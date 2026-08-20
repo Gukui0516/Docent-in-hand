@@ -1,18 +1,22 @@
 import React from 'react';
-import { Compass, Zap, MapPin } from 'lucide-react';
+import { Compass, Zap, MapPin, Navigation } from 'lucide-react';
 
 interface HeaderProps {
   currentPlaceName: string;
   onOpenBenchmark: () => void;
   onOpenPOIList: () => void;
+  onOpenGPSSimulator: () => void;
   isGpsActive: boolean;
+  gpsLabel?: string;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   currentPlaceName,
   onOpenBenchmark,
   onOpenPOIList,
-  isGpsActive
+  onOpenGPSSimulator,
+  isGpsActive,
+  gpsLabel
 }) => {
   return (
     <header className="app-header">
@@ -50,14 +54,17 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      <div className="location-bar">
+      <div className="location-bar" onClick={onOpenGPSSimulator} title="GPS 위치 변경 및 시뮬레이션">
         <div className="location-info">
           <MapPin size={14} className={`pin-icon ${isGpsActive ? 'active' : ''}`} />
           <span className="location-text">
-            현재 위치: <strong>{currentPlaceName}</strong>
+            현재 위치: <strong>{currentPlaceName}</strong> {gpsLabel && <span className="gps-label">({gpsLabel})</span>}
           </span>
         </div>
-        <span className="zero-click-badge">✨ 0-Click 즉시 매핑</span>
+        <button type="button" className="gps-change-btn">
+          <Navigation size={12} />
+          <span>GPS 설정</span>
+        </button>
       </div>
     </header>
   );

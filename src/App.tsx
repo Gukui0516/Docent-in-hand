@@ -10,6 +10,7 @@ import { StoryCard } from './components/StoryCard';
 import { ChatSection } from './components/ChatSection';
 import { POICarousel } from './components/POICarousel';
 import { BenchmarkModal } from './components/BenchmarkModal';
+import { GPSSimulatorModal } from './components/GPSSimulatorModal';
 import './App.css';
 
 export const App: React.FC = () => {
@@ -18,12 +19,13 @@ export const App: React.FC = () => {
     lat: 33.4586,
     lng: 126.9423 // Default: 성산일출봉
   });
+  const [gpsLabel, setGpsLabel] = useState<string>('성산일출봉 앞');
   const [isGpsActive, setIsGpsActive] = useState(false);
   const [currentPOI, setCurrentPOI] = useState<POI>(POI_LIST[0]);
   const [currentCharacter, setCurrentCharacter] = useState<Character>(
     CHARACTERS[POI_LIST[0].assignedCharacterId]
   );
-  const [distanceText, setDistanceText] = useState('120m 앞');
+  const [distanceText, setDistanceText] = useState('80m 앞');
 
   // Story & Streaming
   const [storyText, setStoryText] = useState('');
@@ -36,6 +38,7 @@ export const App: React.FC = () => {
   // Modals
   const [isPOIListOpen, setIsPOIListOpen] = useState(false);
   const [isBenchmarkOpen, setIsBenchmarkOpen] = useState(false);
+  const [isGPSModalOpen, setIsGPSModalOpen] = useState(false);
 
   const isInitialStoryStarted = useRef(false);
 
@@ -64,13 +67,48 @@ export const App: React.FC = () => {
     setCurrentCharacter(assignedChar);
 
     if (distMeters !== undefined) {
-      setDistanceText(formatDistance(distMeters));
+      setDistanceText(`${formatDistance(distMeters)} 앞`);
     } else {
       setDistanceText(poi.region);
     }
 
     triggerZeroClickStory(poi, assignedChar);
   }, [triggerZeroClickStory]);
+
+  // Request Real Device GPS
+  const handleUseRealGPS = useCallback(() => {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          setUserLocation({ lat, lng });
+          setIsGpsActive(true);
+          setGpsLabel('실제 기기 GPS');
+
+          const { poi, distanceMeters } = findNearestPOI(lat, lng);
+          applyPOI(poi, distanceMeters);
+        },
+        (err) => {
+          console.warn('Geolocation denied or timeout:', err);
+          alert('GPS 권한이 차단되었거나 수신할 수 없습니다. 시뮬레이터를 사용해 보세요.');
+        },
+        { enableHighAccuracy: true, timeout: 6000, maximumAge: 30000 }
+      );
+    } else {
+      alert('이 브라우저는 Geolocation을 지원하지 않습니다.');
+    }
+  }, [applyPOI]);
+
+  // Apply Simulated GPS Coordinates
+  const handleApplyCoordinates = useCallback((lat: number, lng: number, label: string) => {
+    setUserLocation({ lat, lng });
+    setIsGpsActive(true);
+    setGpsLabel(label);
+
+    const { poi, distanceMeters } = findNearestPOI(lat, lng);
+    applyPOI(poi, distanceMeters);
+  }, [applyPOI]);
 
   // Initial GPS Location Flow (Zero-Click)
   useEffect(() => {
@@ -84,20 +122,19 @@ export const App: React.FC = () => {
           const lng = position.coords.longitude;
           setUserLocation({ lat, lng });
           setIsGpsActive(true);
+          setGpsLabel('실시간 GPS');
 
           const { poi, distanceMeters } = findNearestPOI(lat, lng);
           applyPOI(poi, distanceMeters);
         },
-        (err) => {
-          console.warn('Geolocation denied or timeout, using default landmark:', err);
-          setIsGpsActive(false);
-          // Default to 성산일출봉
-          applyPOI(POI_LIST[0], 120);
+        () => {
+          // Default fallback
+          applyPOI(POI_LIST[0], 80);
         },
-        { enableHighAccuracy: true, timeout: 5000, maximumAge: 60000 }
+        { enableHighAccuracy: true, timeout: 3000, maximumAge: 60000 }
       );
     } else {
-      applyPOI(POI_LIST[0], 120);
+      applyPOI(POI_LIST[0], 80);
     }
   }, [applyPOI]);
 
@@ -165,8 +202,10 @@ export const App: React.FC = () => {
     <div className="app-shell">
       <Header
         currentPlaceName={currentPOI.name}
+        gpsLabel={gpsLabel}
         onOpenBenchmark={() => setIsBenchmarkOpen(true)}
         onOpenPOIList={() => setIsPOIListOpen(true)}
+        onOpenGPSSimulator={() => setIsGPSModalOpen(true)}
         isGpsActive={isGpsActive}
       />
 
@@ -207,6 +246,17 @@ export const App: React.FC = () => {
         onClose={() => setIsBenchmarkOpen(false)}
         userLat={userLocation.lat}
         userLng={userLocation.lng}
+      />
+
+      {/* GPS Location Simulator Modal */}
+      <GPSSimulatorModal
+        isOpen={isGPSModalOpen}
+        onClose={() => setIsGPSModalOpen(false)}
+        currentLat={userLocation.lat}
+        currentLng={userLocation.lng}
+        onApplyCoordinates={handleApplyCoordinates}
+        onUseRealGPS={handleUseRealGPS}
+        isRealGpsActive={isGpsActive}
       />
     </div>
   );
