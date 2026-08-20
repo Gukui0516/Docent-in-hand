@@ -22,6 +22,7 @@ export const App: React.FC = () => {
   });
   const [gpsLabel, setGpsLabel] = useState<string>('성산일출봉 앞');
   const [isGpsActive, setIsGpsActive] = useState(false);
+  const [isSyncingLocation, setIsSyncingLocation] = useState(false);
   const [currentPOI, setCurrentPOI] = useState<POI>(POI_LIST[0]);
   const [currentCharacter, setCurrentCharacter] = useState<Character>(
     CHARACTERS[POI_LIST[0].assignedCharacterId]
@@ -110,6 +111,7 @@ export const App: React.FC = () => {
   // Request Real Device GPS
   const handleUseRealGPS = useCallback(() => {
     if ('geolocation' in navigator) {
+      setIsSyncingLocation(true);
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const lat = position.coords.latitude;
@@ -119,13 +121,15 @@ export const App: React.FC = () => {
 
           setUserLocation({ lat, lng });
           setIsGpsActive(true);
-          setGpsLabel('실제 기기 GPS');
+          setGpsLabel('실시간 GPS');
 
           const { poi, distanceMeters } = findNearestPOI(lat, lng);
           applyPOI(poi, distanceMeters);
+          setIsSyncingLocation(false);
         },
         (err) => {
           console.warn('[GPS 수신 실패 또는 거부]:', err);
+          setIsSyncingLocation(false);
           alert('브라우저 위치 권한이 차단되었거나 수신할 수 없습니다. 상단 [GPS 설정]에서 가상 위치를 선택해 보세요!');
         },
         { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 }
@@ -251,7 +255,9 @@ export const App: React.FC = () => {
         gpsLabel={gpsLabel}
         onOpenPOIList={() => setIsPOIListOpen(true)}
         onOpenGPSSimulator={() => setIsGPSModalOpen(true)}
+        onSyncLocation={handleUseRealGPS}
         isGpsActive={isGpsActive}
+        isSyncing={isSyncingLocation}
       />
 
       <main className="main-content">

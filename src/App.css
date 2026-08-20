@@ -1367,19 +1367,46 @@
   font-weight: 600;
 }
 
-.location-bar-change-hint {
-  font-size: 11px;
-  font-weight: 600;
-  color: #E65100;
-  transition: all 0.2s ease;
+.location-sync-btn {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 5px;
+  background-color: #FFF3E0;
+  border: 1px solid #FFE0B2;
+  color: #E65100;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px rgba(230, 81, 0, 0.06);
 }
 
-.location-bar:hover .location-bar-change-hint {
-  text-decoration: underline;
+.location-sync-btn:hover:not(:disabled) {
+  background-color: #FFE0B2;
+  border-color: #FFCC80;
   color: #D84315;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(230, 81, 0, 0.15);
+}
+
+.location-sync-btn:active {
+  transform: translateY(0);
+}
+
+.location-sync-btn.syncing {
+  opacity: 0.8;
+  cursor: wait;
+}
+
+.sync-icon.spin {
+  animation: spinSync 1s linear infinite;
+}
+
+@keyframes spinSync {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .nav-icon {

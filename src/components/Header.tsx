@@ -1,20 +1,24 @@
 import React from 'react';
-import { Search, MapPin } from 'lucide-react';
+import { Search, MapPin, RefreshCw } from 'lucide-react';
 
 interface HeaderProps {
   currentPlaceName: string;
   onOpenPOIList: () => void;
   onOpenGPSSimulator: () => void;
+  onSyncLocation: () => void;
   isGpsActive: boolean;
   gpsLabel?: string;
+  isSyncing?: boolean;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   currentPlaceName,
   onOpenPOIList,
   onOpenGPSSimulator,
+  onSyncLocation,
   isGpsActive,
-  gpsLabel
+  gpsLabel,
+  isSyncing = false
 }) => {
   return (
     <header className="app-header">
@@ -43,16 +47,25 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       <div className="location-bar-wrapper">
-        <div className="location-bar" onClick={onOpenGPSSimulator} title="클릭하여 GPS 위치 변경">
+        <div className="location-bar" onClick={onOpenGPSSimulator} title="클릭하여 GPS 가상 위치 시뮬레이터 열기">
           <div className="location-info">
             <MapPin size={14} className={`pin-icon ${isGpsActive ? 'active' : ''}`} />
             <span className="location-text">
               현재 위치: <strong>{currentPlaceName}</strong> {gpsLabel && <span className="gps-label">({gpsLabel})</span>}
             </span>
           </div>
-          <span className="location-bar-change-hint">
-            위치 변경 ↗
-          </span>
+          <button
+            type="button"
+            className={`location-sync-btn ${isSyncing ? 'syncing' : ''}`}
+            onClick={(e) => {
+              e.stopPropagation();
+              onSyncLocation();
+            }}
+            title="현재 기기 GPS 실시간 위치 동기화"
+          >
+            <RefreshCw size={12} className={`sync-icon ${isSyncing ? 'spin' : ''}`} />
+            <span>{isSyncing ? '동기화 중...' : '위치 동기화'}</span>
+          </button>
         </div>
       </div>
     </header>
