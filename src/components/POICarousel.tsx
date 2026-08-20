@@ -25,8 +25,14 @@ export const POICarousel: React.FC<POICarouselProps> = ({
   const categories = [
     { id: 'all', label: `전체 (${POI_LIST.length})` },
     { id: '자연과 지리', label: '🌋 자연과 지리' },
-    { id: '생활과 민속', label: '🤿 생활과 민속' },
+    { id: '역사', label: '📜 역사' },
     { id: '문화유산', label: '🗿 문화유산' },
+    { id: '성씨와 인물', label: '👑 성씨와 인물' },
+    { id: '정치·경제·사회', label: '🏛️ 정치·경제·사회' },
+    { id: '종교', label: '⛩️ 종교' },
+    { id: '생활과 민속', label: '🤿 생활과 민속' },
+    { id: '문화와 교육', label: '🎨 문화와 교육' },
+    { id: '언어와 문학', label: '📖 언어와 문학' },
   ];
 
   const filteredList = POI_LIST.filter((poi) => {
@@ -61,18 +67,24 @@ export const POICarousel: React.FC<POICarouselProps> = ({
           />
         </div>
 
-        {/* Category Tabs */}
+        {/* Category Tabs (9 Official Domains) */}
         <div className="category-tabs">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              className={`category-tab-btn ${filterCategory === cat.id ? 'active' : ''}`}
-              onClick={() => setFilterCategory(cat.id)}
-            >
-              {cat.label}
-            </button>
-          ))}
+          {categories.map((cat) => {
+            const count = cat.id === 'all' 
+              ? POI_LIST.length 
+              : POI_LIST.filter(p => p.category === cat.id).length;
+            
+            return (
+              <button
+                key={cat.id}
+                type="button"
+                className={`category-tab-btn ${filterCategory === cat.id ? 'active' : ''}`}
+                onClick={() => setFilterCategory(cat.id)}
+              >
+                {cat.id === 'all' ? cat.label : `${cat.label} (${count})`}
+              </button>
+            );
+          })}
         </div>
 
         {/* POI Grid/List */}
@@ -91,7 +103,16 @@ export const POICarousel: React.FC<POICarouselProps> = ({
                 }}
               >
                 <div className="item-thumbnail-wrapper">
-                  <img src={poi.imageUrl} alt={poi.name} className="item-thumbnail" />
+                  <img
+                    src={poi.imageUrl}
+                    alt={poi.name}
+                    referrerPolicy="no-referrer"
+                    loading="lazy"
+                    className="item-thumbnail"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=300&q=80';
+                    }}
+                  />
                   <span className="item-char-pill">
                     {character.avatarEmoji} {character.name}
                   </span>
