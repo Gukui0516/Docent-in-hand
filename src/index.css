@@ -1,30 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Color Tokens */
+  --bg-primary: #F8F9FA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #FFFFFF;
+  --bg-subtle: #F1F3F5;
+  
+  --text-primary: #191F28;
+  --text-secondary: #4E5968;
+  --text-tertiary: #8B95A1;
+  --text-inverse: #FFFFFF;
+  
+  --color-brand: #E65100;
+  --color-brand-light: #FFF3E0;
+  --color-ocean: #00695C;
+  --color-ocean-light: #E0F2F1;
+  --color-stone: #37474F;
+  --color-stone-light: #ECEFF1;
+  
+  --border-color: #E5E8EB;
+  --border-color-light: #F2F4F6;
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #0f172a;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: var(--font-family);
+  background-color: #E9ECEF;
+  color: var(--text-primary);
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
   width: 100%;
+  max-width: 540px;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
 }

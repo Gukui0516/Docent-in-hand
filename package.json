@@ -4,11 +4,18 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "predev": "python3 scripts/sync_data_to_app.py",
+    "dev": "concurrently -k -p \"[{name}]\" -n \"SERVER,CLIENT\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "vite",
+    "dev:server": "cd server && npm run dev",
+    "prebuild": "python3 scripts/sync_data_to_app.py",
     "build": "tsc && vite build",
+    "sync:data": "python3 scripts/sync_data_to_app.py",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/genai": "^2.18.0",
+    "lucide-react": "^1.33.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -16,6 +23,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^9.1.2",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
   }

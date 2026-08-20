@@ -77,3 +77,17 @@ build/
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# Data files (excluded from Git)
+/data/
+/data/**
+/data/jeju-language/
+*.tsv
+*.parquet
+*.tar.gz
+
+
+# Environment variables
+.env
+.env.local
+.env.*.local
