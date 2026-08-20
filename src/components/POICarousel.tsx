@@ -23,7 +23,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
   if (!isOpen) return null;
 
   const categories = [
-    { id: 'all', label: '전체 (11)' },
+    { id: 'all', label: `전체 (${POI_LIST.length})` },
     { id: '자연과 지리', label: '🌋 자연과 지리' },
     { id: '생활과 민속', label: '🤿 생활과 민속' },
     { id: '문화유산', label: '🗿 문화유산' },
