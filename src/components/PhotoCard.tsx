@@ -36,7 +36,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
     setIsAutoPlay(true);
   }, [poi.id]);
 
-  // Auto Slideshow Timer (4.5s interval)
+  // Auto Slideshow Timer (6.0s interval)
   useEffect(() => {
     if (timerRef.current) {
       clearInterval(timerRef.current);
@@ -45,7 +45,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
     if (isAutoPlay && totalImages > 1) {
       timerRef.current = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % totalImages);
-      }, 4500);
+      }, 6000);
     }
 
     return () => {
@@ -88,7 +88,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
             className="slideshow-track"
             style={{
               transform: `translateX(-${currentIndex * 100}%)`,
-              transition: 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)'
+              transition: 'transform 1.25s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
           >
             {imageList.map((img, idx) => (
