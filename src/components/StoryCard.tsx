@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Character, POI } from '../types/docent';
-import { Sparkles, BookOpen, Volume2, VolumeX, ChevronDown, ChevronUp, Cpu } from 'lucide-react';
+import { Sparkles, BookOpen, Volume2, VolumeX, ChevronDown, ChevronUp, Cpu, ExternalLink } from 'lucide-react';
 import { RAG_KNOWLEDGE_BASE } from '../data/ragKnowledgeBase';
 
 interface StoryCardProps {
@@ -175,7 +175,29 @@ export const StoryCard: React.FC<StoryCardProps> = ({
               </div>
               <div className="rag-ref-item">
                 <span className="rag-ref-label">📚 공인 출처:</span>
-                <span className="rag-ref-val">{ragDoc.academicReferences?.join(', ') || '한국향토문화전자대전'}</span>
+                <span className="rag-ref-val">
+                  {ragDoc.academicReferences?.join(', ') || '한국학중앙연구원 향토문화전자대전'}
+                  {(ragDoc.sourceUrl || poi.sourceUrl || poi.id) && (
+                    <a
+                      href={ragDoc.sourceUrl || poi.sourceUrl || `https://jeju.grandculture.net/jeju/toc/${poi.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rag-archive-link"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '3px',
+                        marginLeft: '8px',
+                        color: '#eb5e28',
+                        textDecoration: 'underline',
+                        fontWeight: 600
+                      }}
+                      title="한국학중앙연구원 공식 원문 열기"
+                    >
+                      [공식 아카이브 원문 바로가기 <ExternalLink size={11} />]
+                    </a>
+                  )}
+                </span>
               </div>
             </div>
           )}

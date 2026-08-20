@@ -157,6 +157,8 @@ def process_items_to_pois(all_items):
         if not multimedia:
             continue
 
+        item_url = it.get('url') or f"https://jeju.grandculture.net/jeju/toc/{it.get('id', '')}"
+        
         clean_images = []
         for m in multimedia:
             src = m.get('src')
@@ -165,7 +167,8 @@ def process_items_to_pois(all_items):
                 clean_images.append({
                     'src': src,
                     'alt': html.unescape(alt),
-                    'source': '한국학중앙연구원 향토문화전자대전'
+                    'source': '한국학중앙연구원 한국향토문화전자대전',
+                    'sourceUrl': item_url
                 })
 
         if not clean_images:
@@ -228,6 +231,7 @@ def process_items_to_pois(all_items):
             'images': clean_images[:6],
             'imageTitle': first_img['alt'],
             'imageSource': first_img['source'],
+            'sourceUrl': item_url,
             'tags': tags,
             'mythAndFact': {
                 'mythTitle': f"{title}에 깃든 구전 기록과 학술 팩트",
@@ -267,6 +271,7 @@ def write_frontend_rag_kb(all_items):
         title = html.unescape(it.get('title', ''))
         summary = it.get('summary', '')
         sections = {s.get('heading', ''): s.get('content', '') for s in it.get('sections', [])}
+        item_url = it.get('url') or f"https://jeju.grandculture.net/jeju/toc/{it_id}"
         meta = it.get('metadata', {})
         subcats = [s.get('nodeName', '') for s in it.get('subcategories', [])]
 
@@ -274,11 +279,12 @@ def write_frontend_rag_kb(all_items):
             'poiId': it_id,
             'poiName': title,
             'category': it.get('file_cat', '자연과 지리'),
+            'sourceUrl': item_url,
             'folkloreNarrative': {
                 'title': f"{title} 구전 설화 및 유래",
                 'story': sections.get('정의', summary),
                 'motifs': subcats,
-                'oralTraditionSource': '한국학중앙연구원 향토문화전자대전'
+                'oralTraditionSource': '한국학중앙연구원 한국향토문화전자대전'
             },
             'geologyAndNature': {
                 'formationProcess': sections.get('지질', sections.get('위치', summary)),
@@ -297,7 +303,7 @@ def write_frontend_rag_kb(all_items):
         }
 
     content = 'export interface RAGDocument {\n'
-    content += '  poiId: string;\n  poiName: string;\n  category: string;\n'
+    content += '  poiId: string;\n  poiName: string;\n  category: string;\n  sourceUrl?: string;\n'
     content += '  folkloreNarrative: { title: string; story: string; motifs: string[]; oralTraditionSource: string; };\n'
     content += '  geologyAndNature: { formationProcess: string; scientificSignificance: string; naturalEnvironment: string; };\n'
     content += '  historyAndCulture: { culturalHeritageRank: string; historicalContext: string; localFolklorePractices: string; };\n'

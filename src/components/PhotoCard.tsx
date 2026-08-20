@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { POI, POIImage } from '../types/docent';
-import { MapPin, Image as ImageIcon, ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
+import { MapPin, Image as ImageIcon, ChevronLeft, ChevronRight, Play, Pause, ExternalLink } from 'lucide-react';
 
 interface PhotoCardProps {
   poi: POI;
@@ -245,14 +245,49 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
           )}
         </div>
 
-        {/* Source Attribution Bar */}
+        {/* Source Attribution Bar with Clickable Archive Link */}
         <div className="source-bar">
           <span className="source-label">
             📸 <strong>{currentImage.alt || poi.imageTitle || poi.name}</strong>
           </span>
-          <span className="source-credit">
-            출처: {currentImage.source || poi.imageSource || '한국학중앙연구원 한국향토문화전자대전'}
-          </span>
+          {currentImage.sourceUrl || poi.sourceUrl || poi.id ? (
+            <a
+              href={currentImage.sourceUrl || poi.sourceUrl || `https://jeju.grandculture.net/jeju/toc/${poi.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="source-credit-link"
+              title="한국학중앙연구원 향토문화전자대전 공식 아카이브 원문 페이지 열기"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
+                color: '#2b2d42',
+                textDecoration: 'none',
+                backgroundColor: 'rgba(235, 94, 40, 0.08)',
+                padding: '3px 8px',
+                borderRadius: '4px',
+                border: '1px solid rgba(235, 94, 40, 0.25)',
+                fontWeight: 600,
+                fontSize: '11px',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(235, 94, 40, 0.18)';
+                e.currentTarget.style.borderColor = '#eb5e28';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(235, 94, 40, 0.08)';
+                e.currentTarget.style.borderColor = 'rgba(235, 94, 40, 0.25)';
+              }}
+            >
+              <span>출처: {currentImage.source || poi.imageSource || '한국학중앙연구원 한국향토문화전자대전'}</span>
+              <ExternalLink size={12} color="#eb5e28" />
+            </a>
+          ) : (
+            <span className="source-credit">
+              출처: {currentImage.source || poi.imageSource || '한국학중앙연구원 한국향토문화전자대전'}
+            </span>
+          )}
         </div>
       </div>
     </section>

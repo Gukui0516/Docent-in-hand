@@ -18,6 +18,7 @@ export interface POIImage {
   src: string;
   alt: string;
   source?: string;
+  sourceUrl?: string;
 }
 
 export interface POI {
@@ -32,6 +33,7 @@ export interface POI {
   images?: POIImage[];
   imageTitle: string;
   imageSource: string;
+  sourceUrl?: string;
   tags: string[];
   mythAndFact: {
     mythTitle?: string;

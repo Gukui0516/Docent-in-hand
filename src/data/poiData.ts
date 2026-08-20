@@ -15,36 +15,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04505",
         "alt": "만장굴 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710008"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01737",
         "alt": "만장굴 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710008"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01740",
         "alt": "만장굴 내 세계 제일의 용암주",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710008"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01738",
         "alt": "만장굴 용암교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710008"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01739",
         "alt": "만장굴 용암구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710008"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03324",
         "alt": "1970년대 만장굴 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710008"
       }
     ],
     "imageTitle": "만장굴 입구",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710008",
     "tags": [
       "자연 지리",
       "현대",
@@ -74,36 +81,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03480",
         "alt": "1900년대 초, 용연",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701484"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03481",
         "alt": "2005년 용연야범재현축제 장면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701484"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00684",
         "alt": "용두암",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701484"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00686",
         "alt": "용연",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701484"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00687",
         "alt": "용연다리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701484"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05040",
         "alt": "용연야범재현축제",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701484"
       }
     ],
     "imageTitle": "1900년대 초, 용연",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701484",
     "tags": [
       "자연 지리",
       "현대",
@@ -133,26 +147,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09147",
         "alt": "제주 수월봉 화산 쇄설층",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712004"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09144",
         "alt": "제주 수월봉 화산 쇄설층",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712004"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09145",
         "alt": "제주 수월봉 화산 쇄설층",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712004"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09146",
         "alt": "제주 수월봉 화산 쇄설층",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712004"
       }
     ],
     "imageTitle": "제주 수월봉 화산 쇄설층",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712004",
     "tags": [
       "자연 지리",
       "지형·지질",
@@ -183,21 +202,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09066",
         "alt": "사려니 숲길 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712012"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09067",
         "alt": "사려니 숲길 탐방로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712012"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09068",
         "alt": "사려니 숲길 탐방로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712012"
       }
     ],
     "imageTitle": "사려니 숲길 입구",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712012",
     "tags": [
       "인문 지리",
       "현대",
@@ -227,11 +250,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02409",
         "alt": "새별 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710114"
       }
     ],
     "imageTitle": "새별 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710114",
     "tags": [
       "자연 지리",
       "현대",
@@ -261,16 +286,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01360",
         "alt": "「용눈이 오름」",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710144"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05039",
         "alt": "용눈이 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710144"
       }
     ],
     "imageTitle": "「용눈이 오름」",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710144",
     "tags": [
       "자연 지리",
       "현대",
@@ -300,11 +328,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02564",
         "alt": "다랑쉬 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710064"
       }
     ],
     "imageTitle": "다랑쉬 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710064",
     "tags": [
       "자연 지리",
       "현대",
@@ -334,11 +364,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02575",
         "alt": "아끈다랑쉬 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710131"
       }
     ],
     "imageTitle": "아끈다랑쉬 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710131",
     "tags": [
       "자연 지리",
       "현대",
@@ -368,11 +400,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02482",
         "alt": "제주 선흘리 거문 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710209"
       }
     ],
     "imageTitle": "제주 선흘리 거문 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710209",
     "tags": [
       "자연 지리",
       "현대",
@@ -402,16 +436,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03024",
         "alt": "금능농공단지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710392"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02030",
         "alt": "금능리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710392"
       }
     ],
     "imageTitle": "금능농공단지",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710392",
     "tags": [
       "인문 지리",
       "현대",
@@ -441,21 +478,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09032",
         "alt": "금능 으뜸원 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712013"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09034",
         "alt": "금능 으뜸원 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712013"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09033",
         "alt": "금능 으뜸원 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712013"
       }
     ],
     "imageTitle": "금능 으뜸원 해변",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712013",
     "tags": [
       "자연 지리",
       "현대",
@@ -485,26 +526,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01754",
         "alt": "소천굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710021"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01753",
         "alt": "소천굴의 용암 산호",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710021"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01755",
         "alt": "협재굴 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710021"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02688",
         "alt": "협재굴 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710021"
       }
     ],
     "imageTitle": "소천굴",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710021",
     "tags": [
       "자연 지리",
       "현대",
@@ -534,11 +580,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02501",
         "alt": "협재리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710478"
       }
     ],
     "imageTitle": "협재리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710478",
     "tags": [
       "인문 지리",
       "현대",
@@ -568,11 +616,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02423",
         "alt": "협재포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710365"
       }
     ],
     "imageTitle": "협재포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710365",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -602,16 +652,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04230",
         "alt": "협재해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710375"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02620",
         "alt": "협재해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710375"
       }
     ],
     "imageTitle": "협재해수욕장",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710375",
     "tags": [
       "인문 지리",
       "현대",
@@ -641,21 +694,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00162",
         "alt": "집중호우로 인한 농경지 침수 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710476"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04209",
         "alt": "함덕리 유물산포지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710476"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03156",
         "alt": "함덕해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710476"
       }
     ],
     "imageTitle": "집중호우로 인한 농경지 침수 모습",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710476",
     "tags": [
       "인문 지리",
       "현대",
@@ -685,11 +742,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02599",
         "alt": "함덕포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702587"
       }
     ],
     "imageTitle": "함덕포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702587",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -719,21 +778,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02939",
         "alt": "1960~1970년대의 함덕해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710374"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03156",
         "alt": "함덕해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710374"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04210",
         "alt": "함덕해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710374"
       }
     ],
     "imageTitle": "1960~1970년대의 함덕해수욕장",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710374",
     "tags": [
       "인문 지리",
       "현대",
@@ -763,11 +826,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03104",
         "alt": "김녕사굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710005"
       }
     ],
     "imageTitle": "김녕사굴",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710005",
     "tags": [
       "자연 지리",
       "현대",
@@ -797,31 +862,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03101",
         "alt": "김녕리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710396"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03102",
         "alt": "김녕리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710396"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03104",
         "alt": "김녕사굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710396"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03105",
         "alt": "김녕초등학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710396"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02562",
         "alt": "김녕해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710396"
       }
     ],
     "imageTitle": "김녕리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710396",
     "tags": [
       "인문 지리",
       "현대",
@@ -851,11 +922,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03068",
         "alt": "김녕항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710327"
       }
     ],
     "imageTitle": "김녕항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710327",
     "tags": [
       "인문 지리",
       "현대",
@@ -885,21 +958,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04784",
         "alt": "김녕해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710373"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02562",
         "alt": "김녕해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710373"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03695",
         "alt": "김녕해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710373"
       }
     ],
     "imageTitle": "김녕해수욕장",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710373",
     "tags": [
       "인문 지리",
       "현대",
@@ -929,16 +1006,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03694",
         "alt": "김녕미로공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710238"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02197",
         "alt": "김녕미로공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710238"
       }
     ],
     "imageTitle": "김녕미로공원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710238",
     "tags": [
       "인문 지리",
       "현대",
@@ -968,11 +1048,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02168",
         "alt": "월정리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710448"
       }
     ],
     "imageTitle": "월정리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710448",
     "tags": [
       "인문 지리",
       "현대",
@@ -1002,26 +1084,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09117",
         "alt": "월정리 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712017"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09120",
         "alt": "월정리 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712017"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09119",
         "alt": "월정리 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712017"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09118",
         "alt": "월정리 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712017"
       }
     ],
     "imageTitle": "월정리 해변",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712017",
     "tags": [
       "자연 지리",
       "현대",
@@ -1051,21 +1138,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02191",
         "alt": "곽금초등학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710382"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03010",
         "alt": "곽지리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710382"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02401",
         "alt": "곽지해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710382"
       }
     ],
     "imageTitle": "곽금초등학교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710382",
     "tags": [
       "인문 지리",
       "현대",
@@ -1095,11 +1186,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03284",
         "alt": "곽지포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710323"
       }
     ],
     "imageTitle": "곽지포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710323",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -1129,16 +1222,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03607",
         "alt": "곽지해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710372"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02401",
         "alt": "곽지해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710372"
       }
     ],
     "imageTitle": "곽지해수욕장",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710372",
     "tags": [
       "인문 지리",
       "현대",
@@ -1168,21 +1264,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02526",
         "alt": "서빈백사",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710213"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04508",
         "alt": "서빈백사",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710213"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02537",
         "alt": "우도 홍조단괴 해빈",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710213"
       }
     ],
     "imageTitle": "서빈백사",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710213",
     "tags": [
       "자연 지리",
       "지형·지질",
@@ -1213,26 +1313,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03421",
         "alt": "우도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710026"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02954",
         "alt": "우도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710026"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04511",
         "alt": "우도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710026"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04510",
         "alt": "우도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710026"
       }
     ],
     "imageTitle": "우도",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710026",
     "tags": [
       "자연 지리",
       "현대",
@@ -1262,21 +1367,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02992",
         "alt": "구좌면 연평출장소(1960년대)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710445"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04467",
         "alt": "우도면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710445"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02993",
         "alt": "우도면사무소(1996)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710445"
       }
     ],
     "imageTitle": "구좌면 연평출장소(1960년대)",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710445",
     "tags": [
       "인문 지리",
       "현대",
@@ -1306,11 +1415,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03422",
         "alt": "우도항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710347"
       }
     ],
     "imageTitle": "우도항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710347",
     "tags": [
       "인문 지리",
       "현대",
@@ -1340,16 +1451,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04511",
         "alt": "우도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710315"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04466",
         "alt": "우도등대",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710315"
       }
     ],
     "imageTitle": "우도",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710315",
     "tags": [
       "인문 지리",
       "현대",
@@ -1379,36 +1493,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02526",
         "alt": "서빈백사",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710023"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04508",
         "alt": "서빈백사",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710023"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02954",
         "alt": "우도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710023"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03421",
         "alt": "우도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710023"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04510",
         "alt": "우도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710023"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04511",
         "alt": "우도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710023"
       }
     ],
     "imageTitle": "서빈백사",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710023",
     "tags": [
       "자연 지리",
       "관광·위락시설",
@@ -1439,21 +1560,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09112",
         "alt": "우도 산호 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712016"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09111",
         "alt": "우도 산호 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712016"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09110",
         "alt": "우도 산호 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712016"
       }
     ],
     "imageTitle": "우도 산호 해변",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712016",
     "tags": [
       "자연 지리",
       "현대",
@@ -1483,11 +1608,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02534",
         "alt": "우도등대공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710243"
       }
     ],
     "imageTitle": "우도등대공원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710243",
     "tags": [
       "인문 지리",
       "현대",
@@ -1517,21 +1644,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02954",
         "alt": "우도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710244"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03421",
         "alt": "우도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710244"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02536",
         "alt": "우도해상국립공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710244"
       }
     ],
     "imageTitle": "우도",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710244",
     "tags": [
       "인문 지리",
       "현대",
@@ -1561,16 +1692,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00241",
         "alt": "도두봉",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700584"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01397",
         "alt": "도두봉 응회암층과 관입암",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700584"
       }
     ],
     "imageTitle": "도두봉",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700584",
     "tags": [
       "자연 지리",
       "현대",
@@ -1600,16 +1734,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03021",
         "alt": "삼양동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701045"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05074",
         "alt": "제주 삼양동 유적 발굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701045"
       }
     ],
     "imageTitle": "삼양동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701045",
     "tags": [
       "인문 지리",
       "현대",
@@ -1639,16 +1776,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02142",
         "alt": "5·16도로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702554"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04981",
         "alt": "한라산횡단도로 개설",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702554"
       }
     ],
     "imageTitle": "5·16도로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702554",
     "tags": [
       "인문 지리",
       "일제 강점기",
@@ -1678,36 +1818,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02434",
         "alt": "고성천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701708"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02438",
         "alt": "금성천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701708"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01397",
         "alt": "도두봉 응회암층과 관입암",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701708"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01618",
         "alt": "별도교 화북천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701708"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01893",
         "alt": "비양도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701708"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04647",
         "alt": "상추자",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701708"
       }
     ],
     "imageTitle": "고성천",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701708",
     "tags": [
       "자연 지리",
       "현대",
@@ -1737,36 +1884,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02401",
         "alt": "곽지해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711581"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00071",
         "alt": "관덕정",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711581"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00152",
         "alt": "국립 제주 박물관",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711581"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02197",
         "alt": "김녕미로공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711581"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03104",
         "alt": "김녕사굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711581"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01737",
         "alt": "만장굴 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711581"
       }
     ],
     "imageTitle": "곽지해수욕장",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711581",
     "tags": [
       "인문 지리",
       "현대",
@@ -1796,36 +1950,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02284",
         "alt": "금산공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701084"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03152",
         "alt": "노꼬메 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701084"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01851",
         "alt": "동백동산 내 상록수림",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701084"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02449",
         "alt": "명월 팽나무군락",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701084"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01845",
         "alt": "무환자나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701084"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02513",
         "alt": "문돗지 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701084"
       }
     ],
     "imageTitle": "금산공원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701084",
     "tags": [
       "동식물",
       "현대",
@@ -1856,36 +2017,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03104",
         "alt": "김녕사굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702331"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01765",
         "alt": "난대림",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702331"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02442",
         "alt": "당처물 동굴의 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702331"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01737",
         "alt": "만장굴 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702331"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01736",
         "alt": "문주란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702331"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02871",
         "alt": "봉개동의 왕벚나무 자생지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702331"
       }
     ],
     "imageTitle": "김녕사굴",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702331",
     "tags": [
       "동식물",
       "현대",
@@ -1916,21 +2084,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00165",
         "alt": "제주지방기상청",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700324"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00167",
         "alt": "제주지방기상청",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700324"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00345",
         "alt": "푄현상 시 나타나는 렌즈구름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700324"
       }
     ],
     "imageTitle": "제주지방기상청",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700324",
     "tags": [
       "자연 지리",
       "현대",
@@ -1960,16 +2132,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00344",
         "alt": "제주시 구좌읍에 위치한 편향수 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700801"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02181",
         "alt": "행원풍력단지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700801"
       }
     ],
     "imageTitle": "제주시 구좌읍에 위치한 편향수 모습",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700801",
     "tags": [
       "자연 지리",
       "기후",
@@ -2000,11 +2175,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03306",
         "alt": "태풍이 지나간 자리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701707"
       }
     ],
     "imageTitle": "태풍이 지나간 자리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701707",
     "tags": [
       "자연 지리",
       "현대",
@@ -2034,36 +2211,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03463",
         "alt": "1959년 병문천에 사라호 태풍이 지나간 자리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700319"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03464",
         "alt": "1970년대 태풍이 지나간 칠성로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700319"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00161",
         "alt": "강풍으로 인한 월파 피해 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700319"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00162",
         "alt": "집중호우로 인한 농경지 침수 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700319"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00163",
         "alt": "집중호우로 인한 농경지 피해 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700319"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03306",
         "alt": "태풍이 지나간 자리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700319"
       }
     ],
     "imageTitle": "1959년 병문천에 사라호 태풍이 지나간 자리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700319",
     "tags": [
       "자연 지리",
       "현대",
@@ -2093,16 +2277,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03464",
         "alt": "1970년대 태풍이 지나간 칠성로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702441"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03306",
         "alt": "태풍이 지나간 자리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702441"
       }
     ],
     "imageTitle": "1970년대 태풍이 지나간 칠성로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702441",
     "tags": [
       "자연 지리",
       "현대",
@@ -2132,11 +2319,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03463",
         "alt": "1959년 병문천에 사라호 태풍이 지나간 자리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702443"
       }
     ],
     "imageTitle": "1959년 병문천에 사라호 태풍이 지나간 자리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702443",
     "tags": [
       "자연 지리",
       "현대",
@@ -2166,36 +2355,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02401",
         "alt": "곽지해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702298"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04784",
         "alt": "김녕해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702298"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02442",
         "alt": "당처물 동굴의 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702298"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01737",
         "alt": "만장굴 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702298"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04775",
         "alt": "방패형화산, 한라산의 하와이형 순상화산",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702298"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01754",
         "alt": "소천굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702298"
       }
     ],
     "imageTitle": "곽지해수욕장",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702298",
     "tags": [
       "자연 지리",
       "현대",
@@ -2225,36 +2421,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04774",
         "alt": "방패형 화산, 모슬봉의 아이슬란드형 순상화산",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711611"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04775",
         "alt": "방패형화산, 한라산의 하와이형 순상화산",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711611"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04776",
         "alt": "아아용암",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711611"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04777",
         "alt": "영실 병풍바위",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711611"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04779",
         "alt": "제주시의 건천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711611"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04780",
         "alt": "제주시의 용천 중 곽지물 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711611"
       }
     ],
     "imageTitle": "방패형 화산, 모슬봉의 아이슬란드형 순상화산",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711611",
     "tags": [
       "인문 지리",
       "고려 전기",
@@ -2284,16 +2487,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04774",
         "alt": "방패형 화산, 모슬봉의 아이슬란드형 순상화산",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700845"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04775",
         "alt": "방패형화산, 한라산의 하와이형 순상화산",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700845"
       }
     ],
     "imageTitle": "방패형 화산, 모슬봉의 아이슬란드형 순상화산",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700845",
     "tags": [
       "자연 지리",
       "현대",
@@ -2323,16 +2529,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02377",
         "alt": "가마 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710032"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05032",
         "alt": "가마 오름 진지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710032"
       }
     ],
     "imageTitle": "가마 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710032",
     "tags": [
       "자연 지리",
       "현대",
@@ -2362,16 +2571,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04482",
         "alt": "가메혹 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710034"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04714",
         "alt": "가메혹 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710034"
       }
     ],
     "imageTitle": "가메혹 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710034",
     "tags": [
       "자연 지리",
       "현대",
@@ -2401,11 +2613,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02816",
         "alt": "가사 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700032"
       }
     ],
     "imageTitle": "가사 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700032",
     "tags": [
       "자연 지리",
       "현대",
@@ -2435,11 +2649,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03133",
         "alt": "갈체 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710043"
       }
     ],
     "imageTitle": "갈체 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710043",
     "tags": [
       "자연 지리",
       "현대",
@@ -2469,11 +2685,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02277",
         "alt": "감은이 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710036"
       }
     ],
     "imageTitle": "감은이 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710036",
     "tags": [
       "자연 지리",
       "현대",
@@ -2503,11 +2721,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03134",
         "alt": "갓그레기 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710053"
       }
     ],
     "imageTitle": "갓그레기 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710053",
     "tags": [
       "자연 지리",
       "현대",
@@ -2537,16 +2757,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02263",
         "alt": "개오리 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700093"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02543",
         "alt": "족은 개오리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700093"
       }
     ],
     "imageTitle": "개오리 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700093",
     "tags": [
       "자연 지리",
       "현대",
@@ -2576,16 +2799,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04483",
         "alt": "갯거리 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710037"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02608",
         "alt": "선소 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710037"
       }
     ],
     "imageTitle": "갯거리 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710037",
     "tags": [
       "자연 지리",
       "현대",
@@ -2615,16 +2841,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02279",
         "alt": "거슨세미",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710039"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02278",
         "alt": "거슨세미",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710039"
       }
     ],
     "imageTitle": "거슨세미",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710039",
     "tags": [
       "자연 지리",
       "현대",
@@ -2654,11 +2883,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02289",
         "alt": "거친 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700102"
       }
     ],
     "imageTitle": "거친 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700102",
     "tags": [
       "자연 지리",
       "현대",
@@ -2688,11 +2919,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02290",
         "alt": "걸시 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700110"
       }
     ],
     "imageTitle": "걸시 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700110",
     "tags": [
       "자연 지리",
       "현대",
@@ -2722,11 +2955,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02379",
         "alt": "검은덱이 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710040"
       }
     ],
     "imageTitle": "검은덱이 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710040",
     "tags": [
       "자연 지리",
       "현대",
@@ -2756,11 +2991,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02735",
         "alt": "검은들먹 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710041"
       }
     ],
     "imageTitle": "검은들먹 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710041",
     "tags": [
       "자연 지리",
       "현대",
@@ -2790,11 +3027,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02821",
         "alt": "검은 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710052"
       }
     ],
     "imageTitle": "검은 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710052",
     "tags": [
       "자연 지리",
       "현대",
@@ -2824,16 +3063,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02143",
         "alt": "검은 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700112"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02144",
         "alt": "검은 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700112"
       }
     ],
     "imageTitle": "검은 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700112",
     "tags": [
       "자연 지리",
       "현대",
@@ -2863,11 +3105,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02383",
         "alt": "것구리 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710054"
       }
     ],
     "imageTitle": "것구리 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710054",
     "tags": [
       "자연 지리",
       "현대",
@@ -2897,11 +3141,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02145",
         "alt": "고내 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710042"
       }
     ],
     "imageTitle": "고내 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710042",
     "tags": [
       "자연 지리",
       "현대",
@@ -2931,11 +3177,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02604",
         "alt": "골머리 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700187"
       }
     ],
     "imageTitle": "골머리 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700187",
     "tags": [
       "자연 지리",
       "현대",
@@ -2965,21 +3213,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02400",
         "alt": "과오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710044"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02448",
         "alt": "말젯 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710044"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02410",
         "alt": "샛오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710044"
       }
     ],
     "imageTitle": "과오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710044",
     "tags": [
       "자연 지리",
       "현대",
@@ -3009,11 +3261,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02147",
         "alt": "광이 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700231"
       }
     ],
     "imageTitle": "광이 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700231",
     "tags": [
       "자연 지리",
       "현대",
@@ -3043,11 +3297,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02381",
         "alt": "굽은 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710048"
       }
     ],
     "imageTitle": "굽은 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710048",
     "tags": [
       "자연 지리",
       "현대",
@@ -3077,11 +3333,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02266",
         "alt": "권제 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700278"
       }
     ],
     "imageTitle": "권제 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700278",
     "tags": [
       "자연 지리",
       "현대",
@@ -3111,16 +3369,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02402",
         "alt": "궤미 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710046"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02558",
         "alt": "궤미 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710046"
       }
     ],
     "imageTitle": "궤미 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710046",
     "tags": [
       "자연 지리",
       "현대",
@@ -3150,11 +3411,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02450",
         "alt": "궤살미",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710084"
       }
     ],
     "imageTitle": "궤살미",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710084",
     "tags": [
       "자연 지리",
       "현대",
@@ -3184,11 +3447,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02403",
         "alt": "궷물 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710050"
       }
     ],
     "imageTitle": "궷물 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710050",
     "tags": [
       "자연 지리",
       "현대",
@@ -3218,11 +3483,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02560",
         "alt": "그스네 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710047"
       }
     ],
     "imageTitle": "그스네 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710047",
     "tags": [
       "자연 지리",
       "현대",
@@ -3252,11 +3519,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02382",
         "alt": "극락 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710051"
       }
     ],
     "imageTitle": "극락 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710051",
     "tags": [
       "자연 지리",
       "현대",
@@ -3286,11 +3555,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02285",
         "alt": "남짓은 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700480"
       }
     ],
     "imageTitle": "남짓은 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700480",
     "tags": [
       "자연 지리",
       "현대",
@@ -3320,11 +3591,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02404",
         "alt": "널개 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710055"
       }
     ],
     "imageTitle": "널개 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710055",
     "tags": [
       "자연 지리",
       "현대",
@@ -3354,11 +3627,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04735",
         "alt": "넙거리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710056"
       }
     ],
     "imageTitle": "넙거리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710056",
     "tags": [
       "자연 지리",
       "현대",
@@ -3388,11 +3663,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03152",
         "alt": "노꼬메 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710057"
       }
     ],
     "imageTitle": "노꼬메 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710057",
     "tags": [
       "자연 지리",
       "현대",
@@ -3422,11 +3699,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02392",
         "alt": "노꼬메 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710128"
       }
     ],
     "imageTitle": "노꼬메 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710128",
     "tags": [
       "자연 지리",
       "현대",
@@ -3456,11 +3735,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02240",
         "alt": "노로손이 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700496"
       }
     ],
     "imageTitle": "노로손이 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700496",
     "tags": [
       "자연 지리",
       "현대",
@@ -3490,11 +3771,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02405",
         "alt": "노로오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710059"
       }
     ],
     "imageTitle": "노로오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710059",
     "tags": [
       "자연 지리",
       "현대",
@@ -3524,11 +3807,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05018",
         "alt": "노리 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700497"
       }
     ],
     "imageTitle": "노리 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700497",
     "tags": [
       "자연 지리",
       "현대",
@@ -3558,11 +3843,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02369",
         "alt": "논오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700508"
       }
     ],
     "imageTitle": "논오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700508",
     "tags": [
       "자연 지리",
       "현대",
@@ -3592,11 +3879,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02563",
         "alt": "높은 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710060"
       }
     ],
     "imageTitle": "높은 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710060",
     "tags": [
       "자연 지리",
       "현대",
@@ -3626,11 +3915,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04486",
         "alt": "누운 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700519"
       }
     ],
     "imageTitle": "누운 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700519",
     "tags": [
       "자연 지리",
       "현대",
@@ -3660,11 +3951,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02605",
         "alt": "눈오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710061"
       }
     ],
     "imageTitle": "눈오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710061",
     "tags": [
       "자연 지리",
       "현대",
@@ -3694,11 +3987,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02606",
         "alt": "느지리오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710062"
       }
     ],
     "imageTitle": "느지리오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710062",
     "tags": [
       "자연 지리",
       "현대",
@@ -3728,11 +4023,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02384",
         "alt": "늡서리 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710063"
       }
     ],
     "imageTitle": "늡서리 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710063",
     "tags": [
       "자연 지리",
       "현대",
@@ -3762,16 +4059,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02291",
         "alt": "당오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710070"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02565",
         "alt": "당오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710070"
       }
     ],
     "imageTitle": "당오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710070",
     "tags": [
       "자연 지리",
       "현대",
@@ -3801,11 +4101,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02565",
         "alt": "당오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710071"
       }
     ],
     "imageTitle": "당오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710071",
     "tags": [
       "자연 지리",
       "현대",
@@ -3835,11 +4137,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02386",
         "alt": "당오름(한경면)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710068"
       }
     ],
     "imageTitle": "당오름(한경면)",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710068",
     "tags": [
       "자연 지리",
       "현대",
@@ -3869,21 +4173,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02378",
         "alt": "가메창 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710067"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02385",
         "alt": "당 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710067"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02311",
         "alt": "저지 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710067"
       }
     ],
     "imageTitle": "가메창 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710067",
     "tags": [
       "자연 지리",
       "현대",
@@ -3913,11 +4221,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02443",
         "alt": "대천이 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710073"
       }
     ],
     "imageTitle": "대천이 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710073",
     "tags": [
       "자연 지리",
       "현대",
@@ -3947,11 +4257,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02458",
         "alt": "독물 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710102"
       }
     ],
     "imageTitle": "독물 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710102",
     "tags": [
       "자연 지리",
       "현대",
@@ -3981,11 +4293,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02495",
         "alt": "큰돌이미",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710173"
       }
     ],
     "imageTitle": "큰돌이미",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710173",
     "tags": [
       "자연 지리",
       "현대",
@@ -4015,11 +4329,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03035",
         "alt": "돔베 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710074"
       }
     ],
     "imageTitle": "돔베 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710074",
     "tags": [
       "자연 지리",
       "현대",
@@ -4049,11 +4365,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02508",
         "alt": "돗오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710075"
       }
     ],
     "imageTitle": "돗오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710075",
     "tags": [
       "자연 지리",
       "현대",
@@ -4083,11 +4401,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02445",
         "alt": "둔지오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710076"
       }
     ],
     "imageTitle": "둔지오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710076",
     "tags": [
       "자연 지리",
       "현대",
@@ -4117,11 +4437,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02510",
         "alt": "뒤굽은이오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710077"
       }
     ],
     "imageTitle": "뒤굽은이오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710077",
     "tags": [
       "자연 지리",
       "현대",
@@ -4151,11 +4473,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03038",
         "alt": "들레 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700650"
       }
     ],
     "imageTitle": "들레 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700650",
     "tags": [
       "자연 지리",
       "현대",
@@ -4185,11 +4509,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05121",
         "alt": "들리 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700651"
       }
     ],
     "imageTitle": "들리 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700651",
     "tags": [
       "자연 지리",
       "현대",
@@ -4219,11 +4545,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02446",
         "alt": "마중 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710079"
       }
     ],
     "imageTitle": "마중 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710079",
     "tags": [
       "자연 지리",
       "현대",
@@ -4253,11 +4581,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02447",
         "alt": "만수동산",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710080"
       }
     ],
     "imageTitle": "만수동산",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710080",
     "tags": [
       "자연 지리",
       "현대",
@@ -4287,11 +4617,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02512",
         "alt": "말찻 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710082"
       }
     ],
     "imageTitle": "말찻 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710082",
     "tags": [
       "자연 지리",
       "현대",
@@ -4321,11 +4653,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02513",
         "alt": "문돗지 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710085"
       }
     ],
     "imageTitle": "문돗지 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710085",
     "tags": [
       "자연 지리",
       "현대",
@@ -4355,11 +4689,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02451",
         "alt": "문석이 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710086"
       }
     ],
     "imageTitle": "문석이 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710086",
     "tags": [
       "자연 지리",
       "현대",
@@ -4389,11 +4725,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02514",
         "alt": "물메",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710087"
       }
     ],
     "imageTitle": "물메",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710087",
     "tags": [
       "자연 지리",
       "현대",
@@ -4423,11 +4761,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04740",
         "alt": "물장오리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700771"
       }
     ],
     "imageTitle": "물장오리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700771",
     "tags": [
       "자연 지리",
       "현대",
@@ -4457,11 +4797,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02515",
         "alt": "물찻",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710088"
       }
     ],
     "imageTitle": "물찻",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710088",
     "tags": [
       "자연 지리",
       "현대",
@@ -4491,11 +4833,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02452",
         "alt": "민대가리 동산",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710089"
       }
     ],
     "imageTitle": "민대가리 동산",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710089",
     "tags": [
       "자연 지리",
       "현대",
@@ -4525,11 +4869,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03042",
         "alt": "민오름(선흘리)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710091"
       }
     ],
     "imageTitle": "민오름(선흘리)",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710091",
     "tags": [
       "자연 지리",
       "현대",
@@ -4559,11 +4905,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02453",
         "alt": "민오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710090"
       }
     ],
     "imageTitle": "민오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710090",
     "tags": [
       "자연 지리",
       "현대",
@@ -4593,11 +4941,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02182",
         "alt": "민오름[오라 2동]",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700787"
       }
     ],
     "imageTitle": "민오름[오라 2동]",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700787",
     "tags": [
       "자연 지리",
       "현대",
@@ -4627,11 +4977,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02552",
         "alt": "파군봉",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710175"
       }
     ],
     "imageTitle": "파군봉",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710175",
     "tags": [
       "자연 지리",
       "현대",
@@ -4661,11 +5013,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02454",
         "alt": "바농 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710092"
       }
     ],
     "imageTitle": "바농 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710092",
     "tags": [
       "자연 지리",
       "현대",
@@ -4695,11 +5049,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02516",
         "alt": "바리메",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710093"
       }
     ],
     "imageTitle": "바리메",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710093",
     "tags": [
       "자연 지리",
       "현대",
@@ -4729,11 +5085,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04491",
         "alt": "밝은오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700829"
       }
     ],
     "imageTitle": "밝은오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700829",
     "tags": [
       "자연 지리",
       "현대",
@@ -4763,11 +5121,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02517",
         "alt": "밝은 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710094"
       }
     ],
     "imageTitle": "밝은 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710094",
     "tags": [
       "자연 지리",
       "현대",
@@ -4797,11 +5157,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02518",
         "alt": "밝은 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710095"
       }
     ],
     "imageTitle": "밝은 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710095",
     "tags": [
       "자연 지리",
       "현대",
@@ -4831,11 +5193,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02519",
         "alt": "밝은 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710096"
       }
     ],
     "imageTitle": "밝은 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710096",
     "tags": [
       "자연 지리",
       "현대",
@@ -4865,11 +5229,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02520",
         "alt": "밧돌 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710097"
       }
     ],
     "imageTitle": "밧돌 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710097",
     "tags": [
       "자연 지리",
       "현대",
@@ -4899,11 +5265,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02243",
         "alt": "밧새미 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700832"
       }
     ],
     "imageTitle": "밧새미 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700832",
     "tags": [
       "자연 지리",
       "현대",
@@ -4933,11 +5301,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03043",
         "alt": "방에 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710098"
       }
     ],
     "imageTitle": "방에 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710098",
     "tags": [
       "자연 지리",
       "현대",
@@ -4967,11 +5337,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02651",
         "alt": "베두리오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700875"
       }
     ],
     "imageTitle": "베두리오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700875",
     "tags": [
       "자연 지리",
       "현대",
@@ -5001,21 +5373,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00366",
         "alt": "별도봉",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700886"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05087",
         "alt": "별도봉의 사람들",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700886"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02897",
         "alt": "별도봉의 일본군 갱도진지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700886"
       }
     ],
     "imageTitle": "별도봉",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700886",
     "tags": [
       "자연 지리",
       "현대",
@@ -5045,11 +5421,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02286",
         "alt": "봉아 오름 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700926"
       }
     ],
     "imageTitle": "봉아 오름 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700926",
     "tags": [
       "자연 지리",
       "현대",
@@ -5079,11 +5457,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02457",
         "alt": "부대 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710100"
       }
     ],
     "imageTitle": "부대 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710100",
     "tags": [
       "자연 지리",
       "현대",
@@ -5113,11 +5493,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02522",
         "alt": "북오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710103"
       }
     ],
     "imageTitle": "북오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710103",
     "tags": [
       "자연 지리",
       "현대",
@@ -5147,11 +5529,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02523",
         "alt": "불칸디 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700958"
       }
     ],
     "imageTitle": "불칸디 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700958",
     "tags": [
       "자연 지리",
       "현대",
@@ -5181,11 +5565,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02460",
         "alt": "붉은 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710104"
       }
     ],
     "imageTitle": "붉은 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710104",
     "tags": [
       "자연 지리",
       "현대",
@@ -5215,16 +5601,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02200",
         "alt": "비양봉",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710105"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02461",
         "alt": "비양봉",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710105"
       }
     ],
     "imageTitle": "비양봉",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710105",
     "tags": [
       "자연 지리",
       "현대",
@@ -5254,11 +5643,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02293",
         "alt": "비치미 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710106"
       }
     ],
     "imageTitle": "비치미 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710106",
     "tags": [
       "자연 지리",
       "현대",
@@ -5288,11 +5679,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02408",
         "alt": "빈네 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710107"
       }
     ],
     "imageTitle": "빈네 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710107",
     "tags": [
       "자연 지리",
       "현대",
@@ -5322,16 +5715,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02201",
         "alt": "사라봉",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700977"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05022",
         "alt": "사라봉 등대",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700977"
       }
     ],
     "imageTitle": "사라봉",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700977",
     "tags": [
       "자연 지리",
       "현대",
@@ -5361,11 +5757,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03136",
         "alt": "사제비동산",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710108"
       }
     ],
     "imageTitle": "사제비동산",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710108",
     "tags": [
       "자연 지리",
       "현대",
@@ -5395,11 +5793,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02150",
         "alt": "산세미 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710109"
       }
     ],
     "imageTitle": "산세미 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710109",
     "tags": [
       "자연 지리",
       "현대",
@@ -5429,11 +5829,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02524",
         "alt": "살쏜장오리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701017"
       }
     ],
     "imageTitle": "살쏜장오리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701017",
     "tags": [
       "자연 지리",
       "현대",
@@ -5463,11 +5865,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02607",
         "alt": "살핀 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710110"
       }
     ],
     "imageTitle": "살핀 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710110",
     "tags": [
       "자연 지리",
       "현대",
@@ -5497,11 +5901,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04603",
         "alt": "삼각봉",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701019"
       }
     ],
     "imageTitle": "삼각봉",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701019",
     "tags": [
       "자연 지리",
       "현대",
@@ -5531,11 +5937,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02525",
         "alt": "상여 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701068"
       }
     ],
     "imageTitle": "상여 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701068",
     "tags": [
       "자연 지리",
       "현대",
@@ -5565,11 +5973,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02464",
         "alt": "새미 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701074"
       }
     ],
     "imageTitle": "새미 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701074",
     "tags": [
       "자연 지리",
       "현대",
@@ -5599,11 +6009,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02388",
         "alt": "새신 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710115"
       }
     ],
     "imageTitle": "새신 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710115",
     "tags": [
       "자연 지리",
       "현대",
@@ -5633,11 +6045,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03137",
         "alt": "서모 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710119"
       }
     ],
     "imageTitle": "서모 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710119",
     "tags": [
       "자연 지리",
       "현대",
@@ -5667,16 +6081,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05023",
         "alt": "선조기 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710148"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02295",
         "alt": "알선족이 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710148"
       }
     ],
     "imageTitle": "선조기 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710148",
     "tags": [
       "자연 지리",
       "현대",
@@ -5706,11 +6123,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03138",
         "alt": "섬머리 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710127"
       }
     ],
     "imageTitle": "섬머리 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710127",
     "tags": [
       "자연 지리",
       "현대",
@@ -5740,11 +6159,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02294",
         "alt": "성불 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710122"
       }
     ],
     "imageTitle": "성불 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710122",
     "tags": [
       "자연 지리",
       "현대",
@@ -5774,11 +6195,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02528",
         "alt": "성판악",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710207"
       }
     ],
     "imageTitle": "성판악",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710207",
     "tags": [
       "자연 지리",
       "지형·지질",
@@ -5809,11 +6232,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02389",
         "alt": "세미 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710124"
       }
     ],
     "imageTitle": "세미 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710124",
     "tags": [
       "자연 지리",
       "현대",
@@ -5843,11 +6268,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02569",
         "alt": "세성제 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710113"
       }
     ],
     "imageTitle": "세성제 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710113",
     "tags": [
       "자연 지리",
       "현대",
@@ -5877,11 +6304,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02390",
         "alt": "손지 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710125"
       }
     ],
     "imageTitle": "손지 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710125",
     "tags": [
       "자연 지리",
       "현대",
@@ -5911,11 +6340,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02391",
         "alt": "송아 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710126"
       }
     ],
     "imageTitle": "송아 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710126",
     "tags": [
       "자연 지리",
       "현대",
@@ -5945,11 +6376,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02572",
         "alt": "식은이 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710130"
       }
     ],
     "imageTitle": "식은이 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710130",
     "tags": [
       "자연 지리",
       "현대",
@@ -5979,11 +6412,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02393",
         "alt": "안돌 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710133"
       }
     ],
     "imageTitle": "안돌 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710133",
     "tags": [
       "자연 지리",
       "현대",
@@ -6013,11 +6448,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02268",
         "alt": "안새미 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701296"
       }
     ],
     "imageTitle": "안새미 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701296",
     "tags": [
       "자연 지리",
       "현대",
@@ -6047,11 +6484,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02744",
         "alt": "안천이 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710135"
       }
     ],
     "imageTitle": "안천이 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710135",
     "tags": [
       "자연 지리",
       "현대",
@@ -6081,11 +6520,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02576",
         "alt": "안친 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710136"
       }
     ],
     "imageTitle": "안친 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710136",
     "tags": [
       "자연 지리",
       "현대",
@@ -6115,11 +6556,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03142",
         "alt": "알바메기 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710137"
       }
     ],
     "imageTitle": "알바메기 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710137",
     "tags": [
       "자연 지리",
       "현대",
@@ -6149,11 +6592,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04757",
         "alt": "알오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701301"
       }
     ],
     "imageTitle": "알오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701301",
     "tags": [
       "자연 지리",
       "현대",
@@ -6183,11 +6628,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02574",
         "alt": "압오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710132"
       }
     ],
     "imageTitle": "압오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710132",
     "tags": [
       "자연 지리",
       "현대",
@@ -6217,11 +6664,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03364",
         "alt": "어대 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710140"
       }
     ],
     "imageTitle": "어대 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710140",
     "tags": [
       "자연 지리",
       "현대",
@@ -6251,11 +6700,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02808",
         "alt": "어도 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710141"
       }
     ],
     "imageTitle": "어도 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710141",
     "tags": [
       "자연 지리",
       "현대",
@@ -6285,11 +6736,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03144",
         "alt": "어승생악",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701338"
       }
     ],
     "imageTitle": "어승생악",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701338",
     "tags": [
       "자연 지리",
       "현대",
@@ -6319,11 +6772,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02636",
         "alt": "오구시 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701399"
       }
     ],
     "imageTitle": "오구시 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701399",
     "tags": [
       "자연 지리",
       "현대",
@@ -6353,11 +6808,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02269",
         "alt": "오드싱 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701406"
       }
     ],
     "imageTitle": "오드싱 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701406",
     "tags": [
       "자연 지리",
       "현대",
@@ -6387,11 +6844,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05151",
         "alt": "왕관릉",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701446"
       }
     ],
     "imageTitle": "왕관릉",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701446",
     "tags": [
       "자연 지리",
       "현대",
@@ -6421,11 +6880,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03146",
         "alt": "웃바메기 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710147"
       }
     ],
     "imageTitle": "웃바메기 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710147",
     "tags": [
       "자연 지리",
       "현대",
@@ -6455,11 +6916,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02166",
         "alt": "원당봉",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701503"
       }
     ],
     "imageTitle": "원당봉",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701503",
     "tags": [
       "자연 지리",
       "현대",
@@ -6489,11 +6952,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04680",
         "alt": "윗세 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710149"
       }
     ],
     "imageTitle": "윗세 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710149",
     "tags": [
       "자연 지리",
       "현대",
@@ -6523,11 +6988,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03365",
         "alt": "은다리 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710150"
       }
     ],
     "imageTitle": "은다리 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710150",
     "tags": [
       "자연 지리",
       "현대",
@@ -6557,11 +7024,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02809",
         "alt": "이계 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710151"
       }
     ],
     "imageTitle": "이계 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710151",
     "tags": [
       "자연 지리",
       "현대",
@@ -6591,11 +7060,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02810",
         "alt": "이달이 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710152"
       }
     ],
     "imageTitle": "이달이 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710152",
     "tags": [
       "자연 지리",
       "현대",
@@ -6625,11 +7096,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02720",
         "alt": "입산 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710155"
       }
     ],
     "imageTitle": "입산 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710155",
     "tags": [
       "자연 지리",
       "현대",
@@ -6659,16 +7132,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02297",
         "alt": "절물 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701760"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02045",
         "alt": "절물 오름의 시민 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701760"
       }
     ],
     "imageTitle": "절물 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701760",
     "tags": [
       "자연 지리",
       "현대",
@@ -6698,16 +7174,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03439",
         "alt": "정물알 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710158"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02312",
         "alt": "정물 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710158"
       }
     ],
     "imageTitle": "정물알 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710158",
     "tags": [
       "자연 지리",
       "현대",
@@ -6737,11 +7216,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02811",
         "alt": "정월이 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710159"
       }
     ],
     "imageTitle": "정월이 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710159",
     "tags": [
       "자연 지리",
       "현대",
@@ -6771,11 +7252,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02544",
         "alt": "족은노리손이",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702262"
       }
     ],
     "imageTitle": "족은노리손이",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702262",
     "tags": [
       "자연 지리",
       "현대",
@@ -6805,11 +7288,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02545",
         "alt": "족은드레 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702263"
       }
     ],
     "imageTitle": "족은드레 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702263",
     "tags": [
       "자연 지리",
       "현대",
@@ -6839,11 +7324,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02551",
         "alt": "큰지그리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710174"
       }
     ],
     "imageTitle": "큰지그리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710174",
     "tags": [
       "자연 지리",
       "현대",
@@ -6873,11 +7360,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02171",
         "alt": "지미 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710167"
       }
     ],
     "imageTitle": "지미 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710167",
     "tags": [
       "자연 지리",
       "현대",
@@ -6907,11 +7396,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04681",
         "alt": "쳇망 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710171"
       }
     ],
     "imageTitle": "쳇망 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710171",
     "tags": [
       "자연 지리",
       "현대",
@@ -6941,16 +7432,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02549",
         "alt": "칡오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702390"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05029",
         "alt": "칡오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702390"
       }
     ],
     "imageTitle": "칡오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702390",
     "tags": [
       "자연 지리",
       "현대",
@@ -6980,11 +7474,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02550",
         "alt": "큰노리손",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702397"
       }
     ],
     "imageTitle": "큰노리손",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702397",
     "tags": [
       "자연 지리",
       "현대",
@@ -7014,11 +7510,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02496",
         "alt": "큰드레 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702398"
       }
     ],
     "imageTitle": "큰드레 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702398",
     "tags": [
       "자연 지리",
       "현대",
@@ -7048,11 +7546,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02555",
         "alt": "폭낭 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710177"
       }
     ],
     "imageTitle": "폭낭 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710177",
     "tags": [
       "자연 지리",
       "현대",
@@ -7082,11 +7582,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02556",
         "alt": "한대 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710178"
       }
     ],
     "imageTitle": "한대 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710178",
     "tags": [
       "자연 지리",
       "현대",
@@ -7116,11 +7618,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04769",
         "alt": "흙붉은오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702703"
       }
     ],
     "imageTitle": "흙붉은오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702703",
     "tags": [
       "자연 지리",
       "현대",
@@ -7150,16 +7654,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02406",
         "alt": "레 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710065"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02407",
         "alt": "레 오름 동북쪽",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710065"
       }
     ],
     "imageTitle": "레 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710065",
     "tags": [
       "자연 지리",
       "현대",
@@ -7189,11 +7696,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03441",
         "alt": "나 오름(애월읍)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710168"
       }
     ],
     "imageTitle": "나 오름(애월읍)",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710168",
     "tags": [
       "자연 지리",
       "현대",
@@ -7223,21 +7732,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02813",
         "alt": "나 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710169"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05137",
         "alt": "나 오름(한림읍)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710169"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03442",
         "alt": "나 오름(한림읍)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710169"
       }
     ],
     "imageTitle": "나 오름",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710169",
     "tags": [
       "자연 지리",
       "현대",
@@ -7267,11 +7780,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01756",
         "alt": "쌍용굴 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710002"
       }
     ],
     "imageTitle": "쌍용굴 내부",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710002",
     "tags": [
       "자연 지리",
       "현대",
@@ -7301,11 +7816,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03415",
         "alt": "검멀레 동굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710003"
       }
     ],
     "imageTitle": "검멀레 동굴",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710003",
     "tags": [
       "자연 지리",
       "현대",
@@ -7335,21 +7852,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01766",
         "alt": "당처물 동굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710210"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01767",
         "alt": "당처물 동굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710210"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02442",
         "alt": "당처물 동굴의 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710210"
       }
     ],
     "imageTitle": "당처물 동굴",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710210",
     "tags": [
       "자연 지리",
       "현대",
@@ -7379,11 +7900,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03411",
         "alt": "동터진굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710007"
       }
     ],
     "imageTitle": "동터진굴",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710007",
     "tags": [
       "자연 지리",
       "현대",
@@ -7413,11 +7936,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01739",
         "alt": "만장굴 용암구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710010"
       }
     ],
     "imageTitle": "만장굴 용암구",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710010",
     "tags": [
       "자연 지리",
       "현대",
@@ -7447,11 +7972,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01753",
         "alt": "소천굴의 용암 산호",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710015"
       }
     ],
     "imageTitle": "소천굴의 용암 산호",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710015",
     "tags": [
       "자연 지리",
       "현대",
@@ -7481,11 +8008,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01756",
         "alt": "쌍용굴 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712001"
       }
     ],
     "imageTitle": "쌍용굴 내부",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712001",
     "tags": [
       "자연 지리",
       "현대",
@@ -7515,11 +8044,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01754",
         "alt": "소천굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710016"
       }
     ],
     "imageTitle": "소천굴",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710016",
     "tags": [
       "자연 지리",
       "현대",
@@ -7549,11 +8080,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02474",
         "alt": "용천 동굴의 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710208"
       }
     ],
     "imageTitle": "용천 동굴의 내부",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710208",
     "tags": [
       "자연 지리",
       "현대",
@@ -7583,16 +8116,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01740",
         "alt": "만장굴 내 세계 제일의 용암주",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710011"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04492",
         "alt": "빌레못 동굴 구석기 유적 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710011"
       }
     ],
     "imageTitle": "만장굴 내 세계 제일의 용암주",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710011",
     "tags": [
       "자연 지리",
       "현대",
@@ -7622,11 +8158,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09004",
         "alt": "황금굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712003"
       }
     ],
     "imageTitle": "황금굴",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712003",
     "tags": [
       "자연 지리",
       "현대",
@@ -7656,31 +8194,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01404",
         "alt": "백록담 기슭에 위치한 백록샘 용천수",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702297"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03347",
         "alt": "지하수 개발공사(1970년대)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702297"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01406",
         "alt": "지하수 관정을 통해 취수되는 지하수",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702297"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01408",
         "alt": "하천변 절벽에서 솟아나는 지하수",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702297"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01409",
         "alt": "화산암의 절리틈에서 솟아나는 지하수",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702297"
       }
     ],
     "imageTitle": "백록담 기슭에 위치한 백록샘 용천수",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702297",
     "tags": [
       "자연 지리",
       "현대",
@@ -7710,36 +8254,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01404",
         "alt": "백록담 기슭에 위치한 백록샘 용천수",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701488"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03003",
         "alt": "장수물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701488"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04780",
         "alt": "제주시의 용천 중 곽지물 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701488"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04155",
         "alt": "태산사지 유수암천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701488"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05108",
         "alt": "하귀리의 관전동물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701488"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02499",
         "alt": "하물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701488"
       }
     ],
     "imageTitle": "백록담 기슭에 위치한 백록샘 용천수",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701488",
     "tags": [
       "자연 지리",
       "현대",
@@ -7769,11 +8320,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02426",
         "alt": "개웃샘물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710180"
       }
     ],
     "imageTitle": "개웃샘물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710180",
     "tags": [
       "자연 지리",
       "현대",
@@ -7803,11 +8356,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02427",
         "alt": "거욱대물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710181"
       }
     ],
     "imageTitle": "거욱대물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710181",
     "tags": [
       "자연 지리",
       "현대",
@@ -7837,11 +8392,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02429",
         "alt": "검색개물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710182"
       }
     ],
     "imageTitle": "검색개물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710182",
     "tags": [
       "자연 지리",
       "현대",
@@ -7871,11 +8428,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02505",
         "alt": "과물 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710183"
       }
     ],
     "imageTitle": "과물 입구",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710183",
     "tags": [
       "자연 지리",
       "현대",
@@ -7905,11 +8464,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05108",
         "alt": "하귀리의 관전동물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711656"
       }
     ],
     "imageTitle": "하귀리의 관전동물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711656",
     "tags": [
       "자연 지리",
       "현대",
@@ -7939,11 +8500,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02435",
         "alt": "구시물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710184"
       }
     ],
     "imageTitle": "구시물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710184",
     "tags": [
       "자연 지리",
       "현대",
@@ -7973,11 +8536,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02507",
         "alt": "독짓국물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710186"
       }
     ],
     "imageTitle": "독짓국물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710186",
     "tags": [
       "자연 지리",
       "현대",
@@ -8007,11 +8572,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02444",
         "alt": "되물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710187"
       }
     ],
     "imageTitle": "되물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710187",
     "tags": [
       "자연 지리",
       "현대",
@@ -8041,11 +8608,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03851",
         "alt": "사재비약수",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710031"
       }
     ],
     "imageTitle": "사재비약수",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710031",
     "tags": [
       "자연 지리",
       "현대",
@@ -8075,11 +8644,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02463",
         "alt": "새물의",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710189"
       }
     ],
     "imageTitle": "새물의",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710189",
     "tags": [
       "자연 지리",
       "현대",
@@ -8109,11 +8680,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02211",
         "alt": "수롱물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710190"
       }
     ],
     "imageTitle": "수롱물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710190",
     "tags": [
       "자연 지리",
       "현대",
@@ -8143,11 +8716,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02529",
         "alt": "신이물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710191"
       }
     ],
     "imageTitle": "신이물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710191",
     "tags": [
       "자연 지리",
       "현대",
@@ -8177,11 +8752,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02532",
         "alt": "옹성물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710192"
       }
     ],
     "imageTitle": "옹성물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710192",
     "tags": [
       "자연 지리",
       "현대",
@@ -8211,16 +8788,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02506",
         "alt": "녹고물의 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710194"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02533",
         "alt": "용운천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710194"
       }
     ],
     "imageTitle": "녹고물의 정면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710194",
     "tags": [
       "자연 지리",
       "현대",
@@ -8250,11 +8830,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04155",
         "alt": "태산사지 유수암천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710196"
       }
     ],
     "imageTitle": "태산사지 유수암천",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710196",
     "tags": [
       "자연 지리",
       "현대",
@@ -8284,11 +8866,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02538",
         "alt": "장공물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710197"
       }
     ],
     "imageTitle": "장공물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710197",
     "tags": [
       "자연 지리",
       "현대",
@@ -8318,31 +8902,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03828",
         "alt": "봉개동사지, 절물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701759"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02296",
         "alt": "봉개동사지, 절물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701759"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03826",
         "alt": "봉개동사지, 절물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701759"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03829",
         "alt": "봉개동사지, 절물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701759"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03827",
         "alt": "봉개동사지, 절물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701759"
       }
     ],
     "imageTitle": "봉개동사지, 절물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701759",
     "tags": [
       "자연 지리",
       "현대",
@@ -8372,11 +8962,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03004",
         "alt": "정지물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710198"
       }
     ],
     "imageTitle": "정지물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710198",
     "tags": [
       "자연 지리",
       "현대",
@@ -8406,11 +8998,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03008",
         "alt": "큰물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710200"
       }
     ],
     "imageTitle": "큰물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710200",
     "tags": [
       "자연 지리",
       "현대",
@@ -8440,11 +9034,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02554",
         "alt": "펭퐁물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710202"
       }
     ],
     "imageTitle": "펭퐁물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710202",
     "tags": [
       "자연 지리",
       "현대",
@@ -8474,11 +9070,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02499",
         "alt": "하물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710203"
       }
     ],
     "imageTitle": "하물",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710203",
     "tags": [
       "자연 지리",
       "현대",
@@ -8508,36 +9106,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02434",
         "alt": "고성천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702499"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02438",
         "alt": "금성천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702499"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01618",
         "alt": "별도교 화북천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702499"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02282",
         "alt": "병문천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702499"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02472",
         "alt": "수산천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702499"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02213",
         "alt": "옹포천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702499"
       }
     ],
     "imageTitle": "고성천",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702499",
     "tags": [
       "자연 지리",
       "현대",
@@ -8567,11 +9172,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02438",
         "alt": "금성천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710218"
       }
     ],
     "imageTitle": "금성천",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710218",
     "tags": [
       "자연 지리",
       "현대",
@@ -8601,11 +9208,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02069",
         "alt": "무수천 줄기",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700740"
       }
     ],
     "imageTitle": "무수천 줄기",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700740",
     "tags": [
       "자연 지리",
       "현대",
@@ -8635,16 +9244,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03463",
         "alt": "1959년 병문천에 사라호 태풍이 지나간 자리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700898"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02282",
         "alt": "병문천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700898"
       }
     ],
     "imageTitle": "1959년 병문천에 사라호 태풍이 지나간 자리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700898",
     "tags": [
       "자연 지리",
       "현대",
@@ -8674,36 +9286,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05077",
         "alt": "1940년대 산지천 하류 촌락",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701006"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03521",
         "alt": "1950년대, 산지천 빨래터",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701006"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03522",
         "alt": "1960년대, 산지천 복개",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701006"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03509",
         "alt": "1990년대, 복원 중인 산지천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701006"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00400",
         "alt": "제주시 중심부를 흐르는 산지천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701006"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00406",
         "alt": "제주시 중심부를 흐르는 산지천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701006"
       }
     ],
     "imageTitle": "1940년대 산지천 하류 촌락",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701006",
     "tags": [
       "자연 지리",
       "현대",
@@ -8733,11 +9352,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02204",
         "alt": "삼소천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701038"
       }
     ],
     "imageTitle": "삼소천",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701038",
     "tags": [
       "자연 지리",
       "현대",
@@ -8767,21 +9388,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02213",
         "alt": "옹포천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710222"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03349",
         "alt": "옹포천 수원지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710222"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03348",
         "alt": "옹포천 수원지의 개발전 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710222"
       }
     ],
     "imageTitle": "옹포천",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710222",
     "tags": [
       "자연 지리",
       "현대",
@@ -8811,16 +9436,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01410",
         "alt": "천미천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710224"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02218",
         "alt": "천미천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710224"
       }
     ],
     "imageTitle": "천미천",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710224",
     "tags": [
       "자연 지리",
       "현대",
@@ -8850,11 +9478,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02188",
         "alt": "한천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702583"
       }
     ],
     "imageTitle": "한천",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702583",
     "tags": [
       "자연 지리",
       "현대",
@@ -8884,11 +9514,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01618",
         "alt": "별도교 화북천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702675"
       }
     ],
     "imageTitle": "별도교 화북천",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702675",
     "tags": [
       "자연 지리",
       "현대",
@@ -8918,36 +9550,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02401",
         "alt": "곽지해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702611"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04784",
         "alt": "김녕해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702611"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04785",
         "alt": "모래해안, 금릉해수욕장의 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702611"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04786",
         "alt": "암석해안, 수월봉의 해식애 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702611"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04787",
         "alt": "인공해안, 김녕해안도로 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702611"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04788",
         "alt": "자갈해안, 추자도 신양리 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702611"
       }
     ],
     "imageTitle": "곽지해수욕장",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702611",
     "tags": [
       "자연 지리",
       "현대",
@@ -8977,11 +9616,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04976",
         "alt": "제주의 바다",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700799"
       }
     ],
     "imageTitle": "제주의 바다",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700799",
     "tags": [
       "자연 지리",
       "현대",
@@ -9011,11 +9652,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02432",
         "alt": "고산엉알",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710205"
       }
     ],
     "imageTitle": "고산엉알",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710205",
     "tags": [
       "자연 지리",
       "지형·지질",
@@ -9046,16 +9689,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02526",
         "alt": "서빈백사",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710206"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04508",
         "alt": "서빈백사",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710206"
       }
     ],
     "imageTitle": "서빈백사",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710206",
     "tags": [
       "자연 지리",
       "지형·지질",
@@ -9086,36 +9732,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01893",
         "alt": "비양도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710024"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03545",
         "alt": "비양도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710024"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01760",
         "alt": "사수도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710024"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04647",
         "alt": "상추자",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710024"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03421",
         "alt": "우도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710024"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02954",
         "alt": "우도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710024"
       }
     ],
     "imageTitle": "비양도",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710024",
     "tags": [
       "자연 지리",
       "현대",
@@ -9145,16 +9798,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01893",
         "alt": "비양도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702810"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03545",
         "alt": "비양도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702810"
       }
     ],
     "imageTitle": "비양도",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702810",
     "tags": [
       "자연 지리",
       "현대",
@@ -9184,36 +9840,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02952",
         "alt": "1910년대의 상추자",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710025"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02953",
         "alt": "1996년 상추자도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710025"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03352",
         "alt": "1996년 하추자도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710025"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03544",
         "alt": "2006년 상추자",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710025"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04647",
         "alt": "상추자",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710025"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03543",
         "alt": "상추자(1910년대)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710025"
       }
     ],
     "imageTitle": "1910년대의 상추자",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710025",
     "tags": [
       "자연 지리",
       "현대",
@@ -9243,16 +9906,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03334",
         "alt": "차귀도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710214"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02547",
         "alt": "차귀도 천연보호구역",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710214"
       }
     ],
     "imageTitle": "차귀도",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710214",
     "tags": [
       "자연 지리",
       "지형·지질",
@@ -9283,11 +9949,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04671",
         "alt": "추포도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710027"
       }
     ],
     "imageTitle": "추포도",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710027",
     "tags": [
       "자연 지리",
       "현대",
@@ -9317,21 +9985,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02953",
         "alt": "1996년 상추자도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710028"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03352",
         "alt": "1996년 하추자도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710028"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04672",
         "alt": "하추자",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710028"
       }
     ],
     "imageTitle": "1996년 상추자도",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710028",
     "tags": [
       "자연 지리",
       "현대",
@@ -9361,11 +10033,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04673",
         "alt": "횡간도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710029"
       }
     ],
     "imageTitle": "횡간도",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710029",
     "tags": [
       "자연 지리",
       "현대",
@@ -9395,11 +10069,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05175",
         "alt": "개미목",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700089"
       }
     ],
     "imageTitle": "개미목",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700089",
     "tags": [
       "자연 지리",
       "현대",
@@ -9429,31 +10105,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02284",
         "alt": "금산공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700199"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03152",
         "alt": "노꼬메 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700199"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01851",
         "alt": "동백동산 내 상록수림",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700199"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02513",
         "alt": "문돗지 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700199"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01764",
         "alt": "비자림 원경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700199"
       }
     ],
     "imageTitle": "금산공원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700199",
     "tags": [
       "자연 지리",
       "현대",
@@ -9483,11 +10165,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02883",
         "alt": "방선문",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700836"
       }
     ],
     "imageTitle": "방선문",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700836",
     "tags": [
       "자연 지리",
       "현대",
@@ -9517,11 +10201,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02466",
         "alt": "선녀폭포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701112"
       }
     ],
     "imageTitle": "선녀폭포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701112",
     "tags": [
       "자연 지리",
       "현대",
@@ -9551,11 +10237,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01749",
         "alt": "백록담 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701208"
       }
     ],
     "imageTitle": "백록담 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701208",
     "tags": [
       "자연 지리",
       "현대",
@@ -9585,11 +10273,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03141",
         "alt": "아흔아홉골",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701289"
       }
     ],
     "imageTitle": "아흔아홉골",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701289",
     "tags": [
       "자연 지리",
       "현대",
@@ -9619,11 +10309,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03143",
         "alt": "어리목",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701336"
       }
     ],
     "imageTitle": "어리목",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701336",
     "tags": [
       "자연 지리",
       "현대",
@@ -9653,16 +10345,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02851",
         "alt": "연화못",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710030"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03983",
         "alt": "연화못",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710030"
       }
     ],
     "imageTitle": "연화못",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710030",
     "tags": [
       "자연 지리",
       "현대",
@@ -9692,11 +10387,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02493",
         "alt": "칠머리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702386"
       }
     ],
     "imageTitle": "칠머리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702386",
     "tags": [
       "자연 지리",
       "현대",
@@ -9726,11 +10423,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04638",
         "alt": "탐라계곡",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702405"
       }
     ],
     "imageTitle": "탐라계곡",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702405",
     "tags": [
       "자연 지리",
       "현대",
@@ -9760,36 +10459,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01397",
         "alt": "도두봉 응회암층과 관입암",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702296"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01398",
         "alt": "두께가 얇은 현무암류 용암의 누층",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702296"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01399",
         "alt": "용암의 하부에 발달한 클린커층",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702296"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01400",
         "alt": "조면암으로 이루어진 영실 병풍바위",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702296"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01401",
         "alt": "하천변에 발달한 하성 역암층",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702296"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01402",
         "alt": "현무암질 용암류 표면에 발달한 새끼줄구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702296"
       }
     ],
     "imageTitle": "도두봉 응회암층과 관입암",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702296",
     "tags": [
       "자연 지리",
       "현대",
@@ -9819,36 +10525,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01398",
         "alt": "두께가 얇은 현무암류 용암의 누층",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701482"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04776",
         "alt": "아아용암",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701482"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04777",
         "alt": "영실 병풍바위",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701482"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01399",
         "alt": "용암의 하부에 발달한 클린커층",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701482"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04778",
         "alt": "파호이호용암",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701482"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04770",
         "alt": "현무암, 아아 용암류",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701482"
       }
     ],
     "imageTitle": "두께가 얇은 현무암류 용암의 누층",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701482",
     "tags": [
       "자연 지리",
       "지형·지질",
@@ -9879,36 +10592,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04781",
         "alt": "표선리 현무암으로 이루어진 제주시 신창리 해안",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702631"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04770",
         "alt": "현무암, 아아 용암류",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702631"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04772",
         "alt": "현무암, 파호에호에 용암류의 발달한 용암동굴",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702631"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04773",
         "alt": "현무암, 파호에호에 용암류의 표면에 발달한 새끼줄 구조",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702631"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01402",
         "alt": "현무암질 용암류 표면에 발달한 새끼줄구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702631"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01403",
         "alt": "현무암질 용암류에 발달한 튜물러스 지형",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702631"
       }
     ],
     "imageTitle": "표선리 현무암으로 이루어진 제주시 신창리 해안",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702631",
     "tags": [
       "자연 지리",
       "현대",
@@ -9938,11 +10658,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02955",
         "alt": "탐라약도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702615"
       }
     ],
     "imageTitle": "탐라약도",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702615",
     "tags": [
       "인문 지리",
       "현대",
@@ -9972,36 +10694,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02755",
         "alt": "제주시",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702045"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00400",
         "alt": "제주시 중심부를 흐르는 산지천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702045"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04740",
         "alt": "물장오리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702045"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01618",
         "alt": "별도교 화북천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702045"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02282",
         "alt": "병문천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702045"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01430",
         "alt": "제주시 타임캡슐",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702045"
       }
     ],
     "imageTitle": "제주시",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702045",
     "tags": [
       "인문 지리",
       "현대",
@@ -10031,36 +10760,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02264",
         "alt": "건입동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700104"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00152",
         "alt": "국립 제주 박물관",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700104"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02210",
         "alt": "세화중학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700104"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00945",
         "alt": "제주동초등학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700104"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00400",
         "alt": "제주시 중심부를 흐르는 산지천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700104"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01176",
         "alt": "제주여자상업고등학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700104"
       }
     ],
     "imageTitle": "건입동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700104",
     "tags": [
       "인문 지리",
       "현대",
@@ -10090,11 +10826,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02238",
         "alt": "내도동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700487"
       }
     ],
     "imageTitle": "내도동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700487",
     "tags": [
       "인문 지리",
       "현대",
@@ -10124,11 +10862,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02644",
         "alt": "노형동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700501"
       }
     ],
     "imageTitle": "노형동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700501",
     "tags": [
       "인문 지리",
       "현대",
@@ -10158,16 +10898,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03027",
         "alt": "도남동의 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700577"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03028",
         "alt": "도남동의 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700577"
       }
     ],
     "imageTitle": "도남동의 마을",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700577",
     "tags": [
       "인문 지리",
       "현대",
@@ -10197,11 +10940,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03032",
         "alt": "도두동 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700582"
       }
     ],
     "imageTitle": "도두동 마을",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700582",
     "tags": [
       "인문 지리",
       "현대",
@@ -10231,11 +10976,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03030",
         "alt": "도두1동 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700579"
       }
     ],
     "imageTitle": "도두1동 마을",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700579",
     "tags": [
       "인문 지리",
       "현대",
@@ -10265,11 +11012,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00474",
         "alt": "제주시 도두하수종말처리장의 시설 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700580"
       }
     ],
     "imageTitle": "제주시 도두하수종말처리장의 시설 모습",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700580",
     "tags": [
       "인문 지리",
       "현대",
@@ -10299,11 +11048,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03033",
         "alt": "도련1동 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700587"
       }
     ],
     "imageTitle": "도련1동 마을",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700587",
     "tags": [
       "인문 지리",
       "현대",
@@ -10333,11 +11084,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03034",
         "alt": "도련2동 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700588"
       }
     ],
     "imageTitle": "도련2동 마을",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700588",
     "tags": [
       "인문 지리",
       "현대",
@@ -10367,11 +11120,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03066",
         "alt": "도평동 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700601"
       }
     ],
     "imageTitle": "도평동 마을",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700601",
     "tags": [
       "인문 지리",
       "현대",
@@ -10401,16 +11156,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03088",
         "alt": "봉개동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700920"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02871",
         "alt": "봉개동의 왕벚나무 자생지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700920"
       }
     ],
     "imageTitle": "봉개동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700920",
     "tags": [
       "인문 지리",
       "현대",
@@ -10440,11 +11198,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02202",
         "alt": "삼도1동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701024"
       }
     ],
     "imageTitle": "삼도1동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701024",
     "tags": [
       "인문 지리",
       "현대",
@@ -10474,11 +11234,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02203",
         "alt": "삼도2동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701025"
       }
     ],
     "imageTitle": "삼도2동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701025",
     "tags": [
       "인문 지리",
       "현대",
@@ -10508,21 +11270,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00376",
         "alt": "불탑사 대웅전 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701040"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00381",
         "alt": "불탑사 오층석탑 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701040"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02166",
         "alt": "원당봉",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701040"
       }
     ],
     "imageTitle": "불탑사 대웅전 정면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701040",
     "tags": [
       "인문 지리",
       "현대",
@@ -10552,16 +11318,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00455",
         "alt": "삼양초등학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701041"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02043",
         "alt": "삼양 해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701041"
       }
     ],
     "imageTitle": "삼양초등학교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701041",
     "tags": [
       "인문 지리",
       "현대",
@@ -10591,11 +11360,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03000",
         "alt": "삼양3동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701042"
       }
     ],
     "imageTitle": "삼양3동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701042",
     "tags": [
       "인문 지리",
       "현대",
@@ -10625,21 +11396,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03541",
         "alt": "1970년대의 아라동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701280"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03542",
         "alt": "2006년의 아라동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701280"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02631",
         "alt": "아라동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701280"
       }
     ],
     "imageTitle": "1970년대의 아라동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701280",
     "tags": [
       "인문 지리",
       "현대",
@@ -10669,11 +11444,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02629",
         "alt": "아라1동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701277"
       }
     ],
     "imageTitle": "아라1동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701277",
     "tags": [
       "인문 지리",
       "현대",
@@ -10703,11 +11480,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02630",
         "alt": "아라2동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701278"
       }
     ],
     "imageTitle": "아라2동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701278",
     "tags": [
       "인문 지리",
       "현대",
@@ -10737,11 +11516,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02395",
         "alt": "연동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701361"
       }
     ],
     "imageTitle": "연동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701361",
     "tags": [
       "인문 지리",
       "현대",
@@ -10771,11 +11552,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02633",
         "alt": "영평상동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701390"
       }
     ],
     "imageTitle": "영평상동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701390",
     "tags": [
       "인문 지리",
       "현대",
@@ -10805,11 +11588,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02635",
         "alt": "영평하동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701393"
       }
     ],
     "imageTitle": "영평하동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701393",
     "tags": [
       "인문 지리",
       "현대",
@@ -10839,11 +11624,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02883",
         "alt": "방선문",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701407"
       }
     ],
     "imageTitle": "방선문",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701407",
     "tags": [
       "인문 지리",
       "현대",
@@ -10873,11 +11660,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03048",
         "alt": "오라동 동사무소",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701413"
       }
     ],
     "imageTitle": "오라동 동사무소",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701413",
     "tags": [
       "인문 지리",
       "현대",
@@ -10907,11 +11696,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03045",
         "alt": "오라 1동 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701409"
       }
     ],
     "imageTitle": "오라 1동 마을",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701409",
     "tags": [
       "인문 지리",
       "현대",
@@ -10941,11 +11732,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03046",
         "alt": "오라 2동 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701410"
       }
     ],
     "imageTitle": "오라 2동 마을",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701410",
     "tags": [
       "인문 지리",
       "현대",
@@ -10975,11 +11768,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03047",
         "alt": "오라 3동 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701411"
       }
     ],
     "imageTitle": "오라 3동 마을",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701411",
     "tags": [
       "인문 지리",
       "현대",
@@ -11009,11 +11804,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03053",
         "alt": "외도동 동사무소",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701456"
       }
     ],
     "imageTitle": "외도동 동사무소",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701456",
     "tags": [
       "인문 지리",
       "현대",
@@ -11043,11 +11840,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03050",
         "alt": "외도 1동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701453"
       }
     ],
     "imageTitle": "외도 1동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701453",
     "tags": [
       "인문 지리",
       "현대",
@@ -11077,11 +11876,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03051",
         "alt": "외도 2동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701454"
       }
     ],
     "imageTitle": "외도 2동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701454",
     "tags": [
       "인문 지리",
       "현대",
@@ -11111,11 +11912,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03055",
         "alt": "용강동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701464"
       }
     ],
     "imageTitle": "용강동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701464",
     "tags": [
       "인문 지리",
       "현대",
@@ -11145,11 +11948,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03056",
         "alt": "용담 1동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701465"
       }
     ],
     "imageTitle": "용담 1동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701465",
     "tags": [
       "인문 지리",
       "현대",
@@ -11179,11 +11984,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03057",
         "alt": "용담 2동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701466"
       }
     ],
     "imageTitle": "용담 2동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701466",
     "tags": [
       "인문 지리",
       "현대",
@@ -11213,11 +12020,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03058",
         "alt": "용담 3동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701467"
       }
     ],
     "imageTitle": "용담 3동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701467",
     "tags": [
       "인문 지리",
       "현대",
@@ -11247,11 +12056,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03059",
         "alt": "월평동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701523"
       }
     ],
     "imageTitle": "월평동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701523",
     "tags": [
       "인문 지리",
       "현대",
@@ -11281,36 +12092,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00121",
         "alt": "광양 초등학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701582"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02265",
         "alt": "국립 제주 검역소",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701582"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00434",
         "alt": "삼성 초등학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701582"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01724",
         "alt": "제주 삼성혈 경내",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701582"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00435",
         "alt": "제주 삼성혈 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701582"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01141",
         "alt": "제주 시민 회관",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701582"
       }
     ],
     "imageTitle": "광양 초등학교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701582",
     "tags": [
       "인문 지리",
       "현대",
@@ -11340,11 +12158,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03022",
         "alt": "이도 2동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701583"
       }
     ],
     "imageTitle": "이도 2동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701583",
     "tags": [
       "인문 지리",
       "현대",
@@ -11374,11 +12194,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03062",
         "alt": "이호동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701653"
       }
     ],
     "imageTitle": "이호동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701653",
     "tags": [
       "인문 지리",
       "현대",
@@ -11408,11 +12230,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03060",
         "alt": "이호 1동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701651"
       }
     ],
     "imageTitle": "이호 1동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701651",
     "tags": [
       "인문 지리",
       "현대",
@@ -11442,11 +12266,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03061",
         "alt": "이호 2동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701652"
       }
     ],
     "imageTitle": "이호 2동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701652",
     "tags": [
       "인문 지리",
       "현대",
@@ -11476,11 +12302,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02611",
         "alt": "일도 1동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701677"
       }
     ],
     "imageTitle": "일도 1동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701677",
     "tags": [
       "인문 지리",
       "현대",
@@ -11510,11 +12338,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02612",
         "alt": "일도2동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701678"
       }
     ],
     "imageTitle": "일도2동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701678",
     "tags": [
       "인문 지리",
       "현대",
@@ -11544,11 +12374,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02075",
         "alt": "해안동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702609"
       }
     ],
     "imageTitle": "해안동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702609",
     "tags": [
       "인문 지리",
       "현대",
@@ -11578,26 +12410,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03071",
         "alt": "동화초등학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702669"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00848",
         "alt": "제주교육대학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702669"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00941",
         "alt": "제주동중학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702669"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01620",
         "alt": "화북초등학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702669"
       }
     ],
     "imageTitle": "동화초등학교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702669",
     "tags": [
       "인문 지리",
       "현대",
@@ -11627,11 +12464,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03094",
         "alt": "화북1동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702666"
       }
     ],
     "imageTitle": "화북1동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702666",
     "tags": [
       "인문 지리",
       "현대",
@@ -11661,11 +12500,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03095",
         "alt": "화북2동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702667"
       }
     ],
     "imageTitle": "화북2동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702667",
     "tags": [
       "인문 지리",
       "현대",
@@ -11695,11 +12536,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03098",
         "alt": "회천동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702693"
       }
     ],
     "imageTitle": "회천동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702693",
     "tags": [
       "인문 지리",
       "현대",
@@ -11729,31 +12572,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02995",
         "alt": "구좌읍 김녕출장소(1951년 7월 1일 개소) 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710388"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02984",
         "alt": "구좌읍사무소(1960년대)의 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710388"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02985",
         "alt": "구좌읍사무소(1996) 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710388"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01737",
         "alt": "만장굴 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710388"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01764",
         "alt": "비자림 원경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710388"
       }
     ],
     "imageTitle": "구좌읍 김녕출장소(1951년 7월 1일 개소) 정면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710388",
     "tags": [
       "인문 지리",
       "현대",
@@ -11783,16 +12632,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03106",
         "alt": "덕천리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710403"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03107",
         "alt": "덕천리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710403"
       }
     ],
     "imageTitle": "덕천리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710403",
     "tags": [
       "인문 지리",
       "현대",
@@ -11822,11 +12674,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03108",
         "alt": "동복리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710405"
       }
     ],
     "imageTitle": "동복리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710405",
     "tags": [
       "인문 지리",
       "현대",
@@ -11856,16 +12710,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03113",
         "alt": "상도리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710416"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03114",
         "alt": "상도리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710416"
       }
     ],
     "imageTitle": "상도리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710416",
     "tags": [
       "인문 지리",
       "현대",
@@ -11895,36 +12752,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03115",
         "alt": "세화리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710421"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03892",
         "alt": "세화원씨 가옥",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710421"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03895",
         "alt": "세화원씨 가옥",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710421"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03363",
         "alt": "세화원씨 가옥",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710421"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03893",
         "alt": "세화원씨 가옥",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710421"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03894",
         "alt": "세화원씨 가옥",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710421"
       }
     ],
     "imageTitle": "세화리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710421",
     "tags": [
       "인문 지리",
       "현대",
@@ -11954,11 +12818,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03117",
         "alt": "송당리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710423"
       }
     ],
     "imageTitle": "송당리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710423",
     "tags": [
       "인문 지리",
       "현대",
@@ -11988,11 +12854,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02170",
         "alt": "종달리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710457"
       }
     ],
     "imageTitle": "종달리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710457",
     "tags": [
       "인문 지리",
       "현대",
@@ -12022,11 +12890,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02172",
         "alt": "평대리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710463"
       }
     ],
     "imageTitle": "평대리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710463",
     "tags": [
       "인문 지리",
       "현대",
@@ -12056,16 +12926,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02173",
         "alt": "하도리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710467"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02683",
         "alt": "하도리 철새도래지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710467"
       }
     ],
     "imageTitle": "하도리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710467",
     "tags": [
       "인문 지리",
       "현대",
@@ -12095,21 +12968,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02559",
         "alt": "괴이",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710469"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02944",
         "alt": "동명서당 졸업기념사진",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710469"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02175",
         "alt": "한동리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710469"
       }
     ],
     "imageTitle": "괴이",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710469",
     "tags": [
       "인문 지리",
       "현대",
@@ -12139,11 +13016,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02231",
         "alt": "행원리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710477"
       }
     ],
     "imageTitle": "행원리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710477",
     "tags": [
       "인문 지리",
       "현대",
@@ -12173,31 +13052,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02982",
         "alt": "애월면사무소(1960)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710433"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03081",
         "alt": "애월읍 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710433"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02994",
         "alt": "애월읍 하귀출장소(1951년 6월 10일 개소)정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710433"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02983",
         "alt": "애월읍사무소(1996) 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710433"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03345",
         "alt": "지붕 개량전의 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710433"
       }
     ],
     "imageTitle": "애월면사무소(1960)",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710433",
     "tags": [
       "인문 지리",
       "현대",
@@ -12227,21 +13112,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03099",
         "alt": "고내리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710377"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03100",
         "alt": "고내리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710377"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02154",
         "alt": "애월고등학교 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710377"
       }
     ],
     "imageTitle": "고내리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710377",
     "tags": [
       "인문 지리",
       "현대",
@@ -12271,21 +13160,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02063",
         "alt": "고성1리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710380"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03184",
         "alt": "백서향",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710380"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01733",
         "alt": "항파두리 토성",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710380"
       }
     ],
     "imageTitle": "고성1리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710380",
     "tags": [
       "인문 지리",
       "현대",
@@ -12315,26 +13208,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02253",
         "alt": "고성2리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710381"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02254",
         "alt": "고성2리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710381"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02150",
         "alt": "산세미 오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710381"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01733",
         "alt": "항파두리 토성",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710381"
       }
     ],
     "imageTitle": "고성2리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710381",
     "tags": [
       "인문 지리",
       "현대",
@@ -12364,11 +13262,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02064",
         "alt": "광령1리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710383"
       }
     ],
     "imageTitle": "광령1리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710383",
     "tags": [
       "인문 지리",
       "현대",
@@ -12398,16 +13298,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02065",
         "alt": "광령2리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710384"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03147",
         "alt": "제주관광대학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710384"
       }
     ],
     "imageTitle": "광령2리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710384",
     "tags": [
       "인문 지리",
       "현대",
@@ -12437,11 +13340,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02066",
         "alt": "광령3리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710385"
       }
     ],
     "imageTitle": "광령3리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710385",
     "tags": [
       "인문 지리",
       "현대",
@@ -12471,11 +13376,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02236",
         "alt": "구엄리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710387"
       }
     ],
     "imageTitle": "구엄리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710387",
     "tags": [
       "인문 지리",
       "현대",
@@ -12505,11 +13412,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03014",
         "alt": "금성리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710394"
       }
     ],
     "imageTitle": "금성리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710394",
     "tags": [
       "인문 지리",
       "현대",
@@ -12539,11 +13448,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02067",
         "alt": "납읍리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710398"
       }
     ],
     "imageTitle": "납읍리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710398",
     "tags": [
       "인문 지리",
       "현대",
@@ -12573,11 +13484,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03016",
         "alt": "봉성리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710409"
       }
     ],
     "imageTitle": "봉성리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710409",
     "tags": [
       "인문 지리",
       "현대",
@@ -12607,11 +13520,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02070",
         "alt": "상가리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710413"
       }
     ],
     "imageTitle": "상가리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710413",
     "tags": [
       "인문 지리",
       "현대",
@@ -12641,16 +13556,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03079",
         "alt": "상귀리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710414"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03078",
         "alt": "상귀리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710414"
       }
     ],
     "imageTitle": "상귀리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710414",
     "tags": [
       "인문 지리",
       "현대",
@@ -12680,11 +13598,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02246",
         "alt": "소길리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710422"
       }
     ],
     "imageTitle": "소길리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710422",
     "tags": [
       "인문 지리",
       "현대",
@@ -12714,16 +13634,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03120",
         "alt": "수산리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710424"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03121",
         "alt": "수산리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710424"
       }
     ],
     "imageTitle": "수산리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710424",
     "tags": [
       "인문 지리",
       "현대",
@@ -12753,16 +13676,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03122",
         "alt": "신엄리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710428"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03123",
         "alt": "신엄리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710428"
       }
     ],
     "imageTitle": "신엄리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710428",
     "tags": [
       "인문 지리",
       "현대",
@@ -12792,11 +13718,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03080",
         "alt": "애월리 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710432"
       }
     ],
     "imageTitle": "애월리 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710432",
     "tags": [
       "인문 지리",
       "현대",
@@ -12826,11 +13754,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02072",
         "alt": "어음1리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710434"
       }
     ],
     "imageTitle": "어음1리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710434",
     "tags": [
       "인문 지리",
       "현대",
@@ -12860,11 +13790,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02073",
         "alt": "어음2리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710435"
       }
     ],
     "imageTitle": "어음2리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710435",
     "tags": [
       "인문 지리",
       "현대",
@@ -12894,11 +13826,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03293",
         "alt": "용흥리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710444"
       }
     ],
     "imageTitle": "용흥리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710444",
     "tags": [
       "인문 지리",
       "현대",
@@ -12928,11 +13862,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03296",
         "alt": "유수암리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710449"
       }
     ],
     "imageTitle": "유수암리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710449",
     "tags": [
       "인문 지리",
       "현대",
@@ -12962,11 +13898,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03297",
         "alt": "장전리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710450"
       }
     ],
     "imageTitle": "장전리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710450",
     "tags": [
       "인문 지리",
       "현대",
@@ -12996,11 +13934,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03299",
         "alt": "중엄리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710458"
       }
     ],
     "imageTitle": "중엄리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710458",
     "tags": [
       "인문 지리",
       "현대",
@@ -13030,11 +13970,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03300",
         "alt": "하가리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710464"
       }
     ],
     "imageTitle": "하가리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710464",
     "tags": [
       "인문 지리",
       "현대",
@@ -13064,11 +14006,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03301",
         "alt": "하귀1리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710465"
       }
     ],
     "imageTitle": "하귀1리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710465",
     "tags": [
       "인문 지리",
       "현대",
@@ -13098,11 +14042,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03302",
         "alt": "하귀2리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710466"
       }
     ],
     "imageTitle": "하귀2리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710466",
     "tags": [
       "인문 지리",
       "현대",
@@ -13132,26 +14078,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02997",
         "alt": "조천면 함덕출장소",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710456"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02316",
         "alt": "조천읍",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710456"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02986",
         "alt": "조천읍사무소의 1960년대 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710456"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02987",
         "alt": "조천읍사무소의 1996년대 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710456"
       }
     ],
     "imageTitle": "조천면 함덕출장소",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710456",
     "tags": [
       "인문 지리",
       "현대",
@@ -13181,26 +14132,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02255",
         "alt": "교래리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710386"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01757",
         "alt": "산굼부리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710386"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03333",
         "alt": "제주경주마 육성 목장(1995년)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710386"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02540",
         "alt": "제주돌문화공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710386"
       }
     ],
     "imageTitle": "교래리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710386",
     "tags": [
       "인문 지리",
       "현대",
@@ -13230,11 +14186,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03085",
         "alt": "대흘1리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710401"
       }
     ],
     "imageTitle": "대흘1리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710401",
     "tags": [
       "인문 지리",
       "현대",
@@ -13264,11 +14222,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03086",
         "alt": "대흘2리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710402"
       }
     ],
     "imageTitle": "대흘2리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710402",
     "tags": [
       "인문 지리",
       "현대",
@@ -13298,26 +14258,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03110",
         "alt": "북촌리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710410"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03111",
         "alt": "북촌리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710410"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03351",
         "alt": "북촌리 선착장 확장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710410"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03156",
         "alt": "함덕해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710410"
       }
     ],
     "imageTitle": "북촌리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710410",
     "tags": [
       "인문 지리",
       "현대",
@@ -13347,11 +14312,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03090",
         "alt": "선흘1리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710419"
       }
     ],
     "imageTitle": "선흘1리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710419",
     "tags": [
       "인문 지리",
       "현대",
@@ -13381,11 +14348,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03091",
         "alt": "선흘2리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710420"
       }
     ],
     "imageTitle": "선흘2리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710420",
     "tags": [
       "인문 지리",
       "현대",
@@ -13415,11 +14384,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03124",
         "alt": "신촌리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710430"
       }
     ],
     "imageTitle": "신촌리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710430",
     "tags": [
       "인문 지리",
       "현대",
@@ -13449,11 +14420,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03126",
         "alt": "신흥리 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710431"
       }
     ],
     "imageTitle": "신흥리 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710431",
     "tags": [
       "인문 지리",
       "현대",
@@ -13483,11 +14456,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03092",
         "alt": "와산리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710440"
       }
     ],
     "imageTitle": "와산리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710440",
     "tags": [
       "인문 지리",
       "현대",
@@ -13517,11 +14492,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03093",
         "alt": "와흘리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710441"
       }
     ],
     "imageTitle": "와흘리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710441",
     "tags": [
       "인문 지리",
       "현대",
@@ -13551,26 +14528,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04895",
         "alt": "조천리 가옥 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710455"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03075",
         "alt": "조천리 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710455"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02951",
         "alt": "조천리 선착장 보수(1960년대 중반)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710455"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04373",
         "alt": "조천리의 송무생 가옥 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710455"
       }
     ],
     "imageTitle": "조천리 가옥 정면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710455",
     "tags": [
       "인문 지리",
       "현대",
@@ -13600,26 +14582,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02980",
         "alt": "1964년의 한림읍사무소의 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710473"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02930",
         "alt": "한림시가지 전경의 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710473"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02732",
         "alt": "한림읍",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710473"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02981",
         "alt": "현재 (1996년)한림읍사무소의 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710473"
       }
     ],
     "imageTitle": "1964년의 한림읍사무소의 정면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710473",
     "tags": [
       "인문 지리",
       "현대",
@@ -13649,11 +14636,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02664",
         "alt": "강구리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710376"
       }
     ],
     "imageTitle": "강구리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710376",
     "tags": [
       "인문 지리",
       "현대",
@@ -13683,11 +14672,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03011",
         "alt": "귀덕1리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710389"
       }
     ],
     "imageTitle": "귀덕1리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710389",
     "tags": [
       "인문 지리",
       "현대",
@@ -13717,11 +14708,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03012",
         "alt": "귀덕2리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710390"
       }
     ],
     "imageTitle": "귀덕2리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710390",
     "tags": [
       "인문 지리",
       "현대",
@@ -13751,11 +14744,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03013",
         "alt": "귀덕3리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710391"
       }
     ],
     "imageTitle": "귀덕3리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710391",
     "tags": [
       "인문 지리",
       "현대",
@@ -13785,16 +14780,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02032",
         "alt": "금악리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710395"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02439",
         "alt": "금악초등학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710395"
       }
     ],
     "imageTitle": "금악리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710395",
     "tags": [
       "인문 지리",
       "현대",
@@ -13824,11 +14822,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02669",
         "alt": "대림리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710399"
       }
     ],
     "imageTitle": "대림리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710399",
     "tags": [
       "인문 지리",
       "현대",
@@ -13858,26 +14858,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04596",
         "alt": "동명리 유적",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710404"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03745",
         "alt": "동명리사지 문수천",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710404"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03746",
         "alt": "동명리사지 문수천비",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710404"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03747",
         "alt": "동명리사지 절왓",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710404"
       }
     ],
     "imageTitle": "동명리 유적",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710404",
     "tags": [
       "인문 지리",
       "현대",
@@ -13907,11 +14912,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02670",
         "alt": "명월리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710407"
       }
     ],
     "imageTitle": "명월리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710407",
     "tags": [
       "인문 지리",
       "현대",
@@ -13941,11 +14948,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05211",
         "alt": "비양리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710411"
       }
     ],
     "imageTitle": "비양리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710411",
     "tags": [
       "인문 지리",
       "현대",
@@ -13975,11 +14984,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03018",
         "alt": "상대리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710415"
       }
     ],
     "imageTitle": "상대리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710415",
     "tags": [
       "인문 지리",
       "현대",
@@ -14009,16 +15020,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03114",
         "alt": "상도리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710417"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03019",
         "alt": "상명리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710417"
       }
     ],
     "imageTitle": "상도리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710417",
     "tags": [
       "인문 지리",
       "현대",
@@ -14048,11 +15062,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02943",
         "alt": "1922년, 수원서당 졸업사진",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710425"
       }
     ],
     "imageTitle": "1922년, 수원서당 졸업사진",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710425",
     "tags": [
       "인문 지리",
       "현대",
@@ -14082,11 +15098,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02037",
         "alt": "옹포리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710439"
       }
     ],
     "imageTitle": "옹포리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710439",
     "tags": [
       "인문 지리",
       "현대",
@@ -14116,21 +15134,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02307",
         "alt": "월령리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710446"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02717",
         "alt": "월령리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710446"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02215",
         "alt": "제주 월령리의 선인장 군락",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710446"
       }
     ],
     "imageTitle": "월령리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710446",
     "tags": [
       "인문 지리",
       "현대",
@@ -14160,16 +15182,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02039",
         "alt": "월림리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710447"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02308",
         "alt": "월림리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710447"
       }
     ],
     "imageTitle": "월림리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710447",
     "tags": [
       "인문 지리",
       "현대",
@@ -14199,11 +15224,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02176",
         "alt": "한림1리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710470"
       }
     ],
     "imageTitle": "한림1리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710470",
     "tags": [
       "인문 지리",
       "현대",
@@ -14233,11 +15260,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02177",
         "alt": "한림2리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710471"
       }
     ],
     "imageTitle": "한림2리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710471",
     "tags": [
       "인문 지리",
       "현대",
@@ -14267,11 +15296,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02731",
         "alt": "한림3리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710472"
       }
     ],
     "imageTitle": "한림3리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710472",
     "tags": [
       "인문 지리",
       "현대",
@@ -14301,11 +15332,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02180",
         "alt": "한수리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710474"
       }
     ],
     "imageTitle": "한수리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710474",
     "tags": [
       "인문 지리",
       "현대",
@@ -14335,11 +15368,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03416",
         "alt": "서광리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710418"
       }
     ],
     "imageTitle": "서광리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710418",
     "tags": [
       "인문 지리",
       "현대",
@@ -14369,21 +15404,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03419",
         "alt": "오봉리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710438"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03420",
         "alt": "오봉리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710438"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04509",
         "alt": "오봉리 어촌계의 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710438"
       }
     ],
     "imageTitle": "오봉리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710438",
     "tags": [
       "인문 지리",
       "현대",
@@ -14413,11 +15452,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04469",
         "alt": "조일리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710454"
       }
     ],
     "imageTitle": "조일리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710454",
     "tags": [
       "인문 지리",
       "현대",
@@ -14447,11 +15488,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04470",
         "alt": "천진리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710459"
       }
     ],
     "imageTitle": "천진리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710459",
     "tags": [
       "인문 지리",
       "현대",
@@ -14481,21 +15524,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04666",
         "alt": "추자면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710461"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02990",
         "alt": "추자면사무소의 입구모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710461"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02991",
         "alt": "추자면사무소의 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710461"
       }
     ],
     "imageTitle": "추자면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710461",
     "tags": [
       "인문 지리",
       "현대",
@@ -14525,11 +15572,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04643",
         "alt": "대서리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710400"
       }
     ],
     "imageTitle": "대서리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710400",
     "tags": [
       "인문 지리",
       "현대",
@@ -14559,11 +15608,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04646",
         "alt": "묵리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710408"
       }
     ],
     "imageTitle": "묵리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710408",
     "tags": [
       "인문 지리",
       "현대",
@@ -14593,11 +15644,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04648",
         "alt": "신양1리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710426"
       }
     ],
     "imageTitle": "신양1리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710426",
     "tags": [
       "인문 지리",
       "현대",
@@ -14627,11 +15680,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04649",
         "alt": "신양2리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710427"
       }
     ],
     "imageTitle": "신양2리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710427",
     "tags": [
       "인문 지리",
       "현대",
@@ -14661,16 +15716,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04652",
         "alt": "영흥리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710436"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04653",
         "alt": "영흥리 순효각",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710436"
       }
     ],
     "imageTitle": "영흥리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710436",
     "tags": [
       "인문 지리",
       "현대",
@@ -14700,11 +15758,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04654",
         "alt": "예초리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710437"
       }
     ],
     "imageTitle": "예초리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710437",
     "tags": [
       "인문 지리",
       "현대",
@@ -14734,31 +15794,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02988",
         "alt": "1960년대 한경면사무소의 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710468"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02989",
         "alt": "1996년 한경면사무소의 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710468"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02318",
         "alt": "한경면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710468"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02996",
         "alt": "한경면 고산출장소의 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710468"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02041",
         "alt": "한경면사무소, 한경면도서관",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710468"
       }
     ],
     "imageTitle": "1960년대 한경면사무소의 정면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710468",
     "tags": [
       "인문 지리",
       "현대",
@@ -14788,21 +15854,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02027",
         "alt": "고산1리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710378"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02433",
         "alt": "고산중학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710378"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02029",
         "alt": "고산초등학교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710378"
       }
     ],
     "imageTitle": "고산1리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710378",
     "tags": [
       "인문 지리",
       "현대",
@@ -14832,11 +15902,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02028",
         "alt": "고산2리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710379"
       }
     ],
     "imageTitle": "고산2리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710379",
     "tags": [
       "인문 지리",
       "현대",
@@ -14866,11 +15938,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02031",
         "alt": "금등리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710393"
       }
     ],
     "imageTitle": "금등리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710393",
     "tags": [
       "인문 지리",
       "현대",
@@ -14900,11 +15974,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02033",
         "alt": "낙천리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710397"
       }
     ],
     "imageTitle": "낙천리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710397",
     "tags": [
       "인문 지리",
       "현대",
@@ -14934,11 +16010,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02046",
         "alt": "두모리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710406"
       }
     ],
     "imageTitle": "두모리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710406",
     "tags": [
       "인문 지리",
       "현대",
@@ -14968,11 +16046,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03017",
         "alt": "산양리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710412"
       }
     ],
     "imageTitle": "산양리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710412",
     "tags": [
       "인문 지리",
       "현대",
@@ -15002,11 +16082,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02038",
         "alt": "신창리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710429"
       }
     ],
     "imageTitle": "신창리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710429",
     "tags": [
       "인문 지리",
       "현대",
@@ -15036,11 +16118,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02306",
         "alt": "용당리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710442"
       }
     ],
     "imageTitle": "용당리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710442",
     "tags": [
       "인문 지리",
       "현대",
@@ -15070,16 +16154,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02716",
         "alt": "용수리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710443"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05105",
         "alt": "용수리 방사탑",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710443"
       }
     ],
     "imageTitle": "용수리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710443",
     "tags": [
       "인문 지리",
       "현대",
@@ -15109,16 +16196,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02310",
         "alt": "저지리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710451"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02040",
         "alt": "저지리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710451"
       }
     ],
     "imageTitle": "저지리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710451",
     "tags": [
       "인문 지리",
       "현대",
@@ -15148,11 +16238,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02313",
         "alt": "조수1리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710452"
       }
     ],
     "imageTitle": "조수1리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710452",
     "tags": [
       "인문 지리",
       "현대",
@@ -15182,11 +16274,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02314",
         "alt": "조수2리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710453"
       }
     ],
     "imageTitle": "조수2리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710453",
     "tags": [
       "인문 지리",
       "현대",
@@ -15216,11 +16310,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04659",
         "alt": "청수리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710460"
       }
     ],
     "imageTitle": "청수리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710460",
     "tags": [
       "인문 지리",
       "현대",
@@ -15250,16 +16346,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02317",
         "alt": "판포리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710462"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02553",
         "alt": "판포오름",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710462"
       }
     ],
     "imageTitle": "판포리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710462",
     "tags": [
       "인문 지리",
       "현대",
@@ -15289,11 +16388,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02500",
         "alt": "한원리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710475"
       }
     ],
     "imageTitle": "한원리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710475",
     "tags": [
       "인문 지리",
       "현대",
@@ -15323,16 +16424,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02621",
         "alt": "간다시촌",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700040"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02622",
         "alt": "간다시촌",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700040"
       }
     ],
     "imageTitle": "간다시촌",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700040",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -15362,11 +16466,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02623",
         "alt": "거마로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700097"
       }
     ],
     "imageTitle": "거마로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700097",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -15396,11 +16502,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03370",
         "alt": "제주4·3사건 때 폐동된 고놀개",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700131"
       }
     ],
     "imageTitle": "제주4·3사건 때 폐동된 고놀개",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700131",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -15430,11 +16538,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02627",
         "alt": "구름마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700255"
       }
     ],
     "imageTitle": "구름마을",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700255",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -15464,21 +16574,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05079",
         "alt": "1950년대 남수각의 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700477"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00222",
         "alt": "남수각 터",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700477"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00223",
         "alt": "남수각 터",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700477"
       }
     ],
     "imageTitle": "1950년대 남수각의 모습",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700477",
     "tags": [
       "자연 지리",
       "현대",
@@ -15508,11 +16622,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02233",
         "alt": "다라쿳",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700894"
       }
     ],
     "imageTitle": "다라쿳",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700894",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -15542,11 +16658,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04712",
         "alt": "도두포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702478"
       }
     ],
     "imageTitle": "도두포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702478",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -15576,11 +16694,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03036",
         "alt": "동광양 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700618"
       }
     ],
     "imageTitle": "동광양 마을",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700618",
     "tags": [
       "인문 지리",
       "현대",
@@ -15610,11 +16730,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03287",
         "alt": "매돈지 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700692"
       }
     ],
     "imageTitle": "매돈지 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700692",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -15644,11 +16766,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03039",
         "alt": "먹돌새기",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700695"
       }
     ],
     "imageTitle": "먹돌새기",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700695",
     "tags": [
       "자연 지리",
       "현대",
@@ -15678,11 +16802,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03040",
         "alt": "명도암",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700702"
       }
     ],
     "imageTitle": "명도암",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700702",
     "tags": [
       "인문 지리",
       "현대",
@@ -15712,11 +16838,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03041",
         "alt": "무근성",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700734"
       }
     ],
     "imageTitle": "무근성",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700734",
     "tags": [
       "자연 지리",
       "현대",
@@ -15746,11 +16874,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02649",
         "alt": "무드내",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700736"
       }
     ],
     "imageTitle": "무드내",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700736",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -15780,11 +16910,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02672",
         "alt": "벨방개 포구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700877"
       }
     ],
     "imageTitle": "벨방개 포구",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700877",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -15814,11 +16946,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02585",
         "alt": "새성창 포구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700881"
       }
     ],
     "imageTitle": "새성창 포구",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700881",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -15848,11 +16982,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02363",
         "alt": "별도포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700892"
       }
     ],
     "imageTitle": "별도포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700892",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -15882,11 +17018,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02692",
         "alt": "부러리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700932"
       }
     ],
     "imageTitle": "부러리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700932",
     "tags": [
       "자연 지리",
       "현대",
@@ -15916,11 +17054,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02595",
         "alt": "북촌리의 북포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700948"
       }
     ],
     "imageTitle": "북촌리의 북포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700948",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -15950,26 +17090,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00421",
         "alt": "산천단 비석 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701011"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03001",
         "alt": "산천단 유원지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701011"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00417",
         "alt": "산천단 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701011"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05072",
         "alt": "옛 산천단 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701011"
       }
     ],
     "imageTitle": "산천단 비석 정면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701011",
     "tags": [
       "인문 지리",
       "현대",
@@ -15999,21 +17144,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00463",
         "alt": "삼의양",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701054"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00464",
         "alt": "삼의양 올라가는 길",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701054"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00467",
         "alt": "삼의양 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701054"
       }
     ],
     "imageTitle": "삼의양",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701054",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -16043,11 +17192,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02465",
         "alt": "서광양",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701085"
       }
     ],
     "imageTitle": "서광양",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701085",
     "tags": [
       "인문 지리",
       "현대",
@@ -16077,26 +17228,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03510",
         "alt": "1970년대 서사라",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701096"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03524",
         "alt": "1970년대, 서사라로터리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701096"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03511",
         "alt": "2005년 서사라",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701096"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02207",
         "alt": "서사라",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701096"
       }
     ],
     "imageTitle": "1970년대 서사라",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701096",
     "tags": [
       "인문 지리",
       "현대",
@@ -16126,11 +17282,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02469",
         "alt": "세미",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702326"
       }
     ],
     "imageTitle": "세미",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702326",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -16160,11 +17318,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02471",
         "alt": "소흘포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701159"
       }
     ],
     "imageTitle": "소흘포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701159",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -16194,11 +17354,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02573",
         "alt": "신촌포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701256"
       }
     ],
     "imageTitle": "신촌포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701256",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -16228,11 +17390,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02632",
         "alt": "아라호",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701284"
       }
     ],
     "imageTitle": "아라호",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701284",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -16262,11 +17426,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02577",
         "alt": "어등포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701335"
       }
     ],
     "imageTitle": "어등포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701335",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -16296,21 +17462,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05086",
         "alt": "도두동 오랫물에서의 물맞이하는 옛 장면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701416"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03292",
         "alt": "몰래물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701416"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03291",
         "alt": "몰래물",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701416"
       }
     ],
     "imageTitle": "도두동 오랫물에서의 물맞이하는 옛 장면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701416",
     "tags": [
       "자연 지리",
       "현대",
@@ -16340,16 +17510,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02714",
         "alt": "오싕이",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701408"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03044",
         "alt": "오싕이",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701408"
       }
     ],
     "imageTitle": "오싕이",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701408",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -16379,11 +17552,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02140",
         "alt": "와호산",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701445"
       }
     ],
     "imageTitle": "와호산",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701445",
     "tags": [
       "자연 지리",
       "현대",
@@ -16413,11 +17588,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03072",
         "alt": "왜포, 현재의 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701450"
       }
     ],
     "imageTitle": "왜포, 현재의 모습",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701450",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -16447,11 +17624,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03294",
         "alt": "월두동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701515"
       }
     ],
     "imageTitle": "월두동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701515",
     "tags": [
       "인문 지리",
       "현대",
@@ -16481,11 +17660,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02638",
         "alt": "인화동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701674"
       }
     ],
     "imageTitle": "인화동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701674",
     "tags": [
       "인문 지리",
       "현대",
@@ -16515,11 +17696,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02161",
         "alt": "정실 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701777"
       }
     ],
     "imageTitle": "정실 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701777",
     "tags": [
       "인문 지리",
       "현대",
@@ -16549,16 +17732,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02977",
         "alt": "1956년 9월 1일 이전의 제주읍사무소",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702116"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04655",
         "alt": "제주읍",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702116"
       }
     ],
     "imageTitle": "1956년 9월 1일 이전의 제주읍사무소",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702116",
     "tags": [
       "인문 지리",
       "현대",
@@ -16588,36 +17774,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01447",
         "alt": "탑동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702437"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01445",
         "alt": "탑동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702437"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01450",
         "alt": "탑동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702437"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01444",
         "alt": "탑동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702437"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01451",
         "alt": "탑동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702437"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01449",
         "alt": "탑동",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702437"
       }
     ],
     "imageTitle": "탑동",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702437",
     "tags": [
       "인문 지리",
       "현대",
@@ -16647,11 +17840,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03097",
         "alt": "황사평",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702687"
       }
     ],
     "imageTitle": "황사평",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702687",
     "tags": [
       "인문 지리",
       "현대",
@@ -16681,11 +17876,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02430",
         "alt": "세 마을",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701143"
       }
     ],
     "imageTitle": "세 마을",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701143",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -16715,21 +17912,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02950",
         "alt": "1947년, 광복 후 도내 최초의 버스인 조흥버스",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700241"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03504",
         "alt": "1950년대 관덕정 거리의 교통대",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700241"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03350",
         "alt": "1976년 중산간도로 버스개통",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700241"
       }
     ],
     "imageTitle": "1947년, 광복 후 도내 최초의 버스인 조흥버스",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700241",
     "tags": [
       "인문 지리",
       "현대",
@@ -16759,21 +17960,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02503",
         "alt": "1100도로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700592"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02142",
         "alt": "5·16도로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700592"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05005",
         "alt": "해안도로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700592"
       }
     ],
     "imageTitle": "1100도로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700592",
     "tags": [
       "인문 지리",
       "현대",
@@ -16803,11 +18008,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02503",
         "alt": "1100도로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710303"
       }
     ],
     "imageTitle": "1100도로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710303",
     "tags": [
       "인문 지리",
       "현대",
@@ -16837,11 +18044,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02142",
         "alt": "5·16도로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700020"
       }
     ],
     "imageTitle": "5·16도로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700020",
     "tags": [
       "인문 지리",
       "현대",
@@ -16871,16 +18080,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09010",
         "alt": "공설로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712022"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09009",
         "alt": "공설로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712022"
       }
     ],
     "imageTitle": "공설로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712022",
     "tags": [
       "인문 지리",
       "현대",
@@ -16910,11 +18122,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09011",
         "alt": "공항로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712023"
       }
     ],
     "imageTitle": "공항로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712023",
     "tags": [
       "인문 지리",
       "현대",
@@ -16944,26 +18158,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09015",
         "alt": "관덕로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712024"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09013",
         "alt": "관덕로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712024"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09014",
         "alt": "관덕로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712024"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09012",
         "alt": "관덕정 앞 관덕로 구간",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712024"
       }
     ],
     "imageTitle": "관덕로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712024",
     "tags": [
       "인문 지리",
       "현대",
@@ -16993,16 +18212,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00115",
         "alt": "광양로터리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700229"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00117",
         "alt": "광양로터리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700229"
       }
     ],
     "imageTitle": "광양로터리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700229",
     "tags": [
       "인문 지리",
       "현대",
@@ -17032,16 +18254,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09025",
         "alt": "구좌 해안로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712025"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09026",
         "alt": "구좌 해안로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712025"
       }
     ],
     "imageTitle": "구좌 해안로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712025",
     "tags": [
       "인문 지리",
       "현대",
@@ -17071,16 +18296,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00217",
         "alt": "남문로터리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700469"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00219",
         "alt": "남문로터리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700469"
       }
     ],
     "imageTitle": "남문로터리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700469",
     "tags": [
       "인문 지리",
       "현대",
@@ -17110,16 +18338,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02368",
         "alt": "남문로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700468"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02367",
         "alt": "남문로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700468"
       }
     ],
     "imageTitle": "남문로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700468",
     "tags": [
       "인문 지리",
       "현대",
@@ -17149,21 +18380,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09040",
         "alt": "남성로 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712026"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09041",
         "alt": "남성로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712026"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09039",
         "alt": "남성로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712026"
       }
     ],
     "imageTitle": "남성로 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712026",
     "tags": [
       "인문 지리",
       "현대",
@@ -17193,11 +18428,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03025",
         "alt": "남조로 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710304"
       }
     ],
     "imageTitle": "남조로 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710304",
     "tags": [
       "인문 지리",
       "현대",
@@ -17227,11 +18464,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04699",
         "alt": "대한로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710305"
       }
     ],
     "imageTitle": "대한로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710305",
     "tags": [
       "인문 지리",
       "현대",
@@ -17261,11 +18500,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09050",
         "alt": "동광로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712027"
       }
     ],
     "imageTitle": "동광로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712027",
     "tags": [
       "인문 지리",
       "현대",
@@ -17295,16 +18536,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00296",
         "alt": "동문로터리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700627"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00297",
         "alt": "동문로터리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700627"
       }
     ],
     "imageTitle": "동문로터리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700627",
     "tags": [
       "인문 지리",
       "현대",
@@ -17334,16 +18578,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03037",
         "alt": "동문로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700626"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03539",
         "alt": "동문로(1960년대) 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700626"
       }
     ],
     "imageTitle": "동문로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700626",
     "tags": [
       "인문 지리",
       "현대",
@@ -17373,21 +18620,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09059",
         "alt": "만덕로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712028"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09058",
         "alt": "만덕로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712028"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09060",
         "alt": "만덕로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712028"
       }
     ],
     "imageTitle": "만덕로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712028",
     "tags": [
       "인문 지리",
       "현대",
@@ -17417,11 +18668,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09061",
         "alt": "문연로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712029"
       }
     ],
     "imageTitle": "문연로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712029",
     "tags": [
       "인문 지리",
       "현대",
@@ -17451,11 +18704,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02302",
         "alt": "동서부산업도로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710306"
       }
     ],
     "imageTitle": "동서부산업도로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710306",
     "tags": [
       "인문 지리",
       "현대",
@@ -17485,16 +18740,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09078",
         "alt": "서광로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712030"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09077",
         "alt": "서광로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712030"
       }
     ],
     "imageTitle": "서광로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712030",
     "tags": [
       "인문 지리",
       "현대",
@@ -17524,11 +18782,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02206",
         "alt": "서문로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701089"
       }
     ],
     "imageTitle": "서문로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701089",
     "tags": [
       "인문 지리",
       "현대",
@@ -17558,11 +18818,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09081",
         "alt": "서사로 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712031"
       }
     ],
     "imageTitle": "서사로 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712031",
     "tags": [
       "인문 지리",
       "현대",
@@ -17592,26 +18854,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09083",
         "alt": "서해안로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712032"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09082",
         "alt": "서해안로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712032"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09084",
         "alt": "서해안로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712032"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09085",
         "alt": "서해안로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712032"
       }
     ],
     "imageTitle": "서해안로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712032",
     "tags": [
       "인문 지리",
       "현대",
@@ -17641,26 +18908,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00528",
         "alt": "신제주로터리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701248"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00527",
         "alt": "신제주로터리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701248"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03519",
         "alt": "1970년대, 신제주로터리 건설 현장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701248"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03514",
         "alt": "1970년 신제주로터리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701248"
       }
     ],
     "imageTitle": "신제주로터리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701248",
     "tags": [
       "인문 지리",
       "현대",
@@ -17690,11 +18962,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02267",
         "alt": "신비의 도로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701234"
       }
     ],
     "imageTitle": "신비의 도로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701234",
     "tags": [
       "인문 지리",
       "현대",
@@ -17724,21 +18998,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09095",
         "alt": "애월 해안로 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712033"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09096",
         "alt": "애월 해안로 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712033"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09097",
         "alt": "애월 해안로 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712033"
       }
     ],
     "imageTitle": "애월 해안로 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712033",
     "tags": [
       "인문 지리",
       "현대",
@@ -17768,21 +19046,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09099",
         "alt": "애조로 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712038"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09098",
         "alt": "애조로 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712038"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09100",
         "alt": "애조로 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712038"
       }
     ],
     "imageTitle": "애조로 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712038",
     "tags": [
       "인문 지리",
       "현대",
@@ -17812,11 +19094,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02748",
         "alt": "연북로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701366"
       }
     ],
     "imageTitle": "연북로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701366",
     "tags": [
       "인문 지리",
       "현대",
@@ -17846,21 +19130,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09104",
         "alt": "연삼로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712034"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09105",
         "alt": "연삼로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712034"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09103",
         "alt": "연삼로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712034"
       }
     ],
     "imageTitle": "연삼로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712034",
     "tags": [
       "인문 지리",
       "현대",
@@ -17890,11 +19178,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03405",
         "alt": "자전거도로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701711"
       }
     ],
     "imageTitle": "자전거도로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701711",
     "tags": [
       "인문 지리",
       "현대",
@@ -17924,11 +19214,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02613",
         "alt": "전농로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701752"
       }
     ],
     "imageTitle": "전농로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701752",
     "tags": [
       "인문 지리",
       "현대",
@@ -17958,11 +19250,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03298",
         "alt": "제1산록도로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710309"
       }
     ],
     "imageTitle": "제1산록도로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710309",
     "tags": [
       "인문 지리",
       "현대",
@@ -17992,11 +19286,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02722",
         "alt": "제2산록도로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710310"
       }
     ],
     "imageTitle": "제2산록도로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710310",
     "tags": [
       "인문 지리",
       "현대",
@@ -18026,11 +19322,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02169",
         "alt": "제성로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710311"
       }
     ],
     "imageTitle": "제성로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710311",
     "tags": [
       "인문 지리",
       "현대",
@@ -18060,21 +19358,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09128",
         "alt": "제주 대학로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712035"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09127",
         "alt": "제주 대학로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712035"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09129",
         "alt": "제주 대학로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712035"
       }
     ],
     "imageTitle": "제주 대학로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712035",
     "tags": [
       "인문 지리",
       "현대",
@@ -18104,26 +19406,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01390",
         "alt": "중앙로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702283"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01391",
         "alt": "중앙로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702283"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03512",
         "alt": "1950년대 중앙로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702283"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03513",
         "alt": "1970년대 중앙로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702283"
       }
     ],
     "imageTitle": "중앙로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702283",
     "tags": [
       "인문 지리",
       "현대",
@@ -18153,11 +19460,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03288",
         "alt": "지방도 제1135호선",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710308"
       }
     ],
     "imageTitle": "지방도 제1135호선",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710308",
     "tags": [
       "인문 지리",
       "현대",
@@ -18187,11 +19496,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04665",
         "alt": "추자로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710313"
       }
     ],
     "imageTitle": "추자로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710313",
     "tags": [
       "인문 지리",
       "현대",
@@ -18221,16 +19532,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01423",
         "alt": "칠성로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702388"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01425",
         "alt": "칠성로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702388"
       }
     ],
     "imageTitle": "칠성로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702388",
     "tags": [
       "인문 지리",
       "현대",
@@ -18260,16 +19574,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09191",
         "alt": "탑동 해안로 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712036"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09192",
         "alt": "탑동 해안로 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712036"
       }
     ],
     "imageTitle": "탑동 해안로 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712036",
     "tags": [
       "인문 지리",
       "현대",
@@ -18299,26 +19616,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09208",
         "alt": "한경 해안로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712037"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09207",
         "alt": "한경 해안로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712037"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09206",
         "alt": "한경 해안로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712037"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09205",
         "alt": "한경 해안로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712037"
       }
     ],
     "imageTitle": "한경 해안로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712037",
     "tags": [
       "인문 지리",
       "현대",
@@ -18348,11 +19670,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03443",
         "alt": "한창로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710314"
       }
     ],
     "imageTitle": "한창로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710314",
     "tags": [
       "인문 지리",
       "현대",
@@ -18382,11 +19706,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05005",
         "alt": "해안도로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702608"
       }
     ],
     "imageTitle": "해안도로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702608",
     "tags": [
       "인문 지리",
       "현대",
@@ -18416,16 +19742,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00022",
         "alt": "거로교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700096"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00023",
         "alt": "거로교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700096"
       }
     ],
     "imageTitle": "거로교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700096",
     "tags": [
       "인문 지리",
       "현대",
@@ -18455,16 +19784,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00025",
         "alt": "견월교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700114"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00024",
         "alt": "견월교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700114"
       }
     ],
     "imageTitle": "견월교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700114",
     "tags": [
       "인문 지리",
       "현대",
@@ -18494,16 +19826,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00077",
         "alt": "관음교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700215"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00078",
         "alt": "관음교 교명",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700215"
       }
     ],
     "imageTitle": "관음교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700215",
     "tags": [
       "인문 지리",
       "현대",
@@ -18533,16 +19868,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00112",
         "alt": "광양교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700227"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00113",
         "alt": "광양교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700227"
       }
     ],
     "imageTitle": "광양교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700227",
     "tags": [
       "인문 지리",
       "현대",
@@ -18572,11 +19910,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00240",
         "alt": "도근교 교명",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700574"
       }
     ],
     "imageTitle": "도근교 교명",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700574",
     "tags": [
       "인문 지리",
       "현대",
@@ -18606,16 +19946,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00273",
         "alt": "동광양교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700619"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00274",
         "alt": "동광양교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700619"
       }
     ],
     "imageTitle": "동광양교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700619",
     "tags": [
       "인문 지리",
       "현대",
@@ -18645,31 +19988,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00299",
         "alt": "동산교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700633"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00298",
         "alt": "동산교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700633"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05020",
         "alt": "동산교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700633"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05021",
         "alt": "동산교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700633"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05019",
         "alt": "동산교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700633"
       }
     ],
     "imageTitle": "동산교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700633",
     "tags": [
       "인문 지리",
       "현대",
@@ -18699,11 +20048,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00364",
         "alt": "별도교 교명",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700885"
       }
     ],
     "imageTitle": "별도교 교명",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700885",
     "tags": [
       "인문 지리",
       "현대",
@@ -18733,11 +20084,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00370",
         "alt": "봉개교 교명 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700919"
       }
     ],
     "imageTitle": "봉개교 교명 정면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700919",
     "tags": [
       "인문 지리",
       "현대",
@@ -18767,16 +20120,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00389",
         "alt": "사수교 교명 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700987"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00390",
         "alt": "제2사수교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700987"
       }
     ],
     "imageTitle": "사수교 교명 정면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700987",
     "tags": [
       "인문 지리",
       "현대",
@@ -18806,16 +20162,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00450",
         "alt": "삼양교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701044"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00449",
         "alt": "삼양교 삼수천 안내판",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701044"
       }
     ],
     "imageTitle": "삼양교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701044",
     "tags": [
       "인문 지리",
       "현대",
@@ -18845,16 +20204,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00461",
         "alt": "삼의교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701051"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00460",
         "alt": "옛 삼의교 교명",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701051"
       }
     ],
     "imageTitle": "삼의교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701051",
     "tags": [
       "인문 지리",
       "현대",
@@ -18884,16 +20246,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00558",
         "alt": "아라교 교명",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701279"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00559",
         "alt": "아라교 난간",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701279"
       }
     ],
     "imageTitle": "아라교 교명",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701279",
     "tags": [
       "인문 지리",
       "현대",
@@ -18923,16 +20288,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00615",
         "alt": "어후교 우측 중심 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701342"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00616",
         "alt": "어후교 좌측 중심 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701342"
       }
     ],
     "imageTitle": "어후교 우측 중심 정면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701342",
     "tags": [
       "인문 지리",
       "현대",
@@ -18962,16 +20330,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00625",
         "alt": "영평교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701389"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00624",
         "alt": "영평교 교명 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701389"
       }
     ],
     "imageTitle": "영평교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701389",
     "tags": [
       "인문 지리",
       "현대",
@@ -19001,16 +20372,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00629",
         "alt": "오라교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701412"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00628",
         "alt": "오라교 교명",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701412"
       }
     ],
     "imageTitle": "오라교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701412",
     "tags": [
       "인문 지리",
       "현대",
@@ -19040,16 +20414,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00635",
         "alt": "오봉교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701425"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00634",
         "alt": "오봉교 교명 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701425"
       }
     ],
     "imageTitle": "오봉교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701425",
     "tags": [
       "인문 지리",
       "현대",
@@ -19079,11 +20456,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00637",
         "alt": "오장교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701432"
       }
     ],
     "imageTitle": "오장교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701432",
     "tags": [
       "인문 지리",
       "현대",
@@ -19113,16 +20492,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00670",
         "alt": "(구)외도교 교명",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701455"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00671",
         "alt": "(신)외도교 교명",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701455"
       }
     ],
     "imageTitle": "(구)외도교 교명",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701455",
     "tags": [
       "인문 지리",
       "현대",
@@ -19152,16 +20534,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00696",
         "alt": "월평교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701521"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00695",
         "alt": "월평교 교명",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701521"
       }
     ],
     "imageTitle": "월평교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701521",
     "tags": [
       "인문 지리",
       "현대",
@@ -19191,16 +20576,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01544",
         "alt": "한북교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702571"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01543",
         "alt": "한북교 교명",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702571"
       }
     ],
     "imageTitle": "한북교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702571",
     "tags": [
       "인문 지리",
       "현대",
@@ -19230,16 +20618,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01555",
         "alt": "해안교",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702607"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01554",
         "alt": "해안교 교명",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702607"
       }
     ],
     "imageTitle": "해안교",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702607",
     "tags": [
       "인문 지리",
       "현대",
@@ -19269,36 +20660,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03068",
         "alt": "김녕항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702589"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00416",
         "alt": "산지축항 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702589"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02153",
         "alt": "세화항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702589"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04650",
         "alt": "신양항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702589"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02413",
         "alt": "신창항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702589"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02159",
         "alt": "애월항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702589"
       }
     ],
     "imageTitle": "김녕항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702589",
     "tags": [
       "인문 지리",
       "현대",
@@ -19328,11 +20726,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05034",
         "alt": "고산항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710322"
       }
     ],
     "imageTitle": "고산항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710322",
     "tags": [
       "인문 지리",
       "현대",
@@ -19362,11 +20762,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03286",
         "alt": "귀덕1리항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710325"
       }
     ],
     "imageTitle": "귀덕1리항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710325",
     "tags": [
       "인문 지리",
       "현대",
@@ -19396,31 +20798,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03533",
         "alt": "1960년대 보리말리는 장면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701091"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00479",
         "alt": "서부두",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701091"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00482",
         "alt": "서부두",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701091"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00483",
         "alt": "서부두",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701091"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00484",
         "alt": "서부두",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701091"
       }
     ],
     "imageTitle": "1960년대 보리말리는 장면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701091",
     "tags": [
       "자연 지리",
       "현대",
@@ -19450,16 +20858,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02152",
         "alt": "세화항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710339"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02153",
         "alt": "세화항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710339"
       }
     ],
     "imageTitle": "세화항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710339",
     "tags": [
       "인문 지리",
       "현대",
@@ -19489,11 +20900,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04650",
         "alt": "신양항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710342"
       }
     ],
     "imageTitle": "신양항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710342",
     "tags": [
       "인문 지리",
       "현대",
@@ -19523,11 +20936,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02413",
         "alt": "신창항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710343"
       }
     ],
     "imageTitle": "신창항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710343",
     "tags": [
       "인문 지리",
       "현대",
@@ -19557,11 +20972,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02159",
         "alt": "애월항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710345"
       }
     ],
     "imageTitle": "애월항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710345",
     "tags": [
       "인문 지리",
       "현대",
@@ -19591,26 +21008,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03515",
         "alt": "1950년대 제주항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702204"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03516",
         "alt": "2005년 제주항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702204"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03528",
         "alt": "제주항 전경(2006년)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702204"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03527",
         "alt": "제주항과 시가지(1960년대)",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702204"
       }
     ],
     "imageTitle": "1950년대 제주항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702204",
     "tags": [
       "인문 지리",
       "현대",
@@ -19640,11 +21062,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03151",
         "alt": "조천항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710357"
       }
     ],
     "imageTitle": "조천항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710357",
     "tags": [
       "인문 지리",
       "현대",
@@ -19674,16 +21098,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02164",
         "alt": "종달항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710359"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02165",
         "alt": "종달항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710359"
       }
     ],
     "imageTitle": "종달항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710359",
     "tags": [
       "인문 지리",
       "현대",
@@ -19713,11 +21140,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04670",
         "alt": "추자항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710361"
       }
     ],
     "imageTitle": "추자항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710361",
     "tags": [
       "인문 지리",
       "현대",
@@ -19747,11 +21176,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03154",
         "alt": "하귀1리항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710363"
       }
     ],
     "imageTitle": "하귀1리항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710363",
     "tags": [
       "인문 지리",
       "현대",
@@ -19781,11 +21212,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02619",
         "alt": "한림항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710364"
       }
     ],
     "imageTitle": "한림항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710364",
     "tags": [
       "인문 지리",
       "현대",
@@ -19815,31 +21248,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05080",
         "alt": "1890년대 산지 포구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702477"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03285",
         "alt": "군랑포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702477"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02363",
         "alt": "별도포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702477"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03149",
         "alt": "조천포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702477"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05180",
         "alt": "포구 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702477"
       }
     ],
     "imageTitle": "1890년대 산지 포구",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702477",
     "tags": [
       "자연 지리",
       "현대",
@@ -19869,21 +21308,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03283",
         "alt": "고내포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710320"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04982",
         "alt": "고내포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710320"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04983",
         "alt": "고내포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710320"
       }
     ],
     "imageTitle": "고내포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710320",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -19913,11 +21356,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02131",
         "alt": "귀덕포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710326"
       }
     ],
     "imageTitle": "귀덕포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710326",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -19947,11 +21392,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04923",
         "alt": "도근천포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710329"
       }
     ],
     "imageTitle": "도근천포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710329",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -19981,11 +21428,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02133",
         "alt": "독포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710331"
       }
     ],
     "imageTitle": "독포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710331",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -20015,11 +21464,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02303",
         "alt": "두모포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710332"
       }
     ],
     "imageTitle": "두모포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710332",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -20049,11 +21500,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02134",
         "alt": "배령포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710335"
       }
     ],
     "imageTitle": "배령포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710335",
     "tags": [
       "인문 지리",
       "일제 강점기",
@@ -20083,16 +21536,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02304",
         "alt": "사귀포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710337"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02805",
         "alt": "사귀포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710337"
       }
     ],
     "imageTitle": "사귀포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710337",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -20122,11 +21578,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02571",
         "alt": "송포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710340"
       }
     ],
     "imageTitle": "송포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710340",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -20156,11 +21614,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02628",
         "alt": "수근포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710341"
       }
     ],
     "imageTitle": "수근포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710341",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -20190,11 +21650,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02158",
         "alt": "애월포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710344"
       }
     ],
     "imageTitle": "애월포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710344",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -20224,11 +21686,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02414",
         "alt": "원룡포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710351"
       }
     ],
     "imageTitle": "원룡포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710351",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -20258,11 +21722,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02160",
         "alt": "입두포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710353"
       }
     ],
     "imageTitle": "입두포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710353",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -20292,11 +21758,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04503",
         "alt": "조부포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710355"
       }
     ],
     "imageTitle": "조부포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710355",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -20326,11 +21794,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03149",
         "alt": "조천포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710356"
       }
     ],
     "imageTitle": "조천포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710356",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -20360,16 +21830,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02162",
         "alt": "종달포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710358"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02163",
         "alt": "종달포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710358"
       }
     ],
     "imageTitle": "종달포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710358",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -20399,11 +21872,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02418",
         "alt": "판포",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710362"
       }
     ],
     "imageTitle": "판포",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710362",
     "tags": [
       "인문 지리",
       "조선 후기",
@@ -20433,11 +21908,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03394",
         "alt": "산지등대",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701005"
       }
     ],
     "imageTitle": "산지등대",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701005",
     "tags": [
       "인문 지리",
       "일제 강점기",
@@ -20467,11 +21944,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04664",
         "alt": "추자도등대",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710316"
       }
     ],
     "imageTitle": "추자도등대",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710316",
     "tags": [
       "인문 지리",
       "현대",
@@ -20501,36 +21980,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03525",
         "alt": "1950년대 제주공항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701844"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03505",
         "alt": "1970년대 제주공항 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701844"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03506",
         "alt": "2005년 제주국제공항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701844"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03526",
         "alt": "서울올림픽 성화 도착",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701844"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02615",
         "alt": "제주국제공항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701844"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02616",
         "alt": "제주국제공항",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701844"
       }
     ],
     "imageTitle": "1950년대 제주공항",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701844",
     "tags": [
       "인문 지리",
       "현대",
@@ -20560,26 +22046,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01111",
         "alt": "제주시 종합 터미널",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702059"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01110",
         "alt": "제주시 종합 터미널",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702059"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01113",
         "alt": "제주시 종합 터미널 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702059"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01112",
         "alt": "제주시 종합 터미널 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702059"
       }
     ],
     "imageTitle": "제주시 종합 터미널",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702059",
     "tags": [
       "인문 지리",
       "현대",
@@ -20609,11 +22100,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05002",
         "alt": "제주국제여객선터미널",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701847"
       }
     ],
     "imageTitle": "제주국제여객선터미널",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701847",
     "tags": [
       "인문 지리",
       "현대",
@@ -20643,11 +22136,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02216",
         "alt": "제주항연안여객선터미널",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702206"
       }
     ],
     "imageTitle": "제주항연안여객선터미널",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702206",
     "tags": [
       "인문 지리",
       "현대",
@@ -20677,11 +22172,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05163",
         "alt": "카페리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702393"
       }
     ],
     "imageTitle": "카페리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702393",
     "tags": [
       "경제·산업",
       "현대",
@@ -20711,11 +22208,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03463",
         "alt": "1959년 병문천에 사라호 태풍이 지나간 자리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702593"
       }
     ],
     "imageTitle": "1959년 병문천에 사라호 태풍이 지나간 자리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702593",
     "tags": [
       "정치·행정",
       "현대",
@@ -20745,36 +22244,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03479",
         "alt": "1960년대 제주시관광안내도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711584"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03324",
         "alt": "1970년대 만장굴 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711584"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02401",
         "alt": "곽지해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711584"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02666",
         "alt": "관광 안내소",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711584"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02665",
         "alt": "관광명소인 한림공원 내 이정표",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711584"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00071",
         "alt": "관덕정",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711584"
       }
     ],
     "imageTitle": "1960년대 제주시관광안내도",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711584",
     "tags": [
       "경제·산업",
       "현대",
@@ -20804,11 +22310,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04513",
         "alt": "검멀레해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710371"
       }
     ],
     "imageTitle": "검멀레해수욕장",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710371",
     "tags": [
       "인문 지리",
       "현대",
@@ -20838,36 +22346,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09071",
         "alt": "삼양 검은 모래 해변 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712014"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09072",
         "alt": "삼양 검은 모래 해변 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712014"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09073",
         "alt": "삼양 검은 모래 해변 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712014"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02043",
         "alt": "삼양 해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712014"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03477",
         "alt": "1950년대 삼양해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712014"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05088",
         "alt": "삼양해수욕장 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712014"
       }
     ],
     "imageTitle": "삼양 검은 모래 해변 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712014",
     "tags": [
       "자연 지리",
       "현대",
@@ -20897,21 +22412,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09088",
         "alt": "세화 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712015"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09087",
         "alt": "세화 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712015"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09089",
         "alt": "세화 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712015"
       }
     ],
     "imageTitle": "세화 해변",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712015",
     "tags": [
       "자연 지리",
       "현대",
@@ -20941,16 +22460,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03478",
         "alt": "1970년대 이호해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701655"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03063",
         "alt": "이호해수욕장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701655"
       }
     ],
     "imageTitle": "1970년대 이호해수욕장",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701655",
     "tags": [
       "인문 지리",
       "현대",
@@ -20980,21 +22502,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09198",
         "alt": "하고수동 해변 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712018"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09199",
         "alt": "하고수동 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712018"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09200",
         "alt": "하고수동 해변",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712018"
       }
     ],
     "imageTitle": "하고수동 해변 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712018",
     "tags": [
       "자연 지리",
       "현대",
@@ -21024,16 +22550,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09204",
         "alt": "하도 해변 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712019"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09203",
         "alt": "하도 해변 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712019"
       }
     ],
     "imageTitle": "하도 해변 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712019",
     "tags": [
       "자연 지리",
       "현대",
@@ -21063,36 +22592,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02284",
         "alt": "금산공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700197"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02197",
         "alt": "김녕미로공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700197"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02258",
         "alt": "노형미리내공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700197"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03026",
         "alt": "도깨비공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700197"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02242",
         "alt": "미리내체육공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700197"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03836",
         "alt": "북촌돌하르방공원내의 돌하르방",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700197"
       }
     ],
     "imageTitle": "금산공원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700197",
     "tags": [
       "인문 지리",
       "현대",
@@ -21122,16 +22658,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03670",
         "alt": "금릉석물원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710237"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02196",
         "alt": "금릉석물원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710237"
       }
     ],
     "imageTitle": "금릉석물원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710237",
     "tags": [
       "인문 지리",
       "현대",
@@ -21161,11 +22700,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02284",
         "alt": "금산공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700306"
       }
     ],
     "imageTitle": "금산공원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700306",
     "tags": [
       "인문 지리",
       "현대",
@@ -21195,31 +22736,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09046",
         "alt": "노루 생태 관찰원 노루 관람장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712005"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09043",
         "alt": "노루 생태 관찰원 전시관",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712005"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09044",
         "alt": "노루 생태 관찰원 전시관 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712005"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09045",
         "alt": "노루 생태 관찰원 전시관 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712005"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09042",
         "alt": "노루 생태 관찰원 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712005"
       }
     ],
     "imageTitle": "노루 생태 관찰원 노루 관람장",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712005",
     "tags": [
       "인문 지리",
       "현대",
@@ -21249,11 +22796,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02258",
         "alt": "노형미리내공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700503"
       }
     ],
     "imageTitle": "노형미리내공원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700503",
     "tags": [
       "인문 지리",
       "현대",
@@ -21283,16 +22832,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03026",
         "alt": "도깨비공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710239"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03728",
         "alt": "도깨비공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710239"
       }
     ],
     "imageTitle": "도깨비공원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710239",
     "tags": [
       "인문 지리",
       "현대",
@@ -21322,31 +22874,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00331",
         "alt": "목석원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700718"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00330",
         "alt": "목석원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700718"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01871",
         "alt": "목석원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700718"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00332",
         "alt": "목석원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700718"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00327",
         "alt": "목석원 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700718"
       }
     ],
     "imageTitle": "목석원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700718",
     "tags": [
       "인문 지리",
       "현대",
@@ -21376,16 +22934,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02456",
         "alt": "방림원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710240"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03800",
         "alt": "방림원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710240"
       }
     ],
     "imageTitle": "방림원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710240",
     "tags": [
       "인문 지리",
       "현대",
@@ -21415,16 +22976,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03548",
         "alt": "북촌 돌하르방공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710241"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03836",
         "alt": "북촌돌하르방공원내의 돌하르방",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710241"
       }
     ],
     "imageTitle": "북촌 돌하르방공원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710241",
     "tags": [
       "인문 지리",
       "현대",
@@ -21454,11 +23018,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04899",
         "alt": "사라봉공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700978"
       }
     ],
     "imageTitle": "사라봉공원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700978",
     "tags": [
       "인문 지리",
       "현대",
@@ -21488,31 +23054,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00430",
         "alt": "삼무공원 내 정자",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701027"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00427",
         "alt": "삼무공원 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701027"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00429",
         "alt": "삼무공원 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701027"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00424",
         "alt": "삼무공원 안내표석",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701027"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00425",
         "alt": "삼무공원 안내표석",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701027"
       }
     ],
     "imageTitle": "삼무공원 내 정자",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701027",
     "tags": [
       "인문 지리",
       "현대",
@@ -21542,21 +23114,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03842",
         "alt": "생각하는 정원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710242"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02034",
         "alt": "생각하는 정원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710242"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02035",
         "alt": "생각하는 정원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710242"
       }
     ],
     "imageTitle": "생각하는 정원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710242",
     "tags": [
       "인문 지리",
       "현대",
@@ -21586,11 +23162,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02137",
         "alt": "서원관광농원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710852"
       }
     ],
     "imageTitle": "서원관광농원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710852",
     "tags": [
       "경제·산업",
       "현대",
@@ -21620,16 +23198,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02831",
         "alt": "수운근린공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701196"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02832",
         "alt": "수운근린공원 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701196"
       }
     ],
     "imageTitle": "수운근린공원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701196",
     "tags": [
       "인문 지리",
       "현대",
@@ -21659,16 +23240,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09090",
         "alt": "신산 공원 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712006"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09091",
         "alt": "신산 공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712006"
       }
     ],
     "imageTitle": "신산 공원 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712006",
     "tags": [
       "인문 지리",
       "현대",
@@ -21698,16 +23282,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09102",
         "alt": "어영 소공원 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712007"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09101",
         "alt": "어영 소공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712007"
       }
     ],
     "imageTitle": "어영 소공원 전경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712007",
     "tags": [
       "인문 지리",
       "현대",
@@ -21737,16 +23324,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03452",
         "alt": "4·3희생자 범도민 위령제",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701818"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02298",
         "alt": "제주4·3평화공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701818"
       }
     ],
     "imageTitle": "4·3희생자 범도민 위령제",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701818",
     "tags": [
       "인문 지리",
       "현대",
@@ -21776,11 +23366,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02540",
         "alt": "제주돌문화공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711035"
       }
     ],
     "imageTitle": "제주돌문화공원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711035",
     "tags": [
       "교육",
       "현대",
@@ -21810,11 +23402,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05014",
         "alt": "제주러브랜드",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711631"
       }
     ],
     "imageTitle": "제주러브랜드",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711631",
     "tags": [
       "인문 지리",
       "현대",
@@ -21844,31 +23438,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09135",
         "alt": "제주 별빛누리 공원 전시장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712008"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09134",
         "alt": "제주 별빛누리 공원 전경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712008"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09133",
         "alt": "제주 별빛누리 공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712008"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09136",
         "alt": "제주 별빛누리 공원 전시장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712008"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09137",
         "alt": "제주 별빛누리 공원 전시장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712008"
       }
     ],
     "imageTitle": "제주 별빛누리 공원 전시장",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712008",
     "tags": [
       "인문 지리",
       "현대",
@@ -21898,26 +23498,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02960",
         "alt": "우도해녀항일운동기념비의 측면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710245"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02959",
         "alt": "제1회 제주해녀항일투쟁기념식의 행렬 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710245"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02486",
         "alt": "제주해녀항일기념운동공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710245"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04116",
         "alt": "제주해녀항일기념운동공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710245"
       }
     ],
     "imageTitle": "우도해녀항일운동기념비의 측면",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710245",
     "tags": [
       "인문 지리",
       "현대",
@@ -21947,16 +23552,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04662",
         "alt": "추자도등대산공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710246"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04663",
         "alt": "추자도등대산공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710246"
       }
     ],
     "imageTitle": "추자도등대산공원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710246",
     "tags": [
       "인문 지리",
       "현대",
@@ -21986,31 +23594,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02665",
         "alt": "관광명소인 한림공원 내 이정표",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710247"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01756",
         "alt": "쌍용굴 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710247"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04198",
         "alt": "한림공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710247"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02224",
         "alt": "한림공원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710247"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02688",
         "alt": "협재굴 내부",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710247"
       }
     ],
     "imageTitle": "관광명소인 한림공원 내 이정표",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710247",
     "tags": [
       "인문 지리",
       "현대",
@@ -22040,36 +23654,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09018",
         "alt": "교래 자연 휴양림 오름 산책로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712020"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09019",
         "alt": "교래 자연 휴양림 생태 관찰로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712020"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09017",
         "alt": "교래 자연 휴양림",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712020"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09022",
         "alt": "교래 자연 휴양림 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712020"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09020",
         "alt": "교래 자연 휴양림 숙박 시설",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712020"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09021",
         "alt": "교래 자연 휴양림 숙박 시설",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712020"
       }
     ],
     "imageTitle": "교래 자연 휴양림 오름 산책로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712020",
     "tags": [
       "인문 지리",
       "현대",
@@ -22099,16 +23720,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02262",
         "alt": "제주절물자연휴양림",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702133"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02261",
         "alt": "제주절물자연휴양림 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702133"
       }
     ],
     "imageTitle": "제주절물자연휴양림",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702133",
     "tags": [
       "인문 지리",
       "현대",
@@ -22138,36 +23762,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09212",
         "alt": "한라 생태 숲 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712011"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09216",
         "alt": "한라 생태 숲 탐방로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712011"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09213",
         "alt": "한라 생태 숲 탐방로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712011"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09215",
         "alt": "한라 생태 숲 연못",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712011"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09214",
         "alt": "한라 생태 숲 정원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712011"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09217",
         "alt": "한라 생태 숲 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712011"
       }
     ],
     "imageTitle": "한라 생태 숲 입구",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712011",
     "tags": [
       "인문 지리",
       "현대",
@@ -22197,31 +23828,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01513",
         "alt": "한라수목원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702556"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01509",
         "alt": "한라수목원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702556"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01519",
         "alt": "한라수목원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702556"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01515",
         "alt": "한라수목원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702556"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01508",
         "alt": "한라수목원 안내판",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702556"
       }
     ],
     "imageTitle": "한라수목원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702556",
     "tags": [
       "인문 지리",
       "현대",
@@ -22251,11 +23888,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04475",
         "alt": "골프장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711591"
       }
     ],
     "imageTitle": "골프장",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711591",
     "tags": [
       "경제·산업",
       "현대",
@@ -22285,11 +23924,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02641",
         "alt": "관광을 위해 개발된 농원",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711585"
       }
     ],
     "imageTitle": "관광을 위해 개발된 농원",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711585",
     "tags": [
       "경제·산업",
       "현대",
@@ -22319,31 +23960,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09056",
         "alt": "두멩이 골목",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712010"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09057",
         "alt": "두멩이 골목 입구",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712010"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09053",
         "alt": "두멩이 골목",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712010"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09054",
         "alt": "두멩이 골목",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712010"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09055",
         "alt": "두멩이 골목",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712010"
       }
     ],
     "imageTitle": "두멩이 골목",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712010",
     "tags": [
       "인문 지리",
       "현대",
@@ -22373,11 +24020,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04996",
         "alt": "유람선",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701529"
       }
     ],
     "imageTitle": "유람선",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701529",
     "tags": [
       "경제·산업",
       "현대",
@@ -22407,36 +24056,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01761",
         "alt": "방목중인 제주마 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700629"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04025",
         "alt": "원앙",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700629"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04056",
         "alt": "저어새",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700629"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03332",
         "alt": "제주 조랑말",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700629"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01750",
         "alt": "한라산의 노루",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700629"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04238",
         "alt": "황새",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700629"
       }
     ],
     "imageTitle": "방목중인 제주마 모습",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700629",
     "tags": [
       "동식물",
       "현대",
@@ -22466,11 +24122,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03561",
         "alt": "가락지나비 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702773"
       }
     ],
     "imageTitle": "가락지나비 모습",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702773",
     "tags": [
       "동식물",
       "현대",
@@ -22500,11 +24158,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03562",
         "alt": "각시물자라",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711617"
       }
     ],
     "imageTitle": "각시물자라",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711617",
     "tags": [
       "동식물",
       "현대",
@@ -22534,21 +24194,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04057",
         "alt": "어시장에 진열된 전갱이",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710488"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03423",
         "alt": "전갱이",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710488"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04058",
         "alt": "전갱이 표본",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710488"
       }
     ],
     "imageTitle": "어시장에 진열된 전갱이",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710488",
     "tags": [
       "동식물",
       "현대",
@@ -22578,16 +24242,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03564",
         "alt": "갈치표본",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710539"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03563",
         "alt": "어시장의 갈치",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710539"
       }
     ],
     "imageTitle": "갈치표본",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710539",
     "tags": [
       "동식물",
       "현대",
@@ -22617,11 +24284,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03574",
         "alt": "검정꼬리박각시",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702774"
       }
     ],
     "imageTitle": "검정꼬리박각시",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702774",
     "tags": [
       "동식물",
       "현대",
@@ -22651,11 +24320,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03700",
         "alt": "남방남색공작나비",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702775"
       }
     ],
     "imageTitle": "남방남색공작나비",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702775",
     "tags": [
       "동식물",
       "현대",
@@ -22685,11 +24356,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03709",
         "alt": "노랑줄박각시",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702776"
       }
     ],
     "imageTitle": "노랑줄박각시",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702776",
     "tags": [
       "동식물",
       "현대",
@@ -22719,11 +24392,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03772",
         "alt": "말매미",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711620"
       }
     ],
     "imageTitle": "말매미",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711620",
     "tags": [
       "동식물",
       "현대",
@@ -22753,11 +24428,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03773",
         "alt": "매",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710499"
       }
     ],
     "imageTitle": "매",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710499",
     "tags": [
       "동식물",
       "현대",
@@ -22787,11 +24464,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03774",
         "alt": "먹나비",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702779"
       }
     ],
     "imageTitle": "먹나비",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702779",
     "tags": [
       "동식물",
       "현대",
@@ -22821,11 +24500,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03791",
         "alt": "물수리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711613"
       }
     ],
     "imageTitle": "물수리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711613",
     "tags": [
       "동식물",
       "현대",
@@ -22855,11 +24536,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03792",
         "alt": "물장군",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702780"
       }
     ],
     "imageTitle": "물장군",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702780",
     "tags": [
       "동식물",
       "현대",
@@ -22889,11 +24572,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03797",
         "alt": "민어리여치 암컷",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702781"
       }
     ],
     "imageTitle": "민어리여치 암컷",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702781",
     "tags": [
       "동식물",
       "현대",
@@ -22923,11 +24608,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03798",
         "alt": "바다방울벌레 암컷",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702782"
       }
     ],
     "imageTitle": "바다방울벌레 암컷",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702782",
     "tags": [
       "동식물",
       "현대",
@@ -22957,11 +24644,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03801",
         "alt": "방패관대노린재",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711621"
       }
     ],
     "imageTitle": "방패관대노린재",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711621",
     "tags": [
       "동식물",
       "현대",
@@ -22991,11 +24680,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03844",
         "alt": "뾰족매부리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702783"
       }
     ],
     "imageTitle": "뾰족매부리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702783",
     "tags": [
       "동식물",
       "현대",
@@ -23025,11 +24716,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03852",
         "alt": "산굴뚝나비",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702784"
       }
     ],
     "imageTitle": "산굴뚝나비",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702784",
     "tags": [
       "동식물",
       "현대",
@@ -23059,11 +24752,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03944",
         "alt": "애기뿔소똥구리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711622"
       }
     ],
     "imageTitle": "애기뿔소똥구리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711622",
     "tags": [
       "동식물",
       "현대",
@@ -23093,16 +24788,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03976",
         "alt": "여치",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711623"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05149",
         "alt": "여치",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711623"
       }
     ],
     "imageTitle": "여치",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711623",
     "tags": [
       "동식물",
       "현대",
@@ -23132,11 +24830,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03984",
         "alt": "열대풀종다리 수컷",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711624"
       }
     ],
     "imageTitle": "열대풀종다리 수컷",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711624",
     "tags": [
       "동식물",
       "현대",
@@ -23166,11 +24866,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04025",
         "alt": "원앙",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710507"
       }
     ],
     "imageTitle": "원앙",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710507",
     "tags": [
       "동식물",
       "현대",
@@ -23200,16 +24902,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04052",
         "alt": "자주복 표본",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710487"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04051",
         "alt": "자주복의 양식어",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710487"
       }
     ],
     "imageTitle": "자주복 표본",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710487",
     "tags": [
       "동식물",
       "현대",
@@ -23239,11 +24944,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04053",
         "alt": "잘록허리왕잠자리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711625"
       }
     ],
     "imageTitle": "잘록허리왕잠자리",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711625",
     "tags": [
       "동식물",
       "현대",
@@ -23273,11 +24980,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04056",
         "alt": "저어새",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710508"
       }
     ],
     "imageTitle": "저어새",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710508",
     "tags": [
       "동식물",
       "현대",
@@ -23307,11 +25016,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04080",
         "alt": "제주꼬마팔랑나비",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702788"
       }
     ],
     "imageTitle": "제주꼬마팔랑나비",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702788",
     "tags": [
       "동식물",
       "현대",
@@ -23341,11 +25052,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04091",
         "alt": "제주등줄박각시",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702791"
       }
     ],
     "imageTitle": "제주등줄박각시",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702791",
     "tags": [
       "동식물",
       "현대",
@@ -23375,11 +25088,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04092",
         "alt": "제주멋쟁이딱정벌레",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701985"
       }
     ],
     "imageTitle": "제주멋쟁이딱정벌레",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701985",
     "tags": [
       "동식물",
       "현대",
@@ -23409,11 +25124,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03996",
         "alt": "왕나비",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702104"
       }
     ],
     "imageTitle": "왕나비",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702104",
     "tags": [
       "동식물",
       "현대",
@@ -23443,11 +25160,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03997",
         "alt": "왕딱정벌레",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702105"
       }
     ],
     "imageTitle": "왕딱정벌레",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702105",
     "tags": [
       "동식물",
       "현대",
@@ -23477,11 +25196,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04097",
         "alt": "제주우리딱정벌레",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702109"
       }
     ],
     "imageTitle": "제주우리딱정벌레",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702109",
     "tags": [
       "동식물",
       "현대",
@@ -23511,26 +25232,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01762",
         "alt": "견월악 방목지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702122"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01761",
         "alt": "방목중인 제주마 모습",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702122"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04507",
         "alt": "제주 말",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702122"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01763",
         "alt": "제주마",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702122"
       }
     ],
     "imageTitle": "견월악 방목지",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702122",
     "tags": [
       "동식물",
       "현대",
@@ -23560,11 +25286,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04114",
         "alt": "제주풍뎅이",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702192"
       }
     ],
     "imageTitle": "제주풍뎅이",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702192",
     "tags": [
       "동식물",
       "현대",
@@ -23594,11 +25322,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04117",
         "alt": "제주홍단딱정벌레",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702215"
       }
     ],
     "imageTitle": "제주홍단딱정벌레",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702215",
     "tags": [
       "동식물",
       "현대",
@@ -23628,11 +25358,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04132",
         "alt": "종달새",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710538"
       }
     ],
     "imageTitle": "종달새",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710538",
     "tags": [
       "동식물",
       "현대",
@@ -23662,11 +25394,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04136",
         "alt": "참복의 표본",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710490"
       }
     ],
     "imageTitle": "참복의 표본",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710490",
     "tags": [
       "동식물",
       "현대",
@@ -23696,16 +25430,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04658",
         "alt": "참조기",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710489"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04137",
         "alt": "참조기 표본",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710489"
       }
     ],
     "imageTitle": "참조기",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710489",
     "tags": [
       "동식물",
       "현대",
@@ -23735,11 +25472,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04147",
         "alt": "탐라매부리 암컷",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702794"
       }
     ],
     "imageTitle": "탐라매부리 암컷",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702794",
     "tags": [
       "동식물",
       "현대",
@@ -23769,11 +25508,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04165",
         "alt": "팔색조",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710514"
       }
     ],
     "imageTitle": "팔색조",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710514",
     "tags": [
       "동식물",
       "현대",
@@ -23803,11 +25544,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04197",
         "alt": "한라푸른부전나비",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702566"
       }
     ],
     "imageTitle": "한라푸른부전나비",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702566",
     "tags": [
       "동식물",
       "현대",
@@ -23837,11 +25580,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04238",
         "alt": "황새",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711614"
       }
     ],
     "imageTitle": "황새",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711614",
     "tags": [
       "동식물",
       "현대",
@@ -23871,11 +25616,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04248",
         "alt": "흑로",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711615"
       }
     ],
     "imageTitle": "흑로",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711615",
     "tags": [
       "동식물",
       "현대",
@@ -23905,11 +25652,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04249",
         "alt": "흰고리방울벌레 암컷",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702795"
       }
     ],
     "imageTitle": "흰고리방울벌레 암컷",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702795",
     "tags": [
       "동식물",
       "현대",
@@ -23939,16 +25688,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01760",
         "alt": "사수도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710574"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03847",
         "alt": "사수도 해조류 번식지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710574"
       }
     ],
     "imageTitle": "사수도",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710574",
     "tags": [
       "동식물",
       "현대",
@@ -23978,16 +25730,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02683",
         "alt": "하도리 철새도래지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711605"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04188",
         "alt": "하도리 철새도래지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711605"
       }
     ],
     "imageTitle": "하도리 철새도래지",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00711605",
     "tags": [
       "동식물",
       "현대",
@@ -24017,36 +25772,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02841",
         "alt": "개서어나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701222"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01765",
         "alt": "난대림",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701222"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01880",
         "alt": "녹나무 열매와 이파리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701222"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03170",
         "alt": "단풍나무의 물든 잎",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701222"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03175",
         "alt": "동백나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701222"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01851",
         "alt": "동백동산 내 상록수림",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701222"
       }
     ],
     "imageTitle": "개서어나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701222",
     "tags": [
       "동식물",
       "현대",
@@ -24076,21 +25838,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02840",
         "alt": "개서어나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710547"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02841",
         "alt": "개서어나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710547"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03160",
         "alt": "개서어나무 잎사귀",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710547"
       }
     ],
     "imageTitle": "개서어나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710547",
     "tags": [
       "동식물",
       "현대",
@@ -24120,16 +25886,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02842",
         "alt": "구상나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700245"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03165",
         "alt": "구상나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700245"
       }
     ],
     "imageTitle": "구상나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700245",
     "tags": [
       "동식물",
       "현대",
@@ -24159,21 +25928,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02819",
         "alt": "구실잣밤나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700248"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03167",
         "alt": "구실잣밤나무 꽃",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700248"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03166",
         "alt": "구실잣밤나무 열매",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700248"
       }
     ],
     "imageTitle": "구실잣밤나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700248",
     "tags": [
       "동식물",
       "현대",
@@ -24203,11 +25976,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03168",
         "alt": "깔끔좁쌀풀",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710518"
       }
     ],
     "imageTitle": "깔끔좁쌀풀",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710518",
     "tags": [
       "동식물",
       "현대",
@@ -24237,16 +26012,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01881",
         "alt": "녹나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700506"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01880",
         "alt": "녹나무 열매와 이파리",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700506"
       }
     ],
     "imageTitle": "녹나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700506",
     "tags": [
       "동식물",
       "식물",
@@ -24277,21 +26055,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03169",
         "alt": "단풍나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710548"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02646",
         "alt": "단풍나무 잎가지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710548"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03170",
         "alt": "단풍나무의 물든 잎",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710548"
       }
     ],
     "imageTitle": "단풍나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710548",
     "tags": [
       "동식물",
       "현대",
@@ -24321,16 +26103,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02766",
         "alt": "당유자나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700540"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03171",
         "alt": "당유자나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700540"
       }
     ],
     "imageTitle": "당유자나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700540",
     "tags": [
       "동식물",
       "현대",
@@ -24360,11 +26145,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01858",
         "alt": "도련귤나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700589"
       }
     ],
     "imageTitle": "도련귤나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700589",
     "tags": [
       "동식물",
       "식물",
@@ -24395,16 +26182,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03172",
         "alt": "돌매화나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700610"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04595",
         "alt": "돌매화나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700610"
       }
     ],
     "imageTitle": "돌매화나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700610",
     "tags": [
       "동식물",
       "현대",
@@ -24434,26 +26224,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03173",
         "alt": "동백나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710562"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02647",
         "alt": "동백나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710562"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03175",
         "alt": "동백나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710562"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03174",
         "alt": "동백나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710562"
       }
     ],
     "imageTitle": "동백나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710562",
     "tags": [
       "동식물",
       "현대",
@@ -24483,16 +26278,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01879",
         "alt": "무환자나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700746"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01878",
         "alt": "무환자나무 열매",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700746"
       }
     ],
     "imageTitle": "무환자나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700746",
     "tags": [
       "동식물",
       "현대",
@@ -24522,26 +26320,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02592",
         "alt": "문주란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710545"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01736",
         "alt": "문주란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710545"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03178",
         "alt": "문주란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710545"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03177",
         "alt": "문주란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710545"
       }
     ],
     "imageTitle": "문주란",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710545",
     "tags": [
       "동식물",
       "현대",
@@ -24571,11 +26374,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03179",
         "alt": "물부추",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710521"
       }
     ],
     "imageTitle": "물부추",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710521",
     "tags": [
       "동식물",
       "현대",
@@ -24605,21 +26410,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02866",
         "alt": "박달목서",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710522"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03181",
         "alt": "박달목서",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710522"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03182",
         "alt": "박달목서",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710522"
       }
     ],
     "imageTitle": "박달목서",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710522",
     "tags": [
       "동식물",
       "현대",
@@ -24649,31 +26458,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03183",
         "alt": "백서향",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710549"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03184",
         "alt": "백서향",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710549"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01855",
         "alt": "백서향 및 변산일엽 군락지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710549"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01854",
         "alt": "백서향꽃",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710549"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02467",
         "alt": "선흘리 백서향 및 변산 일엽군락",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710549"
       }
     ],
     "imageTitle": "백서향",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710549",
     "tags": [
       "동식물",
       "현대",
@@ -24703,16 +26518,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03185",
         "alt": "변산일엽",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710550"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03186",
         "alt": "변산일엽의 잎의 모양새",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710550"
       }
     ],
     "imageTitle": "변산일엽",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710550",
     "tags": [
       "동식물",
       "현대",
@@ -24742,16 +26560,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02898",
         "alt": "병귤나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700896"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03187",
         "alt": "병귤나무 열매",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700896"
       }
     ],
     "imageTitle": "병귤나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700896",
     "tags": [
       "동식물",
       "식물",
@@ -24782,16 +26603,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03188",
         "alt": "병꽃나무 꽃",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700897"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04702",
         "alt": "병꽃나무 꽃과 가지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700897"
       }
     ],
     "imageTitle": "병꽃나무 꽃",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700897",
     "tags": [
       "동식물",
       "현대",
@@ -24821,21 +26645,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02656",
         "alt": "붉가시나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710566"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03189",
         "alt": "붉가시나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710566"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03190",
         "alt": "붉가시나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710566"
       }
     ],
     "imageTitle": "붉가시나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710566",
     "tags": [
       "동식물",
       "현대",
@@ -24865,26 +26693,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03191",
         "alt": "붓순나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710567"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02845",
         "alt": "붓순나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710567"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03193",
         "alt": "붓순나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710567"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03192",
         "alt": "붓순나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710567"
       }
     ],
     "imageTitle": "붓순나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710567",
     "tags": [
       "동식물",
       "현대",
@@ -24914,21 +26747,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03194",
         "alt": "비양나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710563"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03195",
         "alt": "비양나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710563"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01894",
         "alt": "비양나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710563"
       }
     ],
     "imageTitle": "비양나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710563",
     "tags": [
       "동식물",
       "현대",
@@ -24958,26 +26795,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02657",
         "alt": "비자나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710568"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03196",
         "alt": "비자나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710568"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03197",
         "alt": "비자나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710568"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01764",
         "alt": "비자림 원경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710568"
       }
     ],
     "imageTitle": "비자나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710568",
     "tags": [
       "동식물",
       "현대",
@@ -25007,16 +26849,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03198",
         "alt": "사스래나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710551"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03199",
         "alt": "사스래나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710551"
       }
     ],
     "imageTitle": "사스래나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710551",
     "tags": [
       "동식물",
       "현대",
@@ -25046,11 +26891,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03200",
         "alt": "산개벚나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710552"
       }
     ],
     "imageTitle": "산개벚나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710552",
     "tags": [
       "동식물",
       "현대",
@@ -25080,16 +26927,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02828",
         "alt": "산귤나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700998"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03201",
         "alt": "산귤나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700998"
       }
     ],
     "imageTitle": "산귤나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700998",
     "tags": [
       "동식물",
       "식물",
@@ -25120,36 +26970,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03205",
         "alt": "산딸나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710569"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02868",
         "alt": "산딸나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710569"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02867",
         "alt": "산딸나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710569"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03203",
         "alt": "산딸나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710569"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03204",
         "alt": "산딸나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710569"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03202",
         "alt": "산딸나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710569"
       }
     ],
     "imageTitle": "산딸나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710569",
     "tags": [
       "동식물",
       "현대",
@@ -25179,16 +27036,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03206",
         "alt": "새우란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710553"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03207",
         "alt": "새우란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710553"
       }
     ],
     "imageTitle": "새우란",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710553",
     "tags": [
       "동식물",
       "현대",
@@ -25218,21 +27078,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02364",
         "alt": "생달나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710554"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03208",
         "alt": "생달나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710554"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03209",
         "alt": "생달나무 열매",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710554"
       }
     ],
     "imageTitle": "생달나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710554",
     "tags": [
       "동식물",
       "현대",
@@ -25262,21 +27126,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02846",
         "alt": "서어나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710555"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02847",
         "alt": "서어나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710555"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03210",
         "alt": "서어나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710555"
       }
     ],
     "imageTitle": "서어나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710555",
     "tags": [
       "동식물",
       "현대",
@@ -25306,31 +27174,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01882",
         "alt": "꽃이 핀 선인장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710570"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03211",
         "alt": "꽃이 핀 선인장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710570"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02044",
         "alt": "선인장",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710570"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01883",
         "alt": "선인장 군락지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710570"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02215",
         "alt": "제주 월령리의 선인장 군락",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710570"
       }
     ],
     "imageTitle": "꽃이 핀 선인장",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710570",
     "tags": [
       "동식물",
       "현대",
@@ -25360,11 +27234,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03212",
         "alt": "섬바위장대",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710526"
       }
     ],
     "imageTitle": "섬바위장대",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710526",
     "tags": [
       "동식물",
       "현대",
@@ -25394,16 +27270,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03213",
         "alt": "솔잎란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710527"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04692",
         "alt": "솔잎란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710527"
       }
     ],
     "imageTitle": "솔잎란",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710527",
     "tags": [
       "동식물",
       "현대",
@@ -25433,21 +27312,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03214",
         "alt": "시로미",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710529"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03215",
         "alt": "시로미",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710529"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05213",
         "alt": "시로미차",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710529"
       }
     ],
     "imageTitle": "시로미",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710529",
     "tags": [
       "동식물",
       "현대",
@@ -25477,21 +27360,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02869",
         "alt": "식나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710571"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03216",
         "alt": "식나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710571"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03217",
         "alt": "식나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710571"
       }
     ],
     "imageTitle": "식나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710571",
     "tags": [
       "동식물",
       "현대",
@@ -25521,16 +27408,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02870",
         "alt": "신갈나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710556"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03218",
         "alt": "신갈나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710556"
       }
     ],
     "imageTitle": "신갈나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710556",
     "tags": [
       "동식물",
       "현대",
@@ -25560,16 +27450,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03219",
         "alt": "성장한 신서란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701239"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04609",
         "alt": "신서란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701239"
       }
     ],
     "imageTitle": "성장한 신서란",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701239",
     "tags": [
       "동식물",
       "현대",
@@ -25599,11 +27492,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02677",
         "alt": "애월읍 상가리 팽나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710535"
       }
     ],
     "imageTitle": "애월읍 상가리 팽나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710535",
     "tags": [
       "동식물",
       "현대",
@@ -25633,16 +27528,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01859",
         "alt": "조록나무 근경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701391"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01860",
         "alt": "조록나무 근경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701391"
       }
     ],
     "imageTitle": "조록나무 근경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701391",
     "tags": [
       "동식물",
       "식물",
@@ -25673,36 +27571,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02871",
         "alt": "봉개동의 왕벚나무 자생지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701447"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01742",
         "alt": "왕벚나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701447"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02872",
         "alt": "왕벚나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701447"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03220",
         "alt": "왕벚나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701447"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03221",
         "alt": "왕벚나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701447"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00109",
         "alt": "왕벚나무 자생지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701447"
       }
     ],
     "imageTitle": "봉개동의 왕벚나무 자생지",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701447",
     "tags": [
       "동식물",
       "현대",
@@ -25732,11 +27637,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03222",
         "alt": "유채",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701538"
       }
     ],
     "imageTitle": "유채",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701538",
     "tags": [
       "동식물",
       "현대",
@@ -25766,11 +27673,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03223",
         "alt": "으름난초",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701553"
       }
     ],
     "imageTitle": "으름난초",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00701553",
     "tags": [
       "동식물",
       "현대",
@@ -25800,11 +27709,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03224",
         "alt": "자주땅귀개",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710530"
       }
     ],
     "imageTitle": "자주땅귀개",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710530",
     "tags": [
       "동식물",
       "현대",
@@ -25834,11 +27745,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01848",
         "alt": "수산곰솔",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710528"
       }
     ],
     "imageTitle": "수산곰솔",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710528",
     "tags": [
       "동식물",
       "현대",
@@ -25868,11 +27781,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03225",
         "alt": "제주고사리삼",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710531"
       }
     ],
     "imageTitle": "제주고사리삼",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710531",
     "tags": [
       "동식물",
       "현대",
@@ -25902,36 +27817,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01136",
         "alt": "제주시곰솔",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702063"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01131",
         "alt": "제주시곰솔",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702063"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01744",
         "alt": "제주시곰솔",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702063"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01743",
         "alt": "제주시곰솔",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702063"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01134",
         "alt": "제주시곰솔 비석",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702063"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01135",
         "alt": "제주시곰솔 안내판",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702063"
       }
     ],
     "imageTitle": "제주시곰솔",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702063",
     "tags": [
       "동식물",
       "식물",
@@ -25962,31 +27884,37 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03228",
         "alt": "꽃이 핀 조록나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702235"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03227",
         "alt": "조록나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702235"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01859",
         "alt": "조록나무 근경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702235"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01860",
         "alt": "조록나무 근경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702235"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02856",
         "alt": "조록나무 잎사귀",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702235"
       }
     ],
     "imageTitle": "꽃이 핀 조록나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702235",
     "tags": [
       "동식물",
       "현대",
@@ -26016,26 +27944,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03229",
         "alt": "졸참나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710557"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02874",
         "alt": "졸참나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710557"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03231",
         "alt": "졸참나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710557"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03230",
         "alt": "졸참나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710557"
       }
     ],
     "imageTitle": "졸참나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710557",
     "tags": [
       "동식물",
       "현대",
@@ -26065,16 +27998,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03232",
         "alt": "좀향유",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710534"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04479",
         "alt": "좀향유",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710534"
       }
     ],
     "imageTitle": "좀향유",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710534",
     "tags": [
       "동식물",
       "현대",
@@ -26104,21 +28040,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02857",
         "alt": "종가시나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710558"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03234",
         "alt": "종가시나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710558"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03233",
         "alt": "종가시나무 열매",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710558"
       }
     ],
     "imageTitle": "종가시나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710558",
     "tags": [
       "동식물",
       "현대",
@@ -26148,16 +28088,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04578",
         "alt": "재래의 진귤나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702303"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05047",
         "alt": "진귤나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702303"
       }
     ],
     "imageTitle": "재래의 진귤나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702303",
     "tags": [
       "동식물",
       "식물",
@@ -26188,21 +28131,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02876",
         "alt": "참가시나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710559"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02877",
         "alt": "참가시나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710559"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03235",
         "alt": "참가시나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710559"
       }
     ],
     "imageTitle": "참가시나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710559",
     "tags": [
       "동식물",
       "현대",
@@ -26232,16 +28179,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01876",
         "alt": "청귤나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702346"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01877",
         "alt": "청귤나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702346"
       }
     ],
     "imageTitle": "청귤나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702346",
     "tags": [
       "동식물",
       "현대",
@@ -26271,36 +28221,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02449",
         "alt": "명월 팽나무군락",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710546"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02581",
         "alt": "팽나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710546"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03238",
         "alt": "팽나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710546"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03239",
         "alt": "팽나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710546"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03241",
         "alt": "팽나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710546"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03240",
         "alt": "팽나무의 열매",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710546"
       }
     ],
     "imageTitle": "명월 팽나무군락",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710546",
     "tags": [
       "동식물",
       "현대",
@@ -26330,11 +28287,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03242",
         "alt": "한라구절초",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702537"
       }
     ],
     "imageTitle": "한라구절초",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702537",
     "tags": [
       "동식물",
       "현대",
@@ -26364,16 +28323,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01752",
         "alt": "제주한란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702567"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01751",
         "alt": "제주한란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702567"
       }
     ],
     "imageTitle": "제주한란",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702567",
     "tags": [
       "동식물",
       "현대",
@@ -26403,16 +28365,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03243",
         "alt": "협죽도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702636"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03244",
         "alt": "협죽도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702636"
       }
     ],
     "imageTitle": "협죽도",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00702636",
     "tags": [
       "동식물",
       "현대",
@@ -26442,21 +28407,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02863",
         "alt": "황근",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710536"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03246",
         "alt": "황근",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710536"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03245",
         "alt": "황근의 꽃",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710536"
       }
     ],
     "imageTitle": "황근",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710536",
     "tags": [
       "동식물",
       "현대",
@@ -26486,26 +28455,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03247",
         "alt": "후박나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710560"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02603",
         "alt": "후박나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710560"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03249",
         "alt": "후박나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710560"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03248",
         "alt": "후박나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710560"
       }
     ],
     "imageTitle": "후박나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710560",
     "tags": [
       "동식물",
       "현대",
@@ -26535,21 +28509,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00110",
         "alt": "관음사 왕벚나무 자생지 안내문",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700220"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00108",
         "alt": "왕벚나무 자생지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700220"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00109",
         "alt": "왕벚나무 자생지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700220"
       }
     ],
     "imageTitle": "관음사 왕벚나무 자생지 안내문",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700220",
     "tags": [
       "동식물",
       "식물",
@@ -26580,11 +28558,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01764",
         "alt": "비자림 원경",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710564"
       }
     ],
     "imageTitle": "비자림 원경",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710564",
     "tags": [
       "동식물",
       "현대",
@@ -26614,26 +28594,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02437",
         "alt": "금덕무환자나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710480"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01844",
         "alt": "무환자나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710480"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01845",
         "alt": "무환자나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710480"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01843",
         "alt": "팽나무와 무환자나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710480"
       }
     ],
     "imageTitle": "금덕무환자나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710480",
     "tags": [
       "동식물",
       "식물",
@@ -26664,11 +28649,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01765",
         "alt": "난대림",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710575"
       }
     ],
     "imageTitle": "난대림",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710575",
     "tags": [
       "동식물",
       "현대",
@@ -26698,11 +28685,13 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01851",
         "alt": "동백동산 내 상록수림",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710481"
       }
     ],
     "imageTitle": "동백동산 내 상록수림",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710481",
     "tags": [
       "동식물",
       "식물",
@@ -26733,21 +28722,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02449",
         "alt": "명월 팽나무군락",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710482"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01857",
         "alt": "팽나무 군락",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710482"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01856",
         "alt": "팽나무의 정면",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710482"
       }
     ],
     "imageTitle": "명월 팽나무군락",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710482",
     "tags": [
       "동식물",
       "현대",
@@ -26777,16 +28770,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02871",
         "alt": "봉개동의 왕벚나무 자생지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700921"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01741",
         "alt": "왕벚나무의 꽃",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700921"
       }
     ],
     "imageTitle": "봉개동의 왕벚나무 자생지",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00700921",
     "tags": [
       "동식물",
       "식물",
@@ -26817,26 +28813,31 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03194",
         "alt": "비양나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710484"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03195",
         "alt": "비양나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710484"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01894",
         "alt": "비양나무",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710484"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01893",
         "alt": "비양도",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710484"
       }
     ],
     "imageTitle": "비양나무",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710484",
     "tags": [
       "동식물",
       "식물",
@@ -26867,36 +28868,43 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03183",
         "alt": "백서향",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710485"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03184",
         "alt": "백서향",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710485"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01855",
         "alt": "백서향 및 변산일엽 군락지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710485"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03185",
         "alt": "변산일엽",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710485"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03186",
         "alt": "변산일엽의 잎의 모양새",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710485"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02467",
         "alt": "선흘리 백서향 및 변산 일엽군락",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710485"
       }
     ],
     "imageTitle": "백서향",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710485",
     "tags": [
       "동식물",
       "식물",
@@ -26927,21 +28935,25 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09131",
         "alt": "제주 도련동 귤나무류",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712042"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09132",
         "alt": "제주 도련동 귤나무류",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712042"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09130",
         "alt": "제주 도련동 귤나무류",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712042"
       }
     ],
     "imageTitle": "제주 도련동 귤나무류",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00712042",
     "tags": [
       "동식물",
       "현대",
@@ -26971,16 +28983,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01883",
         "alt": "선인장 군락지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710576"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02215",
         "alt": "제주 월령리의 선인장 군락",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710576"
       }
     ],
     "imageTitle": "선인장 군락지",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710576",
     "tags": [
       "동식물",
       "식물",
@@ -27011,16 +29026,19 @@ export const POI_LIST: POI[] = [
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01736",
         "alt": "문주란",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710573"
       },
       {
         "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02199",
         "alt": "제주도 구좌읍 문주란 자생지",
-        "source": "한국학중앙연구원 향토문화전자대전"
+        "source": "한국학중앙연구원 한국향토문화전자대전",
+        "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710573"
       }
     ],
     "imageTitle": "문주란",
-    "imageSource": "한국학중앙연구원 향토문화전자대전",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "sourceUrl": "https://jeju.grandculture.net/jeju/toc/GC00710573",
     "tags": [
       "동식물",
       "현대",
