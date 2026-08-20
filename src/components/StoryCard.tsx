@@ -99,13 +99,11 @@ export const StoryCard: React.FC<StoryCardProps> = ({
             <Sparkles size={13} className="sparkle-icon" />
             1인칭 RAG 심층 서사 도슨트 (3막 구성)
           </span>
-          {isStreaming ? (
+          {isStreaming && (
             <span className="streaming-pulse">
               <span className="pulse-dot" />
               이야기 구술하는 중...
             </span>
-          ) : (
-            <span className="reading-time-badge">📖 1분 30초 몰입형</span>
           )}
         </div>
 
