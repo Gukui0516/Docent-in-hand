@@ -227,7 +227,39 @@ export const POI_LIST: POI[] = [
       "동굴 내부의 거북바위는 자연이 만든 모양이 맞나요?",
       "세계자연유산 거문오름 용암동굴계의 지질학적 가치는 무엇인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01737",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01737",
+            "alt": "만장굴 내부",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04505",
+            "alt": "만장굴 입구",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01740",
+            "alt": "만장굴 내 세계 제일의 용암주",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01738",
+            "alt": "만장굴 용암교",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01739",
+            "alt": "만장굴 용암구",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03324",
+            "alt": "1970년대 만장굴 입구",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "신비로운 만장굴 내부 7.6m 용암석주",
     imageSource: "한국관광공사 / 한국학중앙연구원",
     tags: ["유네스코 세계자연유산", "천연기념물 제98호", "용암석주", "거북바위"]
@@ -250,7 +282,39 @@ export const POI_LIST: POI[] = [
       "파도가 칠 때 울부짖는 소리가 난다는 전설이 사실인가요?",
       "제주공항과 가장 가까운 역사적 명소로서의 매력은 무엇인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03480",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03480",
+            "alt": "1900년대 초, 용연",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03481",
+            "alt": "2005년 용연야범재현축제 장면",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00684",
+            "alt": "용두암",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00686",
+            "alt": "용연",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00687",
+            "alt": "용연다리",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05040",
+            "alt": "용연야범재현축제",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "바다를 향해 포효하는 형상의 용두암",
     imageSource: "한국관광공사 / 한국향토문화전자대전",
     tags: ["공항근처명소", "용담해안", "기암괴석", "포효하는용"]
@@ -273,7 +337,14 @@ export const POI_LIST: POI[] = [
       "비자나무 열매는 옛 선조들이 어디에 약재로 썼나요?",
       "화산송이 흙길을 맨발로 걸으면 어떤 점이 좋나요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01764",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01764",
+            "alt": "비자림 원경",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "천년 비자나무 원시림과 붉은 송이 산책로",
     imageSource: "한국관광공사 / 한국향토문화전자대전",
     tags: ["천연기념물 제374호", "천년비자나무", "피톤치드", "화산송이길"]
@@ -296,7 +367,24 @@ export const POI_LIST: POI[] = [
       "삼나무 숲이 빽빽하게 자라난 역사는 어떻게 되나요?",
       "물찻오름으로 이어지는 숲길 탐방 팁이 궁금해요."
     ],
-    imageUrl: "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09066",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09066",
+            "alt": "사려니 숲길 입구",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09067",
+            "alt": "사려니 숲길 탐방로",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09068",
+            "alt": "사려니 숲길 탐방로",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "하늘 높이 뻗은 삼나무와 사려니 숲길",
     imageSource: "한국관광공사 / 한국향토문화전자대전",
     tags: ["유네스코 생물권보전지역", "삼나무숲길", "에코로드", "힐링명소"]
@@ -319,7 +407,39 @@ export const POI_LIST: POI[] = [
       "성판악 코스와 관음사 코스의 차이점은 무엇인가요?",
       "백록담 분화구에 물이 고이는 원리는 무엇인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01747",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01747",
+            "alt": "한라산의 가을",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01748",
+            "alt": "한라산의 겨울",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04775",
+            "alt": "방패형화산, 한라산의 하와이형 순상화산",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01404",
+            "alt": "백록담 기슭에 위치한 백록샘 용천수",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01749",
+            "alt": "백록담 전경",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02142",
+            "alt": "5&#183;16도로",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "남한 최고봉 한라산 백록담 분화구 전경",
     imageSource: "한국관광공사 / 한국향토문화전자대전",
     tags: ["유네스코 세계자연유산", "국가지정명승", "남한최고봉", "백록담"]
@@ -342,7 +462,14 @@ export const POI_LIST: POI[] = [
       "정월대보름 들불축제는 왜 시작되었나요?",
       "가을 억새 절경을 즐기기 가장 좋은 시간대는 언제인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1509233725247-49e657c54213?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02409",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02409",
+            "alt": "새별 오름",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "은빛 억새 물결이 넘실대는 새별오름 능선",
     imageSource: "한국관광공사 / 한국향토문화전자대전",
     tags: ["들불축제", "억새명소", "애월오름", "최영장군전적지"]
@@ -365,7 +492,19 @@ export const POI_LIST: POI[] = [
       "능선이 유독 부드럽고 완만한 지질학적 이유는 무엇인가요?",
       "김영갑 사진작가가 사랑한 오름의 매력은 무엇인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd0?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01360",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01360",
+            "alt": "「용눈이 오름」",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05039",
+            "alt": "용눈이 오름",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "부드러운 벨벳 능선을 자랑하는 용눈이오름",
     imageSource: "한국관광공사 / 한국향토문화전자대전",
     tags: ["동부오름", "능선미", "일출일몰명소", "구좌오름"]
@@ -388,7 +527,19 @@ export const POI_LIST: POI[] = [
       "다랑쉬오름 아래 아끈다랑쉬오름의 이름 뜻은 무엇인가요?",
       "제주 4·3 사건 다랑쉬굴 유적의 역사는 무엇인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02564",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02564",
+            "alt": "다랑쉬 오름",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02575",
+            "alt": "아끈다랑쉬 오름",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "웅장한 원형 분화구를 품은 다랑쉬오름",
     imageSource: "한국관광공사 / 한국향토문화전자대전",
     tags: ["오름의여왕", "원형분화구", "동부전망대", "구좌명소"]
@@ -434,7 +585,34 @@ export const POI_LIST: POI[] = [
       "차귀도 너머로 떨어지는 일몰이 아름다운 이유는 무엇인가요?",
       "녹고물 약수터에 얽힌 효심 설화는 무엇인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04786",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04786",
+            "alt": "암석해안, 수월봉의 해식애 전경",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09147",
+            "alt": "제주 수월봉 화산 쇄설층",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09144",
+            "alt": "제주 수월봉 화산 쇄설층",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09145",
+            "alt": "제주 수월봉 화산 쇄설층",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09146",
+            "alt": "제주 수월봉 화산 쇄설층",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "세계지질공원 수월봉 화산쇄설층 엉알길",
     imageSource: "한국관광공사 / 한국향토문화전자대전",
     tags: ["유네스코 세계지질공원", "화산쇄설층", "일몰명소", "차귀도조망"]
@@ -459,7 +637,39 @@ export const POI_LIST: POI[] = [
       "숨비소리는 낼 때 왜 휘파람 소리가 나나요?",
       "저기 손에 잡힐 듯 보이는 섬이 비양도가 맞나요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02688",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02688",
+            "alt": "협재굴 내부",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02620",
+            "alt": "협재해수욕장",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01754",
+            "alt": "소천굴",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01753",
+            "alt": "소천굴의 용암 산호",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01755",
+            "alt": "협재굴 내부",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02501",
+            "alt": "협재리",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "협재해수욕장과 건너편 비양도 에메랄드 해안",
     imageSource: "한국관광공사 / 제주향토문화대전",
     tags: ["은빛백사장", "비양도조망", "해녀물질", "에메랄드바다"]
@@ -482,7 +692,34 @@ export const POI_LIST: POI[] = [
       "썰물 때 모래톱이 얼마나 멀리까지 열리나요?",
       "금능 바다에서 주로 잡히는 해산물은 무엇인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03024",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03024",
+            "alt": "금능농공단지",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02030",
+            "alt": "금능리",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09032",
+            "alt": "금능 으뜸원 해변",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09034",
+            "alt": "금능 으뜸원 해변",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09033",
+            "alt": "금능 으뜸원 해변",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "원담과 투명한 에메랄드빛 물결의 금능해수욕장",
     imageSource: "한국관광공사 / 제주향토문화대전",
     tags: ["원담유적", "에메랄드빛바다", "비양도", "가족휴양지"]
@@ -505,7 +742,39 @@ export const POI_LIST: POI[] = [
       "함덕 해녀 삼춘들은 주로 어떤 계절에 물질을 많이 하나요?",
       "바다 한가운데 구름다리 산책로는 어떻게 연결되었나요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03156",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03156",
+            "alt": "함덕해수욕장",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02997",
+            "alt": "조천면 함덕출장소",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00162",
+            "alt": "집중호우로 인한 농경지 침수 모습",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04209",
+            "alt": "함덕리 유물산포지",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02599",
+            "alt": "함덕포",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02939",
+            "alt": "1960~1970년대의 함덕해수욕장",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "서우봉과 에메랄드빛 바다가 어우러진 함덕해수욕장",
     imageSource: "한국관광공사 / 제주향토문화대전",
     tags: ["서우봉", "유채꽃", "에메랄드바다", "동부대표해변"]
@@ -528,7 +797,39 @@ export const POI_LIST: POI[] = [
       "김녕 바다의 갯바위에는 어떤 해조류가 자라나요?",
       "해녀들이 물질할 때 착용하는 고무옷과 물안경의 유래는 무엇인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02197",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02197",
+            "alt": "김녕미로공원",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03104",
+            "alt": "김녕사굴",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04784",
+            "alt": "김녕해수욕장",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04787",
+            "alt": "인공해안, 김녕해안도로 전경",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02995",
+            "alt": "구좌읍 김녕출장소(1951년 7월 1일 개소) 정면",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03101",
+            "alt": "김녕리",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "김녕 해안의 코발트빛 바다와 현무암 풍경",
     imageSource: "한국관광공사 / 제주향토문화대전",
     tags: ["유네스코 인류무형유산", "해녀불턱", "김녕바당", "풍력발전"]
@@ -551,7 +852,34 @@ export const POI_LIST: POI[] = [
       "월정 바다의 풍력발전기는 왜 바닷가에 세워졌나요?",
       "해녀들이 채취하는 뿔소라는 언제 가장 맛이 좋나요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02168",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02168",
+            "alt": "월정리",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09117",
+            "alt": "월정리 해변",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09120",
+            "alt": "월정리 해변",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09119",
+            "alt": "월정리 해변",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09118",
+            "alt": "월정리 해변",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "하얀 모래사장과 에메랄드빛 물결의 월정리해변",
     imageSource: "한국관광공사 / 제주향토문화대전",
     tags: ["달이머무는곳", "풍차해안", "카페거리", "서핑명소"]
@@ -574,7 +902,39 @@ export const POI_LIST: POI[] = [
       "제주해녀박물관에서 꼭 보아야 할 전시물은 무엇인가요?",
       "세화 민속오일시장이 서는 날짜는 언제인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02210",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02210",
+            "alt": "세화중학교",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03115",
+            "alt": "세화리",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03892",
+            "alt": "세화원씨 가옥",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03895",
+            "alt": "세화원씨 가옥",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03363",
+            "alt": "세화원씨 가옥",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03893",
+            "alt": "세화원씨 가옥",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "세화 해변의 맑은 바다와 해녀박물관 전경",
     imageSource: "한국관광공사 / 제주향토문화대전",
     tags: ["제주해녀박물관", "해녀항일운동", "세화오일장", "코발트바다"]
@@ -620,7 +980,39 @@ export const POI_LIST: POI[] = [
       "해녀 삼춘들이 물질 후에 과물 노천탕을 어떻게 이용했나요?",
       "애월 한담해안산책로로 이어지는 길은 어디인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02401",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02401",
+            "alt": "곽지해수욕장",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04780",
+            "alt": "제주시의 용천 중 곽지물 모습",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02505",
+            "alt": "과물 입구",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02191",
+            "alt": "곽금초등학교",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03010",
+            "alt": "곽지리",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03284",
+            "alt": "곽지포",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "곽지과물해변과 천연 용천수 노천탕",
     imageSource: "한국관광공사 / 제주향토문화대전",
     tags: ["용천수노천탕", "과물", "애월해변", "가족휴양지"]
@@ -643,7 +1035,39 @@ export const POI_LIST: POI[] = [
       "동안경굴 안에서 고래가 살았다는 동굴 음악회 이야기는 무엇인가요?",
       "우도 땅콩이 다른 지역보다 고소하고 달콤한 이유는 무엇인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03421",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03421",
+            "alt": "우도",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02526",
+            "alt": "서빈백사",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04508",
+            "alt": "서빈백사",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02537",
+            "alt": "우도 홍조단괴 해빈",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02954",
+            "alt": "우도",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04511",
+            "alt": "우도",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "소가 누워있는 형태의 아름다운 섬 우도 전경",
     imageSource: "한국관광공사 / 한국향토문화전자대전",
     tags: ["우도8경", "홍조단괴", "서빈백사", "우도땅콩"]
@@ -714,7 +1138,24 @@ export const POI_LIST: POI[] = [
       "관덕정 편액 글씨와 처마 밑 벽화에는 어떤 역사가 담겨 있나요?",
       "조선시대 제주목사가 정사를 보던 관아 건물의 복원 과정은 어떠했나요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00071",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00071",
+            "alt": "관덕정",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03504",
+            "alt": "1950년대 관덕정 거리의 교통대",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09012",
+            "alt": "관덕정 앞 관덕로 구간",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "제주에서 가장 오래된 목조 건물 보물 관덕정",
     imageSource: "한국관광공사 / 한국향토문화전자대전",
     tags: ["사적 제380호", "보물 제322호", "조선시대목관아", "돌하르방"]
@@ -737,7 +1178,19 @@ export const POI_LIST: POI[] = [
       "삼신인이 쏜 화살이 꽂힌 땅을 나누어 가졌다는 사시장올악 설화는 무엇인가요?",
       "삼성혈을 둘러싼 울창한 고목 숲의 수령은 몇 년인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01724",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01724",
+            "alt": "제주 삼성혈 경내",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00435",
+            "alt": "제주 삼성혈 입구",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "탐라국 개국 신화의 성지 삼성혈 품혈",
     imageSource: "한국관광공사 / 한국향토문화전자대전",
     tags: ["사적 제134호", "탐라개국신화", "삼을나", "모흥혈"]
@@ -760,7 +1213,19 @@ export const POI_LIST: POI[] = [
       "복원된 원형 움집의 내부 구조는 어떻게 생겼나요?",
       "삼양동 검은모래해변과 선사유적의 연관성은 무엇인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03021",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03021",
+            "alt": "삼양동",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      },
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05074",
+            "alt": "제주 삼양동 유적 발굴",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "삼양동 선사마을 원형 움집 복원 경관",
     imageSource: "한국관광공사 / 한국향토문화전자대전",
     tags: ["사적 제416호", "청동기마을", "탐라선사문화", "원형움집"]
@@ -783,7 +1248,14 @@ export const POI_LIST: POI[] = [
       "항파두리 토성은 흙과 돌을 어떻게 섞어 튼튼하게 쌓았나요?",
       "김통정 장군이 바위를 밟아 솟아났다는 장수물의 전설은 무엇인가요?"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=1200&auto=format&fit=crop&q=85",
+    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01733",
+    images: [
+      {
+            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01733",
+            "alt": "항파두리 토성",
+            "source": "한국학중앙연구원 향토문화전자대전"
+      }
+],
     imageTitle: "호국 삼별초의 최후 항전지 항파두리 토성",
     imageSource: "한국관광공사 / 한국향토문화전자대전",
     tags: ["사적 제396호", "삼별초항몽", "김통정장군", "항파두리토성"]
