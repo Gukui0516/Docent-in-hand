@@ -8,6 +8,7 @@ import { Header } from './components/Header';
 import { PhotoCard } from './components/PhotoCard';
 import { StoryCard } from './components/StoryCard';
 import { ChatSection } from './components/ChatSection';
+import { NearbyNavSection } from './components/NearbyNavSection';
 import { POICarousel } from './components/POICarousel';
 import { BenchmarkModal } from './components/BenchmarkModal';
 import { GPSSimulatorModal } from './components/GPSSimulatorModal';
@@ -323,6 +324,14 @@ export const App: React.FC = () => {
               isReplying={isReplying}
               agentChatStatus={agentChatStatus}
               onSendMessage={handleSendMessage}
+            />
+
+            {/* 1KM Radius Nearby POI Prev/Next Navigation */}
+            <NearbyNavSection
+              currentPOI={currentPOI}
+              allPOIs={POI_LIST}
+              userLocation={userLocation}
+              onSelectPOI={(poi, distMeters) => applyPOI(poi, distMeters)}
             />
           </section>
         </div>
