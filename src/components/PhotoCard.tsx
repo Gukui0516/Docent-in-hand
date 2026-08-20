@@ -106,6 +106,8 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
                       : img.src
                   }
                   alt={img.alt || poi.name}
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
                   className={`poi-image ${loadedMap[idx] ? 'loaded' : 'loading'}`}
                   onLoad={() => setLoadedMap((prev) => ({ ...prev, [idx]: true }))}
                   onError={() => {

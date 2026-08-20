@@ -18,6 +18,7 @@ import unicodedata
 DATA_DIR = 'data'
 SRC_POI_DATA = 'src/data/poiData.ts'
 SRC_RAG_KB = 'src/data/ragKnowledgeBase.ts'
+SRC_CORPUS = 'src/data/ragFullCorpus.json'
 SERVER_CORPUS = 'server/src/data/ragFullCorpus.json'
 
 # Standard coordinates for Jeju regions (Eup/Myeon/Dong) to map real places accurately
@@ -132,14 +133,24 @@ def load_all_json_files():
                 # Derive category name from filename
                 base_name = unicodedata.normalize('NFC', os.path.basename(fpath))
                 cat_default = '자연과 지리'
-                if '문화유산' in base_name:
+                if '자연과지리' in base_name or '지리' in base_name:
+                    cat_default = '자연과 지리'
+                elif '문화유산' in base_name:
                     cat_default = '문화유산'
                 elif '생활과민속' in base_name or '민속' in base_name:
                     cat_default = '생활과 민속'
-                elif '역사' in base_name or '성씨와인물' in base_name:
-                    cat_default = '역사와 인물'
-                elif '문화와교육' in base_name or '언어와문학' in base_name or '종교' in base_name:
-                    cat_default = '문화와 예술'
+                elif '성씨와인물' in base_name or '인물' in base_name:
+                    cat_default = '성씨와 인물'
+                elif '정치경제사회' in base_name or '정치' in base_name:
+                    cat_default = '정치·경제·사회'
+                elif '종교' in base_name:
+                    cat_default = '종교'
+                elif '문화와교육' in base_name or '교육' in base_name:
+                    cat_default = '문화와 교육'
+                elif '언어와문학' in base_name or '문학' in base_name:
+                    cat_default = '언어와 문학'
+                elif '역사' in base_name:
+                    cat_default = '역사'
 
                 items = data.get('items', [])
                 print(f'  📄 {norm_path}: {len(items)} items (Region: {region_default}, Category: {cat_default})')
@@ -199,12 +210,8 @@ def process_items_to_pois(all_items):
         sec_text = '\n'.join([f"{s.get('heading','')}: {s.get('content','')}" for s in sections])
         full_content = (summary + '\n' + sec_text).strip()
 
-        # Category normalization
-        category = '자연과 지리'
-        if any(k in subcats for k in ['민속', '생활', '의식주', '생업']):
-            category = '생활과 민속'
-        elif any(k in subcats for k in ['유적', '역사', '문화유산', '종교']):
-            category = '문화유산'
+        # Category from 9 official Grand Culture datasets
+        category = it.get('file_cat', '자연과 지리')
 
         persona = determine_persona(title, subcats, full_content)
         lat, lng = extract_coordinates(title, region_str)
@@ -355,6 +362,11 @@ def write_backend_corpus(all_items):
     with open(SERVER_CORPUS, 'w', encoding='utf-8') as f:
         json.dump(corpus_docs, f, ensure_ascii=False, indent=2)
     print(f'💾 Saved {SERVER_CORPUS} ({len(corpus_docs)} corpus items)')
+
+    os.makedirs(os.path.dirname(SRC_CORPUS), exist_ok=True)
+    with open(SRC_CORPUS, 'w', encoding='utf-8') as f:
+        json.dump(corpus_docs, f, ensure_ascii=False, indent=2)
+    print(f'💾 Saved {SRC_CORPUS} ({len(corpus_docs)} corpus items)')
 
 
 def main():
