@@ -67,7 +67,7 @@ export class GeminiService {
     const ragContext = RAGService.getRAGContext(poi, character);
 
     if (!this.client || !this.apiKey) {
-      const needKeyMsg = `⚠️ 실시간 RAG 생성을 위해 Gemini API 키가 필요합니다. 상단 설정에서 Gemini API Key를 입력해 주시면 한국학중앙연구원 학술 데이터베이스를 기반으로 ${character.name}의 실시간 3막 도슨트가 생성됩니다.`;
+      const needKeyMsg = `⚠️ 실시간 RAG 생성을 위해 Gemini API 키가 필요합니다. 상단 설정에서 Gemini API Key를 입력해 주시면 한국학중앙연구원 학술 데이터베이스를 기반으로 ${character.name}의 실시간 맞춤형 도슨트가 생성됩니다.`;
       if (onChunk) onChunk(needKeyMsg);
       return {
         text: needKeyMsg,
