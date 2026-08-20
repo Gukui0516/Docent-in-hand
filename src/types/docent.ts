@@ -14,6 +14,12 @@ export interface Character {
   systemPrompt: string;
 }
 
+export interface POIImage {
+  src: string;
+  alt: string;
+  source?: string;
+}
+
 export interface POI {
   id: string;
   name: string;
@@ -23,6 +29,7 @@ export interface POI {
   latitude: number;
   longitude: number;
   imageUrl: string;
+  images?: POIImage[];
   imageTitle: string;
   imageSource: string;
   tags: string[];
