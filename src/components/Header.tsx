@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, MapPin, Navigation } from 'lucide-react';
+import { Search, MapPin } from 'lucide-react';
 
 interface HeaderProps {
   currentPlaceName: string;
@@ -32,21 +32,12 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="header-actions">
           <button
             type="button"
-            className={`header-icon-btn ${isGpsActive ? 'active-gps' : ''}`}
-            onClick={onOpenGPSSimulator}
-            aria-label="GPS 위치 설정 및 시뮬레이터"
-            title="GPS 위치 설정 및 시뮬레이터"
-          >
-            <Navigation size={17} className="nav-btn-icon" />
-          </button>
-          <button
-            type="button"
             className="header-icon-btn"
             onClick={onOpenPOIList}
             aria-label="제주 명소 및 신화 검색"
             title="제주 명소 및 신화 검색"
           >
-            <Search size={17} className="search-btn-icon" />
+            <Search size={18} className="search-btn-icon" />
           </button>
         </div>
       </div>
