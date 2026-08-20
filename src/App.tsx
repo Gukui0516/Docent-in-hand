@@ -35,7 +35,6 @@ export const App: React.FC = () => {
   // Story & Streaming
   const [storyText, setStoryText] = useState('');
   const [isStoryStreaming, setIsStoryStreaming] = useState(false);
-  const [agentStoryStatus, setAgentStoryStatus] = useState('');
 
   // Chat
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -59,14 +58,12 @@ export const App: React.FC = () => {
     setIsStoryStreaming(true);
     setStoryText('');
     setMessages([]);
-    const modeLabel = mode === 'jeju' ? '제주 방언' : '표준어';
-    setAgentStoryStatus(`🔍 [리서치 에이전트] 18종 한국학 아카이브에서 [${poi.name}] 팩트 탐색 중 (${modeLabel})...`);
 
     await AgentClientService.streamDocentStory(
       poi,
       character,
-      (status: AgentStatusEvent) => {
-        setAgentStoryStatus(status.message);
+      (_status: AgentStatusEvent) => {
+        // Status event handled silently in background
       },
       (token: string) => {
         setStoryText((prev) => prev + token);
@@ -74,13 +71,11 @@ export const App: React.FC = () => {
       (fullText: string) => {
         setStoryText(fullText);
         setIsStoryStreaming(false);
-        setAgentStoryStatus('');
       },
       (errorMsg: string) => {
         console.error('Story streaming error:', errorMsg);
         setStoryText((prev) => (prev ? prev : `⚠️ 해설을 불러오지 못했습니다: ${errorMsg}`));
         setIsStoryStreaming(false);
-        setAgentStoryStatus('');
       },
       mode
     );
@@ -316,7 +311,6 @@ export const App: React.FC = () => {
               poi={currentPOI}
               storyText={storyText}
               isStreaming={isStoryStreaming}
-              agentStatus={agentStoryStatus}
               languageMode={languageMode}
               onToggleLanguageMode={handleToggleLanguageMode}
             />

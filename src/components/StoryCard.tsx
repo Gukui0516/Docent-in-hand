@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Character, POI } from '../types/docent';
-import { Sparkles, BookOpen, Volume2, VolumeX, ChevronDown, ChevronUp, Cpu, ExternalLink } from 'lucide-react';
+import { Sparkles, BookOpen, Volume2, VolumeX, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { RAG_KNOWLEDGE_BASE } from '../data/ragKnowledgeBase';
 
 interface StoryCardProps {
@@ -8,7 +8,6 @@ interface StoryCardProps {
   poi: POI;
   storyText: string;
   isStreaming: boolean;
-  agentStatus?: string;
   languageMode?: 'standard' | 'jeju';
   onToggleLanguageMode?: (mode: 'standard' | 'jeju') => void;
 }
@@ -18,7 +17,6 @@ export const StoryCard: React.FC<StoryCardProps> = ({
   poi,
   storyText,
   isStreaming,
-  agentStatus,
   languageMode = 'standard',
   onToggleLanguageMode
 }) => {
@@ -88,12 +86,12 @@ export const StoryCard: React.FC<StoryCardProps> = ({
         <div className="persona-banner-actions">
           {/* Dialect Mode Toggle */}
           {onToggleLanguageMode && (
-            <div className="dialect-mode-pill-toggle" role="group" aria-label="구술 언어 모드 선택">
+            <div className="dialect-mode-pill-toggle" role="group" aria-label="언어 모드 선택">
               <button
                 type="button"
                 className={`mode-toggle-btn ${languageMode === 'standard' ? 'active' : ''}`}
                 onClick={() => onToggleLanguageMode('standard')}
-                title="표준어 구술 모드"
+                title="표준어 모드"
               >
                 표준어
               </button>
@@ -101,7 +99,7 @@ export const StoryCard: React.FC<StoryCardProps> = ({
                 type="button"
                 className={`mode-toggle-btn ${languageMode === 'jeju' ? 'active' : ''}`}
                 onClick={() => onToggleLanguageMode('jeju')}
-                title="제주 방언 구술 모드"
+                title="제주어 모드"
               >
                 제주어
               </button>
@@ -122,27 +120,6 @@ export const StoryCard: React.FC<StoryCardProps> = ({
         </div>
       </div>
 
-      {/* Real-time Multi-Agent Activity Banner */}
-      {agentStatus && isStreaming && (
-        <div className="agent-status-banner" style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          padding: '10px 14px',
-          background: 'linear-gradient(135deg, rgba(235, 94, 40, 0.08) 0%, rgba(20, 33, 61, 0.08) 100%)',
-          borderRadius: '12px',
-          marginBottom: '12px',
-          border: '1px solid rgba(235, 94, 40, 0.2)',
-          fontSize: '0.85rem',
-          color: '#14213d',
-          fontWeight: 500,
-          animation: 'pulse 2s infinite'
-        }}>
-          <Cpu size={16} color="#eb5e28" />
-          <span>{agentStatus}</span>
-        </div>
-      )}
-
       {/* Speech Bubble Card */}
       <div className="speech-bubble-card deep-story-card">
         <div className="bubble-header">
@@ -153,7 +130,7 @@ export const StoryCard: React.FC<StoryCardProps> = ({
           {isStreaming && (
             <span className="streaming-pulse">
               <span className="pulse-dot" />
-              이야기 구술하는 중...
+              이야기 들려주는 중...
             </span>
           )}
         </div>
