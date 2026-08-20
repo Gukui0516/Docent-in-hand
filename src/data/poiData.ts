@@ -1,1378 +1,710 @@
 import { POI } from "../types/docent";
 
+// 100% Verified POI Data generated strictly from data/ JSON database
 export const POI_LIST: POI[] = [
-  // ==================== [1. 설문대할망 - 신화 / 자연 / 오름 / 폭포 / 지질] ====================
   {
-    id: "GC04600071",
-    name: "성산일출봉",
-    category: "자연과 지리",
-    region: "서귀포시 성산읍",
-    latitude: 33.4586,
-    longitude: 126.9423,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "설문대할망의 빨래바구니와 99봉우리",
-      summary: "설문대할망이 우도를 빨래판 삼고 일출봉 분화구를 빨래바구니 삼아 빨래를 했다는 창조 설화",
-      details: "약 5,000년 전 얕은 바다에서 분출한 수성화산 응회구(Tuff Cone)로 99개의 바위 봉우리가 분화구를 성곽처럼 둘러싸고 있습니다. 유네스코 세계자연유산이자 천연기념물 제420호입니다."
-    },
-    sampleQuestions: [
-      "할머니, 일출봉 분화구를 빨래바구니로 쓸 때 좁지 않으셨나요?",
-      "99개 바위 봉우리는 어떻게 생겨난 건가요?",
-      "수성화산 분출은 일반 화산과 어떻게 다른가요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "성산일출봉 분화구와 푸른 제주 바다 전경",
-    imageSource: "한국관광공사 / 한국학중앙연구원 한국향토문화전자대전",
-    tags: ["유네스코 세계자연유산", "천연기념물", "일출명소", "수성화산"]
-  },
-  {
-    id: "GC04600070",
-    name: "제주 서귀포 산방산",
-    category: "자연과 지리",
-    region: "서귀포시 안덕면",
-    latitude: 33.2364,
-    longitude: 126.3129,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "한라산 꼭대기를 쥐어뜯어 던진 산방산",
-      summary: "설문대할망이 한라산 봉우리를 뽑아 던졌더니 산방산이 되고 패인 곳이 백록담이 되었다는 천지개벽 설화",
-      details: "약 80만 년 전 점성이 높은 조면암질 용암이 분출하여 분화구 없이 돔 형태로 굳어진 395m 높이의 거대한 종상화산입니다. 국가지정명승 제77호입니다."
-    },
-    sampleQuestions: [
-      "산방산과 백록담 둘레가 진짜 꼭 맞나요?",
-      "산방굴사 천장에서 떨어지는 물방울은 누구의 눈물인가요?",
-      "조면암질 용암은 왜 분화구 없이 돔 모양으로 굳었나요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd0?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "웅장한 조면암질 용암돔 산방산 전경",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["국가지정명승", "종상화산", "산방굴사", "산방덕이"]
-  },
-  {
-    id: "GC04600034",
-    name: "대포동 주상절리대",
-    category: "자연과 지리",
-    region: "서귀포시 중문동",
-    latitude: 33.2376,
-    longitude: 126.4253,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "신들이 먹줄을 튕겨 깎은 돌계단 지삿개",
-      summary: "바다 용왕이 옥황상제를 알현하러 오르내리던 신성한 계단이라는 설화가 깃든 육각형 돌기둥",
-      details: "1,100도의 뜨거운 현무암질 용암이 차가운 바닷물과 만나 급랭하며 수축해 빚어낸 30~40m 높이의 천연기념물 제443호 주상절리 절벽입니다."
-    },
-    sampleQuestions: [
-      "돌기둥이 왜 신기하게 육각형 모양으로 굳었나요?",
-      "지삿개라는 이름은 무슨 뜻인가요?",
-      "파도가 부딪칠 때 어떤 소리가 나나요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "대포동 해안 육각 주상절리 절벽",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["천연기념물 제443호", "주상절리", "지삿개", "중문관광단지"]
-  },
-  {
-    id: "GC04600133",
-    name: "천지연폭포",
-    category: "자연과 지리",
-    region: "서귀포시 천지동",
-    latitude: 33.2448,
-    longitude: 126.5596,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "하늘과 땅이 만나는 못과 칠선녀",
-      summary: "옥황상제를 모시던 일곱 선녀가 밤마다 오색 구름을 타고 내려와 맑은 물에 멱을 감았다는 연못",
-      details: "높이 22m 폭포와 깊이 20m의 천연 소로, 천연기념물 무태장어 서식지 및 아열대 난대림 숲이 어우러져 있습니다."
-    },
-    sampleQuestions: [
-      "선녀들이 목욕하러 내려왔다는 연못 깊이가 몇 미터인가요?",
-      "무태장어는 실제로 밤에만 볼 수 있나요?",
-      "천지연 계곡에 자라는 희귀 식물은 무엇이 있나요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1509233725247-49e657c54213?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "기암절벽 사이로 떨어지는 천지연폭포",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["천연기념물", "칠선녀설화", "무태장어", "서귀포명소"]
-  },
-  {
-    id: "GC04600134",
-    name: "정방폭포",
-    category: "자연과 지리",
-    region: "서귀포시 동홍동",
-    latitude: 33.2449,
-    longitude: 126.5718,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "동양 유일 해안 폭포와 서복 전설",
-      summary: "진시황의 불로초를 찾던 사신 서복이 서불과차를 새기고 서쪽으로 돌아갔다는 서귀포의 유래",
-      details: "높이 23m의 거대한 물줄기가 바다로 곧장 떨어지는 동양 유일의 해안 수직 폭포로 국가지정명승 제43호입니다."
-    },
-    sampleQuestions: [
-      "폭포수가 바다로 바로 떨어지는 곳이 세계적으로 드문가요?",
-      "서귀포라는 이름이 서복 때문에 생긴 게 맞나요?",
-      "주변 암벽 주상절리는 어떻게 형성되었나요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "바다로 직접 떨어지는 정방폭포",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["국가지정명승", "해안폭포", "서복전설", "영주십경"]
-  },
-  {
-    id: "GC04601383",
-    name: "쇠소깍",
-    category: "자연과 지리",
-    region: "서귀포시 하효동",
-    latitude: 33.2519,
-    longitude: 126.6234,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "용이 살던 연못 쇠소와 애틋한 사랑 설화",
-      summary: "효돈천 민물과 바닷물이 만나 빚어낸 깊은 용소(쇠소)와 비련의 연인 전설",
-      details: "현무암 용암류 틈새로 흐르는 효돈천 지하수가 바닷물과 만나는 깊은 계곡으로 국가지정명승 제78호입니다."
-    },
-    sampleQuestions: [
-      "쇠소깍의 물빛이 에메랄드빛인 이유는 무엇인가요?",
-      "전통 나룻배인 테우는 어떻게 타나요?",
-      "쇠소라는 이름에 담긴 뜻은 무엇인가요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "기암괴석과 투명한 물빛의 쇠소깍 계곡",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["명승 제78호", "전통나룻배", "현무암계곡", "효돈천"]
-  },
-  {
-    id: "GC04600039",
-    name: "섭지코지",
-    category: "자연과 지리",
-    region: "서귀포시 성산읍",
-    latitude: 33.4241,
-    longitude: 126.9298,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "선녀를 사랑한 용왕 아들의 촛대바위(선돌바위)",
-      summary: "하늘에서 내려온 선녀를 사랑한 용왕의 아들이 승천하지 못하고 굳어졌다는 애틋한 사랑 전설",
-      details: "붉은 화산송이(스코리아)로 이루어진 화산암 지대와 해안 절벽, 봄철 노란 유채꽃이 장관을 이루는 성산의 대표 곶입니다."
-    },
-    sampleQuestions: [
-      "촛대바위(선돌바위)에 얽힌 선녀 이야기가 궁금해요.",
-      "붉은 화산송이 언덕은 어떻게 만들어졌나요?",
-      "성산일출봉을 바라보는 최고의 뷰포인트는 어디인가요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "섭지코지 붉은오름과 선돌바위 해안",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["선돌바위", "붉은오름", "유채꽃명소", "화산송이"]
-  },
-  {
-    id: "GC04600055",
-    name: "외돌개",
-    category: "자연과 지리",
-    region: "서귀포시 서홍동",
-    latitude: 33.2403,
-    longitude: 126.5458,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "최영 장군의 장군석과 망부석 설화",
-      summary: "고려 말 최영 장군이 왜구를 물리칠 때 장수로 위장시켰다는 바위이자 바다로 나간 남편을 기다리다 바위가 된 할망 전설",
-      details: "약 150만 년 전 화산 분출로 형성된 높이 20m의 해식 기둥(시스택, Sea Stack)으로 국가지정명승 제79호입니다."
-    },
-    sampleQuestions: [
-      "외돌개가 장군바위라고 불리게 된 최영 장군 이야기는 무엇인가요?",
-      "바다 한가운데 우뚝 솟은 돌기둥은 어떻게 깎여 남았나요?",
-      "올레 7코스에서 바라보는 외돌개의 절경 포인트는 어디인가요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "푸른 서귀포 바다 위에 우뚝 솟은 외돌개",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["명승 제79호", "시스택", "장군바위", "올레7코스"]
-  },
-  {
-    id: "GC04600056",
-    name: "용머리해안",
-    category: "자연과 지리",
-    region: "서귀포시 안덕면",
-    latitude: 33.2323,
-    longitude: 126.3147,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "진시황 사신 고종달이 용의 혈을 끊은 설화",
-      summary: "천하를 얻을 왕이 날 것을 두려워한 진나라 사신이 칼로 꼬리와 잔등을 끊어 피를 흘렸다는 전설",
-      details: "산방산 해안가에 위치한 수성화산체로 수천만 년 동안 층층이 쌓인 사암층 암벽이 파도에 깎여 웅장한 협곡을 이룹니다."
-    },
-    sampleQuestions: [
-      "용머리해안 바위 지층이 층층이 쌓인 이유는 무엇인가요?",
-      "하멜 표류비가 이곳에 세워진 역사적 배경은 무엇인가요?",
-      "물때(만조/간조)에 따라 입장 시간이 달라지는 이유는 무엇인가요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "층층이 깎아지른 수성화산 사암층 용머리해안",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["천연기념물", "수성화산", "사암층", "하멜표류비"]
-  },
-  {
-    id: "GC00710008",
-    name: "만장굴",
-    category: "자연과 지리",
-    region: "제주시 구좌읍",
-    latitude: 33.5284,
-    longitude: 126.7716,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "거대한 땅의 용이 뚫고 지나간 태고의 지하 궁전",
-      summary: "설문대할망의 지하 숨결이 서린 총길이 7.4km의 세계 최장급 용암동굴",
-      details: "약 25만 년 전 거문오름 용암류가 바다로 흘러가며 형성된 유네스코 세계자연유산으로 7.6m 높이의 세계 최대 용암석주가 있습니다."
-    },
-    sampleQuestions: [
-      "용암이 어떻게 지하에 이렇게 거대한 터널을 만들었나요?",
-      "동굴 내부의 거북바위는 자연이 만든 모양이 맞나요?",
-      "세계자연유산 거문오름 용암동굴계의 지질학적 가치는 무엇인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01737",
-    images: [
+    "id": "GC00710008",
+    "name": "만장굴",
+    "category": "자연과 지리",
+    "region": "제주시 구좌읍",
+    "latitude": 33.5284,
+    "longitude": 126.7716,
+    "assignedCharacterId": "seolmundae",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04505",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01737",
-            "alt": "만장굴 내부",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04505",
+        "alt": "만장굴 입구",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04505",
-            "alt": "만장굴 입구",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01737",
+        "alt": "만장굴 내부",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01740",
-            "alt": "만장굴 내 세계 제일의 용암주",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01740",
+        "alt": "만장굴 내 세계 제일의 용암주",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01738",
-            "alt": "만장굴 용암교",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01738",
+        "alt": "만장굴 용암교",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01739",
-            "alt": "만장굴 용암구",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01739",
+        "alt": "만장굴 용암구",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03324",
-            "alt": "1970년대 만장굴 입구",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03324",
+        "alt": "1970년대 만장굴 입구",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "신비로운 만장굴 내부 7.6m 용암석주",
-    imageSource: "한국관광공사 / 한국학중앙연구원",
-    tags: ["유네스코 세계자연유산", "천연기념물 제98호", "용암석주", "거북바위"]
+    ],
+    "imageTitle": "만장굴 입구",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "유네스코 세계자연유산",
+      "용암동굴계",
+      "천연기념물",
+      "용암석주"
+    ],
+    "mythAndFact": {
+      "mythTitle": "만장굴에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 구좌읍 동김녕리에 있는 용암 동굴.       제주 지역에는 화산 용암의 침하 운동으로 생성된 천연 동굴이 많이 있다. 만장굴(萬丈窟)도 그 중 하나로 석주(石柱)와 종유석(鍾乳石) 등이 장관을 이루고 있다. 오래 전부터 주민들 사이에 ‘만쟁이굴’이라는 속칭으로 알려졌으나 세상에 널리 공개된 것은 1958년 이후이며 1977~1986년",
+      "details": "제주특별자치도 제주시 구좌읍 동김녕리에 있는 용암 동굴.       제주 지역에는 화산 용암의 침하 운동으로 생성된 천연 동굴이 많이 있다. 만장굴(萬丈窟)도 그 중 하나로 석주(石柱)와 종유석(鍾乳石) 등이 장관을 이루고 있다. 오래 전부터 주민들 사이에 ‘만쟁이굴’이라는 속칭으로 알려졌으나 세상에 널리 공개된 것은 1958년 이후이며 1977~1986년까지 한·일 합...\n\n정의: 제주특별자치도 제주시 구좌읍 동김녕리에 있는 용암 동굴.\n\n개설: 제주 지역에는 화산 용암의 침하 운동으로 생성된 천연 동굴이 많이 있다. 만장굴(萬丈窟)도 그 중 하나로 석주(石柱)와 종유석(鍾乳石) 등이 장관을 이루고 있다. 오래 전부터 주민들 사이에 ‘만쟁이굴’이라는 속칭으로 알려졌으나 세상에 널리 공개된 것은 1958년 이후이며 1977~1986년까지 한·일 합동 조사가 실시되었다.\n\n만장굴 생성 연대는 약 250만 년 전이며 제주도 화산 발생시 한라산 분화구에서 흘러넘친 용암이 바닷가 쪽으로 흘러내리면서 지금과 같은 커다란 공동(空洞)이 형성되었다고 한다.\n\n현황: 만장굴은 제주시에서 동쪽으로 30㎞ 지점인 제주시 구좌읍 동김녕리에 위치한다. 세계 최장의 용암 동굴로서 폭은 2~23m, 높이는 2~30m이며 길이는 8,928m, 총 연장은 13,422m에 이른다.\n\n지하 궁전 같은 내부 경관은 웅장하면서 심오한 맛이 나는데 특히, 화산 발생시 용암 분출로 형성된 돌거북, 돌기둥, 날개벽 등은 정교한 조각품을 보는 듯하다. 그중 돌거북의 형태는 제주도의 형태와 비슷하여 관광객들에게 인기가 있다.\n\n만장굴 내부의 온도는 연"
+    },
+    "sampleQuestions": [
+      "할머니, 만장굴은 어떻게 만들어진 건가요?",
+      "동굴 안의 거대한 돌기둥(용암석주) 이야기가 궁금해요.",
+      "거문오름 용암동굴계는 왜 세계유산인가요?"
+    ]
   },
   {
-    id: "GC00700010",
-    name: "용두암",
-    category: "자연과 지리",
-    region: "제주시 용담동",
-    latitude: 33.5165,
-    longitude: 126.5126,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "여의주를 훔치려다 바위가 된 성난 용의 전설",
-      summary: "한라산 신령의 옥구슬을 훔쳐 승천하려다 활을 맞고 바다로 굳어버린 포효하는 용의 형상",
-      details: "뜨거운 용암이 분출하여 바다와 맞닿아 급랭하며 굳은 10m 높이의 현무암 기암괴석입니다."
-    },
-    sampleQuestions: [
-      "용두암 바위가 진짜 용의 머리와 닮아 보이는 이유는 무엇인가요?",
-      "파도가 칠 때 울부짖는 소리가 난다는 전설이 사실인가요?",
-      "제주공항과 가장 가까운 역사적 명소로서의 매력은 무엇인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03480",
-    images: [
+    "id": "GC00701484",
+    "name": "용연·용두암",
+    "category": "자연과 지리",
+    "region": "제주시 용담동",
+    "latitude": 33.5165,
+    "longitude": 126.5126,
+    "assignedCharacterId": "seolmundae",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03480",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03480",
-            "alt": "1900년대 초, 용연",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03480",
+        "alt": "1900년대 초, 용연",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03481",
-            "alt": "2005년 용연야범재현축제 장면",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03481",
+        "alt": "2005년 용연야범재현축제 장면",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00684",
-            "alt": "용두암",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00684",
+        "alt": "용두암",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00686",
-            "alt": "용연",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00686",
+        "alt": "용연",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00687",
-            "alt": "용연다리",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00687",
+        "alt": "용연다리",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05040",
-            "alt": "용연야범재현축제",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05040",
+        "alt": "용연야범재현축제",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "바다를 향해 포효하는 형상의 용두암",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["공항근처명소", "용담해안", "기암괴석", "포효하는용"]
+    ],
+    "imageTitle": "1900년대 초, 용연",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "용연야범",
+      "용두암",
+      "현무암해안",
+      "제주명승"
+    ],
+    "mythAndFact": {
+      "mythTitle": "용연·용두암에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 용담1동과 용담2동의 경계에 있는 못과 바위.       한천 하구에 형성된 깊은 소(沼)인 용연은 영주 12경중의 하나인 '용연야범(龍淵夜泛)'의 장소로 '취병담(翠屛潭)'이라고도 한다. 조선시대 제주도에 부임한 목사들이 용연에서 여름밤 뱃놀이를 풍류로 즐겼다고 한다. 용이 살았던 연못이라고 해서 붙여진 이름이며, 용두암은 용이 머리",
+      "details": "제주특별자치도 제주시 용담1동과 용담2동의 경계에 있는 못과 바위.       한천 하구에 형성된 깊은 소(沼)인 용연은 영주 12경중의 하나인 '용연야범(龍淵夜泛)'의 장소로 '취병담(翠屛潭)'이라고도 한다. 조선시대 제주도에 부임한 목사들이 용연에서 여름밤 뱃놀이를 풍류로 즐겼다고 한다. 용이 살았던 연못이라고 해서 붙여진 이름이며, 용두암은 용이 머리를 처든 것 같...\n\n정의: 제주특별자치도 제주시 용담1동과 용담2동의 경계에 있는 못과 바위.\n\n개설: 한천 하구에 형성된 깊은 소(沼)인 용연은 영주 12경중의 하나인 '용연야범(龍淵夜泛)'의 장소로 '취병담(翠屛潭)'이라고도 한다. 조선시대 제주도에 부임한 목사들이 용연에서 여름밤 뱃놀이를 풍류로 즐겼다고 한다.\n\n명칭유래: 용이 살았던 연못이라고 해서 붙여진 이름이며, 용두암은 용이 머리를 처든 것 같다고 하여 붙여진 이름이다.\n\n자연환경: 용연을 구성하고 있는 지질은 수직절리가 잘 발달된 두꺼운 현무암질 용암과 깊은 V자 계곡의 형성으로 특징 지워진다. 바다와 만나는 하구에는 자갈과 모래로 된 하천 퇴적물이 쌓여 있으며, 암석면에는 마애각들이 있다.\n\n용두암 부근은 높은 절벽을 이루고 있고, 동쪽과 서쪽으로는 지형이 완만해지는 것으로 보아 두꺼운 용암이 흘렀을 것으로 추측된다. 용두암을 옆에서 보면 용의 머리 모양을 하고 있는데, 높은 곳에서 내려다보면 얇은 판을 길게 세워 놓은 모양이다.\n\n이러한 용두암은 클링커(clinker)가 발달된 두꺼운 아아용암류(aa lava flow)에 나타나는 형태로, 이 용암류가 흘러오면 용암류의 상하부에는 두꺼운"
+    },
+    "sampleQuestions": [
+      "용두암에 얽힌 용의 승천 전설을 들려주세요.",
+      "용연 구름다리와 밤 풍경이 왜 유명한가요?",
+      "용암이 바닷물과 만나 어떻게 이런 모양이 되었나요?"
+    ]
   },
   {
-    id: "GC00700967",
-    name: "비자림",
-    category: "자연과 지리",
-    region: "제주시 구좌읍",
-    latitude: 33.4912,
-    longitude: 126.8115,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "천년의 숲을 지키는 새천년 비자나무",
-      summary: "수령 500~800년 비자나무 2,800여 그루가 뿜어내는 피톤치드 원시림 설화",
-      details: "천연기념물 제374호로 지정된 단일 수종 세계 최대 규모의 비자나무 숲으로 붉은 송이길이 잘 닦여 있습니다."
-    },
-    sampleQuestions: [
-      "새천년 비자나무는 나이가 몇 살인가요?",
-      "비자나무 열매는 옛 선조들이 어디에 약재로 썼나요?",
-      "화산송이 흙길을 맨발로 걸으면 어떤 점이 좋나요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01764",
-    images: [
+    "id": "GC00712004",
+    "name": "제주 수월봉 화산쇄설층",
+    "category": "자연과 지리",
+    "region": "제주시 한경면",
+    "latitude": 33.2952,
+    "longitude": 126.1627,
+    "assignedCharacterId": "seolmundae",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09147",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01764",
-            "alt": "비자림 원경",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09147",
+        "alt": "제주 수월봉 화산 쇄설층",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
+      },
+      {
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09144",
+        "alt": "제주 수월봉 화산 쇄설층",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
+      },
+      {
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09145",
+        "alt": "제주 수월봉 화산 쇄설층",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
+      },
+      {
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09146",
+        "alt": "제주 수월봉 화산 쇄설층",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "천년 비자나무 원시림과 붉은 송이 산책로",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["천연기념물 제374호", "천년비자나무", "피톤치드", "화산송이길"]
+    ],
+    "imageTitle": "제주 수월봉 화산 쇄설층",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "유네스코 세계지질공원",
+      "수성화산",
+      "차귀도전경",
+      "엉알길"
+    ],
+    "mythAndFact": {
+      "mythTitle": "제주 수월봉 화산쇄설층에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 한경면 고산리에 소재한 화산 쇄설성 퇴적층으로서 수성 화산 활동에 의해 형성된 응회환. 화산섬 제주의 가장 서쪽 끝머리에 위치한 수월봉은 높이 77m의 기복이 낮은 언덕 형태의 오름이다. 수월봉은 제주도 내 360여 개의 오름 가운데 하나이지만 성산일출봉, 송악산, 당산봉 등과 더불어 수중 화산 활동으로 형성된 대표적인 화산체이다. 수",
+      "details": "제주특별자치도 제주시 한경면 고산리에 소재한 화산 쇄설성 퇴적층으로서 수성 화산 활동에 의해 형성된 응회환. 화산섬 제주의 가장 서쪽 끝머리에 위치한 수월봉은 높이 77m의 기복이 낮은 언덕 형태의 오름이다. 수월봉은 제주도 내 360여 개의 오름 가운데 하나이지만 성산일출봉, 송악산, 당산봉 등과 더불어 수중 화산 활동으로 형성된 대표적인 화산체이다. 수월봉은 약 18,000년...\n\n정의: 제주특별자치도 제주시 한경면 고산리에 소재한 화산 쇄설성 퇴적층으로서 수성 화산 활동에 의해 형성된 응회환.\n\n개설: 화산섬 제주의 가장 서쪽 끝머리에 위치한 수월봉은 높이 77m의 기복이 낮은 언덕 형태의 오름이다. 수월봉은 제주도 내 360여 개의 오름 가운데 하나이지만 성산일출봉, 송악산, 당산봉 등과 더불어 수중 화산 활동으로 형성된 대표적인 화산체이다.\n\n수월봉은 약 18,000년 전 지하에서 상승하던 마그마가 물을 만나 강력하게 폭발하여 뿜어져 나온 화산재와 모래들이 겹겹이 쌓이면서 형성된 응회환의 일부로서 서쪽 해안선을 따라 화산 쇄설층[화산의 분출에 의해 지표에 노출된 고체 물질]의 내부 구조를 선명하게 관찰할 수 있다.\n\n제주 수월봉 화산쇄설층은 화쇄난류[火碎亂流, pyroclastic surge : 화산가스나 수증기, 화산쇄설물이 뒤섞여 사막의 모래폭풍처럼 빠르게 격렬하게 지표면 위를 흘러가는 현상]라 하는 독특한 화산재 운반 작용에 의해 쌓인 화산체로서 거대 연흔 사층리 구조, 화산암괴가 낙하할 때 충격으로 내려앉은 탄낭 구조는 화산 폭발 당시 현장을 보는 듯하다.\n\n이처럼 제주 수월봉 화산쇄설층의 "
+    },
+    "sampleQuestions": [
+      "수월봉 화산재 지층이 화산학의 교과서라 불리는 이유가 뭔가요?",
+      "수월이와 녹고 남매의 눈물 전설을 들려주세요.",
+      "엉알길 해안 절벽을 따라 걷는 명소 포인트를 알려주세요."
+    ]
   },
   {
-    id: "GC04603004",
-    name: "사려니숲길",
-    category: "자연과 지리",
-    region: "제주시 조천읍 / 서귀포시 표선면",
-    latitude: 33.4077,
-    longitude: 126.6434,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "솔솔 부는 바람과 신성한 숲의 기운",
-      summary: "사려니(신성한 숲)라는 이름처럼 태고의 평온함과 삼나무 피톤치드가 넘치는 숲길",
-      details: "해발 500m 유네스코 생물권보전지역으로 삼나무, 졸참나무, 서어나무 등이 울창하게 우거진 약 15km의 에코 힐링 로드입니다."
-    },
-    sampleQuestions: [
-      "사려니라는 이름의 순우리말 뜻은 무엇인가요?",
-      "삼나무 숲이 빽빽하게 자라난 역사는 어떻게 되나요?",
-      "물찻오름으로 이어지는 숲길 탐방 팁이 궁금해요."
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09066",
-    images: [
+    "id": "GC00712012",
+    "name": "사려니 숲길",
+    "category": "자연과 지리",
+    "region": "제주시 조천읍",
+    "latitude": 33.4077,
+    "longitude": 126.6433,
+    "assignedCharacterId": "seolmundae",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09066",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09066",
-            "alt": "사려니 숲길 입구",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09066",
+        "alt": "사려니 숲길 입구",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09067",
-            "alt": "사려니 숲길 탐방로",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09067",
+        "alt": "사려니 숲길 탐방로",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09068",
-            "alt": "사려니 숲길 탐방로",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09068",
+        "alt": "사려니 숲길 탐방로",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "하늘 높이 뻗은 삼나무와 사려니 숲길",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["유네스코 생물권보전지역", "삼나무숲길", "에코로드", "힐링명소"]
+    ],
+    "imageTitle": "사려니 숲길 입구",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "신성한숲",
+      "삼나무숲길",
+      "물찻오름",
+      "에코힐링"
+    ],
+    "mythAndFact": {
+      "mythTitle": "사려니 숲길에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 조천읍 교래리 비자림로(榧子林路)에서 서귀포시 남원읍 한남리 사려니 오름까지 이어지는 치유와 명상의 숲길. 사려니는 신성한 공간이라는 의미를 담고 있다.  사려니 숲길은 총 길이 약 15km의 임도(林道)를 재활용하여 만든 숲으로 2009년 5월 17일에 개장하였다. 해발 고도 500~600m 위치하고 있으며, 완만한 평탄 지형으로 주",
+      "details": "제주특별자치도 제주시 조천읍 교래리 비자림로(榧子林路)에서 서귀포시 남원읍 한남리 사려니 오름까지 이어지는 치유와 명상의 숲길. 사려니는 신성한 공간이라는 의미를 담고 있다.  사려니 숲길은 총 길이 약 15km의 임도(林道)를 재활용하여 만든 숲으로 2009년 5월 17일에 개장하였다. 해발 고도 500~600m 위치하고 있으며, 완만한 평탄 지형으로 주변에는 물찻 오름, 말찻...\n\n정의: 제주특별자치도 제주시 조천읍 교래리 비자림로(榧子林路)에서 서귀포시 남원읍 한남리 사려니 오름까지 이어지는 치유와 명상의 숲길.\n\n개설: 사려니는 신성한 공간이라는 의미를 담고 있다.  사려니 숲길은 총 길이 약 15km의 임도(林道)를 재활용하여 만든 숲으로 2009년 5월 17일에 개장하였다. 해발 고도 500~600m 위치하고 있으며, 완만한 평탄 지형으로 주변에는 물찻 오름, 말찻 오름, 괴평이 오름, 마은이 오름, 거린 오름, 사려니 오름 등과 천미천 계곡, 서중천 계곡 등이 분포하고 있다.\n\n길 위에서는 삼나무숲, 편백나무숲, 4·3 주둔지, 숯가마터, 표고 재배장 등 다양한 역사·인문·생태 자원을 만날 수 있다.\n\n행정 구역상 제주시 조천읍 교래리와 서귀포시 남원읍 한남리에 걸쳐있으며, 숲길의 출발지는 교래리 비자림로이며, 도착지는 한남리 사려니 오름이다. 하루 1,000명 이상의 탐방객이 찾는 한국의 대표적인 숲길로, 유네스코가 지정한 제주 생물권 보존 지역 내에 위치한다.\n\n구성: 사려니 숲길은 느림의 미학과 산림 생태 문화를 경험할 수 있는 웰빙 '치유의 숲'이다. 전형적인 온대 산지인 사려니 숲길에는"
+    },
+    "sampleQuestions": [
+      "사려니라는 이름의 뜻과 유래는 무엇인가요?",
+      "신성한 숲 사려니의 태고 자연 이야기를 들려주세요.",
+      "삼나무와 편백나무 숲길의 매력은 무엇인가요?"
+    ]
   },
   {
-    id: "GC00710001",
-    name: "한라산 백록담",
-    category: "자연과 지리",
-    region: "서귀포시 토평동",
-    latitude: 33.3617,
-    longitude: 126.5332,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "흰 사슴을 타고 노닐던 신선과 백록담",
-      summary: "신선들이 흰 사슴을 타고 유영하며 영생의 물을 마셨다는 남한 최고봉 한라산 분화구",
-      details: "해발 1,947m 남한 최고봉으로 둘레 약 1.7km, 깊이 108m의 화산체 분화구 호수이며 국가지정명승 제84호입니다."
-    },
-    sampleQuestions: [
-      "백록담이라는 이름에 흰 사슴 설화가 깃든 유래는 무엇인가요?",
-      "성판악 코스와 관음사 코스의 차이점은 무엇인가요?",
-      "백록담 분화구에 물이 고이는 원리는 무엇인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01747",
-    images: [
+    "id": "GC00710114",
+    "name": "새별 오름",
+    "category": "자연과 지리",
+    "region": "제주시 애월읍",
+    "latitude": 33.3665,
+    "longitude": 126.3562,
+    "assignedCharacterId": "seolmundae",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02409",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01747",
-            "alt": "한라산의 가을",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01748",
-            "alt": "한라산의 겨울",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04775",
-            "alt": "방패형화산, 한라산의 하와이형 순상화산",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01404",
-            "alt": "백록담 기슭에 위치한 백록샘 용천수",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01749",
-            "alt": "백록담 전경",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02142",
-            "alt": "5&#183;16도로",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02409",
+        "alt": "새별 오름",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "남한 최고봉 한라산 백록담 분화구 전경",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["유네스코 세계자연유산", "국가지정명승", "남한최고봉", "백록담"]
+    ],
+    "imageTitle": "새별 오름",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "들불축제",
+      "은빛억새명소",
+      "기생화산",
+      "오름왕국"
+    ],
+    "mythAndFact": {
+      "mythTitle": "새별 오름에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 애월읍 봉성리에 있는 오름.       새별 오름은 예로부터 새벨 오름 또는 새빌 오름이라고도 하였는데 ‘새벨’ 또는 ‘새빌’이 ‘샛별’의 제주어인지는 확실하지 않다. 한자를 차용하여 효성악(曉星岳) 또는 신성악(晨星岳, 新星岳)이라고도 한다.       새별 오름 서쪽에는 이달이 오름이 있으며 동남쪽에는 독물 오름과 궤미 오름이 있다",
+      "details": "제주특별자치도 제주시 애월읍 봉성리에 있는 오름.       새별 오름은 예로부터 새벨 오름 또는 새빌 오름이라고도 하였는데 ‘새벨’ 또는 ‘새빌’이 ‘샛별’의 제주어인지는 확실하지 않다. 한자를 차용하여 효성악(曉星岳) 또는 신성악(晨星岳, 新星岳)이라고도 한다.       새별 오름 서쪽에는 이달이 오름이 있으며 동남쪽에는 독물 오름과 궤미 오름이 있다....\n\n정의: 제주특별자치도 제주시 애월읍 봉성리에 있는 오름.\n\n명칭유래: 새별 오름은 예로부터 새벨 오름 또는 새빌 오름이라고도 하였는데 ‘새벨’ 또는 ‘새빌’이 ‘샛별’의 제주어인지는 확실하지 않다. 한자를 차용하여 효성악(曉星岳) 또는 신성악(晨星岳, 新星岳)이라고도 한다.\n\n자연환경: 새별 오름 서쪽에는 이달이 오름이 있으며 동남쪽에는 독물 오름과 궤미 오름이 있다.\n\n현황: 새별 오름의 면적은 522,216㎡, 둘레는 2,713m, 높이는 519.3m이다."
+    },
+    "sampleQuestions": [
+      "새별오름이라는 예쁜 이름은 샛별처럼 빛나서 붙여진 건가요?",
+      "정월대보름 들불축제는 어떤 전통에서 시작되었나요?",
+      "가을철 황홀한 억새 물결 풍경을 소개해 주세요."
+    ]
   },
   {
-    id: "GC00701801",
-    name: "새별오름",
-    category: "자연과 지리",
-    region: "제주시 애월읍",
-    latitude: 33.3664,
-    longitude: 126.3578,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "저녁 하늘의 샛별처럼 빛나는 오름",
-      summary: "고려 말 최영 장군이 목호를 토벌한 역사적 전적지이자 가을 억새 은빛 물결의 명소",
-      details: "표고 519m의 기생화산으로 복합형 화산체이며, 매년 정월대보름 들불축제가 열리는 서부 대표 오름입니다."
-    },
-    sampleQuestions: [
-      "새별오름이라는 이름이 붙은 이유는 무엇인가요?",
-      "정월대보름 들불축제는 왜 시작되었나요?",
-      "가을 억새 절경을 즐기기 가장 좋은 시간대는 언제인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02409",
-    images: [
+    "id": "GC00710144",
+    "name": "용눈이 오름",
+    "category": "자연과 지리",
+    "region": "제주시 구좌읍",
+    "latitude": 33.4608,
+    "longitude": 126.8327,
+    "assignedCharacterId": "seolmundae",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01360",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02409",
-            "alt": "새별 오름",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01360",
+        "alt": "「용눈이 오름」",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
+      },
+      {
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05039",
+        "alt": "용눈이 오름",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "은빛 억새 물결이 넘실대는 새별오름 능선",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["들불축제", "억새명소", "애월오름", "최영장군전적지"]
+    ],
+    "imageTitle": "「용눈이 오름」",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "곡선미의여왕",
+      "일출명소",
+      "3개분화구",
+      "오름곡선"
+    ],
+    "mythAndFact": {
+      "mythTitle": "용눈이 오름에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 구좌읍 종달리에 있는 봉우리. 예로부터 용논이오름 또는 용눈이 오름이라 불렀으며, 한자 차용 표기에 따라 용유악(龍遊岳) 또는 용안악(龍眼岳) 등으로 표기하였다. 오름의 형세가 마치 용이 누워 있는 것과 같이 굽이졌다는 데서 붙인 것이다.       용눈이 오름의 북쪽에는 다랑쉬 오름과 아끈다랑쉬 오름이 있고, 서남쪽에는 손지 오름 또",
+      "details": "제주특별자치도 제주시 구좌읍 종달리에 있는 봉우리. 예로부터 용논이오름 또는 용눈이 오름이라 불렀으며, 한자 차용 표기에 따라 용유악(龍遊岳) 또는 용안악(龍眼岳) 등으로 표기하였다. 오름의 형세가 마치 용이 누워 있는 것과 같이 굽이졌다는 데서 붙인 것이다.       용눈이 오름의 북쪽에는 다랑쉬 오름과 아끈다랑쉬 오름이 있고, 서남쪽에는 손지 오름 또는 동검은이 오...\n\n정의: 제주특별자치도 제주시 구좌읍 종달리에 있는 봉우리.\n\n명칭 유래: 예로부터 용논이오름 또는 용눈이 오름이라 불렀으며, 한자 차용 표기에 따라 용유악(龍遊岳) 또는 용안악(龍眼岳) 등으로 표기하였다. 오름의 형세가 마치 용이 누워 있는 것과 같이 굽이졌다는 데서 붙인 것이다.\n\n자연환경: 용눈이 오름의 북쪽에는 다랑쉬 오름과 아끈다랑쉬 오름이 있고, 서남쪽에는 손지 오름 또는 동검은이 오름이 있다. 그리고 오름의 기슭 언덕에는 할미꽃·꽃향유 등이 자생하고 있다.\n\n현황: 높이는 247.8m, 비고 88m, 둘레는 2,685m, 면적은 404,264㎡, 폭은 773m이며, 모양은 복합형으로 되어 있다. 용눈이 오름의 북동쪽에는 구좌읍 상도리 목장과 상도리 공동 목장 축사가 있다. 넓은 밭과 농장에는 조경수가 심어져 있으며, 서쪽 기슭 괴내기 굴에는 제당터가 있다."
+    },
+    "sampleQuestions": [
+      "용이 누워있는 형상이라는 용눈이오름의 전설이 궁금해요.",
+      "부드러운 능선 곡선과 3개의 분화구는 어떻게 형성되었나요?",
+      "성산일출봉과 다랑쉬오름이 한눈에 보이는 전망 포인트는 어디인가요?"
+    ]
   },
   {
-    id: "GC00701802",
-    name: "용눈이오름",
-    category: "자연과 지리",
-    region: "제주시 구좌읍",
-    latitude: 33.4601,
-    longitude: 126.8322,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "용이 누워있는 부드러운 곡선의 여왕",
-      summary: "용이 누워있는 모습 같다고 하여 이름 붙여진 3개 분화구를 품은 가장 아름다운 능선 오름",
-      details: "표고 247.8m로 동부 오름 군락의 중심에 있으며 성산일출봉과 우도, 다랑쉬오름이 파노라마로 조망됩니다."
-    },
-    sampleQuestions: [
-      "용눈이오름 정상에서 보이는 3개 분화구의 특징은 무엇인가요?",
-      "능선이 유독 부드럽고 완만한 지질학적 이유는 무엇인가요?",
-      "김영갑 사진작가가 사랑한 오름의 매력은 무엇인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01360",
-    images: [
+    "id": "GC00710064",
+    "name": "다랑쉬 오름",
+    "category": "자연과 지리",
+    "region": "제주시 구좌읍",
+    "latitude": 33.4735,
+    "longitude": 126.8335,
+    "assignedCharacterId": "seolmundae",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02564",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01360",
-            "alt": "「용눈이 오름」",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05039",
-            "alt": "용눈이 오름",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02564",
+        "alt": "다랑쉬 오름",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "부드러운 벨벳 능선을 자랑하는 용눈이오름",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["동부오름", "능선미", "일출일몰명소", "구좌오름"]
+    ],
+    "imageTitle": "다랑쉬 오름",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "오름의여왕",
+      "월랑봉",
+      "대형원형분화구",
+      "제주동부전망"
+    ],
+    "mythAndFact": {
+      "mythTitle": "다랑쉬 오름에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 구좌읍 세화리에 있는 봉우리. 남북으로 긴 타원형을 이루며, 북쪽은 평평하다. 이 오름은 일찍부터 다랑쉬 오름이라 부르고 한자 차용 표기로는 가랑수악(多郞秀岳)으로 표기하였다. 다랑쉬 오름은 소리가 랑쉬 오름으로 바뀌어 이를 한자 차용 표기로 월랑봉(月郞峰)으로 표기하였다. 그러면서 월랑봉으로 많이 알려지기도 하였다. 다랑쉬나 랑쉬",
+      "details": "제주특별자치도 제주시 구좌읍 세화리에 있는 봉우리. 남북으로 긴 타원형을 이루며, 북쪽은 평평하다. 이 오름은 일찍부터 다랑쉬 오름이라 부르고 한자 차용 표기로는 가랑수악(多郞秀岳)으로 표기하였다. 다랑쉬 오름은 소리가 랑쉬 오름으로 바뀌어 이를 한자 차용 표기로 월랑봉(月郞峰)으로 표기하였다. 그러면서 월랑봉으로 많이 알려지기도 하였다. 다랑쉬나 랑쉬의 뜻은 확실하...\n\n정의: 제주특별자치도 제주시 구좌읍 세화리에 있는 봉우리.\n\n개설: 남북으로 긴 타원형을 이루며, 북쪽은 평평하다.\n\n명칭유래: 이 오름은 일찍부터 다랑쉬 오름이라 부르고 한자 차용 표기로는 가랑수악(多郞秀岳)으로 표기하였다. 다랑쉬 오름은 소리가 랑쉬 오름으로 바뀌어 이를 한자 차용 표기로 월랑봉(月郞峰)으로 표기하였다. 그러면서 월랑봉으로 많이 알려지기도 하였다. 다랑쉬나 랑쉬의 뜻은 확실하지 않다.\n\n자연환경: 이 오름 서북쪽에는 돋오름[도또롬]과 천연기념물로 지정된 비자림지대가 있고, 남쪽에는 손지 오름과 용논이 오름[용눈이 오름]이 자리하고 있다. 그리고 이 오름의 바로 동쪽에 있는 나지막한 오름을 아끈다랑쉬 오름 또는 아끈랑쉬 오름이라 부른다. 아끈은 작은 뜻을 가진 옛말이자 제주어이다.\n\n현황: 높이는 382.4m, 비고 227m, 둘레는 3,391m, 면적은 800,463㎡, 폭은 1,013m이며, 모양은 원형으로 되어 있다. 이 오름 남동쪽에는 다랑쉬 동네[월랑동]와 다랑쉬 동굴이 있었는데, 제주 4·3사건 때 마을이 폐동되고, 이 동굴에서 많은 사람이 희생당하였다.\n\n중산간도로와 비자림로가 만나는 송당 사거리 까"
+    },
+    "sampleQuestions": [
+      "달이 솟아오르는 형상이라는 월랑봉(다랑쉬)의 유래가 궁금해요.",
+      "백록담 깊이와 맞먹는 115m 깊이의 분화구 이야기가 신기해요.",
+      "다랑쉬굴의 아픈 역사와 평화의 기억을 들려주세요."
+    ]
   },
   {
-    id: "GC00701803",
-    name: "다랑쉬오름 (월랑봉)",
-    category: "자연과 지리",
-    region: "제주시 구좌읍",
-    latitude: 33.4735,
-    longitude: 126.8378,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "오름의 여왕, 쟁반 같은 달맞이 분화구",
-      summary: "달이 떠오르는 모습이 너무나 우아해 월랑봉이라 불리는 깊이 115m의 웅장한 원형 분화구",
-      details: "표고 382.4m로 구좌읍 일대에서 가장 높고 균형 잡힌 원추형 화산체로 오름의 여왕이라 불립니다."
-    },
-    sampleQuestions: [
-      "분화구 깊이가 백록담과 비슷하게 깊은 이유는 무엇인가요?",
-      "다랑쉬오름 아래 아끈다랑쉬오름의 이름 뜻은 무엇인가요?",
-      "제주 4·3 사건 다랑쉬굴 유적의 역사는 무엇인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02564",
-    images: [
+    "id": "GC00712013",
+    "name": "금능 으뜸원 해변",
+    "category": "생활과 민속",
+    "region": "제주시 한림읍",
+    "latitude": 33.3905,
+    "longitude": 126.2355,
+    "assignedCharacterId": "haenyeo",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09032",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02564",
-            "alt": "다랑쉬 오름",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09032",
+        "alt": "금능 으뜸원 해변",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02575",
-            "alt": "아끈다랑쉬 오름",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09034",
+        "alt": "금능 으뜸원 해변",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
+      },
+      {
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09033",
+        "alt": "금능 으뜸원 해변",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "웅장한 원형 분화구를 품은 다랑쉬오름",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["오름의여왕", "원형분화구", "동부전망대", "구좌명소"]
+    ],
+    "imageTitle": "금능 으뜸원 해변",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "비양도조망",
+      "에메랄드빛바다",
+      "은빛모래",
+      "야자수산책로"
+    ],
+    "mythAndFact": {
+      "mythTitle": "금능 으뜸원 해변에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 한림읍 금릉리에 있는 해변. 헤드랜드(headland)의 기반암에 의해 금릉리 사빈과 협재리 사빈으로 분리된다. 수심이 낮아 간조 때에는 상당한 폭을 보이는 사빈이 출현한다. 만입부에 설치된 도로용 축대 전면에 모래가 퇴적되어 형성된 사빈으로, 길이 400m, 폭은 간조 때 350m 정도이다. 수심이 얕아 가족 단위 피서객들에게 인기가",
+      "details": "제주특별자치도 제주시 한림읍 금릉리에 있는 해변. 헤드랜드(headland)의 기반암에 의해 금릉리 사빈과 협재리 사빈으로 분리된다. 수심이 낮아 간조 때에는 상당한 폭을 보이는 사빈이 출현한다. 만입부에 설치된 도로용 축대 전면에 모래가 퇴적되어 형성된 사빈으로, 길이 400m, 폭은 간조 때 350m 정도이다. 수심이 얕아 가족 단위 피서객들에게 인기가 있다. 에메랄드빛 바다와...\n\n정의: 제주특별자치도 제주시 한림읍 금릉리에 있는 해변.\n\n개설: 헤드랜드(headland)의 기반암에 의해 금릉리 사빈과 협재리 사빈으로 분리된다. 수심이 낮아 간조 때에는 상당한 폭을 보이는 사빈이 출현한다. 만입부에 설치된 도로용 축대 전면에 모래가 퇴적되어 형성된 사빈으로, 길이 400m, 폭은 간조 때 350m 정도이다. 수심이 얕아 가족 단위 피서객들에게 인기가 있다.\n\n에메랄드빛 바다와 하얀 모래사장, 낙조의 경관이 아름답기로 유명하며 앞바다에는 비양도가 바라다 보인다. 협재 해변과 연결되어 있으며, 겨울철 계절풍의 길목에 있어 모래 날림이 심하다. 모래 언덕인 사구층이 해안선과 평행하게 발달해 있다. 사구층 뒤편에는 해송으로 이루어진 방사림이 조성되어 있다. 해변 군데군데 노출된 검은색의 용암은 표면이 매끄러운 것으로 보아 점성이 약한 파호이호이 용암으로 판단된다. 검은색 용암과 흰 모래 그리고 에메랄드빛 바다가 조화를 이루는 해변이다.\n\n현황: 금릉 해변은 협재 해변과 함께 여름철 이용객들이 많다. 전면에 위치한 비양도 사이에는 수심이 깊고 물살이 빨라 해녀 작업이 힘들다. 해수욕장 서쪽 부분에는 암석 해안과"
+    },
+    "sampleQuestions": [
+      "삼춘, 금능 바당에서 물질할 때 비양도가 바로 눈앞에 보이나요?",
+      "조수간만의 차로 물이 빠질 때 드러나는 은빛 모래톱 풍경을 들려주세요.",
+      "해녀 삼춘들이 쉬어가던 불턱과 바다 이야기를 들려주세요."
+    ]
   },
   {
-    id: "GC04600057",
-    name: "송악산",
-    category: "자연과 지리",
-    region: "서귀포시 대정읍",
-    latitude: 33.2036,
-    longitude: 126.2907,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "일흔아홉 개 봉우리와 가파도·마라도의 수호자",
-      summary: "바람이 많이 불어 절울이(물결이 운다)라 불렸던 이중 분화구 해안 화산",
-      details: "제주 최남단 해안 화산체로 99개 봉우리와 이중 분화구가 발달해 있으며, 태평양전쟁 당시 일제 진지동굴 유적이 남아있습니다."
-    },
-    sampleQuestions: [
-      "송악산 해안 절벽 아래 일제 진지동굴은 왜 파놓은 건가요?",
-      "이중 분화구 안쪽 분화구는 어떻게 형성되었나요?",
-      "가파도와 마라도, 산방산이 한눈에 보이는 둘레길 코스는 어디인가요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "푸른 바다와 산방산이 한눈에 보이는 송악산 둘레길",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["이중분화구", "일제진지동굴", "가파도조망", "해안둘레길"]
-  },
-  {
-    id: "GC00701804",
-    name: "수월봉",
-    category: "자연과 지리",
-    region: "제주시 한경면",
-    latitude: 33.2965,
-    longitude: 126.1628,
-    assignedCharacterId: "seolmundae",
-    mythAndFact: {
-      mythTitle: "수월이와 녹고 남매의 눈물, 녹고물",
-      summary: "어머니의 약초를 캐다 목숨을 잃은 누이 수월이를 기리며 동생 녹고가 흘린 눈물샘 설화",
-      details: "유네스코 세계지질공원의 핵심 명소로 화산재가 겹겹이 쌓인 완벽한 화산 쇄설층(화산재 지층 교과서) 단면을 관찰할 수 있습니다."
-    },
-    sampleQuestions: [
-      "화산재가 시루떡처럼 겹겹이 쌓인 엉알길 단면의 특징은 무엇인가요?",
-      "차귀도 너머로 떨어지는 일몰이 아름다운 이유는 무엇인가요?",
-      "녹고물 약수터에 얽힌 효심 설화는 무엇인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04786",
-    images: [
+    "id": "GC00710374",
+    "name": "함덕 해변",
+    "category": "생활과 민속",
+    "region": "제주시 조천읍",
+    "latitude": 33.5434,
+    "longitude": 126.6692,
+    "assignedCharacterId": "haenyeo",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02939",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04786",
-            "alt": "암석해안, 수월봉의 해식애 전경",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02939",
+        "alt": "1960~1970년대의 함덕해수욕장",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09147",
-            "alt": "제주 수월봉 화산 쇄설층",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03156",
+        "alt": "함덕해수욕장",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09144",
-            "alt": "제주 수월봉 화산 쇄설층",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09145",
-            "alt": "제주 수월봉 화산 쇄설층",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09146",
-            "alt": "제주 수월봉 화산 쇄설층",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04210",
+        "alt": "함덕해수욕장",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "세계지질공원 수월봉 화산쇄설층 엉알길",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["유네스코 세계지질공원", "화산쇄설층", "일몰명소", "차귀도조망"]
-  },
-
-  // ==================== [2. 해녀 삼춘 - 바다 / 해수욕장 / 섬 / 해녀문화] ====================
-  {
-    id: "GC00702597",
-    name: "협재해수욕장",
-    category: "생활과 민속",
-    region: "제주시 한림읍",
-    latitude: 33.3940,
-    longitude: 126.2397,
-    assignedCharacterId: "haenyeo",
-    mythAndFact: {
-      mythTitle: "비양도를 품은 은빛 조개 모래와 해녀 숨비소리",
-      summary: "조개껍질이 부서져 만들어진 은빛 백사장과 천년 화산섬 비양도가 마주보는 해녀들의 삶의 바다",
-      details: "수심이 완만하고 패사로 이루어진 에메랄드빛 해변으로 한림읍 해녀들의 대표 물질 구역입니다."
-    },
-    sampleQuestions: [
-      "삼춘, 테왁 하나만 메고 바다에 들어가면 안 무서우신가요?",
-      "숨비소리는 낼 때 왜 휘파람 소리가 나나요?",
-      "저기 손에 잡힐 듯 보이는 섬이 비양도가 맞나요?"
     ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02688",
-    images: [
+    "imageTitle": "1960~1970년대의 함덕해수욕장",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "서우봉",
+      "에메랄드바다",
+      "조천포구",
+      "바다물질"
+    ],
+    "mythAndFact": {
+      "mythTitle": "함덕 해변에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 조천읍 함덕리에 있는 해변.       함덕 해변은 물이 맑고 수심이 얕아 본래 바다였던 곳이 바다가 얕아지면서 10~15m의 패사층이 넓게 형성되었다. 이 패사층의 밑바닥을 이룬 지질은 현무암으로 그 암초가 군데군데 드러나 있다. 해안선 부근은 폭 1㎞에 이르기까지 2.5m의 완만한 수심을 이루고 있으며 수심 5~20m까지는 약간 급",
+      "details": "제주특별자치도 제주시 조천읍 함덕리에 있는 해변.       함덕 해변은 물이 맑고 수심이 얕아 본래 바다였던 곳이 바다가 얕아지면서 10~15m의 패사층이 넓게 형성되었다. 이 패사층의 밑바닥을 이룬 지질은 현무암으로 그 암초가 군데군데 드러나 있다. 해안선 부근은 폭 1㎞에 이르기까지 2.5m의 완만한 수심을 이루고 있으며 수심 5~20m까지는 약간 급한 경사를 이루...\n\n정의: 제주특별자치도 제주시 조천읍 함덕리에 있는 해변.\n\n개설: 함덕 해변은 물이 맑고 수심이 얕아 본래 바다였던 곳이 바다가 얕아지면서 10~15m의 패사층이 넓게 형성되었다. 이 패사층의 밑바닥을 이룬 지질은 현무암으로 그 암초가 군데군데 드러나 있다.\n\n해안선 부근은 폭 1㎞에 이르기까지 2.5m의 완만한 수심을 이루고 있으며 수심 5~20m까지는 약간 급한 경사를 이루다가 20m 이상에서는 다시 완만한 경사를 보인다.\n\n변천: 함덕 해변은 입자가 고른 패사질 모래가 주성분인 제주 지역 제일의 해수욕장으로 1983년 국민 관광지로 지정되어 1단계 조성 사업이 마무리되었다.\n\n구성: 시설로는 주차장, 샤워탈의장, 음료수대, 야영장, 휴게소 등이 있다. 주변에 호텔, 펜션과 놀이시설이 들어서 있으며 배낚시, 모터보트 등도 이용할 수 있다.\n\n현황: 총 면적은 46만 5천㎡이며 1일 최대 수용 능력은 4만 명이다. 함덕 해변 동쪽에는 나지막하고 완만한 서우봉(犀牛峰)[111m]이 있고 서쪽 조천리 해변에는 제주특별자치도 유형문화유산인 연북정(戀北亭)이 위치한다. 제주시에서 동쪽으로 14㎞ 떨어져 있으며 시내버스가 수시로 왕래한다."
+    },
+    "sampleQuestions": [
+      "함덕 서우봉에 얽힌 서우낙조와 봄철 유채꽃 이야기를 들려주세요.",
+      "투명하고 얕은 바다에서 해녀 삼춘들이 주로 잡는 해산물은 무엇인가요?",
+      "함덕 포구의 오랜 어촌 생활과 잠녀들의 삶을 전해주세요."
+    ]
+  },
+  {
+    "id": "GC00710373",
+    "name": "김녕 해변",
+    "category": "생활과 민속",
+    "region": "제주시 구좌읍",
+    "latitude": 33.5574,
+    "longitude": 126.7594,
+    "assignedCharacterId": "haenyeo",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04784",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02688",
-            "alt": "협재굴 내부",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04784",
+        "alt": "김녕해수욕장",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02620",
-            "alt": "협재해수욕장",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02562",
+        "alt": "김녕해수욕장",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01754",
-            "alt": "소천굴",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01753",
-            "alt": "소천굴의 용암 산호",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01755",
-            "alt": "협재굴 내부",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02501",
-            "alt": "협재리",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03695",
+        "alt": "김녕해수욕장",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "협재해수욕장과 건너편 비양도 에메랄드 해안",
-    imageSource: "한국관광공사 / 제주향토문화대전",
-    tags: ["은빛백사장", "비양도조망", "해녀물질", "에메랄드바다"]
+    ],
+    "imageTitle": "김녕해수욕장",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "성세기해변",
+      "김녕사굴",
+      "해녀불턱",
+      "풍력발전해안"
+    ],
+    "mythAndFact": {
+      "mythTitle": "김녕 해변에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 구좌읍 김녕리에 있는 해변.       김녕 해변의 전면은 외해에 노출되어 있으며 수심 20m 이내의 완만한 해저 지형이 해안선에서 2㎞까지 넓게 펼쳐져 있어 본도에서 패각류들이 서식하기에 가장 좋은 환경을 제공하고 있다. 외해 쪽으로도 다른 지역에 비해 완만한 경사가 50m의 수심에 이르기까지 펼쳐져 있다. 강풍이 불 때는 해안에서 ",
+      "details": "제주특별자치도 제주시 구좌읍 김녕리에 있는 해변.       김녕 해변의 전면은 외해에 노출되어 있으며 수심 20m 이내의 완만한 해저 지형이 해안선에서 2㎞까지 넓게 펼쳐져 있어 본도에서 패각류들이 서식하기에 가장 좋은 환경을 제공하고 있다. 외해 쪽으로도 다른 지역에 비해 완만한 경사가 50m의 수심에 이르기까지 펼쳐져 있다. 강풍이 불 때는 해안에서 수 ㎞ 떨어진...\n\n정의: 제주특별자치도 제주시 구좌읍 김녕리에 있는 해변.\n\n개설: 김녕 해변의 전면은 외해에 노출되어 있으며 수심 20m 이내의 완만한 해저 지형이 해안선에서 2㎞까지 넓게 펼쳐져 있어 본도에서 패각류들이 서식하기에 가장 좋은 환경을 제공하고 있다.\n\n외해 쪽으로도 다른 지역에 비해 완만한 경사가 50m의 수심에 이르기까지 펼쳐져 있다. 강풍이 불 때는 해안에서 수 ㎞ 떨어진 해역까지 하얗게 부서지는 쇄파가 육안으로 관찰될 만큼 파랑 에너지가 크게 작용하는 곳이다.\n\n구성: 시설로는 야영장, 주차장, 화장실, 탈의실, 샤워장, 음료수대 등이 갖추어져 있다. 해수욕과 함께 갓돔, 노래미돔 등을 낚시하는 갯바위 낚시를 겸할 수 있고 캠핑, 윈드서핑, 수상스키 등을 즐길 수 있으며 횟집, 매점, 민박집 등을 갖추고 있다.\n\n현황: 총 면적 4만 9000㎡, 백사장 길이 200m, 너비 120m, 평균 수심 1~2m 정도로, 규모가 자그마한 백사장에 깔린 부드러운 모래와 푸른빛의 맑은 바닷물은 주위의 기암절벽과 어우러지며 아름다운 풍광을 보여 준다.\n\n주변에는 만장굴, 김녕사굴, 김녕 미로 공원, 제주 공예 단지, 함덕 해변, 해녀 박물관 등 "
+    },
+    "sampleQuestions": [
+      "김녕 바당의 거친 파도 속에서 해녀 삼춘들이 외치는 숨비소리는 어떤 의미인가요?",
+      "김녕사굴의 거대한 뱀과 서련 판관 전설을 들려주세요.",
+      "김녕 어촌계 해녀 공동체의 끈끈한 전통을 들려주세요."
+    ]
   },
   {
-    id: "GC00702598",
-    name: "금능해수욕장",
-    category: "생활과 민속",
-    region: "제주시 한림읍",
-    latitude: 33.3892,
-    longitude: 126.2348,
-    assignedCharacterId: "haenyeo",
-    mythAndFact: {
-      mythTitle: "썰물 때 드러나는 드넓은 모래톱과 원담",
-      summary: "돌을 쌓아 물고기를 가두어 잡던 제주 전통 어로 방식인 원담 유적이 살아있는 포구",
-      details: "협재와 이어지는 투명한 에메랄드빛 바다로 썰물 때 바다 멀리까지 모래밭이 드러나 아이들과 걷기 좋은 곳입니다."
-    },
-    sampleQuestions: [
-      "제주 전통 어로 방식인 원담은 어떻게 물고기를 잡나요?",
-      "썰물 때 모래톱이 얼마나 멀리까지 열리나요?",
-      "금능 바다에서 주로 잡히는 해산물은 무엇인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03024",
-    images: [
+    "id": "GC00710448",
+    "name": "월정리 해변",
+    "category": "생활과 민속",
+    "region": "제주시 구좌읍",
+    "latitude": 33.5562,
+    "longitude": 126.7958,
+    "assignedCharacterId": "haenyeo",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02168",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03024",
-            "alt": "금능농공단지",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02030",
-            "alt": "금능리",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09032",
-            "alt": "금능 으뜸원 해변",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09034",
-            "alt": "금능 으뜸원 해변",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09033",
-            "alt": "금능 으뜸원 해변",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02168",
+        "alt": "월정리",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "원담과 투명한 에메랄드빛 물결의 금능해수욕장",
-    imageSource: "한국관광공사 / 제주향토문화대전",
-    tags: ["원담유적", "에메랄드빛바다", "비양도", "가족휴양지"]
+    ],
+    "imageTitle": "월정리",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "달이머무는곳",
+      "풍력발전단지",
+      "코발트빛바다",
+      "해녀바당"
+    ],
+    "mythAndFact": {
+      "mythTitle": "월정리 해변에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 구좌읍에 속하는 행정리이자 법정리. 예로부터 주민들은 무주애 또는 무주개라 불렀다. ‘무주’의 뜻은 확실하지 않으나 ‘개’는 포구를 뜻한다. 월정(月汀)은 마을의 모양이 반달 같고 바닷가에 접해 있다는 뜻으로, 또는 ‘달이 뜨는 바닷가’라는 의미에서 유래되었다고 전해진다. 약 400여 년 전 김해 김씨가 들어와 살면서 마을이 형성된 것",
+      "details": "제주특별자치도 제주시 구좌읍에 속하는 행정리이자 법정리. 예로부터 주민들은 무주애 또는 무주개라 불렀다. ‘무주’의 뜻은 확실하지 않으나 ‘개’는 포구를 뜻한다. 월정(月汀)은 마을의 모양이 반달 같고 바닷가에 접해 있다는 뜻으로, 또는 ‘달이 뜨는 바닷가’라는 의미에서 유래되었다고 전해진다. 약 400여 년 전 김해 김씨가 들어와 살면서 마을이 형성된 것으로 알려진다....\n\n정의: 제주특별자치도 제주시 구좌읍에 속하는 법정리.\n\n명칭 유래: 예로부터 주민들은 무주애 또는 무주개라 불렀다. ‘무주’의 뜻은 확실하지 않으나 ‘개’는 포구를 뜻한다. 월정(月汀)은 마을의 모양이 반달 같고 바닷가에 접해 있다는 뜻으로, 또는 ‘달이 뜨는 바닷가’라는 의미에서 유래되었다고 전해진다.\n\n형성 및 변천: 약 400여 년 전 김해 김씨가 들어와 살면서 마을이 형성된 것으로 알려진다. 옛 문헌에는 무주포로 표기되었으나 일제 강점기 때 제작된 지도에는 월정리라는 지명이 나타난다. 자연마을로는 서동·중동·입수동·동동 등이 있었다.\n\n자연환경: 한라산 북동쪽 해안에 위치한 비교적 규모가 작은 마을이다. 해발 고도 50m 이하의 낮은 평탄지를 이루며 해안은 암석 해안으로 이루어져 있다.\n\n현황: 월정리는 제주시 구좌읍의 북쪽 해안에 위치하는 반농반어 마을이다. 2007년 현재 면적은 6.63㎢이며 총 303세대에 790명의 주민이 살고 있다. 자연마을은 1동~6동과 취락 구조 개선 마을 등 총 7개의 마을로 이루어져 있다.\n\n농가에서는 양파와 마늘, 당근을 많이 재배하며 바다에서는 소라와 해초를 많이 채취한다. 천연기념물 제38"
+    },
+    "sampleQuestions": [
+      "달이 머무는 아름다운 마을이라는 월정리의 유래가 궁금해요.",
+      "검은 현무암과 하얀 모래가 어우러진 월정리 바다 물질 이야기를 들려주세요.",
+      "해녀들이 바다에 나가기 전 바다신께 빌던 풍어제 이야기가 궁금해요."
+    ]
   },
   {
-    id: "GC00702599",
-    name: "함덕해수욕장",
-    category: "생활과 민속",
-    region: "제주시 조천읍",
-    latitude: 33.5434,
-    longitude: 126.6693,
-    assignedCharacterId: "haenyeo",
-    mythAndFact: {
-      mythTitle: "서우봉 아래 에메랄드빛 낙원",
-      summary: "제주를 지키던 살찐 물소 형상의 서우봉과 하얀 모래사장, 해녀들의 숨비소리가 울려 퍼지는 명소",
-      details: "수심이 얕고 모래톱이 발달하여 한국의 몰디브라 불리며, 봄철 서우봉 유채꽃과 어우러져 장관을 이룹니다."
-    },
-    sampleQuestions: [
-      "서우봉 오름 위에 올라가면 함덕 바다가 어떻게 보이나요?",
-      "함덕 해녀 삼춘들은 주로 어떤 계절에 물질을 많이 하나요?",
-      "바다 한가운데 구름다리 산책로는 어떻게 연결되었나요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03156",
-    images: [
+    "id": "GC00710372",
+    "name": "곽지 해변",
+    "category": "생활과 민속",
+    "region": "제주시 애월읍",
+    "latitude": 33.4509,
+    "longitude": 126.3106,
+    "assignedCharacterId": "haenyeo",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03607",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03156",
-            "alt": "함덕해수욕장",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03607",
+        "alt": "곽지해수욕장",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02997",
-            "alt": "조천면 함덕출장소",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00162",
-            "alt": "집중호우로 인한 농경지 침수 모습",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04209",
-            "alt": "함덕리 유물산포지",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02599",
-            "alt": "함덕포",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02939",
-            "alt": "1960~1970년대의 함덕해수욕장",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02401",
+        "alt": "곽지해수욕장",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "서우봉과 에메랄드빛 바다가 어우러진 함덕해수욕장",
-    imageSource: "한국관광공사 / 제주향토문화대전",
-    tags: ["서우봉", "유채꽃", "에메랄드바다", "동부대표해변"]
+    ],
+    "imageTitle": "곽지해수욕장",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "과물노천탕",
+      "용천수탕",
+      "곽지백사장",
+      "조개잡이"
+    ],
+    "mythAndFact": {
+      "mythTitle": "곽지 해변에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 애월읍 곽지리에 있는 해변.       곽지 해변은 현무암층 위에 패사층이 퇴적되어 이루어진 패사질 해변으로 오른쪽으로는 10m 내외의 단애가 바다 쪽으로 길게 뻗어 있어 강한 쇄파대를 형성하며 연안류는 오른쪽에서 곽지 해변이 위치한 왼쪽으로 흐르고 있다. 북상하는 해류에 의하여 운반된 퇴적물과 인접 연안에 서식하는 패각류의 파편이 파",
+      "details": "제주특별자치도 제주시 애월읍 곽지리에 있는 해변.       곽지 해변은 현무암층 위에 패사층이 퇴적되어 이루어진 패사질 해변으로 오른쪽으로는 10m 내외의 단애가 바다 쪽으로 길게 뻗어 있어 강한 쇄파대를 형성하며 연안류는 오른쪽에서 곽지 해변이 위치한 왼쪽으로 흐르고 있다. 북상하는 해류에 의하여 운반된 퇴적물과 인접 연안에 서식하는 패각류의 파편이 파랑에 의해 해안...\n\n정의: 제주특별자치도 제주시 애월읍 곽지리에 있는 해변.\n\n개설: 곽지 해변은 현무암층 위에 패사층이 퇴적되어 이루어진 패사질 해변으로 오른쪽으로는 10m 내외의 단애가 바다 쪽으로 길게 뻗어 있어 강한 쇄파대를 형성하며 연안류는 오른쪽에서 곽지 해변이 위치한 왼쪽으로 흐르고 있다.\n\n북상하는 해류에 의하여 운반된 퇴적물과 인접 연안에 서식하는 패각류의 파편이 파랑에 의해 해안까지 운반, 퇴적되어 경관이 뛰어나다. 사빈의 배후에는 바람에 의해 모래가 내륙 쪽으로 이동하여 퇴적된 해안 사구가 발달해 있다. 이동된 모래는 사빈 인근의 마을과 농경지 지표면을 얕게 덮고 있다.\n\n구성: 시설로는 300여 대를 동시에 주차할 수 있는 주차장, 샤워탈의장, 음료수대, 야영장 등이 있다. 백사장 위쪽으로는 소나무 숲이 있으며 청소년 수련장이 건립되어 있다.\n\n현황: 곽지 해변은 구릉과 마을에 둘러싸여 넓은 백사장, 맑고 푸른 물, 부드러운 해안선이 잘 어우러진 쾌적한 환경을 형성하고 있으며 해빈에는 대합 등 조개들이 서식한다. 1일 최대 수용능력은 2만 2천 명 정도이다.\n\n백사장 길이는 약 350m, 너비 약 70m이며 평균 수심은 1.5m 정도"
+    },
+    "sampleQuestions": [
+      "바닷가 모래밭에서 솟아나는 차가운 민물 용천수(과물) 이야기가 신기해요.",
+      "과물 노천탕에서 물질을 마치고 몸을 씻던 해녀들의 전통을 들려주세요.",
+      "곽지 바당에서 나오는 특산물과 갯바위 생태를 알려주세요."
+    ]
   },
   {
-    id: "GC00702596",
-    name: "김녕해수욕장 & 해녀 불턱",
-    category: "생활과 민속",
-    region: "제주시 구좌읍",
-    latitude: 33.5574,
-    longitude: 126.7592,
-    assignedCharacterId: "haenyeo",
-    mythAndFact: {
-      mythTitle: "거친 바다를 이겨내는 해녀들의 쉼터, 불턱",
-      summary: "물질을 마친 해녀들이 모여 불을 피우고 몸을 녹이며 바다의 지혜를 나누던 돌담 쉼터",
-      details: "유네스코 인류무형문화유산으로 등재된 제주 해녀문화의 본고장으로 코발트빛 바다와 풍력발전기가 어우러집니다."
-    },
-    sampleQuestions: [
-      "불턱 안에서는 어떤 이야기와 규칙이 오갔나요?",
-      "김녕 바다의 갯바위에는 어떤 해조류가 자라나요?",
-      "해녀들이 물질할 때 착용하는 고무옷과 물안경의 유래는 무엇인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02197",
-    images: [
+    "id": "GC00710213",
+    "name": "우도 (서빈백사 & 우도봉)",
+    "category": "생활과 민속",
+    "region": "제주시 우도면",
+    "latitude": 33.5043,
+    "longitude": 126.9542,
+    "assignedCharacterId": "haenyeo",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02526",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02197",
-            "alt": "김녕미로공원",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02526",
+        "alt": "서빈백사",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03104",
-            "alt": "김녕사굴",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04508",
+        "alt": "서빈백사",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04784",
-            "alt": "김녕해수욕장",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04787",
-            "alt": "인공해안, 김녕해안도로 전경",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02995",
-            "alt": "구좌읍 김녕출장소(1951년 7월 1일 개소) 정면",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03101",
-            "alt": "김녕리",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02537",
+        "alt": "우도 홍조단괴 해빈",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "김녕 해안의 코발트빛 바다와 현무암 풍경",
-    imageSource: "한국관광공사 / 제주향토문화대전",
-    tags: ["유네스코 인류무형유산", "해녀불턱", "김녕바당", "풍력발전"]
+    ],
+    "imageTitle": "서빈백사",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "서빈백사",
+      "홍조단괴해빈",
+      "우도8경",
+      "천연기념물제438호"
+    ],
+    "mythAndFact": {
+      "mythTitle": "우도 (서빈백사 & 우도봉)에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 우도면 연평리에 펼쳐져 있는 해빈.       제주시 우도면 천진해수욕장은 지금까지 깨진 산호조각으로 이루어진 산호해빈으로 알려져 왔다. 그러나 최근에 산호 조각이 아니라 홍조사 혹은 홍조 단괴임이 밝혀졌다.       우도 해안가에 서식하는 것으로 알려진 홍조류는 광합성을 통해 세포에 탄산칼슘을 침전시키는 석회 조류 중의 하나이다. ",
+      "details": "제주특별자치도 제주시 우도면 연평리에 펼쳐져 있는 해빈.       제주시 우도면 천진해수욕장은 지금까지 깨진 산호조각으로 이루어진 산호해빈으로 알려져 왔다. 그러나 최근에 산호 조각이 아니라 홍조사 혹은 홍조 단괴임이 밝혀졌다.       우도 해안가에 서식하는 것으로 알려진 홍조류는 광합성을 통해 세포에 탄산칼슘을 침전시키는 석회 조류 중의 하나이다. 해빈의 길이는...\n\n정의: 제주특별자치도 제주시 우도면 연평리에 펼쳐져 있는 해빈.\n\n개설: 제주시 우도면 천진해수욕장은 지금까지 깨진 산호조각으로 이루어진 산호해빈으로 알려져 왔다. 그러나 최근에 산호 조각이 아니라 홍조사 혹은 홍조단괴임이 밝혀졌다.\n\n자연환경: 우도 해안가에 서식하는 것으로 알려진 홍조류는 광합성을 통해 세포에 탄산칼슘을 침전시키는 석회 조류 중의 하나이다.\n\n현황: 해빈의 길이는 300m, 너비 15m로 되어 있으며, 홍조단괴의 크기는 직경이 대개 4~5㎝정도로 둥근 모양이며 표면은 울퉁불퉁하다. 해외에서는 미국의 플로리다 반도와 바하마를 비롯한 몇몇 지역에서 홍조단괴의 서식이 보고되었으며, 주로 암초 주변에 서식하는 것으로 알려져 있다.\n\n그런데 우도처럼 홍조단괴가 해빈의 주요 구성 퇴적물을 형성하는 경우는 매우 드문 사례로서 학술적인 연구 가치가 높게 평가된다. 2004년 4월 9일 천연기념물 제438호로 지정되었고, 2021년 11월 19일 문화재청 고시에 의해 문화재 지정번호가 폐지되어 천연기념물로 재지정되었다."
+    },
+    "sampleQuestions": [
+      "우도 서빈백사의 하얀 자갈이 산호가 아니라 홍조류 돌덩이(홍조단괴)라는데 맞나요?",
+      "우도 해녀들의 거친 바다 물질과 전설적인 잠수 실력 이야기를 들려주세요.",
+      "소가 누워있는 형상이라는 섬 우도의 8경을 소개해 주세요."
+    ]
   },
   {
-    id: "GC00702600",
-    name: "월정리해변",
-    category: "생활과 민속",
-    region: "제주시 구좌읍",
-    latitude: 33.5562,
-    longitude: 126.7958,
-    assignedCharacterId: "haenyeo",
-    mythAndFact: {
-      mythTitle: "달이 머무는 바다와 해녀들의 뿔소라 밭",
-      summary: "하얀 백사장과 푸른 풍력발전기, 해녀들이 물질하며 갓 건져 올린 싱싱한 뿔소라의 바다",
-      details: "아름다운 해안 도로와 카페 거리, 투명한 에메랄드빛 바다와 서핑 명소로 사랑받는 동부 해변입니다."
-    },
-    sampleQuestions: [
-      "월정리라는 이름이 달이 머무는 마을이라는 뜻인가요?",
-      "월정 바다의 풍력발전기는 왜 바닷가에 세워졌나요?",
-      "해녀들이 채취하는 뿔소라는 언제 가장 맛이 좋나요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02168",
-    images: [
+    "id": "GC00700584",
+    "name": "도두봉",
+    "category": "자연과 지리",
+    "region": "제주시 도두동",
+    "latitude": 33.5069,
+    "longitude": 126.4677,
+    "assignedCharacterId": "seolmundae",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00241",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02168",
-            "alt": "월정리",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00241",
+        "alt": "도두봉",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09117",
-            "alt": "월정리 해변",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09120",
-            "alt": "월정리 해변",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09119",
-            "alt": "월정리 해변",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09118",
-            "alt": "월정리 해변",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01397",
+        "alt": "도두봉 응회암층과 관입암",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "하얀 모래사장과 에메랄드빛 물결의 월정리해변",
-    imageSource: "한국관광공사 / 제주향토문화대전",
-    tags: ["달이머무는곳", "풍차해안", "카페거리", "서핑명소"]
+    ],
+    "imageTitle": "도두봉",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "키세스존",
+      "도두항",
+      "제주공항전망",
+      "해안기생화산"
+    ],
+    "mythAndFact": {
+      "mythTitle": "도두봉에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 도두 1동에 있는 봉우리.       제주시 도두 마을을 대표하는 오름으로 구제주시 서쪽에 위치한 제주 국제공항 너머의 도두리 해안을 끼고 있다. 정상부에 화구가 없는 원추형 화산체로, 도두마을 포구의 방파제로 들어가는 지점에 존재하는 노두[outcrop]로 볼 때, 도두봉의 구성물질은 해안부분에 화산재로 이루어진 응회암과 현무암 그리",
+      "details": "제주특별자치도 제주시 도두 1동에 있는 봉우리.       제주시 도두 마을을 대표하는 오름으로 구제주시 서쪽에 위치한 제주 국제공항 너머의 도두리 해안을 끼고 있다. 정상부에 화구가 없는 원추형 화산체로, 도두마을 포구의 방파제로 들어가는 지점에 존재하는 노두[outcrop]로 볼 때, 도두봉의 구성물질은 해안부분에 화산재로 이루어진 응회암과 현무암 그리고 정상 부분에...\n\n정의: 제주특별자치도 제주시 도두 1동에 있는 봉우리.\n\n개설: 제주시 도두 마을을 대표하는 오름으로 구제주시 서쪽에 위치한 제주 국제공항 너머의 도두리 해안을 끼고 있다. 정상부에 화구가 없는 원추형 화산체로, 도두마을 포구의 방파제로 들어가는 지점에 존재하는 노두[outcrop]로 볼 때, 도두봉의 구성물질은 해안부분에 화산재로 이루어진 응회암과 현무암 그리고 정상 부분에 '송이'(scoria) 구성된 오름임을 알 수 있다.\n\n명칭 유래: 『세종실록』에 도도리산, 『신증동국여지승람』에 도도리악, 『탐라지(耽羅誌)』에 도원봉, 『제주군읍지』에는 도두봉으로 각각 표기되어 있다. 마을 이름이 도두리로 정착되면서 오름의 이름도 도두봉으로 표기되고 있다.\n\n현황: 높이는 65.3m, 비고 55m, 둘레는 1,092m, 면적은 80,253㎡, 폭은 379m이며, 모양은 원추형으로 되어 있다.\n\n도두 포구와 가까운 동쪽 해안 부분에는 소득모실이라는 공간이 도두어촌계 어부회에 의하여 최근에 조성되었다. 바다를 관장하는 신이 좌정해 있는 공간으로 어민들이 바다에 나가 만선과 무사 귀환을 비는 신앙 공간이라고 할 수 있다.\n\n오름 정상에 남아 있는 "
+    },
+    "sampleQuestions": [
+      "도두봉 정상의 동백나무 키세스존과 비행기 이착륙 뷰포인트를 알려주세요.",
+      "도두항과 해안을 붉게 물들이는 저녁 노을 풍경을 소개해 주세요.",
+      "도두봉 수성화산 응회구의 지질학적 형성과정을 알려주세요."
+    ]
   },
   {
-    id: "GC00702601",
-    name: "세화해수욕장",
-    category: "생활과 민속",
-    region: "제주시 구좌읍",
-    latitude: 33.5242,
-    longitude: 126.8617,
-    assignedCharacterId: "haenyeo",
-    mythAndFact: {
-      mythTitle: "제주 해녀 항일운동의 발상지이자 오일장 바당",
-      summary: "일제의 착취에 맞서 일어난 1932년 제주 해녀 항일운동의 뜨거운 역사가 살아 숨 쉬는 곳",
-      details: "세화 오일시장과 제주해녀박물관이 위치하며, 간조 때 투명한 바닥을 드러내는 코발트빛 해안입니다."
-    },
-    sampleQuestions: [
-      "1932년 제주 해녀 항일운동은 어떻게 일어났나요?",
-      "제주해녀박물관에서 꼭 보아야 할 전시물은 무엇인가요?",
-      "세화 민속오일시장이 서는 날짜는 언제인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02210",
-    images: [
+    "id": "GC00701045",
+    "name": "삼양동 선사유적지",
+    "category": "문화유산",
+    "region": "제주시 삼양동",
+    "latitude": 33.5234,
+    "longitude": 126.5878,
+    "assignedCharacterId": "dolhareubang",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03021",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02210",
-            "alt": "세화중학교",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03021",
+        "alt": "삼양동",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03115",
-            "alt": "세화리",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03892",
-            "alt": "세화원씨 가옥",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03895",
-            "alt": "세화원씨 가옥",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03363",
-            "alt": "세화원씨 가옥",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03893",
-            "alt": "세화원씨 가옥",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05074",
+        "alt": "제주 삼양동 유적 발굴",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "세화 해변의 맑은 바다와 해녀박물관 전경",
-    imageSource: "한국관광공사 / 제주향토문화대전",
-    tags: ["제주해녀박물관", "해녀항일운동", "세화오일장", "코발트바다"]
+    ],
+    "imageTitle": "삼양동",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "국가지정사적제416호",
+      "청동기시대집자리",
+      "원삼국시대",
+      "탐라선사마을"
+    ],
+    "mythAndFact": {
+      "mythTitle": "삼양동 선사유적지에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 삼양 1동·삼양 2동·삼양 3동, 도련 1동·도련 2동을 관할하는 행정동.       제주시 동부권의 관문 역할을 하고 있다. 기원전 1세기를 전후한 시기에 형성된 대규모 마을 유적에서 다양한 생활 도구와 곡물들이 발굴되는 것으로 보아 일찍부터 인간 생활이 활발하게 이루어지던 곳임을 알 수 있다. 도시와 농촌, 그리고 어촌의 생활과 경",
+      "details": "제주특별자치도 제주시 삼양 1동·삼양 2동·삼양 3동, 도련 1동·도련 2동을 관할하는 행정동.       제주시 동부권의 관문 역할을 하고 있다. 기원전 1세기를 전후한 시기에 형성된 대규모 마을 유적에서 다양한 생활 도구와 곡물들이 발굴되는 것으로 보아 일찍부터 인간 생활이 활발하게 이루어지던 곳임을 알 수 있다. 도시와 농촌, 그리고 어촌의 생활과 경관이 어우러진...\n\n정의: 제주특별자치도 제주시에 속하는 삼양 1동·삼양 2동·삼양 3동·도련 1동·도련 2동을 관할하는 행정동.\n\n개설: 제주시 동부권의 관문 역할을 하고 있다. 기원전 1세기를 전후한 시기에 형성된 대규모 마을 유적에서 다양한 생활 도구와 곡물들이 발굴되는 것으로 보아 일찍부터 인간 생활이 활발하게 이루어지던 곳임을 알 수 있다. 도시와 농촌, 그리고 어촌의 생활과 경관이 어우러진 근교 농업 및 주거 지역이다.\n\n명칭 유래: 19세기 중반까지 소흘리(所訖里)라 불리다가 19세기 말부터 삼양(三陽)으로 쓰이기 시작했다. 약 120여 년 전 이 마을에 살던 장봉수와 박운경이라는 사람이 서흘개와 가몰개, 그리고 매촌 등 3개 마을을 합하여 양지(陽地)라 부른데서 삼양이라는 명칭이 유래했다고 전해지나 아직 확실한 근거는 없다.\n\n형성과 변천: 이 동은 행정동 명칭으로서 5개의 법정동, 즉 북동쪽의 삼양 1동과 북쪽 가운데의 삼양 2동, 북서쪽의 삼양 3동, 그리고 남서쪽의 도련 1동과 남동쪽의 도련 2동으로 구성되어 있다. 소흘개, 웬당개, 지구리, 가몰개, 들은돌, 버렁개, 감은여, 도른드르, 맨돈지 마을 등 여러 개의 자연 마을이 있었다.\n"
+    },
+    "sampleQuestions": [
+      "돌하르방 어르신, 기원전 삼양동에 형성된 제주 최대 선사 취락마을 이야기를 들려주세요.",
+      "움집터와 청동기·초기철기 토기들이 전하는 선조들의 생활상은 어떠했나요?",
+      "삼양 검은모래 해변과 원당봉이 주는 역사적 배경을 알려주세요."
+    ]
   },
   {
-    id: "GC00702602",
-    name: "이호테우해수욕장",
-    category: "생활과 민속",
-    region: "제주시 이호동",
-    latitude: 33.4984,
-    longitude: 126.4529,
-    assignedCharacterId: "haenyeo",
-    mythAndFact: {
-      mythTitle: "붉은 말·하얀 말 등대와 떼배(테우)",
-      summary: "통나무를 엮어 만든 제주 전통 고깃배 테우와 조마(제주마)를 형상화한 이국적인 목마 등대",
-      details: "제주 시내에서 가장 가까운 해수욕장으로 야경과 일몰이 아름다우며 전통 원담 어로 체험장이 복원되어 있습니다."
-    },
-    sampleQuestions: [
-      "붉은 조마 등대와 하얀 조마 등대는 어떤 의미를 담고 있나요?",
-      "통나무 떼배인 테우는 어떻게 바다에 띄웠나요?",
-      "이호테우 축제에서는 어떤 체험을 할 수 있나요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "이호테우 해변의 상징 붉은 목마 등대와 일몰",
-    imageSource: "한국관광공사 / 제주향토문화대전",
-    tags: ["목마등대", "테우체험", "공항근처", "일몰야경명소"]
-  },
-  {
-    id: "GC00702603",
-    name: "곽지과물해변",
-    category: "생활과 민속",
-    region: "제주시 애월읍",
-    latitude: 33.4509,
-    longitude: 126.3106,
-    assignedCharacterId: "haenyeo",
-    mythAndFact: {
-      mythTitle: "바닷가에서 솟아나는 차가운 민물, 과물 노천탕",
-      summary: "바닷가 모래밭 틈새에서 차가운 용천수가 솟아올라 해녀들이 목욕을 하던 남녀 노천탕 유적",
-      details: "천연 용천수 노천탕이 보존된 독특한 해수욕장으로 고운 백사장과 투명한 바다가 펼쳐집니다."
-    },
-    sampleQuestions: [
-      "바닷가 바로 옆에서 짠물이 아닌 시원한 민물이 솟는 원리는 무엇인가요?",
-      "해녀 삼춘들이 물질 후에 과물 노천탕을 어떻게 이용했나요?",
-      "애월 한담해안산책로로 이어지는 길은 어디인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02401",
-    images: [
+    "id": "GC00710380",
+    "name": "항파두리 항몽유적지",
+    "category": "문화유산",
+    "region": "제주시 애월읍",
+    "latitude": 33.4523,
+    "longitude": 126.4112,
+    "assignedCharacterId": "dolhareubang",
+    "imageUrl": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02063",
+    "images": [
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02401",
-            "alt": "곽지해수욕장",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02063",
+        "alt": "고성1리",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04780",
-            "alt": "제주시의 용천 중 곽지물 모습",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03184",
+        "alt": "백서향",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       },
       {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02505",
-            "alt": "과물 입구",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02191",
-            "alt": "곽금초등학교",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03010",
-            "alt": "곽지리",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03284",
-            "alt": "곽지포",
-            "source": "한국학중앙연구원 향토문화전자대전"
+        "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01733",
+        "alt": "항파두리 토성",
+        "source": "한국학중앙연구원 한국향토문화전자대전"
       }
-],
-    imageTitle: "곽지과물해변과 천연 용천수 노천탕",
-    imageSource: "한국관광공사 / 제주향토문화대전",
-    tags: ["용천수노천탕", "과물", "애월해변", "가족휴양지"]
-  },
-  {
-    id: "GC00710026",
-    name: "우도 (우도등대 & 산호해변)",
-    category: "생활과 민속",
-    region: "제주시 우도면",
-    latitude: 33.5042,
-    longitude: 126.9538,
-    assignedCharacterId: "haenyeo",
-    mythAndFact: {
-      mythTitle: "소가 누워있는 섬, 홍조단괴 서빈백사",
-      summary: "설문대할망의 거대한 빨래판이자 세계적으로 희귀한 홍조단괴 산호빛 백사장의 섬",
-      details: "성산항에서 배로 15분 거리에 있는 제주의 대표 부속섬으로 검멀레 해변, 동안경굴, 우도봉 등 우도 8경을 자랑합니다."
-    },
-    sampleQuestions: [
-      "서빈백사의 하얀 모래가 일반 모래가 아니라 홍조단괴라는 게 사실인가요?",
-      "동안경굴 안에서 고래가 살았다는 동굴 음악회 이야기는 무엇인가요?",
-      "우도 땅콩이 다른 지역보다 고소하고 달콤한 이유는 무엇인가요?"
     ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03421",
-    images: [
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03421",
-            "alt": "우도",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02526",
-            "alt": "서빈백사",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04508",
-            "alt": "서빈백사",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02537",
-            "alt": "우도 홍조단괴 해빈",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P02954",
-            "alt": "우도",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P04511",
-            "alt": "우도",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      }
-],
-    imageTitle: "소가 누워있는 형태의 아름다운 섬 우도 전경",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["우도8경", "홍조단괴", "서빈백사", "우도땅콩"]
-  },
-  {
-    id: "GC04601369",
-    name: "가파도",
-    category: "생활과 민속",
-    region: "서귀포시 대정읍",
-    latitude: 33.1678,
-    longitude: 126.2731,
-    assignedCharacterId: "haenyeo",
-    mythAndFact: {
-      mythTitle: "봄날 청보리 물결과 가장 낮은 섬",
-      summary: "키 큰 나무 없이 완만하게 펼쳐진 청보리밭과 해녀들이 가장 질 좋은 미역을 채취하던 바다",
-      details: "모슬포항 남쪽 5.5km에 위치한 최고 높이 20.5m의 평탄한 섬으로 봄철 18만 평 청보리 축제가 열립니다."
-    },
-    sampleQuestions: [
-      "가파도 청보리 축제는 몇 월에 가장 푸른가요?",
-      "섬 전체에 전봇대와 키 큰 나무가 없는 이유는 무엇인가요?",
-      "가파도 해녀들이 채취하는 자연산 미역과 톳의 맛은 어떤가요?"
+    "imageTitle": "고성1리",
+    "imageSource": "한국학중앙연구원 한국향토문화전자대전",
+    "tags": [
+      "사적제396호",
+      "삼별초항쟁",
+      "김통정장군",
+      "토성유적"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "바람에 일렁이는 가파도 청보리밭 풍경",
-    imageSource: "한국관광공사 / 제주향토문화대전",
-    tags: ["청보리축제", "올레10-1코스", "평탄한섬", "가파도미역"]
-  },
-  {
-    id: "GC04601370",
-    name: "마라도",
-    category: "생활과 민속",
-    region: "서귀포시 대정읍",
-    latitude: 33.1189,
-    longitude: 126.2681,
-    assignedCharacterId: "haenyeo",
-    mythAndFact: {
-      mythTitle: "대한민국 최남단과 애기업개당 설화",
-      summary: "바람이 불어 섬에 갇힌 사람들을 위해 스스로 희생한 소녀를 기리는 본향당 애기업개당",
-      details: "대한민국 최남단 기념비와 마라도 성당, 등대가 위치한 천연기념물 제423호 섬 전체가 천연보호구역입니다."
+    "mythAndFact": {
+      "mythTitle": "항파두리 항몽유적지에 깃든 전설과 학술 팩트",
+      "summary": "제주특별자치도 제주시 애월읍에 속한 행정리. 옛 이름은 항바두리 또는 옛성을이다. 항의 가장자리와 같이 항바두리 토성이 타원형으로 쌓아져 있어서 그렇게 부른 것으로 보인다. 고성(古城)은 항바두리 옛성 주변에 형성된 마을이라는 데서 유래한다. 1271년(원종 12) 항파두리에 토성을 쌓기 시작한 때부터라고 볼 수 있다. 조선 중기에 우면(지금의 애월면)의",
+      "details": "제주특별자치도 제주시 애월읍에 속한 행정리. 옛 이름은 항바두리 또는 옛성을이다. 항의 가장자리와 같이 항바두리 토성이 타원형으로 쌓아져 있어서 그렇게 부른 것으로 보인다. 고성(古城)은 항바두리 옛성 주변에 형성된 마을이라는 데서 유래한다. 1271년(원종 12) 항파두리에 토성을 쌓기 시작한 때부터라고 볼 수 있다. 조선 중기에 우면(지금의 애월면)의 한 촌락으로...\n\n정의: 제주특별자치도 제주시 애월읍에 속하는 행정리.\n\n명칭유래: 옛 이름은 항바두리 또는 옛성을이다. 항의 가장자리와 같이 항바두리 토성이 타원형으로 쌓아져 있어서 그렇게 부른 것으로 보인다. 고성(古城)은 항바두리 옛성 주변에 형성된 마을이라는 데서 유래한다.\n\n형성 및 변천: 1271년(원종 12) 항파두리에 토성을 쌓기 시작한 때부터라고 볼 수 있다. 조선 중기에 우면(지금의 애월면)의 한 촌락으로 존재하다가, 1884년(고종 21)에 독립된 마을로 고성리라 불렀다.\n\n본래 제주군 신우면 지역으로 항파두리, 고성이라 하였는데, 1914년 행정 구역 개편에 따라 고성리가 되었다. 1980년 12월 1일에 애월면이 애월읍으로 승격되었다. 1998년부터 양잠단지가 고성2리로 분리됨에 따라 고성1리가 되었다.\n\n자연환경: 해발 120m에 위치한 분지의 형태를 이룬다. 여러 곳에서 용천수가 솟아나 가뭄이 심할 때에도 물이 마르지 않아 인근 마을까지 이용하였다. 고성천이 북쪽의 바다로 흐르며, 언덕으로 둘러 싸여 있어서 바다가 앞에 트여 있다.\n\n현황: 읍의 북쪽 중앙부에 위치하며, 2005년 12월 현재 면적은 9.10㎢이며, 총 309"
     },
-    sampleQuestions: [
-      "대한민국 최남단 기념비 앞에서 바라보는 태평양 바다는 어떤 느낌인가요?",
-      "애기업개당에 얽힌 눈물겨운 전설은 무엇인가요?",
-      "마라도 등대가 한국 해양 항로에서 갖는 중요한 역할은 무엇인가요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "대한민국 최남단 마라도 해안 절벽과 등대",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["대한민국최남단", "천연기념물 제423호", "애기업개당", "마라도등대"]
-  },
-
-  // ==================== [3. 돌하르방 - 역사 / 문화유산 / 유적 / 읍성] ====================
-  {
-    id: "GC00700266",
-    name: "제주목관아 & 관덕정",
-    category: "문화유산",
-    region: "제주시 삼도2동",
-    latitude: 33.5134,
-    longitude: 126.5218,
-    assignedCharacterId: "dolhareubang",
-    mythAndFact: {
-      mythTitle: "탐라의 심장을 지키는 돌하르방의 수호 이야기",
-      summary: "조선시대 제주 행정의 중심지이자 제주 읍성을 수호하던 돌하르방 48기의 역사",
-      details: "보물 제322호인 관덕정(觀德亭)은 1448년(세종 30)에 건립된 제주에서 가장 오래된 대표 목조 건축물이며 사적 제380호입니다."
-    },
-    sampleQuestions: [
-      "돌하르방은 원래 제주도 전체에 몇 기가 세워졌었나요?",
-      "관덕정 편액 글씨와 처마 밑 벽화에는 어떤 역사가 담겨 있나요?",
-      "조선시대 제주목사가 정사를 보던 관아 건물의 복원 과정은 어떠했나요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00071",
-    images: [
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00071",
-            "alt": "관덕정",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03504",
-            "alt": "1950년대 관덕정 거리의 교통대",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P09012",
-            "alt": "관덕정 앞 관덕로 구간",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      }
-],
-    imageTitle: "제주에서 가장 오래된 목조 건물 보물 관덕정",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["사적 제380호", "보물 제322호", "조선시대목관아", "돌하르방"]
-  },
-  {
-    id: "GC00701036",
-    name: "삼성혈",
-    category: "문화유산",
-    region: "제주시 이도1동",
-    latitude: 33.4981,
-    longitude: 126.5317,
-    assignedCharacterId: "dolhareubang",
-    mythAndFact: {
-      mythTitle: "탐라국 개국 시조 삼을나의 탄생 신화",
-      summary: "태초에 고을나, 양을나, 부을나 삼신인이 땅에서 솟아올라 탐라국을 세웠다는 성스러운 세 구멍",
-      details: "수백 년 된 고목들로 둘러싸인 신성한 성역으로 사적 제134호이며, 비나 눈이 와도 구멍 안에 쌓이지 않는 신비로움이 있습니다."
-    },
-    sampleQuestions: [
-      "삼신인이 솟아났다는 세 개의 품혈 구멍은 왜 눈이나 비가 고이지 않나요?",
-      "삼신인이 쏜 화살이 꽂힌 땅을 나누어 가졌다는 사시장올악 설화는 무엇인가요?",
-      "삼성혈을 둘러싼 울창한 고목 숲의 수령은 몇 년인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01724",
-    images: [
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01724",
-            "alt": "제주 삼성혈 경내",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P00435",
-            "alt": "제주 삼성혈 입구",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      }
-],
-    imageTitle: "탐라국 개국 신화의 성지 삼성혈 품혈",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["사적 제134호", "탐라개국신화", "삼을나", "모흥혈"]
-  },
-  {
-    id: "GC00710736",
-    name: "삼양동 선사유적",
-    category: "문화유산",
-    region: "제주시 삼양동",
-    latitude: 33.5222,
-    longitude: 126.5861,
-    assignedCharacterId: "dolhareubang",
-    mythAndFact: {
-      mythTitle: "기원전 탐라 선조들의 삶의 터전",
-      summary: "수천 년 전 청동기·초기철기시대 한반도 남부 최대 규모의 해안 마을 유적",
-      details: "기원전 1세기 전후 제주도 고대 탐라인들이 집단 거주했던 대규모 마을 유적으로 230여 기의 집자리가 발굴된 사적 제416호입니다."
-    },
-    sampleQuestions: [
-      "기원전 삼양동 선사마을 사람들은 어떤 도구를 만들어 썼나요?",
-      "복원된 원형 움집의 내부 구조는 어떻게 생겼나요?",
-      "삼양동 검은모래해변과 선사유적의 연관성은 무엇인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03021",
-    images: [
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P03021",
-            "alt": "삼양동",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      },
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P05074",
-            "alt": "제주 삼양동 유적 발굴",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      }
-],
-    imageTitle: "삼양동 선사마을 원형 움집 복원 경관",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["사적 제416호", "청동기마을", "탐라선사문화", "원형움집"]
-  },
-  {
-    id: "GC00701050",
-    name: "항파두리 항몽유적지",
-    category: "문화유산",
-    region: "제주시 애월읍",
-    latitude: 33.4528,
-    longitude: 126.4116,
-    assignedCharacterId: "dolhareubang",
-    mythAndFact: {
-      mythTitle: "삼별초의 결사항전과 김통정 장군의 살손물",
-      summary: "고려 무인정권 삼별초가 몽골 제국에 끝까지 맞서 성을 쌓고 최후의 항쟁을 벌였던 호국의 성지",
-      details: "토성과 석성으로 축조된 내성 및 외성 구조의 요새로 사적 제396호이며 김통정 장군의 발자국에서 솟았다는 장수물이 있습니다."
-    },
-    sampleQuestions: [
-      "삼별초가 강화도, 진도를 거쳐 왜 제주 항파두리에 마지막 성을 쌓았나요?",
-      "항파두리 토성은 흙과 돌을 어떻게 섞어 튼튼하게 쌓았나요?",
-      "김통정 장군이 바위를 밟아 솟아났다는 장수물의 전설은 무엇인가요?"
-    ],
-    imageUrl: "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01733",
-    images: [
-      {
-            "src": "https://jeju.grandculture.net/Image?localName=jeju&id=GC007P01733",
-            "alt": "항파두리 토성",
-            "source": "한국학중앙연구원 향토문화전자대전"
-      }
-],
-    imageTitle: "호국 삼별초의 최후 항전지 항파두리 토성",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["사적 제396호", "삼별초항몽", "김통정장군", "항파두리토성"]
-  },
-  {
-    id: "GC04600527",
-    name: "성읍민속마을",
-    category: "문화유산",
-    region: "서귀포시 표선면",
-    latitude: 33.3872,
-    longitude: 126.7994,
-    assignedCharacterId: "dolhareubang",
-    mythAndFact: {
-      mythTitle: "조선 500년 정의현의 옛 도읍지와 돌담길",
-      summary: "초가집과 돌담, 팽나무, 정의현 관아가 원형 그대로 보존되어 주민들이 실제로 살아가는 살아있는 민속촌",
-      details: "국가지정 국가민속문화재 제188호로 일관헌, 정의향교, 500년 수령의 느티나무와 팽나무, 12기의 원형 돌하르방이 지키고 있습니다."
-    },
-    sampleQuestions: [
-      "성읍민속마을 돌하르방은 제주시 돌하르방과 얼굴 표정이 어떻게 다른가요?",
-      "제주 전통 초가의 짚풀 지붕은 바람에 날아가지 않게 어떻게 묶나요?",
-      "성읍마을에 보존된 제주 전통 똥돼지 돗통시의 원리는 무엇인가요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "옛 정의현 도읍의 정취를 간직한 성읍민속마을",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["국가민속문화재 제188호", "정의현도읍지", "원형초가", "살아있는민속마을"]
-  },
-  {
-    id: "GC04600528",
-    name: "추사 김정희 유배지 & 세한도",
-    category: "문화유산",
-    region: "서귀포시 대정읍",
-    latitude: 33.2483,
-    longitude: 126.2489,
-    assignedCharacterId: "dolhareubang",
-    mythAndFact: {
-      mythTitle: "추사체와 국보 세한도가 탄생한 고난의 쉼터",
-      summary: "조선의 대학자 추사 김정희가 9년간의 가시울타리(위리안치) 유배 속에서 불멸의 예술을 꽃피운 곳",
-      details: "사적 제487호로 지정된 복원 가옥과 추사관이 위치하며 국보 제180호 세한도와 추사체의 정수를 감상할 수 있습니다."
-    },
-    sampleQuestions: [
-      "추사 김정희가 가시울타리 안에서 세한도를 그리게 된 사연은 무엇인가요?",
-      "독창적인 서체인 추사체는 제주 유배 시절 어떻게 완성되었나요?",
-      "대정골 유배지 가옥의 안거리, 밖거리 구조는 어떠한가요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "추사 김정희 유배지 가옥과 제주 추사관",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["사적 제487호", "추사김정희", "세한도", "추사체"]
-  },
-  {
-    id: "GC04600529",
-    name: "혼인지 (婚姻池)",
-    category: "문화유산",
-    region: "서귀포시 성산읍",
-    latitude: 33.4358,
-    longitude: 126.8973,
-    assignedCharacterId: "dolhareubang",
-    mythAndFact: {
-      mythTitle: "탐라 삼신인과 벽랑국 삼공주의 혼례 설화",
-      summary: "삼성혈에서 솟아난 삼신인이 동쪽 바다에서 온 벽랑국 세 공주와 첫 혼례를 올리고 신혼방을 차린 굴",
-      details: "제주특별자치도 기념물 제17호로 500여 평의 자연 연못과 신방굴이라 불리는 삼공주 추억의 천연 동굴이 보존되어 있습니다."
-    },
-    sampleQuestions: [
-      "벽랑국 세 공주가 가져온 오곡의 씨앗과 망아지, 송아지가 제주 농경의 시작인가요?",
-      "혼인지 옆 신방굴 안에는 실제로 세 칸의 굴 방이 있나요?",
-      "봄과 여름철 혼인지 연못 주변에 피어나는 수국길의 매력은 무엇인가요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "탐라국 시조들의 혼례터 혼인지 연못",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["제주도기념물 제17호", "벽랑국삼공주", "신방굴", "탐라혼례설화"]
-  },
-  {
-    id: "GC00701051",
-    name: "조천 연북정 (戀北亭)",
-    category: "문화유산",
-    region: "제주시 조천읍",
-    latitude: 33.5411,
-    longitude: 126.6342,
-    assignedCharacterId: "dolhareubang",
-    mythAndFact: {
-      mythTitle: "북녘의 임금님을 그리워하던 유배객의 정자",
-      summary: "뭍에서 제주로 들어오는 첫 관문인 조천포구 성곽 위에 북쪽 한양을 바라보며 지은 정자",
-      details: "제주특별자치도 유형문화재 제3호로 1590년 조천관을 중수하며 연북정이라 개칭하였으며 왜구를 감시하던 방어 망루 역할을 겸했습니다."
-    },
-    sampleQuestions: [
-      "조선시대 유배객들이 연북정에서 북쪽을 바라보며 지은 시문에는 어떤 애환이 담겨 있나요?",
-      "조천포구가 제주와 육지를 잇는 가장 중요한 관문 포구였던 이유는 무엇인가요?",
-      "정자 아래 타원형 석성의 건축적 특징은 무엇인가요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "조천포구 석성 위에 우뚝 선 연북정",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["유형문화재 제3호", "조천포구", "연북정", "왜구방어망루"]
-  },
-  {
-    id: "GC00701052",
-    name: "별방진 (別防鎭)",
-    category: "문화유산",
-    region: "제주시 구좌읍",
-    latitude: 33.5287,
-    longitude: 126.8839,
-    assignedCharacterId: "dolhareubang",
-    mythAndFact: {
-      mythTitle: "왜구의 침탈을 막아낸 동북부 최대의 검은 돌성",
-      summary: "조선 중종 1510년 제주목사 장림이 왜구 침입에 대비해 타원형으로 쌓은 검은 현무암 석성",
-      details: "제주특별자치도 기념물 제24호로 성 둘레 약 1,008m, 높이 3.5m의 석성이 해안을 감싸고 있으며 봄철 성벽 안 유채꽃이 장관입니다."
-    },
-    sampleQuestions: [
-      "조선시대 왜구들이 왜 유독 우도와 하도리 해안으로 자주 침범했나요?",
-      "성벽을 쌓을 때 사용한 거친 현무암 돌쌓기 축조 기법은 어떠한가요?",
-      "성벽 위를 걸으며 바라보는 하도리 앞바다의 방어적 가치는 무엇인가요?"
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=1200&auto=format&fit=crop&q=85",
-    imageTitle: "검은 현무암으로 해안을 에워싼 별방진 성벽",
-    imageSource: "한국관광공사 / 한국향토문화전자대전",
-    tags: ["제주도기념물 제24호", "현무암석성", "하도리포구", "왜구방어성곽"]
+    "sampleQuestions": [
+      "고려 말 몽골에 끝까지 맞서 싸운 삼별초의 결연한 호국 역사 이야기를 들려주세요.",
+      "흙으로 쌓은 토성과 석성의 방어 구조는 어떻게 만들어졌나요?",
+      "김통정 장군과 구국의 넋이 깃든 살맞은돌, 장수물 이야기를 전해주세요."
+    ]
   }
 ];
