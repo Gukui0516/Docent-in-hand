@@ -1,10 +1,11 @@
-export type CharacterId = 'seolmundae' | 'haenyeo' | 'harubang';
+export type CharacterId = 'seolmundae' | 'haenyeo' | 'harubang' | 'dolhareubang';
 
 export interface Character {
   id: CharacterId;
   name: string;
   title: string;
   avatarEmoji: string;
+  avatarUrl?: string;
   badgeColor: string;
   accentColor: string;
   personality: string;
@@ -19,7 +20,6 @@ export interface POI {
   category: '자연과 지리' | '생활과 민속' | '문화유산';
   assignedCharacterId: CharacterId;
   region: string;
-  address: string;
   latitude: number;
   longitude: number;
   imageUrl: string;
@@ -27,6 +27,7 @@ export interface POI {
   imageSource: string;
   tags: string[];
   mythAndFact: {
+    mythTitle?: string;
     summary: string;
     details: string;
   };

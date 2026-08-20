@@ -85,7 +85,11 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
             >
               {msg.sender === 'model' && (
                 <div className="model-avatar-mini" style={{ backgroundColor: `${character.badgeColor}20` }}>
-                  <span>{character.avatarEmoji}</span>
+                  {character.avatarUrl ? (
+                    <img src={character.avatarUrl} alt={character.name} className="avatar-mini-img" />
+                  ) : (
+                    <span>{character.avatarEmoji}</span>
+                  )}
                 </div>
               )}
               <div className={`chat-bubble ${msg.sender === 'user' ? 'user-bubble' : 'model-bubble'}`}>
@@ -102,7 +106,11 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
         {isReplying && (
           <div className="chat-bubble-row model-row">
             <div className="model-avatar-mini" style={{ backgroundColor: `${character.badgeColor}20` }}>
-              <span>{character.avatarEmoji}</span>
+              {character.avatarUrl ? (
+                <img src={character.avatarUrl} alt={character.name} className="avatar-mini-img" />
+              ) : (
+                <span>{character.avatarEmoji}</span>
+              )}
             </div>
             <div className="chat-bubble model-bubble replying-bubble">
               <span className="bubble-speaker-name">{character.name}</span>

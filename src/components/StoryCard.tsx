@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Character } from '../types/docent';
 import { Sparkles } from 'lucide-react';
 
@@ -14,12 +14,23 @@ export const StoryCard: React.FC<StoryCardProps> = ({
   storyText,
   isStreaming
 }) => {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <section className="story-card-container" aria-label="1인칭 스낵 스토리">
       {/* Persona Header */}
       <div className="persona-banner">
         <div className="persona-avatar-wrapper" style={{ backgroundColor: `${character.badgeColor}15` }}>
-          <span className="persona-emoji">{character.avatarEmoji}</span>
+          {character.avatarUrl && !imgError ? (
+            <img
+              src={character.avatarUrl}
+              alt={character.name}
+              className="persona-avatar-img"
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <span className="persona-emoji">{character.avatarEmoji}</span>
+          )}
           <div className="online-indicator" />
         </div>
 
