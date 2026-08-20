@@ -30,9 +30,6 @@ export const App: React.FC = () => {
   );
   const [distanceText, setDistanceText] = useState('80m 앞');
 
-  // Language Mode (Standard vs Jeju Dialect)
-  const [languageMode, setLanguageMode] = useState<'standard' | 'jeju'>('standard');
-
   // Story & Streaming
   const [storyText, setStoryText] = useState('');
   const [isStoryStreaming, setIsStoryStreaming] = useState(false);
@@ -53,8 +50,7 @@ export const App: React.FC = () => {
   // Zero-Click Story Generator via 2-Layer Multi-Agent Backend
   const triggerZeroClickStory = useCallback(async (
     poi: POI,
-    character: Character,
-    mode: 'standard' | 'jeju' = languageMode
+    character: Character
   ) => {
     setIsStoryStreaming(true);
     setStoryText('');
@@ -77,17 +73,9 @@ export const App: React.FC = () => {
         console.error('Story streaming error:', errorMsg);
         setStoryText((prev) => (prev ? prev : `⚠️ 해설을 불러오지 못했습니다: ${errorMsg}`));
         setIsStoryStreaming(false);
-      },
-      mode
+      }
     );
-  }, [languageMode]);
-
-  // Toggle Language Mode (Standard vs Jeju Dialect) and regenerate story
-  const handleToggleLanguageMode = useCallback((newMode: 'standard' | 'jeju') => {
-    if (newMode === languageMode) return;
-    setLanguageMode(newMode);
-    triggerZeroClickStory(currentPOI, currentCharacter, newMode);
-  }, [languageMode, currentPOI, currentCharacter, triggerZeroClickStory]);
+  }, []);
 
   // Update POI and automatically set character & trigger story
   const applyPOI = useCallback((poi: POI, distMeters?: number) => {
@@ -101,8 +89,8 @@ export const App: React.FC = () => {
       setDistanceText(poi.region);
     }
 
-    triggerZeroClickStory(poi, assignedChar, languageMode);
-  }, [triggerZeroClickStory, languageMode]);
+    triggerZeroClickStory(poi, assignedChar);
+  }, [triggerZeroClickStory]);
 
   // Request Real Device GPS
   const handleUseRealGPS = useCallback(() => {
@@ -239,8 +227,7 @@ export const App: React.FC = () => {
         console.error('Chat stream error:', errMsg);
         setIsReplying(false);
         setAgentChatStatus('');
-      },
-      languageMode
+      }
     );
   };
 
@@ -312,8 +299,6 @@ export const App: React.FC = () => {
               poi={currentPOI}
               storyText={storyText}
               isStreaming={isStoryStreaming}
-              languageMode={languageMode}
-              onToggleLanguageMode={handleToggleLanguageMode}
             />
 
             {/* Real-time Interactive Q&A (Tiki-taka) */}

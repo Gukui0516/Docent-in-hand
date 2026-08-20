@@ -58,8 +58,7 @@ export class GeminiService {
   public async generateSnackStory(
     poi: POI,
     character: Character,
-    onChunk?: (text: string) => void,
-    languageMode: 'standard' | 'jeju' = 'standard'
+    onChunk?: (text: string) => void
   ): Promise<{ text: string; ttftMs: number; totalLatencyMs: number; references?: string[] }> {
     const startTime = performance.now();
     let ttftMs = 0;
@@ -78,7 +77,7 @@ export class GeminiService {
     }
 
     try {
-      const prompt = RAGService.buildDeepStoryPrompt(poi, character, languageMode);
+      const prompt = RAGService.buildDeepStoryPrompt(poi, character);
 
       const responseStream = await this.client.models.generateContentStream({
         model: this.modelName,

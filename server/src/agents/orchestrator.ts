@@ -30,9 +30,7 @@ export class AgentOrchestrator {
     res: Response
   ): Promise<void> {
     const startTime = Date.now();
-    const { poiName, characterId, userQuery, coordinates, languageMode = 'standard' } = req;
-
-    const modeLabel = languageMode === 'jeju' ? '🍊 제주 방언 모드' : '🗣️ 표준어 모드';
+    const { poiName, characterId, userQuery, coordinates } = req;
 
     this.sendSSE(res, 'agent_status', {
       layer: 1,
@@ -64,7 +62,7 @@ export class AgentOrchestrator {
         layer: 2,
         agent: characterId,
         step: 'storytelling',
-        message: `🎭 [${characterName}] (${modeLabel}) 학술 지식을 바탕으로 맞춤형 도슨트 해설 구술 중...`
+        message: `🎭 [${characterName}] 학술 지식을 바탕으로 맞춤형 도슨트 해설 구술 중...`
       });
 
       let fullText = '';
@@ -74,11 +72,11 @@ export class AgentOrchestrator {
       };
 
       if (characterId === 'haenyeo') {
-        await HaenyeoAgent.generateStoryStream(poiName, briefing, onToken, languageMode);
+        await HaenyeoAgent.generateStoryStream(poiName, briefing, onToken);
       } else if (characterId === 'dolhareubang') {
-        await DolhareubangAgent.generateStoryStream(poiName, briefing, onToken, languageMode);
+        await DolhareubangAgent.generateStoryStream(poiName, briefing, onToken);
       } else {
-        await SeolmundaeAgent.generateStoryStream(poiName, briefing, onToken, languageMode);
+        await SeolmundaeAgent.generateStoryStream(poiName, briefing, onToken);
       }
 
       const totalLatencyMs = Date.now() - startTime;
@@ -103,9 +101,7 @@ export class AgentOrchestrator {
     res: Response
   ): Promise<void> {
     const startTime = Date.now();
-    const { poiName, characterId, userMessage, coordinates, history = [], languageMode = 'standard' } = req;
-
-    const modeLabel = languageMode === 'jeju' ? '🍊 제주 방언 모드' : '🗣️ 표준어 모드';
+    const { poiName, characterId, userMessage, coordinates, history = [] } = req;
 
     this.sendSSE(res, 'agent_status', {
       layer: 1,
@@ -129,7 +125,7 @@ export class AgentOrchestrator {
         layer: 2,
         agent: characterId,
         step: 'answering',
-        message: `💬 [${characterName}] (${modeLabel}) 답변 구술 중...`
+        message: `💬 [${characterName}] 답변 구술 중...`
       });
 
       let fullText = '';
@@ -139,11 +135,11 @@ export class AgentOrchestrator {
       };
 
       if (characterId === 'haenyeo') {
-        await HaenyeoAgent.answerChatStream(poiName, userMessage, briefing, history, onToken, languageMode);
+        await HaenyeoAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
       } else if (characterId === 'dolhareubang') {
-        await DolhareubangAgent.answerChatStream(poiName, userMessage, briefing, history, onToken, languageMode);
+        await DolhareubangAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
       } else {
-        await SeolmundaeAgent.answerChatStream(poiName, userMessage, briefing, history, onToken, languageMode);
+        await SeolmundaeAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
       }
 
       const totalLatencyMs = Date.now() - startTime;
