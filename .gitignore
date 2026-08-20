@@ -79,9 +79,13 @@ build/
 Thumbs.db
 
 # Data files (excluded from Git)
-data/
-src/data/
-**/data/
+/data/
+/data/**
+/data/jeju-language/
+*.tsv
+*.parquet
+*.tar.gz
+
 
 # Environment variables
 .env

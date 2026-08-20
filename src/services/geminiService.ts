@@ -204,13 +204,16 @@ export class GeminiService {
         parts: [{ text: h.text }]
       }));
 
+      const dialectContext = RAGService.getDialectPromptContext(character.id);
+
       contents.push({
         role: 'user',
         parts: [{
           text: `[현재 장소]: ${poi.name}
 ${ragContext.groundedPromptContext}
+${dialectContext}
 [관광객의 질문]: "${userMessage}"
-위 질문에 대해 당신(${character.name})의 1인칭 페르소나와 어투를 완벽히 유지하며, RAG 학술 팩트에 근거하여 200~350자 내외로 깊이 있고 유쾌하게 답변해 주세요.`
+위 질문에 대해 당신(${character.name})의 1인칭 페르소나와 제주 방언 어투를 완벽히 유지하며, RAG 학술 팩트에 근거하여 200~350자 내외로 깊이 있고 유쾌하게 답변해 주세요.`
         }]
       });
 

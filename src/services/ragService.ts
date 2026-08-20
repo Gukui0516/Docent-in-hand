@@ -1,5 +1,6 @@
 import { POI, Character } from '../types/docent';
 import { RAG_KNOWLEDGE_BASE, RAGDocument } from '../data/ragKnowledgeBase';
+import { JEJU_DIALECT_DICTIONARY, JEJU_FEW_SHOTS } from '../data/jejuDialectData';
 
 export interface RAGContextResult {
   doc: RAGDocument | null;
@@ -65,19 +66,47 @@ ${doc.academicReferences.map((ref) => `- ${ref}`).join('\n')}
   }
 
   /**
+   * Retrieves native Jeju dialect grounding rules and few-shot examples
+   */
+  public static getDialectPromptContext(characterId: string): string {
+    const fewShots = JEJU_FEW_SHOTS[characterId] || JEJU_FEW_SHOTS['seolmundae'];
+    const sampleWords = JEJU_DIALECT_DICTIONARY.slice(0, 10)
+      .map((w) => `• ${w.jeju}: ${w.standard}`)
+      .join('\n');
+
+    const fewShotExamples = fewShots
+      .map((f, i) => `[예시 ${i + 1}]\n표준어: "${f.standard}"\n제주어 구술: "${f.jeju}"`)
+      .join('\n\n');
+
+    return `
+[카카오브레인 JIT / 제주어 공인 방언 가이드라인]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🗣️ [필수 활용 제주어 어휘]:
+${sampleWords}
+
+📖 [실제 원어민 구술 변환 예시 (Few-shot Examples)]:
+${fewShotExamples}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+`;
+  }
+
+  /**
    * Builds the comprehensive 3-act RAG Generation Prompt (500~800자)
    */
   public static buildDeepStoryPrompt(poi: POI, character: Character): string {
     const { groundedPromptContext } = this.getRAGContext(poi, character);
+    const dialectContext = this.getDialectPromptContext(character.id);
 
     return `
 당신은 제주를 대표하는 1인칭 도슨트 "${character.name}" (${character.title})입니다.
 관광객이 지금 방금 "${poi.name}"에 도착하여 당신의 깊이 있는 해설을 듣고 있습니다.
 
-아래 제공된 [RAG 심층 학술 데이터베이스]의 사실만을 철저히 근거(Grounding)로 삼아,
+아래 제공된 [RAG 심층 학술 데이터베이스]와 [제주어 방언 가이드]를 철저히 근거(Grounding)로 삼아,
 단순한 1~2줄 요약이 아닌 **깊이 있는 3막 구성의 1인칭 구술 도슨트 스토리 (공백 포함 550~750자 내외)**를 완성해 주세요.
 
 ${groundedPromptContext}
+
+${dialectContext}
 
 [3막 서사 구조 작성 지침]:
 - **제1막 (도입과 감각적 현장 환영)**:
@@ -89,7 +118,7 @@ ${groundedPromptContext}
 
 [언어 및 문체 규칙]:
 1. ${character.name}의 성격과 어투를 철저히 고수하세요.
-2. 제주 방언 어미와 관용구(~수다, ~마씸, ~허우꽈, 혼저옵서, 바당 등)를 문맥에 맞게 20~30% 자연스럽게 녹여내세요.
+2. 위 제주어 어휘와 어미(~수다, ~마씸, ~우꽈, ~게, ~주게, 바당, 테왁 등)를 문맥에 맞게 20~30% 자연스럽게 녹여내세요.
 3. 외지인이 이해하기 어려운 고어는 피하되, 깊이 있고 몰입감 넘치는 감성적 구술체로 서술하세요.
 4. 절대 RAG 지식베이스에 없는 허위 사실을 날조하지 마세요.
 `;
