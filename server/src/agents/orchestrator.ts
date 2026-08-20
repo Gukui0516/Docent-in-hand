@@ -9,6 +9,7 @@ export interface StreamStoryRequest {
   characterId: string;
   userQuery?: string;
   coordinates?: { lat: number; lng: number };
+  languageMode?: 'standard' | 'jeju';
 }
 
 export interface StreamChatRequest {
@@ -16,6 +17,7 @@ export interface StreamChatRequest {
   characterId: string;
   userMessage: string;
   history?: { role: 'user' | 'model'; text: string }[];
+  languageMode?: 'standard' | 'jeju';
 }
 
 export class AgentOrchestrator {
@@ -27,13 +29,15 @@ export class AgentOrchestrator {
     res: Response
   ): Promise<void> {
     const startTime = Date.now();
-    const { poiName, characterId, userQuery } = req;
+    const { poiName, characterId, userQuery, languageMode = 'standard' } = req;
+
+    const modeLabel = languageMode === 'jeju' ? '🍊 제주 방언 모드' : '🗣️ 표준어 모드';
 
     this.sendSSE(res, 'agent_status', {
       layer: 1,
       agent: 'researcher',
       step: 'researching',
-      message: `🔍 [리서치 에이전트] 18종 한국학 아카이브(3,285건)에서 [${poiName}] 공인 팩트 탐색 중...`
+      message: `🔍 [리서치 에이전트] 18종 한국학 아카이브(5,161건)에서 [${poiName}] 공인 팩트 탐색 중...`
     });
 
     try {
@@ -58,7 +62,7 @@ export class AgentOrchestrator {
         layer: 2,
         agent: characterId,
         step: 'storytelling',
-        message: `🎭 [${characterName} 에이전트] 검증된 학술 브리핑을 바탕으로 1인칭 3막 도슨트 해설 구술 중...`
+        message: `🎭 [${characterName} 에이전트] (${modeLabel}) 검증된 학술 브리핑을 바탕으로 1인칭 3막 도슨트 해설 구술 중...`
       });
 
       let fullText = '';
@@ -68,11 +72,11 @@ export class AgentOrchestrator {
       };
 
       if (characterId === 'haenyeo') {
-        await HaenyeoAgent.generateStoryStream(poiName, briefing, onToken);
+        await HaenyeoAgent.generateStoryStream(poiName, briefing, onToken, languageMode);
       } else if (characterId === 'dolhareubang') {
-        await DolhareubangAgent.generateStoryStream(poiName, briefing, onToken);
+        await DolhareubangAgent.generateStoryStream(poiName, briefing, onToken, languageMode);
       } else {
-        await SeolmundaeAgent.generateStoryStream(poiName, briefing, onToken);
+        await SeolmundaeAgent.generateStoryStream(poiName, briefing, onToken, languageMode);
       }
 
       const totalLatencyMs = Date.now() - startTime;
@@ -97,7 +101,9 @@ export class AgentOrchestrator {
     res: Response
   ): Promise<void> {
     const startTime = Date.now();
-    const { poiName, characterId, userMessage, history = [] } = req;
+    const { poiName, characterId, userMessage, history = [], languageMode = 'standard' } = req;
+
+    const modeLabel = languageMode === 'jeju' ? '🍊 제주 방언 모드' : '🗣️ 표준어 모드';
 
     this.sendSSE(res, 'agent_status', {
       layer: 1,
@@ -120,7 +126,7 @@ export class AgentOrchestrator {
         layer: 2,
         agent: characterId,
         step: 'answering',
-        message: `💬 [${characterName} 에이전트] 1인칭 답변 구술 중...`
+        message: `💬 [${characterName} 에이전트] (${modeLabel}) 1인칭 답변 구술 중...`
       });
 
       let fullText = '';
@@ -130,11 +136,11 @@ export class AgentOrchestrator {
       };
 
       if (characterId === 'haenyeo') {
-        await HaenyeoAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
+        await HaenyeoAgent.answerChatStream(poiName, userMessage, briefing, history, onToken, languageMode);
       } else if (characterId === 'dolhareubang') {
-        await DolhareubangAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
+        await DolhareubangAgent.answerChatStream(poiName, userMessage, briefing, history, onToken, languageMode);
       } else {
-        await SeolmundaeAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
+        await SeolmundaeAgent.answerChatStream(poiName, userMessage, briefing, history, onToken, languageMode);
       }
 
       const totalLatencyMs = Date.now() - startTime;

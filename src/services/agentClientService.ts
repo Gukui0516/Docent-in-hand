@@ -29,7 +29,8 @@ export class AgentClientService {
     onStatus: (status: AgentStatusEvent) => void,
     onToken: (token: string) => void,
     onComplete: (fullText: string, sources: string[]) => void,
-    onError: (err: string) => void
+    onError: (err: string) => void,
+    languageMode: 'standard' | 'jeju' = 'standard'
   ): Promise<void> {
     const url = `${this.backendUrl}/api/agent/stream-story`;
 
@@ -40,7 +41,8 @@ export class AgentClientService {
         body: JSON.stringify({
           poiName: poi.name,
           characterId: character.id,
-          coordinates: { lat: poi.latitude, lng: poi.longitude }
+          coordinates: { lat: poi.latitude, lng: poi.longitude },
+          languageMode
         })
       });
 
@@ -51,15 +53,16 @@ export class AgentClientService {
       await this.readSSEStream(response.body, onStatus, onToken, onComplete, onError);
     } catch (err: any) {
       console.warn('Backend multi-agent offline, falling back to client RAG mode:', err);
+      const modeText = languageMode === 'jeju' ? '🍊 제주 방언' : '🗣️ 표준어';
       onStatus({
         layer: 1,
         agent: 'researcher',
         step: 'researching',
-        message: `⚡ [클라이언트 RAG] 한국학 지식베이스 기반 ${character.name} 도슨트 생성 중...`
+        message: `⚡ [클라이언트 RAG] 한국학 지식베이스 기반 ${character.name} (${modeText}) 도슨트 생성 중...`
       });
 
       try {
-        const res = await this.geminiFallback.generateSnackStory(poi, character, onToken);
+        const res = await this.geminiFallback.generateSnackStory(poi, character, onToken, languageMode);
         onComplete(res.text, res.references || ['한국향토문화전자대전']);
       } catch (fallbackErr: any) {
         onError(fallbackErr.message || '도슨트 해설 생성 실패');
@@ -78,7 +81,8 @@ export class AgentClientService {
     onStatus: (status: AgentStatusEvent) => void,
     onToken: (token: string) => void,
     onComplete: (fullText: string, sources: string[]) => void,
-    onError: (err: string) => void
+    onError: (err: string) => void,
+    languageMode: 'standard' | 'jeju' = 'standard'
   ): Promise<void> {
     const url = `${this.backendUrl}/api/agent/stream-chat`;
 
@@ -90,7 +94,8 @@ export class AgentClientService {
           poiName: poi.name,
           characterId: character.id,
           userMessage,
-          history
+          history,
+          languageMode
         })
       });
 

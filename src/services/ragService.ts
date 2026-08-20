@@ -79,10 +79,25 @@ ${fewShotExamples}
   }
 
   /**
-   * Builds the comprehensive 3-act RAG Generation Prompt (550~800자) in Natural Standard Korean
+   * Builds the comprehensive 3-act RAG Generation Prompt (550~800자)
    */
-  public static buildDeepStoryPrompt(poi: POI, character: Character): string {
+  public static buildDeepStoryPrompt(
+    poi: POI,
+    character: Character,
+    languageMode: 'standard' | 'jeju' = 'standard'
+  ): string {
     const { groundedPromptContext } = this.getRAGContext(poi, character);
+    const dialectContext = languageMode === 'jeju' ? this.getDialectPromptContext(character.id) : '';
+
+    const languageInstruction = languageMode === 'jeju'
+      ? `[언어 및 문체 규칙 - 제주 방언 구술 모드]:
+1. ${character.name} 고유의 정감 넘치고 생생한 제주 방언 구술체를 적극적으로 구사하여 서술하세요.
+2. 아래의 [카카오브레인 JIT / 제주어 방언 가이드라인]과 Few-shot 예시를 충실히 반영하세요.
+3. 외지인 관광객도 감동과 신비로움을 충분히 느낄 수 있도록 친근하고 생동감 있게 구술하세요.
+${dialectContext}`
+      : `[언어 및 문체 규칙 - 표준어 구술 모드]:
+1. 100% 매끄럽고 자연스러운 표준어 구술체를 사용하세요. 어색한 사투리 어미를 억지로 섞어 넣지 마세요.
+2. ${character.name}의 고유한 캐릭터 정체성에 맞는 자연스럽고 품격 있는 표준어 구술체로 서술하세요.`;
 
     return `
 당신은 제주를 대표하는 1인칭 도슨트 "${character.name}" (${character.title})입니다.
@@ -101,11 +116,9 @@ ${groundedPromptContext}
 - **제3막 (세월의 지혜와 여행자에게 건네는 물음)**:
   수백~수천 년 세월 동안 이 땅을 지켜온 선조들의 지혜와 자연의 경이로움을 전하며, 여행자가 이 장소에서 스스로를 돌아보고 대화할 수 있는 여운 깊은 질문으로 마무리합니다.
 
-[언어 및 문체 규칙 - 매우 중요]:
-1. **100% 매끄럽고 자연스러운 표준어 구술체**를 사용하세요. 어색한 사투리 어미(~이우다, ~마씸 등)를 문장에 억지로 섞어 넣지 마세요.
-2. ${character.name}의 고유한 캐릭터 정체성(인자한 큰할머니 / 정감 있는 베테랑 해녀 삼춘 / 진중하고 품격 있는 수호신 돌하르방)에 맞는 자연스러운 말투를 유지하세요.
-3. 외지인이 듣기에 어색함이 전혀 없고 귀에 쏙쏙 들어오는 유려한 구술체로 서술하세요.
-4. 절대 RAG 지식베이스에 없는 허위 사실을 날조하지 마세요.
+${languageInstruction}
+
+절대 RAG 지식베이스에 없는 허위 사실을 날조하지 마세요.
 `;
   }
 }

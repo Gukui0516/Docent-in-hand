@@ -28,6 +28,9 @@ export const App: React.FC = () => {
   );
   const [distanceText, setDistanceText] = useState('80m 앞');
 
+  // Language Mode (Standard vs Jeju Dialect)
+  const [languageMode, setLanguageMode] = useState<'standard' | 'jeju'>('standard');
+
   // Story & Streaming
   const [storyText, setStoryText] = useState('');
   const [isStoryStreaming, setIsStoryStreaming] = useState(false);
@@ -47,11 +50,16 @@ export const App: React.FC = () => {
   const isInitialStoryStarted = useRef(false);
 
   // Zero-Click Story Generator via 2-Layer Multi-Agent Backend
-  const triggerZeroClickStory = useCallback(async (poi: POI, character: Character) => {
+  const triggerZeroClickStory = useCallback(async (
+    poi: POI,
+    character: Character,
+    mode: 'standard' | 'jeju' = languageMode
+  ) => {
     setIsStoryStreaming(true);
     setStoryText('');
     setMessages([]);
-    setAgentStoryStatus(`🔍 [리서치 에이전트] 18종 한국학 아카이브에서 [${poi.name}] 팩트 탐색 중...`);
+    const modeLabel = mode === 'jeju' ? '제주 방언' : '표준어';
+    setAgentStoryStatus(`🔍 [리서치 에이전트] 18종 한국학 아카이브에서 [${poi.name}] 팩트 탐색 중 (${modeLabel})...`);
 
     await AgentClientService.streamDocentStory(
       poi,
@@ -72,9 +80,17 @@ export const App: React.FC = () => {
         setStoryText((prev) => (prev ? prev : `⚠️ 해설을 불러오지 못했습니다: ${errorMsg}`));
         setIsStoryStreaming(false);
         setAgentStoryStatus('');
-      }
+      },
+      mode
     );
-  }, []);
+  }, [languageMode]);
+
+  // Toggle Language Mode (Standard vs Jeju Dialect) and regenerate story
+  const handleToggleLanguageMode = useCallback((newMode: 'standard' | 'jeju') => {
+    if (newMode === languageMode) return;
+    setLanguageMode(newMode);
+    triggerZeroClickStory(currentPOI, currentCharacter, newMode);
+  }, [languageMode, currentPOI, currentCharacter, triggerZeroClickStory]);
 
   // Update POI and automatically set character & trigger story
   const applyPOI = useCallback((poi: POI, distMeters?: number) => {
@@ -88,8 +104,8 @@ export const App: React.FC = () => {
       setDistanceText(poi.region);
     }
 
-    triggerZeroClickStory(poi, assignedChar);
-  }, [triggerZeroClickStory]);
+    triggerZeroClickStory(poi, assignedChar, languageMode);
+  }, [triggerZeroClickStory, languageMode]);
 
   // Request Real Device GPS
   const handleUseRealGPS = useCallback(() => {
@@ -223,7 +239,8 @@ export const App: React.FC = () => {
         console.error('Chat stream error:', errMsg);
         setIsReplying(false);
         setAgentChatStatus('');
-      }
+      },
+      languageMode
     );
   };
 
@@ -249,6 +266,8 @@ export const App: React.FC = () => {
             storyText={storyText}
             isStreaming={isStoryStreaming}
             agentStatus={agentStoryStatus}
+            languageMode={languageMode}
+            onToggleLanguageMode={handleToggleLanguageMode}
           />
 
           {/* Real-time Interactive Q&A (Tiki-taka) */}

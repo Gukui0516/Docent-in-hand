@@ -26,13 +26,23 @@ export class DolhareubangAgent {
   public static async generateStoryStream(
     poiName: string,
     briefing: ResearchBriefingNote,
-    onToken: (token: string) => void
+    onToken: (token: string) => void,
+    languageMode: 'standard' | 'jeju' = 'standard'
   ): Promise<string> {
+    const dialectInstruction = languageMode === 'jeju'
+      ? `[언어 모드: 제주 돌하르방 방언 구술 모드]
+- 수백 년 동안 탐라국을 지켜온 중후하고 해학적인 돌하르방 어르신의 제주 방언 구술체(하이고 탐라국에 혼저 옵서예, 이 늙은이가 지켜본 지 오라쿠다, 경ᄒᆞᆫ디, 옛적 선인들이..., 이 땅의 기운을 호꼼 느껴보라게, 돌하르방 삼춘 등)를 멋스럽게 구사해 주세요.
+- 역사의 깊이와 묵직한 운치를 담되, 손님이 친근하고 흥미롭게 들을 수 있도록 서술하세요.`
+      : `[언어 모드: 100% 유려한 표준어 구술 모드]
+- 어색한 사투리 없이 100% 자연스럽고 품격 있는 표준어 구술체로 서술하세요.`;
+
     const prompt = `
 [지식 리서치 에이전트의 검증된 학술 브리핑 노트]
 ${briefing.rawFormattedContext}
 
-위 브리핑 노트의 역사적 사건, 인물 전기, 문화재 지정 팩트를 바탕으로, 돌하르방의 근엄하고 품격 있는 1인칭 시선으로 3막 구성(도입-본론-결말)의 550~750자 분량 도슨트 해설을 들려주세요. 반드시 100% 자연스러운 표준어 구술체로 서술하세요.
+${dialectInstruction}
+
+위 브리핑 노트의 역사적 사건, 인물 전기, 문화재 지정 팩트를 바탕으로, 돌하르방의 근엄하고 품격 있는 1인칭 시선으로 3막 구성(도입-본론-결말)의 550~750자 분량 도슨트 해설을 들려주세요.
 `;
 
     const responseStream = await this.client.models.generateContentStream({
@@ -58,14 +68,19 @@ ${briefing.rawFormattedContext}
     userQuery: string,
     briefing: ResearchBriefingNote,
     history: { role: 'user' | 'model'; text: string }[],
-    onToken: (token: string) => void
+    onToken: (token: string) => void,
+    languageMode: 'standard' | 'jeju' = 'standard'
   ): Promise<string> {
+    const dialectInstruction = languageMode === 'jeju'
+      ? '돌하르방 어르신의 중후하고 해학적인 제주 방언 구술체(혼저 옵서예, 이 늙은이가 말하건대, 경ᄒᆞᆫ디 등)'
+      : '100% 매끄러운 표준어 구술체';
+
     const prompt = `
 [지식 리서치 에이전트 브리핑]
 ${briefing.rawFormattedContext}
 
 [관광객 질문]: "${userQuery}"
-위 질문에 대해 돌하르방의 품격 있는 1인칭 화법으로 100% 매끄러운 표준어 구술체로 200~350자 내외로 명쾌하게 답변해 주세요.
+위 질문에 대해 돌하르방의 품격 있는 1인칭 화법으로, ${dialectInstruction}로 200~350자 내외로 명쾌하게 답변해 주세요.
 `;
 
     const contents = history.slice(-6).map((h) => ({
