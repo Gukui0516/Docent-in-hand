@@ -121,10 +121,13 @@ export const GPSSimulatorModal: React.FC<GPSSimulatorModalProps> = ({
         {/* Real Device GPS Button */}
         <div className="real-gps-card">
           <div className="real-gps-info">
-            <Compass size={18} className="compass-icon" />
+            <Compass size={22} className="compass-icon" />
             <div>
-              <strong>실제 내 기기 GPS 사용</strong>
-              <p>스마트폰/PC 브라우저의 현재 실제 위경도 좌표 수신</p>
+              <strong>실제 내 기기 GPS 실시간 감지</strong>
+              <p>현재 감지된 내 좌표: <code>{currentLat.toFixed(4)}, {currentLng.toFixed(4)}</code></p>
+              <span className="gps-status-subtext">
+                {isRealGpsActive ? '🟢 실제 브라우저 Geolocation 활성화됨' : '⚪ 버튼을 눌러 실제 기기 GPS 좌표를 다시 가져옵니다'}
+              </span>
             </div>
           </div>
           <button
@@ -135,7 +138,7 @@ export const GPSSimulatorModal: React.FC<GPSSimulatorModalProps> = ({
               onClose();
             }}
           >
-            {isRealGpsActive ? '✓ 연결됨' : 'GPS 연결'}
+            {isRealGpsActive ? '🔄 GPS 재측정' : '📡 내 위치 가져오기'}
           </button>
         </div>
 

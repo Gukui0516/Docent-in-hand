@@ -82,6 +82,9 @@ export const App: React.FC = () => {
         (position) => {
           const lat = position.coords.latitude;
           const lng = position.coords.longitude;
+          const accuracy = position.coords.accuracy;
+          console.log(`[GPS 수신 성공] 위도: ${lat}, 경도: ${lng}, 정확도: ±${accuracy}m`);
+
           setUserLocation({ lat, lng });
           setIsGpsActive(true);
           setGpsLabel('실제 기기 GPS');
@@ -90,13 +93,13 @@ export const App: React.FC = () => {
           applyPOI(poi, distanceMeters);
         },
         (err) => {
-          console.warn('Geolocation denied or timeout:', err);
-          alert('GPS 권한이 차단되었거나 수신할 수 없습니다. 시뮬레이터를 사용해 보세요.');
+          console.warn('[GPS 수신 실패 또는 거부]:', err);
+          alert('브라우저 위치 권한이 차단되었거나 수신할 수 없습니다. 상단 [GPS 설정]에서 가상 위치를 선택해 보세요!');
         },
-        { enableHighAccuracy: true, timeout: 6000, maximumAge: 30000 }
+        { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 }
       );
     } else {
-      alert('이 브라우저는 Geolocation을 지원하지 않습니다.');
+      alert('이 브라우저는 Geolocation API를 지원하지 않습니다.');
     }
   }, [applyPOI]);
 
