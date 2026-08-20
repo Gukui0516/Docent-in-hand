@@ -256,29 +256,75 @@ export const App: React.FC = () => {
 
       <main className="main-content">
         <div className="content-container">
-          {/* Official High-Resolution Photo Card */}
-          <PhotoCard poi={currentPOI} distanceText={distanceText} />
+          {/* Left Column (Desktop Showcase & Quick Nearby Switcher) */}
+          <aside className="desktop-left-column">
+            {/* Official High-Resolution Photo Card */}
+            <PhotoCard poi={currentPOI} distanceText={distanceText} />
 
-          {/* Zero-Click 1st Person Multi-Agent Deep Story */}
-          <StoryCard
-            character={currentCharacter}
-            poi={currentPOI}
-            storyText={storyText}
-            isStreaming={isStoryStreaming}
-            agentStatus={agentStoryStatus}
-            languageMode={languageMode}
-            onToggleLanguageMode={handleToggleLanguageMode}
-          />
+            {/* Desktop Quick POI Recommendations */}
+            <div className="desktop-quick-poi-card">
+              <div className="desktop-quick-poi-header">
+                <span className="quick-poi-title">📍 {currentPOI.region} 및 관련 추천 명소</span>
+                <button
+                  type="button"
+                  className="quick-poi-all-btn"
+                  onClick={() => setIsPOIListOpen(true)}
+                >
+                  전체 3,591개 보기
+                </button>
+              </div>
+              <div className="desktop-quick-poi-list">
+                {POI_LIST.filter((p) => p.id !== currentPOI.id && (p.region === currentPOI.region || p.category === currentPOI.category))
+                  .slice(0, 4)
+                  .map((poi) => (
+                    <button
+                      key={poi.id}
+                      type="button"
+                      className="desktop-quick-poi-item"
+                      onClick={() => applyPOI(poi)}
+                    >
+                      <img
+                        src={poi.imageUrl || 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?auto=format&fit=crop&w=300&q=80'}
+                        alt={poi.name}
+                        className="quick-poi-thumb"
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?auto=format&fit=crop&w=300&q=80';
+                        }}
+                      />
+                      <div className="quick-poi-info">
+                        <span className="quick-poi-name">{poi.name}</span>
+                        <span className="quick-poi-meta">{poi.category} · {poi.region}</span>
+                      </div>
+                    </button>
+                  ))}
+              </div>
+            </div>
+          </aside>
 
-          {/* Real-time Interactive Q&A (Tiki-taka) */}
-          <ChatSection
-            character={currentCharacter}
-            poi={currentPOI}
-            messages={messages}
-            isReplying={isReplying}
-            agentChatStatus={agentChatStatus}
-            onSendMessage={handleSendMessage}
-          />
+          {/* Right Column (Docent Persona Story & Real-time Tiki-taka Chat) */}
+          <section className="desktop-right-column">
+            {/* Zero-Click 1st Person Multi-Agent Deep Story */}
+            <StoryCard
+              character={currentCharacter}
+              poi={currentPOI}
+              storyText={storyText}
+              isStreaming={isStoryStreaming}
+              agentStatus={agentStoryStatus}
+              languageMode={languageMode}
+              onToggleLanguageMode={handleToggleLanguageMode}
+            />
+
+            {/* Real-time Interactive Q&A (Tiki-taka) */}
+            <ChatSection
+              character={currentCharacter}
+              poi={currentPOI}
+              messages={messages}
+              isReplying={isReplying}
+              agentChatStatus={agentChatStatus}
+              onSendMessage={handleSendMessage}
+            />
+          </section>
         </div>
       </main>
 

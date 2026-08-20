@@ -44,22 +44,31 @@
 
 body {
   font-family: var(--font-family);
-  background-color: #E9ECEF;
+  background-color: #F8F9FA;
   color: var(--text-primary);
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   font-size: 15px;
   line-height: 1.5;
 }
 
 #root {
   width: 100%;
-  max-width: 540px;
   min-height: 100vh;
   background-color: var(--bg-primary);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 1023px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #E9ECEF;
+  }
+
+  #root {
+    max-width: 540px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
+  }
 }
