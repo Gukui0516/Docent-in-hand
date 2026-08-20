@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Character, POI } from '../types/docent';
-import { BookOpen, Volume2, VolumeX, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
+import { Sparkles, BookOpen, Volume2, VolumeX, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { RAG_KNOWLEDGE_BASE } from '../data/ragKnowledgeBase';
 
 interface StoryCardProps {
@@ -59,14 +59,10 @@ export const StoryCard: React.FC<StoryCardProps> = ({
       {/* Speech Bubble Card */}
       <div className="speech-bubble-card deep-story-card">
         <div className="bubble-header">
-          <div className="bubble-character-info">
-            <span className="bubble-character-emoji">{character.avatarEmoji}</span>
-            <span className="bubble-character-name">{character.name}</span>
-            <span
-              className="bubble-character-badge"
-              style={{ color: character.badgeColor, borderColor: `${character.badgeColor}40` }}
-            >
-              {character.title}
+          <div className="bubble-header-left">
+            <span className="bubble-tag deep-tag">
+              <Sparkles size={13} className="sparkle-icon" />
+              1인칭 AI 도슨트 스토리
             </span>
             {isStreaming && (
               <span className="streaming-pulse">

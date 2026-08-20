@@ -532,31 +532,23 @@
   gap: 8px;
 }
 
-.bubble-character-info {
+.bubble-header-left {
   display: flex;
   align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.bubble-character-emoji {
-  font-size: 18px;
-  line-height: 1;
-}
-
-.bubble-character-name {
-  font-size: 15px;
+.bubble-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #E65100;
 }
 
-.bubble-character-badge {
-  font-size: 11px;
-  font-weight: 600;
-  padding: 1px 7px;
-  border-radius: var(--radius-pill);
-  border: 1px solid;
-  background-color: rgba(255, 255, 255, 0.8);
+.sparkle-icon {
+  color: #FF9800;
 }
 
 .bubble-header-actions {
