@@ -91,22 +91,19 @@ ${fewShotExamples}
   }
 
   /**
-   * Builds the comprehensive 3-act RAG Generation Prompt (500~800자)
+   * Builds the comprehensive 3-act RAG Generation Prompt (500~800자) in Natural Standard Korean
    */
   public static buildDeepStoryPrompt(poi: POI, character: Character): string {
     const { groundedPromptContext } = this.getRAGContext(poi, character);
-    const dialectContext = this.getDialectPromptContext(character.id);
 
     return `
 당신은 제주를 대표하는 1인칭 도슨트 "${character.name}" (${character.title})입니다.
 관광객이 지금 방금 "${poi.name}"에 도착하여 당신의 깊이 있는 해설을 듣고 있습니다.
 
-아래 제공된 [RAG 심층 학술 데이터베이스]와 [제주어 방언 가이드]를 철저히 근거(Grounding)로 삼아,
+아래 제공된 [RAG 심층 학술 데이터베이스]의 역사/설화적 사실만을 철저히 근거(Grounding)로 삼아,
 단순한 1~2줄 요약이 아닌 **깊이 있는 3막 구성의 1인칭 구술 도슨트 스토리 (공백 포함 550~750자 내외)**를 완성해 주세요.
 
 ${groundedPromptContext}
-
-${dialectContext}
 
 [3막 서사 구조 작성 지침]:
 - **제1막 (도입과 감각적 현장 환영)**:
@@ -116,10 +113,10 @@ ${dialectContext}
 - **제3막 (세월의 지혜와 여행자에게 건네는 물음)**:
   수천 년 세월을 품은 이 땅의 지혜를 전하며, 여행자가 이 장소에서 스스로를 돌아보고 대화할 수 있는 여운 깊은 질문으로 마무리합니다.
 
-[언어 및 문체 규칙]:
-1. ${character.name}의 성격과 어투를 철저히 고수하세요.
-2. 위 제주어 어휘와 어미(~수다, ~마씸, ~우꽈, ~게, ~주게, 바당, 테왁 등)를 문맥에 맞게 20~30% 자연스럽게 녹여내세요.
-3. 외지인이 이해하기 어려운 고어는 피하되, 깊이 있고 몰입감 넘치는 감성적 구술체로 서술하세요.
+[언어 및 문체 규칙 - 매우 중요]:
+1. **100% 매끄럽고 자연스러운 표준어 구술체**를 사용하세요. 어색한 사투리 어미(~이우다, ~마씸 등)를 문장에 억지로 섞어 넣지 마세요.
+2. ${character.name}의 고유한 캐릭터 정체성(인자한 큰할머니 / 정감 있는 베테랑 해녀 삼춘 / 진중하고 품격 있는 수호신 돌하르방)에 맞는 자연스러운 말투를 유지하세요.
+3. 외지인이 듣기에 어색함이 전혀 없고 귀에 쏙쏙 들어오는 유려한 구술체로 서술하세요.
 4. 절대 RAG 지식베이스에 없는 허위 사실을 날조하지 마세요.
 `;
   }
