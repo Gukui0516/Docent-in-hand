@@ -264,13 +264,13 @@ export const App: React.FC = () => {
             {/* Desktop Quick POI Recommendations */}
             <div className="desktop-quick-poi-card">
               <div className="desktop-quick-poi-header">
-                <span className="quick-poi-title">📍 {currentPOI.region} 및 관련 추천 명소</span>
+                <span className="quick-poi-title">📍 연관 추천 명소</span>
                 <button
                   type="button"
                   className="quick-poi-all-btn"
                   onClick={() => setIsPOIListOpen(true)}
                 >
-                  전체 3,591개 보기
+                  전체 3,591개 ↗
                 </button>
               </div>
               <div className="desktop-quick-poi-list">
@@ -294,7 +294,7 @@ export const App: React.FC = () => {
                       />
                       <div className="quick-poi-info">
                         <span className="quick-poi-name">{poi.name}</span>
-                        <span className="quick-poi-meta">{poi.category} · {poi.region}</span>
+                        <span className="quick-poi-meta">{poi.category}</span>
                       </div>
                     </button>
                   ))}

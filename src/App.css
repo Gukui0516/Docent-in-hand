@@ -783,12 +783,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  width: 100%;
 }
 
 .chip-btn {
   background-color: #F8F9FA;
   border: 1px solid var(--border-color);
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: var(--radius-pill);
   font-size: 12px;
   color: var(--text-secondary);
@@ -796,6 +797,10 @@
   cursor: pointer;
   text-align: left;
   transition: all 0.2s ease;
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.35;
+  word-break: break-word;
 }
 
 .chip-btn:hover:not(:disabled) {
@@ -1640,17 +1645,20 @@
 
 @media (min-width: 1024px) {
   .main-content {
-    max-width: 1480px;
+    max-width: 1440px;
     margin: 0 auto;
     width: 100%;
-    padding: 24px 24px 56px;
+    padding: 20px 20px 56px;
+    box-sizing: border-box;
   }
 
   .content-container {
     display: grid;
-    grid-template-columns: 560px 1fr;
-    gap: 28px;
+    grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
+    gap: 24px;
     align-items: start;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .desktop-left-column {
@@ -1659,11 +1667,14 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .desktop-left-column .image-wrapper {
-    aspect-ratio: 16 / 12;
-    min-height: 420px;
+    aspect-ratio: 16 / 11.5;
+    min-height: 380px;
   }
 
   .desktop-right-column {
@@ -1671,6 +1682,8 @@
     flex-direction: column;
     gap: 20px;
     min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* Desktop Quick POI Recommendations Card */
@@ -1680,21 +1693,30 @@
     background-color: var(--bg-surface);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
-    padding: 16px;
+    padding: 14px;
     box-shadow: var(--shadow-sm);
-    gap: 12px;
+    gap: 10px;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .desktop-quick-poi-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 8px;
+    min-width: 0;
   }
 
   .quick-poi-title {
     font-size: 13px;
     font-weight: 700;
     color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .quick-poi-all-btn {
@@ -1704,6 +1726,8 @@
     font-weight: 600;
     color: #E65100;
     cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
     transition: all 0.2s ease;
   }
 
@@ -1713,14 +1737,17 @@
 
   .desktop-quick-poi-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .desktop-quick-poi-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     padding: 8px;
     background-color: #F8F9FA;
     border: 1px solid var(--border-color-light);
@@ -1728,6 +1755,10 @@
     cursor: pointer;
     text-align: left;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    min-width: 0;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
   }
 
   .desktop-quick-poi-item:hover {
@@ -1738,8 +1769,8 @@
   }
 
   .quick-poi-thumb {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: var(--radius-sm);
     object-fit: cover;
     flex-shrink: 0;
@@ -1749,16 +1780,19 @@
     display: flex;
     flex-direction: column;
     min-width: 0;
+    flex: 1;
     overflow: hidden;
   }
 
   .quick-poi-name {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--text-primary);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: block;
+    width: 100%;
   }
 
   .quick-poi-meta {
@@ -1767,6 +1801,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: block;
+    width: 100%;
   }
 
   /* Desktop Modal Expansions */
@@ -1799,13 +1835,13 @@
 
 @media (min-width: 1280px) {
   .content-container {
-    grid-template-columns: 620px 1fr;
-    gap: 32px;
+    grid-template-columns: minmax(0, 540px) minmax(0, 1fr);
+    gap: 28px;
   }
 
   .desktop-left-column .image-wrapper {
-    aspect-ratio: 16 / 12.5;
-    min-height: 460px;
+    aspect-ratio: 16 / 12;
+    min-height: 420px;
   }
 
   .poi-items-list {
