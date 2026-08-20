@@ -32,27 +32,35 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="header-actions">
           <button
             type="button"
+            className={`header-icon-btn ${isGpsActive ? 'active-gps' : ''}`}
+            onClick={onOpenGPSSimulator}
+            aria-label="GPS 위치 설정 및 시뮬레이터"
+            title="GPS 위치 설정 및 시뮬레이터"
+          >
+            <Navigation size={17} className="nav-btn-icon" />
+          </button>
+          <button
+            type="button"
             className="header-icon-btn"
             onClick={onOpenPOIList}
             aria-label="제주 명소 및 신화 검색"
             title="제주 명소 및 신화 검색"
           >
-            <Search size={18} className="search-btn-icon" />
+            <Search size={17} className="search-btn-icon" />
           </button>
         </div>
       </div>
 
-      <div className="location-bar" onClick={onOpenGPSSimulator} title="GPS 위치 변경 및 시뮬레이션">
+      <div className="location-bar" onClick={onOpenGPSSimulator} title="클릭하여 GPS 위치 변경">
         <div className="location-info">
           <MapPin size={14} className={`pin-icon ${isGpsActive ? 'active' : ''}`} />
           <span className="location-text">
             현재 위치: <strong>{currentPlaceName}</strong> {gpsLabel && <span className="gps-label">({gpsLabel})</span>}
           </span>
         </div>
-        <button type="button" className="gps-change-btn">
-          <Navigation size={12} />
-          <span>GPS 설정</span>
-        </button>
+        <span className="location-bar-change-hint">
+          위치 변경 ↗
+        </span>
       </div>
     </header>
   );

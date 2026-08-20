@@ -92,6 +92,18 @@
   transform: translateY(0);
 }
 
+.header-icon-btn.active-gps {
+  color: #00897B;
+  border-color: #B2DFDB;
+  background-color: #E0F2F1;
+}
+
+.header-icon-btn.active-gps:hover {
+  background-color: #B2DFDB;
+  border-color: #80CBC4;
+  color: #00695C;
+}
+
 .action-pill {
   display: inline-flex;
   align-items: center;
@@ -1337,23 +1349,19 @@
   font-weight: 600;
 }
 
-.gps-change-btn {
+.location-bar-change-hint {
+  font-size: 11px;
+  font-weight: 600;
+  color: #E65100;
+  transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  background-color: #FFF3E0;
-  border: 1px solid #FFE0B2;
-  color: #E65100;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-  transition: all 0.2s ease;
+  gap: 2px;
 }
 
-.gps-change-btn:hover {
-  background-color: #FFE0B2;
+.location-bar:hover .location-bar-change-hint {
+  text-decoration: underline;
+  color: #D84315;
 }
 
 .nav-icon {
