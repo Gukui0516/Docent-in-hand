@@ -1,4 +1,5 @@
 import { ArchiveSearchTool, ArchiveSearchResult } from './tools/archiveSearchTool.js';
+import { SpatialResearchAgent, SpatialBriefingNote } from './spatialResearchAgent.js';
 
 export interface ResearchBriefingNote {
   targetPOI: string;
@@ -20,6 +21,7 @@ export interface ResearchBriefingNote {
     title: string;
     folklorePractices: string;
   }[];
+  spatialBriefing?: SpatialBriefingNote;
   academicSources: string[];
   rawFormattedContext: string;
 }
@@ -39,19 +41,24 @@ export class KnowledgeResearchAgent {
 `;
 
   /**
-   * Conducts thorough objective academic research across 18 categories for the given POI and user question.
-   * Outputs an un-biased, factual ResearchBriefingNote.
+   * Conducts thorough objective academic research and 1KM geospatial analysis for the given POI.
+   * Outputs an un-biased, factual ResearchBriefingNote with spatial context.
    */
   public static async conductResearch(
     poiName: string,
     userQuery?: string,
+    coordinates?: { lat: number; lng: number },
     onStatus?: (statusMessage: string) => void
   ): Promise<ResearchBriefingNote> {
     if (onStatus) {
-      onStatus(`🔍 18종 한국학 아카이브(3,285건)에서 [${poiName}] 관련 설화·역사·인물 탐색 중...`);
+      onStatus(`🔍 18종 한국학 아카이브(5,161건) 및 주변 1KM 지리 공간에서 [${poiName}] 팩트 탐색 중...`);
     }
 
-    const searchResult: ArchiveSearchResult = ArchiveSearchTool.search(poiName, userQuery);
+    // 1. Parallel execution of academic corpus search & 1KM spatial research
+    const [searchResult, spatialBriefing] = await Promise.all([
+      Promise.resolve(ArchiveSearchTool.search(poiName, userQuery)),
+      SpatialResearchAgent.conductSpatialResearch(poiName, coordinates, onStatus)
+    ]);
 
     const matchedFolklore = searchResult.folkloreDocs.map((d) => ({
       title: d.title,
@@ -111,13 +118,21 @@ export class KnowledgeResearchAgent {
       });
     }
 
+    // Append 1KM Geospatial analysis briefing context
+    if (spatialBriefing && spatialBriefing.spatialFormattedContext) {
+      briefingSections.push(`\n${spatialBriefing.spatialFormattedContext}`);
+    }
+
     briefingSections.push(`\n[📚 공인 출처]:`);
     searchResult.referenceSources.forEach((ref) => briefingSections.push(`- ${ref}`));
+    if (spatialBriefing && spatialBriefing.nearbyItems.length > 0) {
+      briefingSections.push(`- 제주특별자치도 위치 기반 공간 지리 데이터베이스 (반경 1KM)`);
+    }
 
     const rawFormattedContext = briefingSections.join('\n');
 
     if (onStatus) {
-      onStatus(`✅ 리서치 완료: 총 ${searchResult.allDocs.length}건의 공인 학술 자료 확보`);
+      onStatus(`✅ 리서치 & 공간 분석 완료: 학술 자료 ${searchResult.allDocs.length}건, 주변 1KM 유산 ${spatialBriefing.nearbyItems.length}곳 확보`);
     }
 
     return {
@@ -127,6 +142,7 @@ export class KnowledgeResearchAgent {
       matchedHistoryAndPeople,
       matchedGeologyAndNature,
       matchedCustomsAndHeritage,
+      spatialBriefing,
       academicSources: searchResult.referenceSources,
       rawFormattedContext
     };

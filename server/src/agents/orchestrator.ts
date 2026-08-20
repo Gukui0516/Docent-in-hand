@@ -16,6 +16,7 @@ export interface StreamChatRequest {
   poiName: string;
   characterId: string;
   userMessage: string;
+  coordinates?: { lat: number; lng: number };
   history?: { role: 'user' | 'model'; text: string }[];
   languageMode?: 'standard' | 'jeju';
 }
@@ -29,7 +30,7 @@ export class AgentOrchestrator {
     res: Response
   ): Promise<void> {
     const startTime = Date.now();
-    const { poiName, characterId, userQuery, languageMode = 'standard' } = req;
+    const { poiName, characterId, userQuery, coordinates, languageMode = 'standard' } = req;
 
     const modeLabel = languageMode === 'jeju' ? '🍊 제주 방언 모드' : '🗣️ 표준어 모드';
 
@@ -37,14 +38,15 @@ export class AgentOrchestrator {
       layer: 1,
       agent: 'researcher',
       step: 'researching',
-      message: `🔍 [리서치 에이전트] 18종 한국학 아카이브(5,161건)에서 [${poiName}] 공인 팩트 탐색 중...`
+      message: `🔍 [1계층 리서치/공간 에이전트] 18종 아카이브 및 1KM 주변 지리에서 [${poiName}] 탐색 중...`
     });
 
     try {
-      // 1. Layer 1: Knowledge Research Agent
+      // 1. Layer 1: Knowledge & Spatial Research Agents (Parallel)
       const briefing: ResearchBriefingNote = await KnowledgeResearchAgent.conductResearch(
         poiName,
         userQuery,
+        coordinates,
         (msg) => this.sendSSE(res, 'agent_status', { layer: 1, agent: 'researcher', step: 'progress', message: msg })
       );
 
@@ -101,7 +103,7 @@ export class AgentOrchestrator {
     res: Response
   ): Promise<void> {
     const startTime = Date.now();
-    const { poiName, characterId, userMessage, history = [], languageMode = 'standard' } = req;
+    const { poiName, characterId, userMessage, coordinates, history = [], languageMode = 'standard' } = req;
 
     const modeLabel = languageMode === 'jeju' ? '🍊 제주 방언 모드' : '🗣️ 표준어 모드';
 
@@ -109,14 +111,15 @@ export class AgentOrchestrator {
       layer: 1,
       agent: 'researcher',
       step: 'researching',
-      message: `🔍 "${userMessage}" 관련 학술 지식 인출 중...`
+      message: `🔍 "${userMessage}" 관련 학술 지식 및 주변 1KM 지리 인출 중...`
     });
 
     try {
-      // 1. Layer 1: Knowledge Research Agent
+      // 1. Layer 1: Knowledge & Spatial Research Agents
       const briefing = await KnowledgeResearchAgent.conductResearch(
         poiName,
         userMessage,
+        coordinates,
         (msg) => this.sendSSE(res, 'agent_status', { layer: 1, agent: 'researcher', step: 'progress', message: msg })
       );
 
