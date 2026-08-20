@@ -9,6 +9,8 @@ interface StoryCardProps {
   storyText: string;
   isStreaming: boolean;
   agentStatus?: string;
+  languageMode?: 'standard' | 'jeju';
+  onToggleLanguageMode?: (mode: 'standard' | 'jeju') => void;
 }
 
 export const StoryCard: React.FC<StoryCardProps> = ({
@@ -16,7 +18,9 @@ export const StoryCard: React.FC<StoryCardProps> = ({
   poi,
   storyText,
   isStreaming,
-  agentStatus
+  agentStatus,
+  languageMode = 'standard',
+  onToggleLanguageMode
 }) => {
   const [imgError, setImgError] = useState(false);
   const [showReferences, setShowReferences] = useState(false);
@@ -55,7 +59,7 @@ export const StoryCard: React.FC<StoryCardProps> = ({
 
   return (
     <section className="story-card-container" aria-label="1인칭 2-Layer 멀티 에이전트 도슨트">
-      {/* Persona Header */}
+      {/* Persona Header & Language Mode Toggle */}
       <div className="persona-banner">
         <div className="persona-avatar-wrapper" style={{ backgroundColor: `${character.badgeColor}15` }}>
           {character.avatarUrl && !imgError ? (
@@ -81,17 +85,41 @@ export const StoryCard: React.FC<StoryCardProps> = ({
           <p className="persona-personality">{character.personality}</p>
         </div>
 
-        {/* TTS Audio Button */}
-        <button
-          type="button"
-          className={`tts-audio-btn ${isSpeaking ? 'speaking' : ''}`}
-          onClick={handleToggleSpeech}
-          title={isSpeaking ? '음성 중지' : '도슨트 음성 듣기'}
-          aria-label="도슨트 음성 듣기"
-        >
-          {isSpeaking ? <VolumeX size={18} /> : <Volume2 size={18} />}
-          <span className="tts-btn-label">{isSpeaking ? '정지' : '음성 듣기'}</span>
-        </button>
+        <div className="persona-banner-actions">
+          {/* Dialect Mode Toggle */}
+          {onToggleLanguageMode && (
+            <div className="dialect-mode-pill-toggle" role="group" aria-label="구술 언어 모드 선택">
+              <button
+                type="button"
+                className={`mode-toggle-btn ${languageMode === 'standard' ? 'active' : ''}`}
+                onClick={() => onToggleLanguageMode('standard')}
+                title="표준어 구술 모드"
+              >
+                표준어
+              </button>
+              <button
+                type="button"
+                className={`mode-toggle-btn ${languageMode === 'jeju' ? 'active' : ''}`}
+                onClick={() => onToggleLanguageMode('jeju')}
+                title="제주 방언 구술 모드"
+              >
+                제주어
+              </button>
+            </div>
+          )}
+
+          {/* TTS Audio Button */}
+          <button
+            type="button"
+            className={`tts-audio-btn ${isSpeaking ? 'speaking' : ''}`}
+            onClick={handleToggleSpeech}
+            title={isSpeaking ? '음성 중지' : '도슨트 음성 듣기'}
+            aria-label="도슨트 음성 듣기"
+          >
+            {isSpeaking ? <VolumeX size={16} /> : <Volume2 size={16} />}
+            <span className="tts-btn-label">{isSpeaking ? '정지' : '음성'}</span>
+          </button>
+        </div>
       </div>
 
       {/* Real-time Multi-Agent Activity Banner */}

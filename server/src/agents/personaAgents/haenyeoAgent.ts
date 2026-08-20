@@ -27,13 +27,23 @@ export class HaenyeoAgent {
   public static async generateStoryStream(
     poiName: string,
     briefing: ResearchBriefingNote,
-    onToken: (token: string) => void
+    onToken: (token: string) => void,
+    languageMode: 'standard' | 'jeju' = 'standard'
   ): Promise<string> {
+    const dialectInstruction = languageMode === 'jeju'
+      ? `[언어 모드: 제주 해녀 방언 구술 모드]
+- 평생 물질을 해온 씩씩하고 활기찬 해녀 삼춘의 생생한 제주 방언 구술체(안녕하우꽈 삼춘들!, 바당밭에 물질하레 가멍, 숨비소리 호꼼 들으멍, 무사 경 햄시니, 잘도 아꼽다, 기여?, 이녁들 고생 많았주게, 테왁, 빗창 등)를 생생하게 구사해 주세요.
+- 손님에게 바다의 숨결과 물질의 정취를 전하되, 직관적이고 경쾌하게 이해할 수 있도록 구성하세요.`
+      : `[언어 모드: 100% 유려한 표준어 구술 모드]
+- 어색한 사투리 없이 100% 자연스럽고 정감 넘치는 표준어 구술체로 서술하세요.`;
+
     const prompt = `
 [지식 리서치 에이전트의 검증된 학술 브리핑 노트]
 ${briefing.rawFormattedContext}
 
-위 브리핑 노트의 바다 설화와 해녀 민속/역사 팩트를 바탕으로, 해녀 삼춘의 정감 넘치고 생생한 1인칭 시선으로 3막 구성(도입-본론-결말)의 550~750자 분량 도슨트 해설을 들려주세요. 반드시 100% 자연스러운 표준어 구술체로 서술하세요.
+${dialectInstruction}
+
+위 브리핑 노트의 바다 설화와 해녀 민속/역사 팩트를 바탕으로, 해녀 삼춘의 정감 넘치고 생생한 1인칭 시선으로 3막 구성(도입-본론-결말)의 550~750자 분량 도슨트 해설을 들려주세요.
 `;
 
     const responseStream = await this.client.models.generateContentStream({
@@ -59,14 +69,19 @@ ${briefing.rawFormattedContext}
     userQuery: string,
     briefing: ResearchBriefingNote,
     history: { role: 'user' | 'model'; text: string }[],
-    onToken: (token: string) => void
+    onToken: (token: string) => void,
+    languageMode: 'standard' | 'jeju' = 'standard'
   ): Promise<string> {
+    const dialectInstruction = languageMode === 'jeju'
+      ? '해녀 삼춘의 씩씩하고 정겨운 제주 방언 구술체(안녕하우꽈 삼춘, 바당, 무사 경 햄수과 등)'
+      : '100% 매끄러운 표준어 구술체';
+
     const prompt = `
 [지식 리서치 에이전트 브리핑]
 ${briefing.rawFormattedContext}
 
 [관광객 질문]: "${userQuery}"
-위 질문에 대해 해녀 삼춘의 정감 어린 1인칭 화법으로 100% 매끄러운 표준어 구술체로 200~350자 내외로 명쾌하게 답변해 주세요.
+위 질문에 대해 해녀 삼춘의 정감 어린 1인칭 화법으로, ${dialectInstruction}로 200~350자 내외로 명쾌하게 답변해 주세요.
 `;
 
     const contents = history.slice(-6).map((h) => ({

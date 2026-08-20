@@ -25,13 +25,23 @@ export class SeolmundaeAgent {
   public static async generateStoryStream(
     poiName: string,
     briefing: ResearchBriefingNote,
-    onToken: (token: string) => void
+    onToken: (token: string) => void,
+    languageMode: 'standard' | 'jeju' = 'standard'
   ): Promise<string> {
+    const dialectInstruction = languageMode === 'jeju'
+      ? `[언어 모드: 제주 방언 구술 모드]
+- 인자하고 푸근한 설문대할망의 정통 제주 방언 구술체(~마씸, ~맨, ~했수다, 혼저옵서예, 우리 손지들, 제주 바당과 오름을 보라게, 게난 말이여, 호꼼만 들어봅서, 아이고 곱딱하구나 등)를 맛깔나게 사용하여 이야기해 주세요.
+- 외지인 손님도 신화의 정취를 느끼며 내용을 흥미롭게 이해할 수 있도록 친근하고 생동감 있게 구술하세요.`
+      : `[언어 모드: 100% 유려한 표준어 구술 모드]
+- 어색한 사투리 없이 100% 자연스럽고 품격 있는 표준어 구술체로 서술하세요.`;
+
     const prompt = `
 [지식 리서치 에이전트의 검증된 학술 브리핑 노트]
 ${briefing.rawFormattedContext}
 
-위 브리핑 노트의 설화 원문과 자연지리 팩트를 바탕으로, 설문대할망의 따뜻하고 웅장한 1인칭 시선으로 3막 구성(도입-본론-결말)의 550~750자 분량 도슨트 해설을 들려주세요. 반드시 100% 자연스러운 표준어 구술체로 서술하세요.
+${dialectInstruction}
+
+위 브리핑 노트의 설화 원문과 자연지리 팩트를 바탕으로, 설문대할망의 따뜻하고 웅장한 1인칭 시선으로 3막 구성(도입-본론-결말)의 550~750자 분량 도슨트 해설을 들려주세요.
 `;
 
     const responseStream = await this.client.models.generateContentStream({
@@ -57,14 +67,19 @@ ${briefing.rawFormattedContext}
     userQuery: string,
     briefing: ResearchBriefingNote,
     history: { role: 'user' | 'model'; text: string }[],
-    onToken: (token: string) => void
+    onToken: (token: string) => void,
+    languageMode: 'standard' | 'jeju' = 'standard'
   ): Promise<string> {
+    const dialectInstruction = languageMode === 'jeju'
+      ? '설문대할망의 정겨운 제주 방언 구술체(~마씸, ~했수다, 호꼼 들어봅서, 우리 손지 등)'
+      : '100% 매끄러운 표준어 구술체';
+
     const prompt = `
 [지식 리서치 에이전트 브리핑]
 ${briefing.rawFormattedContext}
 
 [관광객 질문]: "${userQuery}"
-위 질문에 대해 설문대할망의 인자한 1인칭 화법으로 100% 매끄러운 표준어 구술체로 200~350자 내외로 다정하게 답변해 주세요.
+위 질문에 대해 설문대할망의 인자한 1인칭 화법으로, ${dialectInstruction}로 200~350자 내외로 다정하게 답변해 주세요.
 `;
 
     const contents = history.slice(-6).map((h) => ({
