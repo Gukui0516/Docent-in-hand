@@ -5,11 +5,16 @@ import { RAGService } from './ragService';
 export class GeminiService {
   private client: GoogleGenAI | null = null;
   private apiKey: string;
+  private modelName: string;
 
   constructor() {
     this.apiKey = 
       import.meta.env.VITE_GEMINI_API_KEY || 
       (typeof window !== 'undefined' ? localStorage.getItem('DOCENT_GEMINI_API_KEY') || '' : '');
+
+    this.modelName = 
+      import.meta.env.VITE_GEMINI_MODEL || 
+      (typeof window !== 'undefined' ? localStorage.getItem('DOCENT_GEMINI_MODEL') || 'gemini-2.0-flash' : 'gemini-2.0-flash');
 
     if (this.apiKey) {
       try {
@@ -64,7 +69,7 @@ export class GeminiService {
       const prompt = RAGService.buildDeepStoryPrompt(poi, character);
 
       const responseStream = await this.client.models.generateContentStream({
-        model: 'gemini-1.5-flash',
+        model: this.modelName,
         contents: [{ role: 'user', parts: [{ text: prompt }] }],
         config: {
           systemInstruction: character.systemPrompt,
@@ -145,7 +150,7 @@ ${ragContext.groundedPromptContext}
       });
 
       const responseStream = await this.client.models.generateContentStream({
-        model: 'gemini-1.5-flash',
+        model: this.modelName,
         contents,
         config: {
           systemInstruction: character.systemPrompt,
