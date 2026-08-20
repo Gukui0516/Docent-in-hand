@@ -9,8 +9,8 @@ interface PhotoCardProps {
 
 export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
+  const [loadedMap, setLoadedMap] = useState<Record<number, boolean>>({});
+  const [errorMap, setErrorMap] = useState<Record<number, boolean>>({});
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -31,8 +31,8 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
   // Reset index when POI changes
   useEffect(() => {
     setCurrentIndex(0);
-    setImageLoaded(false);
-    setImageErrors({});
+    setLoadedMap({});
+    setErrorMap({});
     setIsAutoPlay(true);
   }, [poi.id]);
 
@@ -55,20 +55,17 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setImageLoaded(false);
     setCurrentIndex((prev) => (prev - 1 + totalImages) % totalImages);
   };
 
   const handleNext = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setImageLoaded(false);
     setCurrentIndex((prev) => (prev + 1) % totalImages);
   };
 
   const handleSelectDot = (idx: number, e: React.MouseEvent) => {
     e.stopPropagation();
     if (idx === currentIndex) return;
-    setImageLoaded(false);
     setCurrentIndex(idx);
   };
 
@@ -84,30 +81,41 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
         onMouseEnter={() => totalImages > 1 && setIsAutoPlay(false)}
         onMouseLeave={() => totalImages > 1 && setIsAutoPlay(true)}
       >
-        {/* Background Image Container */}
+        {/* Background Image Container with Smooth Sliding Track */}
         <div className="image-wrapper">
-          {!imageLoaded && !imageErrors[currentIndex] && (
-            <div className="image-skeleton">
-              <ImageIcon className="skeleton-icon" size={32} />
-              <span>공식 아카이브 사진 불러오는 중...</span>
-            </div>
-          )}
-
-          <img
-            key={`${poi.id}-${currentIndex}`}
-            src={
-              imageErrors[currentIndex]
-                ? 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=800&q=80'
-                : currentImage.src
-            }
-            alt={currentImage.alt || poi.name}
-            className={`poi-image ${imageLoaded ? 'loaded' : 'loading'}`}
-            onLoad={() => setImageLoaded(true)}
-            onError={() => {
-              setImageErrors((prev) => ({ ...prev, [currentIndex]: true }));
-              setImageLoaded(true);
+          {/* Smooth Horizontal Sliding Track */}
+          <div
+            className="slideshow-track"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+              transition: 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)'
             }}
-          />
+          >
+            {imageList.map((img, idx) => (
+              <div key={idx} className="slideshow-slide">
+                {!loadedMap[idx] && !errorMap[idx] && (
+                  <div className="image-skeleton">
+                    <ImageIcon className="skeleton-icon" size={32} />
+                    <span>공식 아카이브 사진 불러오는 중...</span>
+                  </div>
+                )}
+                <img
+                  src={
+                    errorMap[idx]
+                      ? 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=800&q=80'
+                      : img.src
+                  }
+                  alt={img.alt || poi.name}
+                  className={`poi-image ${loadedMap[idx] ? 'loaded' : 'loading'}`}
+                  onLoad={() => setLoadedMap((prev) => ({ ...prev, [idx]: true }))}
+                  onError={() => {
+                    setErrorMap((prev) => ({ ...prev, [idx]: true }));
+                    setLoadedMap((prev) => ({ ...prev, [idx]: true }));
+                  }}
+                />
+              </div>
+            ))}
+          </div>
 
           {/* Gradient Overlay */}
           <div className="image-overlay" />
@@ -157,13 +165,14 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
             </div>
           </div>
 
-          {/* Slideshow Arrow Buttons (When multiple images exist) */}
+          {/* Slideshow Directional Arrow Buttons */}
           {totalImages > 1 && (
             <>
               <button
                 type="button"
                 className="slide-arrow-btn prev-btn"
                 onClick={handlePrev}
+                title="이전 사진 (오른쪽으로 슬라이드)"
                 aria-label="이전 사진 보기"
               >
                 <ChevronLeft size={20} />
@@ -172,6 +181,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
                 type="button"
                 className="slide-arrow-btn next-btn"
                 onClick={handleNext}
+                title="다음 사진 (왼쪽으로 슬라이드)"
                 aria-label="다음 사진 보기"
               >
                 <ChevronRight size={20} />
@@ -185,10 +195,11 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
             <h2 className="poi-title">{poi.name}</h2>
             {currentImage.alt && currentImage.alt !== poi.name && (
               <div className="photo-subtitle" style={{
-                color: 'rgba(255, 255, 255, 0.85)',
+                color: 'rgba(255, 255, 255, 0.9)',
                 fontSize: '0.85rem',
                 marginTop: '2px',
-                marginBottom: '6px'
+                marginBottom: '6px',
+                transition: 'opacity 0.3s ease'
               }}>
                 📷 {currentImage.alt}
               </div>
@@ -202,14 +213,14 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
             </div>
           </div>
 
-          {/* Dot Pagination Bullets */}
+          {/* Interactive Dot Pagination Bullets */}
           {totalImages > 1 && (
             <div className="slideshow-dots" style={{
               position: 'absolute',
-              bottom: '8px',
-              right: '12px',
+              bottom: '10px',
+              right: '14px',
               display: 'flex',
-              gap: '5px',
+              gap: '6px',
               zIndex: 3
             }}>
               {imageList.map((_, idx) => (
@@ -219,14 +230,14 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
                   onClick={(e) => handleSelectDot(idx, e)}
                   aria-label={`${idx + 1}번 사진으로 이동`}
                   style={{
-                    width: idx === currentIndex ? '16px' : '6px',
+                    width: idx === currentIndex ? '18px' : '6px',
                     height: '6px',
                     borderRadius: '3px',
-                    backgroundColor: idx === currentIndex ? '#eb5e28' : 'rgba(255, 255, 255, 0.5)',
+                    backgroundColor: idx === currentIndex ? '#eb5e28' : 'rgba(255, 255, 255, 0.55)',
                     border: 'none',
                     cursor: 'pointer',
                     padding: 0,
-                    transition: 'all 0.3s ease'
+                    transition: 'all 0.35s cubic-bezier(0.22, 1, 0.36, 1)'
                   }}
                 />
               ))}
