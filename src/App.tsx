@@ -3,7 +3,7 @@ import { POI, Character, ChatMessage } from './types/docent';
 import { POI_LIST } from './data/poiData';
 import { CHARACTERS } from './data/characters';
 import { findNearestPOI, formatDistance } from './utils/geo';
-import { geminiService } from './services/geminiService';
+import { AgentClientService, AgentStatusEvent } from './services/agentClientService';
 import { Header } from './components/Header';
 import { PhotoCard } from './components/PhotoCard';
 import { StoryCard } from './components/StoryCard';
@@ -31,10 +31,12 @@ export const App: React.FC = () => {
   // Story & Streaming
   const [storyText, setStoryText] = useState('');
   const [isStoryStreaming, setIsStoryStreaming] = useState(false);
+  const [agentStoryStatus, setAgentStoryStatus] = useState('');
 
   // Chat
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isReplying, setIsReplying] = useState(false);
+  const [agentChatStatus, setAgentChatStatus] = useState('');
 
   // Modals
   const [isPOIListOpen, setIsPOIListOpen] = useState(false);
@@ -44,22 +46,34 @@ export const App: React.FC = () => {
 
   const isInitialStoryStarted = useRef(false);
 
-  // Zero-Click Story Generator
+  // Zero-Click Story Generator via 2-Layer Multi-Agent Backend
   const triggerZeroClickStory = useCallback(async (poi: POI, character: Character) => {
     setIsStoryStreaming(true);
     setStoryText('');
     setMessages([]);
+    setAgentStoryStatus(`🔍 [리서치 에이전트] 18종 한국학 아카이브에서 [${poi.name}] 팩트 탐색 중...`);
 
-    try {
-      const res = await geminiService.generateSnackStory(poi, character, (chunk) => {
-        setStoryText((prev) => prev + chunk);
-      });
-      setStoryText(res.text);
-    } catch (err) {
-      console.error('Error generating story:', err);
-    } finally {
-      setIsStoryStreaming(false);
-    }
+    await AgentClientService.streamDocentStory(
+      poi,
+      character,
+      (status: AgentStatusEvent) => {
+        setAgentStoryStatus(status.message);
+      },
+      (token: string) => {
+        setStoryText((prev) => prev + token);
+      },
+      (fullText: string) => {
+        setStoryText(fullText);
+        setIsStoryStreaming(false);
+        setAgentStoryStatus('');
+      },
+      (errorMsg: string) => {
+        console.error('Story streaming error:', errorMsg);
+        setStoryText((prev) => (prev ? prev : `⚠️ 해설을 불러오지 못했습니다: ${errorMsg}`));
+        setIsStoryStreaming(false);
+        setAgentStoryStatus('');
+      }
+    );
   }, []);
 
   // Update POI and automatically set character & trigger story
@@ -143,7 +157,7 @@ export const App: React.FC = () => {
     }
   }, [applyPOI]);
 
-  // Handle user chat message
+  // Handle user chat message via 2-Layer Multi-Agent Backend
   const handleSendMessage = async (text: string) => {
     const userMsg: ChatMessage = {
       id: `user-${Date.now()}`,
@@ -154,53 +168,63 @@ export const App: React.FC = () => {
 
     setMessages((prev) => [...prev, userMsg]);
     setIsReplying(true);
+    setAgentChatStatus(`🔍 [리서치 에이전트] 팩트 인출 중...`);
 
     const modelMsgId = `model-${Date.now()}`;
     let accumulatedModelText = '';
 
-    try {
-      const res = await geminiService.sendChatMessage(
-        currentPOI,
-        currentCharacter,
-        text,
-        [...messages, userMsg],
-        (chunk) => {
-          accumulatedModelText += chunk;
-          setMessages((prev) => {
-            const filtered = prev.filter((m) => m.id !== modelMsgId);
-            return [
-              ...filtered,
-              {
-                id: modelMsgId,
-                sender: 'model',
-                text: accumulatedModelText,
-                timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-                characterId: currentCharacter.id
-              }
-            ];
-          });
-        }
-      );
+    const historyForAgent = [...messages, userMsg].map((m) => ({
+      role: m.sender === 'user' ? ('user' as const) : ('model' as const),
+      text: m.text
+    }));
 
-      // Finalize
-      setMessages((prev) => {
-        const filtered = prev.filter((m) => m.id !== modelMsgId);
-        return [
-          ...filtered,
-          {
-            id: modelMsgId,
-            sender: 'model',
-            text: res.text || accumulatedModelText,
-            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-            characterId: currentCharacter.id
-          }
-        ];
-      });
-    } catch (err) {
-      console.error('Chat error:', err);
-    } finally {
-      setIsReplying(false);
-    }
+    await AgentClientService.streamChat(
+      currentPOI,
+      currentCharacter,
+      text,
+      historyForAgent,
+      (status: AgentStatusEvent) => {
+        setAgentChatStatus(status.message);
+      },
+      (chunk: string) => {
+        accumulatedModelText += chunk;
+        setMessages((prev) => {
+          const filtered = prev.filter((m) => m.id !== modelMsgId);
+          return [
+            ...filtered,
+            {
+              id: modelMsgId,
+              sender: 'model',
+              text: accumulatedModelText,
+              timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+              characterId: currentCharacter.id
+            }
+          ];
+        });
+      },
+      (fullText: string) => {
+        setMessages((prev) => {
+          const filtered = prev.filter((m) => m.id !== modelMsgId);
+          return [
+            ...filtered,
+            {
+              id: modelMsgId,
+              sender: 'model',
+              text: fullText || accumulatedModelText,
+              timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+              characterId: currentCharacter.id
+            }
+          ];
+        });
+        setIsReplying(false);
+        setAgentChatStatus('');
+      },
+      (errMsg: string) => {
+        console.error('Chat stream error:', errMsg);
+        setIsReplying(false);
+        setAgentChatStatus('');
+      }
+    );
   };
 
   return (
@@ -218,12 +242,13 @@ export const App: React.FC = () => {
           {/* Official High-Resolution Photo Card */}
           <PhotoCard poi={currentPOI} distanceText={distanceText} />
 
-          {/* Zero-Click 1st Person RAG Deep Story */}
+          {/* Zero-Click 1st Person Multi-Agent Deep Story */}
           <StoryCard
             character={currentCharacter}
             poi={currentPOI}
             storyText={storyText}
             isStreaming={isStoryStreaming}
+            agentStatus={agentStoryStatus}
           />
 
           {/* Real-time Interactive Q&A (Tiki-taka) */}
@@ -232,6 +257,7 @@ export const App: React.FC = () => {
             poi={currentPOI}
             messages={messages}
             isReplying={isReplying}
+            agentChatStatus={agentChatStatus}
             onSendMessage={handleSendMessage}
           />
         </div>

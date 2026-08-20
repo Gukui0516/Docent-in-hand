@@ -1,12 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Character, ChatMessage, POI } from '../types/docent';
-import { Send, MessageCircle, HelpCircle } from 'lucide-react';
+import { Send, MessageCircle, HelpCircle, Cpu } from 'lucide-react';
 
 interface ChatSectionProps {
   character: Character;
   poi: POI;
   messages: ChatMessage[];
   isReplying: boolean;
+  agentChatStatus?: string;
   onSendMessage: (text: string) => void;
 }
 
@@ -15,6 +16,7 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
   poi,
   messages,
   isReplying,
+  agentChatStatus,
   onSendMessage
 }) => {
   const [inputText, setInputText] = useState('');
@@ -47,7 +49,7 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
           <MessageCircle size={16} className="chat-icon" />
           <h3>{character.name}와 실시간 티키타카</h3>
         </div>
-        <span className="live-status">온라인 연결됨</span>
+        <span className="live-status">2-Layer 멀티 에이전트 연결됨</span>
       </div>
 
       {/* Suggested Question Chips */}
@@ -112,13 +114,20 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
                 <span>{character.avatarEmoji}</span>
               )}
             </div>
-            <div className="chat-bubble model-bubble replying-bubble">
+            <div className="chat-bubble model-bubble replying-bubble" style={{ minWidth: '220px' }}>
               <span className="bubble-speaker-name">{character.name}</span>
-              <div className="typing-dots">
-                <span className="dot" />
-                <span className="dot" />
-                <span className="dot" />
-              </div>
+              {agentChatStatus ? (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#666', marginTop: '4px' }}>
+                  <Cpu size={14} className="spin" color="#eb5e28" />
+                  <span>{agentChatStatus}</span>
+                </div>
+              ) : (
+                <div className="typing-dots">
+                  <span className="dot" />
+                  <span className="dot" />
+                  <span className="dot" />
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -138,9 +147,9 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
         />
         <button
           type="submit"
-          className="send-button"
+          className="chat-send-btn"
           disabled={!inputText.trim() || isReplying}
-          aria-label="메시지 전송"
+          aria-label="질문 전송"
         >
           <Send size={16} />
         </button>
