@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Character, POI } from '../types/docent';
-import { Sparkles, BookOpen, Volume2, VolumeX, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
+import { BookOpen, Volume2, VolumeX, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { RAG_KNOWLEDGE_BASE } from '../data/ragKnowledgeBase';
 
 interface StoryCardProps {
@@ -20,7 +20,6 @@ export const StoryCard: React.FC<StoryCardProps> = ({
   languageMode = 'standard',
   onToggleLanguageMode
 }) => {
-  const [imgError, setImgError] = useState(false);
   const [showReferences, setShowReferences] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
 
@@ -57,82 +56,61 @@ export const StoryCard: React.FC<StoryCardProps> = ({
 
   return (
     <section className="story-card-container" aria-label="1인칭 2-Layer 멀티 에이전트 도슨트">
-      {/* Persona Header & Language Mode Toggle */}
-      <div className="persona-banner">
-        <div className="persona-avatar-wrapper" style={{ backgroundColor: `${character.badgeColor}15` }}>
-          {character.avatarUrl && !imgError ? (
-            <img
-              src={character.avatarUrl}
-              alt={character.name}
-              className="persona-avatar-img"
-              onError={() => setImgError(true)}
-            />
-          ) : (
-            <span className="persona-emoji">{character.avatarEmoji}</span>
-          )}
-          <div className="online-indicator" />
-        </div>
-
-        <div className="persona-info">
-          <div className="persona-name-row">
-            <span className="persona-name">{character.name}</span>
-            <span className="persona-role-badge" style={{ color: character.badgeColor, borderColor: `${character.badgeColor}40` }}>
-              {character.title}
-            </span>
-          </div>
-          <p className="persona-personality">{character.personality}</p>
-        </div>
-
-        <div className="persona-banner-actions">
-          {/* Dialect Mode Toggle */}
-          {onToggleLanguageMode && (
-            <div className="dialect-mode-pill-toggle" role="group" aria-label="언어 모드 선택">
-              <button
-                type="button"
-                className={`mode-toggle-btn ${languageMode === 'standard' ? 'active' : ''}`}
-                onClick={() => onToggleLanguageMode('standard')}
-                title="표준어 모드"
-              >
-                표준어
-              </button>
-              <button
-                type="button"
-                className={`mode-toggle-btn ${languageMode === 'jeju' ? 'active' : ''}`}
-                onClick={() => onToggleLanguageMode('jeju')}
-                title="제주어 모드"
-              >
-                제주어
-              </button>
-            </div>
-          )}
-
-          {/* TTS Audio Button */}
-          <button
-            type="button"
-            className={`tts-audio-btn ${isSpeaking ? 'speaking' : ''}`}
-            onClick={handleToggleSpeech}
-            title={isSpeaking ? '음성 중지' : '도슨트 음성 듣기'}
-            aria-label="도슨트 음성 듣기"
-          >
-            {isSpeaking ? <VolumeX size={16} /> : <Volume2 size={16} />}
-            <span className="tts-btn-label">{isSpeaking ? '정지' : '음성'}</span>
-          </button>
-        </div>
-      </div>
-
       {/* Speech Bubble Card */}
       <div className="speech-bubble-card deep-story-card">
         <div className="bubble-header">
-          <span className="bubble-tag deep-tag">
-            <Sparkles size={13} className="sparkle-icon" />
-            2-Layer 멀티 에이전트 심층 도슨트 (3막 구성)
-          </span>
-          {isStreaming && (
-            <span className="streaming-pulse">
-              <span className="pulse-dot" />
-              이야기 들려주는 중...
+          <div className="bubble-character-info">
+            <span className="bubble-character-emoji">{character.avatarEmoji}</span>
+            <span className="bubble-character-name">{character.name}</span>
+            <span
+              className="bubble-character-badge"
+              style={{ color: character.badgeColor, borderColor: `${character.badgeColor}40` }}
+            >
+              {character.title}
             </span>
-          )}
+            {isStreaming && (
+              <span className="streaming-pulse">
+                <span className="pulse-dot" />
+                들려주는 중...
+              </span>
+            )}
+          </div>
+
+          <div className="bubble-header-actions">
+            {/* Dialect Mode Toggle */}
+            {onToggleLanguageMode && (
+              <div className="dialect-mode-pill-toggle" role="group" aria-label="언어 모드 선택">
+                <button
+                  type="button"
+                  className={`mode-toggle-btn ${languageMode === 'standard' ? 'active' : ''}`}
+                  onClick={() => onToggleLanguageMode('standard')}
+                  title="표준어 모드"
+                >
+                  표준어
+                </button>
+                <button
+                  type="button"
+                  className={`mode-toggle-btn ${languageMode === 'jeju' ? 'active' : ''}`}
+                  onClick={() => onToggleLanguageMode('jeju')}
+                  title="제주어 모드"
+                >
+                  제주어
+                </button>
+              </div>
+            )}
+
+            {/* TTS Audio Button */}
+            <button
+              type="button"
+              className={`tts-audio-btn ${isSpeaking ? 'speaking' : ''}`}
+              onClick={handleToggleSpeech}
+              title={isSpeaking ? '음성 중지' : '도슨트 음성 듣기'}
+              aria-label="도슨트 음성 듣기"
+            >
+              {isSpeaking ? <VolumeX size={15} /> : <Volume2 size={15} />}
+              <span className="tts-btn-label">{isSpeaking ? '정지' : '음성'}</span>
+            </button>
+          </div>
         </div>
 
         {/* Multi-paragraph Story Content */}
