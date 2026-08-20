@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { POI, POIImage } from '../types/docent';
-import { MapPin, Image as ImageIcon, ChevronLeft, ChevronRight, Play, Pause, ExternalLink, Maximize2, X } from 'lucide-react';
+import { MapPin, Image as ImageIcon, ChevronLeft, ChevronRight, ExternalLink, Maximize2, X } from 'lucide-react';
 
 interface PhotoCardProps {
   poi: POI;
@@ -70,11 +70,6 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
     setCurrentIndex(idx);
   };
 
-  const toggleAutoPlay = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setIsAutoPlay((prev) => !prev);
-  };
-
   return (
     <section className="photo-card-container" aria-label="대표 명소 현장 사진 카드">
       <div
@@ -140,27 +135,6 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
             </div>
 
             <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-              {totalImages > 1 && (
-                <button
-                  type="button"
-                  onClick={toggleAutoPlay}
-                  className="badge autoplay-badge"
-                  style={{
-                    backgroundColor: 'rgba(0, 0, 0, 0.65)',
-                    color: '#FFFFFF',
-                    border: 'none',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                    padding: '4px 8px'
-                  }}
-                  title={isAutoPlay ? '슬라이드쇼 일시정지' : '슬라이드쇼 재생'}
-                >
-                  {isAutoPlay ? <Pause size={12} /> : <Play size={12} />}
-                  <span style={{ fontSize: '10px' }}>{isAutoPlay ? '자동' : '정지'}</span>
-                </button>
-              )}
               <span className="badge distance-badge">
                 <MapPin size={12} />
                 {distanceText}
