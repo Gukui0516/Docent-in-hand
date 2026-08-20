@@ -208,10 +208,8 @@ export const App: React.FC = () => {
       <Header
         currentPlaceName={currentPOI.name}
         gpsLabel={gpsLabel}
-        onOpenBenchmark={() => setIsBenchmarkOpen(true)}
         onOpenPOIList={() => setIsPOIListOpen(true)}
         onOpenGPSSimulator={() => setIsGPSModalOpen(true)}
-        onOpenApiKeyModal={() => setIsApiKeyModalOpen(true)}
         isGpsActive={isGpsActive}
       />
 

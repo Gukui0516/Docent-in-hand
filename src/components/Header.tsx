@@ -1,22 +1,18 @@
 import React from 'react';
-import { Compass, Zap, MapPin, Navigation } from 'lucide-react';
+import { Compass, MapPin, Navigation } from 'lucide-react';
 
 interface HeaderProps {
   currentPlaceName: string;
-  onOpenBenchmark: () => void;
   onOpenPOIList: () => void;
   onOpenGPSSimulator: () => void;
-  onOpenApiKeyModal: () => void;
   isGpsActive: boolean;
   gpsLabel?: string;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   currentPlaceName,
-  onOpenBenchmark,
   onOpenPOIList,
   onOpenGPSSimulator,
-  onOpenApiKeyModal,
   isGpsActive,
   gpsLabel
 }) => {
@@ -42,26 +38,6 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Compass size={15} className="action-icon" />
             <span>명소 목록</span>
-          </button>
-
-          <button
-            type="button"
-            className="action-pill benchmark-pill"
-            onClick={onOpenBenchmark}
-            title="검색 엔진 A/B 벤치마크"
-          >
-            <Zap size={15} className="action-icon zap" />
-            <span>A/B 비교</span>
-          </button>
-
-          <button
-            type="button"
-            className="action-pill key-pill"
-            onClick={onOpenApiKeyModal}
-            title="Gemini API Key 설정"
-          >
-            <span className="key-icon">🔑</span>
-            <span>API 키</span>
           </button>
         </div>
       </div>
