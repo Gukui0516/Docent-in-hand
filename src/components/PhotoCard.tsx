@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { POI, POIImage } from '../types/docent';
-import { MapPin, Image as ImageIcon, ChevronLeft, ChevronRight, Play, Pause, ExternalLink } from 'lucide-react';
+import { MapPin, Image as ImageIcon, ChevronLeft, ChevronRight, Play, Pause, ExternalLink, Maximize2, X } from 'lucide-react';
 
 interface PhotoCardProps {
   poi: POI;
@@ -12,6 +12,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
   const [loadedMap, setLoadedMap] = useState<Record<number, boolean>>({});
   const [errorMap, setErrorMap] = useState<Record<number, boolean>>({});
   const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Normalize image list (supports multiple images or single fallback)
@@ -164,6 +165,29 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
                 <MapPin size={12} />
                 {distanceText}
               </span>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsLightboxOpen(true);
+                }}
+                className="badge fullscreen-btn"
+                style={{
+                  backgroundColor: 'rgba(0, 0, 0, 0.65)',
+                  color: '#FFFFFF',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  padding: '4px 8px'
+                }}
+                title="사진 원본 크게 보기"
+                aria-label="사진 원본 크게 보기"
+              >
+                <Maximize2 size={12} />
+                <span style={{ fontSize: '10px' }}>확대</span>
+              </button>
             </div>
           </div>
 
@@ -292,6 +316,50 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
           )}
         </div>
       </div>
+
+      {/* Fullscreen High-Resolution Lightbox Modal */}
+      {isLightboxOpen && (
+        <div
+          className="modal-backdrop photo-lightbox-backdrop"
+          onClick={() => setIsLightboxOpen(false)}
+        >
+          <div
+            className="photo-lightbox-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="lightbox-close-btn"
+              onClick={() => setIsLightboxOpen(false)}
+              aria-label="닫기"
+            >
+              <X size={24} />
+            </button>
+
+            <div className="lightbox-image-container">
+              <img
+                src={currentImage.src}
+                alt={currentImage.alt || poi.name}
+                className="lightbox-img"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+
+            <div className="lightbox-caption">
+              <div className="lightbox-title-row">
+                <h3>{poi.name}</h3>
+                <span className="lightbox-badge">{poi.category} · {poi.region}</span>
+              </div>
+              {currentImage.alt && (
+                <p className="lightbox-alt">📷 {currentImage.alt}</p>
+              )}
+              <div className="lightbox-source-info">
+                출처: {currentImage.source || poi.imageSource || '한국학중앙연구원 한국향토문화전자대전'}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
