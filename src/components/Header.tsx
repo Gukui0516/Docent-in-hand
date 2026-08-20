@@ -51,16 +51,18 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      <div className="location-bar" onClick={onOpenGPSSimulator} title="클릭하여 GPS 위치 변경">
-        <div className="location-info">
-          <MapPin size={14} className={`pin-icon ${isGpsActive ? 'active' : ''}`} />
-          <span className="location-text">
-            현재 위치: <strong>{currentPlaceName}</strong> {gpsLabel && <span className="gps-label">({gpsLabel})</span>}
+      <div className="location-bar-wrapper">
+        <div className="location-bar" onClick={onOpenGPSSimulator} title="클릭하여 GPS 위치 변경">
+          <div className="location-info">
+            <MapPin size={14} className={`pin-icon ${isGpsActive ? 'active' : ''}`} />
+            <span className="location-text">
+              현재 위치: <strong>{currentPlaceName}</strong> {gpsLabel && <span className="gps-label">({gpsLabel})</span>}
+            </span>
+          </div>
+          <span className="location-bar-change-hint">
+            위치 변경 ↗
           </span>
         </div>
-        <span className="location-bar-change-hint">
-          위치 변경 ↗
-        </span>
       </div>
     </header>
   );
