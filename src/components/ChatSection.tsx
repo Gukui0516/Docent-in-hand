@@ -43,13 +43,13 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
   };
 
   return (
-    <section className="chat-section-container" aria-label="실시간 티키타카 대화창">
+    <section className="chat-section-container" aria-label="실시간 QnA 대화창">
       <div className="chat-section-header">
         <div className="chat-header-title">
           <MessageCircle size={16} className="chat-icon" />
-          <h3>{character.name}와 실시간 티키타카</h3>
+          <h3>{character.name}와 실시간 QnA</h3>
         </div>
-        <span className="live-status">2-Layer 멀티 에이전트 연결됨</span>
+        <span className="live-status">실시간 AI 도슨트 연결됨</span>
       </div>
 
       {/* Suggested Question Chips */}

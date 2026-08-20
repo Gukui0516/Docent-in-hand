@@ -62,7 +62,7 @@ export class AgentOrchestrator {
         layer: 2,
         agent: characterId,
         step: 'storytelling',
-        message: `🎭 [${characterName} 에이전트] (${modeLabel}) 검증된 학술 브리핑을 바탕으로 1인칭 3막 도슨트 해설 구술 중...`
+        message: `🎭 [${characterName}] (${modeLabel}) 학술 지식을 바탕으로 맞춤형 도슨트 해설 구술 중...`
       });
 
       let fullText = '';
@@ -109,7 +109,7 @@ export class AgentOrchestrator {
       layer: 1,
       agent: 'researcher',
       step: 'researching',
-      message: `🔍 [리서치 에이전트] "${userMessage}" 관련 실시간 학술 팩트 인출 중...`
+      message: `🔍 "${userMessage}" 관련 학술 지식 인출 중...`
     });
 
     try {
@@ -126,7 +126,7 @@ export class AgentOrchestrator {
         layer: 2,
         agent: characterId,
         step: 'answering',
-        message: `💬 [${characterName} 에이전트] (${modeLabel}) 1인칭 답변 구술 중...`
+        message: `💬 [${characterName}] (${modeLabel}) 답변 구술 중...`
       });
 
       let fullText = '';

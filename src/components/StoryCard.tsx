@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Character, POI } from '../types/docent';
 import { Sparkles, BookOpen, Volume2, VolumeX, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { RAG_KNOWLEDGE_BASE } from '../data/ragKnowledgeBase';
+import { getThemeTitle } from '../utils/themeTitle';
 
 interface StoryCardProps {
   character: Character;
@@ -55,14 +56,14 @@ export const StoryCard: React.FC<StoryCardProps> = ({
   const paragraphs = storyText.split(/\n\n+/).filter((p) => p.trim().length > 0);
 
   return (
-    <section className="story-card-container" aria-label="1인칭 2-Layer 멀티 에이전트 도슨트">
+    <section className="story-card-container" aria-label="1인칭 맞춤형 심층 도슨트">
       {/* Speech Bubble Card */}
       <div className="speech-bubble-card deep-story-card">
         <div className="bubble-header">
           <div className="bubble-header-left">
             <span className="bubble-tag deep-tag">
               <Sparkles size={13} className="sparkle-icon" />
-              1인칭 AI 도슨트 스토리
+              {getThemeTitle(poi, ragDoc)}
             </span>
             {isStreaming && (
               <span className="streaming-pulse">
