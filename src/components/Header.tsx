@@ -6,6 +6,7 @@ interface HeaderProps {
   onOpenBenchmark: () => void;
   onOpenPOIList: () => void;
   onOpenGPSSimulator: () => void;
+  onOpenApiKeyModal: () => void;
   isGpsActive: boolean;
   gpsLabel?: string;
 }
@@ -15,6 +16,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenBenchmark,
   onOpenPOIList,
   onOpenGPSSimulator,
+  onOpenApiKeyModal,
   isGpsActive,
   gpsLabel
 }) => {
@@ -50,6 +52,16 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Zap size={15} className="action-icon zap" />
             <span>A/B 비교</span>
+          </button>
+
+          <button
+            type="button"
+            className="action-pill key-pill"
+            onClick={onOpenApiKeyModal}
+            title="Gemini API Key 설정"
+          >
+            <span className="key-icon">🔑</span>
+            <span>API 키</span>
           </button>
         </div>
       </div>

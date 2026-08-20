@@ -11,6 +11,7 @@ import { ChatSection } from './components/ChatSection';
 import { POICarousel } from './components/POICarousel';
 import { BenchmarkModal } from './components/BenchmarkModal';
 import { GPSSimulatorModal } from './components/GPSSimulatorModal';
+import { ApiKeyModal } from './components/ApiKeyModal';
 import './App.css';
 
 export const App: React.FC = () => {
@@ -39,6 +40,7 @@ export const App: React.FC = () => {
   const [isPOIListOpen, setIsPOIListOpen] = useState(false);
   const [isBenchmarkOpen, setIsBenchmarkOpen] = useState(false);
   const [isGPSModalOpen, setIsGPSModalOpen] = useState(false);
+  const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
 
   const isInitialStoryStarted = useRef(false);
 
@@ -209,6 +211,7 @@ export const App: React.FC = () => {
         onOpenBenchmark={() => setIsBenchmarkOpen(true)}
         onOpenPOIList={() => setIsPOIListOpen(true)}
         onOpenGPSSimulator={() => setIsGPSModalOpen(true)}
+        onOpenApiKeyModal={() => setIsApiKeyModalOpen(true)}
         isGpsActive={isGpsActive}
       />
 
@@ -261,6 +264,13 @@ export const App: React.FC = () => {
         onApplyCoordinates={handleApplyCoordinates}
         onUseRealGPS={handleUseRealGPS}
         isRealGpsActive={isGpsActive}
+      />
+
+      {/* Gemini API Key Settings Modal */}
+      <ApiKeyModal
+        isOpen={isApiKeyModalOpen}
+        onClose={() => setIsApiKeyModalOpen(false)}
+        onKeySaved={() => triggerZeroClickStory(currentPOI, currentCharacter)}
       />
     </div>
   );
