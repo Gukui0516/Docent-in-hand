@@ -24,7 +24,7 @@ export interface POIImage {
 export interface POI {
   id: string;
   name: string;
-  category: '자연과 지리' | '생활과 민속' | '문화유산';
+  category: '자연과 지리' | '생활과 민속' | '문화유산' | '역사와 인물' | '문화와 예술' | string;
   assignedCharacterId: CharacterId;
   region: string;
   latitude: number;
