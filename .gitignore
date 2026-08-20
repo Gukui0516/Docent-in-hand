@@ -86,6 +86,12 @@ Thumbs.db
 *.parquet
 *.tar.gz
 
+# Generated Data & Corpus Files (Local only)
+src/data/poiData.ts
+src/data/ragKnowledgeBase.ts
+src/data/ragFullCorpus.json
+server/src/data/ragFullCorpus.json
+
 
 # Environment variables
 .env

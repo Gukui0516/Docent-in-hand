@@ -13,6 +13,8 @@ import os
 import html
 import re
 
+import unicodedata
+
 DATA_DIR = 'data'
 SRC_POI_DATA = 'src/data/poiData.ts'
 SRC_RAG_KB = 'src/data/ragKnowledgeBase.ts'
@@ -122,12 +124,25 @@ def load_all_json_files():
     print(f'🔍 Scanning {len(json_files)} JSON database files in {DATA_DIR}/...')
     for fpath in json_files:
         try:
+            norm_path = unicodedata.normalize('NFC', fpath)
             with open(fpath, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                region_default = data.get('region', '제주시')
-                cat_default = data.get('category_name', '자연과 지리')
+                region_default = '서귀포시' if 'Seogwipo' in norm_path or '서귀포' in norm_path else '제주시'
+                
+                # Derive category name from filename
+                base_name = unicodedata.normalize('NFC', os.path.basename(fpath))
+                cat_default = '자연과 지리'
+                if '문화유산' in base_name:
+                    cat_default = '문화유산'
+                elif '생활과민속' in base_name or '민속' in base_name:
+                    cat_default = '생활과 민속'
+                elif '역사' in base_name or '성씨와인물' in base_name:
+                    cat_default = '역사와 인물'
+                elif '문화와교육' in base_name or '언어와문학' in base_name or '종교' in base_name:
+                    cat_default = '문화와 예술'
+
                 items = data.get('items', [])
-                print(f'  📄 {fpath}: {len(items)} items (Region: {region_default})')
+                print(f'  📄 {norm_path}: {len(items)} items (Region: {region_default}, Category: {cat_default})')
                 for it in items:
                     it_id = it.get('id', '')
                     if not it_id or it_id in seen_ids:
@@ -242,12 +257,15 @@ def process_items_to_pois(all_items):
         }
         pois.append(poi_obj)
 
-    # Sort so that core famous landmarks appear first, followed by other locations
+    # Sort: Prioritize famous landmarks, then by number of photos, then content length
     def sort_score(p):
+        landmark_idx = 999
         for idx, k in enumerate(priority_titles):
             if k in p['name']:
-                return idx
-        return 9999
+                landmark_idx = idx
+                break
+        photo_count = len(p.get('images', []))
+        return (landmark_idx, -photo_count, -len(p.get('mythAndFact', {}).get('details', '')))
 
     pois.sort(key=sort_score)
     print(f'🎉 Processed {len(pois)} interactive POIs with verified photos!')
