@@ -16,6 +16,7 @@ export interface StreamChatRequest {
   poiName: string;
   characterId: string;
   userMessage: string;
+  coordinates?: { lat: number; lng: number };
   history?: { role: 'user' | 'model'; text: string }[];
   languageMode?: 'standard' | 'jeju';
 }
@@ -29,22 +30,21 @@ export class AgentOrchestrator {
     res: Response
   ): Promise<void> {
     const startTime = Date.now();
-    const { poiName, characterId, userQuery, languageMode = 'standard' } = req;
-
-    const modeLabel = languageMode === 'jeju' ? '🍊 제주 방언 모드' : '🗣️ 표준어 모드';
+    const { poiName, characterId, userQuery, coordinates } = req;
 
     this.sendSSE(res, 'agent_status', {
       layer: 1,
       agent: 'researcher',
       step: 'researching',
-      message: `🔍 [리서치 에이전트] 18종 한국학 아카이브(5,161건)에서 [${poiName}] 공인 팩트 탐색 중...`
+      message: `🔍 [1계층 리서치/공간 에이전트] 18종 아카이브 및 1KM 주변 지리에서 [${poiName}] 탐색 중...`
     });
 
     try {
-      // 1. Layer 1: Knowledge Research Agent
+      // 1. Layer 1: Knowledge & Spatial Research Agents (Parallel)
       const briefing: ResearchBriefingNote = await KnowledgeResearchAgent.conductResearch(
         poiName,
         userQuery,
+        coordinates,
         (msg) => this.sendSSE(res, 'agent_status', { layer: 1, agent: 'researcher', step: 'progress', message: msg })
       );
 
@@ -62,7 +62,7 @@ export class AgentOrchestrator {
         layer: 2,
         agent: characterId,
         step: 'storytelling',
-        message: `🎭 [${characterName} 에이전트] (${modeLabel}) 검증된 학술 브리핑을 바탕으로 1인칭 3막 도슨트 해설 구술 중...`
+        message: `🎭 [${characterName}] 학술 지식을 바탕으로 맞춤형 도슨트 해설 구술 중...`
       });
 
       let fullText = '';
@@ -72,11 +72,11 @@ export class AgentOrchestrator {
       };
 
       if (characterId === 'haenyeo') {
-        await HaenyeoAgent.generateStoryStream(poiName, briefing, onToken, languageMode);
+        await HaenyeoAgent.generateStoryStream(poiName, briefing, onToken);
       } else if (characterId === 'dolhareubang') {
-        await DolhareubangAgent.generateStoryStream(poiName, briefing, onToken, languageMode);
+        await DolhareubangAgent.generateStoryStream(poiName, briefing, onToken);
       } else {
-        await SeolmundaeAgent.generateStoryStream(poiName, briefing, onToken, languageMode);
+        await SeolmundaeAgent.generateStoryStream(poiName, briefing, onToken);
       }
 
       const totalLatencyMs = Date.now() - startTime;
@@ -101,22 +101,21 @@ export class AgentOrchestrator {
     res: Response
   ): Promise<void> {
     const startTime = Date.now();
-    const { poiName, characterId, userMessage, history = [], languageMode = 'standard' } = req;
-
-    const modeLabel = languageMode === 'jeju' ? '🍊 제주 방언 모드' : '🗣️ 표준어 모드';
+    const { poiName, characterId, userMessage, coordinates, history = [] } = req;
 
     this.sendSSE(res, 'agent_status', {
       layer: 1,
       agent: 'researcher',
       step: 'researching',
-      message: `🔍 [리서치 에이전트] "${userMessage}" 관련 실시간 학술 팩트 인출 중...`
+      message: `🔍 "${userMessage}" 관련 학술 지식 및 주변 1KM 지리 인출 중...`
     });
 
     try {
-      // 1. Layer 1: Knowledge Research Agent
+      // 1. Layer 1: Knowledge & Spatial Research Agents
       const briefing = await KnowledgeResearchAgent.conductResearch(
         poiName,
         userMessage,
+        coordinates,
         (msg) => this.sendSSE(res, 'agent_status', { layer: 1, agent: 'researcher', step: 'progress', message: msg })
       );
 
@@ -126,7 +125,7 @@ export class AgentOrchestrator {
         layer: 2,
         agent: characterId,
         step: 'answering',
-        message: `💬 [${characterName} 에이전트] (${modeLabel}) 1인칭 답변 구술 중...`
+        message: `💬 [${characterName}] 답변 구술 중...`
       });
 
       let fullText = '';
@@ -136,11 +135,11 @@ export class AgentOrchestrator {
       };
 
       if (characterId === 'haenyeo') {
-        await HaenyeoAgent.answerChatStream(poiName, userMessage, briefing, history, onToken, languageMode);
+        await HaenyeoAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
       } else if (characterId === 'dolhareubang') {
-        await DolhareubangAgent.answerChatStream(poiName, userMessage, briefing, history, onToken, languageMode);
+        await DolhareubangAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
       } else {
-        await SeolmundaeAgent.answerChatStream(poiName, userMessage, briefing, history, onToken, languageMode);
+        await SeolmundaeAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
       }
 
       const totalLatencyMs = Date.now() - startTime;

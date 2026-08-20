@@ -1,68 +1,37 @@
 import React, { useState } from 'react';
 import { Character, POI } from '../types/docent';
-import { Sparkles, BookOpen, Volume2, VolumeX, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
+import { Sparkles, BookOpen, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { RAG_KNOWLEDGE_BASE } from '../data/ragKnowledgeBase';
+import { getThemeTitle } from '../utils/themeTitle';
 
 interface StoryCardProps {
   character: Character;
   poi: POI;
   storyText: string;
   isStreaming: boolean;
-  languageMode?: 'standard' | 'jeju';
-  onToggleLanguageMode?: (mode: 'standard' | 'jeju') => void;
 }
 
 export const StoryCard: React.FC<StoryCardProps> = ({
-  character,
   poi,
   storyText,
   isStreaming,
-  languageMode = 'standard',
-  onToggleLanguageMode
 }) => {
   const [showReferences, setShowReferences] = useState(false);
-  const [isSpeaking, setIsSpeaking] = useState(false);
 
   const ragDoc = RAG_KNOWLEDGE_BASE[poi.id];
-
-  // Browser Speech Synthesis for TTS
-  const handleToggleSpeech = () => {
-    if (!('speechSynthesis' in window)) {
-      alert('이 브라우저는 음성 재생을 지원하지 않습니다.');
-      return;
-    }
-
-    if (isSpeaking) {
-      window.speechSynthesis.cancel();
-      setIsSpeaking(false);
-    } else {
-      window.speechSynthesis.cancel();
-      const cleanText = storyText.replace(/[#*|]/g, '');
-      const utterance = new SpeechSynthesisUtterance(cleanText);
-      utterance.lang = 'ko-KR';
-      utterance.rate = 0.95;
-      utterance.pitch = character.id === 'seolmundae' ? 0.85 : character.id === 'haenyeo' ? 1.05 : 0.75;
-
-      utterance.onend = () => setIsSpeaking(false);
-      utterance.onerror = () => setIsSpeaking(false);
-
-      window.speechSynthesis.speak(utterance);
-      setIsSpeaking(true);
-    }
-  };
 
   // Split story into readable narrative paragraphs
   const paragraphs = storyText.split(/\n\n+/).filter((p) => p.trim().length > 0);
 
   return (
-    <section className="story-card-container" aria-label="1인칭 2-Layer 멀티 에이전트 도슨트">
+    <section className="story-card-container" aria-label="1인칭 맞춤형 심층 도슨트">
       {/* Speech Bubble Card */}
       <div className="speech-bubble-card deep-story-card">
         <div className="bubble-header">
           <div className="bubble-header-left">
             <span className="bubble-tag deep-tag">
               <Sparkles size={13} className="sparkle-icon" />
-              1인칭 AI 도슨트 스토리
+              {getThemeTitle(poi, ragDoc)}
             </span>
             {isStreaming && (
               <span className="streaming-pulse">
@@ -70,42 +39,6 @@ export const StoryCard: React.FC<StoryCardProps> = ({
                 들려주는 중...
               </span>
             )}
-          </div>
-
-          <div className="bubble-header-actions">
-            {/* Dialect Mode Toggle */}
-            {onToggleLanguageMode && (
-              <div className="dialect-mode-pill-toggle" role="group" aria-label="언어 모드 선택">
-                <button
-                  type="button"
-                  className={`mode-toggle-btn ${languageMode === 'standard' ? 'active' : ''}`}
-                  onClick={() => onToggleLanguageMode('standard')}
-                  title="표준어 모드"
-                >
-                  표준어
-                </button>
-                <button
-                  type="button"
-                  className={`mode-toggle-btn ${languageMode === 'jeju' ? 'active' : ''}`}
-                  onClick={() => onToggleLanguageMode('jeju')}
-                  title="제주어 모드"
-                >
-                  제주어
-                </button>
-              </div>
-            )}
-
-            {/* TTS Audio Button */}
-            <button
-              type="button"
-              className={`tts-audio-btn ${isSpeaking ? 'speaking' : ''}`}
-              onClick={handleToggleSpeech}
-              title={isSpeaking ? '음성 중지' : '도슨트 음성 듣기'}
-              aria-label="도슨트 음성 듣기"
-            >
-              {isSpeaking ? <VolumeX size={15} /> : <Volume2 size={15} />}
-              <span className="tts-btn-label">{isSpeaking ? '정지' : '음성'}</span>
-            </button>
           </div>
         </div>
 
