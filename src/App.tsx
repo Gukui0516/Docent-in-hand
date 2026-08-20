@@ -217,9 +217,10 @@ export const App: React.FC = () => {
           {/* Official High-Resolution Photo Card */}
           <PhotoCard poi={currentPOI} distanceText={distanceText} />
 
-          {/* Zero-Click 1st Person Snack Story */}
+          {/* Zero-Click 1st Person RAG Deep Story */}
           <StoryCard
             character={currentCharacter}
+            poi={currentPOI}
             storyText={storyText}
             isStreaming={isStoryStreaming}
           />
