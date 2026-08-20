@@ -37,6 +37,17 @@ export class GeminiService {
     return this.apiKey;
   }
 
+  public getModelName(): string {
+    return this.modelName;
+  }
+
+  public setModelName(model: string) {
+    this.modelName = model.trim();
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('DOCENT_GEMINI_MODEL', this.modelName);
+    }
+  }
+
   public hasApiKey(): boolean {
     return Boolean(this.apiKey && this.apiKey.length > 5);
   }
