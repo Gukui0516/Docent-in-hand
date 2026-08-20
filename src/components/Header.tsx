@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, MapPin, Navigation } from 'lucide-react';
+import { Search, MapPin, Navigation } from 'lucide-react';
 
 interface HeaderProps {
   currentPlaceName: string;
@@ -32,12 +32,12 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="header-actions">
           <button
             type="button"
-            className="action-pill map-pill"
+            className="header-icon-btn"
             onClick={onOpenPOIList}
-            title="다른 제주 명소 둘러보기"
+            aria-label="제주 명소 및 신화 검색"
+            title="제주 명소 및 신화 검색"
           >
-            <Compass size={15} className="action-icon" />
-            <span>명소 목록</span>
+            <Search size={18} className="search-btn-icon" />
           </button>
         </div>
       </div>
