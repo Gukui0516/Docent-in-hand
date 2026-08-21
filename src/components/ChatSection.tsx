@@ -47,7 +47,10 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
       <div className="chat-section-header">
         <div className="chat-header-title">
           <MessageCircle size={16} className="chat-icon" />
-          <h3>{character.name}와 실시간 QnA</h3>
+          <div>
+            <span className="chat-section-eyebrow">이야기는 계속됩니다</span>
+            <h3>{character.name}에게 더 물어보세요</h3>
+          </div>
         </div>
       </div>
 
@@ -55,7 +58,7 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
       <div className="quick-chips-wrapper">
         <div className="chips-label">
           <HelpCircle size={13} />
-          <span>추천 질문</span>
+          <span>이런 이야기도 궁금하지 않나요?</span>
         </div>
         <div className="chips-list">
           {poi.sampleQuestions.map((q, idx) => (
@@ -66,7 +69,7 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
               onClick={() => handleChipClick(q)}
               disabled={isReplying}
             >
-              💬 {q}
+              {q} <span aria-hidden="true">→</span>
             </button>
           ))}
         </div>
@@ -76,7 +79,7 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
       <div className="messages-feed">
         {messages.length === 0 ? (
           <div className="empty-chat-hint">
-            <p>💡 위의 추천 질문을 누르거나 직접 궁금한 점을 물어보세요!</p>
+            <p>추천 질문을 고르거나, 이 장소에서 궁금한 것을 자유롭게 물어보세요.</p>
           </div>
         ) : (
           messages.map((msg) => (

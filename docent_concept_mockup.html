@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내 손안의 도슨트 - UI/UX Concept Prototype</title>
+  <!-- Lucide Icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+      /* Jeju Warm & Basalt Palette */
+      --bg-warm-sand: #F5F5F4; /* 따뜻한 아날로그 미색 한지 느낌 */
+      --bg-basalt-dark: #1C1917; /* 돌하르방/현무암 딥그레이 */
+      --accent-tangerine: #F97316; /* 상큼한 제주 감귤 주황 */
+      --accent-ocean: #0D9488; /* 에메랄드 김녕 바당 청록 */
+      --accent-mustard: #EAB308; /* 한라산 야생화 노랑 */
+      --border-soft: #E7E5E4;
+      --text-main: #292524;
+      --text-muted: #78716C;
+      --shadow-soft: 0 4px 16px rgba(28, 25, 23, 0.05), 0 2px 4px rgba(28, 25, 23, 0.02);
+      --shadow-bouncy: 0 10px 25px -5px rgba(249, 115, 22, 0.1), 0 8px 10px -6px rgba(249, 115, 22, 0.05);
+      
+      --radius-bubble: 18px;
+      --radius-card: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Pretendard', -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: #E7E5E4; /* 데스크톱 환경 배경색 (한 단계 어두움) */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    /* 모바일 프레임 시뮬레이터 */
+    .mobile-frame {
+      width: 100%;
+      max-width: 420px;
+      height: 92vh;
+      max-height: 860px;
+      background-color: var(--bg-warm-sand);
+      border-radius: 40px;
+      box-shadow: 0 25px 50px -12px rgba(28, 25, 23, 0.25);
+      border: 8px solid var(--bg-basalt-dark);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* 헤더 */
+    header {
+      background-color: rgba(245, 245, 244, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid var(--border-soft);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-tangerine), #EA580C);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+      color: white;
+      font-size: 18px;
+    }
+
+    .brand-text h1 {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: var(--bg-basalt-dark);
+    }
+
+    .brand-text p {
+      font-size: 10px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* GPS 라이브 동기화 바 */
+    .gps-bar {
+      margin-top: 10px;
+      background-color: white;
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .gps-info {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .gps-pulse {
+      width: 8px;
+      height: 8px;
+      background-color: #22C55E;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .gps-pulse::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border: 2px solid #22C55E;
+      border-radius: 50%;
+      animation: pulse-ring 1.8s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(0.5); opacity: 1; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+
+    .location-name {
+      font-weight: 700;
+      color: var(--bg-basalt-dark);
+    }
+
+    /* 메인 콘텐츠 영역 (스크롤 숨김) */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 16px;
+      gap: 16px;
+      scroll-behavior: smooth;
+    }
+
+    /* 1. 상단 대표 비주얼 카드 */
+    .visual-card {
+      background-color: white;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      aspect-ratio: 1.5 / 1;
+    }
+
+    .visual-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .visual-card:hover .visual-image {
+      transform: scale(1.04);
+    }
+
+    .visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(28, 25, 23, 0) 40%, rgba(28, 25, 23, 0.75) 100%);
+    }
+
+    .visual-info {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      color: white;
+    }
+
+    .visual-tag {
+      background-color: var(--accent-tangerine);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .visual-title {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+
+    .visual-source {
+      font-size: 9px;
+      opacity: 0.7;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    /* 2. 중단 캐릭터 슬라이더 및 페르소나 스테이지 */
+    .character-tab-container {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .character-tab {
+      flex: 1;
+      border: 1px solid var(--border-soft);
+      background-color: white;
+      border-radius: 16px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .character-tab.active {
+      border-color: var(--accent-tangerine);
+      background-color: #FFF7ED;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px -4px rgba(249, 115, 22, 0.15);
+    }
+
+    .character-tab.active.ocean {
+      border-color: var(--accent-ocean);
+      background-color: #F0FDF4;
+      box-shadow: 0 8px 16px -4px rgba(13, 148, 136, 0.15);
+    }
+
+    .character-tab.active.basalt {
+      border-color: var(--bg-basalt-dark);
+      background-color: #FAFAF9;
+      box-shadow: 0 8px 16px -4px rgba(28, 25, 23, 0.15);
+    }
+
+    .tab-avatar {
+      font-size: 22px;
+    }
+
+    .tab-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .tab-role {
+      font-size: 8px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* 1인칭 스낵 스토리 카드 */
+    .story-card {
+      background-color: white;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-soft);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+
+    .story-bubble-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .story-speaker-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 10px;
+    }
+
+    .badge-halmang { background-color: #FFEDD5; color: #C2410C; }
+    .badge-samchun { background-color: #CCFBF1; color: #0F766E; }
+    .badge-harubang { background-color: #E7E5E4; color: #44403C; }
+
+    .story-narrative {
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 500;
+      color: var(--text-main);
+      letter-spacing: -0.2px;
+    }
+
+    .typewriter-cursor {
+      color: var(--accent-tangerine);
+      font-weight: 800;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .story-citation {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* 3. 하단 실시간 Q&A 챗 섹션 */
+    .chat-section {
+      background-color: white;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-height: 250px;
+    }
+
+    .chat-header {
+      background-color: #FAF9F6;
+      border-bottom: 1px solid var(--border-soft);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--bg-basalt-dark);
+    }
+
+    /* 퀵 퀘스천 카드 가로 슬라이더 */
+    .quick-chips {
+      padding: 10px 14px 8px;
+      background-color: #FAFAF9;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      white-space: nowrap;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .quick-chips::-webkit-scrollbar {
+      display: none; /* 스크롤바 숨김 */
+    }
+
+    .chip {
+      background-color: white;
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+      color: var(--text-main);
+    }
+
+    .chip:hover {
+      border-color: var(--accent-tangerine);
+      background-color: #FFF7ED;
+      color: var(--accent-tangerine);
+    }
+
+    /* 채팅 로그 */
+    .chat-log {
+      flex: 1;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow-y: auto;
+      max-height: 200px;
+      background-color: #FBFBFA;
+    }
+
+    .bubble-row {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .bubble-row.user-row {
+      justify-content: flex-end;
+    }
+
+    .mini-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: #FFEDD5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .bubble {
+      max-width: 75%;
+      padding: 10px 14px;
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .bubble.model-bubble {
+      background-color: white;
+      border: 1px solid var(--border-soft);
+      border-radius: 0 16px 16px 16px;
+      color: var(--text-main);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    }
+
+    .bubble.user-bubble {
+      background-color: var(--bg-basalt-dark);
+      color: white;
+      border-radius: 16px 16px 0 16px;
+    }
+
+    .bubble-sender {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+      display: block;
+    }
+
+    /* 로딩 이펙트 (숨비소리) */
+    .loading-bubble {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .diving-float {
+      width: 12px;
+      height: 12px;
+      background-color: var(--accent-tangerine);
+      border-radius: 50%;
+      animation: float-dive 1.4s ease-in-out infinite;
+    }
+
+    @keyframes float-dive {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(4px); opacity: 0.7; }
+    }
+
+    /* 하단 입력 폼 */
+    .input-bar {
+      border-top: 1px solid var(--border-soft);
+      padding: 10px 14px;
+      display: flex;
+      gap: 8px;
+      background-color: white;
+    }
+
+    .chat-input {
+      flex: 1;
+      border: 1px solid var(--border-soft);
+      background-color: var(--bg-warm-sand);
+      border-radius: var(--radius-bubble);
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .chat-input:focus {
+      border-color: var(--accent-tangerine);
+      background-color: white;
+    }
+
+    .send-btn {
+      width: 38px;
+      height: 38px;
+      background-color: var(--bg-basalt-dark);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .send-btn:hover {
+      background-color: var(--accent-tangerine);
+      transform: scale(1.05);
+    }
+
+    /* 자연음 음소거 토글 버튼 */
+    .sound-toggle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: white;
+      border: 1px solid var(--border-soft);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .sound-toggle.active {
+      color: var(--accent-tangerine);
+      border-color: #FFD8A8;
+      background-color: #FFF7ED;
+    }
+
+    /* 알림 이펙트 */
+    .bouncy-animation {
+      animation: bubble-bounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+
+    @keyframes bubble-bounce {
+      0% { transform: scale(0.85) translateY(10px); opacity: 0; }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-frame">
+    <!-- 헤더 -->
+    <header>
+      <div class="header-top">
+        <div class="brand">
+          <div class="brand-logo"><span style="transform: translateY(-1px);">🏝️</span></div>
+          <div class="brand-text">
+            <h1>내 손안의 도슨트</h1>
+            <p>제주 신화·자연 1인칭 AI 도슨트</p>
+          </div>
+        </div>
+        <button class="sound-toggle active" id="btnSound" title="제주 파도/바람 자연소리 토글" onclick="toggleSound()">
+          <i data-lucide="volume-2" style="width: 16px; height: 16px;"></i>
+        </button>
+      </div>
+
+      <!-- 실시간 위치 동기화 바 (Zero-Click 온보딩 체감) -->
+      <div class="gps-bar">
+        <div class="gps-info">
+          <div class="gps-pulse"></div>
+          <span>GPS 감지 명소:</span>
+          <span class="location-name" id="txtLocationName">성산일출봉</span>
+        </div>
+        <div style="font-size: 10px; font-weight: 700; color: var(--accent-tangerine); background-color: #FFF7ED; padding: 2px 6px; border-radius: 6px;">
+          실시간 반경 200m 이내
+        </div>
+      </div>
+    </header>
+
+    <!-- 메인 내용 (Scroll Content) -->
+    <div class="main-content" id="mainContent">
+      
+      <!-- 1. 고화질 대표 비주얼 카드 (향토문화전자대전 출처) -->
+      <div class="visual-card">
+        <img src="https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=800&q=80" alt="성산일출봉" class="visual-image" id="imgVisual">
+        <div class="visual-overlay"></div>
+        <div class="visual-info">
+          <span class="visual-tag" id="txtCategoryTag">구비전승 / 자연지리</span>
+          <h2 class="visual-title" id="txtVisualTitle">성산일출봉 (城山日出峰)</h2>
+          <div class="visual-source">
+            <i data-lucide="book-open" style="width: 11px; height: 11px;"></i>
+            <span>출처: 한국학중앙연구원 향토문화전자대전</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. 캐릭터 선택 탭 (3대 페르소나 캐릭터 스위칭) -->
+      <div class="character-tab-container">
+        <!-- 설문대할망 -->
+        <div class="character-tab active" id="tabHalmang" onclick="selectCharacter('halmang')">
+          <span class="tab-avatar">👵</span>
+          <span class="tab-name">설문대할망</span>
+          <span class="tab-role">제주의 여신</span>
+        </div>
+        <!-- 해녀 삼춘 -->
+        <div class="character-tab" id="tabSamchun" onclick="selectCharacter('samchun')">
+          <span class="tab-avatar">🏊‍♀️</span>
+          <span class="tab-name">해녀 삼춘</span>
+          <span class="tab-role">바다의 수호자</span>
+        </div>
+        <!-- 돌하르방 -->
+        <div class="character-tab" id="tabHarubang" onclick="selectCharacter('harubang')">
+          <span class="tab-avatar">🗿</span>
+          <span class="tab-name">돌하르방</span>
+          <span class="tab-role">탐라의 파수꾼</span>
+        </div>
+      </div>
+
+      <!-- 1인칭 스낵 스토리 (Typing Effect 연출용) -->
+      <div class="story-card">
+        <div class="story-bubble-header">
+          <div class="story-speaker-badge badge-halmang" id="txtSpeakerBadge">
+            <i data-lucide="sparkles" style="width: 12px; height: 12px;"></i>
+            <span id="txtSpeakerName">설문대할망의 한마디</span>
+          </div>
+          <div style="font-size: 10px; color: var(--text-muted); font-weight: 600;">
+            ⏳ 30초 스낵 완독
+          </div>
+        </div>
+        <div class="story-narrative">
+          <span id="txtStoryContent">어여 오게나! 내가 거대한 흙을 치마에 담아 나르다가, 이 제주섬을 다 만들고 남은 흙으로 요 성산일출봉을 빚어냈단다. 어때, 참 곱지 않으냐? 내 빨래바구니였던 이 분화구에 서서 바라보는 바다 풍경이 제주의 으뜸 중의 으뜸이라네...</span><span class="typewriter-cursor" id="typewriterCursor">|</span>
+        </div>
+        <div class="story-citation">
+          <i data-lucide="check-circle" style="width: 12px; height: 12px; color: #22C55E;"></i>
+          <span>디지털제주시문화대전 설화 원문 고증 완료</span>
+        </div>
+      </div>
+
+      <!-- 3. 실시간 대화창 (티키타카 챗) -->
+      <div class="chat-section">
+        <div class="chat-header">
+          <i data-lucide="message-square" style="width: 14px; height: 14px; color: var(--accent-tangerine);"></i>
+          <span id="txtChatHeader">설문대할망과 실시간 대화하기</span>
+        </div>
+
+        <!-- 퀵 추천 질문 칩 -->
+        <div class="quick-chips" id="quickChips">
+          <button class="chip" onclick="askQuickQuestion('할망, 우도는 진짜 빨래돌이었나요?')">💬 우도는 진짜 빨래돌?</button>
+          <button class="chip" onclick="askQuickQuestion('옷 한 벌 해드리지 못해 미안해요.')">💬 옷 해드리지 못한 이야기</button>
+          <button class="chip" onclick="askQuickQuestion('일출봉은 어쩌다 패인 거우다?')">💬 일출봉이 패인 이유</button>
+        </div>
+
+        <!-- 실시간 채팅 메시지 로그 -->
+        <div class="chat-log" id="chatLog">
+          <div class="bubble-row">
+            <div class="mini-avatar" id="txtMiniAvatar">👵</div>
+            <div class="bubble model-bubble">
+              <span class="bubble-sender" id="txtSenderLabel">설문대할망</span>
+              성산일출봉에 대해 궁금한 점을 편하게 이 할망한테 물어보게나! (예: "우도는 진짜 빨래돌이었어?")
+            </div>
+          </div>
+        </div>
+
+        <!-- 하단 메시지 입력 바 -->
+        <form class="input-bar" onsubmit="sendMessage(event)">
+          <input type="text" class="chat-input" id="chatInput" placeholder="설문대할망에게 제주 전설 물어보기..." autocomplete="off">
+          <button class="send-btn" type="submit">
+            <i data-lucide="send" style="width: 16px; height: 16px;"></i>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Audio Context용 더미 오디오 스크립트 및 JS 제어 -->
+  <script>
+    // Lucide Icons 초기화
+    lucide.createIcons();
+
+    // 캐릭터별 전용 데이터셋
+    const dataSet = {
+      halmang: {
+        avatar: "👵",
+        miniAvatar: "👵",
+        name: "설문대할망",
+        location: "성산일출봉",
+        category: "구비전승 / 자연지리",
+        badgeClass: "badge-halmang",
+        tabTheme: "active",
+        bgImg: "https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=800&q=80",
+        story: "어여 오게나! 내가 거대한 흙을 치마에 담아 나르다가, 이 제주섬을 다 만들고 남은 흙으로 요 성산일출봉을 빚어냈단다. 어때, 참 곱지 않으냐? 내 빨래바구니였던 이 분화구에 서서 바라보는 바다 풍경이 제주의 으뜸 중의 으뜸이라네. 너를 보아하니 옛날 나의 거대하고 웅장한 손주들이 생각나는구나. 궁금한 게 있으면 무엇이든 물어보렴!",
+        inputPlaceholder: "설문대할망에게 제주 전설 물어보기...",
+        quickQuestions: [
+          "할망, 우도는 진짜 빨래돌이었나요?",
+          "옷 한 벌 해드리지 못해 미안해요.",
+          "일출봉은 어쩌다 패인 거우다?"
+        ],
+        replies: {
+          "할망, 우도는 진짜 빨래돌이었나요?": "어이구, 맞단다! 내 치마자락이 어찌나 큰지, 우도를 딱 딛고 서서 성산일출봉을 빨래통 삼아 바닷물로 슥슥 빨래를 비볐제. 우도 바위들이 반질반질한 것도 다 내 거친 손바닥으로 문질러서 그런 것이우다! 하하하!",
+          "옷 한 벌 해드리지 못해 미안해요.": "아이고, 잊지 않고 그 얘길 해 주어 가슴이 뭉클하구나. 속옷 한 벌만 다 만들어 줬어도 내가 육지까지 다리를 놓아 주었을 텐데, 명주 백 새(조각)에서 한 조각이 모자라 그만두었지. 하지만 마음만으로도 내 치마 폭처럼 넉넉하니 고맙다이.",
+          "일출봉은 어쩌다 패인 거우다?": "그거야 내 빨래바구니니까 그렇지! 치마 끝자락에 흙을 담고 날르다 한라산도 빚고 여기 성산에 턱하고 구멍 뚫린 빨래바구니를 얹어놓은 게지. 너희들이 보기엔 깎아지른 절벽 같아도 내 눈엔 그저 고운 바구니란다."
+        },
+        fallbackReply: "허허허, 손주야! 그 전설도 참 신비롭지 않으냐? 제주의 흙과 오름들은 다 내 손길이 닿지 않은 곳이 없단다. 일출봉의 푸른 바다를 보며 옛이야기에 취해 보려무나!"
+      },
+      samchun: {
+        avatar: "🏊‍♀️",
+        miniAvatar: "🏊‍♀️",
+        name: "해녀 삼춘",
+        location: "김녕 평대 바당",
+        category: "생활과 민속 / 언어문학",
+        badgeClass: "badge-samchun",
+        tabTheme: "active ocean",
+        bgImg: "https://images.unsplash.com/photo-1516690561799-46d8f74f90f6?w=800&q=80",
+        story: "어이 손님! 거 기웃거리지 말고 내 목소리 한번 들어보소! 물결 일렁이는 평대 바다에서 오늘 아침에도 전복이랑 소라를 한 망사리 따왔다게. 바다에 들어가서 숨을 참았다가 물 위로 솟구치며 '호오이-'하고 숨비소리를 낼 때면, 살아있음에 감사하게 되지. 우리 해녀들이 바다와 싸우며 일궈온 거친 삶의 지혜가 궁금한가?",
+        inputPlaceholder: "해녀 삼춘에게 바다 물질과 생활 물어보기...",
+        quickQuestions: [
+          "삼춘! 숨비소리는 왜 내는 거우다?",
+          "테왁이 없으면 물질을 못 하나요?",
+          "오늘 바다 날씨는 어떤가요?"
+        ],
+        replies: {
+          "삼춘! 숨비소리는 왜 내는 거우다?": "오고고, 숨비소리는 해녀들이 물속에서 1, 2분씩 숨을 참다 나와서 허파에 찬 이산화탄소를 확 뿜어내고 신선한 공기를 들이마시는 생명의 소리우다. '호오이~' 소리를 들어야 비로소 숨통이 트이는 법이제!",
+          "테왁이 없으면 물질을 못 하나요?": "당연하지! 테왁은 해녀들의 생명줄이우다. 물 위에서 가슴을 얹고 쉴 수 있는 징검다리이자 망사리를 매달아 두는 기준점이제. 테왁 없이 바다에 들어가는 건 날개 없이 하늘을 나는 것과 똑같다이!",
+          "오늘 바다 날씨는 어떤가요?": "아주 곱다게! 오늘 물때가 딱 좋아서 소라들이 바위 밑에 쏙쏙 박혀있겠구만. 손님도 바닷바람 시원하게 쐬면서 가벼운 마음으로 제주 바당의 푸른 숨결을 가슴 가득 담고 가소!"
+        },
+        fallbackReply: "어이 손님, 바다 일은 알다가도 모르는 법이우다. 거센 파도 뒤에는 늘 고요한 보물이 숨어있는 것처럼 말이제! 전복 캐는 법이라도 알려주랴?"
+      },
+      harubang: {
+        avatar: "🗿",
+        miniAvatar: "🗿",
+        name: "돌하르방",
+        location: "제주 관덕정 유적",
+        category: "문화유산 / 역사",
+        badgeClass: "badge-harubang",
+        tabTheme: "active basalt",
+        bgImg: "https://images.unsplash.com/photo-1624513689269-ccf02c6fe958?w=800&q=80",
+        story: "탐라의 오랜 역사를 온몸으로 지켜온 돌하르방이우다. 구멍이 숭숭 뚫린 단단한 검은 현무암을 깎아 만든 내 두 눈은 제주 성문 밖을 매섭게 감시하며 액운과 잡귀를 막아왔지요. 묵묵히 자리를 지키며 들었던 탐라국 개국 신화와 벼슬아치들의 역사, 혹시 그 깊은 돌의 숨결을 귀 기울여 들을 준비가 되셨습니까?",
+        inputPlaceholder: "돌하르방에게 제주의 역사와 유산 물어보기...",
+        quickQuestions: [
+          "코를 만지면 진짜 아들을 낳나요?",
+          "돌하르방의 손 모양은 왜 다른가요?",
+          "원래 이름이 옹중석이었다고요?"
+        ],
+        replies: {
+          "코를 만지면 진짜 아들을 낳나요?": "허허, 옛날부터 내 코를 깎아 가루를 내어 마시면 득남한다는 속설이 있어서 수많은 사람들의 손을 타서 내 코가 닳아 없어질 뻔했지요. 지금은 아들딸 구분 없이 제주를 찾아준 모든 이들에게 다복(多福)을 빌어주고 있수다.",
+          "돌하르방의 손 모양은 왜 다른가요?": "그거 아주 날카로운 관찰력이십니다! 오른손이 위에 가 있는 하르방은 '문관'을 뜻하여 학업 성취와 평화를, 왼손이 위에 가 있는 하르방은 '무관'을 뜻하여 무병장수와 수호를 의미하지요. 제주의 수호신다운 깊은 뜻이 있지요.",
+          "원래 이름이 옹중석이었다고요?": "맞습니다. 조선시대 문헌에는 '옹중석(翁仲石)' 혹은 '우석목(偶石木)'이라 적혀 있었지요. 그러다 해방 이후 제주 사투리로 인자하고 든든한 할아버지를 뜻하는 '돌하르방'이라는 고운 이름으로 불리게 된 것입니다."
+        },
+        fallbackReply: "이 늙은 돌하르방이 탐라국의 건국 전설부터 묵직하게 전해 드리지요. 한결같이 이 섬을 지켜온 듬직한 에너지를 손님에게 듬뿍 나누어 드리리다."
+      }
+    };
+
+    let currentCharacter = 'halmang';
+    let typingTimer = null;
+
+    // 1인칭 타이핑 애니메이션 효과
+    function runTypewriter(text) {
+      const container = document.getElementById('txtStoryContent');
+      const cursor = document.getElementById('typewriterCursor');
+      container.innerHTML = '';
+      cursor.style.display = 'inline-block';
+      
+      let index = 0;
+      if (typingTimer) clearInterval(typingTimer);
+      
+      // 글자 한 자 한 자 흘러나오는 효과
+      typingTimer = setInterval(() => {
+        if (index < text.length) {
+          container.innerHTML += text.charAt(index);
+          index++;
+        } else {
+          clearInterval(typingTimer);
+          cursor.style.display = 'none'; // 타이핑 완료 시 커서 숨김
+        }
+      }, 15); // 고속 렌더링 (15ms 간격)
+    }
+
+    // 캐릭터 변경 탭 함수
+    function selectCharacter(charKey) {
+      if (charKey === currentCharacter) return;
+      currentCharacter = charKey;
+
+      const charData = dataSet[charKey];
+
+      // 1. 탭 버튼 상태 클래스 토글
+      document.getElementById('tabHalmang').className = 'character-tab' + (charKey === 'halmang' ? ' active' : '');
+      document.getElementById('tabSamchun').className = 'character-tab' + (charKey === 'samchun' ? ' active ocean' : '');
+      document.getElementById('tabHarubang').className = 'character-tab' + (charKey === 'harubang' ? ' active basalt' : '');
+
+      // 2. 대표 비주얼 카드 및 정보 업데이트
+      document.getElementById('imgVisual').src = charData.bgImg;
+      document.getElementById('txtLocationName').innerText = charData.location;
+      document.getElementById('txtCategoryTag').innerText = charData.category;
+      document.getElementById('txtVisualTitle').innerText = charData.location + " " + (charKey === 'halmang' ? '(城山日出峰)' : charKey === 'samchun' ? '(바다와 해녀)' : '(관덕정 광장)');
+
+      // 3. 중단 1인칭 스토리 렌더링 (타이핑 효과)
+      const badge = document.getElementById('txtSpeakerBadge');
+      badge.className = `story-speaker-badge ${charData.badgeClass}`;
+      document.getElementById('txtSpeakerName').innerText = `${charData.name}의 이야기`;
+      runTypewriter(charData.story);
+
+      // 4. 하단 챗 인터페이스 리셋 및 갱신
+      document.getElementById('txtChatHeader').innerText = `${charData.name}와 실시간 대화하기`;
+      document.getElementById('chatInput').placeholder = charData.inputPlaceholder;
+
+      // 추천 칩 업데이트
+      const chipsContainer = document.getElementById('quickChips');
+      chipsContainer.innerHTML = '';
+      charData.quickQuestions.forEach((q) => {
+        chipsContainer.innerHTML += `<button class="chip" onclick="askQuickQuestion('${q}')">💬 ${q}</button>`;
+      });
+
+      // 대화창 리셋 및 환영 메시지
+      const log = document.getElementById('chatLog');
+      log.innerHTML = `
+        <div class="bubble-row bouncy-animation">
+          <div class="mini-avatar" style="background-color: ${charKey === 'halmang' ? '#FFEDD5' : charKey === 'samchun' ? '#CCFBF1' : '#E7E5E4'}">${charData.miniAvatar}</div>
+          <div class="bubble model-bubble">
+            <span class="bubble-sender">${charData.name}</span>
+            ${charData.location}에 오신 것을 환영하우다! 저에 대해 궁금한 점을 터치하여 질문해 보소!
+          </div>
+        </div>
+      `;
+
+      // 물소리/파도소리 효과음 (가상 플레이 피드백)
+      playSampleSound();
+    }
+
+    // 퀵칩 클릭 시 동작
+    function askQuickQuestion(questionText) {
+      addUserMessage(questionText);
+      simulateModelReply(questionText);
+    }
+
+    // 전송 폼 서브밋 처리
+    function sendMessage(event) {
+      event.preventDefault();
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      addUserMessage(text);
+      input.value = '';
+
+      simulateModelReply(text);
+    }
+
+    // 유저 메시지 버블 추가
+    function addUserMessage(text) {
+      const log = document.getElementById('chatLog');
+      log.innerHTML += `
+        <div class="bubble-row user-row bouncy-animation">
+          <div class="bubble user-bubble">${text}</div>
+        </div>
+      `;
+      log.scrollTop = log.scrollHeight; // 스크롤 하단 고정
+    }
+
+    // AI 답변 시뮬레이션 및 1인칭 구사 렌더링
+    function simulateModelReply(userText) {
+      const log = document.getElementById('chatLog');
+      const charData = dataSet[currentCharacter];
+
+      // 1. 숨비소리/생각 중 로딩 인디케이터 띄우기
+      const loadingId = 'loading-' + Date.now();
+      log.innerHTML += `
+        <div class="bubble-row bouncy-animation" id="${loadingId}">
+          <div class="mini-avatar">${charData.miniAvatar}</div>
+          <div class="bubble model-bubble loading-bubble">
+            <div class="diving-float"></div>
+            <span>${currentCharacter === 'samchun' ? '삼춘이 숨비소리를 멈추고 답하는 중...' : currentCharacter === 'halmang' ? '할망이 호탕하게 웃으며 대답 준비 중...' : '돌하르방이 묵직하게 답변을 고르는 중...'}</span>
+          </div>
+        </div>
+      `;
+      log.scrollTop = log.scrollHeight;
+
+      // 2. 800ms 후 실제 1인칭 답변 렌더링
+      setTimeout(() => {
+        // 로딩 버블 제거
+        const loadingElement = document.getElementById(loadingId);
+        if (loadingElement) loadingElement.remove();
+
+        // 매칭되는 프리로드 답변 검증 (없을 경우 fallbackReply 적용)
+        let replyText = charData.replies[userText] || charData.fallbackReply;
+
+        log.innerHTML += `
+          <div class="bubble-row bouncy-animation">
+            <div class="mini-avatar" style="background-color: ${currentCharacter === 'halmang' ? '#FFEDD5' : currentCharacter === 'samchun' ? '#CCFBF1' : '#E7E5E4'}">${charData.miniAvatar}</div>
+            <div class="bubble model-bubble">
+              <span class="bubble-sender">${charData.name}</span>
+              ${replyText}
+            </div>
+          </div>
+        `;
+        log.scrollTop = log.scrollHeight;
+
+        // 효과음 및 피드백 재생
+        playSampleSound();
+      }, 900);
+    }
+
+    // 브라우저 Audio API를 활용한 제주 자연의 소리 가상 합성음 (물소리/파도소리 비프음)
+    let isSoundOn = true;
+    function toggleSound() {
+      const btn = document.getElementById('btnSound');
+      isSoundOn = !isSoundOn;
+      if (isSoundOn) {
+        btn.classList.add('active');
+        btn.innerHTML = '<i data-lucide="volume-2" style="width: 16px; height: 16px;"></i>';
+      } else {
+        btn.classList.remove('active');
+        btn.innerHTML = '<i data-lucide="volume-x" style="width: 16px; height: 16px;"></i>';
+      }
+      lucide.createIcons();
+    }
+
+    function playSampleSound() {
+      if (!isSoundOn) return;
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        const ctx = new AudioContext();
+        
+        // 캐릭터에 맞는 주파수 합성음 출력
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        
+        if (currentCharacter === 'samchun') {
+          // 청량하고 부드러운 하이 오션 피치 (물소리 느낌)
+          osc.frequency.setValueAtTime(650, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(800, ctx.currentTime + 0.15);
+        } else if (currentCharacter === 'halmang') {
+          // 웅장하고 따뜻한 미들 로우 피치
+          osc.frequency.setValueAtTime(300, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(250, ctx.currentTime + 0.2);
+        } else {
+          // 묵직하고 무거운 돌 사운드 피치
+          osc.frequency.setValueAtTime(150, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 0.3);
+        }
+        
+        gain.gain.setValueAtTime(0.06, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+        
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.25);
+      } catch (e) {
+        // 브라우저 권한 제약으로 실패 시 안전하게 캐치
+      }
+    }
+
+    // 최초 로딩 시 설문대할망 타이핑 스타트
+    window.onload = () => {
+      runTypewriter(dataSet.halmang.story);
+    };
+  </script>
+</body>
+</html>

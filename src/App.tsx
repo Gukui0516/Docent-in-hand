@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { Compass, Home } from 'lucide-react';
 import { POI, Character, ChatMessage } from './types/docent';
 import { POI_LIST } from './data/poiData';
 import { CHARACTERS } from './data/characters';
 import { findNearestPOI, formatDistance } from './utils/geo';
 import { AgentClientService, AgentStatusEvent } from './services/agentClientService';
-import { Header } from './components/Header';
 import { PhotoCard } from './components/PhotoCard';
 import { StoryCard } from './components/StoryCard';
 import { ChatSection } from './components/ChatSection';
-import { NearbyNavSection } from './components/NearbyNavSection';
 import { POICarousel } from './components/POICarousel';
 import { BenchmarkModal } from './components/BenchmarkModal';
 import { GPSSimulatorModal } from './components/GPSSimulatorModal';
@@ -21,7 +20,6 @@ export const App: React.FC = () => {
     lat: 33.4586,
     lng: 126.9423 // Default: 성산일출봉
   });
-  const [gpsLabel, setGpsLabel] = useState<string>('성산일출봉 앞');
   const [isGpsActive, setIsGpsActive] = useState(false);
   const [isSyncingLocation, setIsSyncingLocation] = useState(false);
   const [currentPOI, setCurrentPOI] = useState<POI>(POI_LIST[0]);
@@ -105,8 +103,6 @@ export const App: React.FC = () => {
 
           setUserLocation({ lat, lng });
           setIsGpsActive(true);
-          setGpsLabel('실시간 GPS');
-
           const { poi, distanceMeters } = findNearestPOI(lat, lng);
           applyPOI(poi, distanceMeters);
           setIsSyncingLocation(false);
@@ -124,11 +120,9 @@ export const App: React.FC = () => {
   }, [applyPOI]);
 
   // Apply Simulated GPS Coordinates
-  const handleApplyCoordinates = useCallback((lat: number, lng: number, label: string) => {
+  const handleApplyCoordinates = useCallback((lat: number, lng: number) => {
     setUserLocation({ lat, lng });
     setIsGpsActive(true);
-    setGpsLabel(label);
-
     const { poi, distanceMeters } = findNearestPOI(lat, lng);
     applyPOI(poi, distanceMeters);
   }, [applyPOI]);
@@ -145,8 +139,6 @@ export const App: React.FC = () => {
           const lng = position.coords.longitude;
           setUserLocation({ lat, lng });
           setIsGpsActive(true);
-          setGpsLabel('실시간 GPS');
-
           const { poi, distanceMeters } = findNearestPOI(lat, lng);
           applyPOI(poi, distanceMeters);
         },
@@ -233,69 +225,27 @@ export const App: React.FC = () => {
 
   return (
     <div className="app-shell">
-      <Header
-        currentPlaceName={currentPOI.name}
-        gpsLabel={gpsLabel}
-        onOpenPOIList={() => setIsPOIListOpen(true)}
-        onOpenGPSSimulator={() => setIsGPSModalOpen(true)}
-        onSyncLocation={handleUseRealGPS}
-        isGpsActive={isGpsActive}
-        isSyncing={isSyncingLocation}
-      />
-
       <main className="main-content">
         <div className="content-container">
           {/* Left Column (Desktop Showcase & Quick Nearby Switcher) */}
           <aside className="desktop-left-column">
-            {/* Official High-Resolution Photo Card */}
-            <PhotoCard poi={currentPOI} distanceText={distanceText} />
-
-            {/* Desktop Quick POI Recommendations */}
-            <div className="desktop-quick-poi-card">
-              <div className="desktop-quick-poi-header">
-                <span className="quick-poi-title">📍 연관 추천 명소</span>
-                <button
-                  type="button"
-                  className="quick-poi-all-btn"
-                  onClick={() => setIsPOIListOpen(true)}
-                >
-                  전체 3,591개 ↗
-                </button>
-              </div>
-              <div className="desktop-quick-poi-list">
-                {POI_LIST.filter((p) => p.id !== currentPOI.id && (p.region === currentPOI.region || p.category === currentPOI.category))
-                  .slice(0, 4)
-                  .map((poi) => (
-                    <button
-                      key={poi.id}
-                      type="button"
-                      className="desktop-quick-poi-item"
-                      onClick={() => applyPOI(poi)}
-                    >
-                      <img
-                        src={poi.imageUrl || 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?auto=format&fit=crop&w=300&q=80'}
-                        alt={poi.name}
-                        className="quick-poi-thumb"
-                        referrerPolicy="no-referrer"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?auto=format&fit=crop&w=300&q=80';
-                        }}
-                      />
-                      <div className="quick-poi-info">
-                        <span className="quick-poi-name">{poi.name}</span>
-                        <span className="quick-poi-meta">{poi.category}</span>
-                      </div>
-                    </button>
-                  ))}
-              </div>
+            <div className="immersive-place-hero">
+              {/* Official High-Resolution Photo Card */}
+              <PhotoCard
+                poi={currentPOI}
+                distanceText={distanceText}
+                onSyncLocation={handleUseRealGPS}
+                onOpenLocationSettings={() => setIsGPSModalOpen(true)}
+                isSyncing={isSyncingLocation}
+              />
             </div>
+
           </aside>
 
           {/* Right Column (Docent Persona Story & Real-time Tiki-taka Chat) */}
           <section className="desktop-right-column">
             {/* Zero-Click 1st Person Multi-Agent Deep Story */}
             <StoryCard
-              character={currentCharacter}
               poi={currentPOI}
               storyText={storyText}
               isStreaming={isStoryStreaming}
@@ -310,17 +260,36 @@ export const App: React.FC = () => {
               agentChatStatus={agentChatStatus}
               onSendMessage={handleSendMessage}
             />
-
-            {/* 1KM Radius Nearby POI Prev/Next Navigation */}
-            <NearbyNavSection
-              currentPOI={currentPOI}
-              allPOIs={POI_LIST}
-              userLocation={userLocation}
-              onSelectPOI={(poi, distMeters) => applyPOI(poi, distMeters)}
-            />
           </section>
+
         </div>
       </main>
+
+      <nav className={`mobile-bottom-nav ${isPOIListOpen ? 'explore-open' : ''}`} aria-label="모바일 주요 메뉴">
+        <button
+          type="button"
+          className={`mobile-bottom-nav-item ${!isPOIListOpen ? 'active' : ''}`}
+          onClick={() => {
+            setIsPOIListOpen(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          aria-current={!isPOIListOpen ? 'page' : undefined}
+        >
+          <Home size={20} strokeWidth={2.2} />
+          <span>지금 여기</span>
+          <i aria-hidden="true" />
+        </button>
+        <button
+          type="button"
+          className={`mobile-bottom-nav-item ${isPOIListOpen ? 'active' : ''}`}
+          onClick={() => setIsPOIListOpen(true)}
+          aria-current={isPOIListOpen ? 'page' : undefined}
+        >
+          <Compass size={20} strokeWidth={2.2} />
+          <span>주변 탐색</span>
+          <i aria-hidden="true" />
+        </button>
+      </nav>
 
       {/* Manual POI Explore Modal */}
       <POICarousel

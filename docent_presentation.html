@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내 손안의 도슨트 (Docent-in-Hand) - 프로젝트 발표자료</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #FF6B35;
+      --primary-light: #FFF0EB;
+      --primary-dark: #D94814;
+      --secondary: #004E64;
+      --secondary-light: #E0F2F7;
+      --accent: #25A18E;
+      --bg-dark: #121820;
+      --bg-card: #1C2430;
+      --bg-card-light: #F8FAFC;
+      --text-main: #FFFFFF;
+      --text-muted: #94A3B8;
+      --border-color: rgba(255, 255, 255, 0.12);
+      --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Noto Serif KR', serif;
+      --shadow-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+    }
+
+    /* Top Progress Bar */
+    .progress-bar-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      z-index: 100;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), #FFA07A);
+      transition: width 0.3s ease;
+    }
+
+    /* Deck Viewport */
+    .deck-viewport {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0.96) translateY(20px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 1300px;
+      margin: 0 auto;
+      background: radial-gradient(circle at top right, rgba(255, 107, 53, 0.08) 0%, transparent 60%), var(--bg-dark);
+      border-radius: 24px;
+      padding: 48px 64px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1) translateY(0);
+      z-index: 10;
+    }
+
+    /* Typography & Badges */
+    .slide-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 107, 53, 0.15);
+      border: 1px solid rgba(255, 107, 53, 0.3);
+      color: #FFA07A;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .slide-title {
+      font-size: 40px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+      text-align: center;
+      line-height: 1.25;
+    }
+
+    .slide-subtitle {
+      font-size: 18px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 36px;
+      max-width: 850px;
+      line-height: 1.5;
+    }
+
+    /* Slide Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      width: 100%;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      width: 100%;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+
+    /* Cards */
+    .content-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .content-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 107, 53, 0.4);
+    }
+
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .card-desc {
+      font-size: 15px;
+      color: #CBD5E1;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .tag-pill {
+      display: inline-block;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #94A3B8;
+      margin-right: 6px;
+      margin-top: 6px;
+    }
+
+    /* Title Slide Specifics */
+    .slide-title-hero {
+      font-family: var(--font-serif);
+      font-size: 58px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FFA07A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+      text-align: center;
+      letter-spacing: -1px;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .hero-tag {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 8px 18px;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #E2E8F0;
+    }
+
+    /* Step Timeline for GCP & Architecture */
+    .timeline-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .timeline-row {
+      display: flex;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 16px 24px;
+      gap: 20px;
+    }
+
+    .timeline-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .timeline-text {
+      flex: 1;
+    }
+
+    .timeline-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 2px;
+    }
+
+    .timeline-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* Tech Stack Pills Grid */
+    .tech-group {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .tech-header {
+      font-size: 16px;
+      font-weight: 700;
+      color: #FFA07A;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tech-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-badge {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #F1F5F9;
+      font-weight: 500;
+    }
+
+    /* Bottom Controller */
+    .deck-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      background: rgba(18, 24, 32, 0.85);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-color);
+      z-index: 50;
+    }
+
+    .brand-mark {
+      font-size: 15px;
+      font-weight: 700;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-nav {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-color);
+      color: #FFFFFF;
+      padding: 8px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-nav:hover:not(:disabled) {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .btn-nav:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .slide-counter {
+      font-size: 14px;
+      font-weight: 600;
+      color: #94A3B8;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .btn-fullscreen {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: #94A3B8;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .btn-fullscreen:hover {
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Key indicator */
+    .key-hint {
+      font-size: 12px;
+      color: #64748B;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Progress Bar -->
+  <div class="progress-bar-container">
+    <div class="progress-bar-fill" id="progressBar"></div>
+  </div>
+
+  <!-- Deck Viewport -->
+  <main class="deck-viewport">
+
+    <!-- Slide 1: Cover -->
+    <section class="slide active" data-slide="1">
+      <span class="slide-badge">🎙️ 2026 AI Agent Project Presentation</span>
+      <h1 class="slide-title-hero">내 손안의 도슨트</h1>
+      <p class="slide-subtitle" style="font-size: 22px; color: #E2E8F0;">
+        제주 5,000년 역사·신화 속으로 떠나는 <span class="highlight">1인칭 멀티에이전트 AI 오디오 가이드</span>
+      </p>
+      <div class="hero-tags">
+        <span class="hero-tag">⚡ Google Gemini 3.7 Flash</span>
+        <span class="hero-tag">📚 한국학중앙연구원 18종 아카이브 RAG</span>
+        <span class="hero-tag">🎧 실시간 Web Speech TTS</span>
+        <span class="hero-tag">🖥️ 4K UHD & 전해상도 반응형</span>
+      </div>
+    </section>
+
+    <!-- Slide 2: Background & Problem -->
+    <section class="slide" data-slide="2">
+      <span class="slide-badge">💡 기획 배경 & 문제 정의</span>
+      <h2 class="slide-title">왜 기존의 관광 오디오 가이드는 외면받았을까요?</h2>
+      <p class="slide-subtitle">딱딱한 백과사전식 텍스트 낭독과 일방향 정보 전달의 한계를 극복합니다.</p>
+      <div class="grid-3">
+        <div class="content-card">
+          <div class="card-icon">😴</div>
+          <h3 class="card-title">지루한 3인칭 백과사전</h3>
+          <p class="card-desc">설명문 형식의 텍스트로 인해 여행자의 몰입도가 급격히 저하되고 기억에 남지 않음</p>
+        </div>
+        <div class="content-card">
+          <div class="card-icon">❓</div>
+          <h3 class="card-title">일방향 단절성 (No Q&A)</h3>
+          <p class="card-desc">궁금한 점이 생겨도 물어볼 수 없고, 현장의 호기심을 즉시 해소할 방법 부재</p>
+        </div>
+        <div class="content-card">
+          <div class="card-icon">⚠️</div>
+          <h3 class="card-title">할루시네이션(거짓 정보)</h3>
+          <p class="card-desc">일반 생성형 AI는 제주의 토착 역사와 신화에 대해 엉뚱한 거짓 정보를 만들어냄</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Core Feature 1 -->
+    <section class="slide" data-slide="3">
+      <span class="slide-badge">🎭 핵심 기능 01</span>
+      <h2 class="slide-title">생동감 넘치는 3인 3색 1인칭 페르소나</h2>
+      <p class="slide-subtitle">설문대할망, 해녀 삼춘, 돌하르방이 직접 말을 걸며 살아 숨쉬는 이야기를 전합니다.</p>
+      <div class="grid-3">
+        <div class="content-card" style="border-top: 4px solid #FF6B35;">
+          <div class="card-icon">🌊</div>
+          <h3 class="card-title">설문대할망</h3>
+          <p class="card-desc">제주 창조 신화의 주인공! 오름과 한라산을 빚어낸 웅장하고 따스한 모성애의 목소리</p>
+          <div>
+            <span class="tag-pill">#제주창조설화</span>
+            <span class="tag-pill">#자연지질</span>
+          </div>
+        </div>
+        <div class="content-card" style="border-top: 4px solid #25A18E;">
+          <div class="card-icon">🤿</div>
+          <h3 class="card-title">해녀 삼춘</h3>
+          <p class="card-desc">숨비소리와 바다 물질의 거친 생명력! 정겨운 제주 사투리로 들려주는 생활 민속사</p>
+          <div>
+            <span class="tag-pill">#해녀문화</span>
+            <span class="tag-pill">#제주생활사</span>
+          </div>
+        </div>
+        <div class="content-card" style="border-top: 4px solid #004E64;">
+          <div class="card-icon">🗿</div>
+          <h3 class="card-title">돌하르방</h3>
+          <p class="card-desc">제주 고을을 수호해온 묵직한 석장승! 역사 유적과 문화유산의 수호 이야기를 전수</p>
+          <div>
+            <span class="tag-pill">#문화유산</span>
+            <span class="tag-pill">#수호역사</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: Core Feature 2 & 3 -->
+    <section class="slide" data-slide="4">
+      <span class="slide-badge">🔍 핵심 기술 02 & 03</span>
+      <h2 class="slide-title">RAG 지식 검증 & 실시간 티키타카 대화</h2>
+      <p class="slide-subtitle">공인된 학술 데이터로 팩트를 보장하고, 1:1 양방향 질의응답을 구현했습니다.</p>
+      <div class="grid-2">
+        <div class="content-card">
+          <div class="card-icon">🏛️</div>
+          <h3 class="card-title">한국학중앙연구원 18종 아카이브 RAG</h3>
+          <p class="card-desc">
+            5,200여 건의 향토문화전자대전 데이터를 In-Memory 색인하여 설화 원문, 문화유산 등급, 지질 형성사를 엄격히 교차 검증합니다.
+          </p>
+          <div style="margin-top: 8px;">
+            <span class="tag-pill">✅ 팩트 기반 그라운딩</span>
+            <span class="tag-pill">✅ 공인 아카이브 원문 링크</span>
+          </div>
+        </div>
+        <div class="content-card">
+          <div class="card-icon">💬</div>
+          <h3 class="card-title">실시간 1:1 Q&A (Tiki-taka)</h3>
+          <p class="card-desc">
+            "할망, 일출봉 분화구에는 왜 물이 안 고여요?"처럼 도슨트에게 실시간으로 질문하면 페르소나 성격을 유지한 채 즉각 답변합니다.
+          </p>
+          <div style="margin-top: 8px;">
+            <span class="tag-pill">✅ 원클릭 추천 질문</span>
+            <span class="tag-pill">✅ 멀티턴 문맥 인지</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: System Tech Stack -->
+    <section class="slide" data-slide="5">
+      <span class="slide-badge">🛠️ 기술 스택</span>
+      <h2 class="slide-title">검증된 엔터프라이즈 풀스택 아키텍처</h2>
+      <p class="slide-subtitle">반응형 프론트엔드부터 초저지연 LLM 오케스트레이션까지 완벽한 구조화</p>
+      <div class="grid-3">
+        <div class="tech-group">
+          <div class="tech-header">🤖 AI & RAG Engine</div>
+          <div class="tech-items">
+            <span class="tech-badge">Gemini 3.7 Flash</span>
+            <span class="tech-badge">@google/genai SDK</span>
+            <span class="tech-badge">In-Memory Corpus Index</span>
+            <span class="tech-badge">Python Sync Pipeline</span>
+          </div>
+        </div>
+        <div class="tech-group">
+          <div class="tech-header">💻 Frontend (Client)</div>
+          <div class="tech-items">
+            <span class="tech-badge">React 18</span>
+            <span class="tech-badge">TypeScript</span>
+            <span class="tech-badge">Vite</span>
+            <span class="tech-badge">Web Speech API (TTS)</span>
+            <span class="tech-badge">4K UHD Responsive CSS</span>
+          </div>
+        </div>
+        <div class="tech-group">
+          <div class="tech-header">⚡ Backend & Tools</div>
+          <div class="tech-items">
+            <span class="tech-badge">Node.js + Express</span>
+            <span class="tech-badge">tsx (Hot Reload)</span>
+            <span class="tech-badge">SSE Streaming</span>
+            <span class="tech-badge">Git & GitHub CLI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: GCP Deployment Strategy -->
+    <section class="slide" data-slide="6">
+      <span class="slide-badge">☁️ 클라우드 배포 전략</span>
+      <h2 class="slide-title">Google Cloud Platform (GCP) 서버리스 배포</h2>
+      <p class="slide-subtitle">Scale-to-Zero 비용 절감과 전 세계 초고속 서빙을 위한 무중단 아키텍처</p>
+      <div class="timeline-container">
+        <div class="timeline-row">
+          <div class="timeline-num">1</div>
+          <div class="timeline-text">
+            <div class="timeline-title">Google Cloud Run (백엔드 서버리스 컨테이너)</div>
+            <div class="timeline-desc">Node.js 멀티에이전트 서버를 컨테이너화하여 서울 리전(asia-northeast3)에 배포, 트래픽 0일 때 비용 0원 유지</div>
+          </div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-num">2</div>
+          <div class="timeline-text">
+            <div class="timeline-title">Firebase Hosting / Cloud CDN (초고속 프론트엔드)</div>
+            <div class="timeline-desc">React 18 빌드 정적 자원을 글로벌 엣지 CDN에 분산 캐싱하여 0.1초대 초기 로딩 속도 달성</div>
+          </div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-num">3</div>
+          <div class="timeline-text">
+            <div class="timeline-title">GCP Secret Manager (보안 키 관리) & CI/CD</div>
+            <div class="timeline-desc">Gemini API Key를 런타임에 암호화 주입하고 GitHub Actions로 PR 승인 시 자동 무중단 배포</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7: Business & Social Impact -->
+    <section class="slide" data-slide="7">
+      <span class="slide-badge">✨ 기대 효과 & 확장성</span>
+      <h2 class="slide-title">스마트 관광 혁신과 지역 문화유산 보존</h2>
+      <p class="slide-subtitle">디지털 도슨트가 만들어갈 제주의 새로운 여행 문화</p>
+      <div class="grid-3">
+        <div class="content-card">
+          <div class="card-icon">🚀</div>
+          <h3 class="card-title">여행자 체류 경험 극대화</h3>
+          <p class="card-desc">단순 사진 찍기 중심 관광에서 벗어나 깊이 있는 역사·설화 스토리텔링을 통해 여행 만족도 200% 상승</p>
+        </div>
+        <div class="content-card">
+          <div class="card-icon">🌿</div>
+          <h3 class="card-title">사라져가는 구비문학 보존</h3>
+          <p class="card-desc">제주 방언, 해녀 구전 민요, 잊혀진 신화들을 AI가 친근한 1인칭으로 재해석하여 다음 세대로 계승</p>
+        </div>
+        <div class="content-card">
+          <div class="card-icon">🌏</div>
+          <h3 class="card-title">글로벌 다국어 확장</h3>
+          <p class="card-desc">Gemini의 강력한 다국어 능력을 활용해 영어, 일본어, 중국어 등 전 세계 여행자 맞춤 가이드로 확장 가능</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: Q&A / Closing -->
+    <section class="slide" data-slide="8">
+      <span class="slide-badge">🎉 Closing & Demonstration</span>
+      <h1 class="slide-title-hero" style="font-size: 52px; margin-bottom: 20px;">경청해 주셔서 감사합니다</h1>
+      <p class="slide-subtitle" style="font-size: 20px; color: #CBD5E1;">
+        지금 바로 <span class="highlight">‘내 손안의 도슨트’</span>를 켜고 제주 이야기 속으로 걸어 들어가 보세요!
+      </p>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px 32px; border-radius: 16px; text-align: center; margin-top: 10px;">
+        <div style="font-size: 16px; color: #FFA07A; font-weight: 700; margin-bottom: 6px;">🔗 라이브 데모 접속</div>
+        <div style="font-size: 20px; font-weight: 800; color: #FFFFFF;">http://localhost:5173/</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Deck Controller -->
+  <footer class="deck-controls">
+    <div class="brand-mark">
+      <span>🏝️</span>
+      <span>내 손안의 도슨트</span>
+      <span class="key-hint">| 키보드 ◀ ▶ 방향키로 이동 가능</span>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn-nav" id="prevBtn" aria-label="이전 슬라이드">
+        ◀ 이전
+      </button>
+      <div class="slide-counter">
+        <span id="currentSlideNum">1</span> / <span id="totalSlideNum">8</span>
+      </div>
+      <button class="btn-nav" id="nextBtn" aria-label="다음 슬라이드">
+        다음 ▶
+      </button>
+    </div>
+
+    <button class="btn-fullscreen" id="fullscreenBtn" title="전체화면 전환">
+      ⛶ 전체화면
+    </button>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideNum = document.getElementById('currentSlideNum');
+    const totalSlideNum = document.getElementById('totalSlideNum');
+    const progressBar = document.getElementById('progressBar');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+    totalSlideNum.textContent = totalSlides;
+
+    function updateSlide(index) {
+      if (index < 0 || index >= totalSlides) return;
+      currentSlide = index;
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentSlide);
+      });
+
+      currentSlideNum.textContent = currentSlide + 1;
+      const progressPercent = ((currentSlide + 1) / totalSlides) * 100;
+      progressBar.style.width = `${progressPercent}%`;
+
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.disabled = currentSlide === totalSlides - 1;
+    }
+
+    prevBtn.addEventListener('click', () => updateSlide(currentSlide - 1));
+    nextBtn.addEventListener('click', () => updateSlide(currentSlide + 1));
+
+    // Keyboard Arrow navigation
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        updateSlide(currentSlide + 1);
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        updateSlide(currentSlide - 1);
+      } else if (e.key === 'Home') {
+        updateSlide(0);
+      } else if (e.key === 'End') {
+        updateSlide(totalSlides - 1);
+      }
+    });
+
+    // Fullscreen toggle
+    fullscreenBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.warn(`Error attempting to enable fullscreen: ${err.message}`);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    });
+
+    // Touch Swipe Support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) {
+        updateSlide(currentSlide + 1); // Swipe Left -> Next
+      } else if (touchEndX - touchStartX > 50) {
+        updateSlide(currentSlide - 1); // Swipe Right -> Prev
+      }
+    });
+
+    updateSlide(0);
+  </script>
+</body>
+</html>
