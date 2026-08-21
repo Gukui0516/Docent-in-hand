@@ -123,7 +123,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
         {/* POI Grid/List */}
         <div className="poi-items-list">
           {visibleList.map((poi) => {
-            const character = CHARACTERS[poi.assignedCharacterId];
+            const character = CHARACTERS[poi.assignedCharacterId] || CHARACTERS.docent;
             const isSelected = poi.id === selectedPOIId;
 
             return (

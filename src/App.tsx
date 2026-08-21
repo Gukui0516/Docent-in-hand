@@ -24,7 +24,7 @@ export const App: React.FC = () => {
   const [isSyncingLocation, setIsSyncingLocation] = useState(false);
   const [currentPOI, setCurrentPOI] = useState<POI>(POI_LIST[0]);
   const [currentCharacter, setCurrentCharacter] = useState<Character>(
-    CHARACTERS[POI_LIST[0].assignedCharacterId]
+    CHARACTERS[POI_LIST[0].assignedCharacterId] || CHARACTERS.docent
   );
   const [distanceText, setDistanceText] = useState('80m 앞');
 
@@ -78,7 +78,7 @@ export const App: React.FC = () => {
   // Update POI and automatically set character & trigger story
   const applyPOI = useCallback((poi: POI, distMeters?: number) => {
     setCurrentPOI(poi);
-    const assignedChar = CHARACTERS[poi.assignedCharacterId] || CHARACTERS.seolmundae;
+    const assignedChar = CHARACTERS[poi.assignedCharacterId] || CHARACTERS.docent;
     setCurrentCharacter(assignedChar);
 
     if (distMeters !== undefined) {

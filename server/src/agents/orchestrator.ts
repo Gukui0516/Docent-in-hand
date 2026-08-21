@@ -1,12 +1,10 @@
 import { Response } from 'express';
 import { KnowledgeResearchAgent, ResearchBriefingNote } from './researchAgent.js';
-import { SeolmundaeAgent } from './personaAgents/seolmundaeAgent.js';
-import { HaenyeoAgent } from './personaAgents/haenyeoAgent.js';
-import { DolhareubangAgent } from './personaAgents/dolhareubangAgent.js';
+import { StandardDocentAgent } from './personaAgents/standardDocentAgent.js';
 
 export interface StreamStoryRequest {
   poiName: string;
-  characterId: string;
+  characterId?: string;
   userQuery?: string;
   coordinates?: { lat: number; lng: number };
   languageMode?: 'standard' | 'jeju';
@@ -14,7 +12,7 @@ export interface StreamStoryRequest {
 
 export interface StreamChatRequest {
   poiName: string;
-  characterId: string;
+  characterId?: string;
   userMessage: string;
   coordinates?: { lat: number; lng: number };
   history?: { role: 'user' | 'model'; text: string }[];
@@ -30,7 +28,7 @@ export class AgentOrchestrator {
     res: Response
   ): Promise<void> {
     const startTime = Date.now();
-    const { poiName, characterId, userQuery, coordinates } = req;
+    const { poiName, characterId = 'docent', userQuery, coordinates } = req;
 
     this.sendSSE(res, 'agent_status', {
       layer: 1,
@@ -56,28 +54,21 @@ export class AgentOrchestrator {
         sources: briefing.academicSources
       });
 
-      // 2. Layer 2: Persona Docent Selection
-      const characterName = this.getCharacterDisplayName(characterId);
+      // 2. Layer 2: Standard Docent Agent
       this.sendSSE(res, 'agent_status', {
         layer: 2,
-        agent: characterId,
+        agent: 'docent',
         step: 'storytelling',
-        message: `🎭 [${characterName}] 학술 지식을 바탕으로 맞춤형 도슨트 해설 작성 중...`
+        message: `🎙️ [제주 전문 도슨트] 학술 지식을 바탕으로 표준어 도슨트 해설 작성 중...`
       });
 
       let fullText = '';
       const onToken = (token: string) => {
         fullText += token;
-        this.sendSSE(res, 'persona_stream', { token, characterId });
+        this.sendSSE(res, 'persona_stream', { token, characterId: 'docent' });
       };
 
-      if (characterId === 'haenyeo') {
-        await HaenyeoAgent.generateStoryStream(poiName, briefing, onToken);
-      } else if (characterId === 'dolhareubang') {
-        await DolhareubangAgent.generateStoryStream(poiName, briefing, onToken);
-      } else {
-        await SeolmundaeAgent.generateStoryStream(poiName, briefing, onToken);
-      }
+      await StandardDocentAgent.generateStoryStream(poiName, briefing, onToken);
 
       const totalLatencyMs = Date.now() - startTime;
       this.sendSSE(res, 'done', {
@@ -101,7 +92,7 @@ export class AgentOrchestrator {
     res: Response
   ): Promise<void> {
     const startTime = Date.now();
-    const { poiName, characterId, userMessage, coordinates, history = [] } = req;
+    const { poiName, characterId = 'docent', userMessage, coordinates, history = [] } = req;
 
     this.sendSSE(res, 'agent_status', {
       layer: 1,
@@ -119,28 +110,21 @@ export class AgentOrchestrator {
         (msg) => this.sendSSE(res, 'agent_status', { layer: 1, agent: 'researcher', step: 'progress', message: msg })
       );
 
-      // 2. Layer 2: Persona Response
-      const characterName = this.getCharacterDisplayName(characterId);
+      // 2. Layer 2: Standard Docent Response
       this.sendSSE(res, 'agent_status', {
         layer: 2,
-        agent: characterId,
+        agent: 'docent',
         step: 'answering',
-        message: `💬 [${characterName}] 답변 작성 중...`
+        message: `💬 [제주 전문 도슨트] 표준어 답변 작성 중...`
       });
 
       let fullText = '';
       const onToken = (token: string) => {
         fullText += token;
-        this.sendSSE(res, 'persona_stream', { token, characterId });
+        this.sendSSE(res, 'persona_stream', { token, characterId: 'docent' });
       };
 
-      if (characterId === 'haenyeo') {
-        await HaenyeoAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
-      } else if (characterId === 'dolhareubang') {
-        await DolhareubangAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
-      } else {
-        await SeolmundaeAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
-      }
+      await StandardDocentAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
 
       const totalLatencyMs = Date.now() - startTime;
       this.sendSSE(res, 'done', {
@@ -159,11 +143,5 @@ export class AgentOrchestrator {
   private static sendSSE(res: Response, event: string, data: any) {
     res.write(`event: ${event}\n`);
     res.write(`data: ${JSON.stringify(data)}\n\n`);
-  }
-
-  private static getCharacterDisplayName(id: string): string {
-    if (id === 'haenyeo') return '해녀 삼춘';
-    if (id === 'dolhareubang') return '돌하르방';
-    return '설문대할망';
   }
 }

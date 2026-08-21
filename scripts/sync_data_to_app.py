@@ -87,18 +87,7 @@ EXACT_COORDS = {
 
 
 def determine_persona(title, subcats, content):
-    text = (title + ' ' + ' '.join(subcats) + ' ' + content).lower()
-    
-    # Haenyeo keywords
-    if any(k in text for k in ['해녀', '바다', '해변', '해수욕장', '포구', '물질', '어촌', '해안', '섬', '우도', '비양도', '가파도', '마라도', '불턱', '소라', '전복', '해산물']):
-        return 'haenyeo'
-    
-    # Dolhareubang keywords
-    if any(k in text for k in ['유적', '역사', '사적', '문화재', '민속', '당', '신당', '제사', '마을', '관덕정', '목관아', '삼성혈', '항몽', '토성', '비석', '절', '사찰', '불탑', '고분', '성곽', '진성']):
-        return 'dolhareubang'
-    
-    # Seolmundae keywords (Nature, geology, mythology, volcano, oreum, cave)
-    return 'seolmundae'
+    return 'docent'
 
 
 def extract_coordinates(title, region_str):
@@ -230,14 +219,8 @@ def process_items_to_pois(all_items):
         sample_questions = [
             f"{title}의 지형과 역사에 얽힌 흥미로운 이야기를 들려주세요.",
             f"{title}에서 놓치지 말고 꼭 봐야 할 핵심 포인트는 무엇인가요?",
-            f"옛 조상들은 {title}을 어떤 공간으로 기록하고 전승해왔나요?"
+            f"옛 문헌과 선조들은 {title}을 어떤 공간으로 기록했나요?"
         ]
-        if persona == 'seolmundae':
-            sample_questions[0] = f"할머니, {title}에 얽힌 제주 창세 신화와 자연 전설을 들려주세요."
-        elif persona == 'haenyeo':
-            sample_questions[0] = f"삼춘, {title} 바당과 해녀들의 삶에 얽힌 숨비소리 이야기를 들려주세요."
-        elif persona == 'dolhareubang':
-            sample_questions[0] = f"어르신, {title}에 깃든 유구한 탐라 역사와 문화유산의 가치를 알려주세요."
 
         first_img = clean_images[0]
 
