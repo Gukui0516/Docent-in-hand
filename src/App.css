@@ -807,14 +807,6 @@
   color: var(--text-primary);
 }
 
-.live-status {
-  font-size: 11px;
-  color: #00897B;
-  font-weight: 600;
-  background-color: #E0F2F1;
-  padding: 2px 7px;
-  border-radius: var(--radius-pill);
-}
 
 /* Quick Chips */
 .quick-chips-wrapper {
