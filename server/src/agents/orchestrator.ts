@@ -62,7 +62,7 @@ export class AgentOrchestrator {
         layer: 2,
         agent: characterId,
         step: 'storytelling',
-        message: `🎭 [${characterName}] 학술 지식을 바탕으로 맞춤형 도슨트 해설 구술 중...`
+        message: `🎭 [${characterName}] 학술 지식을 바탕으로 맞춤형 도슨트 해설 작성 중...`
       });
 
       let fullText = '';
@@ -125,7 +125,7 @@ export class AgentOrchestrator {
         layer: 2,
         agent: characterId,
         step: 'answering',
-        message: `💬 [${characterName}] 답변 구술 중...`
+        message: `💬 [${characterName}] 답변 작성 중...`
       });
 
       let fullText = '';
