@@ -122,16 +122,6 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
           <div className="card-top-badges">
             <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
               <span className="badge category-badge">{poi.category}</span>
-              {totalImages > 1 && (
-                <span className="badge counter-badge" style={{
-                  backgroundColor: 'rgba(0, 0, 0, 0.65)',
-                  color: '#FFFFFF',
-                  fontSize: '11px',
-                  fontWeight: 600
-                }}>
-                  {currentIndex + 1} / {totalImages}
-                </span>
-              )}
             </div>
 
             <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
