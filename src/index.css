@@ -42,11 +42,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-family);
-  background-color: #F8F9FA;
+  background-color: var(--bg-primary);
   color: var(--text-primary);
-  min-height: 100vh;
   font-size: 15px;
   line-height: 1.5;
 }
@@ -57,18 +65,5 @@ body {
   background-color: var(--bg-primary);
   display: flex;
   flex-direction: column;
-}
-
-@media (max-width: 1023px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: #E9ECEF;
-  }
-
-  #root {
-    max-width: 540px;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
-  }
+  box-sizing: border-box;
 }
