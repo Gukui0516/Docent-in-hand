@@ -49,7 +49,6 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
           <MessageCircle size={16} className="chat-icon" />
           <h3>{character.name}와 실시간 QnA</h3>
         </div>
-        <span className="live-status">실시간 AI 도슨트 연결됨</span>
       </div>
 
       {/* Suggested Question Chips */}
