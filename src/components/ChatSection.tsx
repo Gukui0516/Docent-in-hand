@@ -76,13 +76,9 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
       </div>
 
       {/* Messages Feed */}
-      <div className="messages-feed">
-        {messages.length === 0 ? (
-          <div className="empty-chat-hint">
-            <p>추천 질문을 고르거나, 이 장소에서 궁금한 것을 자유롭게 물어보세요.</p>
-          </div>
-        ) : (
-          messages.map((msg) => (
+      {(messages.length > 0 || isReplying) && (
+        <div className="messages-feed">
+          {messages.map((msg) => (
             <div
               key={msg.id}
               className={`chat-bubble-row ${msg.sender === 'user' ? 'user-row' : 'model-row'}`}
@@ -104,38 +100,38 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
                 <span className="bubble-time">{msg.timestamp}</span>
               </div>
             </div>
-          ))
-        )}
+          ))}
 
-        {isReplying && (
-          <div className="chat-bubble-row model-row">
-            <div className="model-avatar-mini" style={{ backgroundColor: `${character.badgeColor}20` }}>
-              {character.avatarUrl ? (
-                <img src={character.avatarUrl} alt={character.name} className="avatar-mini-img" />
-              ) : (
-                <span>{character.avatarEmoji}</span>
-              )}
+          {isReplying && (
+            <div className="chat-bubble-row model-row">
+              <div className="model-avatar-mini" style={{ backgroundColor: `${character.badgeColor}20` }}>
+                {character.avatarUrl ? (
+                  <img src={character.avatarUrl} alt={character.name} className="avatar-mini-img" />
+                ) : (
+                  <span>{character.avatarEmoji}</span>
+                )}
+              </div>
+              <div className="chat-bubble model-bubble replying-bubble" style={{ minWidth: '220px' }}>
+                <span className="bubble-speaker-name">{character.name}</span>
+                {agentChatStatus ? (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#666', marginTop: '4px' }}>
+                    <Cpu size={14} className="spin" color="#eb5e28" />
+                    <span>{agentChatStatus}</span>
+                  </div>
+                ) : (
+                  <div className="typing-dots">
+                    <span className="dot" />
+                    <span className="dot" />
+                    <span className="dot" />
+                  </div>
+                )}
+              </div>
             </div>
-            <div className="chat-bubble model-bubble replying-bubble" style={{ minWidth: '220px' }}>
-              <span className="bubble-speaker-name">{character.name}</span>
-              {agentChatStatus ? (
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#666', marginTop: '4px' }}>
-                  <Cpu size={14} className="spin" color="#eb5e28" />
-                  <span>{agentChatStatus}</span>
-                </div>
-              ) : (
-                <div className="typing-dots">
-                  <span className="dot" />
-                  <span className="dot" />
-                  <span className="dot" />
-                </div>
-              )}
-            </div>
-          </div>
-        )}
+          )}
 
-        <div ref={messagesEndRef} />
-      </div>
+          <div ref={messagesEndRef} />
+        </div>
+      )}
 
       {/* Input Form */}
       <form className="chat-input-form" onSubmit={handleSubmit}>
