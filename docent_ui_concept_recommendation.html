@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#173f3b" />
+  <title>내 손안의 도슨트 — 추천 UI 콘셉트</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&amp;family=Pretendard:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #172824;
+      --muted: #71807b;
+      --paper: #f6f2e8;
+      --paper-deep: #eae3d4;
+      --white: #fffdf8;
+      --forest: #173f3b;
+      --sea: #2c7a73;
+      --accent: #f2b544;
+      --coral: #db715d;
+      --line: rgba(23, 40, 36, 0.12);
+      --shadow: 0 24px 70px rgba(29, 49, 44, 0.16);
+      --character: #2c7a73;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: Pretendard, "Apple SD Gothic Neo", sans-serif;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(242, 181, 68, 0.18), transparent 24rem),
+        radial-gradient(circle at 88% 80%, rgba(44, 122, 115, 0.16), transparent 30rem),
+        var(--paper);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+      z-index: 10;
+    }
+
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+
+    .concept-label {
+      position: fixed;
+      top: 22px;
+      left: 24px;
+      z-index: 20;
+      padding: 9px 13px;
+      color: rgba(255,255,255,.86);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 999px;
+      background: rgba(23,63,59,.76);
+      backdrop-filter: blur(12px);
+    }
+
+    .stage {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 54px 24px;
+    }
+
+    .phone {
+      width: min(100%, 430px);
+      height: min(900px, calc(100vh - 52px));
+      min-height: 720px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border: 9px solid #12231f;
+      border-radius: 44px;
+      background: var(--white);
+      box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,.7) inset;
+    }
+
+    .hero {
+      position: relative;
+      flex: 0 0 46%;
+      min-height: 315px;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(180deg, rgba(10,36,34,.14) 0%, rgba(10,36,34,.02) 40%, rgba(12,31,28,.88) 100%),
+        url("https://images.unsplash.com/photo-1603197788269-c76bbc23b3f4?auto=format&fit=crop&w=1100&q=88") center 48% / cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 34px;
+      background: var(--white);
+      clip-path: polygon(0 58%, 18% 70%, 38% 42%, 58% 72%, 77% 48%, 100% 66%, 100% 100%, 0 100%);
+    }
+
+    .topbar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 22px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .brand-mark {
+      width: 31px;
+      height: 31px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      color: var(--forest);
+      background: var(--accent);
+      box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    }
+
+    .icon-button {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: rgba(13,35,32,.28);
+      backdrop-filter: blur(10px);
+    }
+
+    .place-copy {
+      position: absolute;
+      z-index: 2;
+      left: 24px;
+      right: 24px;
+      bottom: 42px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 9px;
+      color: rgba(255,255,255,.82);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #73d5b4;
+      box-shadow: 0 0 0 5px rgba(115,213,180,.15);
+    }
+
+    .place-copy h1 {
+      margin: 0;
+      font-family: "Gowun Batang", serif;
+      font-size: clamp(32px, 8vw, 40px);
+      line-height: 1.12;
+      letter-spacing: -.055em;
+      text-shadow: 0 5px 24px rgba(0,0,0,.25);
+    }
+
+    .place-meta {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      font-size: 11px;
+      color: rgba(255,255,255,.78);
+    }
+
+    .place-meta span {
+      padding: 6px 9px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      background: rgba(17,39,36,.25);
+      backdrop-filter: blur(8px);
+    }
+
+    .content {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      scrollbar-width: none;
+      padding: 4px 22px 106px;
+      background: var(--white);
+    }
+
+    .content::-webkit-scrollbar { display: none; }
+
+    .guide-row {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      margin: 2px -22px 18px;
+      padding: 4px 22px 8px;
+    }
+
+    .guide-row::-webkit-scrollbar { display: none; }
+
+    .guide {
+      flex: 0 0 auto;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 5px 13px 5px 5px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: #faf8f1;
+      transition: .25s ease;
+    }
+
+    .guide.active {
+      color: var(--ink);
+      border-color: color-mix(in srgb, var(--character) 45%, white);
+      background: color-mix(in srgb, var(--character) 10%, white);
+      box-shadow: 0 8px 20px color-mix(in srgb, var(--character) 14%, transparent);
+    }
+
+    .guide-avatar {
+      width: 37px;
+      height: 37px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .guide strong {
+      display: block;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .guide small {
+      font-size: 9px;
+      color: var(--muted);
+    }
+
+    .story-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .story-kicker {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--character);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .audio-button {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 11px;
+      border: 0;
+      border-radius: 999px;
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      background: var(--character);
+      box-shadow: 0 7px 18px color-mix(in srgb, var(--character) 25%, transparent);
+    }
+
+    .bars { height: 12px; display: flex; align-items: center; gap: 2px; }
+    .bars i { width: 2px; height: 4px; border-radius: 2px; background: currentColor; }
+    .audio-button.playing .bars i { animation: wave .8s ease-in-out infinite alternate; }
+    .audio-button.playing .bars i:nth-child(2) { animation-delay: -.35s; }
+    .audio-button.playing .bars i:nth-child(3) { animation-delay: -.6s; }
+    @keyframes wave { to { height: 12px; } }
+
+    .story-title {
+      margin: 0 0 12px;
+      font-family: "Gowun Batang", serif;
+      font-size: 23px;
+      line-height: 1.35;
+      letter-spacing: -.045em;
+    }
+
+    .story-text {
+      position: relative;
+      margin: 0;
+      padding-left: 16px;
+      color: #485651;
+      font-family: "Gowun Batang", serif;
+      font-size: 14px;
+      line-height: 1.85;
+      word-break: keep-all;
+    }
+
+    .story-text::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      bottom: 5px;
+      left: 0;
+      width: 3px;
+      border-radius: 3px;
+      background: var(--character);
+    }
+
+    .source {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 13px;
+      color: #87908d;
+      font-size: 9px;
+    }
+
+    .divider {
+      height: 1px;
+      margin: 21px 0 17px;
+      background: var(--line);
+    }
+
+    .question-title {
+      margin: 0 0 11px;
+      font-size: 13px;
+      letter-spacing: -.02em;
+    }
+
+    .questions {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      margin-right: -22px;
+      padding: 0 22px 8px 0;
+      scrollbar-width: none;
+    }
+
+    .questions::-webkit-scrollbar { display: none; }
+
+    .question-chip {
+      flex: 0 0 auto;
+      max-width: 220px;
+      padding: 10px 13px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: #58645f;
+      font-size: 11px;
+      text-align: left;
+      background: #faf8f2;
+      transition: .2s ease;
+    }
+
+    .question-chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--character);
+    }
+
+    .composer-wrap {
+      position: absolute;
+      z-index: 5;
+      left: 16px;
+      right: 16px;
+      bottom: 64px;
+    }
+
+    .composer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 7px 7px 15px;
+      border: 1px solid rgba(23,40,36,.12);
+      border-radius: 18px;
+      background: rgba(255,253,248,.94);
+      box-shadow: 0 14px 34px rgba(25,50,44,.16);
+      backdrop-filter: blur(16px);
+    }
+
+    .composer input {
+      min-width: 0;
+      flex: 1;
+      border: 0;
+      outline: 0;
+      color: var(--ink);
+      font-size: 12px;
+      background: transparent;
+    }
+
+    .composer input::placeholder { color: #929c98; }
+
+    .send {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-radius: 13px;
+      color: white;
+      background: var(--forest);
+      transition: .2s ease;
+    }
+
+    .send:hover { transform: scale(1.05); }
+
+    .bottom-nav {
+      position: absolute;
+      z-index: 4;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 72px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 8px 35px 12px;
+      border-top: 1px solid rgba(23,40,36,.08);
+      background: rgba(255,253,248,.96);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      border: 0;
+      color: #87918d;
+      font-size: 9px;
+      font-weight: 600;
+      background: transparent;
+    }
+
+    .nav-item.active { color: var(--forest); }
+    .nav-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+
+    .toast {
+      position: absolute;
+      z-index: 30;
+      left: 50%;
+      bottom: 142px;
+      width: max-content;
+      max-width: 84%;
+      padding: 11px 15px;
+      border-radius: 12px;
+      color: white;
+      font-size: 11px;
+      background: rgba(18,35,31,.92);
+      box-shadow: 0 14px 30px rgba(0,0,0,.2);
+      transform: translate(-50%, 12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
+    }
+
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    .note {
+      position: fixed;
+      z-index: 3;
+      width: 250px;
+      right: max(28px, calc(50vw - 480px));
+      top: 50%;
+      transform: translateY(-50%);
+      color: #44534f;
+    }
+
+    .note h2 {
+      margin: 0 0 13px;
+      font-family: "Gowun Batang", serif;
+      font-size: 26px;
+      line-height: 1.35;
+      letter-spacing: -.04em;
+    }
+
+    .note p { margin: 0 0 20px; font-size: 12px; line-height: 1.75; color: #6d7a76; }
+
+    .palette { display: flex; gap: 8px; }
+    .palette i { width: 27px; height: 27px; border-radius: 50%; box-shadow: 0 0 0 3px rgba(255,255,255,.7); }
+    .palette i:nth-child(1) { background: var(--forest); }
+    .palette i:nth-child(2) { background: var(--sea); }
+    .palette i:nth-child(3) { background: var(--accent); }
+    .palette i:nth-child(4) { background: var(--paper-deep); }
+    .palette i:nth-child(5) { background: var(--coral); }
+
+    @media (max-width: 1050px) {
+      .note { display: none; }
+    }
+
+    @media (max-width: 520px) {
+      .stage { padding: 0; }
+      .phone { width: 100%; height: 100vh; min-height: 650px; border: 0; border-radius: 0; }
+      .concept-label { display: none; }
+      .hero { flex-basis: 43%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="concept-label">UI CONCEPT · JEJU STORY POSTCARD</div>
+
+  <main class="stage">
+    <section class="phone" aria-label="내 손안의 도슨트 모바일 UI 시안">
+      <header class="hero">
+        <div class="topbar">
+          <div class="brand">
+            <span class="brand-mark">ᄌᆞ</span>
+            <span>내 손안의 도슨트</span>
+          </div>
+          <button class="icon-button" aria-label="장소 탐색" onclick="showToast('제주 명소 지도를 여는 동작입니다')">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          </button>
+        </div>
+
+        <div class="place-copy">
+          <div class="eyebrow"><span class="live-dot"></span> 지금 여기서 시작되는 이야기 · 80m</div>
+          <h1>성산일출봉</h1>
+          <div class="place-meta"><span>🌋 자연과 지리</span><span>약 3분 이야기</span></div>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="guide-row" role="tablist" aria-label="도슨트 선택">
+          <button class="guide active" data-guide="seolmundae" role="tab">
+            <img class="guide-avatar" src="public/images/characters/seolmundae.jpg" alt="설문대할망" />
+            <span><strong>설문대할망</strong><small>신화 · 오름</small></span>
+          </button>
+          <button class="guide" data-guide="haenyeo" role="tab">
+            <img class="guide-avatar" src="public/images/characters/haenyeo.jpg" alt="해녀 삼춘" />
+            <span><strong>해녀 삼춘</strong><small>바다 · 삶</small></span>
+          </button>
+          <button class="guide" data-guide="dolhareubang" role="tab">
+            <img class="guide-avatar" src="public/images/characters/dolhareubang.jpg" alt="돌하르방" />
+            <span><strong>돌하르방</strong><small>역사 · 유산</small></span>
+          </button>
+        </div>
+
+        <article>
+          <div class="story-head">
+            <div class="story-kicker"><span>✦</span><span id="guideLabel">설문대할망의 이야기</span></div>
+            <button class="audio-button" id="audioButton" type="button">
+              <span class="bars"><i></i><i></i><i></i></span><span id="audioLabel">들려줘</span>
+            </button>
+          </div>
+          <h2 class="story-title" id="storyTitle">“저 봉우리는 바다가 품어 올린<br />제주의 첫 아침이란다.”</h2>
+          <p class="story-text" id="storyText">아가, 저 커다란 사발 모양의 봉우리를 보렴. 아주 먼 옛날 바닷속 불길이 솟구치며 수많은 화산재 조각을 쌓아 만든 곳이지. 사람들은 이곳에서 해가 가장 먼저 떠오르는 모습을 보며 한 해의 소망을 빌었단다.</p>
+          <div class="source">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            한국학중앙연구원 한국향토문화전자대전 기반
+          </div>
+        </article>
+
+        <div class="divider"></div>
+
+        <section>
+          <h3 class="question-title">이런 이야기도 물어보세요</h3>
+          <div class="questions">
+            <button class="question-chip">분화구는 왜 사발 모양인가요?</button>
+            <button class="question-chip">일출봉에 얽힌 전설이 있나요?</button>
+            <button class="question-chip">지금 어디를 보면 좋을까요?</button>
+          </div>
+        </section>
+      </div>
+
+      <div class="composer-wrap">
+        <form class="composer" id="composer">
+          <input id="questionInput" aria-label="도슨트에게 질문" placeholder="도슨트에게 궁금한 걸 물어보세요" autocomplete="off" />
+          <button class="send" type="submit" aria-label="질문 보내기">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <nav class="bottom-nav" aria-label="주 메뉴">
+        <button class="nav-item active"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>지금 여기</span><i class="nav-dot"></i></button>
+        <button class="nav-item" onclick="showToast('주변 명소 탐색 화면입니다')"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5Z"/></svg><span>주변 탐색</span></button>
+        <button class="nav-item" onclick="showToast('저장한 이야기 모음입니다')"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4-6 4Z"/></svg><span>나의 이야기</span></button>
+      </nav>
+
+      <div class="toast" id="toast" role="status"></div>
+    </section>
+  </main>
+
+  <aside class="note">
+    <h2>풍경이 먼저 말하고,<br />도슨트가 곁에서<br />이야기를 건넵니다.</h2>
+    <p>관광 정보 앱의 복잡한 카드 나열보다 장소의 감정과 캐릭터의 목소리에 집중한 ‘제주 이야기 엽서’ 콘셉트입니다.</p>
+    <div class="palette" aria-label="추천 색상 팔레트"><i></i><i></i><i></i><i></i><i></i></div>
+  </aside>
+
+  <script>
+    const guideData = {
+      seolmundae: {
+        color: '#2c7a73',
+        label: '설문대할망의 이야기',
+        title: '“저 봉우리는 바다가 품어 올린<br />제주의 첫 아침이란다.”',
+        text: '아가, 저 커다란 사발 모양의 봉우리를 보렴. 아주 먼 옛날 바닷속 불길이 솟구치며 수많은 화산재 조각을 쌓아 만든 곳이지. 사람들은 이곳에서 해가 가장 먼저 떠오르는 모습을 보며 한 해의 소망을 빌었단다.'
+      },
+      haenyeo: {
+        color: '#277aa0',
+        label: '해녀 삼춘의 이야기',
+        title: '“저 바당 아래에도<br />일출봉의 시간이 이어져 있지.”',
+        text: '이 바다에서 숨을 고르다 고개를 들면 일출봉이 늘 같은 자리에서 우리를 지켜봤어. 물때와 바람을 읽던 해녀들에게 저 봉우리는 멋진 풍경이기 전에, 집으로 돌아갈 방향을 알려 주는 든든한 표지였지.'
+      },
+      dolhareubang: {
+        color: '#b05f48',
+        label: '돌하르방의 이야기',
+        title: '“오래 바라볼수록<br />제주의 시간이 보이는 곳이지.”',
+        text: '성산일출봉은 아름다운 경관만으로 남은 곳이 아닐세. 제주 사람들이 자연을 경외하고 삶의 소망을 나누던 기억이 층층이 쌓인 장소지. 봉우리의 결을 따라 시선을 옮기며 그 오랜 시간을 천천히 읽어 보게.'
+      }
+    };
+
+    const guides = document.querySelectorAll('.guide');
+    const storyTitle = document.getElementById('storyTitle');
+    const storyText = document.getElementById('storyText');
+    const guideLabel = document.getElementById('guideLabel');
+    const audioButton = document.getElementById('audioButton');
+    const audioLabel = document.getElementById('audioLabel');
+    const toast = document.getElementById('toast');
+    let toastTimer;
+
+    guides.forEach((button) => {
+      button.addEventListener('click', () => {
+        const data = guideData[button.dataset.guide];
+        guides.forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+        document.documentElement.style.setProperty('--character', data.color);
+        guideLabel.textContent = data.label;
+        storyTitle.innerHTML = data.title;
+        storyText.textContent = data.text;
+        audioButton.classList.remove('playing');
+        audioLabel.textContent = '들려줘';
+      });
+    });
+
+    audioButton.addEventListener('click', () => {
+      const playing = audioButton.classList.toggle('playing');
+      audioLabel.textContent = playing ? '듣는 중' : '들려줘';
+      showToast(playing ? '도슨트 음성 재생을 시작합니다' : '음성 재생을 멈췄습니다');
+    });
+
+    document.querySelectorAll('.question-chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        document.getElementById('questionInput').value = chip.textContent;
+        document.getElementById('questionInput').focus();
+      });
+    });
+
+    document.getElementById('composer').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const input = document.getElementById('questionInput');
+      if (!input.value.trim()) return;
+      showToast(`“${input.value.trim()}” 질문을 도슨트에게 보냈어요`);
+      input.value = '';
+    });
+
+    function showToast(message) {
+      window.clearTimeout(toastTimer);
+      toast.textContent = message;
+      toast.classList.add('show');
+      toastTimer = window.setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+  </script>
+</body>
+</html>

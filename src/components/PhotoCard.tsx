@@ -1,18 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { POI, POIImage } from '../types/docent';
-import { MapPin, Image as ImageIcon, ChevronLeft, ChevronRight, ExternalLink, X } from 'lucide-react';
+import { MapPin, Image as ImageIcon, RefreshCw } from 'lucide-react';
 
 interface PhotoCardProps {
   poi: POI;
   distanceText: string;
+  onSyncLocation: () => void;
+  onOpenLocationSettings: () => void;
+  isSyncing?: boolean;
 }
 
-export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
+export const PhotoCard: React.FC<PhotoCardProps> = ({
+  poi,
+  distanceText,
+  onSyncLocation,
+  onOpenLocationSettings,
+  isSyncing = false
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loadedMap, setLoadedMap] = useState<Record<number, boolean>>({});
   const [errorMap, setErrorMap] = useState<Record<number, boolean>>({});
   const [isAutoPlay, setIsAutoPlay] = useState(true);
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Normalize image list (supports multiple images or single fallback)
@@ -64,12 +72,6 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
     setCurrentIndex((prev) => (prev + 1) % totalImages);
   };
 
-  const handleSelectDot = (idx: number, e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (idx === currentIndex) return;
-    setCurrentIndex(idx);
-  };
-
   return (
     <section className="photo-card-container" aria-label="대표 명소 현장 사진 카드">
       <div
@@ -77,21 +79,8 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
         onMouseEnter={() => totalImages > 1 && setIsAutoPlay(false)}
         onMouseLeave={() => totalImages > 1 && setIsAutoPlay(true)}
       >
-        {/* Background Image Container with Smooth Sliding Track (Click to open full lightbox) */}
-        <div
-          className="image-wrapper"
-          onClick={() => setIsLightboxOpen(true)}
-          title="사진을 클릭하여 크게 보기"
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              setIsLightboxOpen(true);
-            }
-          }}
-          style={{ cursor: 'pointer' }}
-        >
+        {/* Background Image Container with Smooth Sliding Track */}
+        <div className="image-wrapper">
           {/* Smooth Horizontal Sliding Track */}
           <div
             className="slideshow-track"
@@ -131,41 +120,33 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
           {/* Gradient Overlay */}
           <div className="image-overlay" />
 
-          {/* Top Badges */}
-          <div className="card-top-badges" onClick={(e) => e.stopPropagation()}>
-            <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-              <span className="badge category-badge">{poi.category}</span>
+          {totalImages > 1 && (
+            <div
+              className="photo-dot-indicator"
+              role="status"
+              aria-label={`${totalImages}장 중 ${currentIndex + 1}번째 사진`}
+            >
+              {imageList.map((_, index) => (
+                <i key={index} className={index === currentIndex ? 'active' : ''} aria-hidden="true" />
+              ))}
             </div>
+          )}
 
-            <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-              <span className="badge distance-badge">
-                <MapPin size={12} />
-                {distanceText}
-              </span>
-            </div>
-          </div>
-
-          {/* Slideshow Directional Arrow Buttons */}
+          {/* Invisible edge navigation zones; the center remains non-interactive. */}
           {totalImages > 1 && (
             <>
               <button
                 type="button"
-                className="slide-arrow-btn prev-btn"
+                className="photo-nav-zone photo-nav-zone-left"
                 onClick={handlePrev}
-                title="이전 사진 (오른쪽으로 슬라이드)"
                 aria-label="이전 사진 보기"
-              >
-                <ChevronLeft size={20} />
-              </button>
+              />
               <button
                 type="button"
-                className="slide-arrow-btn next-btn"
+                className="photo-nav-zone photo-nav-zone-right"
                 onClick={handleNext}
-                title="다음 사진 (왼쪽으로 슬라이드)"
                 aria-label="다음 사진 보기"
-              >
-                <ChevronRight size={20} />
-              </button>
+              />
             </>
           )}
 
@@ -193,127 +174,36 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
             </div>
           </div>
 
-          {/* Interactive Dot Pagination Bullets */}
-          {totalImages > 1 && (
-            <div className="slideshow-dots" style={{
-              position: 'absolute',
-              bottom: '10px',
-              right: '14px',
-              display: 'flex',
-              gap: '6px',
-              zIndex: 3
-            }}>
-              {imageList.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={(e) => handleSelectDot(idx, e)}
-                  aria-label={`${idx + 1}번 사진으로 이동`}
-                  style={{
-                    width: idx === currentIndex ? '18px' : '6px',
-                    height: '6px',
-                    borderRadius: '3px',
-                    backgroundColor: idx === currentIndex ? '#eb5e28' : 'rgba(255, 255, 255, 0.55)',
-                    border: 'none',
-                    cursor: 'pointer',
-                    padding: 0,
-                    transition: 'all 0.35s cubic-bezier(0.22, 1, 0.36, 1)'
-                  }}
-                />
-              ))}
-            </div>
-          )}
         </div>
 
-        {/* Source Attribution Bar with Clickable Archive Link */}
+        {/* Location utility bar */}
         <div className="source-bar">
-          <span className="source-label">
-            📸 <strong>{currentImage.alt || poi.imageTitle || poi.name}</strong>
-          </span>
-          {currentImage.sourceUrl || poi.sourceUrl || poi.id ? (
-            <a
-              href={currentImage.sourceUrl || poi.sourceUrl || `https://jeju.grandculture.net/jeju/toc/${poi.id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="source-credit-link"
-              title="한국학중앙연구원 향토문화전자대전 공식 아카이브 원문 페이지 열기"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '4px',
-                color: '#2b2d42',
-                textDecoration: 'none',
-                backgroundColor: 'rgba(235, 94, 40, 0.08)',
-                padding: '3px 8px',
-                borderRadius: '4px',
-                border: '1px solid rgba(235, 94, 40, 0.25)',
-                fontWeight: 600,
-                fontSize: '11px',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(235, 94, 40, 0.18)';
-                e.currentTarget.style.borderColor = '#eb5e28';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(235, 94, 40, 0.08)';
-                e.currentTarget.style.borderColor = 'rgba(235, 94, 40, 0.25)';
-              }}
+          <button
+            type="button"
+            className="source-current-location"
+            onClick={onOpenLocationSettings}
+            title="GPS 위치 설정 열기"
+          >
+            <MapPin size={13} aria-hidden="true" />
+            <span>현재 위치</span>
+            <strong>{poi.name}</strong>
+            <em>· {distanceText}</em>
+          </button>
+          <div className="source-bar-actions">
+            <button
+              type="button"
+              className={`source-gps-button ${isSyncing ? 'syncing' : ''}`}
+              onClick={onSyncLocation}
+              title="현재 기기 GPS 위치 다시 찾기"
+              aria-label="현재 위치 다시 찾기"
             >
-              <span>출처: {currentImage.source || poi.imageSource || '한국학중앙연구원 한국향토문화전자대전'}</span>
-              <ExternalLink size={12} color="#eb5e28" />
-            </a>
-          ) : (
-            <span className="source-credit">
-              출처: {currentImage.source || poi.imageSource || '한국학중앙연구원 한국향토문화전자대전'}
-            </span>
-          )}
+              <RefreshCw size={13} className={isSyncing ? 'spin' : ''} />
+              <span>{isSyncing ? '찾는 중' : '내 위치'}</span>
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Fullscreen High-Resolution Lightbox Modal */}
-      {isLightboxOpen && (
-        <div
-          className="modal-backdrop photo-lightbox-backdrop"
-          onClick={() => setIsLightboxOpen(false)}
-        >
-          <div
-            className="photo-lightbox-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="lightbox-close-btn"
-              onClick={() => setIsLightboxOpen(false)}
-              aria-label="닫기"
-            >
-              <X size={24} />
-            </button>
-
-            <div className="lightbox-image-container">
-              <img
-                src={currentImage.src}
-                alt={currentImage.alt || poi.name}
-                className="lightbox-img"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-
-            <div className="lightbox-caption">
-              <div className="lightbox-title-row">
-                <h3>{poi.name}</h3>
-                <span className="lightbox-badge">{poi.category} · {poi.region}</span>
-              </div>
-              {currentImage.alt && (
-                <p className="lightbox-alt">📷 {currentImage.alt}</p>
-              )}
-              <div className="lightbox-source-info">
-                출처: {currentImage.source || poi.imageSource || '한국학중앙연구원 한국향토문화전자대전'}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

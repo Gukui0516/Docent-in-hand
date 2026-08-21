@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { POI } from '../types/docent';
 import { POI_LIST } from '../data/poiData';
 import { CHARACTERS } from '../data/characters';
@@ -17,10 +17,30 @@ export const POICarousel: React.FC<POICarouselProps> = ({
   selectedPOIId,
   onSelectPOI
 }) => {
+  const PAGE_SIZE = 40;
   const [filterCategory, setFilterCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const [shouldRender, setShouldRender] = useState(isOpen);
+  const [isClosing, setIsClosing] = useState(false);
 
-  if (!isOpen) return null;
+  useEffect(() => {
+    if (isOpen) {
+      setShouldRender(true);
+      setIsClosing(false);
+      return;
+    }
+
+    if (!shouldRender) return;
+
+    setIsClosing(true);
+    const closeTimer = window.setTimeout(() => {
+      setShouldRender(false);
+      setIsClosing(false);
+    }, 500);
+
+    return () => window.clearTimeout(closeTimer);
+  }, [isOpen, shouldRender]);
 
   const categories = [
     { id: 'all', label: `전체 (${POI_LIST.length})` },
@@ -35,17 +55,30 @@ export const POICarousel: React.FC<POICarouselProps> = ({
     { id: '언어와 문학', label: '📖 언어와 문학' },
   ];
 
-  const filteredList = POI_LIST.filter((poi) => {
-    const matchCat = filterCategory === 'all' || poi.category === filterCategory;
-    const matchSearch = poi.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                        poi.region.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                        poi.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
-    return matchCat && matchSearch;
-  });
+  const filteredList = useMemo(() => {
+    const normalizedQuery = searchQuery.trim().toLowerCase();
+
+    return POI_LIST.filter((poi) => {
+      const matchCat = filterCategory === 'all' || poi.category === filterCategory;
+      const matchSearch = !normalizedQuery ||
+                          poi.name.toLowerCase().includes(normalizedQuery) ||
+                          poi.region.toLowerCase().includes(normalizedQuery) ||
+                          poi.tags.some((tag) => tag.toLowerCase().includes(normalizedQuery));
+      return matchCat && matchSearch;
+    });
+  }, [filterCategory, searchQuery]);
+
+  const visibleList = filteredList.slice(0, visibleCount);
+
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE);
+  }, [filterCategory, searchQuery, isOpen]);
+
+  if (!shouldRender) return null;
 
   return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal-sheet" onClick={(e) => e.stopPropagation()}>
+    <div className={`modal-backdrop poi-explorer-backdrop ${isClosing ? 'closing' : ''}`} onClick={onClose}>
+      <div className="modal-sheet poi-explorer-sheet" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <div className="modal-title-group">
             <h3>제주 신화 & 명소 둘러보기</h3>
@@ -89,7 +122,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
 
         {/* POI Grid/List */}
         <div className="poi-items-list">
-          {filteredList.map((poi) => {
+          {visibleList.map((poi) => {
             const character = CHARACTERS[poi.assignedCharacterId];
             const isSelected = poi.id === selectedPOIId;
 
@@ -129,6 +162,16 @@ export const POICarousel: React.FC<POICarouselProps> = ({
               </div>
             );
           })}
+          {visibleCount < filteredList.length && (
+            <button
+              type="button"
+              className="poi-load-more"
+              onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
+            >
+              장소 더 보기
+              <span>{Math.min(visibleCount, filteredList.length).toLocaleString()} / {filteredList.length.toLocaleString()}</span>
+            </button>
+          )}
         </div>
       </div>
     </div>

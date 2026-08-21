@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Character, POI } from '../types/docent';
-import { Sparkles, BookOpen, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
+import { POI } from '../types/docent';
+import { BookOpen, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { RAG_KNOWLEDGE_BASE } from '../data/ragKnowledgeBase';
 import { getThemeTitle } from '../utils/themeTitle';
 
 interface StoryCardProps {
-  character: Character;
   poi: POI;
   storyText: string;
   isStreaming: boolean;
@@ -27,23 +26,20 @@ export const StoryCard: React.FC<StoryCardProps> = ({
     <section className="story-card-container" aria-label="1인칭 맞춤형 심층 도슨트">
       {/* Speech Bubble Card */}
       <div className="speech-bubble-card deep-story-card">
-        <div className="bubble-header">
-          <div className="bubble-header-left">
-            <span className="bubble-tag deep-tag">
-              <Sparkles size={13} className="sparkle-icon" />
-              {getThemeTitle(poi, ragDoc)}
-            </span>
-            {isStreaming && (
+        {isStreaming && (
+          <div className="bubble-header streaming-only-header">
+            <div className="bubble-header-left">
               <span className="streaming-pulse">
                 <span className="pulse-dot" />
                 들려주는 중...
               </span>
-            )}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Multi-paragraph Story Content */}
         <div className="bubble-content deep-story-content">
+          <h3 className="story-theme-title">{getThemeTitle(poi, ragDoc)}</h3>
           {paragraphs.length > 0 ? (
             paragraphs.map((para, idx) => (
               <p key={idx} className="story-paragraph">
