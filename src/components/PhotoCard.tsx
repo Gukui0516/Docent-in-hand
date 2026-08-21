@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { POI, POIImage } from '../types/docent';
-import { MapPin, Image as ImageIcon, ChevronLeft, ChevronRight, ExternalLink, Maximize2, X } from 'lucide-react';
+import { MapPin, Image as ImageIcon, ChevronLeft, ChevronRight, ExternalLink, X } from 'lucide-react';
 
 interface PhotoCardProps {
   poi: POI;
@@ -77,8 +77,21 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
         onMouseEnter={() => totalImages > 1 && setIsAutoPlay(false)}
         onMouseLeave={() => totalImages > 1 && setIsAutoPlay(true)}
       >
-        {/* Background Image Container with Smooth Sliding Track */}
-        <div className="image-wrapper">
+        {/* Background Image Container with Smooth Sliding Track (Click to open full lightbox) */}
+        <div
+          className="image-wrapper"
+          onClick={() => setIsLightboxOpen(true)}
+          title="사진을 클릭하여 크게 보기"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setIsLightboxOpen(true);
+            }
+          }}
+          style={{ cursor: 'pointer' }}
+        >
           {/* Smooth Horizontal Sliding Track */}
           <div
             className="slideshow-track"
@@ -119,7 +132,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
           <div className="image-overlay" />
 
           {/* Top Badges */}
-          <div className="card-top-badges">
+          <div className="card-top-badges" onClick={(e) => e.stopPropagation()}>
             <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
               <span className="badge category-badge">{poi.category}</span>
             </div>
@@ -129,29 +142,6 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ poi, distanceText }) => {
                 <MapPin size={12} />
                 {distanceText}
               </span>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsLightboxOpen(true);
-                }}
-                className="badge fullscreen-btn"
-                style={{
-                  backgroundColor: 'rgba(0, 0, 0, 0.65)',
-                  color: '#FFFFFF',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '4px',
-                  padding: '4px 8px'
-                }}
-                title="사진 원본 크게 보기"
-                aria-label="사진 원본 크게 보기"
-              >
-                <Maximize2 size={12} />
-                <span style={{ fontSize: '10px' }}>확대</span>
-              </button>
             </div>
           </div>
 
