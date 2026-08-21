@@ -2066,7 +2066,7 @@
   }
 }
 
-/* 6. Ultra-Wide Screens (>= 1600px) */
+/* 6. Ultra-Wide Screens (1600px ~ 2559px) */
 @media (min-width: 1600px) {
   .main-content {
     max-width: 1600px;
@@ -2081,6 +2081,150 @@
   .desktop-left-column .image-wrapper {
     aspect-ratio: 16 / 11.5;
     min-height: 460px;
+  }
+}
+
+/* 7. QHD / 2K Large Monitors (2560px ~ 3839px) */
+@media (min-width: 2560px) {
+  body {
+    font-size: 17px;
+  }
+
+  .header-container,
+  .location-bar-wrapper {
+    max-width: 2100px;
+  }
+
+  .main-content {
+    max-width: 2100px;
+    padding: 36px 48px 80px;
+  }
+
+  .content-container {
+    grid-template-columns: minmax(0, 680px) minmax(0, 1fr);
+    gap: 44px;
+  }
+
+  .desktop-left-column {
+    top: 100px;
+    gap: 24px;
+  }
+
+  .desktop-left-column .image-wrapper {
+    aspect-ratio: 16 / 11;
+    min-height: 540px;
+  }
+
+  .desktop-right-column {
+    gap: 28px;
+  }
+
+  .brand-logo {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+
+  .brand-title {
+    font-size: 20px;
+  }
+
+  .brand-subtitle {
+    font-size: 13px;
+  }
+
+  .location-bar {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  .poi-title {
+    font-size: 28px;
+  }
+
+  .poi-story-content {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .modal-sheet {
+    max-width: 1200px;
+  }
+
+  .photo-lightbox-content {
+    max-width: 1600px;
+  }
+}
+
+/* 8. 4K UHD Ultra High Resolution (>= 3840px) */
+@media (min-width: 3840px) {
+  body {
+    font-size: 22px;
+  }
+
+  .header-container,
+  .location-bar-wrapper {
+    max-width: 2800px;
+  }
+
+  .main-content {
+    max-width: 2800px;
+    padding: 48px 64px 100px;
+  }
+
+  .content-container {
+    grid-template-columns: minmax(0, 920px) minmax(0, 1fr);
+    gap: 56px;
+  }
+
+  .desktop-left-column {
+    top: 120px;
+    gap: 32px;
+  }
+
+  .desktop-left-column .image-wrapper {
+    aspect-ratio: 16 / 11;
+    min-height: 720px;
+  }
+
+  .desktop-right-column {
+    gap: 36px;
+  }
+
+  .brand-logo {
+    width: 56px;
+    height: 56px;
+    font-size: 32px;
+  }
+
+  .brand-title {
+    font-size: 26px;
+  }
+
+  .brand-subtitle {
+    font-size: 16px;
+  }
+
+  .location-bar {
+    padding: 16px 28px;
+    font-size: 18px;
+  }
+
+  .poi-title {
+    font-size: 36px;
+  }
+
+  .poi-story-content {
+    font-size: 22px;
+    line-height: 1.85;
+  }
+
+  .modal-sheet {
+    max-width: 1600px;
+  }
+
+  .photo-lightbox-content {
+    max-width: 2200px;
   }
 }
 
