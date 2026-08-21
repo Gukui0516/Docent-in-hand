@@ -918,15 +918,6 @@
   padding: 6px 2px;
 }
 
-.empty-chat-hint {
-  text-align: center;
-  padding: 12px;
-  background-color: var(--bg-subtle);
-  border-radius: var(--radius-md);
-  color: var(--text-secondary);
-  font-size: 12px;
-}
-
 .chat-bubble-row {
   display: flex;
   align-items: flex-end;
@@ -1160,6 +1151,8 @@
 }
 
 .category-tabs {
+  flex: 0 0 auto;
+  min-height: 46px;
   display: flex;
   gap: 6px;
   overflow-x: auto;
@@ -2875,19 +2868,21 @@ body::before {
 .chips-label { color: var(--jeju-muted); font-size: 10px; }
 
 .chips-list {
+  flex-direction: column;
   flex-wrap: nowrap;
   gap: 8px;
-  overflow-x: auto;
-  padding: 2px 2px 7px;
-  scrollbar-width: none;
+  overflow: visible;
+  padding: 2px 0;
 }
 
-.chips-list::-webkit-scrollbar { display: none; }
-
 .chip-btn {
-  flex: 0 0 auto;
-  max-width: min(300px, 82vw);
-  padding: 10px 12px;
+  width: 100%;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 13px;
   color: #52605c;
   border-color: var(--jeju-line);
   border-radius: 12px;
@@ -2905,13 +2900,6 @@ body::before {
   max-height: 330px;
   gap: 12px;
   padding: 5px 2px;
-}
-
-.empty-chat-hint {
-  padding: 15px;
-  color: var(--jeju-muted);
-  border: 1px dashed rgba(23, 40, 36, 0.13);
-  background: transparent;
 }
 
 .model-avatar-mini { overflow: hidden; }
@@ -3066,7 +3054,7 @@ body::before {
   .chat-section-container { padding: 18px 15px; border-radius: 7px 24px 24px 24px; }
   .chat-header-title h3 { font-size: 16px; }
   .messages-feed { max-height: 360px; }
-  .chip-btn { max-width: 78vw; }
+  .chip-btn { max-width: none; }
 }
 
 /* Desktop: an editorial two-page travel spread */
@@ -3472,6 +3460,19 @@ body::before {
     box-shadow: 0 -18px 45px rgba(34, 55, 49, 0.13);
     transform-origin: bottom center;
     animation: poiExplorerRise 0.56s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .poi-explorer-sheet .modal-header,
+  .poi-explorer-sheet .modal-search-bar,
+  .poi-explorer-sheet .category-tabs {
+    flex-shrink: 0;
+  }
+
+  .poi-explorer-sheet .poi-items-list {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    overflow-y: auto;
   }
 }
 
