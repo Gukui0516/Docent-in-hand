@@ -11,7 +11,7 @@ export const CONFIG = {
   IS_PRODUCTION: process.env.NODE_ENV === 'production',
 
   GEMINI_API_KEY: process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY || '',
-  GEMINI_MODEL: process.env.GEMINI_MODEL || process.env.VITE_GEMINI_MODEL || 'gemini-2.0-flash',
+  GEMINI_MODEL: process.env.GEMINI_MODEL || process.env.VITE_GEMINI_MODEL || 'gemini-3.7-flash',
 
   // 비공개 assets 버킷 — /data/* 프록시가 서비스 계정으로 읽는다.
   ASSETS_BUCKET: process.env.ASSETS_BUCKET || '',

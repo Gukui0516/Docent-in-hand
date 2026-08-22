@@ -14,7 +14,7 @@ export class GeminiService {
 
     this.modelName = 
       import.meta.env.VITE_GEMINI_MODEL || 
-      (typeof window !== 'undefined' ? localStorage.getItem('DOCENT_GEMINI_MODEL') || 'gemini-2.0-flash' : 'gemini-2.0-flash');
+      (typeof window !== 'undefined' ? localStorage.getItem('DOCENT_GEMINI_MODEL') || 'gemini-3.7-flash' : 'gemini-3.7-flash');
 
     if (this.apiKey) {
       try {

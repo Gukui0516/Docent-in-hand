@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import compression from 'compression';
 import path from 'path';
 import fs from 'fs';
 import { CONFIG } from './config/env.js';
@@ -14,6 +15,20 @@ const app = express();
 // 프로덕션에서는 프론트와 백엔드가 같은 Cloud Run 오리진이라 CORS 가 필요 없다.
 // 로컬 개발에서만 Vite dev 서버(5173)를 허용한다.
 app.use(cors({ origin: CONFIG.IS_PRODUCTION ? false : ['http://localhost:5173'] }));
+
+// express.static 은 압축을 하지 않는다. 이게 없으면 프론트 번들이 600KB 무압축으로
+// 나간다(gzip 이면 133KB). SSE 와 이미 gzip 인 /data 프록시 응답은 건드리지 않는다.
+app.use(
+  compression({
+    filter: (req, res) => {
+      const type = String(res.getHeader('Content-Type') ?? '');
+      if (type.includes('text/event-stream')) return false;
+      if (res.getHeader('Content-Encoding')) return false;
+      return compression.filter(req, res);
+    }
+  })
+);
+
 app.use(express.json());
 
 // ── 헬스 체크 ───────────────────────────────────────────────────────────────
