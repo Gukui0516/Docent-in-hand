@@ -43,13 +43,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* The page itself never scrolls — only `.main-content` inside the app frame does. */
 html,
 body {
   width: 100%;
-  min-height: 100vh;
+  height: 100svh;
+  min-height: 100svh;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
@@ -62,8 +64,9 @@ body {
 
 #root {
   width: 100%;
-  min-height: 100vh;
-  background-color: var(--bg-primary);
+  height: 100svh;
+  min-height: 100svh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;

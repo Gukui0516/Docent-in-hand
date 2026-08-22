@@ -44,6 +44,7 @@ export const App: React.FC = () => {
   const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
 
   const isInitialStoryStarted = useRef(false);
+  const mainContentRef = useRef<HTMLElement>(null);
 
   // Zero-Click Story Generator via 2-Layer Multi-Agent Backend
   const triggerZeroClickStory = useCallback(async (
@@ -225,7 +226,7 @@ export const App: React.FC = () => {
 
   return (
     <div className="app-shell">
-      <main className="main-content">
+      <main className="main-content" ref={mainContentRef}>
         <div className="content-container">
           {/* Left Column (Desktop Showcase & Quick Nearby Switcher) */}
           <aside className="desktop-left-column">
@@ -271,7 +272,7 @@ export const App: React.FC = () => {
           className={`mobile-bottom-nav-item ${!isPOIListOpen ? 'active' : ''}`}
           onClick={() => {
             setIsPOIListOpen(false);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            mainContentRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           aria-current={!isPOIListOpen ? 'page' : undefined}
         >
