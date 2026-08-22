@@ -143,6 +143,68 @@ npm run build
 
 ---
 
+## ☁️ 배포 (Deployment)
+
+**운영 URL**: https://docent-in-hand-660438036743.asia-northeast3.run.app
+
+프론트엔드·백엔드·데이터 프록시를 **Cloud Run 단일 서비스**가 모두 담당합니다. SSE 스트리밍이 동일 오리진으로 동작해 CORS와 프록시 버퍼링 문제가 없습니다.
+
+```text
+브라우저 ──HTTPS──▶ Cloud Run (Express, asia-northeast3)
+                     ├─ GET  /*                  → dist/ 정적 (gzip)
+                     ├─ GET  /data/v1/*          → GCS 중계 (서비스 계정 인증)
+                     └─ POST /api/agent/stream-* → SSE
+                            │
+                            ▼
+                     GCS (두 버킷 모두 비공개)
+```
+
+### 데이터 스토어
+
+POI 데이터와 학술 코퍼스는 번들이 아니라 비공개 GCS 버킷에 둡니다. 덕분에 초기 다운로드가 **gzip 7.7MB → 212KB** 로 줄었습니다.
+
+| 산출물 | 크기(gzip) | 로드 시점 |
+|---|---:|---|
+| `poi-index.json` | 62KB | 부팅 시 1회 (검색·필터·최근접 탐색) |
+| `poi-cards.json` | 329KB | 주변 탐색 첫 오픈 시 1회 |
+| `poi/{id}.json` × 2,692 | ~2KB | POI 선택 시 1건 |
+| `ragFullCorpus.json` | 5.0MB | 서버 기동 시 1회 (백엔드 전용) |
+
+버킷은 공개하지 않고 Cloud Run이 서비스 계정으로 중계합니다. 요청 경로는 화이트리스트 정규식으로 검증합니다.
+
+### 데이터 갱신
+
+`data/` 원본이 바뀌면 아래 순서로 반영합니다.
+
+```bash
+npm run sync:data     # 원본 → src/data 생성 파일
+npm run build:data    # → build/gcs (인덱스·카드·조각·코퍼스)
+npm run upload:data   # → GCS 두 버킷에 업로드
+```
+
+스키마가 바뀌면 `DATA_VERSION=v2` 로 올려 업로드하고 Cloud Run 환경변수만 교체하면 무중단 전환됩니다.
+
+### CI/CD
+
+`main` 브랜치에 머지되면 Cloud Build 트리거(`deploy-main`)가 `cloudbuild.yaml` 을 실행해 자동 배포합니다. 이미지 태그와 리비전 접미사에 커밋 SHA가 박혀 `docent-in-hand-<SHA>` 로 어느 커밋이 떠 있는지 추적됩니다.
+
+```text
+PR 머지 → main push → Cloud Build → 빌드·푸시 → Cloud Run 배포
+```
+
+> `min/max-instances` 는 `cloudbuild.yaml` 에 선언하지 않습니다. 시연 여부에 따라 조절하는 비용 노브라 배포마다 되돌아가지 않게 하기 위함입니다.
+
+### 로컬에서 컨테이너 실행
+
+```bash
+docker build -t docent .
+docker run -p 8080:8080 --env-file .env docent
+```
+
+`ASSETS_BUCKET` 을 지정하지 않으면 백엔드가 `build/gcs/assets` 를 직접 서빙하므로 GCS 없이도 동작합니다.
+
+---
+
 ## 📂 디렉토리 구조 (Project Structure)
 
 ```text
@@ -151,7 +213,9 @@ Docent-in-hand/
 │   ├── Jeju-si/                  # 제주시 9개 분야 데이터
 │   └── Seogwipo-si/              # 서귀포시 9개 분야 데이터
 ├── scripts/
-│   └── sync_data_to_app.py       # 자동화 데이터 정제 및 동기화 파이프라인
+│   ├── sync_data_to_app.mjs      # 원본 → src/data 생성 파이프라인
+│   ├── build_gcs_data.mjs        # 생성 데이터 → GCS 업로드 산출물 (3단계 분할)
+│   └── upload_gcs_data.sh        # build/gcs → GCS 두 버킷 업로드
 ├── server/                       # 백엔드 멀티 에이전트 시스템
 │   ├── src/
 │   │   ├── agents/
@@ -161,15 +225,17 @@ Docent-in-hand/
 │   │   │       ├── seolmundaeAgent.ts
 │   │   │       ├── haenyeoAgent.ts
 │   │   │       └── dolhareubangAgent.ts
-│   │   └── index.ts              # Express API 서버 진입점
+│   │   ├── data/gcsSource.ts     # GCS 로더 (로컬 파일 폴백 지원)
+│   │   └── index.ts              # Express: API + 정적 서빙 + /data 프록시
 │   └── package.json
 ├── src/                          # 프론트엔드 React 애플리케이션
 │   ├── components/               # UI 컴포넌트 (PhotoCard, StoryCard, POICarousel 등)
-│   ├── services/                 # Agent 클라이언트 및 Gemini 서비스
+│   ├── services/                 # Agent 클라이언트, POI 데이터 로더, Gemini 서비스
 │   ├── types/                    # TypeScript 인터페이스 정의
 │   ├── App.tsx                   # 메인 뷰포트
 │   └── index.css / App.css       # 반응형 스타일시트
-├── public/                       # 정적 리소스 및 캐릭터 이미지 에셋
+├── Dockerfile                    # 멀티스테이지 빌드 (프론트 + 백엔드 → 런타임)
+├── cloudbuild.yaml               # main 머지 시 Cloud Run 자동 배포 파이프라인
 ├── GEMINI.md                     # 프로젝트 개발 및 협업 가이드라인
 └── package.json                  # 통합 실행 및 빌드 스크립트
 ```
