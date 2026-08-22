@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Compass, Home, ShieldCheck } from 'lucide-react';
+import { Compass, Home } from 'lucide-react';
 import { POI, POISummary, Character, ChatMessage } from './types/docent';
 import { loadPOIIndex, resolvePOI, placeholderPOI } from './services/poiDataService';
 import { CHARACTERS } from './data/characters';
@@ -352,18 +352,6 @@ export const App: React.FC = () => {
         >
           <Compass size={20} strokeWidth={2.2} />
           <span>주변 탐색</span>
-          <i aria-hidden="true" />
-        </button>
-        <button
-          type="button"
-          className="mobile-bottom-nav-item"
-          onClick={() => {
-            window.history.pushState(null, '', '/lab');
-            setCurrentPath('/lab');
-          }}
-        >
-          <ShieldCheck size={20} strokeWidth={2.2} />
-          <span>환각 검증실</span>
           <i aria-hidden="true" />
         </button>
       </nav>
