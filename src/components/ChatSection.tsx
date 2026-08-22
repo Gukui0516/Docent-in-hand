@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Character, ChatMessage, POI } from '../types/docent';
-import { Send, MessageCircle, HelpCircle, Cpu } from 'lucide-react';
+import { Send, MessageCircle, Cpu } from 'lucide-react';
 
 interface ChatSectionProps {
   character: Character;
@@ -37,41 +37,12 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
     setInputText('');
   };
 
-  const handleChipClick = (question: string) => {
-    if (isReplying) return;
-    onSendMessage(question);
-  };
-
   return (
     <section className="chat-section-container" aria-label="실시간 QnA 대화창">
       <div className="chat-section-header">
         <div className="chat-header-title">
           <MessageCircle size={16} className="chat-icon" />
-          <div>
-            <span className="chat-section-eyebrow">이야기는 계속됩니다</span>
-            <h3>{character.name}에게 더 물어보세요</h3>
-          </div>
-        </div>
-      </div>
-
-      {/* Suggested Question Chips */}
-      <div className="quick-chips-wrapper">
-        <div className="chips-label">
-          <HelpCircle size={13} />
-          <span>이런 이야기도 궁금하지 않나요?</span>
-        </div>
-        <div className="chips-list">
-          {poi.sampleQuestions.map((q, idx) => (
-            <button
-              key={idx}
-              type="button"
-              className="chip-btn"
-              onClick={() => handleChipClick(q)}
-              disabled={isReplying}
-            >
-              {q} <span aria-hidden="true">→</span>
-            </button>
-          ))}
+          <h3>궁금한 게 있으신가요?</h3>
         </div>
       </div>
 
@@ -138,7 +109,7 @@ export const ChatSection: React.FC<ChatSectionProps> = ({
         <input
           type="text"
           className="chat-input"
-          placeholder={`${character.name}에게 궁금한 점 물어보기...`}
+          placeholder={`${poi.name}에 대해 궁금한 점을 적어주세요...`}
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           disabled={isReplying}

@@ -34,7 +34,7 @@ export const StoryCard: React.FC<StoryCardProps> = ({
             <div className="bubble-header-left">
               <span className="streaming-pulse">
                 <span className="pulse-dot" />
-                핵심 요약 정리 중...
+                이야기를 생각중...
               </span>
             </div>
           </div>
@@ -58,21 +58,23 @@ export const StoryCard: React.FC<StoryCardProps> = ({
           )}
         </div>
 
-        {/* Direct Source Citation Line (No accordion dropdown) */}
-        <div className="bubble-footer" style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px solid #f0f0f0' }}>
-          <div className="rag-direct-citation" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '6px', fontSize: '0.85rem', color: '#555' }}>
-            <BookOpen size={14} className="book-icon" style={{ color: '#1565C0', flexShrink: 0 }} />
-            <span><strong>공인 출처:</strong></span>
+        {/* Direct Source Citation Line (Extra Small & Subtle) */}
+        <div className="bubble-footer" style={{ marginTop: '8px', paddingTop: '6px', borderTop: '1px solid #f2f2f2' }}>
+          <div className="rag-direct-citation" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '3px', fontSize: '0.625rem', color: '#888', lineHeight: 1.35 }}>
+            <BookOpen size={11} className="book-icon" style={{ color: '#999', flexShrink: 0 }} />
+            <span style={{ fontWeight: 500, color: '#777' }}>공인 출처:</span>
             <a
               href={sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rag-archive-link"
               style={{
-                color: 'inherit',
+                color: '#777',
+                fontSize: '0.625rem',
                 textDecoration: 'underline',
-                textDecorationColor: 'rgba(21, 101, 192, 0.45)',
-                textUnderlineOffset: '3px'
+                textDecorationColor: 'rgba(0, 0, 0, 0.2)',
+                textUnderlineOffset: '2px',
+                fontWeight: 400
               }}
               title="공식 원문 열기"
             >
