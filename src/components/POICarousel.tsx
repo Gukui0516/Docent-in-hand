@@ -1,7 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { POI } from '../types/docent';
 import { POI_LIST } from '../data/poiData';
-import { CHARACTERS } from '../data/characters';
 import { X, MapPin, Search } from 'lucide-react';
 
 interface POICarouselProps {
@@ -23,6 +22,8 @@ export const POICarousel: React.FC<POICarouselProps> = ({
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [shouldRender, setShouldRender] = useState(isOpen);
   const [isClosing, setIsClosing] = useState(false);
+  const listRef = useRef<HTMLDivElement>(null);
+  const loadSentinelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -43,16 +44,14 @@ export const POICarousel: React.FC<POICarouselProps> = ({
   }, [isOpen, shouldRender]);
 
   const categories = [
-    { id: 'all', label: `전체 (${POI_LIST.length})` },
-    { id: '자연과 지리', label: '🌋 자연과 지리' },
-    { id: '역사', label: '📜 역사' },
-    { id: '문화유산', label: '🗿 문화유산' },
-    { id: '성씨와 인물', label: '👑 성씨와 인물' },
-    { id: '정치·경제·사회', label: '🏛️ 정치·경제·사회' },
-    { id: '종교', label: '⛩️ 종교' },
-    { id: '생활과 민속', label: '🤿 생활과 민속' },
-    { id: '문화와 교육', label: '🎨 문화와 교육' },
-    { id: '언어와 문학', label: '📖 언어와 문학' },
+    { id: 'all', label: '전체' },
+    { id: '관광지', label: '관광지' },
+    { id: '문화유산', label: '문화유산' },
+    { id: '설화', label: '설화' },
+    { id: '인물', label: '인물' },
+    { id: '음식', label: '음식' },
+    { id: '축제', label: '축제' },
+    { id: '교육', label: '교육' },
   ];
 
   const filteredList = useMemo(() => {
@@ -74,6 +73,29 @@ export const POICarousel: React.FC<POICarouselProps> = ({
     setVisibleCount(PAGE_SIZE);
   }, [filterCategory, searchQuery, isOpen]);
 
+  useEffect(() => {
+    const listElement = listRef.current;
+    const sentinelElement = loadSentinelRef.current;
+
+    if (!shouldRender || !listElement || !sentinelElement || visibleCount >= filteredList.length) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisibleCount((count) => Math.min(count + PAGE_SIZE, filteredList.length));
+        }
+      },
+      {
+        root: listElement,
+        rootMargin: '0px 0px 500px 0px',
+        threshold: 0
+      }
+    );
+
+    observer.observe(sentinelElement);
+    return () => observer.disconnect();
+  }, [filteredList.length, shouldRender, visibleCount]);
+
   if (!shouldRender) return null;
 
   return (
@@ -81,8 +103,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
       <div className="modal-sheet poi-explorer-sheet" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <div className="modal-title-group">
-            <h3>제주 신화 & 명소 둘러보기</h3>
-            <p>원하는 장소를 선택하면 도슨트와 스토리가 즉시 전환됩니다.</p>
+            <h3>주변 탐색</h3>
           </div>
           <button type="button" className="close-btn" onClick={onClose} aria-label="닫기">
             <X size={20} />
@@ -100,30 +121,23 @@ export const POICarousel: React.FC<POICarouselProps> = ({
           />
         </div>
 
-        {/* Category Tabs (9 Official Domains) */}
+        {/* Category Tabs */}
         <div className="category-tabs">
-          {categories.map((cat) => {
-            const count = cat.id === 'all' 
-              ? POI_LIST.length 
-              : POI_LIST.filter(p => p.category === cat.id).length;
-            
-            return (
-              <button
-                key={cat.id}
-                type="button"
-                className={`category-tab-btn ${filterCategory === cat.id ? 'active' : ''}`}
-                onClick={() => setFilterCategory(cat.id)}
-              >
-                {cat.id === 'all' ? cat.label : `${cat.label} (${count})`}
-              </button>
-            );
-          })}
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              type="button"
+              className={`category-tab-btn ${filterCategory === cat.id ? 'active' : ''}`}
+              onClick={() => setFilterCategory(cat.id)}
+            >
+              {cat.label}
+            </button>
+          ))}
         </div>
 
         {/* POI Grid/List */}
-        <div className="poi-items-list">
+        <div className="poi-items-list" ref={listRef}>
           {visibleList.map((poi) => {
-            const character = CHARACTERS[poi.assignedCharacterId];
             const isSelected = poi.id === selectedPOIId;
 
             return (
@@ -146,9 +160,6 @@ export const POICarousel: React.FC<POICarouselProps> = ({
                       (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=300&q=80';
                     }}
                   />
-                  <span className="item-char-pill">
-                    {character.avatarEmoji} {character.name}
-                  </span>
                 </div>
 
                 <div className="item-info">
@@ -163,14 +174,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
             );
           })}
           {visibleCount < filteredList.length && (
-            <button
-              type="button"
-              className="poi-load-more"
-              onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
-            >
-              장소 더 보기
-              <span>{Math.min(visibleCount, filteredList.length).toLocaleString()} / {filteredList.length.toLocaleString()}</span>
-            </button>
+            <div className="poi-load-sentinel" ref={loadSentinelRef} aria-hidden="true" />
           )}
         </div>
       </div>

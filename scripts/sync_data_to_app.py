@@ -122,35 +122,35 @@ def load_all_json_files():
     all_items = []
     seen_ids = set()
 
-    print(f'🔍 Scanning {len(json_files)} JSON database files in {DATA_DIR}/...')
+    print(f'🔍 Scanning JSON database files in {DATA_DIR}/...')
     for fpath in json_files:
+        norm_path = unicodedata.normalize('NFC', fpath)
+        # Skip backup folder
+        if 'backup' in norm_path or 'backup' in fpath:
+            continue
+
         try:
-            norm_path = unicodedata.normalize('NFC', fpath)
             with open(fpath, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 region_default = '서귀포시' if 'Seogwipo' in norm_path or '서귀포' in norm_path else '제주시'
                 
-                # Derive category name from filename
+                # Derive category name from filename (7 Thematic Categories)
                 base_name = unicodedata.normalize('NFC', os.path.basename(fpath))
-                cat_default = '자연과 지리'
-                if '자연과지리' in base_name or '지리' in base_name:
-                    cat_default = '자연과 지리'
+                cat_default = '관광지'
+                if '관광지' in base_name:
+                    cat_default = '관광지'
+                elif '축제' in base_name:
+                    cat_default = '축제'
+                elif '설화' in base_name:
+                    cat_default = '설화'
+                elif '인물' in base_name:
+                    cat_default = '인물'
                 elif '문화유산' in base_name:
                     cat_default = '문화유산'
-                elif '생활과민속' in base_name or '민속' in base_name:
-                    cat_default = '생활과 민속'
-                elif '성씨와인물' in base_name or '인물' in base_name:
-                    cat_default = '성씨와 인물'
-                elif '정치경제사회' in base_name or '정치' in base_name:
-                    cat_default = '정치·경제·사회'
-                elif '종교' in base_name:
-                    cat_default = '종교'
-                elif '문화와교육' in base_name or '교육' in base_name:
-                    cat_default = '문화와 교육'
-                elif '언어와문학' in base_name or '문학' in base_name:
-                    cat_default = '언어와 문학'
-                elif '역사' in base_name:
-                    cat_default = '역사'
+                elif '음식' in base_name:
+                    cat_default = '음식'
+                elif '교육' in base_name:
+                    cat_default = '교육'
 
                 items = data.get('items', [])
                 print(f'  📄 {norm_path}: {len(items)} items (Region: {region_default}, Category: {cat_default})')
@@ -169,8 +169,150 @@ def load_all_json_files():
     return all_items
 
 
+def classify_poi_category(it):
+    """
+    Classify an encyclopedic item into one of the 7 core themes
+    based on comprehensive metadata and content analysis.
+    """
+    title = unicodedata.normalize('NFC', html.unescape(it.get('title', ''))).strip()
+    meta = it.get('metadata') or it.get('meta') or {}
+    mtype = meta.get('유형') or meta.get('type') or ''
+    field = meta.get('분야') or meta.get('field') or ''
+    subs = [s.get('nodeName', '') for s in it.get('subcategories', [])]
+    sub_str = ' '.join(subs)
+    
+    # 1. 설화 (Folklore, Myth, Oral song, Dialect)
+    if any(k in mtype for k in ['설화', '신화', '전설', '민담', '본풀이', '민요', '무가']):
+        return '설화'
+    if any(k in field for k in ['구비 전승', '신화', '설화']) and not ('행사' in mtype or '축제' in mtype):
+        return '설화'
+    if (title.startswith('「') or title.startswith('『')) and any(k in title for k in ['전설', '이야기', '본풀이', '민요', '노래', '설화', '방언집', '속담']):
+        return '설화'
+
+    # 2. 인물 (Figures, Lineages, Ancestors)
+    if mtype.startswith('인물/') or '성씨·인물' in field or mtype.startswith('성씨/'):
+        return '인물'
+
+    # 3. 음식 (Food, Cuisine, Local specialities)
+    if '음식물' in mtype or '식생활' in field or '음식' in mtype or '식생활' in sub_str or '음식' in sub_str:
+        return '음식'
+    dish_suffixes = ('국수', '물회', '구이', '몸국', '갈치국', '성게국', '미역국', '토란국', '빙떡', '오메기떡', '돔베고기', '보말죽', '전복죽', '자리물회', '옥돔구이', '고등어조림', '갈치조림', '청국장', '된장', '간장', '고추장', '젓갈', '자리젓', '멸치젓', '막걸리', '오메기술', '고소리술', '꿩메밀칼국수')
+    if any(title.endswith(s) for s in dish_suffixes) or any(s in title for s in ['흑돼지', '빙떡', '오메기떡', '돔베고기', '몸국', '보말국', '보말죽', '자리물회']):
+        if not any(k in title for k in ['마을', '오름', '축제', '협회', '학회', '주식회사', '초등학교', '중학교', '고등학교']):
+            return '음식'
+
+    # 4. 축제 (Festivals, Official Events & Traditional Rituals)
+    festival_keywords = ['축제', '제전', '음악회', '페스티벌', '대축제', '문화제', '연극제', '영화제', '불꽃축제', '마라톤대회', '영등굿', '입춘굿', '풍어제', '산신제', '포제', '당제']
+    if any(k in title for k in festival_keywords):
+        return '축제'
+    if '행사' in mtype or '축제' in mtype or '축제' in field or '의례/제' in mtype:
+        return '축제'
+
+    # 5. 교육 (Education, Memorials, Libraries & Museums)
+    edu_terms = ['향교', '서원', '서당', '야학', '박물관', '미술관', '기념관', '도서관', '과학관', '문화원', '체육관', '수련원', '교육원', '학교', '대학']
+    if any(k in title for k in edu_terms) or '문화·교육/교육' in field or '기관 단체/학교' in mtype:
+        return '교육'
+
+    # 6. 문화유산 (Cultural Heritage, Relics & Historical Sites)
+    heritage_types = ['유물', '유적', '기록유산', '무형 유산', '유형 유산', '문화유산']
+    heritage_words = ['지석묘', '고인돌', '선돌', '마애명', '원당사지', '하마비', '선정비', '공덕비', '삼별초', '항파두리', '환해장성', '목관아', '관덕정', '연대', '봉수', '성곽', '진성', '사찰', '석탑', '불상', '유적지', '충혼묘지', '위령비', '추모비', '비석']
+    if any(k in mtype for k in heritage_types) or '문화유산' in field or '역사/전통 시대' in field or '종교/불교' in field or any(k in title for k in heritage_words):
+        return '문화유산'
+
+    # 7. 관광지 (Natural Landscapes, Scenic Spots & Attractions)
+    return '관광지'
+
+
+def is_valid_poi(it, title, meta):
+    """
+    Filter out non-travel encyclopedic concept terms, general modern facilities,
+    and administrative offices to keep only true travel docent POIs.
+    """
+    mtype = meta.get('유형') or meta.get('type') or ''
+    field = meta.get('분야') or meta.get('field') or ''
+    cat_type = it.get('category_type', '')
+    category_7 = it.get('category_7') or classify_poi_category(it)
+    
+    # 1. Reject overview and concept terms (개관 / 개념 용어)
+    if '개관' in mtype or cat_type == '개관항목' or '개념 용어' in mtype:
+        # Only allow real specific food/dishes in concept terms
+        if category_7 == '음식':
+            dish_indicators = ('국수', '물회', '구이', '몸국', '갈치국', '성게국', '미역국', '토란국', '빙떡', '오메기떡', '돔베고기', '보말죽', '전복죽', '자리물회', '옥돔구이', '고등어조림', '갈치조림', '청국장', '된장', '간장', '고추장', '젓갈', '자리젓', '멸치젓', '막걸리', '오메기술', '고소리술', '꿩메밀칼국수', '수애', '솔변', '둠비', '칼국', '괴기', '돗괴기', '감제침떡', '거스름떡', '생감주', '가문반')
+            if not any(k in title for k in dish_indicators):
+                return False
+        else:
+            return False
+        
+    abstract_concepts = {
+        '관광', '교통', '지리', '역사', '문화', '예술', '체육', '종교', '산업', '농업', '어업', '임업',
+        '축산업', '상업', '무역', '금융', '사회', '정치', '행정', '사법', '치안', '국방', '통신', '언론',
+        '출판', '문학', '어학', '민속', '의식주', '의생활', '식생활', '주생활', '풍속', '신앙', '구비전승',
+        '성씨', '인물', '유적', '유물', '문화유산', '자연', '동물', '식물', '환경', '기후', '지형', '지질',
+        '관광지', '축제', '행사', '공연', '전시', '교육', '학문', '도서관', '박물관', '미술관', '자연지리',
+        '인문지리', '인구', '생태계', '천연기념물', '기온', '강수', '바람', '토양', '하천', '해안', '바다',
+        '섬', '동굴', '화산 폭발', '방패형 화산', '지하수', '용천수', '해류', '자연재해', '기상재해', '태풍',
+        '해안 지형', '산담', '올레', '걸바다 밭', '토성', '입도조', '세거 성씨', '집성촌', '구비 전승',
+        '제주 토지 조사 사업', '제주 4·3 전략촌', '복지', '지명', '설화', '신화', '전설', '민요', '무가',
+        '속담', '교육 기관', '교육 과정', '장학'
+    }
+    if title in abstract_concepts or len(title) == 1:
+        return False
+        
+    # 2. Reject life-cycle ritual / generic custom concepts
+    ritual_concepts = {
+        '혼례', '상례', '제례', '관례', '계례', '돌잔치', '회갑', '초경', '성년례', '통과의례',
+        '출산의례', '혼례복', '제례 음식', '혼례 음식', '상례복', '계', '품앗이', '수눌음', '장례',
+        '마을 신앙', '본향당 신앙', '포제', '당굿'
+    }
+    if title in ritual_concepts:
+        return False
+
+    # 3. Reject general modern schools / universities (preserve historic schools: 향교, 서원, 서당, 야학, 옛터)
+    historic_school_keywords = ['향교', '서원', '서당', '야학', '구교', '옛터', '유적', '사적', '항일', '기념관']
+    is_historic = any(k in title for k in historic_school_keywords)
+    
+    if not is_historic:
+        if any(w in title for w in ['초등학교', '중학교', '고등학교', '대학교', '대학원', '유치원', '어린이집', '학원']):
+            return False
+        if title in ['학교', '대학교', '고등학교', '중학교', '초등학교']:
+            return False
+        if '기관 단체/학교' in mtype or '학교' in mtype:
+            return False
+
+    # 4. Reject modern commercial shops, bookstores, and general hospitals (unless historic site)
+    if not is_historic:
+        commercial_terms = ['서점', '책방', '병의원', '약국', '마트', '상점', '의원']
+        if title in commercial_terms or ('병원' in title and '옛터' not in title) or ('의원' in title and '옛터' not in title):
+            return False
+
+    # 5. Reject modern administrative and public offices (preserve historic offices: 목관아, 관덕정, 정의현 등)
+    historic_office_keywords = ['목관아', '관덕정', '정의현', '대정현', '진성', '성곽', '유적', '옛터']
+    if not any(k in title for k in historic_office_keywords):
+        office_terms = [
+            '주민센터', '동주민센터', '읍사무소', '면사무소', '파출소', '치안센터', '소방서',
+            '우체국', '세무서', '등기소', '선거관리위원회', '검찰청', '법원', '경찰서', '보건소'
+        ]
+        if any(w in title for w in office_terms) or title in office_terms:
+            return False
+
+    # 6. Reject administrative districts, dong, eup, myeon, and general village overview (preserve famous folk/eco villages)
+    if '행정 지명과 마을' in mtype or '행정구역' in mtype:
+        if not any(k in title for k in ['민속마을', '전통마을', '체험마을', '생태마을', '예술마을', '문화마을']):
+            return False
+
+    clean_title = title.replace(' ', '')
+    simple_suffixes = ['동', '읍', '면']
+    if any(clean_title.endswith(s) for s in simple_suffixes) or any(clean_title.endswith(f'{i}동') for i in range(1, 10)):
+        if not any(k in title for k in ['오름', '장오리', '머리', '바위', '폭포', '동굴', '포구', '해변', '사찰', '당', '낭', '물', '왓', '빌레', '궤', '터', '숲', '길', '마을', '산', '봉', '암', '굴', '목', '코지', '절리', '곶자왈']):
+            if len(clean_title) <= 6:
+                return False
+
+    return True
+
+
 def process_items_to_pois(all_items):
     pois = []
+    filtered_out_count = 0
     
     # Priority list for famous landmark naming
     priority_titles = list(EXACT_COORDS.keys())
@@ -178,6 +320,12 @@ def process_items_to_pois(all_items):
     for it in all_items:
         title = html.unescape(it.get('title', '')).strip()
         multimedia = it.get('multimedia', [])
+        meta = it.get('metadata') or it.get('meta') or {}
+        
+        # Filter out non-travel POI items
+        if not is_valid_poi(it, title, meta):
+            filtered_out_count += 1
+            continue
         
         # Must have official multimedia photos to be an interactive POI
         if not multimedia:
@@ -200,18 +348,50 @@ def process_items_to_pois(all_items):
         if not clean_images:
             continue
 
-        meta = it.get('metadata', {})
+        meta = it.get('metadata') or it.get('meta') or {}
         region_str = meta.get('지역', it.get('file_region', '제주시'))
         subcats = [s.get('nodeName', '') for s in it.get('subcategories', [])]
-        summary = it.get('summary', '')
         sections = it.get('sections', [])
+        full_text_raw = it.get('full_text', '')
         
-        # Full text content
-        sec_text = '\n'.join([f"{s.get('heading','')}: {s.get('content','')}" for s in sections])
-        full_content = (summary + '\n' + sec_text).strip()
+        # Robust summary extraction
+        summary = it.get('summary')
+        if not summary or not summary.strip():
+            if full_text_raw:
+                lines = [l.strip() for l in full_text_raw.split('\n') if l.strip()]
+                content_lines = [l for l in lines if not (l.startswith('[') and l.endswith(']'))]
+                if content_lines:
+                    summary = content_lines[0]
+            if not summary and sections:
+                for sec in sections:
+                    paras = sec.get('paragraphs', [])
+                    if paras and paras[0].strip():
+                        summary = paras[0].strip()
+                        break
+                    cnt = sec.get('content', '')
+                    if cnt and cnt.strip():
+                        summary = cnt.strip()
+                        break
+        
+        if not summary or not summary.strip():
+            summary = f"{title}에 깃든 제주의 소중한 역사와 향토문화 이야기입니다."
+        else:
+            summary = summary.strip()
 
-        # Category from 9 official Grand Culture datasets
-        category = it.get('file_cat', '자연과 지리')
+        # Full text content reconstruction
+        if full_text_raw:
+            full_content = full_text_raw.strip()
+        else:
+            sec_texts = []
+            for s in sections:
+                heading = s.get('heading') or s.get('title') or ''
+                content = s.get('content') or '\n'.join(s.get('paragraphs', []))
+                if heading or content:
+                    sec_texts.append(f"{heading}: {content}".strip())
+            full_content = (summary + '\n' + '\n'.join(sec_texts)).strip()
+
+        # Robust category classification based on metadata and content
+        category = classify_poi_category(it)
 
         persona = determine_persona(title, subcats, full_content)
         lat, lng = extract_coordinates(title, region_str)
@@ -257,7 +437,7 @@ def process_items_to_pois(all_items):
             'tags': tags,
             'mythAndFact': {
                 'mythTitle': f"{title}에 깃든 구전 기록과 학술 팩트",
-                'summary': summary[:250] if summary else f"{title} 공식 아카이브 기록",
+                'summary': summary[:250],
                 'details': full_content[:800]
             },
             'sampleQuestions': sample_questions
@@ -275,7 +455,7 @@ def process_items_to_pois(all_items):
         return (landmark_idx, -photo_count, -len(p.get('mythAndFact', {}).get('details', '')))
 
     pois.sort(key=sort_score)
-    print(f'🎉 Processed {len(pois)} interactive POIs with verified photos!')
+    print(f'🎉 Processed {len(pois)} interactive POIs with verified photos! (Filtered out {filtered_out_count} non-travel concept/school items)')
     return pois
 
 
@@ -283,6 +463,7 @@ def write_frontend_poi_data(pois):
     content = 'import { POI } from "../types/docent";\n\n'
     content += '// 100% Verified POI Data generated strictly from data/ JSON database\n'
     content += 'export const POI_LIST: POI[] = ' + json.dumps(pois, ensure_ascii=False, indent=2) + ';\n'
+    content = unicodedata.normalize('NFC', content)
 
     with open(SRC_POI_DATA, 'w', encoding='utf-8') as f:
         f.write(content)
@@ -293,17 +474,21 @@ def write_frontend_rag_kb(all_items):
     kb = {}
     for it in all_items:
         it_id = it.get('id', '')
-        title = html.unescape(it.get('title', ''))
+        title = unicodedata.normalize('NFC', html.unescape(it.get('title', '')))
         summary = it.get('summary', '')
+        if not summary and it.get('full_text'):
+            lines = [l.strip() for l in it['full_text'].split('\n') if l.strip() and not (l.startswith('[') and l.endswith(']'))]
+            summary = lines[0] if lines else ''
         sections = {s.get('heading', ''): s.get('content', '') for s in it.get('sections', [])}
         item_url = it.get('url') or f"https://jeju.grandculture.net/jeju/toc/{it_id}"
-        meta = it.get('metadata', {})
+        meta = it.get('metadata') or it.get('meta') or {}
         subcats = [s.get('nodeName', '') for s in it.get('subcategories', [])]
+        category = classify_poi_category(it)
 
         kb[it_id] = {
             'poiId': it_id,
             'poiName': title,
-            'category': it.get('file_cat', '자연과 지리'),
+            'category': category,
             'sourceUrl': item_url,
             'folkloreNarrative': {
                 'title': f"{title} 구전 설화 및 유래",
@@ -334,6 +519,7 @@ def write_frontend_rag_kb(all_items):
     content += '  historyAndCulture: { culturalHeritageRank: string; historicalContext: string; localFolklorePractices: string; };\n'
     content += '  academicReferences: string[];\n}\n\n'
     content += 'export const RAG_KNOWLEDGE_BASE: Record<string, RAGDocument> = ' + json.dumps(kb, ensure_ascii=False, indent=2) + ';\n'
+    content = unicodedata.normalize('NFC', content)
 
     with open(SRC_RAG_KB, 'w', encoding='utf-8') as f:
         f.write(content)
@@ -344,28 +530,41 @@ def write_backend_corpus(all_items):
     corpus_docs = []
     for it in all_items:
         it_id = it.get('id', '')
-        title = html.unescape(it.get('title', ''))
+        title = unicodedata.normalize('NFC', html.unescape(it.get('title', '')))
         subs = [s.get('nodeName', '') for s in it.get('subcategories', [])]
-        sec_text = '\n'.join([f"{s.get('heading','')}: {s.get('content','')}" for s in it.get('sections', [])])
+        full_text_raw = it.get('full_text', '')
+        summary = it.get('summary', '')
+        if not summary and full_text_raw:
+            lines = [l.strip() for l in full_text_raw.split('\n') if l.strip() and not (l.startswith('[') and l.endswith(']'))]
+            summary = lines[0] if lines else ''
+        
+        if full_text_raw:
+            full_content = full_text_raw.strip()
+        else:
+            sec_text = '\n'.join([f"{s.get('heading','')}: {s.get('content','')}" for s in it.get('sections', [])])
+            full_content = (summary + '\n' + sec_text).strip()
+
+        meta = it.get('metadata') or it.get('meta') or {}
+        category = classify_poi_category(it)
         doc = {
             'id': it_id,
             'title': title,
-            'category': it.get('file_cat', '자연과 지리'),
-            'region': it.get('metadata', {}).get('지역', it.get('file_region', '제주특별자치도')),
+            'category': category,
+            'region': meta.get('지역', it.get('file_region', '제주특별자치도')),
             'subcats': subs,
-            'summary': it.get('summary', ''),
-            'content': (it.get('summary', '') + '\n' + sec_text).strip()
+            'summary': summary,
+            'content': full_content
         }
         corpus_docs.append(doc)
 
     os.makedirs(os.path.dirname(SERVER_CORPUS), exist_ok=True)
     with open(SERVER_CORPUS, 'w', encoding='utf-8') as f:
-        json.dump(corpus_docs, f, ensure_ascii=False, indent=2)
+        f.write(unicodedata.normalize('NFC', json.dumps(corpus_docs, ensure_ascii=False, indent=2)))
     print(f'💾 Saved {SERVER_CORPUS} ({len(corpus_docs)} corpus items)')
 
     os.makedirs(os.path.dirname(SRC_CORPUS), exist_ok=True)
     with open(SRC_CORPUS, 'w', encoding='utf-8') as f:
-        json.dump(corpus_docs, f, ensure_ascii=False, indent=2)
+        f.write(unicodedata.normalize('NFC', json.dumps(corpus_docs, ensure_ascii=False, indent=2)))
     print(f'💾 Saved {SRC_CORPUS} ({len(corpus_docs)} corpus items)')
 
 

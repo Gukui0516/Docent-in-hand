@@ -1,6 +1,6 @@
 import React from 'react';
 import { POI } from '../types/docent';
-import { BookOpen, ExternalLink } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 import { RAG_KNOWLEDGE_BASE } from '../data/ragKnowledgeBase';
 import { getThemeTitle } from '../utils/themeTitle';
 
@@ -21,7 +21,9 @@ export const StoryCard: React.FC<StoryCardProps> = ({
   const paragraphs = storyText.split(/\n\n+/).filter((p) => p.trim().length > 0);
 
   const sourceUrl = ragDoc?.sourceUrl || poi.sourceUrl || `https://jeju.grandculture.net/jeju/toc/${poi.id}`;
-  const academicSources = ragDoc?.academicReferences?.join(', ') || '한국향토문화전자대전 (한국학중앙연구원)';
+  const academicSources = ragDoc?.academicReferences
+    ?.map((source) => source.replace(/\s*\(항목\s*ID\s*:\s*[^)]+\)/gi, ''))
+    .join(', ') || '한국향토문화전자대전 (한국학중앙연구원)';
 
   return (
     <section className="story-card-container" aria-label="핵심 요약 리포트">
@@ -60,29 +62,22 @@ export const StoryCard: React.FC<StoryCardProps> = ({
         <div className="bubble-footer" style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px solid #f0f0f0' }}>
           <div className="rag-direct-citation" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '6px', fontSize: '0.85rem', color: '#555' }}>
             <BookOpen size={14} className="book-icon" style={{ color: '#1565C0', flexShrink: 0 }} />
-            <span>
-              <strong>공인 출처:</strong> {academicSources}
-            </span>
-            {sourceUrl && (
-              <a
-                href={sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rag-archive-link"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '3px',
-                  marginLeft: '6px',
-                  color: '#eb5e28',
-                  textDecoration: 'underline',
-                  fontWeight: 600
-                }}
-                title="공식 원문 열기"
-              >
-                [자세히 알아보기 <ExternalLink size={11} />]
-              </a>
-            )}
+            <span><strong>공인 출처:</strong></span>
+            <a
+              href={sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rag-archive-link"
+              style={{
+                color: 'inherit',
+                textDecoration: 'underline',
+                textDecorationColor: 'rgba(21, 101, 192, 0.45)',
+                textUnderlineOffset: '3px'
+              }}
+              title="공식 원문 열기"
+            >
+              {academicSources}
+            </a>
           </div>
         </div>
       </div>
