@@ -23,6 +23,15 @@ interface PresetLocation {
 
 const PRESET_LOCATIONS: PresetLocation[] = [
   {
+    id: 'jejunudeng',
+    name: '제주대학교 공과대학 4호관',
+    region: '제주시 아라1동',
+    lat: 33.4552,
+    lng: 126.5620,
+    targetPOIName: '아라 1동 / 인다마을',
+    description: '반경 400m 이내 - 아라동 인근 역사 탐색'
+  },
+  {
     id: 'seongsan',
     name: '성산일출봉 주차장 앞',
     region: '서귀포시 성산읍',

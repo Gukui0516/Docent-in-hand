@@ -23,6 +23,11 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Drag & Touch Swipe States
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStartX, setDragStartX] = useState(0);
+  const [dragOffsetX, setDragOffsetX] = useState(0);
+
   // Normalize image list (supports multiple images or single fallback)
   const imageList: POIImage[] = poi.images && poi.images.length > 0
     ? poi.images
@@ -43,6 +48,8 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
     setLoadedMap({});
     setErrorMap({});
     setIsAutoPlay(true);
+    setIsDragging(false);
+    setDragOffsetX(0);
   }, [poi.id]);
 
   // Auto Slideshow Timer (6.0s interval)
@@ -51,7 +58,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
       clearInterval(timerRef.current);
     }
 
-    if (isAutoPlay && totalImages > 1) {
+    if (isAutoPlay && !isDragging && totalImages > 1) {
       timerRef.current = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % totalImages);
       }, 6000);
@@ -60,33 +67,119 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isAutoPlay, totalImages, currentIndex]);
+  }, [isAutoPlay, isDragging, totalImages, currentIndex]);
 
-  const handlePrev = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handlePrev = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     setCurrentIndex((prev) => (prev - 1 + totalImages) % totalImages);
   };
 
-  const handleNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleNext = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     setCurrentIndex((prev) => (prev + 1) % totalImages);
+  };
+
+  // Drag & Swipe Event Handlers
+  const handleStart = (clientX: number) => {
+    if (totalImages <= 1) return;
+    setIsDragging(true);
+    setDragStartX(clientX);
+    setDragOffsetX(0);
+    setIsAutoPlay(false);
+  };
+
+  const handleMove = (clientX: number) => {
+    if (!isDragging) return;
+    const deltaX = clientX - dragStartX;
+    setDragOffsetX(deltaX);
+  };
+
+  const handleEnd = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+
+    const threshold = 40; // minimum drag offset in px to trigger page switch
+    if (dragOffsetX < -threshold) {
+      handleNext();
+    } else if (dragOffsetX > threshold) {
+      handlePrev();
+    }
+
+    setDragOffsetX(0);
+    if (totalImages > 1) {
+      setIsAutoPlay(true);
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (e.button !== 0) return;
+    handleStart(e.clientX);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging) {
+      e.preventDefault();
+      handleMove(e.clientX);
+    }
+  };
+
+  const handleMouseUp = () => {
+    handleEnd();
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging) {
+      handleEnd();
+    } else if (totalImages > 1) {
+      setIsAutoPlay(true);
+    }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (e.touches.length > 0) {
+      handleStart(e.touches[0].clientX);
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (isDragging && e.touches.length > 0) {
+      handleMove(e.touches[0].clientX);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    handleEnd();
   };
 
   return (
     <section className="photo-card-container" aria-label="대표 명소 현장 사진 카드">
       <div
         className="photo-card"
-        onMouseEnter={() => totalImages > 1 && setIsAutoPlay(false)}
-        onMouseLeave={() => totalImages > 1 && setIsAutoPlay(true)}
+        onMouseEnter={() => totalImages > 1 && !isDragging && setIsAutoPlay(false)}
+        onMouseLeave={handleMouseLeave}
       >
         {/* Background Image Container with Smooth Sliding Track */}
-        <div className="image-wrapper">
+        <div
+          className="image-wrapper"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          style={{
+            touchAction: 'pan-y',
+            cursor: totalImages > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default',
+            userSelect: 'none',
+            WebkitUserSelect: 'none'
+          }}
+        >
           {/* Smooth Horizontal Sliding Track */}
           <div
             className="slideshow-track"
             style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-              transition: 'transform 1.25s cubic-bezier(0.16, 1, 0.3, 1)'
+              transform: `translateX(calc(-${currentIndex * 100}% + ${dragOffsetX}px))`,
+              transition: isDragging ? 'none' : 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
           >
             {imageList.map((img, idx) => (
@@ -106,6 +199,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
                   alt={img.alt || poi.name}
                   referrerPolicy="no-referrer"
                   loading="lazy"
+                  draggable={false}
                   className={`poi-image ${loadedMap[idx] ? 'loaded' : 'loading'}`}
                   onLoad={() => setLoadedMap((prev) => ({ ...prev, [idx]: true }))}
                   onError={() => {
@@ -132,8 +226,8 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
             </div>
           )}
 
-          {/* Invisible edge navigation zones; the center remains non-interactive. */}
-          {totalImages > 1 && (
+          {/* Invisible edge navigation zones; active when not dragging */}
+          {totalImages > 1 && !isDragging && (
             <>
               <button
                 type="button"
@@ -207,3 +301,4 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
     </section>
   );
 };
+

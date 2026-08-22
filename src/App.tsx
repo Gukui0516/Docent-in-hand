@@ -24,7 +24,7 @@ export const App: React.FC = () => {
   const [isSyncingLocation, setIsSyncingLocation] = useState(false);
   const [currentPOI, setCurrentPOI] = useState<POI>(POI_LIST[0]);
   const [currentCharacter, setCurrentCharacter] = useState<Character>(
-    CHARACTERS[POI_LIST[0].assignedCharacterId]
+    CHARACTERS[POI_LIST[0].assignedCharacterId] || CHARACTERS.summaryAgent || Object.values(CHARACTERS)[0]
   );
   const [distanceText, setDistanceText] = useState('80m 앞');
 
@@ -78,11 +78,11 @@ export const App: React.FC = () => {
   // Update POI and automatically set character & trigger story
   const applyPOI = useCallback((poi: POI, distMeters?: number) => {
     setCurrentPOI(poi);
-    const assignedChar = CHARACTERS[poi.assignedCharacterId] || CHARACTERS.seolmundae;
+    const assignedChar = CHARACTERS[poi.assignedCharacterId] || CHARACTERS.summaryAgent || Object.values(CHARACTERS)[0];
     setCurrentCharacter(assignedChar);
 
     if (distMeters !== undefined) {
-      setDistanceText(`${formatDistance(distMeters)} 앞`);
+      setDistanceText(`직선거리 ${formatDistance(distMeters)}`);
     } else {
       setDistanceText(poi.region);
     }
@@ -110,9 +110,9 @@ export const App: React.FC = () => {
         (err) => {
           console.warn('[GPS 수신 실패 또는 거부]:', err);
           setIsSyncingLocation(false);
-          alert('브라우저 위치 권한이 차단되었거나 수신할 수 없습니다. 상단 [GPS 설정]에서 가상 위치를 선택해 보세요!');
+          alert('브라우저 위치 권한이 차단되었거나 수신할 수 없습니다. 주소창 좌측의 [위치 권한]을 허용으로 변경하시거나 상단 [GPS 설정]에서 위치를 직접 지정해보세요!');
         },
-        { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 }
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
       );
     } else {
       alert('이 브라우저는 Geolocation API를 지원하지 않습니다.');
@@ -146,7 +146,7 @@ export const App: React.FC = () => {
           // Default fallback
           applyPOI(POI_LIST[0], 80);
         },
-        { enableHighAccuracy: true, timeout: 3000, maximumAge: 60000 }
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
       );
     } else {
       applyPOI(POI_LIST[0], 80);
