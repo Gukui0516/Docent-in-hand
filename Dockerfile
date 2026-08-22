@@ -10,7 +10,6 @@ RUN npm ci
 
 COPY tsconfig.json vite.config.ts index.html ./
 COPY src ./src
-COPY public ./public
 
 # npm run build 의 prebuild 훅은 data/ 원본으로 40MB 파일을 생성하는데,
 # 이제 그 데이터는 번들이 아니라 GCS 에서 오므로 컴파일·번들만 직접 돌린다.
