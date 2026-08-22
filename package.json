@@ -11,7 +11,9 @@
     "prebuild": "node scripts/sync_data_to_app.mjs",
     "build": "tsc && vite build",
     "sync:data": "node scripts/sync_data_to_app.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:data": "node scripts/build_gcs_data.mjs",
+    "upload:data": "bash scripts/upload_gcs_data.sh"
   },
   "dependencies": {
     "@google/genai": "^2.18.0",

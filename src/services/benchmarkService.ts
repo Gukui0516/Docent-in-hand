@@ -1,4 +1,4 @@
-import { POI, BenchmarkMetrics } from '../types/docent';
+import { BenchmarkMetrics, POISummary } from '../types/docent';
 import { findNearestPOI } from '../utils/geo';
 
 export class BenchmarkService {
@@ -7,12 +7,14 @@ export class BenchmarkService {
    */
   public static async runEngineA(
     lat: number,
-    lng: number
-  ): Promise<{ result: POI; metrics: BenchmarkMetrics }> {
+    lng: number,
+    pois: POISummary[]
+  ): Promise<{ result: POISummary; metrics: BenchmarkMetrics }> {
     const startTime = performance.now();
     
     // Engine A: Direct spatial lookup
-    const { poi } = findNearestPOI(lat, lng);
+    const res = findNearestPOI(lat, lng, pois);
+    const poi = res ? res.poi : pois[0];
     
     // Simulate minimal in-memory lookup overhead
     await new Promise((r) => setTimeout(r, 12));
@@ -36,14 +38,16 @@ export class BenchmarkService {
    */
   public static async runEngineB(
     lat: number,
-    lng: number
-  ): Promise<{ result: POI; metrics: BenchmarkMetrics }> {
+    lng: number,
+    pois: POISummary[]
+  ): Promise<{ result: POISummary; metrics: BenchmarkMetrics }> {
     const startTime = performance.now();
 
     // Simulate query embedding generation (Vertex AI text-embedding-004) + Cosine similarity over 5,161 docs
     await new Promise((r) => setTimeout(r, 320));
     
-    const { poi } = findNearestPOI(lat, lng);
+    const res = findNearestPOI(lat, lng, pois);
+    const poi = res ? res.poi : pois[0];
     const searchLatencyMs = Math.round((performance.now() - startTime) * 10) / 10;
 
     return {

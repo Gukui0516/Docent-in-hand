@@ -132,7 +132,7 @@ export class GeminiService {
     const startTime = performance.now();
     let ttftMs = 0;
 
-    const ragContext = RAGService.getRAGContext(poi, character, userMessage);
+    const ragContext = RAGService.getRAGContext(poi, character);
 
     if (!this.client || !this.apiKey) {
       const needKeyMsg = `⚠️ 실시간 대화를 위해 Gemini API Key가 필요합니다.`;

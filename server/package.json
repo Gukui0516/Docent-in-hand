@@ -9,6 +9,7 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
+    "@google-cloud/storage": "^8.0.1",
     "@google/genai": "^2.18.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",

@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { POI, POIImage } from '../types/docent';
-import { MapPin, Image as ImageIcon, RefreshCw } from 'lucide-react';
+import { MapPin, Image as ImageIcon, RefreshCw, ShieldCheck } from 'lucide-react';
 
 interface PhotoCardProps {
   poi: POI;
   distanceText: string;
   onSyncLocation: () => void;
   onOpenLocationSettings: () => void;
+  onOpenHallucinationLab?: () => void;
   isSyncing?: boolean;
 }
 
@@ -15,6 +16,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
   distanceText,
   onSyncLocation,
   onOpenLocationSettings,
+  onOpenHallucinationLab,
   isSyncing = false
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -213,6 +215,22 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
 
           {/* Gradient Overlay */}
           <div className="image-overlay" />
+
+          {/* Hallucination Proof Lab Trigger Button */}
+          {onOpenHallucinationLab && (
+            <button
+              type="button"
+              className="grounding-lab-trigger-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenHallucinationLab();
+              }}
+              title="에이전트 환각 방지 & 팩트 검증 실험실 열기"
+            >
+              <ShieldCheck size={14} style={{ color: '#38BDF8' }} />
+              <span>환각 검증 실험실</span>
+            </button>
+          )}
 
           {totalImages > 1 && (
             <div

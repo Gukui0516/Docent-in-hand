@@ -23,7 +23,25 @@ export interface POIImage {
 
 export type POICategory = '관광지' | '축제' | '설화' | '인물' | '문화유산' | '음식' | '교육';
 
-export interface POI {
+/**
+ * 한국향토문화전자대전 학술 문서. 예전에는 src/data/ragKnowledgeBase.ts 에서
+ * 10MB 짜리 상수와 함께 export 됐지만, 이제 POI 상세 조각에 실려 온다.
+ */
+export interface RAGDocument {
+  poiId: string;
+  poiName: string;
+  category: string;
+  sourceUrl?: string;
+  folkloreNarrative: { title: string; story: string; motifs: string[]; oralTraditionSource: string };
+  geologyAndNature: { formationProcess: string; scientificSignificance: string; naturalEnvironment: string };
+  historyAndCulture: { culturalHeritageRank: string; historicalContext: string; localFolklorePractices: string };
+  academicReferences: string[];
+}
+
+/**
+ * 목록·검색·지도에 필요한 최소 필드. poi-index.json(gzip 62KB)으로 부팅 시 1회 받는다.
+ */
+export interface POISummary {
   id: string;
   name: string;
   category: POICategory | string;
@@ -31,19 +49,34 @@ export interface POI {
   region: string;
   latitude: number;
   longitude: number;
+  tags: string[];
+}
+
+/** 카루셀 카드 렌더용 보조 데이터. poi-cards.json 으로 시트 첫 오픈 시 1회 받는다. */
+export interface POICard {
+  imageUrl: string;
+  summary: string;
+}
+
+/** POI 선택 시 poi/{id}.json 으로 받는 상세 조각. */
+export interface POIDetail {
+  id: string;
   imageUrl: string;
   images?: POIImage[];
   imageTitle: string;
   imageSource: string;
   sourceUrl?: string;
-  tags: string[];
   mythAndFact: {
     mythTitle?: string;
     summary: string;
     details: string;
   };
   sampleQuestions: string[];
+  ragDocument?: RAGDocument | null;
 }
+
+/** 요약 + 상세를 합친 완전한 POI. 화면 컴포넌트가 다루는 단위. */
+export type POI = POISummary & Omit<POIDetail, 'id'> & { id: string };
 
 export interface ChatMessage {
   id: string;

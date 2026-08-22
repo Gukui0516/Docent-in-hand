@@ -1,5 +1,4 @@
-import { POI } from '../types/docent';
-import { POI_LIST } from '../data/poiData';
+import { POISummary } from '../types/docent';
 
 /**
  * Calculates the great-circle distance between two points in meters using the Haversine formula.
@@ -27,7 +26,7 @@ export function calculateDistanceMeters(
 }
 
 export interface NearestPOIResult {
-  poi: POI;
+  poi: POISummary;
   distanceMeters: number;
   formattedDistance: string;
   isWithinProximity: boolean; // within 3km
@@ -35,12 +34,21 @@ export interface NearestPOIResult {
 
 /**
  * Finds the nearest POI from user's current GPS location.
+ *
+ * 후보 목록은 인자로 받는다 — 예전에는 10MB POI_LIST 를 직접 import 해서
+ * 이 유틸을 쓰는 것만으로 번들이 불어났다. 이제 호출부가 poi-index 를 넘긴다.
  */
-export function findNearestPOI(userLat: number, userLng: number): NearestPOIResult {
-  let nearestPOI = POI_LIST[0];
+export function findNearestPOI(
+  userLat: number,
+  userLng: number,
+  pois: POISummary[]
+): NearestPOIResult | null {
+  if (pois.length === 0) return null;
+
+  let nearestPOI = pois[0];
   let minDistance = Infinity;
 
-  for (const poi of POI_LIST) {
+  for (const poi of pois) {
     const dist = calculateDistanceMeters(userLat, userLng, poi.latitude, poi.longitude);
     if (dist < minDistance) {
       minDistance = dist;
