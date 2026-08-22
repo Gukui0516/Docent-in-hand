@@ -143,8 +143,10 @@ export const App: React.FC = () => {
 
           setUserLocation({ lat, lng });
           setIsGpsActive(true);
-          const { poi, distanceMeters } = findNearestPOI(lat, lng);
-          applyPOI(poi, distanceMeters);
+          const result = findNearestPOI(lat, lng, POI_LIST);
+          if (result) {
+            applyPOI(result.poi as POI, result.distanceMeters);
+          }
           setIsSyncingLocation(false);
         },
         (err) => {
@@ -163,8 +165,10 @@ export const App: React.FC = () => {
   const handleApplyCoordinates = useCallback((lat: number, lng: number) => {
     setUserLocation({ lat, lng });
     setIsGpsActive(true);
-    const { poi, distanceMeters } = findNearestPOI(lat, lng);
-    applyPOI(poi, distanceMeters);
+    const result = findNearestPOI(lat, lng, POI_LIST);
+    if (result) {
+      applyPOI(result.poi as POI, result.distanceMeters);
+    }
   }, [applyPOI]);
 
   // Initial GPS Location Flow (Zero-Click)
@@ -179,8 +183,10 @@ export const App: React.FC = () => {
           const lng = position.coords.longitude;
           setUserLocation({ lat, lng });
           setIsGpsActive(true);
-          const { poi, distanceMeters } = findNearestPOI(lat, lng);
-          applyPOI(poi, distanceMeters);
+          const result = findNearestPOI(lat, lng, POI_LIST);
+          if (result) {
+            applyPOI(result.poi as POI, result.distanceMeters);
+          }
         },
         () => {
           // Default fallback
@@ -352,6 +358,7 @@ export const App: React.FC = () => {
         onClose={() => setIsBenchmarkOpen(false)}
         userLat={userLocation.lat}
         userLng={userLocation.lng}
+        pois={POI_LIST}
       />
 
       {/* GPS Location Simulator Modal */}

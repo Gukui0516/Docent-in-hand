@@ -42,7 +42,7 @@ export const StoryCard: React.FC<StoryCardProps> = ({
 
         {/* Multi-paragraph Story Content */}
         <div className="bubble-content deep-story-content">
-          <h3 className="story-theme-title">{getThemeTitle(poi, ragDoc)}</h3>
+          <h3 className="story-theme-title">{getThemeTitle(poi, ragDoc || undefined)}</h3>
           {paragraphs.length > 0 ? (
             paragraphs.map((para, idx) => (
               <p key={idx} className="story-paragraph">
