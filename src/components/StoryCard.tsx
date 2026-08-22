@@ -1,7 +1,6 @@
 import React from 'react';
 import { POI } from '../types/docent';
 import { BookOpen } from 'lucide-react';
-import { RAG_KNOWLEDGE_BASE } from '../data/ragKnowledgeBase';
 import { getThemeTitle } from '../utils/themeTitle';
 
 interface StoryCardProps {
@@ -15,7 +14,8 @@ export const StoryCard: React.FC<StoryCardProps> = ({
   storyText,
   isStreaming,
 }) => {
-  const ragDoc = RAG_KNOWLEDGE_BASE[poi.id];
+  // 학술 문서는 POI 상세 조각(poi/{id}.json)에 실려 온다. 아직 로딩 중이면 null.
+  const ragDoc = poi.ragDocument;
 
   // Split story into readable narrative paragraphs
   const paragraphs = storyText.split(/\n\n+/).filter((p) => p.trim().length > 0);

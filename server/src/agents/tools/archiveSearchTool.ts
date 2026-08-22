@@ -1,5 +1,4 @@
-import fs from 'fs';
-import path from 'path';
+import { loadJson } from '../../data/gcsSource.js';
 
 export interface CorpusDoc {
   id: string;
@@ -22,20 +21,22 @@ export interface ArchiveSearchResult {
 
 let CORPUS: CorpusDoc[] = [];
 
-try {
-  const jsonPath = path.resolve(process.cwd(), 'src/data/ragFullCorpus.json');
-  if (fs.existsSync(jsonPath)) {
-    CORPUS = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
-  } else {
-    // Fallback for dist / root
-    const altPath = path.resolve(process.cwd(), 'server/src/data/ragFullCorpus.json');
-    if (fs.existsSync(altPath)) {
-      CORPUS = JSON.parse(fs.readFileSync(altPath, 'utf-8'));
-    }
-  }
-} catch (e) {
-  console.warn('Could not load ragFullCorpus.json directly:', e);
+/**
+ * 코퍼스를 적재한다. 반드시 app.listen() 이전에 await 해야 한다 —
+ * Cloud Run 은 포트가 열리는 즉시 트래픽을 보내므로, 준비 전에 리스닝하면
+ * 첫 요청이 빈 코퍼스를 만나 근거 없는 답변이 나간다.
+ */
+export async function initArchiveCorpus(): Promise<number> {
+  const docs = await loadJson<CorpusDoc[]>(
+    process.env.CORPUS_URI,
+    ['src/data/ragFullCorpus.json', '../src/data/ragFullCorpus.json'],
+    'corpus'
+  );
+  CORPUS = docs ?? [];
+  return CORPUS.length;
 }
+
+export const getCorpusSize = () => CORPUS.length;
 
 export class ArchiveSearchTool {
   /**
@@ -148,11 +149,12 @@ export class ArchiveSearchTool {
     if (query && query.length >= 2 && title.includes(query)) score += 80;
 
     for (const kw of keywords) {
+      if (!kw || kw.length < 2) continue;
       if (title.includes(kw)) score += 35;
       if (subStr.includes(kw)) score += 15;
       if (summary.includes(kw)) score += 12;
       if (content.includes(kw)) {
-        const c = (content.match(new RegExp(kw, 'g')) || []).length;
+        const c = content.split(kw).length - 1;
         score += Math.min(c * 2, 16);
       }
     }

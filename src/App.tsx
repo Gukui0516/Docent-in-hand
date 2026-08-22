@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Compass, Home } from 'lucide-react';
-import { POI, Character, ChatMessage } from './types/docent';
-import { POI_LIST } from './data/poiData';
+import { POI, POISummary, Character, ChatMessage } from './types/docent';
+import { loadPOIIndex, resolvePOI, placeholderPOI } from './services/poiDataService';
 import { CHARACTERS } from './data/characters';
 import { findNearestPOI, formatDistance } from './utils/geo';
 import { AgentClientService, AgentStatusEvent } from './services/agentClientService';
@@ -12,9 +12,23 @@ import { POICarousel } from './components/POICarousel';
 import { BenchmarkModal } from './components/BenchmarkModal';
 import { GPSSimulatorModal } from './components/GPSSimulatorModal';
 import { ApiKeyModal } from './components/ApiKeyModal';
+import { HallucinationLabPage } from './pages/HallucinationLabPage';
 import './App.css';
 
 export const App: React.FC = () => {
+  // Simple URL Route State
+  const [currentPath, setCurrentPath] = useState<string>(
+    window.location.pathname + window.location.hash
+  );
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setCurrentPath(window.location.pathname + window.location.hash);
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   // State
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number }>({
     lat: 33.4586,
@@ -22,9 +36,11 @@ export const App: React.FC = () => {
   });
   const [isGpsActive, setIsGpsActive] = useState(false);
   const [isSyncingLocation, setIsSyncingLocation] = useState(false);
-  const [currentPOI, setCurrentPOI] = useState<POI>(POI_LIST[0]);
+  const [poiIndex, setPoiIndex] = useState<POISummary[]>([]);
+  const [indexError, setIndexError] = useState<string>('');
+  const [currentPOI, setCurrentPOI] = useState<POI | null>(null);
   const [currentCharacter, setCurrentCharacter] = useState<Character>(
-    CHARACTERS[POI_LIST[0].assignedCharacterId] || CHARACTERS.summaryAgent || Object.values(CHARACTERS)[0]
+    CHARACTERS.summaryAgent || Object.values(CHARACTERS)[0]
   );
   const [distanceText, setDistanceText] = useState('80m 앞');
 
@@ -44,6 +60,7 @@ export const App: React.FC = () => {
   const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
 
   const isInitialStoryStarted = useRef(false);
+  const poiIndexRef = useRef<POISummary[]>([]);
   const mainContentRef = useRef<HTMLElement>(null);
 
   // Zero-Click Story Generator via 2-Layer Multi-Agent Backend
@@ -77,18 +94,26 @@ export const App: React.FC = () => {
   }, []);
 
   // Update POI and automatically set character & trigger story
-  const applyPOI = useCallback((poi: POI, distMeters?: number) => {
-    setCurrentPOI(poi);
-    const assignedChar = CHARACTERS[poi.assignedCharacterId] || CHARACTERS.summaryAgent || Object.values(CHARACTERS)[0];
+  //
+  // 스토리 스트리밍은 이름·좌표만 있으면 시작할 수 있으므로, 상세 조각(poi/{id}.json)이
+  // 도착하기를 기다리지 않고 자리표시자로 즉시 화면을 띄운 뒤 병렬로 채운다.
+  const applyPOI = useCallback((summary: POISummary, distMeters?: number) => {
+    const assignedChar =
+      CHARACTERS[summary.assignedCharacterId] || CHARACTERS.summaryAgent || Object.values(CHARACTERS)[0];
+
+    const placeholder = placeholderPOI(summary);
+    setCurrentPOI(placeholder);
     setCurrentCharacter(assignedChar);
+    setDistanceText(distMeters !== undefined ? `직선거리 ${formatDistance(distMeters)}` : summary.region);
 
-    if (distMeters !== undefined) {
-      setDistanceText(`직선거리 ${formatDistance(distMeters)}`);
-    } else {
-      setDistanceText(poi.region);
-    }
+    triggerZeroClickStory(placeholder, assignedChar);
 
-    triggerZeroClickStory(poi, assignedChar);
+    resolvePOI(summary)
+      .then((full) => {
+        // 상세를 기다리는 동안 사용자가 다른 POI 로 옮겼다면 덮어쓰지 않는다.
+        setCurrentPOI((prev) => (prev && prev.id === full.id ? full : prev));
+      })
+      .catch((err) => console.warn(`POI 상세 로드 실패 (${summary.id}):`, err));
   }, [triggerZeroClickStory]);
 
   // Request Real Device GPS
@@ -104,8 +129,8 @@ export const App: React.FC = () => {
 
           setUserLocation({ lat, lng });
           setIsGpsActive(true);
-          const { poi, distanceMeters } = findNearestPOI(lat, lng);
-          applyPOI(poi, distanceMeters);
+          const nearest = findNearestPOI(lat, lng, poiIndexRef.current);
+          if (nearest) applyPOI(nearest.poi, nearest.distanceMeters);
           setIsSyncingLocation(false);
         },
         (err) => {
@@ -124,38 +149,54 @@ export const App: React.FC = () => {
   const handleApplyCoordinates = useCallback((lat: number, lng: number) => {
     setUserLocation({ lat, lng });
     setIsGpsActive(true);
-    const { poi, distanceMeters } = findNearestPOI(lat, lng);
-    applyPOI(poi, distanceMeters);
+    const nearest = findNearestPOI(lat, lng, poiIndexRef.current);
+    if (nearest) applyPOI(nearest.poi, nearest.distanceMeters);
   }, [applyPOI]);
 
-  // Initial GPS Location Flow (Zero-Click)
+  // Initial Flow (Zero-Click): POI 인덱스를 먼저 받고 나서 GPS 로 최근접 명소를 고른다.
   useEffect(() => {
     if (isInitialStoryStarted.current) return;
     isInitialStoryStarted.current = true;
 
-    if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const lat = position.coords.latitude;
-          const lng = position.coords.longitude;
-          setUserLocation({ lat, lng });
-          setIsGpsActive(true);
-          const { poi, distanceMeters } = findNearestPOI(lat, lng);
-          applyPOI(poi, distanceMeters);
-        },
-        () => {
-          // Default fallback
-          applyPOI(POI_LIST[0], 80);
-        },
-        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
-      );
-    } else {
-      applyPOI(POI_LIST[0], 80);
-    }
+    loadPOIIndex()
+      .then((index) => {
+        setPoiIndex(index);
+        poiIndexRef.current = index;
+        if (index.length === 0) {
+          setIndexError('POI 데이터가 비어 있습니다.');
+          return;
+        }
+
+        const fallback = () => applyPOI(index[0], 80);
+
+        if ('geolocation' in navigator) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const lat = position.coords.latitude;
+              const lng = position.coords.longitude;
+              setUserLocation({ lat, lng });
+              setIsGpsActive(true);
+              const nearest = findNearestPOI(lat, lng, index);
+              if (nearest) applyPOI(nearest.poi, nearest.distanceMeters);
+              else fallback();
+            },
+            fallback,
+            { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+          );
+        } else {
+          fallback();
+        }
+      })
+      .catch((err) => {
+        console.error('POI 인덱스 로드 실패:', err);
+        setIndexError('명소 목록을 불러오지 못했습니다. 새로고침해 주세요.');
+      });
   }, [applyPOI]);
 
   // Handle user chat message via 2-Layer Multi-Agent Backend
   const handleSendMessage = async (text: string) => {
+    if (!currentPOI) return;
+
     const userMsg: ChatMessage = {
       id: `user-${Date.now()}`,
       sender: 'user',
@@ -223,6 +264,29 @@ export const App: React.FC = () => {
       }
     );
   };
+
+  // Render dedicated lab page when accessing /lab or /eval or #lab
+  if (
+    currentPath.startsWith('/lab') ||
+    currentPath.startsWith('/eval') ||
+    currentPath.includes('#lab')
+  ) {
+    return <HallucinationLabPage />;
+  }
+
+  if (!currentPOI) {
+    return (
+      <div className="app-shell app-booting">
+        <div className="boot-status" role="status" aria-live="polite">
+          {indexError ? (
+            <p className="boot-error">⚠️ {indexError}</p>
+          ) : (
+            <p>제주 명소 데이터를 불러오는 중…</p>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="app-shell">
@@ -297,6 +361,7 @@ export const App: React.FC = () => {
         isOpen={isPOIListOpen}
         onClose={() => setIsPOIListOpen(false)}
         selectedPOIId={currentPOI.id}
+        pois={poiIndex}
         onSelectPOI={(poi) => applyPOI(poi)}
       />
 
@@ -306,6 +371,7 @@ export const App: React.FC = () => {
         onClose={() => setIsBenchmarkOpen(false)}
         userLat={userLocation.lat}
         userLng={userLocation.lng}
+        pois={poiIndex}
       />
 
       {/* GPS Location Simulator Modal */}

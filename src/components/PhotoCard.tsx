@@ -29,15 +29,22 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
   const [dragOffsetX, setDragOffsetX] = useState(0);
 
   // Normalize image list (supports multiple images or single fallback)
+  //
+  // src 가 빈 문자열인 슬라이드는 만들지 않는다. POI 상세(images[], imageUrl)는
+  // poi/{id}.json 이 도착해야 채워지는데, 그 전 자리표시자 단계에서 <img src="">
+  // 를 렌더하면 브라우저가 즉시 onError 를 쏴 errorMap 에 실패가 박히고,
+  // 뒤늦게 진짜 URL 이 도착해도 그 슬라이드는 계속 대체 이미지로 남는다.
   const imageList: POIImage[] = poi.images && poi.images.length > 0
-    ? poi.images
-    : [
-        {
-          src: poi.imageUrl,
-          alt: poi.imageTitle || poi.name,
-          source: poi.imageSource
-        }
-      ];
+    ? poi.images.filter((img) => Boolean(img.src))
+    : poi.imageUrl
+      ? [
+          {
+            src: poi.imageUrl,
+            alt: poi.imageTitle || poi.name,
+            source: poi.imageSource
+          }
+        ]
+      : [];
 
   const totalImages = imageList.length;
   const currentImage = imageList[currentIndex] || imageList[0];
@@ -50,7 +57,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
     setIsAutoPlay(true);
     setIsDragging(false);
     setDragOffsetX(0);
-  }, [poi.id]);
+  }, [poi.id, poi.imageUrl, poi.images?.length]);
 
   // Auto Slideshow Timer (6.0s interval)
   useEffect(() => {
@@ -182,6 +189,14 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
               transition: isDragging ? 'none' : 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
           >
+            {totalImages === 0 && (
+              <div className="slideshow-slide">
+                <div className="image-skeleton">
+                  <ImageIcon className="skeleton-icon" size={32} />
+                  <span>공식 아카이브 사진 불러오는 중...</span>
+                </div>
+              </div>
+            )}
             {imageList.map((img, idx) => (
               <div key={idx} className="slideshow-slide">
                 {!loadedMap[idx] && !errorMap[idx] && (
@@ -248,7 +263,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
           <div className="card-bottom-info">
             <div className="poi-region">{poi.region}</div>
             <h2 className="poi-title">{poi.name}</h2>
-            {currentImage.alt && currentImage.alt !== poi.name && (
+            {currentImage?.alt && currentImage.alt !== poi.name && (
               <div className="photo-subtitle" style={{
                 color: 'rgba(255, 255, 255, 0.9)',
                 fontSize: '0.85rem',

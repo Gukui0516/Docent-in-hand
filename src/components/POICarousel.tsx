@@ -1,19 +1,24 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { POI } from '../types/docent';
-import { POI_LIST } from '../data/poiData';
+import { POICard, POISummary } from '../types/docent';
+import { loadPOICards } from '../services/poiDataService';
 import { X, MapPin, Search } from 'lucide-react';
 
 interface POICarouselProps {
   isOpen: boolean;
   onClose: () => void;
   selectedPOIId: string;
-  onSelectPOI: (poi: POI) => void;
+  /** 부팅 시 받아 둔 슬림 인덱스. 검색·필터는 전부 이 배열 위에서 돈다. */
+  pois: POISummary[];
+  onSelectPOI: (poi: POISummary) => void;
 }
+
+const FALLBACK_THUMBNAIL = 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=300&q=80';
 
 export const POICarousel: React.FC<POICarouselProps> = ({
   isOpen,
   onClose,
   selectedPOIId,
+  pois,
   onSelectPOI
 }) => {
   const PAGE_SIZE = 40;
@@ -24,6 +29,17 @@ export const POICarousel: React.FC<POICarouselProps> = ({
   const [isClosing, setIsClosing] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
   const loadSentinelRef = useRef<HTMLDivElement>(null);
+  const [cards, setCards] = useState<Record<string, POICard>>({});
+
+  // 썸네일 + 요약(gzip 329KB)은 탐색 시트를 실제로 열 때까지 받지 않는다.
+  useEffect(() => {
+    if (!isOpen) return;
+    let cancelled = false;
+    loadPOICards()
+      .then((loaded) => { if (!cancelled) setCards(loaded); })
+      .catch((err) => console.warn('POI 카드 로드 실패:', err));
+    return () => { cancelled = true; };
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -57,7 +73,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
   const filteredList = useMemo(() => {
     const normalizedQuery = searchQuery.trim().toLowerCase();
 
-    return POI_LIST.filter((poi) => {
+    return pois.filter((poi) => {
       const matchCat = filterCategory === 'all' || poi.category === filterCategory;
       const matchSearch = !normalizedQuery ||
                           poi.name.toLowerCase().includes(normalizedQuery) ||
@@ -65,7 +81,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
                           poi.tags.some((tag) => tag.toLowerCase().includes(normalizedQuery));
       return matchCat && matchSearch;
     });
-  }, [filterCategory, searchQuery]);
+  }, [filterCategory, searchQuery, pois]);
 
   const visibleList = filteredList.slice(0, visibleCount);
 
@@ -139,6 +155,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
         <div className="poi-items-list" ref={listRef}>
           {visibleList.map((poi) => {
             const isSelected = poi.id === selectedPOIId;
+            const card = cards[poi.id];
 
             return (
               <div
@@ -151,13 +168,13 @@ export const POICarousel: React.FC<POICarouselProps> = ({
               >
                 <div className="item-thumbnail-wrapper">
                   <img
-                    src={poi.imageUrl}
+                    src={card?.imageUrl || FALLBACK_THUMBNAIL}
                     alt={poi.name}
                     referrerPolicy="no-referrer"
                     loading="lazy"
                     className="item-thumbnail"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=300&q=80';
+                      (e.target as HTMLImageElement).src = FALLBACK_THUMBNAIL;
                     }}
                   />
                 </div>
@@ -168,7 +185,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
                     {poi.region}
                   </div>
                   <h4 className="item-name">{poi.name}</h4>
-                  <p className="item-summary">{poi.mythAndFact.summary}</p>
+                  <p className="item-summary">{card?.summary ?? ''}</p>
                 </div>
               </div>
             );

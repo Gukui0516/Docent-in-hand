@@ -1,11 +1,10 @@
-import { POI } from '../types/docent';
-import { RAGDocument } from '../data/ragKnowledgeBase';
+import { POI, RAGDocument } from '../types/docent';
 
 /**
  * Generates an engaging, context-tailored theme title for POI stories
  * e.g., "오백장군에 깃든 이야기", "만장굴의 역사와 탐라의 숨결", "용두암에 깃든 전설"
  */
-export const getThemeTitle = (poi: POI, ragDoc?: RAGDocument): string => {
+export const getThemeTitle = (poi: POI, ragDoc?: RAGDocument | null): string => {
   if (!poi) return '제주 이야기';
 
   const poiName = poi.name ? poi.name.trim() : '';
