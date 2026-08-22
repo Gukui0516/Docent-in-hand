@@ -1,9 +1,10 @@
-import { ArchiveSearchTool, ArchiveSearchResult } from './tools/archiveSearchTool.js';
+import { ArchiveSearchTool, CorpusDoc } from './tools/archiveSearchTool.js';
 import { SpatialResearchAgent, SpatialBriefingNote } from './spatialResearchAgent.js';
 
 export interface ResearchBriefingNote {
   targetPOI: string;
   querySummary: string;
+  retrievedDocs: CorpusDoc[];
   matchedFolklore: {
     title: string;
     storyExcerpt: string;
@@ -138,6 +139,7 @@ export class KnowledgeResearchAgent {
     return {
       targetPOI: poiName,
       querySummary: userQuery || `${poiName} 대표 도슨트 해설`,
+      retrievedDocs: searchResult.allDocs,
       matchedFolklore,
       matchedHistoryAndPeople,
       matchedGeologyAndNature,

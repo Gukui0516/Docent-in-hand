@@ -1,7 +1,5 @@
-import { POI, Character } from '../types/docent';
-import { RAG_KNOWLEDGE_BASE, RAGDocument } from '../data/ragKnowledgeBase';
+import { POI, Character, RAGDocument } from '../types/docent';
 import { JEJU_DIALECT_DICTIONARY, JEJU_FEW_SHOTS } from '../data/jejuDialectData';
-import { FullRagSearchEngine } from './fullRagSearchEngine';
 
 export interface RAGContextResult {
   doc: RAGDocument | null;
@@ -13,11 +11,14 @@ export class RAGService {
   /**
    * Dynamically retrieves deep academic, folklore, history, and natural facts across the ENTIRE 3,285+ article dataset!
    */
-  public static getRAGContext(poi: POI, character: Character, userQuery?: string): RAGContextResult {
-    const doc = RAG_KNOWLEDGE_BASE[poi.id] || null;
-
-    // Retrieve multi-category comprehensive context from the full 3,285+ articles dataset
-    const comprehensiveResult = FullRagSearchEngine.retrieveComprehensiveContext(poi, userQuery);
+  public static getRAGContext(poi: POI, character: Character): RAGContextResult {
+    // 전체 코퍼스 검색은 백엔드 KnowledgeResearchAgent 가 담당한다. 이 경로는
+    // 백엔드 호출이 실패했을 때 쓰는 클라이언트 폴백이라, POI 상세 조각에 실려 온
+    // 학술 문서 1건만 근거로 쓴다. (예전에는 20MB 코퍼스를 번들에 넣고 검색했다.)
+    const doc = poi.ragDocument || null;
+    const references = doc?.academicReferences?.length
+      ? doc.academicReferences
+      : ['한국향토문화전자대전 (한국학중앙연구원)'];
 
     let specificContext = '';
     if (doc) {
@@ -38,19 +39,12 @@ export class RAGService {
 - 배정 도슨트: ${character.name} (${character.title})
 ${specificContext}
 
-[전체 데이터셋에서 실시간 인출된 관련 설화·역사·인물·자연 지식]
-${comprehensiveResult.formattedContext}
-
 📚 [참고 문헌 및 공식 학술 출처]:
-${comprehensiveResult.referenceSources.map((ref) => `- ${ref}`).join('\n')}
+${references.map((ref) => `- ${ref}`).join('\n')}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 `;
 
-    return {
-      doc,
-      groundedPromptContext,
-      references: comprehensiveResult.referenceSources
-    };
+    return { doc, groundedPromptContext, references };
   }
 
   /**

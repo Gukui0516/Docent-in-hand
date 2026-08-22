@@ -1,9 +1,17 @@
 node_modules
+server/node_modules
 dist
+server/dist
+build
 .git
 .gitignore
 .env
 .env.*
-data
-src/data/*.json
+/data
+# 생성 데이터는 런타임에 GCS 에서 읽는다 (이미지에 넣지 않음)
+src/data/poiData.ts
+src/data/ragKnowledgeBase.ts
+src/data/ragFullCorpus.json
+server/src/data/ragFullCorpus.json
 *.md
+.DS_Store

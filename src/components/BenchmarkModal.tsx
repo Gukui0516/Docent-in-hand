@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BenchmarkMetrics } from '../types/docent';
+import { BenchmarkMetrics, POISummary } from '../types/docent';
 import { BenchmarkService } from '../services/benchmarkService';
 import { X, Zap, Cpu, Clock, HardDrive, Play } from 'lucide-react';
 
@@ -8,13 +8,16 @@ interface BenchmarkModalProps {
   onClose: () => void;
   userLat: number;
   userLng: number;
+  /** 부팅 시 받아 둔 POI 인덱스. 벤치마크 대상 후보 집합. */
+  pois: POISummary[];
 }
 
 export const BenchmarkModal: React.FC<BenchmarkModalProps> = ({
   isOpen,
   onClose,
   userLat,
-  userLng
+  userLng,
+  pois
 }) => {
   const [isRunning, setIsRunning] = useState(false);
   const [metricsA, setMetricsA] = useState<BenchmarkMetrics>({
@@ -40,8 +43,8 @@ export const BenchmarkModal: React.FC<BenchmarkModalProps> = ({
   const handleRunBenchmark = async () => {
     setIsRunning(true);
     try {
-      const resA = await BenchmarkService.runEngineA(userLat, userLng);
-      const resB = await BenchmarkService.runEngineB(userLat, userLng);
+      const resA = await BenchmarkService.runEngineA(userLat, userLng, pois);
+      const resB = await BenchmarkService.runEngineB(userLat, userLng, pois);
       setMetricsA(resA.metrics);
       setMetricsB(resB.metrics);
     } catch (e) {

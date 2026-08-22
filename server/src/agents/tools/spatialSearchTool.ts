@@ -1,5 +1,4 @@
-import fs from 'fs';
-import path from 'path';
+import { loadJson } from '../../data/gcsSource.js';
 
 export interface SpatialPOIItem {
   id: string;
@@ -71,19 +70,22 @@ const EXACT_COORDS: Record<string, [number, number]> = {
   '한라산': [33.3617, 126.5332]
 };
 
-try {
-  // Load full POI database from synced JSON corpus or src/data/poiData.ts
-  const srcPoiPath = path.resolve(process.cwd(), 'src/data/poiData.ts');
-  if (fs.existsSync(srcPoiPath)) {
-    const rawCode = fs.readFileSync(srcPoiPath, 'utf-8');
-    const jsonMatch = rawCode.match(/export const POI_LIST: POI\[\] = (\[[\s\S]*?\]);/);
-    if (jsonMatch && jsonMatch[1]) {
-      KNOWN_POIS = JSON.parse(jsonMatch[1]);
-    }
-  }
-} catch (e) {
-  console.warn('Could not load POI_LIST for SpatialSearchTool:', e);
+/**
+ * POI 목록을 적재한다. 이전에는 src/data/poiData.ts 를 정규식으로 파싱했지만,
+ * 런타임 이미지에 프론트 TS 소스를 넣어야 하고 포맷이 조금만 바뀌어도 조용히
+ * 실패한다. 이제 빌드 단계에서 만든 poi-spatial.json 을 읽는다.
+ */
+export async function initSpatialPOIs(): Promise<number> {
+  const pois = await loadJson<RawPOI[]>(
+    process.env.POI_SPATIAL_URI,
+    ['build/gcs/data/poi/v1/poi-spatial.json', '../build/gcs/data/poi/v1/poi-spatial.json'],
+    'poi-spatial'
+  );
+  KNOWN_POIS = pois ?? [];
+  return KNOWN_POIS.length;
 }
+
+export const getSpatialPOICount = () => KNOWN_POIS.length;
 
 export class SpatialSearchTool {
   /**
