@@ -1,20 +1,23 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { POI } from '../types/docent';
 import { POI_LIST } from '../data/poiData';
-import { X, MapPin, Search } from 'lucide-react';
+import { calculateDistanceMeters, formatDistance } from '../utils/geo';
+import { X, MapPin, Search, Navigation } from 'lucide-react';
 
 interface POICarouselProps {
   isOpen: boolean;
   onClose: () => void;
   selectedPOIId: string;
-  onSelectPOI: (poi: POI) => void;
+  onSelectPOI: (poi: POI, distMeters?: number) => void;
+  userLocation: { lat: number; lng: number };
 }
 
 export const POICarousel: React.FC<POICarouselProps> = ({
   isOpen,
   onClose,
   selectedPOIId,
-  onSelectPOI
+  onSelectPOI,
+  userLocation
 }) => {
   const PAGE_SIZE = 40;
   const [filterCategory, setFilterCategory] = useState<string>('all');
@@ -54,18 +57,59 @@ export const POICarousel: React.FC<POICarouselProps> = ({
     { id: '교육', label: '교육' },
   ];
 
+  // Calculate distances for all POIs and sort by proximity
+  const sortedPOIsWithDistance = useMemo(() => {
+    return POI_LIST.map((poi) => {
+      const distMeters = calculateDistanceMeters(
+        userLocation.lat,
+        userLocation.lng,
+        poi.latitude,
+        poi.longitude
+      );
+      return { poi, distMeters };
+    }).sort((a, b) => a.distMeters - b.distMeters);
+  }, [userLocation]);
+
+  // Deep search logic across name, region, tags, mythTitle, summary, details, and sampleQuestions
   const filteredList = useMemo(() => {
     const normalizedQuery = searchQuery.trim().toLowerCase();
 
-    return POI_LIST.filter((poi) => {
-      const matchCat = filterCategory === 'all' || poi.category === filterCategory;
-      const matchSearch = !normalizedQuery ||
-                          poi.name.toLowerCase().includes(normalizedQuery) ||
-                          poi.region.toLowerCase().includes(normalizedQuery) ||
-                          poi.tags.some((tag) => tag.toLowerCase().includes(normalizedQuery));
+    return sortedPOIsWithDistance.filter(({ poi }) => {
+      let matchCat = true;
+      if (filterCategory !== 'all') {
+        matchCat = poi.category === filterCategory;
+      }
+
+      if (!normalizedQuery) return matchCat;
+
+      const matchName = poi.name.toLowerCase().includes(normalizedQuery);
+      const matchRegion = poi.region.toLowerCase().includes(normalizedQuery);
+      const matchTags = poi.tags.some((tag) => tag.toLowerCase().includes(normalizedQuery));
+      const matchMythTitle = poi.mythAndFact.mythTitle
+        ? poi.mythAndFact.mythTitle.toLowerCase().includes(normalizedQuery)
+        : false;
+      const matchSummary = poi.mythAndFact.summary
+        ? poi.mythAndFact.summary.toLowerCase().includes(normalizedQuery)
+        : false;
+      const matchDetails = poi.mythAndFact.details
+        ? poi.mythAndFact.details.toLowerCase().includes(normalizedQuery)
+        : false;
+      const matchQuestions = poi.sampleQuestions
+        ? poi.sampleQuestions.some((q) => q.toLowerCase().includes(normalizedQuery))
+        : false;
+
+      const matchSearch =
+        matchName ||
+        matchRegion ||
+        matchTags ||
+        matchMythTitle ||
+        matchSummary ||
+        matchDetails ||
+        matchQuestions;
+
       return matchCat && matchSearch;
     });
-  }, [filterCategory, searchQuery]);
+  }, [filterCategory, searchQuery, sortedPOIsWithDistance]);
 
   const visibleList = filteredList.slice(0, visibleCount);
 
@@ -101,24 +145,21 @@ export const POICarousel: React.FC<POICarouselProps> = ({
   return (
     <div className={`modal-backdrop poi-explorer-backdrop ${isClosing ? 'closing' : ''}`} onClick={onClose}>
       <div className="modal-sheet poi-explorer-sheet" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-header">
-          <div className="modal-title-group">
-            <h3>주변 탐색</h3>
+        {/* Inline Search Header with Close Button */}
+        <div className="compact-search-header">
+          <div className="modal-search-bar">
+            <Search size={16} className="search-icon" />
+            <input
+              type="text"
+              placeholder="검색"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              autoFocus
+            />
           </div>
           <button type="button" className="close-btn" onClick={onClose} aria-label="닫기">
             <X size={20} />
           </button>
-        </div>
-
-        {/* Search Bar */}
-        <div className="modal-search-bar">
-          <Search size={16} className="search-icon" />
-          <input
-            type="text"
-            placeholder="명소 이름, 지역, 키워드 검색 (예: 성산, 해녀, 폭포)"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
         </div>
 
         {/* Category Tabs */}
@@ -137,42 +178,53 @@ export const POICarousel: React.FC<POICarouselProps> = ({
 
         {/* POI Grid/List */}
         <div className="poi-items-list" ref={listRef}>
-          {visibleList.map((poi) => {
-            const isSelected = poi.id === selectedPOIId;
+          {visibleList.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '30px 10px', color: '#777', fontSize: '13px' }}>
+              검색 키워드에 해당하는 명소나 이야기를 찾지 못했습니다. 다른 단어로 검색해보세요!
+            </div>
+          ) : (
+            visibleList.map(({ poi, distMeters }) => {
+              const isSelected = poi.id === selectedPOIId;
 
-            return (
-              <div
-                key={poi.id}
-                className={`poi-list-item ${isSelected ? 'selected' : ''}`}
-                onClick={() => {
-                  onSelectPOI(poi);
-                  onClose();
-                }}
-              >
-                <div className="item-thumbnail-wrapper">
-                  <img
-                    src={poi.imageUrl}
-                    alt={poi.name}
-                    referrerPolicy="no-referrer"
-                    loading="lazy"
-                    className="item-thumbnail"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=300&q=80';
-                    }}
-                  />
-                </div>
-
-                <div className="item-info">
-                  <div className="item-region">
-                    <MapPin size={12} />
-                    {poi.region}
+              return (
+                <div
+                  key={poi.id}
+                  className={`poi-list-item ${isSelected ? 'selected' : ''}`}
+                  onClick={() => {
+                    onSelectPOI(poi, distMeters);
+                    onClose();
+                  }}
+                >
+                  <div className="item-thumbnail-wrapper">
+                    <img
+                      src={poi.imageUrl}
+                      alt={poi.name}
+                      referrerPolicy="no-referrer"
+                      loading="lazy"
+                      className="item-thumbnail"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src =
+                          'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=300&q=80';
+                      }}
+                    />
                   </div>
-                  <h4 className="item-name">{poi.name}</h4>
-                  <p className="item-summary">{poi.mythAndFact.summary}</p>
+
+                  <div className="item-info">
+                    <div className="item-region">
+                      <MapPin size={11} />
+                      {poi.region}
+                      <span style={{ marginLeft: 'auto', fontWeight: 700, color: '#00695C' }}>
+                        <Navigation size={10} style={{ display: 'inline', marginRight: '2px' }} />
+                        {formatDistance(distMeters)}
+                      </span>
+                    </div>
+                    <h4 className="item-name">{poi.name}</h4>
+                    <p className="item-summary">{poi.mythAndFact.summary}</p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })
+          )}
           {visibleCount < filteredList.length && (
             <div className="poi-load-sentinel" ref={loadSentinelRef} aria-hidden="true" />
           )}

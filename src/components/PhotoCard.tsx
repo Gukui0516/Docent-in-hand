@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { POI, POIImage } from '../types/docent';
-import { MapPin, Image as ImageIcon, RefreshCw } from 'lucide-react';
+import { MapPin, Image as ImageIcon, RefreshCw, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface PhotoCardProps {
   poi: POI;
@@ -8,6 +8,9 @@ interface PhotoCardProps {
   onSyncLocation: () => void;
   onOpenLocationSettings: () => void;
   isSyncing?: boolean;
+  relevantPOIs?: { poi: POI; distMeters: number }[];
+  onSelectNextPOI?: () => void;
+  onSelectPrevPOI?: () => void;
 }
 
 export const PhotoCard: React.FC<PhotoCardProps> = ({
@@ -15,7 +18,10 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
   distanceText,
   onSyncLocation,
   onOpenLocationSettings,
-  isSyncing = false
+  isSyncing = false,
+  relevantPOIs = [],
+  onSelectNextPOI,
+  onSelectPrevPOI
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loadedMap, setLoadedMap] = useState<Record<number, boolean>>({});
@@ -28,7 +34,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
   const [dragStartX, setDragStartX] = useState(0);
   const [dragOffsetX, setDragOffsetX] = useState(0);
 
-  // Normalize image list (supports multiple images or single fallback)
+  // Normalize image list
   const imageList: POIImage[] = poi.images && poi.images.length > 0
     ? poi.images
     : [
@@ -42,6 +48,9 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
   const totalImages = imageList.length;
   const currentImage = imageList[currentIndex] || imageList[0];
 
+  // Index of current POI in the relevant POIs list
+  const currentPOIIndex = relevantPOIs.findIndex((item) => item.poi.id === poi.id);
+
   // Reset index when POI changes
   useEffect(() => {
     setCurrentIndex(0);
@@ -52,7 +61,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
     setDragOffsetX(0);
   }, [poi.id]);
 
-  // Auto Slideshow Timer (6.0s interval)
+  // Auto Slideshow Timer
   useEffect(() => {
     if (timerRef.current) {
       clearInterval(timerRef.current);
@@ -69,19 +78,26 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
     };
   }, [isAutoPlay, isDragging, totalImages, currentIndex]);
 
-  const handlePrev = (e?: React.MouseEvent) => {
+  const handlePrevImage = (e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
-    setCurrentIndex((prev) => (prev - 1 + totalImages) % totalImages);
+    if (totalImages > 1) {
+      setCurrentIndex((prev) => (prev - 1 + totalImages) % totalImages);
+    } else if (onSelectPrevPOI) {
+      onSelectPrevPOI();
+    }
   };
 
-  const handleNext = (e?: React.MouseEvent) => {
+  const handleNextImage = (e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
-    setCurrentIndex((prev) => (prev + 1) % totalImages);
+    if (totalImages > 1) {
+      setCurrentIndex((prev) => (prev + 1) % totalImages);
+    } else if (onSelectNextPOI) {
+      onSelectNextPOI();
+    }
   };
 
-  // Drag & Swipe Event Handlers
+  // Drag & Swipe Handlers
   const handleStart = (clientX: number) => {
-    if (totalImages <= 1) return;
     setIsDragging(true);
     setDragStartX(clientX);
     setDragOffsetX(0);
@@ -98,11 +114,19 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
     if (!isDragging) return;
     setIsDragging(false);
 
-    const threshold = 40; // minimum drag offset in px to trigger page switch
+    const threshold = 40;
     if (dragOffsetX < -threshold) {
-      handleNext();
+      if (totalImages > 1 && currentIndex < totalImages - 1) {
+        handleNextImage();
+      } else if (onSelectNextPOI) {
+        onSelectNextPOI();
+      }
     } else if (dragOffsetX > threshold) {
-      handlePrev();
+      if (totalImages > 1 && currentIndex > 0) {
+        handlePrevImage();
+      } else if (onSelectPrevPOI) {
+        onSelectPrevPOI();
+      }
     }
 
     setDragOffsetX(0);
@@ -169,7 +193,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
           onTouchEnd={handleTouchEnd}
           style={{
             touchAction: 'pan-y',
-            cursor: totalImages > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default',
+            cursor: isDragging ? 'grabbing' : 'grab',
             userSelect: 'none',
             WebkitUserSelect: 'none'
           }}
@@ -214,6 +238,35 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
           {/* Gradient Overlay */}
           <div className="image-overlay" />
 
+
+
+          {/* Side Navigation Arrow Buttons (Left & Right Edges, Arrow Icons ONLY) */}
+          {onSelectPrevPOI && (
+            <button
+              type="button"
+              className="side-nav-arrow-btn left-arrow-btn"
+              onClick={(e) => { e.stopPropagation(); onSelectPrevPOI(); }}
+              disabled={currentPOIIndex <= 0}
+              aria-label="이전 관련 명소"
+              title="이전 관련 명소"
+            >
+              <ChevronLeft size={20} />
+            </button>
+          )}
+
+          {onSelectNextPOI && (
+            <button
+              type="button"
+              className="side-nav-arrow-btn right-arrow-btn"
+              onClick={(e) => { e.stopPropagation(); onSelectNextPOI(); }}
+              disabled={currentPOIIndex >= relevantPOIs.length - 1}
+              aria-label="다음 관련 명소"
+              title="다음 관련 명소"
+            >
+              <ChevronRight size={20} />
+            </button>
+          )}
+
           {totalImages > 1 && (
             <div
               className="photo-dot-indicator"
@@ -226,34 +279,16 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
             </div>
           )}
 
-          {/* Invisible edge navigation zones; active when not dragging */}
-          {totalImages > 1 && !isDragging && (
-            <>
-              <button
-                type="button"
-                className="photo-nav-zone photo-nav-zone-left"
-                onClick={handlePrev}
-                aria-label="이전 사진 보기"
-              />
-              <button
-                type="button"
-                className="photo-nav-zone photo-nav-zone-right"
-                onClick={handleNext}
-                aria-label="다음 사진 보기"
-              />
-            </>
-          )}
-
           {/* Bottom Info Overlay */}
           <div className="card-bottom-info">
             <div className="poi-region">{poi.region}</div>
             <h2 className="poi-title">{poi.name}</h2>
             {currentImage.alt && currentImage.alt !== poi.name && (
               <div className="photo-subtitle" style={{
-                color: 'rgba(255, 255, 255, 0.9)',
-                fontSize: '0.85rem',
-                marginTop: '2px',
-                marginBottom: '6px',
+                color: 'rgba(255, 255, 255, 0.88)',
+                fontSize: '0.7rem',
+                marginTop: '1px',
+                marginBottom: '3px',
                 transition: 'opacity 0.3s ease'
               }}>
                 📷 {currentImage.alt}
@@ -301,4 +336,3 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
     </section>
   );
 };
-

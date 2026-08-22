@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Compass, Home } from 'lucide-react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { Search, Home } from 'lucide-react';
 import { POI, Character, ChatMessage } from './types/docent';
 import { POI_LIST } from './data/poiData';
 import { CHARACTERS } from './data/characters';
-import { findNearestPOI, formatDistance } from './utils/geo';
+import { findNearestPOI, formatDistance, calculateDistanceMeters } from './utils/geo';
 import { AgentClientService, AgentStatusEvent } from './services/agentClientService';
 import { PhotoCard } from './components/PhotoCard';
 import { StoryCard } from './components/StoryCard';
+import { UserArchiveSection } from './components/UserArchiveSection';
 import { ChatSection } from './components/ChatSection';
 import { POICarousel } from './components/POICarousel';
 import { BenchmarkModal } from './components/BenchmarkModal';
@@ -90,6 +91,44 @@ export const App: React.FC = () => {
 
     triggerZeroClickStory(poi, assignedChar);
   }, [triggerZeroClickStory]);
+
+  // Sorted POIs related to current location / region
+  const relevantPOIs = useMemo(() => {
+    const currentRegionClean = currentPOI.region.replace(/\s+/g, '');
+
+    const sameRegionList = POI_LIST.filter((poi) => {
+      const reg = poi.region.replace(/\s+/g, '');
+      return reg.includes(currentRegionClean) || currentRegionClean.includes(reg);
+    });
+
+    const candidateList = sameRegionList.length >= 2 ? sameRegionList : POI_LIST;
+
+    return candidateList
+      .map((poi) => {
+        const distMeters = calculateDistanceMeters(
+          userLocation.lat,
+          userLocation.lng,
+          poi.latitude,
+          poi.longitude
+        );
+        return { poi, distMeters };
+      })
+      .sort((a, b) => a.distMeters - b.distMeters);
+  }, [currentPOI.region, userLocation]);
+
+  const handleSelectNextRelevantPOI = useCallback(() => {
+    const currentIndex = relevantPOIs.findIndex((item) => item.poi.id === currentPOI.id);
+    const nextIndex = (currentIndex + 1) % relevantPOIs.length;
+    const nextItem = relevantPOIs[nextIndex];
+    applyPOI(nextItem.poi, nextItem.distMeters);
+  }, [relevantPOIs, currentPOI.id, applyPOI]);
+
+  const handleSelectPrevRelevantPOI = useCallback(() => {
+    const currentIndex = relevantPOIs.findIndex((item) => item.poi.id === currentPOI.id);
+    const prevIndex = (currentIndex - 1 + relevantPOIs.length) % relevantPOIs.length;
+    const prevItem = relevantPOIs[prevIndex];
+    applyPOI(prevItem.poi, prevItem.distMeters);
+  }, [relevantPOIs, currentPOI.id, applyPOI]);
 
   // Request Real Device GPS
   const handleUseRealGPS = useCallback(() => {
@@ -238,6 +277,9 @@ export const App: React.FC = () => {
                 onSyncLocation={handleUseRealGPS}
                 onOpenLocationSettings={() => setIsGPSModalOpen(true)}
                 isSyncing={isSyncingLocation}
+                relevantPOIs={relevantPOIs}
+                onSelectNextPOI={handleSelectNextRelevantPOI}
+                onSelectPrevPOI={handleSelectPrevRelevantPOI}
               />
             </div>
 
@@ -251,6 +293,9 @@ export const App: React.FC = () => {
               storyText={storyText}
               isStreaming={isStoryStreaming}
             />
+
+            {/* Community Memory & Story Archive (주민 & 탐방객의 옛날 기억 아카이브) */}
+            <UserArchiveSection poi={currentPOI} />
 
             {/* Real-time Interactive Q&A (Tiki-taka) */}
             <ChatSection
@@ -286,8 +331,8 @@ export const App: React.FC = () => {
           onClick={() => setIsPOIListOpen(true)}
           aria-current={isPOIListOpen ? 'page' : undefined}
         >
-          <Compass size={20} strokeWidth={2.2} />
-          <span>주변 탐색</span>
+          <Search size={20} strokeWidth={2.2} />
+          <span>검색</span>
           <i aria-hidden="true" />
         </button>
       </nav>
@@ -297,7 +342,8 @@ export const App: React.FC = () => {
         isOpen={isPOIListOpen}
         onClose={() => setIsPOIListOpen(false)}
         selectedPOIId={currentPOI.id}
-        onSelectPOI={(poi) => applyPOI(poi)}
+        onSelectPOI={(poi, dist) => applyPOI(poi, dist)}
+        userLocation={userLocation}
       />
 
       {/* Real-time A/B Benchmark Modal */}
