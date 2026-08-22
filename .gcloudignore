@@ -10,12 +10,14 @@ node_modules
 server/node_modules
 
 # 빌드 산출물은 컨테이너 안에서 다시 만든다
-dist
-server/dist
-build
+/dist/
+/server/dist/
+/build/
 
 # 원본·생성 데이터는 이미지에 넣지 않는다 (런타임에 GCS 에서 읽음)
-data
+# 앞에 / 를 붙여 루트로 앵커링한다 — 그냥 data 라고 쓰면 src/data 까지 제외돼
+# characters.ts, jejuDialectData.ts 가 사라진다.
+/data/
 src/data/poiData.ts
 src/data/ragKnowledgeBase.ts
 src/data/ragFullCorpus.json

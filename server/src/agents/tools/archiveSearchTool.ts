@@ -149,11 +149,12 @@ export class ArchiveSearchTool {
     if (query && query.length >= 2 && title.includes(query)) score += 80;
 
     for (const kw of keywords) {
+      if (!kw || kw.length < 2) continue;
       if (title.includes(kw)) score += 35;
       if (subStr.includes(kw)) score += 15;
       if (summary.includes(kw)) score += 12;
       if (content.includes(kw)) {
-        const c = (content.match(new RegExp(kw, 'g')) || []).length;
+        const c = content.split(kw).length - 1;
         score += Math.min(c * 2, 16);
       }
     }
