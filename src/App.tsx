@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Compass, Home } from 'lucide-react';
+import { Compass, Home, ShieldCheck } from 'lucide-react';
 import { POI, POISummary, Character, ChatMessage } from './types/docent';
 import { loadPOIIndex, resolvePOI, placeholderPOI } from './services/poiDataService';
 import { CHARACTERS } from './data/characters';
@@ -12,10 +12,23 @@ import { POICarousel } from './components/POICarousel';
 import { BenchmarkModal } from './components/BenchmarkModal';
 import { GPSSimulatorModal } from './components/GPSSimulatorModal';
 import { ApiKeyModal } from './components/ApiKeyModal';
-import { HallucinationLabModal } from './components/HallucinationLabModal';
+import { HallucinationLabPage } from './pages/HallucinationLabPage';
 import './App.css';
 
 export const App: React.FC = () => {
+  // Simple URL Route State
+  const [currentPath, setCurrentPath] = useState<string>(
+    window.location.pathname + window.location.hash
+  );
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setCurrentPath(window.location.pathname + window.location.hash);
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   // State
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number }>({
     lat: 33.4586,
@@ -45,7 +58,6 @@ export const App: React.FC = () => {
   const [isBenchmarkOpen, setIsBenchmarkOpen] = useState(false);
   const [isGPSModalOpen, setIsGPSModalOpen] = useState(false);
   const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
-  const [isHallucinationLabOpen, setIsHallucinationLabOpen] = useState(false);
 
   const isInitialStoryStarted = useRef(false);
   const poiIndexRef = useRef<POISummary[]>([]);
@@ -253,6 +265,15 @@ export const App: React.FC = () => {
     );
   };
 
+  // Render dedicated lab page when accessing /lab or /eval or #lab
+  if (
+    currentPath.startsWith('/lab') ||
+    currentPath.startsWith('/eval') ||
+    currentPath.includes('#lab')
+  ) {
+    return <HallucinationLabPage />;
+  }
+
   if (!currentPOI) {
     return (
       <div className="app-shell app-booting">
@@ -280,7 +301,6 @@ export const App: React.FC = () => {
                 distanceText={distanceText}
                 onSyncLocation={handleUseRealGPS}
                 onOpenLocationSettings={() => setIsGPSModalOpen(true)}
-                onOpenHallucinationLab={() => setIsHallucinationLabOpen(true)}
                 isSyncing={isSyncingLocation}
               />
             </div>
@@ -334,6 +354,18 @@ export const App: React.FC = () => {
           <span>주변 탐색</span>
           <i aria-hidden="true" />
         </button>
+        <button
+          type="button"
+          className="mobile-bottom-nav-item"
+          onClick={() => {
+            window.history.pushState(null, '', '/lab');
+            setCurrentPath('/lab');
+          }}
+        >
+          <ShieldCheck size={20} strokeWidth={2.2} />
+          <span>환각 검증실</span>
+          <i aria-hidden="true" />
+        </button>
       </nav>
 
       {/* Manual POI Explore Modal */}
@@ -352,12 +384,6 @@ export const App: React.FC = () => {
         userLat={userLocation.lat}
         userLng={userLocation.lng}
         pois={poiIndex}
-      />
-
-      {/* Hallucination Proof & Fact Grounding Lab Modal */}
-      <HallucinationLabModal
-        isOpen={isHallucinationLabOpen}
-        onClose={() => setIsHallucinationLabOpen(false)}
       />
 
       {/* GPS Location Simulator Modal */}
