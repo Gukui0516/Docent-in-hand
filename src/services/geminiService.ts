@@ -84,7 +84,7 @@ export class GeminiService {
         contents: [{ role: 'user', parts: [{ text: prompt }] }],
         config: {
           systemInstruction: character.systemPrompt,
-          temperature: 0.7,
+          temperature: 0.2,
         }
       });
 
@@ -155,8 +155,8 @@ export class GeminiService {
         parts: [{
           text: `[현재 장소]: ${poi.name}
 ${ragContext.groundedPromptContext}
-[관광객의 질문]: "${userMessage}"
-위 질문에 대해 당신(${character.name})의 1인칭 페르소나와 품격을 지키며, 제공된 RAG 학술 팩트에만 근거하여 100% 매끄럽고 유려한 표준어 구술체로 200~350자 내외로 명쾌하게 답변해 주세요.`
+[관광객 질문]: "${userMessage}"
+위 질문에 대해 서두(인사말)와 종두(맺음말)를 절대로 출력하지 마세요. 장소의 실제 관람 가능 여부나 정비 상태를 팩트대로 정확히 전달하고, 어려운 단어나 과도한 숫자 없이 150~250자 내외로 명확하게 답변하세요.`
         }]
       });
 
@@ -165,7 +165,7 @@ ${ragContext.groundedPromptContext}
         contents,
         config: {
           systemInstruction: character.systemPrompt,
-          temperature: 0.7,
+          temperature: 0.2,
         }
       });
 

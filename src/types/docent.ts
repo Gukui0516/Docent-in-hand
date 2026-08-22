@@ -1,4 +1,4 @@
-export type CharacterId = 'seolmundae' | 'haenyeo' | 'harubang' | 'dolhareubang';
+export type CharacterId = 'summaryAgent' | 'seolmundae' | 'haenyeo' | 'harubang' | 'dolhareubang';
 
 export interface Character {
   id: CharacterId;

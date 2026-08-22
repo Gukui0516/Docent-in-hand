@@ -1,8 +1,6 @@
 import { Response } from 'express';
 import { KnowledgeResearchAgent, ResearchBriefingNote } from './researchAgent.js';
-import { SeolmundaeAgent } from './personaAgents/seolmundaeAgent.js';
-import { HaenyeoAgent } from './personaAgents/haenyeoAgent.js';
-import { DolhareubangAgent } from './personaAgents/dolhareubangAgent.js';
+import { SummaryAgent } from './personaAgents/summaryAgent.js';
 
 export interface StreamStoryRequest {
   poiName: string;
@@ -36,11 +34,11 @@ export class AgentOrchestrator {
       layer: 1,
       agent: 'researcher',
       step: 'researching',
-      message: `🔍 [1계층 리서치/공간 에이전트] 18종 아카이브 및 1KM 주변 지리에서 [${poiName}] 탐색 중...`
+      message: `🔍 [1계층 리서치 에이전트] [${poiName}] 학술 자료 탐색 및 인출 중...`
     });
 
     try {
-      // 1. Layer 1: Knowledge & Spatial Research Agents (Parallel)
+      // 1. Layer 1: Knowledge & Spatial Research Agents
       const briefing: ResearchBriefingNote = await KnowledgeResearchAgent.conductResearch(
         poiName,
         userQuery,
@@ -56,28 +54,21 @@ export class AgentOrchestrator {
         sources: briefing.academicSources
       });
 
-      // 2. Layer 2: Persona Docent Selection
-      const characterName = this.getCharacterDisplayName(characterId);
+      // 2. Layer 2: Summary Agent
       this.sendSSE(res, 'agent_status', {
         layer: 2,
-        agent: characterId,
+        agent: 'summaryAgent',
         step: 'storytelling',
-        message: `🎭 [${characterName}] 학술 지식을 바탕으로 맞춤형 도슨트 해설 작성 중...`
+        message: `📌 [핵심 요약 에이전트] 서두·종두 없이 간결한 핵심 요약 작성 중...`
       });
 
       let fullText = '';
       const onToken = (token: string) => {
         fullText += token;
-        this.sendSSE(res, 'persona_stream', { token, characterId });
+        this.sendSSE(res, 'persona_stream', { token, characterId: 'summaryAgent' });
       };
 
-      if (characterId === 'haenyeo') {
-        await HaenyeoAgent.generateStoryStream(poiName, briefing, onToken);
-      } else if (characterId === 'dolhareubang') {
-        await DolhareubangAgent.generateStoryStream(poiName, briefing, onToken);
-      } else {
-        await SeolmundaeAgent.generateStoryStream(poiName, briefing, onToken);
-      }
+      await SummaryAgent.generateStoryStream(poiName, briefing, onToken);
 
       const totalLatencyMs = Date.now() - startTime;
       this.sendSSE(res, 'done', {
@@ -119,28 +110,21 @@ export class AgentOrchestrator {
         (msg) => this.sendSSE(res, 'agent_status', { layer: 1, agent: 'researcher', step: 'progress', message: msg })
       );
 
-      // 2. Layer 2: Persona Response
-      const characterName = this.getCharacterDisplayName(characterId);
+      // 2. Layer 2: Summary Agent
       this.sendSSE(res, 'agent_status', {
         layer: 2,
-        agent: characterId,
+        agent: 'summaryAgent',
         step: 'answering',
-        message: `💬 [${characterName}] 답변 작성 중...`
+        message: `💬 [핵심 요약 에이전트] 간결한 답변 작성 중...`
       });
 
       let fullText = '';
       const onToken = (token: string) => {
         fullText += token;
-        this.sendSSE(res, 'persona_stream', { token, characterId });
+        this.sendSSE(res, 'persona_stream', { token, characterId: 'summaryAgent' });
       };
 
-      if (characterId === 'haenyeo') {
-        await HaenyeoAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
-      } else if (characterId === 'dolhareubang') {
-        await DolhareubangAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
-      } else {
-        await SeolmundaeAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
-      }
+      await SummaryAgent.answerChatStream(poiName, userMessage, briefing, history, onToken);
 
       const totalLatencyMs = Date.now() - startTime;
       this.sendSSE(res, 'done', {
@@ -161,9 +145,7 @@ export class AgentOrchestrator {
     res.write(`data: ${JSON.stringify(data)}\n\n`);
   }
 
-  private static getCharacterDisplayName(id: string): string {
-    if (id === 'haenyeo') return '해녀 삼춘';
-    if (id === 'dolhareubang') return '돌하르방';
-    return '설문대할망';
+  private static getCharacterDisplayName(_id: string): string {
+    return '핵심 요약 에이전트';
   }
 }
