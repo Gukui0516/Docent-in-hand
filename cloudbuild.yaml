@@ -1,0 +1,76 @@
+# main 브랜치에 머지되면 Cloud Build 트리거가 이 파일을 실행해 Cloud Run 에 배포한다.
+#
+# 이미지 태그에 커밋 SHA 를 박아 "지금 떠 있는 리비전 = 어느 커밋" 이 항상 추적되게 한다.
+# (수동 `gcloud run deploy --source .` 시절에는 로컬 워킹트리 zip 이라 추적이 불가능했다.)
+
+substitutions:
+  _REGION: asia-northeast3
+  _SERVICE: docent-in-hand
+  _REPO: cloud-run-source-deploy
+  _RUNTIME_SA: docent-run@iceu-694.iam.gserviceaccount.com
+  _ASSETS_BUCKET: docent-in-hand-assets
+  _DATA_BUCKET: docent-in-hand-data
+  _DATA_VERSION: v1
+  _GEMINI_MODEL: gemini-3.7-flash
+
+steps:
+  # ── 1. 이미지 빌드 ────────────────────────────────────────────────────────
+  # 캐시로 빌드 시간을 줄이려 직전 latest 를 먼저 받아 온다 (없으면 무시).
+  - id: pull-cache
+    name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        docker pull ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest || true
+
+  - id: build
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --cache-from=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest
+      - -t=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:$COMMIT_SHA
+      - -t=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest
+      - .
+
+  # ── 2. 푸시 ───────────────────────────────────────────────────────────────
+  - id: push
+    name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - --all-tags
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}
+
+  # ── 3. Cloud Run 배포 ─────────────────────────────────────────────────────
+  # min/max-instances 는 일부러 지정하지 않는다. 시연 여부에 따라 콘솔에서 손으로
+  # 조절하는 비용 노브라, 여기서 선언하면 배포할 때마다 되돌아간다.
+  # (gcloud run deploy 는 지정하지 않은 설정을 기존 값 그대로 유지한다.)
+  - id: deploy
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_SERVICE}
+      - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:$COMMIT_SHA
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+      - --service-account=${_RUNTIME_SA}
+      - --set-secrets=GEMINI_API_KEY=gemini-api-key:latest
+      - --set-env-vars=NODE_ENV=production,GEMINI_MODEL=${_GEMINI_MODEL},ASSETS_BUCKET=${_ASSETS_BUCKET},DATA_VERSION=${_DATA_VERSION},CORPUS_URI=gs://${_DATA_BUCKET}/corpus/${_DATA_VERSION}/ragFullCorpus.json,POI_SPATIAL_URI=gs://${_DATA_BUCKET}/poi/${_DATA_VERSION}/poi-spatial.json
+      - --memory=2Gi
+      - --cpu=2
+      - --timeout=600
+      - --concurrency=40
+      - --revision-suffix=${SHORT_SHA}
+
+images:
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:$COMMIT_SHA
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: E2_HIGHCPU_8
+
+timeout: 1200s
