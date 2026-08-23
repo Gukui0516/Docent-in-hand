@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { POI } from '../types/docent';
-import { POI_LIST } from '../data/poiData';
+import { POICard, POISummary } from '../types/docent';
+import { loadPOICards } from '../services/poiDataService';
 import { calculateDistanceMeters, formatDistance } from '../utils/geo';
 import { X, MapPin, Search, Navigation } from 'lucide-react';
 
@@ -8,14 +8,19 @@ interface POICarouselProps {
   isOpen: boolean;
   onClose: () => void;
   selectedPOIId: string;
-  onSelectPOI: (poi: POI, distMeters?: number) => void;
+  /** 부팅 시 받아 둔 슬림 인덱스(gzip 62KB). 정렬·필터는 전부 이 배열 위에서 돈다. */
+  pois: POISummary[];
+  onSelectPOI: (poi: POISummary, distMeters?: number) => void;
   userLocation: { lat: number; lng: number };
 }
+
+const FALLBACK_THUMBNAIL = 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=300&q=80';
 
 export const POICarousel: React.FC<POICarouselProps> = ({
   isOpen,
   onClose,
   selectedPOIId,
+  pois,
   onSelectPOI,
   userLocation
 }) => {
@@ -25,6 +30,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [shouldRender, setShouldRender] = useState(isOpen);
   const [isClosing, setIsClosing] = useState(false);
+  const [cards, setCards] = useState<Record<string, POICard>>({});
   const listRef = useRef<HTMLDivElement>(null);
   const loadSentinelRef = useRef<HTMLDivElement>(null);
 
@@ -46,6 +52,15 @@ export const POICarousel: React.FC<POICarouselProps> = ({
     return () => window.clearTimeout(closeTimer);
   }, [isOpen, shouldRender]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    let cancelled = false;
+    loadPOICards()
+      .then((loaded) => { if (!cancelled) setCards(loaded); })
+      .catch((err) => console.warn('POI 카드 로드 실패:', err));
+    return () => { cancelled = true; };
+  }, [isOpen]);
+
   const categories = [
     { id: 'all', label: '전체' },
     { id: '관광지', label: '관광지' },
@@ -59,7 +74,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
 
   // Calculate distances for all POIs and sort by proximity
   const sortedPOIsWithDistance = useMemo(() => {
-    return POI_LIST.map((poi) => {
+    return pois.map((poi) => {
       const distMeters = calculateDistanceMeters(
         userLocation.lat,
         userLocation.lng,
@@ -68,7 +83,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
       );
       return { poi, distMeters };
     }).sort((a, b) => a.distMeters - b.distMeters);
-  }, [userLocation]);
+  }, [pois, userLocation]);
 
   // Deep search logic across name, region, tags, mythTitle, summary, details, and sampleQuestions
   const filteredList = useMemo(() => {
@@ -82,20 +97,21 @@ export const POICarousel: React.FC<POICarouselProps> = ({
 
       if (!normalizedQuery) return matchCat;
 
+      // 인덱스에 있는 필드 + 카드에 실려 온 필드까지 검색한다.
+      // mythAndFact.details(원문 본문)는 카드에 넣지 않았으므로 대상이 아니다 —
+      // 그 필드 하나가 카드 전송량을 gzip 329KB → 1.5MB 로 불린다.
+      const card = cards[poi.id];
       const matchName = poi.name.toLowerCase().includes(normalizedQuery);
       const matchRegion = poi.region.toLowerCase().includes(normalizedQuery);
       const matchTags = poi.tags.some((tag) => tag.toLowerCase().includes(normalizedQuery));
-      const matchMythTitle = poi.mythAndFact.mythTitle
-        ? poi.mythAndFact.mythTitle.toLowerCase().includes(normalizedQuery)
+      const matchMythTitle = card?.mythTitle
+        ? card.mythTitle.toLowerCase().includes(normalizedQuery)
         : false;
-      const matchSummary = poi.mythAndFact.summary
-        ? poi.mythAndFact.summary.toLowerCase().includes(normalizedQuery)
+      const matchSummary = card?.summary
+        ? card.summary.toLowerCase().includes(normalizedQuery)
         : false;
-      const matchDetails = poi.mythAndFact.details
-        ? poi.mythAndFact.details.toLowerCase().includes(normalizedQuery)
-        : false;
-      const matchQuestions = poi.sampleQuestions
-        ? poi.sampleQuestions.some((q) => q.toLowerCase().includes(normalizedQuery))
+      const matchQuestions = card?.sampleQuestions
+        ? card.sampleQuestions.some((q) => q.toLowerCase().includes(normalizedQuery))
         : false;
 
       const matchSearch =
@@ -104,12 +120,11 @@ export const POICarousel: React.FC<POICarouselProps> = ({
         matchTags ||
         matchMythTitle ||
         matchSummary ||
-        matchDetails ||
         matchQuestions;
 
       return matchCat && matchSearch;
     });
-  }, [filterCategory, searchQuery, sortedPOIsWithDistance]);
+  }, [filterCategory, searchQuery, sortedPOIsWithDistance, cards]);
 
   const visibleList = filteredList.slice(0, visibleCount);
 
@@ -197,14 +212,13 @@ export const POICarousel: React.FC<POICarouselProps> = ({
                 >
                   <div className="item-thumbnail-wrapper">
                     <img
-                      src={poi.imageUrl}
+                      src={cards[poi.id]?.imageUrl || FALLBACK_THUMBNAIL}
                       alt={poi.name}
                       referrerPolicy="no-referrer"
                       loading="lazy"
                       className="item-thumbnail"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src =
-                          'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=300&q=80';
+                        (e.target as HTMLImageElement).src = FALLBACK_THUMBNAIL;
                       }}
                     />
                   </div>
@@ -219,7 +233,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
                       </span>
                     </div>
                     <h4 className="item-name">{poi.name}</h4>
-                    <p className="item-summary">{poi.mythAndFact.summary}</p>
+                    <p className="item-summary">{cards[poi.id]?.summary ?? ''}</p>
                   </div>
                 </div>
               );

@@ -89,12 +89,19 @@ const index = pois.map((p) => ({
 const indexBytes = writeJson(path.join(OUT_ASSETS, 'poi-index.json'), index);
 
 // ── 3. Tier 2: 카루셀 카드 ──────────────────────────────────────────────────
-// 주변 탐색 시트를 처음 열 때만 필요한 썸네일 + 한 줄 요약. id 로 인덱스와 조인한다.
+// 주변 탐색 시트를 처음 열 때만 필요한 데이터. id 로 인덱스와 조인한다.
+// 카드 렌더(썸네일·요약)와 시트 내 딥 서치에 쓰인다.
+//
+// mythAndFact.details 는 일부러 넣지 않는다 — 이 필드 하나가 gzip 을 329KB 에서
+// 1.5MB 로 불린다. 본문 검색은 백엔드 ArchiveSearchTool 이 전체 코퍼스(5,161건)로
+// 이미 수행하므로, 클라이언트에 원문을 통째로 내려보낼 이유가 없다.
 const cards = {};
 for (const p of pois) {
   cards[p.id] = {
     imageUrl: p.imageUrl ?? '',
-    summary: p.mythAndFact?.summary ?? ''
+    summary: p.mythAndFact?.summary ?? '',
+    mythTitle: p.mythAndFact?.mythTitle ?? '',
+    sampleQuestions: p.sampleQuestions ?? []
   };
 }
 const cardsBytes = writeJson(path.join(OUT_ASSETS, 'poi-cards.json'), cards);
