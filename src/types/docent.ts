@@ -52,10 +52,15 @@ export interface POISummary {
   tags: string[];
 }
 
-/** 카루셀 카드 렌더용 보조 데이터. poi-cards.json 으로 시트 첫 오픈 시 1회 받는다. */
+/**
+ * 카루셀 카드 렌더 + 시트 내 검색용 데이터. poi-cards.json 으로 시트 첫 오픈 시 1회.
+ * mythAndFact.details 는 제외한다 (gzip 329KB → 1.5MB). 본문 검색은 백엔드 담당.
+ */
 export interface POICard {
   imageUrl: string;
   summary: string;
+  mythTitle: string;
+  sampleQuestions: string[];
 }
 
 /** POI 선택 시 poi/{id}.json 으로 받는 상세 조각. */

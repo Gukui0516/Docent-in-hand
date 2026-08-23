@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { POI, POIImage } from '../types/docent';
+import { POI, POIImage, POISummary } from '../types/docent';
 import { MapPin, Image as ImageIcon, RefreshCw, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface PhotoCardProps {
@@ -8,7 +8,9 @@ interface PhotoCardProps {
   onSyncLocation: () => void;
   onOpenLocationSettings: () => void;
   isSyncing?: boolean;
-  relevantPOIs?: { poi: POI; distMeters: number }[];
+  // id 와 개수만 쓰므로 요약 타입으로 충분하다. POI 상세를 요구하면 인덱스 기반
+  // 이웃 목록(poi-index.json)을 그대로 넘길 수 없다.
+  relevantPOIs?: { poi: POISummary; distMeters: number }[];
   onSelectNextPOI?: () => void;
   onSelectPrevPOI?: () => void;
 }
