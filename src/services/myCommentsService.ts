@@ -1,4 +1,4 @@
-import { POI_LIST } from '../data/poiData';
+import { getLoadedPOIIndex } from './poiDataService';
 
 export interface MyCommentItem {
   id: string;
@@ -37,12 +37,16 @@ export class MyCommentsService {
           if (Array.isArray(parsedLegacy)) {
             for (const story of parsedLegacy) {
               if (!list.some((item) => item.id === story.id)) {
-                const poi = POI_LIST.find((p) => p.id === story.poiId);
+                // 부팅 시 받아 둔 POI 인덱스에서 이름을 보강한다.
+                // 생성 파일(poiData.ts)은 .gitignore 대상이라 import 하면
+                // 클린 체크아웃 빌드가 깨진다 (트러블슈팅 TS-015 참조).
+                const poi = getLoadedPOIIndex().find((p) => p.id === story.poiId);
                 list.push({
                   id: story.id,
                   poiId: story.poiId,
                   poiName: poi ? poi.name : '제주 명소',
-                  poiImageUrl: story.imageUrl || poi?.imageUrl,
+                  // 인덱스에는 imageUrl 이 없다(용량 때문에 카드로 분리). 원본 값만 쓴다.
+                  poiImageUrl: story.imageUrl,
                   authorName: story.authorName || '다정한 바당',
                   authorType: story.authorType,
                   category: story.category,

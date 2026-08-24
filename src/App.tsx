@@ -449,16 +449,15 @@ export const App: React.FC = () => {
         </button>
         <button
           type="button"
-          className={`mobile-bottom-nav-item ${isSavedStoriesOpen ? 'active' : ''}`}
+          className={`mobile-bottom-nav-item ${isPOIListOpen ? 'active' : ''}`}
           onClick={() => {
-            setIsPOIListOpen(false);
-            setIsSavedStoriesOpen(true);
+            setIsSavedStoriesOpen(false);
+            setIsPOIListOpen(true);
           }}
-          aria-label="북마크한 명소 이야기"
-          title="북마크 열기"
+          aria-current={isPOIListOpen ? 'page' : undefined}
         >
-          <Bookmark size={19} strokeWidth={2.2} />
-          <span>북마크</span>
+          <Search size={19} strokeWidth={2.2} />
+          <span>명소 탐색</span>
           <i aria-hidden="true" />
         </button>
         <button
@@ -477,15 +476,16 @@ export const App: React.FC = () => {
         </button>
         <button
           type="button"
-          className={`mobile-bottom-nav-item ${isPOIListOpen ? 'active' : ''}`}
+          className={`mobile-bottom-nav-item ${isSavedStoriesOpen ? 'active' : ''}`}
           onClick={() => {
-            setIsSavedStoriesOpen(false);
-            setIsPOIListOpen(true);
+            setIsPOIListOpen(false);
+            setIsSavedStoriesOpen(true);
           }}
-          aria-current={isPOIListOpen ? 'page' : undefined}
+          aria-label="북마크한 명소 이야기"
+          title="북마크 열기"
         >
-          <Search size={19} strokeWidth={2.2} />
-          <span>명소 탐색</span>
+          <Bookmark size={19} strokeWidth={2.2} />
+          <span>북마크</span>
           <i aria-hidden="true" />
         </button>
         <button
