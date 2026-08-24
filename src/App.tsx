@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { Search, Home, ChevronLeft, ChevronRight, Bookmark } from 'lucide-react';
+import { Search, Home, ChevronLeft, ChevronRight, Bookmark, BookOpen } from 'lucide-react';
 import { POI, POISummary, Character, ChatMessage } from './types/docent';
 import { loadPOIIndex, resolvePOI, placeholderPOI } from './services/poiDataService';
 import { CHARACTERS } from './data/characters';
-import { findNearestPOI, formatDistance, calculateDistanceMeters } from './utils/geo';
+import { findNearestPOI, formatDistance, calculateDistanceMeters, hasClearAddress } from './utils/geo';
 import { AgentClientService, AgentStatusEvent } from './services/agentClientService';
 import { PhotoCard } from './components/PhotoCard';
 import { StoryCard } from './components/StoryCard';
@@ -11,6 +11,7 @@ import { UserArchiveSection } from './components/UserArchiveSection';
 import { ChatSection } from './components/ChatSection';
 import { POICarousel } from './components/POICarousel';
 import { SavedStoriesModal } from './components/SavedStoriesModal';
+import { VisitHistoryService } from './services/visitHistoryService';
 import { BenchmarkModal } from './components/BenchmarkModal';
 import { GPSSimulatorModal } from './components/GPSSimulatorModal';
 import { ApiKeyModal } from './components/ApiKeyModal';
@@ -135,14 +136,23 @@ export const App: React.FC = () => {
     const placeholder = placeholderPOI(summary);
     setCurrentPOI(placeholder);
     setCurrentCharacter(assignedChar);
-    setDistanceText(distMeters !== undefined ? `직선거리 ${formatDistance(distMeters)}` : summary.region);
+    setDistanceText(distMeters !== undefined ? `직선거리 ${formatDistance(distMeters)}` : (hasClearAddress(summary.region) ? summary.region : summary.category));
+
+    // Record visit in history
+    VisitHistoryService.recordVisit(summary, placeholder.imageUrl, placeholder.mythAndFact?.summary);
 
     triggerZeroClickStory(placeholder, assignedChar);
 
     resolvePOI(summary)
       .then((full) => {
         // 상세를 기다리는 동안 사용자가 다른 POI 로 옮겼다면 덮어쓰지 않는다.
-        setCurrentPOI((prev) => (prev && prev.id === full.id ? full : prev));
+        setCurrentPOI((prev) => {
+          if (prev && prev.id === full.id) {
+            VisitHistoryService.recordVisit(full, full.imageUrl, full.mythAndFact?.summary);
+            return full;
+          }
+          return prev;
+        });
       })
       .catch((err) => console.warn(`POI 상세 로드 실패 (${summary.id}):`, err));
   }, [triggerZeroClickStory]);
@@ -403,6 +413,23 @@ export const App: React.FC = () => {
               agentChatStatus={agentChatStatus}
               onSendMessage={handleSendMessage}
             />
+
+            {/* Direct Academic Source Citation Line (Below Chatbot) */}
+            <div className="docent-academic-citation-footer">
+              <BookOpen size={11} className="book-icon" />
+              <span className="citation-prefix">공인 출처:</span>
+              <a
+                href={currentPOI.ragDocument?.sourceUrl || currentPOI.sourceUrl || `https://jeju.grandculture.net/jeju/toc/${currentPOI.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rag-archive-link"
+                title="한국학중앙연구원 공식 원문 열기"
+              >
+                {currentPOI.ragDocument?.academicReferences
+                  ?.map((source) => source.replace(/\s*\(항목\s*ID\s*:\s*[^)]+\)/gi, ''))
+                  .join(', ') || '한국향토문화전자대전 (한국학중앙연구원)'}
+              </a>
+            </div>
           </section>
 
         </div>
@@ -474,11 +501,12 @@ export const App: React.FC = () => {
         </button>
       </nav>
 
-      {/* Instagram-Style Saved Stories Modal */}
+      {/* Combined Bookmarks & Visit History Modal */}
       <SavedStoriesModal
         isOpen={isSavedStoriesOpen}
         onClose={() => setIsSavedStoriesOpen(false)}
         onSelectSavedPOI={handleSelectSavedPOI}
+        currentPOIId={currentPOI.id}
       />
 
       {/* Manual POI Explore Modal */}

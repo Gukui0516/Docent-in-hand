@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { POICard, POISummary } from '../types/docent';
 import { loadPOICards } from '../services/poiDataService';
-import { calculateDistanceMeters, formatDistance } from '../utils/geo';
+import { calculateDistanceMeters, formatDistance, hasClearAddress } from '../utils/geo';
 import { X, MapPin, Search, Navigation } from 'lucide-react';
 import { KakaoPOIMap } from './KakaoPOIMap';
 
@@ -263,8 +263,16 @@ export const POICarousel: React.FC<POICarouselProps> = ({
 
                   <div className="item-info">
                     <div className="item-region">
-                      <MapPin size={11} />
-                      {poi.region}
+                      {hasClearAddress(poi.region) ? (
+                        <>
+                          <MapPin size={11} />
+                          <span>{poi.region}</span>
+                        </>
+                      ) : (
+                        <span className="category-tag-badge" style={{ fontSize: '11px', color: '#555', background: 'rgba(0,0,0,0.06)', padding: '1px 7px', borderRadius: '4px', fontWeight: 600 }}>
+                          {poi.category}
+                        </span>
+                      )}
                       <span style={{ marginLeft: 'auto', fontWeight: 700, color: '#00695C' }}>
                         <Navigation size={10} style={{ display: 'inline', marginRight: '2px' }} />
                         {formatDistance(distMeters)}

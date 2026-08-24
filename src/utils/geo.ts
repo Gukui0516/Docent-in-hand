@@ -78,3 +78,25 @@ export function formatDistance(meters: number): string {
   }
   return `${(meters / 1000).toFixed(1)}km`;
 }
+
+/**
+ * Checks whether a given region string is a concrete, specific physical address
+ * rather than a generic administrative or broad island/city label.
+ */
+export function hasClearAddress(region?: string | null): boolean {
+  if (!region || typeof region !== 'string') return false;
+  const trimmed = region.trim();
+  const broadOnly = [
+    '제주시',
+    '서귀포시',
+    '제주특별자치도',
+    '제주특별자치도 제주시',
+    '제주특별자치도 서귀포시',
+    '제주도',
+    '제주',
+    '서귀포'
+  ];
+  if (broadOnly.includes(trimmed)) return false;
+  return /[읍면동리로길번]/.test(trimmed);
+}
+

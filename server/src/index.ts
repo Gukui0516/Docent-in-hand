@@ -8,7 +8,7 @@ import { AgentOrchestrator } from './agents/orchestrator.js';
 import { initArchiveCorpus, getCorpusSize } from './agents/tools/archiveSearchTool.js';
 import { initSpatialPOIs, getSpatialPOICount } from './agents/tools/spatialSearchTool.js';
 import { openAssetStream, uploadAsset } from './data/gcsSource.js';
-import { randomUUID } from 'crypto';
+import { randomUUID, timingSafeEqual } from 'crypto';
 import { GROUNDING_TEST_CASES, GroundingEvaluationService } from './services/groundingEvaluationService.js';
 import { communityStoryService } from './services/communityStoryService.js';
 
@@ -188,6 +188,49 @@ app.post('/api/stories/:id/like', writeLimiter, async (req, res) => {
     console.error('공감 처리 오류:', err);
     res.status(500).json({ error: '공감 처리 중 서버 오류가 발생했습니다.' });
   }
+});
+
+// ── 관리자: 방명록 전체 삭제 ────────────────────────────────────────────────
+// /lab 페이지는 인증 없이 인터넷에 열려 있다. 이 엔드포인트가 무방비면 누구나
+// 방명록을 통째로 날릴 수 있으므로 관리자 토큰을 요구한다.
+// 토큰은 Secret Manager(admin-token) → ADMIN_TOKEN 환경변수로 주입된다.
+function requireAdmin(req: express.Request, res: express.Response): boolean {
+  const expected = CONFIG.ADMIN_TOKEN;
+  if (!expected) {
+    res.status(503).json({ error: 'ADMIN_TOKEN 이 설정되지 않아 관리자 기능을 사용할 수 없습니다.' });
+    return false;
+  }
+
+  const provided = String(req.headers['x-admin-token'] ?? '');
+  // 길이가 다르면 timingSafeEqual 이 예외를 던지므로 먼저 비교한다.
+  const ok =
+    provided.length === expected.length &&
+    timingSafeEqual(Buffer.from(provided), Buffer.from(expected));
+
+  if (!ok) {
+    res.status(401).json({ error: '관리자 토큰이 올바르지 않습니다.' });
+    return false;
+  }
+  return true;
+}
+
+app.delete('/api/admin/stories', writeLimiter, async (req, res) => {
+  if (!requireAdmin(req, res)) return;
+
+  try {
+    const deleted = await communityStoryService.deleteAllStories();
+    console.warn(`🗑️  [admin] 방명록 전체 삭제 — ${deleted}건`);
+    res.json({ deleted });
+  } catch (err: any) {
+    console.error('방명록 전체 삭제 실패:', err?.message);
+    res.status(500).json({ error: '삭제 중 서버 오류가 발생했습니다.' });
+  }
+});
+
+// 관리자 토큰 유효성만 확인 (UI 에서 입력값 검증용)
+app.post('/api/admin/verify', writeLimiter, (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ ok: true });
 });
 
 // ── 방명록 사진 업로드 ──────────────────────────────────────────────────────

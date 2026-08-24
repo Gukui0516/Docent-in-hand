@@ -51,13 +51,13 @@ ${references.map((ref) => `- ${ref}`).join('\n')}
    * Retrieves native Jeju dialect grounding rules and few-shot examples
    */
   public static getDialectPromptContext(characterId: string): string {
-    const fewShots = JEJU_FEW_SHOTS[characterId] || JEJU_FEW_SHOTS['seolmundae'];
+    const fewShots = JEJU_FEW_SHOTS[characterId] || JEJU_FEW_SHOTS['default'] || [];
     const sampleWords = JEJU_DIALECT_DICTIONARY.slice(0, 10)
       .map((w) => `• ${w.jeju}: ${w.standard}`)
       .join('\n');
 
     const fewShotExamples = fewShots
-      .map((f, i) => `[예시 ${i + 1}]\n표준어: "${f.standard}"\n제주어 구술: "${f.jeju}"`)
+      .map((f: { standard: string; jeju: string }, i: number) => `[예시 ${i + 1}]\n표준어: "${f.standard}"\n제주어 구술: "${f.jeju}"`)
       .join('\n\n');
 
     return `

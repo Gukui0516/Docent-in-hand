@@ -57,7 +57,7 @@ steps:
       - --platform=managed
       - --allow-unauthenticated
       - --service-account=${_RUNTIME_SA}
-      - --set-secrets=GEMINI_API_KEY=gemini-api-key:latest
+      - --set-secrets=GEMINI_API_KEY=gemini-api-key:latest,ADMIN_TOKEN=admin-token:latest
       - --set-env-vars=NODE_ENV=production,GEMINI_MODEL=${_GEMINI_MODEL},ASSETS_BUCKET=${_ASSETS_BUCKET},DATA_VERSION=${_DATA_VERSION},CORPUS_URI=gs://${_DATA_BUCKET}/corpus/${_DATA_VERSION}/ragFullCorpus.json,POI_SPATIAL_URI=gs://${_DATA_BUCKET}/poi/${_DATA_VERSION}/poi-spatial.json
       - --memory=2Gi
       - --cpu=2

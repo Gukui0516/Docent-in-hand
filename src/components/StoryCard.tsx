@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { POI } from '../types/docent';
-import { BookOpen, Bookmark, Check } from 'lucide-react';
+import { Bookmark, Check } from 'lucide-react';
 import { getThemeTitle } from '../utils/themeTitle';
 import { SavedStoryService } from '../services/savedStoryService';
 
@@ -43,11 +43,6 @@ export const StoryCard: React.FC<StoryCardProps> = ({
 
   // Split story into readable narrative paragraphs
   const paragraphs = storyText.split(/\n\n+/).filter((p) => p.trim().length > 0);
-
-  const sourceUrl = ragDoc?.sourceUrl || poi.sourceUrl || `https://jeju.grandculture.net/jeju/toc/${poi.id}`;
-  const academicSources = ragDoc?.academicReferences
-    ?.map((source) => source.replace(/\s*\(항목\s*ID\s*:\s*[^)]+\)/gi, ''))
-    .join(', ') || '한국향토문화전자대전 (한국학중앙연구원)';
 
   return (
     <section className="story-card-container" aria-label="핵심 요약 리포트">
@@ -108,31 +103,6 @@ export const StoryCard: React.FC<StoryCardProps> = ({
               {isStreaming && <span className="typewriter-cursor">|</span>}
             </p>
           )}
-        </div>
-
-        {/* Direct Source Citation Line (Extra Small & Subtle) */}
-        <div className="bubble-footer" style={{ marginTop: '8px', paddingTop: '6px', borderTop: '1px solid #f2f2f2' }}>
-          <div className="rag-direct-citation" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '3px', fontSize: '0.625rem', color: '#888', lineHeight: 1.35 }}>
-            <BookOpen size={11} className="book-icon" style={{ color: '#999', flexShrink: 0 }} />
-            <span style={{ fontWeight: 500, color: '#777' }}>공인 출처:</span>
-            <a
-              href={sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rag-archive-link"
-              style={{
-                color: '#777',
-                fontSize: '0.625rem',
-                textDecoration: 'underline',
-                textDecorationColor: 'rgba(0, 0, 0, 0.2)',
-                textUnderlineOffset: '2px',
-                fontWeight: 400
-              }}
-              title="공식 원문 열기"
-            >
-              {academicSources}
-            </a>
-          </div>
         </div>
       </div>
     </section>
