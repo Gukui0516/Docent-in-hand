@@ -24,14 +24,21 @@ steps:
       - |
         docker pull ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest || true
 
+  # 카카오맵 키는 Vite 가 번들에 인라인하는 빌드 타임 변수라 여기서 넘겨야 한다.
+  # 런타임 환경변수(--set-env-vars)로는 절대 반영되지 않는다.
   - id: build
     name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    secretEnv: ['KAKAO_MAP_KEY']
     args:
-      - build
-      - --cache-from=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest
-      - -t=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:$COMMIT_SHA
-      - -t=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest
-      - .
+      - -c
+      - |
+        docker build \
+          --cache-from=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest \
+          --build-arg VITE_KAKAO_MAP_API_KEY="$$KAKAO_MAP_KEY" \
+          -t ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:$COMMIT_SHA \
+          -t ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest \
+          .
 
   # ── 2. 푸시 ───────────────────────────────────────────────────────────────
   - id: push
@@ -64,6 +71,11 @@ steps:
       - --timeout=600
       - --concurrency=40
       - --revision-suffix=${SHORT_SHA}
+
+availableSecrets:
+  secretManager:
+    - versionName: projects/$PROJECT_ID/secrets/kakao-map-key/versions/latest
+      env: KAKAO_MAP_KEY
 
 images:
   - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:$COMMIT_SHA

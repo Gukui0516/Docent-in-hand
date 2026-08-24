@@ -12,6 +12,60 @@ const SRC_RAG_KB = path.join(ROOT_DIR, 'src/data/ragKnowledgeBase.ts');
 const SRC_CORPUS = path.join(ROOT_DIR, 'src/data/ragFullCorpus.json');
 const SERVER_CORPUS = path.join(ROOT_DIR, 'server/src/data/ragFullCorpus.json');
 
+const NAMED_ENTITIES = {
+  amp: '&',
+  lt: '<',
+  gt: '>',
+  quot: '"',
+  apos: "'",
+  nbsp: ' ',
+  middot: '·',
+  bull: '•',
+  hellip: '…',
+  ndash: '–',
+  mdash: '—',
+  lsquo: '‘',
+  rsquo: '’',
+  ldquo: '“',
+  rdquo: '”',
+  tilde: '~'
+};
+
+const ENTITY_RE = /&(#\d+|#[xX][0-9a-fA-F]+|[a-zA-Z]+);/g;
+
+function decodeEntities(text) {
+  if (typeof text !== 'string' || !text.includes('&')) return text;
+  return text.replace(ENTITY_RE, (whole, body) => {
+    if (body[0] === '#') {
+      const code =
+        body[1] === 'x' || body[1] === 'X'
+          ? parseInt(body.slice(2), 16)
+          : parseInt(body.slice(1), 10);
+      if (!Number.isFinite(code) || code <= 0 || code > 0x10ffff) return whole;
+      if (code === 160) return ' ';
+      if (code === 183 || code === 8231) return '·';
+      if (code === 8226) return '•';
+      return String.fromCodePoint(code);
+    }
+    const lower = body.toLowerCase();
+    return NAMED_ENTITIES[lower] ?? whole;
+  }).replace(/\u00a0/g, ' ');
+}
+
+function deepDecode(value) {
+  if (typeof value === 'string') return decodeEntities(value);
+  if (Array.isArray(value)) return value.map(deepDecode);
+  if (value && typeof value === 'object') {
+    const out = {};
+    for (const [k, v] of Object.entries(value)) {
+      out[decodeEntities(k)] = deepDecode(v);
+    }
+    return out;
+  }
+  return value;
+}
+
+
 // Standard coordinates for Jeju regions (Eup/Myeon/Dong) to map real places accurately
 const REGION_COORDS = {
   '구좌읍': [33.5284, 126.7716],
@@ -418,7 +472,7 @@ function processItemsToPois(allItems) {
 function writeFrontendPoiData(pois) {
   let content = 'import { POI } from "../types/docent";\n\n';
   content += '// 100% Verified POI Data generated strictly from Data/ JSON database\n';
-  content += 'export const POI_LIST: POI[] = ' + JSON.stringify(pois, null, 2) + ';\n';
+  content += 'export const POI_LIST: POI[] = ' + JSON.stringify(deepDecode(pois), null, 2) + ';\n';
   fs.mkdirSync(path.dirname(SRC_POI_DATA), { recursive: true });
   fs.writeFileSync(SRC_POI_DATA, content, 'utf8');
   console.log(`Saved ${SRC_POI_DATA} (${pois.length} POIs)`);
@@ -474,7 +528,7 @@ function writeFrontendRagKb(allItems) {
   content += '  geologyAndNature: { formationProcess: string; scientificSignificance: string; naturalEnvironment: string; };\n';
   content += '  historyAndCulture: { culturalHeritageRank: string; historicalContext: string; localFolklorePractices: string; };\n';
   content += '  academicReferences: string[];\n}\n\n';
-  content += 'export const RAG_KNOWLEDGE_BASE: Record<string, RAGDocument> = ' + JSON.stringify(kb, null, 2) + ';\n';
+  content += 'export const RAG_KNOWLEDGE_BASE: Record<string, RAGDocument> = ' + JSON.stringify(deepDecode(kb), null, 2) + ';\n';
 
   fs.mkdirSync(path.dirname(SRC_RAG_KB), { recursive: true });
   fs.writeFileSync(SRC_RAG_KB, content, 'utf8');
@@ -516,7 +570,7 @@ function writeBackendCorpus(allItems) {
   }
 
   fs.mkdirSync(path.dirname(SERVER_CORPUS), { recursive: true });
-  fs.writeFileSync(SERVER_CORPUS, JSON.stringify(corpusDocs, null, 2), 'utf8');
+  fs.writeFileSync(SERVER_CORPUS, JSON.stringify(deepDecode(corpusDocs), null, 2), 'utf8');
   console.log(`Saved ${SERVER_CORPUS} (${corpusDocs.length} corpus items)`);
 
   fs.mkdirSync(path.dirname(SRC_CORPUS), { recursive: true });

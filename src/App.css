@@ -4729,12 +4729,21 @@ body::before {
   background-color: #E65100;
 }
 
+.saved-count-pill.story-pill {
+  background-color: #E65100;
+}
+
 .empty-icon-circle.history-circle {
   background-color: #E0F2F1;
   color: #00695C;
 }
 
 .empty-icon-circle.comment-circle {
+  background-color: #FFF3E0;
+  color: #E65100;
+}
+
+.empty-icon-circle.story-circle {
   background-color: #FFF3E0;
   color: #E65100;
 }
@@ -4748,6 +4757,18 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* My written story specific card adjustments */
+.my-written-story-card {
+  border-left: 3px solid #E65100;
+  transition: all 0.2s ease;
+}
+
+.my-written-story-card:hover {
+  border-left-color: #C2410C;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 81, 0, 0.08);
 }
 
 /* My comment specific card adjustments */
@@ -4772,4 +4793,15 @@ body::before {
 .my-comment-content {
   color: #1E293B;
   font-weight: 500;
+}
+
+.my-written-content {
+  color: #0F172A;
+  font-weight: 500;
+  font-size: 12.5px;
+  line-height: 1.55;
+  background-color: #FFFDF9;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px dashed #FFD8A8;
 }

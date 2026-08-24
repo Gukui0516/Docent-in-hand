@@ -5,13 +5,10 @@ import {
   Trash2,
   Calendar,
   Search,
-  History,
   MessageSquareHeart,
-  MessageCircle,
-  MapPin
+  BookOpen
 } from 'lucide-react';
 import { SavedStoryService, DateGroupedStories, SavedStoryItem } from '../services/savedStoryService';
-import { VisitHistoryService, DateGroupedVisits, VisitRecord } from '../services/visitHistoryService';
 import { MyCommentsService, DateGroupedComments, MyCommentItem } from '../services/myCommentsService';
 
 interface SavedStoriesModalProps {
@@ -21,7 +18,7 @@ interface SavedStoriesModalProps {
   currentPOIId?: string;
 }
 
-type TabType = 'bookmarks' | 'history' | 'comments';
+type TabType = 'bookmarks' | 'stories';
 
 export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
   isOpen,
@@ -29,21 +26,16 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
   onSelectSavedPOI
 }) => {
   const [activeTab, setActiveTab] = useState<TabType>('bookmarks');
-  
+
   // Bookmarks state
   const [savedGroups, setSavedGroups] = useState<DateGroupedStories[]>([]);
   const [bookmarkSearchQuery, setBookmarkSearchQuery] = useState('');
   const [bookmarkCount, setBookmarkCount] = useState(0);
 
-  // Visit history state
-  const [visitGroups, setVisitGroups] = useState<DateGroupedVisits[]>([]);
-  const [visitSearchQuery, setVisitSearchQuery] = useState('');
-  const [visitCount, setVisitCount] = useState(0);
-
-  // My comments state
-  const [commentGroups, setCommentGroups] = useState<DateGroupedComments[]>([]);
-  const [commentSearchQuery, setCommentSearchQuery] = useState('');
-  const [commentCount, setCommentCount] = useState(0);
+  // My Stories state
+  const [storyGroups, setStoryGroups] = useState<DateGroupedComments[]>([]);
+  const [storySearchQuery, setStorySearchQuery] = useState('');
+  const [storyCount, setStoryCount] = useState(0);
 
   const refreshData = () => {
     // Refresh bookmarks
@@ -52,25 +44,18 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
     const bCount = bGroups.reduce((acc, g) => acc + g.items.length, 0);
     setBookmarkCount(bCount);
 
-    // Refresh visit history
-    const vGroups = VisitHistoryService.getGroupedVisits();
-    setVisitGroups(vGroups);
-    const vCount = vGroups.reduce((acc, g) => acc + g.records.length, 0);
-    setVisitCount(vCount);
-
-    // Refresh my comments
-    const cGroups = MyCommentsService.getGroupedComments();
-    setCommentGroups(cGroups);
-    const cCount = cGroups.reduce((acc, g) => acc + g.items.length, 0);
-    setCommentCount(cCount);
+    // Refresh my stories
+    const sGroups = MyCommentsService.getGroupedComments();
+    setStoryGroups(sGroups);
+    const sCount = sGroups.reduce((acc, g) => acc + g.items.length, 0);
+    setStoryCount(sCount);
   };
 
   useEffect(() => {
     if (isOpen) {
       refreshData();
       setBookmarkSearchQuery('');
-      setVisitSearchQuery('');
-      setCommentSearchQuery('');
+      setStorySearchQuery('');
     }
   }, [isOpen]);
 
@@ -82,13 +67,7 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
     refreshData();
   };
 
-  const handleRemoveVisit = (e: React.MouseEvent, poiId: string) => {
-    e.stopPropagation();
-    VisitHistoryService.removeVisit(poiId);
-    refreshData();
-  };
-
-  const handleRemoveComment = (e: React.MouseEvent, commentId: string) => {
+  const handleRemoveStory = (e: React.MouseEvent, commentId: string) => {
     e.stopPropagation();
     MyCommentsService.removeComment(commentId);
     refreshData();
@@ -115,31 +94,15 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
     })
     .filter((group) => group.items.length > 0);
 
-  // Filter visit history by search query
-  const filteredVisitGroups = visitGroups
-    .map((group) => {
-      const filteredItems = group.records.filter(
-        (item) =>
-          item.name.toLowerCase().includes(visitSearchQuery.toLowerCase()) ||
-          (item.category && item.category.toLowerCase().includes(visitSearchQuery.toLowerCase())) ||
-          (item.region && item.region.toLowerCase().includes(visitSearchQuery.toLowerCase())) ||
-          (item.summary && item.summary.toLowerCase().includes(visitSearchQuery.toLowerCase()))
-      );
-      return {
-        ...group,
-        records: filteredItems
-      };
-    })
-    .filter((group) => group.records.length > 0);
-
-  // Filter comments by search query
-  const filteredCommentGroups = commentGroups
+  // Filter my stories by search query
+  const filteredStoryGroups = storyGroups
     .map((group) => {
       const filteredItems = group.items.filter(
         (item) =>
-          item.poiName.toLowerCase().includes(commentSearchQuery.toLowerCase()) ||
-          item.content.toLowerCase().includes(commentSearchQuery.toLowerCase()) ||
-          item.authorName.toLowerCase().includes(commentSearchQuery.toLowerCase())
+          item.poiName.toLowerCase().includes(storySearchQuery.toLowerCase()) ||
+          item.content.toLowerCase().includes(storySearchQuery.toLowerCase()) ||
+          item.authorName.toLowerCase().includes(storySearchQuery.toLowerCase()) ||
+          (item.category && item.category.toLowerCase().includes(storySearchQuery.toLowerCase()))
       );
       return {
         ...group,
@@ -166,22 +129,16 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
                   <>
                     북마크 <span className="saved-count-pill">{bookmarkCount}</span>
                   </>
-                ) : activeTab === 'history' ? (
-                  <>
-                    탐방 기록 <span className="saved-count-pill history-pill">{visitCount}</span>
-                  </>
                 ) : (
                   <>
-                    내가 쓴 댓글 <span className="saved-count-pill comment-pill">{commentCount}</span>
+                    내가 쓴 이야기 <span className="saved-count-pill story-pill">{storyCount}</span>
                   </>
                 )}
               </h2>
               <p className="saved-header-desc">
                 {activeTab === 'bookmarks'
                   ? '더 읽고 싶은 제주의 이야기'
-                  : activeTab === 'history'
-                  ? '시간 순서대로 기록된 제주의 발자취'
-                  : '제주 명소에 남긴 나의 이야기와 추억'}
+                  : '제주 명소에 기록한 나만의 이야기와 추억'}
               </p>
             </div>
           </div>
@@ -195,7 +152,7 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
           </button>
         </div>
 
-        {/* 3-Tab Segment Switcher */}
+        {/* 2-Tab Segment Switcher */}
         <div className="modal-tab-segment" role="tablist">
           <button
             type="button"
@@ -210,22 +167,12 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
           <button
             type="button"
             role="tab"
-            aria-selected={activeTab === 'history'}
-            className={`modal-tab-btn ${activeTab === 'history' ? 'active' : ''}`}
-            onClick={() => setActiveTab('history')}
-          >
-            <History size={15} />
-            <span>탐방 기록 ({visitCount})</span>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeTab === 'comments'}
-            className={`modal-tab-btn ${activeTab === 'comments' ? 'active' : ''}`}
-            onClick={() => setActiveTab('comments')}
+            aria-selected={activeTab === 'stories'}
+            className={`modal-tab-btn ${activeTab === 'stories' ? 'active' : ''}`}
+            onClick={() => setActiveTab('stories')}
           >
             <MessageSquareHeart size={15} />
-            <span>내가 쓴 댓글 ({commentCount})</span>
+            <span>내가 쓴 이야기 ({storyCount})</span>
           </button>
         </div>
 
@@ -344,25 +291,25 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
           </>
         )}
 
-        {/* Tab 2: Visit History Content (Exact same chronological card layout as Bookmarks) */}
-        {activeTab === 'history' && (
+        {/* Tab 2: My Written Stories (내가 쓴 이야기) */}
+        {activeTab === 'stories' && (
           <>
             {/* Search Bar (if has items) */}
-            {visitCount > 0 && (
+            {storyCount > 0 && (
               <div className="saved-search-wrapper">
                 <Search size={16} className="saved-search-icon" />
                 <input
                   type="text"
                   className="saved-search-input"
-                  placeholder="탐방한 명소 이름, 분류, 지역 검색..."
-                  value={visitSearchQuery}
-                  onChange={(e) => setVisitSearchQuery(e.target.value)}
+                  placeholder="내가 쓴 이야기 내용, 명소 이름 검색..."
+                  value={storySearchQuery}
+                  onChange={(e) => setStorySearchQuery(e.target.value)}
                 />
-                {visitSearchQuery && (
+                {storySearchQuery && (
                   <button
                     type="button"
                     className="saved-search-clear"
-                    onClick={() => setVisitSearchQuery('')}
+                    onClick={() => setStorySearchQuery('')}
                   >
                     <X size={14} />
                   </button>
@@ -372,152 +319,25 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
 
             {/* Content Body */}
             <div className="saved-modal-body">
-              {visitCount === 0 ? (
+              {storyCount === 0 ? (
                 <div className="saved-empty-state">
-                  <div className="empty-icon-circle history-circle">
-                    <History size={36} className="empty-history-icon" />
+                  <div className="empty-icon-circle story-circle">
+                    <BookOpen size={36} className="empty-story-icon" />
                   </div>
-                  <h3 className="empty-title">아직 탐방 기록이 없습니다</h3>
+                  <h3 className="empty-title">아직 작성한 이야기가 없습니다</h3>
                   <p className="empty-desc">
-                    제주 곳곳의 명소를 둘러보면,
+                    명소 카드의 <strong>[우리의 제주 이야기 &gt; 기록하기]</strong>에서
                     <br />
-                    다녀온 시간 순서대로 이곳에 자동으로 발자취가 기록됩니다.
+                    명소에 대한 나만의 추억과 이야기를 남겨보세요.
                   </p>
                 </div>
-              ) : filteredVisitGroups.length === 0 ? (
+              ) : filteredStoryGroups.length === 0 ? (
                 <div className="saved-empty-state">
-                  <p className="empty-desc">검색어와 일치하는 탐방 명소가 없습니다.</p>
+                  <p className="empty-desc">검색어와 일치하는 이야기가 없습니다.</p>
                 </div>
               ) : (
                 <div className="saved-timeline">
-                  {filteredVisitGroups.map((group) => (
-                    <div key={group.dateKey} className="saved-date-group">
-                      <div className="saved-date-header">
-                        <Calendar size={14} className="date-icon" />
-                        <span>{group.dateLabel}</span>
-                        <span className="date-item-count">{group.records.length}곳 방문</span>
-                      </div>
-
-                      <div className="saved-items-grid">
-                        {group.records.map((record: VisitRecord) => {
-                          const timeString = new Date(record.visitedAt).toLocaleTimeString('ko-KR', {
-                            hour: '2-digit',
-                            minute: '2-digit'
-                          });
-
-                          return (
-                            <article
-                              key={record.id}
-                              className="saved-story-card"
-                              onClick={() => handleItemClick(record.id)}
-                            >
-                              <div className="saved-card-thumb-wrapper">
-                                {record.imageUrl ? (
-                                  <img
-                                    src={record.imageUrl}
-                                    alt={record.name}
-                                    className="saved-card-thumb"
-                                    loading="lazy"
-                                  />
-                                ) : (
-                                  <div className="saved-card-thumb-placeholder">
-                                    <MapPin size={24} />
-                                  </div>
-                                )}
-                                <div className="saved-card-time-badge">{timeString}</div>
-                              </div>
-
-                              <div className="saved-card-content">
-                                <div className="saved-card-header-row">
-                                  <h4 className="saved-poi-name">「{record.name}」</h4>
-                                  <button
-                                    type="button"
-                                    className="saved-card-delete-btn"
-                                    onClick={(e) => handleRemoveVisit(e, record.id)}
-                                    title="탐방 기록 삭제"
-                                    aria-label={`${record.name} 탐방 기록 삭제`}
-                                  >
-                                    <Trash2 size={14} />
-                                  </button>
-                                </div>
-
-                                <p className="saved-card-snippet">
-                                  {record.summary || `${record.name} - 제주의 역사와 문화가 깃든 명소 탐방`}
-                                </p>
-
-                                <div className="saved-card-footer">
-                                  <div className="saved-card-tags">
-                                    {record.category && (
-                                      <span className="saved-tag-pill">#{record.category}</span>
-                                    )}
-                                    {record.region && (
-                                      <span className="saved-tag-pill">
-                                        #{record.region.split(' ')[0]}
-                                      </span>
-                                    )}
-                                    <span className="saved-tag-pill">#탐방완료</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </article>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </>
-        )}
-
-        {/* Tab 3: My Comments (내가 쓴 댓글) */}
-        {activeTab === 'comments' && (
-          <>
-            {/* Search Bar (if has items) */}
-            {commentCount > 0 && (
-              <div className="saved-search-wrapper">
-                <Search size={16} className="saved-search-icon" />
-                <input
-                  type="text"
-                  className="saved-search-input"
-                  placeholder="내가 쓴 댓글 내용, 명소 이름 검색..."
-                  value={commentSearchQuery}
-                  onChange={(e) => setCommentSearchQuery(e.target.value)}
-                />
-                {commentSearchQuery && (
-                  <button
-                    type="button"
-                    className="saved-search-clear"
-                    onClick={() => setCommentSearchQuery('')}
-                  >
-                    <X size={14} />
-                  </button>
-                )}
-              </div>
-            )}
-
-            {/* Content Body */}
-            <div className="saved-modal-body">
-              {commentCount === 0 ? (
-                <div className="saved-empty-state">
-                  <div className="empty-icon-circle comment-circle">
-                    <MessageCircle size={36} className="empty-comment-icon" />
-                  </div>
-                  <h3 className="empty-title">아직 남긴 댓글이 없습니다</h3>
-                  <p className="empty-desc">
-                    명소 카드의 <strong>[우리의 제주 이야기]</strong>에서 나만의 추억과 이야기를 남겨보세요.
-                    <br />
-                    내가 쓴 모든 글이 이곳에 시간순으로 모입니다.
-                  </p>
-                </div>
-              ) : filteredCommentGroups.length === 0 ? (
-                <div className="saved-empty-state">
-                  <p className="empty-desc">검색어와 일치하는 댓글이 없습니다.</p>
-                </div>
-              ) : (
-                <div className="saved-timeline">
-                  {filteredCommentGroups.map((group) => (
+                  {filteredStoryGroups.map((group) => (
                     <div key={group.dateKey} className="saved-date-group">
                       <div className="saved-date-header">
                         <Calendar size={14} className="date-icon" />
@@ -530,7 +350,7 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
                           return (
                             <article
                               key={item.id}
-                              className="saved-story-card my-comment-card"
+                              className="saved-story-card my-written-story-card"
                               onClick={() => handleItemClick(item.poiId)}
                             >
                               <div className="saved-card-thumb-wrapper">
@@ -555,9 +375,9 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
                                   <button
                                     type="button"
                                     className="saved-card-delete-btn"
-                                    onClick={(e) => handleRemoveComment(e, item.id)}
-                                    title="댓글 삭제"
-                                    aria-label={`${item.poiName} 댓글 삭제`}
+                                    onClick={(e) => handleRemoveStory(e, item.id)}
+                                    title="이야기 삭제"
+                                    aria-label={`${item.poiName} 이야기 삭제`}
                                   >
                                     <Trash2 size={14} />
                                   </button>
@@ -567,7 +387,8 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
                                   <span>✍️ {item.authorName}</span>
                                 </div>
 
-                                <p className="saved-card-snippet my-comment-content">
+                                {/* Displays the actual user-written story, NOT the default description */}
+                                <p className="saved-card-snippet my-written-content">
                                   {item.content}
                                 </p>
 
@@ -576,7 +397,7 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
                                     {item.category && (
                                       <span className="saved-tag-pill">#{item.category}</span>
                                     )}
-                                    <span className="saved-tag-pill">#나의기록</span>
+                                    <span className="saved-tag-pill">#내가쓴이야기</span>
                                   </div>
                                 </div>
                               </div>

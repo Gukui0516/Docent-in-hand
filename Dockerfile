@@ -11,6 +11,13 @@ RUN npm ci
 COPY tsconfig.json vite.config.ts index.html ./
 COPY src ./src
 
+# 카카오맵 JS 키는 import.meta.env 로 읽히는 빌드 타임 변수다. Vite 가 번들에
+# 인라인하므로 Cloud Run 런타임 환경변수로는 절대 주입되지 않는다.
+# 값은 Cloud Build 가 Secret Manager(kakao-map-key)에서 꺼내 --build-arg 로 넘긴다.
+# (브라우저 SDK 키라 번들 노출은 정상이며, 보호는 카카오 콘솔의 허용 도메인으로 한다.)
+ARG VITE_KAKAO_MAP_API_KEY=""
+ENV VITE_KAKAO_MAP_API_KEY=$VITE_KAKAO_MAP_API_KEY
+
 # npm run build 의 prebuild 훅은 data/ 원본으로 40MB 파일을 생성하는데,
 # 이제 그 데이터는 번들이 아니라 GCS 에서 오므로 컴파일·번들만 직접 돌린다.
 RUN npx tsc && npx vite build
