@@ -17,6 +17,7 @@ import {
   GroundingEvalClient,
   DEFAULT_FALLBACK_TEST_CASES
 } from '../services/groundingEvalClient';
+import { AdminPurgePanel } from '../components/AdminPurgePanel';
 import './HallucinationLabPage.css';
 
 export const HallucinationLabPage: React.FC = () => {
@@ -113,6 +114,7 @@ export const HallucinationLabPage: React.FC = () => {
         </div>
 
         <div className="lab-nav-right">
+          <AdminPurgePanel />
           <button
             type="button"
             className="lab-action-btn primary"

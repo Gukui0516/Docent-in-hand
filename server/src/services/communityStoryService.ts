@@ -169,6 +169,34 @@ class CommunityStoryService {
   }
 
   /**
+   * 컬렉션의 모든 글을 지운다. 관리자 정리·시연 초기화 용도.
+   *
+   * Firestore 는 컬렉션 단위 삭제가 없어 문서를 배치로 지운다. 배치 상한이
+   * 500 이므로 나눠서 커밋한다.
+   *
+   * 주의: 지운 뒤 서버가 재기동되면 seedIfEmpty 가 샘플 5건을 다시 만든다.
+   * 사용자 글만 사라지고 샘플은 돌아오는 동작이다.
+   */
+  public async deleteAllStories(): Promise<number> {
+    const col = this.client().collection(COLLECTION);
+    let deleted = 0;
+
+    for (;;) {
+      const snap = await col.limit(400).get();
+      if (snap.empty) break;
+
+      const batch = this.client().batch();
+      snap.docs.forEach((d) => batch.delete(d.ref));
+      await batch.commit();
+      deleted += snap.size;
+
+      if (snap.size < 400) break;
+    }
+
+    return deleted;
+  }
+
+  /**
    * 공감 토글. increment 는 서버 측 원자 연산이라 동시 요청에도 갱신이 유실되지 않는다.
    * 파일 기반 read-modify-write 로는 보장할 수 없던 부분이다.
    */
