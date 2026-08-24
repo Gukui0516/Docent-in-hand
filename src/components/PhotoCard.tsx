@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { POI, POIImage, POISummary } from '../types/docent';
-import { MapPin, Image as ImageIcon, RefreshCw, ChevronLeft, ChevronRight } from 'lucide-react';
+import { POI, POIImage } from '../types/docent';
+import { MapPin, Image as ImageIcon, RefreshCw } from 'lucide-react';
 
 interface PhotoCardProps {
   poi: POI;
@@ -8,11 +8,6 @@ interface PhotoCardProps {
   onSyncLocation: () => void;
   onOpenLocationSettings: () => void;
   isSyncing?: boolean;
-  // id 와 개수만 쓰므로 요약 타입으로 충분하다. POI 상세를 요구하면 인덱스 기반
-  // 이웃 목록(poi-index.json)을 그대로 넘길 수 없다.
-  relevantPOIs?: { poi: POISummary; distMeters: number }[];
-  onSelectNextPOI?: () => void;
-  onSelectPrevPOI?: () => void;
 }
 
 export const PhotoCard: React.FC<PhotoCardProps> = ({
@@ -20,10 +15,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
   distanceText,
   onSyncLocation,
   onOpenLocationSettings,
-  isSyncing = false,
-  relevantPOIs = [],
-  onSelectNextPOI,
-  onSelectPrevPOI
+  isSyncing = false
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loadedMap, setLoadedMap] = useState<Record<number, boolean>>({});
@@ -56,9 +48,6 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
 
   const totalImages = imageList.length;
   const currentImage = imageList[currentIndex] || imageList[0] || { src: '', alt: poi.name };
-
-  // Index of current POI in the relevant POIs list
-  const currentPOIIndex = relevantPOIs.findIndex((item) => item.poi.id === poi.id);
 
   // Track image sources to reset loading/error state when real images arrive
   const imageKey = imageList.map((img) => img.src).join('|');
@@ -94,8 +83,6 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
     if (e) e.stopPropagation();
     if (totalImages > 1) {
       setCurrentIndex((prev) => (prev - 1 + totalImages) % totalImages);
-    } else if (onSelectPrevPOI) {
-      onSelectPrevPOI();
     }
   };
 
@@ -103,13 +90,12 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
     if (e) e.stopPropagation();
     if (totalImages > 1) {
       setCurrentIndex((prev) => (prev + 1) % totalImages);
-    } else if (onSelectNextPOI) {
-      onSelectNextPOI();
     }
   };
 
   // Drag & Swipe Handlers
   const handleStart = (clientX: number) => {
+    if (totalImages <= 1) return;
     setIsDragging(true);
     setDragStartX(clientX);
     setDragOffsetX(0);
@@ -128,16 +114,12 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
 
     const threshold = 40;
     if (dragOffsetX < -threshold) {
-      if (totalImages > 1 && currentIndex < totalImages - 1) {
+      if (totalImages > 1) {
         handleNextImage();
-      } else if (onSelectNextPOI) {
-        onSelectNextPOI();
       }
     } else if (dragOffsetX > threshold) {
-      if (totalImages > 1 && currentIndex > 0) {
+      if (totalImages > 1) {
         handlePrevImage();
-      } else if (onSelectPrevPOI) {
-        onSelectPrevPOI();
       }
     }
 
@@ -205,7 +187,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
           onTouchEnd={handleTouchEnd}
           style={{
             touchAction: 'pan-y',
-            cursor: isDragging ? 'grabbing' : 'grab',
+            cursor: totalImages > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default',
             userSelect: 'none',
             WebkitUserSelect: 'none'
           }}
@@ -260,35 +242,6 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
           {/* Gradient Overlay */}
           <div className="image-overlay" />
 
-
-
-          {/* Side Navigation Arrow Buttons (Left & Right Edges, Arrow Icons ONLY) */}
-          {onSelectPrevPOI && (
-            <button
-              type="button"
-              className="side-nav-arrow-btn left-arrow-btn"
-              onClick={(e) => { e.stopPropagation(); onSelectPrevPOI(); }}
-              disabled={currentPOIIndex <= 0}
-              aria-label="이전 관련 명소"
-              title="이전 관련 명소"
-            >
-              <ChevronLeft size={20} />
-            </button>
-          )}
-
-          {onSelectNextPOI && (
-            <button
-              type="button"
-              className="side-nav-arrow-btn right-arrow-btn"
-              onClick={(e) => { e.stopPropagation(); onSelectNextPOI(); }}
-              disabled={currentPOIIndex >= relevantPOIs.length - 1}
-              aria-label="다음 관련 명소"
-              title="다음 관련 명소"
-            >
-              <ChevronRight size={20} />
-            </button>
-          )}
-
           {totalImages > 1 && (
             <div
               className="photo-dot-indicator"
@@ -318,43 +271,50 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
             )}
             <div className="tag-list">
               {poi.tags.slice(0, 3).map((tag, idx) => (
-                <span key={idx} className="poi-tag">
+                <span key={idx} className="tag-badge">
                   #{tag}
                 </span>
               ))}
             </div>
           </div>
 
-        </div>
-
-        {/* Location utility bar */}
-        <div className="source-bar">
-          <button
-            type="button"
-            className="source-current-location"
-            onClick={onOpenLocationSettings}
-            title="GPS 위치 설정 열기"
-          >
-            <MapPin size={13} aria-hidden="true" />
-            <span>현재 위치</span>
-            <strong>{poi.name}</strong>
-            <em>· {distanceText}</em>
-          </button>
-          <div className="source-bar-actions">
+          {/* Location & GPS Info Floating Bar */}
+          <div className="location-info-bar">
             <button
               type="button"
-              className={`source-gps-button ${isSyncing ? 'syncing' : ''}`}
+              className={`location-distance-pill ${isSyncing ? 'syncing' : ''}`}
               onClick={onSyncLocation}
-              title="현재 기기 GPS 위치 다시 찾기"
-              aria-label="현재 위치 다시 찾기"
+              title="현재 내 실시간 GPS 위치와 명소 거리 재측정"
+              aria-label={`현재 위치: ${distanceText}. 클릭 시 GPS 재동기화`}
+              disabled={isSyncing}
             >
-              <RefreshCw size={13} className={isSyncing ? 'spin' : ''} />
-              <span>{isSyncing ? '찾는 중' : '내 위치'}</span>
+              {isSyncing ? (
+                <>
+                  <RefreshCw className="distance-icon spin-icon" size={13} />
+                  <span>GPS 수신중...</span>
+                </>
+              ) : (
+                <>
+                  <MapPin className="distance-icon" size={13} />
+                  <span>{distanceText}</span>
+                </>
+              )}
             </button>
+
+            <div className="location-action-buttons">
+              <button
+                type="button"
+                className="location-setting-btn"
+                onClick={onOpenLocationSettings}
+                title="GPS 좌표 직접 설정 또는 테스트 시뮬레이터 열기"
+                aria-label="GPS 위치 시뮬레이터 열기"
+              >
+                GPS 설정
+              </button>
+            </div>
           </div>
         </div>
       </div>
-
     </section>
   );
 };
