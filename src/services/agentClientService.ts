@@ -29,7 +29,8 @@ export class AgentClientService {
     onStatus: (status: AgentStatusEvent) => void,
     onToken: (token: string) => void,
     onComplete: (fullText: string, sources: string[]) => void,
-    onError: (err: string) => void
+    onError: (err: string) => void,
+    signal?: AbortSignal
   ): Promise<void> {
     const url = `${this.backendUrl}/api/agent/stream-story`;
 
@@ -37,6 +38,7 @@ export class AgentClientService {
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        signal,
         body: JSON.stringify({
           poiName: poi.name,
           characterId: character.id,
@@ -79,7 +81,8 @@ export class AgentClientService {
     onStatus: (status: AgentStatusEvent) => void,
     onToken: (token: string) => void,
     onComplete: (fullText: string, sources: string[]) => void,
-    onError: (err: string) => void
+    onError: (err: string) => void,
+    signal?: AbortSignal
   ): Promise<void> {
     const url = `${this.backendUrl}/api/agent/stream-chat`;
 
@@ -87,6 +90,7 @@ export class AgentClientService {
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        signal,
         body: JSON.stringify({
           poiName: poi.name,
           characterId: character.id,
