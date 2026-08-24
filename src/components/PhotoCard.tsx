@@ -36,24 +36,34 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
   const [dragStartX, setDragStartX] = useState(0);
   const [dragOffsetX, setDragOffsetX] = useState(0);
 
-  // Normalize image list
-  const imageList: POIImage[] = poi.images && poi.images.length > 0
-    ? poi.images
-    : [
+  // Normalize image list (only keep valid non-empty URLs)
+  const imageList: POIImage[] = React.useMemo(() => {
+    if (poi.images && poi.images.length > 0) {
+      const validImages = poi.images.filter((img) => Boolean(img && img.src && img.src.trim()));
+      if (validImages.length > 0) return validImages;
+    }
+    if (poi.imageUrl && poi.imageUrl.trim()) {
+      return [
         {
-          src: poi.imageUrl,
+          src: poi.imageUrl.trim(),
           alt: poi.imageTitle || poi.name,
           source: poi.imageSource
         }
       ];
+    }
+    return [];
+  }, [poi.images, poi.imageUrl, poi.imageTitle, poi.imageSource, poi.name]);
 
   const totalImages = imageList.length;
-  const currentImage = imageList[currentIndex] || imageList[0];
+  const currentImage = imageList[currentIndex] || imageList[0] || { src: '', alt: poi.name };
 
   // Index of current POI in the relevant POIs list
   const currentPOIIndex = relevantPOIs.findIndex((item) => item.poi.id === poi.id);
 
-  // Reset index when POI changes
+  // Track image sources to reset loading/error state when real images arrive
+  const imageKey = imageList.map((img) => img.src).join('|');
+
+  // Reset index & maps when POI or image sources change
   useEffect(() => {
     setCurrentIndex(0);
     setLoadedMap({});
@@ -61,7 +71,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
     setIsAutoPlay(true);
     setIsDragging(false);
     setDragOffsetX(0);
-  }, [poi.id]);
+  }, [poi.id, imageKey]);
 
   // Auto Slideshow Timer
   useEffect(() => {
@@ -208,33 +218,43 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
               transition: isDragging ? 'none' : 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
           >
-            {imageList.map((img, idx) => (
-              <div key={idx} className="slideshow-slide">
-                {!loadedMap[idx] && !errorMap[idx] && (
-                  <div className="image-skeleton">
-                    <ImageIcon className="skeleton-icon" size={32} />
-                    <span>공식 아카이브 사진 불러오는 중...</span>
-                  </div>
-                )}
-                <img
-                  src={
-                    errorMap[idx]
-                      ? 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=800&q=80'
-                      : img.src
-                  }
-                  alt={img.alt || poi.name}
-                  referrerPolicy="no-referrer"
-                  loading="lazy"
-                  draggable={false}
-                  className={`poi-image ${loadedMap[idx] ? 'loaded' : 'loading'}`}
-                  onLoad={() => setLoadedMap((prev) => ({ ...prev, [idx]: true }))}
-                  onError={() => {
-                    setErrorMap((prev) => ({ ...prev, [idx]: true }));
-                    setLoadedMap((prev) => ({ ...prev, [idx]: true }));
-                  }}
-                />
+            {imageList.length === 0 ? (
+              <div className="slideshow-slide">
+                <div className="image-skeleton">
+                  <ImageIcon className="skeleton-icon" size={32} />
+                  <span>공식 아카이브 사진 불러오는 중...</span>
+                </div>
               </div>
-            ))}
+            ) : (
+              imageList.map((img, idx) => (
+                <div key={`${img.src}-${idx}`} className="slideshow-slide">
+                  {!loadedMap[idx] && !errorMap[idx] && (
+                    <div className="image-skeleton">
+                      <ImageIcon className="skeleton-icon" size={32} />
+                      <span>공식 아카이브 사진 불러오는 중...</span>
+                    </div>
+                  )}
+                  <img
+                    key={img.src}
+                    src={
+                      errorMap[idx]
+                        ? 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=800&q=80'
+                        : img.src
+                    }
+                    alt={img.alt || poi.name}
+                    referrerPolicy="no-referrer"
+                    loading="lazy"
+                    draggable={false}
+                    className={`poi-image ${loadedMap[idx] ? 'loaded' : 'loading'}`}
+                    onLoad={() => setLoadedMap((prev) => ({ ...prev, [idx]: true }))}
+                    onError={() => {
+                      setErrorMap((prev) => ({ ...prev, [idx]: true }));
+                      setLoadedMap((prev) => ({ ...prev, [idx]: true }));
+                    }}
+                  />
+                </div>
+              ))
+            )}
           </div>
 
           {/* Gradient Overlay */}
