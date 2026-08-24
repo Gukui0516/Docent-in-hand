@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { POI } from '../types/docent';
-import { INITIAL_COMMUNITY_STORIES, UserCommunityStory } from '../data/communityStories';
+import { UserCommunityStory } from '../data/communityStories';
 import { CommunityArchiveModal } from './CommunityArchiveModal';
+import { CommunityStoryClient } from '../services/communityStoryClient';
 import { Heart, PlusCircle, BookHeart, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface UserArchiveSectionProps {
@@ -13,53 +14,81 @@ export const UserArchiveSection: React.FC<UserArchiveSectionProps> = ({ poi }) =
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [likedMap, setLikedMap] = useState<Record<string, boolean>>({});
   const [visibleCount, setVisibleCount] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Load community stories from localStorage + INITIAL_COMMUNITY_STORIES
+  // Load liked stories from localStorage
   useEffect(() => {
-    const savedCustomStories: UserCommunityStory[] = JSON.parse(
-      localStorage.getItem('docent_community_stories') || '[]'
-    );
+    try {
+      const savedLikes = JSON.parse(localStorage.getItem('docent_liked_story_ids') || '{}');
+      setLikedMap(savedLikes);
+    } catch {
+      setLikedMap({});
+    }
+  }, []);
 
-    const allStories = [...savedCustomStories, ...INITIAL_COMMUNITY_STORIES];
-    const poiStories = allStories.filter((story) => story.poiId === poi.id);
+  // Fetch all community stories from central server for this POI
+  useEffect(() => {
+    let isCancelled = false;
+    setIsLoading(true);
 
-    setStories(poiStories);
-    setVisibleCount(1);
+    CommunityStoryClient.fetchStoriesByPOI(poi.id).then((poiStories) => {
+      if (!isCancelled) {
+        setStories(poiStories);
+        setVisibleCount(1);
+        setIsLoading(false);
+      }
+    });
+
+    return () => {
+      isCancelled = true;
+    };
   }, [poi.id]);
 
   const handleAddStory = (newStory: UserCommunityStory) => {
-    const savedCustomStories: UserCommunityStory[] = JSON.parse(
-      localStorage.getItem('docent_community_stories') || '[]'
-    );
-
-    const updatedCustom = [newStory, ...savedCustomStories];
-    localStorage.setItem('docent_community_stories', JSON.stringify(updatedCustom));
-
-    setStories((prev) => [newStory, ...prev]);
+    setStories((prev) => {
+      const filtered = prev.filter((s) => s.id !== newStory.id);
+      return [newStory, ...filtered];
+    });
   };
 
-  // Toggle Like: add like (+1) or remove like (-1)
-  const handleLike = (storyId: string) => {
+  // Toggle Like: add like (+1) or remove like (-1) & sync with server
+  const handleLike = async (storyId: string) => {
     const isCurrentlyLiked = !!likedMap[storyId];
+    const willBeLiked = !isCurrentlyLiked;
 
-    setLikedMap((prev) => ({
-      ...prev,
-      [storyId]: !isCurrentlyLiked
-    }));
+    const newLikedMap = {
+      ...likedMap,
+      [storyId]: willBeLiked
+    };
+    setLikedMap(newLikedMap);
+    try {
+      localStorage.setItem('docent_liked_story_ids', JSON.stringify(newLikedMap));
+    } catch {
+      // ignore
+    }
 
+    // Optimistic UI update
     setStories((prev) =>
       prev.map((item) => {
         if (item.id === storyId) {
-          const newLikes = isCurrentlyLiked ? Math.max(0, item.likes - 1) : item.likes + 1;
+          const newLikes = willBeLiked ? item.likes + 1 : Math.max(0, item.likes - 1);
           return { ...item, likes: newLikes };
         }
         return item;
       })
     );
+
+    // Sync to backend server
+    const serverLikes = await CommunityStoryClient.toggleLike(storyId, willBeLiked);
+    if (serverLikes !== null) {
+      setStories((prev) =>
+        prev.map((item) => (item.id === storyId ? { ...item, likes: serverLikes } : item))
+      );
+    }
   };
 
   // Sort stories strictly by likes descending (most liked story first)
-  const sortedStories = [...stories].sort((a, b) => b.likes - a.likes);
+  const sortedStories = [...stories].sort((a, b) => b.likes - a.likes || b.createdAt.localeCompare(a.createdAt));
   const displayedStories = sortedStories.slice(0, visibleCount);
 
   const hasMore = visibleCount < sortedStories.length;
@@ -96,6 +125,12 @@ export const UserArchiveSection: React.FC<UserArchiveSectionProps> = ({ poi }) =
             <span>기록하기</span>
           </button>
         </div>
+
+        {isLoading && sortedStories.length === 0 && (
+          <p className="compact-stories-loading" style={{ fontSize: '12px', color: '#777', padding: '8px 0' }}>
+            이웃들의 이야기를 불러오는 중…
+          </p>
+        )}
 
         {/* Stories List (Sorted by Most Liked, Expanded 3 at a time) */}
         {sortedStories.length > 0 && (

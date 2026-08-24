@@ -4,6 +4,7 @@ import { X, Send, MessageSquareHeart, RefreshCw, Camera } from 'lucide-react';
 import { UserCommunityStory } from '../data/communityStories';
 import { POI } from '../types/docent';
 import { getRandomJejuNickname } from '../services/jejuDialectService';
+import { CommunityStoryClient, downscaleImage } from '../services/communityStoryClient';
 
 interface CommunityArchiveModalProps {
   isOpen: boolean;
@@ -21,6 +22,7 @@ export const CommunityArchiveModal: React.FC<CommunityArchiveModalProps> = ({
   const [generatedNickname, setGeneratedNickname] = useState('');
   const [content, setContent] = useState('');
   const [attachedImage, setAttachedImage] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Automatically generate a new Jeju Dialect random nickname when modal opens or POI changes
   useEffect(() => {
@@ -46,20 +48,21 @@ export const CommunityArchiveModal: React.FC<CommunityArchiveModalProps> = ({
       return;
     }
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      if (typeof reader.result === 'string') {
-        setAttachedImage(reader.result);
-      }
-    };
-    reader.readAsDataURL(file);
+    // 원본을 그대로 base64 로 실으면 서버 본문 한도와 Firestore 문서 한도를 넘긴다.
+    // 표시 크기에 맞춰 긴 변 1280px 로 줄인 뒤 미리보기로 쓴다.
+    downscaleImage(file)
+      .then(setAttachedImage)
+      .catch((err) => {
+        console.error('사진 처리 실패:', err);
+        alert('사진을 처리하지 못했습니다. 다른 이미지를 선택해 주세요.');
+      });
   };
 
   const handleRemoveImage = () => {
     setAttachedImage(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!content.trim()) {
@@ -67,22 +70,36 @@ export const CommunityArchiveModal: React.FC<CommunityArchiveModalProps> = ({
       return;
     }
 
-    const newStory: UserCommunityStory = {
-      id: `user-story-${Date.now()}`,
-      poiId: poi.id,
-      authorName: generatedNickname || '다정한 바당',
-      authorType: '우리 동네 주민',
-      category: '옛날 이야기/전설',
-      content: content.trim(),
-      imageUrl: attachedImage || undefined,
-      createdAt: new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit' }),
-      likes: 0
-    };
+    setIsSubmitting(true);
+    try {
+      // 사진 바이트는 GCS 로, 문서에는 /media/... 경로만 넣는다.
+      let uploadedImageUrl: string | undefined;
+      if (attachedImage) {
+        uploadedImageUrl = (await CommunityStoryClient.uploadPhoto(attachedImage)) ?? undefined;
+        if (!uploadedImageUrl) {
+          alert('사진 업로드에 실패해 글만 등록합니다.');
+        }
+      }
 
-    onSubmitStory(newStory);
-    setContent('');
-    setAttachedImage(null);
-    onClose();
+      const createdStory = await CommunityStoryClient.submitStory({
+        poiId: poi.id,
+        authorName: generatedNickname || '다정한 바당',
+        authorType: '우리 동네 주민',
+        category: '옛날 이야기/전설',
+        content: content.trim(),
+        imageUrl: uploadedImageUrl
+      });
+
+      onSubmitStory(createdStory);
+      setContent('');
+      setAttachedImage(null);
+      onClose();
+    } catch (err) {
+      console.error('스토리 등록 실패:', err);
+      alert('이야기 등록 중 오류가 발생했습니다.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const modalNode = (
@@ -167,9 +184,9 @@ export const CommunityArchiveModal: React.FC<CommunityArchiveModalProps> = ({
             <button type="button" className="cancel-btn" onClick={onClose}>
               취소
             </button>
-            <button type="submit" className="submit-story-btn">
+            <button type="submit" className="submit-story-btn" disabled={isSubmitting}>
               <Send size={14} />
-              등록하기
+              {isSubmitting ? '등록 중…' : '등록하기'}
             </button>
           </div>
         </form>

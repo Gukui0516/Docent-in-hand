@@ -64,3 +64,22 @@ export function openAssetStream(bucket: string, name: string) {
     stream: file.createReadStream({ decompress: false })
   };
 }
+
+/**
+ * 방명록 사진처럼 사용자가 올린 바이트를 비공개 버킷에 저장한다.
+ * 버킷이 공개가 아니므로 브라우저는 /media 프록시로만 다시 읽을 수 있다.
+ */
+export async function uploadAsset(
+  bucket: string,
+  name: string,
+  body: Buffer,
+  contentType: string
+): Promise<void> {
+  await client()
+    .bucket(bucket)
+    .file(name)
+    .save(body, {
+      contentType,
+      metadata: { cacheControl: 'public, max-age=31536000, immutable' }
+    });
+}
