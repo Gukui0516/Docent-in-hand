@@ -3,14 +3,8 @@ import { POISummary } from '../types/docent';
 import { calculateDistanceMeters, formatDistance } from '../utils/geo';
 import { kakaoMapService } from '../services/kakaoMapService';
 import {
-  MapPin,
-  Navigation,
   Crosshair,
   Layers,
-  Sparkles,
-  Key,
-  CheckCircle,
-  ExternalLink,
   Plus,
   Minus
 } from 'lucide-react';
@@ -19,10 +13,41 @@ interface KakaoPOIMapProps {
   userLocation: { lat: number; lng: number };
   pois: POISummary[];
   selectedCategory: string; // 'all' or category name
-  selectedPOIId?: string;
-  onSelectPOI: (poi: POISummary, distMeters: number) => void;
+  highlightedPOIId?: string;
+  onHighlightPOI: (poiId: string) => void;
   searchQuery?: string;
 }
+
+interface MapBoundsSnapshot {
+  south: number;
+  west: number;
+  north: number;
+  east: number;
+}
+
+interface AreaCluster {
+  label: string;
+  latitude: number;
+  longitude: number;
+  count: number;
+}
+
+const getAdministrativeAreaLabel = (region: string): string => {
+  const normalized = region
+    .replace(/\|/g, ' ')
+    .replace(/([가-힣]+)\s+([0-9]+동)/g, '$1$2');
+  const localityMatches = normalized.match(/[가-힣0-9]+(?:동|읍|면|리)/g);
+  if (localityMatches?.length) return localityMatches[localityMatches.length - 1];
+
+  const cityMatch = normalized.match(/[가-힣]+시/);
+  return cityMatch?.[0] || '제주 지역';
+};
+
+const getCityLabel = (region: string): string => {
+  if (region.includes('서귀포시')) return '서귀포시';
+  if (region.includes('제주시')) return '제주시';
+  return getAdministrativeAreaLabel(region);
+};
 
 const CATEGORY_EMOJIS: Record<string, string> = {
   관광지: '🏞️',
@@ -34,47 +59,29 @@ const CATEGORY_EMOJIS: Record<string, string> = {
   교육: '📚'
 };
 
-const CATEGORY_COLORS: Record<string, string> = {
-  관광지: '#00897B',
-  문화유산: '#D84315',
-  설화: '#6A1B9A',
-  인물: '#1565C0',
-  음식: '#E65100',
-  축제: '#C2185B',
-  교육: '#2E7D32'
-};
-
 export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
   userLocation,
   pois,
   selectedCategory,
-  selectedPOIId,
-  onSelectPOI,
+  highlightedPOIId,
+  onHighlightPOI,
   searchQuery = ''
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
   const markersRef = useRef<any[]>([]);
-  const overlaysRef = useRef<any[]>([]);
-  const userCircleRef = useRef<any>(null);
   const userMarkerRef = useRef<any>(null);
 
   const [mapLoaded, setMapLoaded] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
-  const [hasKey, setHasKey] = useState<boolean>(kakaoMapService.hasAppKey());
-  const [keyInput, setKeyInput] = useState<string>(kakaoMapService.getAppKey());
-  const [isKeySaving, setIsKeySaving] = useState(false);
-  const [showKeyForm, setShowKeyForm] = useState(false);
+  const [mapBounds, setMapBounds] = useState<MapBoundsSnapshot | null>(null);
+  const [mapLevel, setMapLevel] = useState(5);
 
-  const [mapRadiusMeters, setMapRadiusMeters] = useState<number>(1000); // 1km default
-  const [activePOIPreview, setActivePOIPreview] = useState<{
-    poi: POISummary;
-    distMeters: number;
-  } | null>(null);
   const [mapTypeId, setMapTypeId] = useState<'ROADMAP' | 'HYBRID'>('ROADMAP');
 
-  // Filter POIs strictly within radius and matching category & search
-  const nearbyPOIs = useMemo(() => {
+  // Apply semantic filters first. Geographic visibility is determined by the
+  // live Kakao map viewport below, not by a fixed radius.
+  const matchingPOIs = useMemo(() => {
     const normalizedQuery = searchQuery.trim().toLowerCase();
 
     return pois
@@ -87,16 +94,11 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
         );
         return { poi, distMeters };
       })
-      .filter(({ poi, distMeters }) => {
-        // 1) Radius filter
-        if (distMeters > mapRadiusMeters) return false;
-
-        // 2) Category filter
+      .filter(({ poi }) => {
         if (selectedCategory !== 'all' && poi.category !== selectedCategory) {
           return false;
         }
 
-        // 3) Search query filter
         if (normalizedQuery) {
           const matchName = poi.name.toLowerCase().includes(normalizedQuery);
           const matchRegion = poi.region.toLowerCase().includes(normalizedQuery);
@@ -107,20 +109,102 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
         return true;
       })
       .sort((a, b) => a.distMeters - b.distMeters);
-  }, [pois, userLocation, mapRadiusMeters, selectedCategory, searchQuery]);
+  }, [pois, userLocation, selectedCategory, searchQuery]);
+
+  const visiblePOIs = useMemo(() => {
+    if (!mapBounds) return [];
+
+    return matchingPOIs.filter(({ poi }) => (
+      poi.latitude >= mapBounds.south &&
+      poi.latitude <= mapBounds.north &&
+      poi.longitude >= mapBounds.west &&
+      poi.longitude <= mapBounds.east
+    ));
+  }, [mapBounds, matchingPOIs]);
+
+  const fallbackPOIs = matchingPOIs.slice(0, 8);
+  const fallbackMaxDistance = fallbackPOIs[fallbackPOIs.length - 1]?.distMeters || 1;
+  const shouldClusterByArea = mapLevel >= 7;
+
+  const areaClusters = useMemo<AreaCluster[]>(() => {
+    if (!shouldClusterByArea || !mapBounds) return [];
+
+    // At island-wide zoom, show one aggregate per city. At intermediate zoom,
+    // spatial cells keep broad city-only addresses from collapsing together.
+    const isCityLevel = mapLevel >= 10;
+    const columnCount = mapLevel >= 8 ? 4 : 5;
+    const rowCount = mapLevel >= 8 ? 3 : 4;
+    const longitudeStep = Math.max(
+      (mapBounds.east - mapBounds.west) / columnCount,
+      Number.EPSILON
+    );
+    const latitudeStep = Math.max(
+      (mapBounds.north - mapBounds.south) / rowCount,
+      Number.EPSILON
+    );
+
+    const grouped = new Map<string, {
+      latitudeSum: number;
+      longitudeSum: number;
+      count: number;
+      labelCounts: Map<string, number>;
+    }>();
+
+    visiblePOIs.forEach(({ poi }) => {
+      const label = isCityLevel
+        ? getCityLabel(poi.region)
+        : getAdministrativeAreaLabel(poi.region);
+      const column = Math.min(
+        columnCount - 1,
+        Math.max(0, Math.floor((poi.longitude - mapBounds.west) / longitudeStep))
+      );
+      const row = Math.min(
+        rowCount - 1,
+        Math.max(0, Math.floor((poi.latitude - mapBounds.south) / latitudeStep))
+      );
+      const cellKey = isCityLevel ? `city:${label}` : `${row}:${column}`;
+      const current = grouped.get(cellKey) || {
+        latitudeSum: 0,
+        longitudeSum: 0,
+        count: 0,
+        labelCounts: new Map<string, number>()
+      };
+      current.latitudeSum += poi.latitude;
+      current.longitudeSum += poi.longitude;
+      current.count += 1;
+      current.labelCounts.set(label, (current.labelCounts.get(label) || 0) + 1);
+      grouped.set(cellKey, current);
+    });
+
+    return Array.from(grouped.values()).map((group) => {
+      const labels = Array.from(group.labelCounts.entries());
+      const specificLabels = labels.filter(([label]) => !label.endsWith('시'));
+      const labelPool = isCityLevel
+        ? labels
+        : specificLabels.length ? specificLabels : labels;
+      const label = labelPool.sort((a, b) => b[1] - a[1])[0]?.[0] || '제주 지역';
+
+      return {
+        label,
+        latitude: group.latitudeSum / group.count,
+        longitude: group.longitudeSum / group.count,
+        count: group.count
+      };
+    });
+  }, [mapBounds, mapLevel, shouldClusterByArea, visiblePOIs]);
 
   // Load Kakao Maps SDK
-  const initKakaoSDK = useCallback(async (customKey?: string) => {
-    const key = customKey || kakaoMapService.getAppKey();
+  const initKakaoSDK = useCallback(async () => {
+    const key = kakaoMapService.getAppKey();
     if (!key) {
-      setHasKey(false);
+      setLoadError('missing-key');
+      setMapLoaded(false);
       return;
     }
 
     try {
       setLoadError(null);
       await kakaoMapService.loadSDK(key);
-      setHasKey(true);
       setMapLoaded(true);
     } catch (err: any) {
       console.warn('Kakao Maps SDK Load Error:', err);
@@ -133,18 +217,6 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
     initKakaoSDK();
   }, [initKakaoSDK]);
 
-  // Handle saving API key
-  const handleSaveKey = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!keyInput.trim()) return;
-
-    setIsKeySaving(true);
-    kakaoMapService.setAppKey(keyInput.trim());
-    await initKakaoSDK(keyInput.trim());
-    setIsKeySaving(false);
-    setShowKeyForm(false);
-  };
-
   // Initialize Map Instance
   useEffect(() => {
     if (!mapLoaded || !mapContainerRef.current || !window.kakao?.maps) return;
@@ -153,38 +225,67 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
       const container = mapContainerRef.current;
       const options = {
         center: new window.kakao.maps.LatLng(userLocation.lat, userLocation.lng),
-        level: 4 // Suitable zoom level for 1km radius
+        level: 5
       };
 
       const map = new window.kakao.maps.Map(container, options);
       mapInstanceRef.current = map;
-
-      // Handle map resize on container mount
-      setTimeout(() => {
-        if (mapInstanceRef.current) {
-          mapInstanceRef.current.relayout();
-          mapInstanceRef.current.setCenter(
-            new window.kakao.maps.LatLng(userLocation.lat, userLocation.lng)
-          );
-        }
-      }, 100);
     } catch (err) {
       console.error('Error instantiating Kakao Map:', err);
     }
   }, [mapLoaded]);
 
+  // Synchronize React state after Kakao finishes a pan or zoom. Zooming out
+  // expands these bounds, so more markers and list items become visible.
+  useEffect(() => {
+    const map = mapInstanceRef.current;
+    if (!map || !mapLoaded || !window.kakao?.maps) return;
+
+    const syncMapBounds = () => {
+      const bounds = map.getBounds();
+      const southWest = bounds.getSouthWest();
+      const northEast = bounds.getNorthEast();
+      const nextBounds: MapBoundsSnapshot = {
+        south: southWest.getLat(),
+        west: southWest.getLng(),
+        north: northEast.getLat(),
+        east: northEast.getLng()
+      };
+
+      setMapLevel(map.getLevel());
+
+      setMapBounds((previous) => {
+        if (
+          previous &&
+          previous.south === nextBounds.south &&
+          previous.west === nextBounds.west &&
+          previous.north === nextBounds.north &&
+          previous.east === nextBounds.east
+        ) {
+          return previous;
+        }
+        return nextBounds;
+      });
+    };
+
+    window.kakao.maps.event.addListener(map, 'idle', syncMapBounds);
+
+    const resizeTimer = window.setTimeout(() => {
+      map.relayout();
+      map.setCenter(new window.kakao.maps.LatLng(userLocation.lat, userLocation.lng));
+      syncMapBounds();
+    }, 100);
+
+    return () => {
+      window.clearTimeout(resizeTimer);
+      window.kakao.maps.event.removeListener(map, 'idle', syncMapBounds);
+    };
+  }, [mapLoaded, userLocation.lat, userLocation.lng]);
+
   // Clear existing markers & overlays
   const clearMapElements = useCallback(() => {
     markersRef.current.forEach((m) => m.setMap(null));
     markersRef.current = [];
-
-    overlaysRef.current.forEach((o) => o.setMap(null));
-    overlaysRef.current = [];
-
-    if (userCircleRef.current) {
-      userCircleRef.current.setMap(null);
-      userCircleRef.current = null;
-    }
 
     if (userMarkerRef.current) {
       userMarkerRef.current.setMap(null);
@@ -192,7 +293,7 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
     }
   }, []);
 
-  // Update User Marker, 1km Circle, and Nearby POI Markers
+  // Update the current location and POI markers visible in the map viewport.
   useEffect(() => {
     const map = mapInstanceRef.current;
     if (!map || !mapLoaded || !window.kakao?.maps) return;
@@ -201,79 +302,93 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
 
     const userLatLng = new window.kakao.maps.LatLng(userLocation.lat, userLocation.lng);
 
-    // 1. Draw 1km Radius Circle
-    const circle = new window.kakao.maps.Circle({
-      center: userLatLng,
-      radius: mapRadiusMeters,
-      strokeWeight: 2,
-      strokeColor: '#00897B',
-      strokeOpacity: 0.85,
-      strokeStyle: 'dashed',
-      fillColor: '#00897B',
-      fillOpacity: 0.09
-    });
-    circle.setMap(map);
-    userCircleRef.current = circle;
+    // Distinguish the current location from native POI pins with a compact
+    // red location dot, matching the familiar Kakao Map app convention.
+    const currentLocationDot = document.createElement('div');
+    currentLocationDot.className = 'kakao-current-location-dot';
+    currentLocationDot.setAttribute('role', 'img');
+    currentLocationDot.setAttribute('aria-label', '현재 위치');
+    currentLocationDot.innerHTML = '<span class="current-location-dot-core"></span>';
 
-    // 2. Draw User Location Marker (Custom Pulse Overlay)
-    const userMarkerContent = document.createElement('div');
-    userMarkerContent.className = 'kakao-user-location-marker';
-    userMarkerContent.innerHTML = `
-      <div class="user-pulse-ring"></div>
-      <div class="user-center-dot">
-        <span class="user-icon">📍</span>
-      </div>
-      <div class="user-label-pill">현재 위치</div>
-    `;
-
-    const userOverlay = new window.kakao.maps.CustomOverlay({
+    const userMarker = new window.kakao.maps.CustomOverlay({
       position: userLatLng,
-      content: userMarkerContent,
-      yAnchor: 1.1,
+      content: currentLocationDot,
+      xAnchor: 0.5,
+      yAnchor: 0.5,
       zIndex: 10
     });
-    userOverlay.setMap(map);
-    userMarkerRef.current = userOverlay;
+    userMarker.setMap(map);
+    userMarkerRef.current = userMarker;
 
-    // 3. Draw POI Markers within 1km
-    nearbyPOIs.forEach(({ poi, distMeters }) => {
-      const poiLatLng = new window.kakao.maps.LatLng(poi.latitude, poi.longitude);
-      const isSelected = poi.id === selectedPOIId;
-      const emoji = CATEGORY_EMOJIS[poi.category] || '📍';
-      const badgeColor = CATEGORY_COLORS[poi.category] || '#00897B';
+    if (shouldClusterByArea) {
+      areaClusters.forEach((cluster) => {
+        const clusterPosition = new window.kakao.maps.LatLng(
+          cluster.latitude,
+          cluster.longitude
+        );
+        const clusterElement = document.createElement('button');
+        clusterElement.type = 'button';
+        clusterElement.className = 'kakao-area-cluster';
+        clusterElement.title = `${cluster.label} 명소 ${cluster.count}개`;
+        clusterElement.setAttribute(
+          'aria-label',
+          `${cluster.label} 명소 ${cluster.count}개, 클릭하여 확대`
+        );
+        clusterElement.style.setProperty(
+          '--cluster-size',
+          `${Math.min(76, 58 + Math.sqrt(cluster.count) * 4)}px`
+        );
 
-      const markerDiv = document.createElement('div');
-      markerDiv.className = `kakao-poi-pin ${isSelected ? 'selected' : ''}`;
-      markerDiv.style.setProperty('--cat-color', badgeColor);
-      markerDiv.innerHTML = `
-        <div class="poi-pin-bubble" style="border-color: ${badgeColor};">
-          <span class="poi-emoji">${emoji}</span>
-          <span class="poi-pin-name">${poi.name}</span>
-        </div>
-        <div class="poi-pin-stem" style="background-color: ${badgeColor};"></div>
-      `;
+        const areaName = document.createElement('span');
+        areaName.className = 'cluster-area-name';
+        areaName.textContent = cluster.label;
+        const countLabel = document.createElement('strong');
+        countLabel.className = 'cluster-count';
+        countLabel.textContent = `${cluster.count}개`;
+        clusterElement.append(areaName, countLabel);
+        clusterElement.onclick = (event) => {
+          event.stopPropagation();
+          map.setCenter(clusterPosition);
+          map.setLevel(Math.max(5, map.getLevel() - 2), { animate: true });
+        };
 
-      markerDiv.onclick = (e) => {
-        e.stopPropagation();
-        setActivePOIPreview({ poi, distMeters });
-      };
-
-      const customOverlay = new window.kakao.maps.CustomOverlay({
-        position: poiLatLng,
-        content: markerDiv,
-        yAnchor: 1.0,
-        zIndex: isSelected ? 8 : 4
+        const clusterOverlay = new window.kakao.maps.CustomOverlay({
+          position: clusterPosition,
+          content: clusterElement,
+          xAnchor: 0.5,
+          yAnchor: 0.5,
+          zIndex: 6
+        });
+        clusterOverlay.setMap(map);
+        markersRef.current.push(clusterOverlay);
       });
+    } else {
+      // At close zoom levels, retain precise native markers for each POI.
+      visiblePOIs.forEach(({ poi }) => {
+        const poiLatLng = new window.kakao.maps.LatLng(poi.latitude, poi.longitude);
+        const isSelected = poi.id === highlightedPOIId;
 
-      customOverlay.setMap(map);
-      overlaysRef.current.push(customOverlay);
-    });
+        const marker = new window.kakao.maps.Marker({
+          position: poiLatLng,
+          title: poi.name,
+          clickable: true
+        });
+        marker.setMap(map);
+        marker.setZIndex(isSelected ? 8 : 4);
+        window.kakao.maps.event.addListener(marker, 'click', () => {
+          onHighlightPOI(poi.id);
+        });
+        markersRef.current.push(marker);
+      });
+    }
   }, [
+    areaClusters,
     mapLoaded,
     userLocation,
-    nearbyPOIs,
-    selectedPOIId,
-    mapRadiusMeters,
+    visiblePOIs,
+    highlightedPOIId,
+    onHighlightPOI,
+    shouldClusterByArea,
     clearMapElements
   ]);
 
@@ -315,119 +430,6 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
 
   return (
     <div className="kakao-poi-map-wrapper">
-      {/* Map Header Status & Control Bar */}
-      <div className="kakao-map-top-bar">
-        <div className="map-radius-badge">
-          <Navigation size={13} className="radius-icon pulse" />
-          <span className="radius-text">
-            반경 <strong>{formatDistance(mapRadiusMeters)}</strong> 내
-          </span>
-          <span className="nearby-count-pill">
-            <strong>{nearbyPOIs.length}</strong>개{' '}
-            {selectedCategory !== 'all' ? selectedCategory : '명소'}
-          </span>
-        </div>
-
-        <div className="map-radius-toggle-group">
-          <button
-            type="button"
-            className={`radius-tab-btn ${mapRadiusMeters === 1000 ? 'active' : ''}`}
-            onClick={() => setMapRadiusMeters(1000)}
-            title="반경 1km 탐색"
-          >
-            1km
-          </button>
-          <button
-            type="button"
-            className={`radius-tab-btn ${mapRadiusMeters === 2000 ? 'active' : ''}`}
-            onClick={() => setMapRadiusMeters(2000)}
-            title="반경 2km 탐색"
-          >
-            2km
-          </button>
-          <button
-            type="button"
-            className={`radius-tab-btn ${mapRadiusMeters === 3000 ? 'active' : ''}`}
-            onClick={() => setMapRadiusMeters(3000)}
-            title="반경 3km 탐색"
-          >
-            3km
-          </button>
-          <button
-            type="button"
-            className="btn-map-settings"
-            onClick={() => setShowKeyForm((prev) => !prev)}
-            title="카카오 지도 API 키 설정"
-          >
-            <Key size={13} />
-          </button>
-        </div>
-      </div>
-
-      {/* API Key Registration Card (if no key or toggled) */}
-      {(!hasKey || showKeyForm || loadError) && (
-        <div className="kakao-key-setup-card">
-          <div className="key-card-header">
-            <div className="key-title">
-              <Key size={15} />
-              <span>카카오 지도 Javascript API 키 설정</span>
-            </div>
-            {hasKey && (
-              <button
-                type="button"
-                className="btn-text-close"
-                onClick={() => setShowKeyForm(false)}
-              >
-                닫기
-              </button>
-            )}
-          </div>
-
-          <p className="key-desc">
-            현재 위치 기준 1km 내 명소와 지도를 실시간으로 표시하기 위해{' '}
-            <strong>카카오 지도 Javascript 키</strong>가 필요합니다.
-          </p>
-
-          <form onSubmit={handleSaveKey} className="key-input-form">
-            <input
-              type="text"
-              className="kakao-key-input"
-              placeholder="카카오 개발자 콘솔의 JavaScript 키 입력"
-              value={keyInput}
-              onChange={(e) => setKeyInput(e.target.value)}
-              required
-            />
-            <button type="submit" className="btn-save-kakao-key" disabled={isKeySaving}>
-              {isKeySaving ? (
-                '연결 중...'
-              ) : (
-                <>
-                  <CheckCircle size={14} />
-                  <span>적용</span>
-                </>
-              )}
-            </button>
-          </form>
-
-          <div className="key-guide-links">
-            <a
-              href="https://developers.kakao.com/console/app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="guide-link"
-            >
-              <span>Kakao Developers 키 발급 바로가기</span>
-              <ExternalLink size={11} />
-            </a>
-            <span className="guide-note">
-              (웹 플랫폼 사이트 도메인에 <code>http://localhost:5173</code> 등록 필요)
-            </span>
-          </div>
-
-          {loadError && <div className="kakao-error-msg">⚠️ {loadError}</div>}
-        </div>
-      )}
-
       {/* Kakao Map Container */}
       <div className="kakao-map-container-frame">
         <div
@@ -448,10 +450,9 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
                 <span>📍 내 위치</span>
               </div>
 
-              {/* Visualized POIs inside 1km radius on radar fallback */}
-              {nearbyPOIs.slice(0, 8).map(({ poi, distMeters }, idx) => {
-                const angle = (idx * (360 / Math.min(nearbyPOIs.length, 8))) * (Math.PI / 180);
-                const distanceRatio = Math.min(distMeters / mapRadiusMeters, 0.9);
+              {fallbackPOIs.map(({ poi, distMeters }, idx) => {
+                const angle = (idx * (360 / Math.max(fallbackPOIs.length, 1))) * (Math.PI / 180);
+                const distanceRatio = Math.min(distMeters / fallbackMaxDistance, 0.9);
                 const left = 50 + Math.cos(angle) * (distanceRatio * 42);
                 const top = 50 + Math.sin(angle) * (distanceRatio * 42);
 
@@ -461,7 +462,7 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
                     type="button"
                     className="radar-poi-dot"
                     style={{ left: `${left}%`, top: `${top}%` }}
-                    onClick={() => onSelectPOI(poi, distMeters)}
+                    onClick={() => onHighlightPOI(poi.id)}
                     title={`${poi.name} (${formatDistance(distMeters)})`}
                   >
                     <span className="dot-emoji">{CATEGORY_EMOJIS[poi.category] || '📍'}</span>
@@ -472,9 +473,9 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
             </div>
 
             <div className="radar-caption">
-              {hasKey
-                ? '카카오 지도를 로드하고 있습니다...'
-                : '카카오 지도 API 키를 등록하시면 실시간 고화질 지도와 핀이 표시됩니다.'}
+              {loadError
+                ? '카카오 지도를 불러오지 못했습니다.'
+                : '카카오 지도를 불러오고 있습니다...'}
             </div>
           </div>
         )}
@@ -525,53 +526,6 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
           </div>
         )}
 
-        {/* POI Active Info Popup Modal over Map */}
-        {activePOIPreview && (
-          <div className="kakao-poi-preview-card">
-            <div className="preview-header">
-              <span
-                className="preview-cat-badge"
-                style={{
-                  backgroundColor: `${CATEGORY_COLORS[activePOIPreview.poi.category] || '#00897B'}18`,
-                  color: CATEGORY_COLORS[activePOIPreview.poi.category] || '#00897B'
-                }}
-              >
-                {CATEGORY_EMOJIS[activePOIPreview.poi.category] || '📍'}{' '}
-                {activePOIPreview.poi.category}
-              </span>
-              <span className="preview-dist">
-                <Navigation size={12} />
-                {formatDistance(activePOIPreview.distMeters)}
-              </span>
-              <button
-                type="button"
-                className="preview-close-btn"
-                onClick={() => setActivePOIPreview(null)}
-              >
-                ✕
-              </button>
-            </div>
-
-            <div className="preview-body">
-              <h4 className="preview-title">{activePOIPreview.poi.name}</h4>
-              <p className="preview-region">
-                <MapPin size={12} /> {activePOIPreview.poi.region}
-              </p>
-            </div>
-
-            <button
-              type="button"
-              className="btn-select-docent-target"
-              onClick={() => {
-                onSelectPOI(activePOIPreview.poi, activePOIPreview.distMeters);
-                setActivePOIPreview(null);
-              }}
-            >
-              <Sparkles size={15} />
-              <span>이 명소 이야기 듣기</span>
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );

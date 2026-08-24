@@ -300,12 +300,44 @@ def is_valid_poi(it, title, meta):
         if not any(k in title for k in ['민속마을', '전통마을', '체험마을', '생태마을', '예술마을', '문화마을']):
             return False
 
-    clean_title = title.replace(' ', '')
-    simple_suffixes = ['동', '읍', '면']
-    if any(clean_title.endswith(s) for s in simple_suffixes) or any(clean_title.endswith(f'{i}동') for i in range(1, 10)):
-        if not any(k in title for k in ['오름', '장오리', '머리', '바위', '폭포', '동굴', '포구', '해변', '사찰', '당', '낭', '물', '왓', '빌레', '궤', '터', '숲', '길', '마을', '산', '봉', '암', '굴', '목', '코지', '절리', '곶자왈']):
-            if len(clean_title) <= 6:
-                return False
+    # 7. Filter out roads, highways, intersections, and transit infrastructure (preserve scenic trails/walking paths)
+    scenic_trail_keywords = ['올레', '올레길', '둘레길', '탐방로', '산책로', '숲길', '지질트레일', '트레킹', '등산로', '코스', '성곽', '진성', '옛터', '사적', '유적', '바람길', '순례길', '마실길', '생태길']
+    is_scenic_trail = any(k in title for k in scenic_trail_keywords)
+
+    if not is_scenic_trail:
+        # (1) Road and highway terms
+        road_terms = [
+            '도로', '국도', '지방도', '군도', '면도', '리도', '고속도로', '순환도로', '우회도로',
+            '일주도로', '중산간도로', '도시계획도로', '농어촌도로', '임도', '도로망', '교통망'
+        ]
+        if any(w in title for w in road_terms):
+            return False
+
+        # Specific Jeju major vehicle express roads
+        jeju_express_roads = [
+            '번영로', '평화로', '남조로', '산록서로', '산록동로', '산록북로', '산록남로', '애조로', '한창로',
+            '서성로', '제1우회도로', '제2우회도로', '중산간서로', '중산간동로', '일주서로', '일주동로',
+            '516도로', '1100도로', '공항로', '연삼로', '연북로', '중앙로', '동문로', '서문로', '관덕로', '탑동로'
+        ]
+        if any(r in title for r in jeju_express_roads):
+            return False
+
+        # Numbered route patterns: e.g. "1131호", "1132호", "11번 국도", "1136호선"
+        if re.search(r'\d+호\s*(선|지방도|국도|도로)?', title) or re.search(r'\d+번\s*(국도|지방도|도로)', title):
+            return False
+
+        # (2) Traffic & transit facilities (intersections, bus stops, tunnels, parking)
+        traffic_facility_terms = [
+            '교차로', '로터리', '사거리', '오거리', '삼거리', '나들목', '인터체인지', '분기점',
+            '지하차도', '고가차도', '정류소', '정류장', '환승센터', '버스정류장', '공용주차장', '주차장',
+            '주차타워', '차고지', '버스 노선', '시내버스', '시외버스', '급행버스', '지선버스', '간선버스'
+        ]
+        if any(w in title for w in traffic_facility_terms):
+            return False
+
+        # If metadata explicitly classifies under transport/road
+        if '교통/도로' in mtype or '지명/도로' in mtype or '교통/교통 시설' in mtype:
+            return False
 
     return True
 

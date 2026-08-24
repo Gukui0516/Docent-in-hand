@@ -100,7 +100,7 @@ export class KakaoMapService {
       const script = document.createElement('script');
       script.id = 'kakao-maps-sdk';
       script.type = 'text/javascript';
-      script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${encodeURIComponent(keyToUse)}&autoload=false&libraries=services,clusterer`;
+      script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${keyToUse}&autoload=false`;
       script.async = true;
 
       script.onload = () => {
@@ -115,9 +115,13 @@ export class KakaoMapService {
         }
       };
 
-      script.onerror = (err) => {
+      script.onerror = () => {
         this.loadPromise = null;
-        reject(new Error(`카카오 지도 스크립트 로드 실패: ${err}`));
+        reject(
+          new Error(
+            '카카오 지도 스크립트 로드에 실패했습니다. (1) Kakao Developers 콘솔의 [플랫폼] > [Web]에 "http://localhost:5173" 도메인이 등록되어 있는지, (2) REST API 키가 아닌 "JavaScript 키"를 입력하셨는지 확인해 주세요.'
+          )
+        );
       };
 
       document.head.appendChild(script);
