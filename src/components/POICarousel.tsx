@@ -3,6 +3,7 @@ import { POICard, POISummary } from '../types/docent';
 import { loadPOICards } from '../services/poiDataService';
 import { calculateDistanceMeters, formatDistance } from '../utils/geo';
 import { X, MapPin, Search, Navigation } from 'lucide-react';
+import { KakaoPOIMap } from './KakaoPOIMap';
 
 interface POICarouselProps {
   isOpen: boolean;
@@ -176,6 +177,19 @@ export const POICarousel: React.FC<POICarouselProps> = ({
             <X size={20} />
           </button>
         </div>
+
+        {/* Kakao Map - GPS 1km Radius & Category-filtered Exploration */}
+        <KakaoPOIMap
+          userLocation={userLocation}
+          pois={pois}
+          selectedCategory={filterCategory}
+          selectedPOIId={selectedPOIId}
+          onSelectPOI={(poi, dist) => {
+            onSelectPOI(poi, dist);
+            onClose();
+          }}
+          searchQuery={searchQuery}
+        />
 
         {/* Category Tabs */}
         <div className="category-tabs">

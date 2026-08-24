@@ -3021,8 +3021,8 @@ body::before {
 .poi-explorer-sheet {
   width: 100%;
   max-width: none;
-  height: min(78svh, 760px);
-  max-height: min(78svh, 760px);
+  height: min(86svh, 850px);
+  max-height: min(86svh, 850px);
   margin: 0;
   padding: 18px 16px calc(72px + env(safe-area-inset-bottom));
   border: 0;
@@ -3035,6 +3035,7 @@ body::before {
 
 .poi-explorer-sheet .modal-header,
 .poi-explorer-sheet .modal-search-bar,
+.poi-explorer-sheet .kakao-poi-map-wrapper,
 .poi-explorer-sheet .category-tabs {
   flex-shrink: 0;
 }
@@ -4365,3 +4366,654 @@ body::before {
   color: #64748B;
   line-height: 1.5;
 }
+
+/* ==========================================================================
+   Kakao Maps - GPS 1km Radius & Category-Filtered POI Exploration
+   ========================================================================== */
+.kakao-poi-map-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0 12px 0;
+  flex-shrink: 0;
+}
+
+.kakao-map-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.map-radius-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #1b4332;
+  font-weight: 500;
+}
+
+.map-radius-badge .radius-icon {
+  color: #00897b;
+}
+
+.map-radius-badge .radius-icon.pulse {
+  animation: gpsPulse 2s infinite ease-in-out;
+}
+
+.nearby-count-pill {
+  background: rgba(0, 137, 123, 0.12);
+  color: #00695c;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid rgba(0, 137, 123, 0.2);
+}
+
+.map-radius-toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.radius-tab-btn {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-color, #e0e0e0);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary, #666);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.radius-tab-btn:hover {
+  background: #f5f5f5;
+  color: #111;
+}
+
+.radius-tab-btn.active {
+  background: #00695c;
+  color: #ffffff;
+  border-color: #00695c;
+  box-shadow: 0 2px 6px rgba(0, 105, 92, 0.25);
+}
+
+.btn-map-settings {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 6px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary, #888);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-map-settings:hover {
+  color: #e65100;
+  border-color: #e65100;
+}
+
+/* Kakao Key Setup Card */
+.kakao-key-setup-card {
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  box-shadow: 0 4px 12px rgba(255, 179, 0, 0.12);
+  animation: fadeIn 0.3s ease;
+}
+
+.key-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.key-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: #e65100;
+}
+
+.btn-text-close {
+  background: none;
+  border: none;
+  font-size: 11px;
+  color: #888;
+  cursor: pointer;
+}
+
+.key-desc {
+  margin: 0;
+  color: #5d4037;
+  line-height: 1.4;
+  font-size: 11px;
+}
+
+.key-input-form {
+  display: flex;
+  gap: 6px;
+}
+
+.kakao-key-input {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #ffca28;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  outline: none;
+}
+
+.kakao-key-input:focus {
+  border-color: #e65100;
+  box-shadow: 0 0 0 2px rgba(230, 81, 0, 0.15);
+}
+
+.btn-save-kakao-key {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #e65100;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-save-kakao-key:disabled {
+  opacity: 0.6;
+}
+
+.key-guide-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 10.5px;
+  color: #6d4c41;
+}
+
+.guide-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #d84315;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.guide-note {
+  color: #8d6e63;
+}
+
+.guide-note code {
+  background: #ffe0b2;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.kakao-error-msg {
+  color: #d32f2f;
+  font-size: 11px;
+}
+
+/* Map Container Frame */
+.kakao-map-container-frame {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 105, 92, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  background: #e8f5e9;
+}
+
+.kakao-actual-map {
+  width: 100%;
+  height: 100%;
+}
+
+.kakao-actual-map.hidden {
+  display: none;
+}
+
+/* User Location Pin with Pulse Ring */
+.kakao-user-location-marker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.user-pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 38px;
+  height: 38px;
+  margin-top: -19px;
+  margin-left: -19px;
+  border-radius: 50%;
+  background: rgba(0, 137, 123, 0.25);
+  border: 2px solid rgba(0, 137, 123, 0.6);
+  animation: pulseRing 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.user-center-dot {
+  position: relative;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #00695c;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+.user-icon {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.user-label-pill {
+  position: relative;
+  z-index: 2;
+  margin-top: 3px;
+  background: rgba(0, 77, 64, 0.92);
+  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  letter-spacing: -0.2px;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.4);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* POI Pin on Map */
+.kakao-poi-pin {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%, -100%);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.28));
+}
+
+.kakao-poi-pin:hover {
+  transform: translate(-50%, -108%) scale(1.08);
+  z-index: 100 !important;
+}
+
+.poi-pin-bubble {
+  background: #ffffff;
+  padding: 3px 7px 3px 5px;
+  border-radius: 999px;
+  border: 1.5px solid var(--cat-color, #00897b);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+}
+
+.poi-emoji {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.poi-pin-name {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #1a1a1a;
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.poi-pin-stem {
+  width: 2px;
+  height: 6px;
+  background-color: var(--cat-color, #00897b);
+  border-radius: 0 0 1px 1px;
+}
+
+.kakao-poi-pin.selected .poi-pin-bubble {
+  border-width: 2px;
+  border-color: #e65100;
+  background: #fff8e1;
+}
+
+.kakao-poi-pin.selected .poi-pin-name {
+  color: #d84315;
+}
+
+/* Floating Map Controls */
+.kakao-map-floating-controls {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 20;
+}
+
+.map-ctrl-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333333;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.map-ctrl-btn:hover {
+  background: #ffffff;
+  color: #00695c;
+  transform: translateY(-1px);
+}
+
+.map-ctrl-btn.active {
+  background: #00695c;
+  color: #ffffff;
+  border-color: #004d40;
+}
+
+.zoom-group {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.zoom-group .zoom-btn {
+  width: 32px;
+  height: 28px;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.zoom-group .zoom-btn:first-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Active POI Preview Bottom Card */
+.kakao-poi-preview-card {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 10px 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(0, 105, 92, 0.2);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: slideUpPreview 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUpPreview {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.preview-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.preview-cat-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+
+.preview-dist {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  color: #00695c;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.preview-close-btn {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #999;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+}
+
+.preview-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.preview-title {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.preview-region {
+  margin: 0;
+  font-size: 11px;
+  color: #666666;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.btn-select-docent-target {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #00897b 0%, #00695c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 105, 92, 0.25);
+  transition: transform 0.15s ease;
+}
+
+.btn-select-docent-target:hover {
+  transform: translateY(-1px);
+}
+
+/* Radar Fallback Animation */
+.kakao-map-radar-fallback {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #1b3831 0%, #0c1e19 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.radar-grid {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.radar-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 230, 118, 0.35);
+  transform: translate(-50%, -50%);
+}
+
+.radar-circle.circle-1 {
+  width: 50px;
+  height: 50px;
+}
+
+.radar-circle.circle-2 {
+  width: 100px;
+  height: 100px;
+}
+
+.radar-circle.circle-3 {
+  width: 150px;
+  height: 150px;
+  border-style: solid;
+  border-color: rgba(0, 230, 118, 0.5);
+}
+
+.radar-sweep {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75px;
+  height: 75px;
+  transform-origin: top left;
+  background: conic-gradient(from 0deg, rgba(0, 230, 118, 0.35) 0deg, transparent 60deg);
+  animation: radarScan 3s linear infinite;
+}
+
+@keyframes radarScan {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.radar-center-user {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #00e676;
+  color: #0b1f19;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.8);
+  white-space: nowrap;
+}
+
+.radar-poi-dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #00e676;
+  border-radius: 999px;
+  padding: 1px 5px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 230, 118, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.radar-poi-dot:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+  background: #ffffff;
+}
+
+.dot-emoji {
+  font-size: 9px;
+}
+
+.dot-name {
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #0a1f18;
+  max-width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.radar-caption {
+  position: absolute;
+  bottom: 8px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 0 16px;
+}
+
