@@ -483,6 +483,17 @@ function writeBackendCorpus(allItems) {
   fs.mkdirSync(path.dirname(SRC_CORPUS), { recursive: true });
   fs.writeFileSync(SRC_CORPUS, JSON.stringify(corpusDocs, null, 2), 'utf8');
   console.log(`Saved ${SRC_CORPUS} (${corpusDocs.length} corpus items)`);
+
+  // Sync verified oral literature dataset
+  const verifiedOralLitSrc = path.join(DATA_DIR, 'verified_jeju_oral_literature.json');
+  if (fs.existsSync(verifiedOralLitSrc)) {
+    const verifiedData = fs.readFileSync(verifiedOralLitSrc, 'utf8');
+    const srcOralLit = path.join(ROOT_DIR, 'src/data/verified_jeju_oral_literature.json');
+    const serverOralLit = path.join(ROOT_DIR, 'server/src/data/verified_jeju_oral_literature.json');
+    fs.writeFileSync(srcOralLit, verifiedData, 'utf8');
+    fs.writeFileSync(serverOralLit, verifiedData, 'utf8');
+    console.log(`Saved verified oral literature dataset to frontend and backend data dirs.`);
+  }
 }
 
 function main() {
