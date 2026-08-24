@@ -2917,8 +2917,8 @@ body::before {
   flex: 0 0 auto;
   height: calc(62px + env(safe-area-inset-bottom));
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  padding: 4px 12cqw calc(4px + env(safe-area-inset-bottom));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 4px 8px calc(4px + env(safe-area-inset-bottom));
   border-top: 1px solid rgba(23, 40, 36, 0.09);
   border-radius: 0;
   background: rgba(255, 253, 248, 0.95);
@@ -2934,13 +2934,24 @@ body::before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1px;
+  gap: 2px;
   padding: 0;
   color: #85908c;
   border: 0;
   background: transparent;
   font-size: 10px;
   font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-bottom-nav-item:hover:not(:disabled) {
+  color: var(--jeju-forest);
+}
+
+.mobile-bottom-nav-item:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
 .mobile-bottom-nav-item.active { color: var(--jeju-forest); }
@@ -3128,7 +3139,7 @@ body::before {
     order: -1;
     height: 72px;
     display: grid;
-    grid-template-columns: repeat(2, 148px);
+    grid-template-columns: repeat(4, auto);
     justify-content: end;
     gap: 8px;
     padding: 13px 32px;

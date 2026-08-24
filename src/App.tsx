@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { Search, Home } from 'lucide-react';
+import { Search, Home, ChevronLeft, ChevronRight } from 'lucide-react';
 import { POI, POISummary, Character, ChatMessage } from './types/docent';
 import { loadPOIIndex, resolvePOI, placeholderPOI } from './services/poiDataService';
 import { CHARACTERS } from './data/characters';
@@ -318,9 +318,6 @@ export const App: React.FC = () => {
                 onSyncLocation={handleUseRealGPS}
                 onOpenLocationSettings={() => setIsGPSModalOpen(true)}
                 isSyncing={isSyncingLocation}
-                relevantPOIs={relevantPOIs}
-                onSelectNextPOI={handleSelectNextRelevantPOI}
-                onSelectPrevPOI={handleSelectPrevRelevantPOI}
               />
             </div>
 
@@ -352,7 +349,18 @@ export const App: React.FC = () => {
         </div>
       </main>
 
-      <nav className={`mobile-bottom-nav ${isPOIListOpen ? 'explore-open' : ''}`} aria-label="모바일 주요 메뉴">
+      <nav className={`mobile-bottom-nav ${isPOIListOpen ? 'explore-open' : ''}`} aria-label="주요 네비게이션 메뉴">
+        <button
+          type="button"
+          className="mobile-bottom-nav-item nav-poi-switcher-btn"
+          onClick={handleSelectPrevRelevantPOI}
+          disabled={relevantPOIs.length <= 1}
+          aria-label="이전 주변 명소"
+          title="이전 주변 명소로 이동"
+        >
+          <ChevronLeft size={22} strokeWidth={2.2} />
+          <span>이전 명소</span>
+        </button>
         <button
           type="button"
           className={`mobile-bottom-nav-item ${!isPOIListOpen ? 'active' : ''}`}
@@ -368,12 +376,23 @@ export const App: React.FC = () => {
         </button>
         <button
           type="button"
+          className="mobile-bottom-nav-item nav-poi-switcher-btn"
+          onClick={handleSelectNextRelevantPOI}
+          disabled={relevantPOIs.length <= 1}
+          aria-label="다음 주변 명소"
+          title="다음 주변 명소로 이동"
+        >
+          <ChevronRight size={22} strokeWidth={2.2} />
+          <span>다음 명소</span>
+        </button>
+        <button
+          type="button"
           className={`mobile-bottom-nav-item ${isPOIListOpen ? 'active' : ''}`}
           onClick={() => setIsPOIListOpen(true)}
           aria-current={isPOIListOpen ? 'page' : undefined}
         >
           <Search size={20} strokeWidth={2.2} />
-          <span>검색</span>
+          <span>명소 탐색</span>
           <i aria-hidden="true" />
         </button>
       </nav>
