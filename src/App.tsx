@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { Search, Home, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, Home, ChevronLeft, ChevronRight, Bookmark } from 'lucide-react';
 import { POI, POISummary, Character, ChatMessage } from './types/docent';
 import { loadPOIIndex, resolvePOI, placeholderPOI } from './services/poiDataService';
 import { CHARACTERS } from './data/characters';
@@ -10,6 +10,7 @@ import { StoryCard } from './components/StoryCard';
 import { UserArchiveSection } from './components/UserArchiveSection';
 import { ChatSection } from './components/ChatSection';
 import { POICarousel } from './components/POICarousel';
+import { SavedStoriesModal } from './components/SavedStoriesModal';
 import { BenchmarkModal } from './components/BenchmarkModal';
 import { GPSSimulatorModal } from './components/GPSSimulatorModal';
 import { ApiKeyModal } from './components/ApiKeyModal';
@@ -65,6 +66,7 @@ export const App: React.FC = () => {
 
   // Modals
   const [isPOIListOpen, setIsPOIListOpen] = useState(false);
+  const [isSavedStoriesOpen, setIsSavedStoriesOpen] = useState(false);
   const [isBenchmarkOpen, setIsBenchmarkOpen] = useState(false);
   const [isGPSModalOpen, setIsGPSModalOpen] = useState(false);
   const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
@@ -195,6 +197,15 @@ export const App: React.FC = () => {
       alert('이 브라우저는 Geolocation API를 지원하지 않습니다.');
     }
   }, [applyPOI]);
+
+  const handleSelectSavedPOI = useCallback((poiId: string) => {
+    const found = poiIndexRef.current.find((p) => p.id === poiId);
+    if (found) {
+      const dist = calculateDistanceMeters(userLocation.lat, userLocation.lng, found.latitude, found.longitude);
+      applyPOI(found, dist);
+      mainContentRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [userLocation, applyPOI]);
 
   // Apply Simulated GPS Coordinates
   const handleApplyCoordinates = useCallback((lat: number, lng: number) => {
@@ -386,29 +397,47 @@ export const App: React.FC = () => {
           aria-label="이전 주변 명소"
           title="이전 주변 명소로 이동"
         >
-          <ChevronLeft size={22} strokeWidth={2.2} />
+          <ChevronLeft size={19} strokeWidth={2.2} />
           <span>이전 명소</span>
         </button>
         <button
           type="button"
-          className={`mobile-bottom-nav-item ${!isPOIListOpen ? 'active' : ''}`}
+          className={`mobile-bottom-nav-item ${isSavedStoriesOpen ? 'active' : ''}`}
           onClick={() => {
             setIsPOIListOpen(false);
+            setIsSavedStoriesOpen(true);
+          }}
+          aria-label="북마크한 명소 이야기"
+          title="북마크 열기"
+        >
+          <Bookmark size={19} strokeWidth={2.2} />
+          <span>북마크</span>
+          <i aria-hidden="true" />
+        </button>
+        <button
+          type="button"
+          className={`mobile-bottom-nav-item ${!isPOIListOpen && !isSavedStoriesOpen ? 'active' : ''}`}
+          onClick={() => {
+            setIsPOIListOpen(false);
+            setIsSavedStoriesOpen(false);
             mainContentRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          aria-current={!isPOIListOpen ? 'page' : undefined}
+          aria-current={!isPOIListOpen && !isSavedStoriesOpen ? 'page' : undefined}
         >
-          <Home size={20} strokeWidth={2.2} />
+          <Home size={19} strokeWidth={2.2} />
           <span>지금 여기</span>
           <i aria-hidden="true" />
         </button>
         <button
           type="button"
           className={`mobile-bottom-nav-item ${isPOIListOpen ? 'active' : ''}`}
-          onClick={() => setIsPOIListOpen(true)}
+          onClick={() => {
+            setIsSavedStoriesOpen(false);
+            setIsPOIListOpen(true);
+          }}
           aria-current={isPOIListOpen ? 'page' : undefined}
         >
-          <Search size={20} strokeWidth={2.2} />
+          <Search size={19} strokeWidth={2.2} />
           <span>명소 탐색</span>
           <i aria-hidden="true" />
         </button>
@@ -420,10 +449,17 @@ export const App: React.FC = () => {
           aria-label="다음 주변 명소"
           title="다음 주변 명소로 이동"
         >
-          <ChevronRight size={22} strokeWidth={2.2} />
+          <ChevronRight size={19} strokeWidth={2.2} />
           <span>다음 명소</span>
         </button>
       </nav>
+
+      {/* Instagram-Style Saved Stories Modal */}
+      <SavedStoriesModal
+        isOpen={isSavedStoriesOpen}
+        onClose={() => setIsSavedStoriesOpen(false)}
+        onSelectSavedPOI={handleSelectSavedPOI}
+      />
 
       {/* Manual POI Explore Modal */}
       <POICarousel

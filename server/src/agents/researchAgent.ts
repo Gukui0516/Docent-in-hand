@@ -68,7 +68,7 @@ export class KnowledgeResearchAgent {
 
     const matchedFolklore = searchResult.folkloreDocs.map((d) => ({
       title: d.title,
-      storyExcerpt: d.content ? d.content.slice(0, 600) : d.summary,
+      storyExcerpt: d.content ? d.content.slice(0, 1000) : d.summary,
       source: `한국향토문화전자대전 - ${d.title}`
     }));
 

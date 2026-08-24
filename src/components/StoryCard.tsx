@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { POI } from '../types/docent';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, Bookmark, Check } from 'lucide-react';
 import { getThemeTitle } from '../utils/themeTitle';
+import { SavedStoryService } from '../services/savedStoryService';
 
 interface StoryCardProps {
   poi: POI;
@@ -12,10 +13,33 @@ interface StoryCardProps {
 export const StoryCard: React.FC<StoryCardProps> = ({
   poi,
   storyText,
-  isStreaming,
+  isStreaming
 }) => {
   // 학술 문서는 POI 상세 조각(poi/{id}.json)에 실려 온다. 아직 로딩 중이면 null.
   const ragDoc = poi.ragDocument;
+  const themeTitle = getThemeTitle(poi, ragDoc || undefined);
+
+  const [isSaved, setIsSaved] = useState(false);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    setIsSaved(SavedStoryService.isSaved(poi.id));
+  }, [poi.id]);
+
+  const handleToggleSave = () => {
+    const nextSavedState = SavedStoryService.toggleSave(poi, storyText, themeTitle);
+    setIsSaved(nextSavedState);
+
+    if (nextSavedState) {
+      setToastMessage('저장되었습니다.');
+    } else {
+      setToastMessage('저장이 취소되었습니다.');
+    }
+
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 2400);
+  };
 
   // Split story into readable narrative paragraphs
   const paragraphs = storyText.split(/\n\n+/).filter((p) => p.trim().length > 0);
@@ -27,8 +51,37 @@ export const StoryCard: React.FC<StoryCardProps> = ({
 
   return (
     <section className="story-card-container" aria-label="핵심 요약 리포트">
+      {/* Toast Notification */}
+      {toastMessage && (
+        <div className="saved-toast-banner" role="status">
+          <div className="toast-content">
+            <Check size={14} className="toast-icon-check" />
+            <span>{toastMessage}</span>
+          </div>
+        </div>
+      )}
+
       {/* Speech Bubble Card */}
       <div className="speech-bubble-card deep-story-card">
+        {/* Story Header Row with Theme Title and Bookmark Action */}
+        <div className="story-card-header-bar">
+          <h3 className="story-theme-title">{themeTitle}</h3>
+          <button
+            type="button"
+            className={`story-bookmark-btn ${isSaved ? 'active' : ''}`}
+            onClick={handleToggleSave}
+            title={isSaved ? '북마크 취소' : '북마크 저장'}
+            aria-label={isSaved ? `${poi.name} 북마크 취소` : `${poi.name} 북마크 저장`}
+          >
+            <Bookmark
+              size={18}
+              fill={isSaved ? 'currentColor' : 'none'}
+              className="bookmark-icon"
+            />
+            <span className="bookmark-label">{isSaved ? '북마크됨' : '북마크'}</span>
+          </button>
+        </div>
+
         {isStreaming && (
           <div className="bubble-header streaming-only-header">
             <div className="bubble-header-left">
@@ -42,7 +95,6 @@ export const StoryCard: React.FC<StoryCardProps> = ({
 
         {/* Multi-paragraph Story Content */}
         <div className="bubble-content deep-story-content">
-          <h3 className="story-theme-title">{getThemeTitle(poi, ragDoc || undefined)}</h3>
           {paragraphs.length > 0 ? (
             paragraphs.map((para, idx) => (
               <p key={idx} className="story-paragraph">

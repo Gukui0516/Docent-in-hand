@@ -285,11 +285,11 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
               type="button"
               className={`source-gps-button ${isSyncing ? 'syncing' : ''}`}
               onClick={onSyncLocation}
-              title="현재 기기 GPS 위치 다시 찾기"
-              aria-label="현재 위치 다시 찾기"
+              title="현재 기기 GPS 위치로 설정"
+              aria-label="내 위치로 GPS 설정"
             >
               <RefreshCw size={13} className={isSyncing ? 'spin' : ''} />
-              <span>{isSyncing ? '찾는 중' : '내 위치'}</span>
+              <span>{isSyncing ? '찾는 중...' : '내 위치로'}</span>
             </button>
           </div>
         </div>
