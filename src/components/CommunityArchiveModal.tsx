@@ -5,6 +5,7 @@ import { UserCommunityStory } from '../data/communityStories';
 import { POI } from '../types/docent';
 import { getRandomJejuNickname } from '../services/jejuDialectService';
 import { CommunityStoryClient, downscaleImage } from '../services/communityStoryClient';
+import { MyCommentsService } from '../services/myCommentsService';
 
 interface CommunityArchiveModalProps {
   isOpen: boolean;
@@ -88,6 +89,20 @@ export const CommunityArchiveModal: React.FC<CommunityArchiveModalProps> = ({
         category: '옛날 이야기/전설',
         content: content.trim(),
         imageUrl: uploadedImageUrl
+      });
+
+      // Save to My Comments service
+      MyCommentsService.addMyComment({
+        id: createdStory.id,
+        poiId: poi.id,
+        poiName: poi.name,
+        poiImageUrl: poi.imageUrl,
+        authorName: createdStory.authorName,
+        authorType: createdStory.authorType,
+        category: createdStory.category,
+        content: createdStory.content,
+        imageUrl: createdStory.imageUrl,
+        createdAt: createdStory.createdAt
       });
 
       onSubmitStory(createdStory);
