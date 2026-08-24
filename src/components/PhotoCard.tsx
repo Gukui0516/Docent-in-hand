@@ -47,7 +47,6 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
   }, [poi.images, poi.imageUrl, poi.imageTitle, poi.imageSource, poi.name]);
 
   const totalImages = imageList.length;
-  const currentImage = imageList[currentIndex] || imageList[0] || { src: '', alt: poi.name };
 
   // Track image sources to reset loading/error state when real images arrive
   const imageKey = imageList.map((img) => img.src).join('|');
@@ -256,19 +255,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
 
           {/* Bottom Info Overlay */}
           <div className="card-bottom-info">
-            <div className="poi-region">{poi.region}</div>
             <h2 className="poi-title">{poi.name}</h2>
-            {currentImage.alt && currentImage.alt !== poi.name && (
-              <div className="photo-subtitle" style={{
-                color: 'rgba(255, 255, 255, 0.88)',
-                fontSize: '0.7rem',
-                marginTop: '1px',
-                marginBottom: '3px',
-                transition: 'opacity 0.3s ease'
-              }}>
-                📷 {currentImage.alt}
-              </div>
-            )}
             <div className="tag-list">
               {poi.tags.slice(0, 3).map((tag, idx) => (
                 <span key={idx} className="tag-badge">
