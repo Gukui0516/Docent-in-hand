@@ -2887,6 +2887,7 @@ body::before {
   min-height: 48px;
   margin-top: -1px;
   padding: 8px 14px;
+  border: 0;
   background: var(--jeju-white);
 }
 
@@ -2895,7 +2896,7 @@ body::before {
   position: absolute;
   z-index: 5;
   right: 0;
-  bottom: 0;
+  bottom: 47px;
   left: 0;
   height: 36px;
   pointer-events: none;
@@ -3231,7 +3232,7 @@ body::before {
     padding: 9px 18px;
   }
 
-  .immersive-place-hero::after { bottom: 0; }
+  .immersive-place-hero::after { bottom: 53px; }
 
   .source-current-location {
     max-width: calc(100% - 110px);
@@ -3304,6 +3305,50 @@ body::before {
 @keyframes desktopExplorerOut {
   from { opacity: 1; transform: translateY(0) scale(1); }
   to { opacity: 0; transform: translateY(12px) scale(0.98); }
+}
+
+/* Mobile and foldable layouts present the photograph, GPS status and story as
+   one continuous place card. Desktop keeps the editorial two-column layout. */
+@media (max-width: 959px) {
+  .content-container {
+    gap: 0;
+  }
+
+  .immersive-place-hero .photo-card {
+    border-radius: 0;
+    background: var(--jeju-white);
+    box-shadow: none;
+  }
+
+  .immersive-place-hero .source-bar {
+    background: var(--jeju-white);
+  }
+
+  .desktop-right-column {
+    gap: 16px;
+    margin-top: -1px;
+    padding: 0;
+  }
+
+  .desktop-right-column > .story-card-container {
+    margin: 0;
+  }
+
+  .desktop-right-column > .story-card-container .speech-bubble-card {
+    border-top: 0;
+    border-radius: 0 0 26px 26px;
+    background: var(--jeju-white);
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .desktop-right-column > .user-archive-section-container,
+  .desktop-right-column > .chat-section-container {
+    width: calc(100% - 26px);
+    margin-right: 13px;
+    margin-left: 13px;
+  }
 }
 
 /* ==========================================================================

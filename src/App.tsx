@@ -376,6 +376,16 @@ export const App: React.FC = () => {
         </button>
         <button
           type="button"
+          className={`mobile-bottom-nav-item ${isPOIListOpen ? 'active' : ''}`}
+          onClick={() => setIsPOIListOpen(true)}
+          aria-current={isPOIListOpen ? 'page' : undefined}
+        >
+          <Search size={20} strokeWidth={2.2} />
+          <span>명소 탐색</span>
+          <i aria-hidden="true" />
+        </button>
+        <button
+          type="button"
           className="mobile-bottom-nav-item nav-poi-switcher-btn"
           onClick={handleSelectNextRelevantPOI}
           disabled={relevantPOIs.length <= 1}
@@ -384,16 +394,6 @@ export const App: React.FC = () => {
         >
           <ChevronRight size={22} strokeWidth={2.2} />
           <span>다음 명소</span>
-        </button>
-        <button
-          type="button"
-          className={`mobile-bottom-nav-item ${isPOIListOpen ? 'active' : ''}`}
-          onClick={() => setIsPOIListOpen(true)}
-          aria-current={isPOIListOpen ? 'page' : undefined}
-        >
-          <Search size={20} strokeWidth={2.2} />
-          <span>명소 탐색</span>
-          <i aria-hidden="true" />
         </button>
       </nav>
 

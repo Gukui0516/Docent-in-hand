@@ -278,40 +278,32 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
             </div>
           </div>
 
-          {/* Location & GPS Info Floating Bar */}
-          <div className="location-info-bar">
+        </div>
+
+        {/* Location utility bar */}
+        <div className="source-bar">
+          <button
+            type="button"
+            className="source-current-location"
+            onClick={onOpenLocationSettings}
+            title="GPS 위치 설정 열기"
+          >
+            <MapPin size={13} aria-hidden="true" />
+            <span>현재 위치</span>
+            <strong>{poi.name}</strong>
+            <em>· {distanceText}</em>
+          </button>
+          <div className="source-bar-actions">
             <button
               type="button"
-              className={`location-distance-pill ${isSyncing ? 'syncing' : ''}`}
+              className={`source-gps-button ${isSyncing ? 'syncing' : ''}`}
               onClick={onSyncLocation}
-              title="현재 내 실시간 GPS 위치와 명소 거리 재측정"
-              aria-label={`현재 위치: ${distanceText}. 클릭 시 GPS 재동기화`}
-              disabled={isSyncing}
+              title="현재 기기 GPS 위치 다시 찾기"
+              aria-label="현재 위치 다시 찾기"
             >
-              {isSyncing ? (
-                <>
-                  <RefreshCw className="distance-icon spin-icon" size={13} />
-                  <span>GPS 수신중...</span>
-                </>
-              ) : (
-                <>
-                  <MapPin className="distance-icon" size={13} />
-                  <span>{distanceText}</span>
-                </>
-              )}
+              <RefreshCw size={13} className={isSyncing ? 'spin' : ''} />
+              <span>{isSyncing ? '찾는 중' : '내 위치'}</span>
             </button>
-
-            <div className="location-action-buttons">
-              <button
-                type="button"
-                className="location-setting-btn"
-                onClick={onOpenLocationSettings}
-                title="GPS 좌표 직접 설정 또는 테스트 시뮬레이터 열기"
-                aria-label="GPS 위치 시뮬레이터 열기"
-              >
-                GPS 설정
-              </button>
-            </div>
           </div>
         </div>
       </div>
