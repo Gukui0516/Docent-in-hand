@@ -72,35 +72,54 @@ export const App: React.FC = () => {
   const isInitialStoryStarted = useRef(false);
   const poiIndexRef = useRef<POISummary[]>([]);
   const mainContentRef = useRef<HTMLElement>(null);
+  const storyAbortController = useRef<AbortController | null>(null);
 
   // Zero-Click Story Generator via 2-Layer Multi-Agent Backend
   const triggerZeroClickStory = useCallback(async (
     poi: POI,
     character: Character
   ) => {
+    if (storyAbortController.current) {
+      storyAbortController.current.abort();
+    }
+    const abortController = new AbortController();
+    storyAbortController.current = abortController;
+
     setIsStoryStreaming(true);
     setStoryText('');
     setMessages([]);
 
-    await AgentClientService.streamDocentStory(
-      poi,
-      character,
-      (_status: AgentStatusEvent) => {
-        // Status event handled silently in background
-      },
-      (token: string) => {
-        setStoryText((prev) => prev + token);
-      },
-      (fullText: string) => {
-        setStoryText(fullText);
-        setIsStoryStreaming(false);
-      },
-      (errorMsg: string) => {
-        console.error('Story streaming error:', errorMsg);
-        setStoryText((prev) => (prev ? prev : `⚠️ 해설을 불러오지 못했습니다: ${errorMsg}`));
-        setIsStoryStreaming(false);
+    try {
+      await AgentClientService.streamDocentStory(
+        poi,
+        character,
+        (_status: AgentStatusEvent) => {
+          if (abortController.signal.aborted) return;
+        },
+        (token: string) => {
+          if (abortController.signal.aborted) return;
+          setStoryText((prev) => prev + token);
+        },
+        (fullText: string) => {
+          if (abortController.signal.aborted) return;
+          setStoryText(fullText);
+          setIsStoryStreaming(false);
+        },
+        (errorMsg: string) => {
+          if (abortController.signal.aborted) return;
+          console.error('Story streaming error:', errorMsg);
+          setStoryText((prev) => (prev ? prev : `⚠️ 해설을 불러오지 못했습니다: ${errorMsg}`));
+          setIsStoryStreaming(false);
+        },
+        abortController.signal
+      );
+    } catch (err: any) {
+      if (err.name === 'AbortError') {
+        console.log('Previous docent story stream aborted.');
+      } else {
+        console.error('Docent story stream failed:', err);
       }
-    );
+    }
   }, []);
 
   // Update POI and automatically set character & trigger story
