@@ -153,10 +153,22 @@ export class GeminiService {
       contents.push({
         role: 'user',
         parts: [{
-          text: `[현재 장소]: ${poi.name}
+          text: `<context>
+[현재 장소]: ${poi.name}
 ${ragContext.groundedPromptContext}
-[관광객 질문]: "${userMessage}"
-위 질문에 대해 서두(인사말)와 종두(맺음말)를 절대로 출력하지 마세요. 장소의 실제 관람 가능 여부나 정비 상태를 팩트대로 정확히 전달하고, 어려운 단어나 과도한 숫자 없이 150~250자 내외로 명확하게 답변하세요.`
+</context>
+
+<user_query>
+"${userMessage}"
+</user_query>
+
+<instruction>
+위 <context> 자료에 근거하여 <user_query>에 대한 핵심 답변을 작성하십시오.
+
+- [필수] 인사말(서두)과 맺음말(종두) 없이 질문에 대한 팩트 답변으로 즉시 시작하십시오.
+- [필수] 장소의 실제 관람 환경/접근성(옛 터 여부 등)을 팩트 그대로 정확히 전달하십시오.
+- [필수] 어려운 단어나 과도한 숫자 없이 쉬운 우리말로 150~250자 내외로 명확하게 답변하십시오.
+</instruction>`
         }]
       });
 
