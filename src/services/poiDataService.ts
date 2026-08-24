@@ -1,4 +1,5 @@
 import { POI, POICard, POIDetail, POISummary } from '../types/docent';
+import { deepDecodeHtmlEntities } from '../utils/text';
 
 /**
  * POI 데이터 접근 계층.
@@ -26,7 +27,8 @@ const BASE = `/data/${DATA_VERSION}`;
 async function fetchJson<T>(url: string): Promise<T> {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`${url} 요청 실패 (HTTP ${res.status})`);
-  return (await res.json()) as T;
+  const raw = await res.json();
+  return deepDecodeHtmlEntities(raw) as T;
 }
 
 // 같은 리소스를 동시에 여러 번 요청해도 네트워크 호출은 1회가 되도록 Promise 를 캐시한다.
