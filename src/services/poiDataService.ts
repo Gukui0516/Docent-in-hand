@@ -36,8 +36,21 @@ let indexPromise: Promise<POISummary[]> | null = null;
 let cardsPromise: Promise<Record<string, POICard>> | null = null;
 const detailPromises = new Map<string, Promise<POIDetail>>();
 
+// 이미 도착한 인덱스를 동기로 참조해야 하는 곳(레거시 데이터 보강 등)을 위한 캐시.
+// 아직 로드 전이면 빈 배열을 돌려주므로 호출부는 폴백을 갖고 있어야 한다.
+let loadedIndex: POISummary[] = [];
+
+export function getLoadedPOIIndex(): POISummary[] {
+  return loadedIndex;
+}
+
 export function loadPOIIndex(): Promise<POISummary[]> {
-  return (indexPromise ??= fetchJson<POISummary[]>(`${BASE}/poi-index.json`).catch((err) => {
+  return (indexPromise ??= fetchJson<POISummary[]>(`${BASE}/poi-index.json`)
+    .then((idx) => {
+      loadedIndex = idx;
+      return idx;
+    })
+    .catch((err) => {
     // 실패한 Promise 를 캐시에 남기면 재시도가 영구히 막힌다.
     indexPromise = null;
     throw err;
