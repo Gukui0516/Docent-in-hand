@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { Search, Home, ChevronLeft, ChevronRight, Bookmark } from 'lucide-react';
+import { Search, Home, ChevronLeft, ChevronRight, Bookmark, BookOpen } from 'lucide-react';
 import { POI, POISummary, Character, ChatMessage } from './types/docent';
 import { loadPOIIndex, resolvePOI, placeholderPOI } from './services/poiDataService';
 import { CHARACTERS } from './data/characters';
-import { findNearestPOI, formatDistance, calculateDistanceMeters } from './utils/geo';
+import { findNearestPOI, formatDistance, calculateDistanceMeters, hasClearAddress } from './utils/geo';
 import { AgentClientService, AgentStatusEvent } from './services/agentClientService';
 import { PhotoCard } from './components/PhotoCard';
 import { StoryCard } from './components/StoryCard';
@@ -135,7 +135,7 @@ export const App: React.FC = () => {
     const placeholder = placeholderPOI(summary);
     setCurrentPOI(placeholder);
     setCurrentCharacter(assignedChar);
-    setDistanceText(distMeters !== undefined ? `직선거리 ${formatDistance(distMeters)}` : summary.region);
+    setDistanceText(distMeters !== undefined ? `직선거리 ${formatDistance(distMeters)}` : (hasClearAddress(summary.region) ? summary.region : summary.category));
 
     triggerZeroClickStory(placeholder, assignedChar);
 
@@ -402,6 +402,23 @@ export const App: React.FC = () => {
               agentChatStatus={agentChatStatus}
               onSendMessage={handleSendMessage}
             />
+
+            {/* Direct Academic Source Citation Line (Below Chatbot) */}
+            <div className="docent-academic-citation-footer">
+              <BookOpen size={11} className="book-icon" />
+              <span className="citation-prefix">공인 출처:</span>
+              <a
+                href={currentPOI.ragDocument?.sourceUrl || currentPOI.sourceUrl || `https://jeju.grandculture.net/jeju/toc/${currentPOI.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rag-archive-link"
+                title="한국학중앙연구원 공식 원문 열기"
+              >
+                {currentPOI.ragDocument?.academicReferences
+                  ?.map((source) => source.replace(/\s*\(항목\s*ID\s*:\s*[^)]+\)/gi, ''))
+                  .join(', ') || '한국향토문화전자대전 (한국학중앙연구원)'}
+              </a>
+            </div>
           </section>
 
         </div>
