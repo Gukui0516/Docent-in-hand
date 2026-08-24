@@ -41,14 +41,19 @@ export interface NearestPOIResult {
 export function findNearestPOI(
   userLat: number,
   userLng: number,
-  pois: POISummary[]
+  pois: POISummary[],
+  category?: string
 ): NearestPOIResult | null {
-  if (pois.length === 0) return null;
+  const candidates = category
+    ? pois.filter((poi) => poi.category === category)
+    : pois;
 
-  let nearestPOI = pois[0];
+  if (candidates.length === 0) return null;
+
+  let nearestPOI = candidates[0];
   let minDistance = Infinity;
 
-  for (const poi of pois) {
+  for (const poi of candidates) {
     const dist = calculateDistanceMeters(userLat, userLng, poi.latitude, poi.longitude);
     if (dist < minDistance) {
       minDistance = dist;

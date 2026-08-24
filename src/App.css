@@ -4402,8 +4402,8 @@ body::before {
 /* Compact current-location indicator; nearby POIs use Kakao's native pins. */
 .kakao-current-location-dot {
   position: relative;
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   display: grid;
   place-items: center;
   pointer-events: none;
@@ -4421,8 +4421,8 @@ body::before {
 .current-location-dot-core {
   position: relative;
   z-index: 1;
-  width: 14px;
-  height: 14px;
+  width: 17px;
+  height: 17px;
   border: 3px solid #fff;
   border-radius: 50%;
   background: #e24336;
@@ -4434,50 +4434,51 @@ body::before {
   75%, 100% { opacity: 0; transform: scale(1.75); }
 }
 
-/* Administrative-area clusters replace dense pins at wide zoom levels. */
-.kakao-area-cluster {
-  width: var(--cluster-size, 64px);
-  height: var(--cluster-size, 64px);
-  padding: 7px;
+/* Individual POI pins use the former cluster color without text labels. */
+.kakao-poi-marker {
+  width: 32px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  gap: 1px;
-  color: #fff;
-  border: 3px solid rgba(255, 255, 255, 0.92);
-  border-radius: 50%;
-  background: rgba(23, 63, 59, 0.9);
-  box-shadow:
-    0 0 0 5px rgba(44, 122, 115, 0.2),
-    0 8px 18px rgba(23, 40, 36, 0.28);
-  font-family: inherit;
+  border: 0;
+  outline: 0;
+  background: transparent;
   cursor: pointer;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: transform 0.16s ease, background 0.16s ease;
 }
 
-.kakao-area-cluster:hover,
-.kakao-area-cluster:focus-visible {
-  outline: none;
-  background: rgba(44, 122, 115, 0.96);
-  transform: scale(1.06);
+.kakao-poi-marker-shape {
+  position: relative;
+  display: block;
+  width: 27px;
+  height: 27px;
+  border: 2px solid rgba(255, 255, 255, 0.96);
+  border-radius: 50% 50% 50% 0;
+  background: #173f3b;
+  box-shadow: 0 5px 11px rgba(23, 40, 36, 0.34);
+  transform: rotate(-45deg);
 }
 
-.cluster-area-name {
-  max-width: 100%;
-  overflow: hidden;
-  font-size: 10px;
-  font-weight: 700;
-  line-height: 1.1;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.kakao-poi-marker-shape::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  transform: translate(-50%, -50%);
 }
 
-.cluster-count {
-  font-size: 13px;
-  line-height: 1.1;
+.kakao-poi-marker:focus-visible .kakao-poi-marker-shape,
+.kakao-poi-marker.selected .kakao-poi-marker-shape {
+  background: #2c7a73;
+  box-shadow:
+    0 0 0 4px rgba(44, 122, 115, 0.22),
+    0 5px 11px rgba(23, 40, 36, 0.34);
 }
 
 /* Floating Map Controls */

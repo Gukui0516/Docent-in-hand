@@ -25,29 +25,7 @@ interface MapBoundsSnapshot {
   east: number;
 }
 
-interface AreaCluster {
-  label: string;
-  latitude: number;
-  longitude: number;
-  count: number;
-}
-
-const getAdministrativeAreaLabel = (region: string): string => {
-  const normalized = region
-    .replace(/\|/g, ' ')
-    .replace(/([가-힣]+)\s+([0-9]+동)/g, '$1$2');
-  const localityMatches = normalized.match(/[가-힣0-9]+(?:동|읍|면|리)/g);
-  if (localityMatches?.length) return localityMatches[localityMatches.length - 1];
-
-  const cityMatch = normalized.match(/[가-힣]+시/);
-  return cityMatch?.[0] || '제주 지역';
-};
-
-const getCityLabel = (region: string): string => {
-  if (region.includes('서귀포시')) return '서귀포시';
-  if (region.includes('제주시')) return '제주시';
-  return getAdministrativeAreaLabel(region);
-};
+const MARKER_BATCH_SIZE = 40;
 
 const CATEGORY_EMOJIS: Record<string, string> = {
   관광지: '🏞️',
@@ -75,7 +53,6 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
   const [mapLoaded, setMapLoaded] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [mapBounds, setMapBounds] = useState<MapBoundsSnapshot | null>(null);
-  const [mapLevel, setMapLevel] = useState(5);
 
   const [mapTypeId, setMapTypeId] = useState<'ROADMAP' | 'HYBRID'>('ROADMAP');
 
@@ -122,76 +99,23 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
     ));
   }, [mapBounds, matchingPOIs]);
 
-  const fallbackPOIs = matchingPOIs.slice(0, 8);
-  const fallbackMaxDistance = fallbackPOIs[fallbackPOIs.length - 1]?.distMeters || 1;
-  const shouldClusterByArea = mapLevel >= 7;
-
-  const areaClusters = useMemo<AreaCluster[]>(() => {
-    if (!shouldClusterByArea || !mapBounds) return [];
-
-    // At island-wide zoom, show one aggregate per city. At intermediate zoom,
-    // spatial cells keep broad city-only addresses from collapsing together.
-    const isCityLevel = mapLevel >= 10;
-    const columnCount = mapLevel >= 8 ? 4 : 5;
-    const rowCount = mapLevel >= 8 ? 3 : 4;
-    const longitudeStep = Math.max(
-      (mapBounds.east - mapBounds.west) / columnCount,
-      Number.EPSILON
-    );
-    const latitudeStep = Math.max(
-      (mapBounds.north - mapBounds.south) / rowCount,
-      Number.EPSILON
-    );
-
-    const grouped = new Map<string, {
-      latitudeSum: number;
-      longitudeSum: number;
-      count: number;
-      labelCounts: Map<string, number>;
-    }>();
+  // Many archive records share a fallback coordinate. Render one marker for
+  // each exact coordinate while keeping every POI available in the list.
+  const visibleMarkerGroups = useMemo(() => {
+    const groups = new Map<string, POISummary[]>();
 
     visiblePOIs.forEach(({ poi }) => {
-      const label = isCityLevel
-        ? getCityLabel(poi.region)
-        : getAdministrativeAreaLabel(poi.region);
-      const column = Math.min(
-        columnCount - 1,
-        Math.max(0, Math.floor((poi.longitude - mapBounds.west) / longitudeStep))
-      );
-      const row = Math.min(
-        rowCount - 1,
-        Math.max(0, Math.floor((poi.latitude - mapBounds.south) / latitudeStep))
-      );
-      const cellKey = isCityLevel ? `city:${label}` : `${row}:${column}`;
-      const current = grouped.get(cellKey) || {
-        latitudeSum: 0,
-        longitudeSum: 0,
-        count: 0,
-        labelCounts: new Map<string, number>()
-      };
-      current.latitudeSum += poi.latitude;
-      current.longitudeSum += poi.longitude;
-      current.count += 1;
-      current.labelCounts.set(label, (current.labelCounts.get(label) || 0) + 1);
-      grouped.set(cellKey, current);
+      const coordinateKey = `${poi.latitude}:${poi.longitude}`;
+      const group = groups.get(coordinateKey);
+      if (group) group.push(poi);
+      else groups.set(coordinateKey, [poi]);
     });
 
-    return Array.from(grouped.values()).map((group) => {
-      const labels = Array.from(group.labelCounts.entries());
-      const specificLabels = labels.filter(([label]) => !label.endsWith('시'));
-      const labelPool = isCityLevel
-        ? labels
-        : specificLabels.length ? specificLabels : labels;
-      const label = labelPool.sort((a, b) => b[1] - a[1])[0]?.[0] || '제주 지역';
+    return Array.from(groups.values());
+  }, [visiblePOIs]);
 
-      return {
-        label,
-        latitude: group.latitudeSum / group.count,
-        longitude: group.longitudeSum / group.count,
-        count: group.count
-      };
-    });
-  }, [mapBounds, mapLevel, shouldClusterByArea, visiblePOIs]);
+  const fallbackPOIs = matchingPOIs.slice(0, 8);
+  const fallbackMaxDistance = fallbackPOIs[fallbackPOIs.length - 1]?.distMeters || 1;
 
   // Load Kakao Maps SDK
   const initKakaoSDK = useCallback(async () => {
@@ -225,7 +149,7 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
       const container = mapContainerRef.current;
       const options = {
         center: new window.kakao.maps.LatLng(userLocation.lat, userLocation.lng),
-        level: 5
+        level: 6
       };
 
       const map = new window.kakao.maps.Map(container, options);
@@ -251,8 +175,6 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
         north: northEast.getLat(),
         east: northEast.getLng()
       };
-
-      setMapLevel(map.getLevel());
 
       setMapBounds((previous) => {
         if (
@@ -320,75 +242,69 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
     userMarker.setMap(map);
     userMarkerRef.current = userMarker;
 
-    if (shouldClusterByArea) {
-      areaClusters.forEach((cluster) => {
-        const clusterPosition = new window.kakao.maps.LatLng(
-          cluster.latitude,
-          cluster.longitude
-        );
-        const clusterElement = document.createElement('button');
-        clusterElement.type = 'button';
-        clusterElement.className = 'kakao-area-cluster';
-        clusterElement.title = `${cluster.label} 명소 ${cluster.count}개`;
-        clusterElement.setAttribute(
-          'aria-label',
-          `${cluster.label} 명소 ${cluster.count}개, 클릭하여 확대`
-        );
-        clusterElement.style.setProperty(
-          '--cluster-size',
-          `${Math.min(76, 58 + Math.sqrt(cluster.count) * 4)}px`
-        );
+    let nextMarkerIndex = 0;
+    let markerFrameId: number | null = null;
+    let isCancelled = false;
 
-        const areaName = document.createElement('span');
-        areaName.className = 'cluster-area-name';
-        areaName.textContent = cluster.label;
-        const countLabel = document.createElement('strong');
-        countLabel.className = 'cluster-count';
-        countLabel.textContent = `${cluster.count}개`;
-        clusterElement.append(areaName, countLabel);
-        clusterElement.onclick = (event) => {
+    const renderNextMarkerBatch = () => {
+      if (isCancelled) return;
+
+      const batch = visibleMarkerGroups.slice(
+        nextMarkerIndex,
+        nextMarkerIndex + MARKER_BATCH_SIZE
+      );
+
+      batch.forEach((poiGroup) => {
+        const poi = poiGroup[0];
+        const poiLatLng = new window.kakao.maps.LatLng(poi.latitude, poi.longitude);
+        const selectedPOI = poiGroup.find(({ id }) => id === highlightedPOIId);
+        const isSelected = Boolean(selectedPOI);
+        const groupLabel = poiGroup.length > 1
+          ? `${poi.name} 외 ${poiGroup.length - 1}개`
+          : poi.name;
+        const markerElement = document.createElement('button');
+        markerElement.type = 'button';
+        markerElement.className = `kakao-poi-marker${isSelected ? ' selected' : ''}`;
+        markerElement.title = groupLabel;
+        markerElement.setAttribute('aria-label', `${groupLabel} 중 명소 선택`);
+        markerElement.innerHTML = '<span class="kakao-poi-marker-shape"></span>';
+        markerElement.onclick = (event) => {
           event.stopPropagation();
-          map.setCenter(clusterPosition);
-          map.setLevel(Math.max(5, map.getLevel() - 2), { animate: true });
+          onHighlightPOI(selectedPOI?.id ?? poi.id);
         };
 
-        const clusterOverlay = new window.kakao.maps.CustomOverlay({
-          position: clusterPosition,
-          content: clusterElement,
-          xAnchor: 0.5,
-          yAnchor: 0.5,
-          zIndex: 6
-        });
-        clusterOverlay.setMap(map);
-        markersRef.current.push(clusterOverlay);
-      });
-    } else {
-      // At close zoom levels, retain precise native markers for each POI.
-      visiblePOIs.forEach(({ poi }) => {
-        const poiLatLng = new window.kakao.maps.LatLng(poi.latitude, poi.longitude);
-        const isSelected = poi.id === highlightedPOIId;
-
-        const marker = new window.kakao.maps.Marker({
+        const markerOverlay = new window.kakao.maps.CustomOverlay({
           position: poiLatLng,
-          title: poi.name,
-          clickable: true
+          content: markerElement,
+          xAnchor: 0.5,
+          yAnchor: 1,
+          zIndex: isSelected ? 8 : 4
         });
-        marker.setMap(map);
-        marker.setZIndex(isSelected ? 8 : 4);
-        window.kakao.maps.event.addListener(marker, 'click', () => {
-          onHighlightPOI(poi.id);
-        });
-        markersRef.current.push(marker);
+        markerOverlay.setMap(map);
+        markersRef.current.push(markerOverlay);
       });
-    }
+
+      nextMarkerIndex += batch.length;
+      if (nextMarkerIndex < visibleMarkerGroups.length) {
+        markerFrameId = window.requestAnimationFrame(renderNextMarkerBatch);
+      }
+    };
+
+    renderNextMarkerBatch();
+
+    return () => {
+      isCancelled = true;
+      if (markerFrameId !== null) {
+        window.cancelAnimationFrame(markerFrameId);
+      }
+      clearMapElements();
+    };
   }, [
-    areaClusters,
     mapLoaded,
     userLocation,
-    visiblePOIs,
+    visibleMarkerGroups,
     highlightedPOIId,
     onHighlightPOI,
-    shouldClusterByArea,
     clearMapElements
   ]);
 
