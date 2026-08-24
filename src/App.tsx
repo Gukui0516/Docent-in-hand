@@ -13,9 +13,32 @@ import { POICarousel } from './components/POICarousel';
 import { BenchmarkModal } from './components/BenchmarkModal';
 import { GPSSimulatorModal } from './components/GPSSimulatorModal';
 import { ApiKeyModal } from './components/ApiKeyModal';
+import { HallucinationLabPage } from './pages/HallucinationLabPage';
 import './App.css';
 
 export const App: React.FC = () => {
+  // Simple URL-based routing (/lab or /eval)
+  const [currentPath, setCurrentPath] = useState<string>(() => window.location.pathname);
+
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname);
+    };
+
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
+    };
+  }, []);
+
+  const isLabRoute =
+    currentPath.startsWith('/lab') ||
+    currentPath.startsWith('/eval') ||
+    window.location.hash.includes('lab') ||
+    window.location.hash.includes('eval');
+
   // State
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number }>({
     lat: 33.4586,
@@ -293,6 +316,11 @@ export const App: React.FC = () => {
     );
   };
 
+  // Dedicated URL Route: /lab or /eval (Grounding Hallucination Evaluation Page)
+  if (isLabRoute) {
+    return <HallucinationLabPage />;
+  }
+
   // 인덱스 도착 전 로딩 화면. gzip 62KB 라 보통 순식간에 지나간다.
   if (!currentPOI) {
     return (
@@ -376,6 +404,16 @@ export const App: React.FC = () => {
         </button>
         <button
           type="button"
+          className={`mobile-bottom-nav-item ${isPOIListOpen ? 'active' : ''}`}
+          onClick={() => setIsPOIListOpen(true)}
+          aria-current={isPOIListOpen ? 'page' : undefined}
+        >
+          <Search size={20} strokeWidth={2.2} />
+          <span>명소 탐색</span>
+          <i aria-hidden="true" />
+        </button>
+        <button
+          type="button"
           className="mobile-bottom-nav-item nav-poi-switcher-btn"
           onClick={handleSelectNextRelevantPOI}
           disabled={relevantPOIs.length <= 1}
@@ -384,16 +422,6 @@ export const App: React.FC = () => {
         >
           <ChevronRight size={22} strokeWidth={2.2} />
           <span>다음 명소</span>
-        </button>
-        <button
-          type="button"
-          className={`mobile-bottom-nav-item ${isPOIListOpen ? 'active' : ''}`}
-          onClick={() => setIsPOIListOpen(true)}
-          aria-current={isPOIListOpen ? 'page' : undefined}
-        >
-          <Search size={20} strokeWidth={2.2} />
-          <span>명소 탐색</span>
-          <i aria-hidden="true" />
         </button>
       </nav>
 
