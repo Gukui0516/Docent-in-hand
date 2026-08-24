@@ -11,6 +11,7 @@ import { UserArchiveSection } from './components/UserArchiveSection';
 import { ChatSection } from './components/ChatSection';
 import { POICarousel } from './components/POICarousel';
 import { SavedStoriesModal } from './components/SavedStoriesModal';
+import { VisitHistoryService } from './services/visitHistoryService';
 import { BenchmarkModal } from './components/BenchmarkModal';
 import { GPSSimulatorModal } from './components/GPSSimulatorModal';
 import { ApiKeyModal } from './components/ApiKeyModal';
@@ -137,12 +138,21 @@ export const App: React.FC = () => {
     setCurrentCharacter(assignedChar);
     setDistanceText(distMeters !== undefined ? `직선거리 ${formatDistance(distMeters)}` : (hasClearAddress(summary.region) ? summary.region : summary.category));
 
+    // Record visit in history
+    VisitHistoryService.recordVisit(summary, placeholder.imageUrl, placeholder.mythAndFact?.summary);
+
     triggerZeroClickStory(placeholder, assignedChar);
 
     resolvePOI(summary)
       .then((full) => {
         // 상세를 기다리는 동안 사용자가 다른 POI 로 옮겼다면 덮어쓰지 않는다.
-        setCurrentPOI((prev) => (prev && prev.id === full.id ? full : prev));
+        setCurrentPOI((prev) => {
+          if (prev && prev.id === full.id) {
+            VisitHistoryService.recordVisit(full, full.imageUrl, full.mythAndFact?.summary);
+            return full;
+          }
+          return prev;
+        });
       })
       .catch((err) => console.warn(`POI 상세 로드 실패 (${summary.id}):`, err));
   }, [triggerZeroClickStory]);
@@ -490,11 +500,12 @@ export const App: React.FC = () => {
         </button>
       </nav>
 
-      {/* Instagram-Style Saved Stories Modal */}
+      {/* Combined Bookmarks & Visit History Modal */}
       <SavedStoriesModal
         isOpen={isSavedStoriesOpen}
         onClose={() => setIsSavedStoriesOpen(false)}
         onSelectSavedPOI={handleSelectSavedPOI}
+        currentPOIId={currentPOI.id}
       />
 
       {/* Manual POI Explore Modal */}
