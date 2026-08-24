@@ -2895,7 +2895,7 @@ body::before {
   position: absolute;
   z-index: 5;
   right: 0;
-  bottom: 48px;
+  bottom: 0;
   left: 0;
   height: 36px;
   pointer-events: none;
@@ -3231,7 +3231,7 @@ body::before {
     padding: 9px 18px;
   }
 
-  .immersive-place-hero::after { bottom: 54px; }
+  .immersive-place-hero::after { bottom: 0; }
 
   .source-current-location {
     max-width: calc(100% - 110px);
@@ -3828,4 +3828,3 @@ body::before {
   justify-content: center;
   cursor: pointer;
 }
-
