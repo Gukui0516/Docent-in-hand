@@ -33,6 +33,50 @@ const mb = (n) => (n / 1048576).toFixed(2) + 'MB';
 const kbs = (n) => (n / 1024).toFixed(0) + 'KB';
 const gz = (s) => zlib.gzipSync(s).length;
 
+const NAMED_ENTITIES = {
+  amp: '&',
+  lt: '<',
+  gt: '>',
+  quot: '"',
+  apos: "'",
+  nbsp: ' ',
+  middot: '·',
+  hellip: '…',
+  ndash: '–',
+  mdash: '—'
+};
+
+const ENTITY_RE = /&(#\d+|#[xX][0-9a-fA-F]+|[a-zA-Z]+);/g;
+
+function decodeEntities(text) {
+  if (typeof text !== 'string' || !text.includes('&')) return text;
+  return text.replace(ENTITY_RE, (whole, body) => {
+    if (body[0] === '#') {
+      const code =
+        body[1] === 'x' || body[1] === 'X'
+          ? parseInt(body.slice(2), 16)
+          : parseInt(body.slice(1), 10);
+      if (!Number.isFinite(code) || code <= 0 || code > 0x10ffff) return whole;
+      if (code === 160) return ' ';
+      return String.fromCodePoint(code);
+    }
+    return NAMED_ENTITIES[body] ?? whole;
+  });
+}
+
+function deepDecode(value) {
+  if (typeof value === 'string') return decodeEntities(value);
+  if (Array.isArray(value)) return value.map(deepDecode);
+  if (value && typeof value === 'object') {
+    const out = {};
+    for (const [k, v] of Object.entries(value)) {
+      out[decodeEntities(k)] = deepDecode(v);
+    }
+    return out;
+  }
+  return value;
+}
+
 /** 생성된 TS 모듈에서 리터럴 부분만 떼어내 JSON으로 파싱한다. */
 function extractLiteral(file, pattern, label) {
   if (!fs.existsSync(file)) {
@@ -40,12 +84,13 @@ function extractLiteral(file, pattern, label) {
   }
   const match = fs.readFileSync(file, 'utf8').match(pattern);
   if (!match) throw new Error(`${label} 파싱 실패: ${file} 의 형식이 예상과 다릅니다.`);
-  return JSON.parse(match[1]);
+  return deepDecode(JSON.parse(match[1]));
 }
 
 function writeJson(file, value) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
-  const json = JSON.stringify(value); // minify: sync 스크립트는 pretty 출력이라 여기서 압축
+  const cleaned = deepDecode(value);
+  const json = JSON.stringify(cleaned); // minify: sync 스크립트는 pretty 출력이라 여기서 압축
   fs.writeFileSync(file, json, 'utf8');
   return Buffer.byteLength(json);
 }
@@ -67,7 +112,7 @@ const kb = extractLiteral(
 if (!fs.existsSync(SRC_CORPUS)) {
   throw new Error(`코퍼스 없음: ${SRC_CORPUS}\n  → 먼저 \`npm run sync:data\` 를 실행하세요.`);
 }
-const corpus = JSON.parse(fs.readFileSync(SRC_CORPUS, 'utf8'));
+const corpus = deepDecode(JSON.parse(fs.readFileSync(SRC_CORPUS, 'utf8')));
 
 console.log(`  입력: POI ${pois.length}건 · KB ${Object.keys(kb).length}건 · 코퍼스 ${corpus.length}건`);
 
@@ -108,15 +153,13 @@ const cardsBytes = writeJson(path.join(OUT_ASSETS, 'poi-cards.json'), cards);
 
 // ── 4. Tier 3: POI 상세 조각 (상세 + RAG 문서 병합) ─────────────────────────
 // 프론트의 두 사용처가 모두 [poi.id] 키 조회라 POI 단위 샤딩이 그대로 맞아떨어진다.
-//   ragService.ts:17   RAG_KNOWLEDGE_BASE[poi.id]
-//   StoryCard.tsx:18   RAG_KNOWLEDGE_BASE[poi.id]
-let shardTotal = 0;
-let shardMax = 0;
-let withKb = 0;
+let detailBytesTotal = 0;
+let detailGzTotal = 0;
+let maxDetailBytes = 0;
+let maxDetailId = '';
 
 for (const p of pois) {
   const detail = {
-    id: p.id,
     imageUrl: p.imageUrl ?? '',
     images: p.images ?? [],
     imageTitle: p.imageTitle ?? '',
@@ -126,21 +169,22 @@ for (const p of pois) {
     sampleQuestions: p.sampleQuestions ?? [],
     ragDocument: kb[p.id] ?? null
   };
-  if (detail.ragDocument) withKb++;
-  const bytes = writeJson(path.join(OUT_ASSETS, 'poi', `${p.id}.json`), detail);
-  shardTotal += bytes;
-  if (bytes > shardMax) shardMax = bytes;
+  const filePath = path.join(OUT_ASSETS, 'poi', `${p.id}.json`);
+  const size = writeJson(filePath, detail);
+  const gzSize = gz(fs.readFileSync(filePath));
+  detailBytesTotal += size;
+  detailGzTotal += gzSize;
+  if (size > maxDetailBytes) {
+    maxDetailBytes = size;
+    maxDetailId = p.id;
+  }
 }
 
-// KB 에만 있고 POI 목록에 없는 항목이 있으면 조용히 유실되므로 경고한다.
-const orphanKb = Object.keys(kb).filter((id) => !pois.some((p) => p.id === id));
-if (orphanKb.length) {
-  console.warn(`  ⚠️  POI 목록에 없는 KB 문서 ${orphanKb.length}건은 조각으로 생성되지 않았습니다.`);
-}
+// ── 5. 백엔드 코퍼스 ────────────────────────────────────────────────────────
+// 백엔드가 검색 시점에만 GCS 에서 1회 내려받는 대용량 코퍼스(18종 5,161건).
+const corpusBytes = writeJson(path.join(OUT_CORPUS, 'ragFullCorpus.json'), corpus);
 
-// ── 5. 백엔드 전용 POI 파일 ─────────────────────────────────────────────────
-// spatialSearchTool 이 근접 검색 결과에 summary 를 실어 보내므로 요약이 필요하다.
-// 브라우저 인덱스(Tier 1)를 무겁게 하지 않으려고 비공개 data 버킷에 따로 둔다.
+// ── 6. 백엔드 공간 검색용 POI (좌표·이름·카테고리·태그) ──────────────────────
 const spatial = pois.map((p) => ({
   id: p.id,
   name: p.name,
@@ -148,29 +192,27 @@ const spatial = pois.map((p) => ({
   region: p.region,
   latitude: p.latitude,
   longitude: p.longitude,
-  tags: p.tags ?? [],
-  mythAndFact: { summary: p.mythAndFact?.summary ?? '' }
+  tags: p.tags ?? []
 }));
 const spatialBytes = writeJson(path.join(OUT_POI, 'poi-spatial.json'), spatial);
 
-// ── 6. 백엔드 코퍼스 (minify 만) ────────────────────────────────────────────
-const corpusBytes = writeJson(path.join(OUT_CORPUS, 'ragFullCorpus.json'), corpus);
-
-// ── 7. 리포트 ───────────────────────────────────────────────────────────────
+// ── 7. 요약 리포트 ──────────────────────────────────────────────────────────
 const indexGz = gz(fs.readFileSync(path.join(OUT_ASSETS, 'poi-index.json')));
 const cardsGz = gz(fs.readFileSync(path.join(OUT_ASSETS, 'poi-cards.json')));
-const spatialGz = gz(fs.readFileSync(path.join(OUT_POI, 'poi-spatial.json')));
 const corpusGz = gz(fs.readFileSync(path.join(OUT_CORPUS, 'ragFullCorpus.json')));
+const spatialGz = gz(fs.readFileSync(path.join(OUT_POI, 'poi-spatial.json')));
 
-console.log(`
-  ── assets (Cloud Run 프록시로 브라우저에 전달) ──
-  poi-index.json   ${mb(indexBytes).padStart(8)}  gzip ${kbs(indexGz).padStart(7)}   부팅 시 1회
-  poi-cards.json   ${mb(cardsBytes).padStart(8)}  gzip ${kbs(cardsGz).padStart(7)}   주변 탐색 첫 오픈 시 1회
-  poi/*.json       ${mb(shardTotal).padStart(8)}  ${pois.length}개 조각 (최대 ${kbs(shardMax)}) · RAG 병합 ${withKb}건
+console.log('  ─ 산출물 요약 ─────────────────────────────────────────────');
+console.log(`  [assets/${VERSION}]`);
+console.log(`    poi-index.json         : ${mb(indexBytes)} (gzip ${kbs(indexGz)})`);
+console.log(`    poi-cards.json         : ${mb(cardsBytes)} (gzip ${kbs(cardsGz)})`);
+console.log(
+  `    poi/{id}.json (${pois.length}개)  : 합계 ${mb(detailBytesTotal)} (gzip ${mb(detailGzTotal)}), 최대 ${kbs(maxDetailBytes)} (${maxDetailId})`
+);
+console.log(`  [data/corpus/${VERSION}]`);
+console.log(`    ragFullCorpus.json     : ${mb(corpusBytes)} (gzip ${kbs(corpusGz)})`);
+console.log(`  [data/poi/${VERSION}]`);
+console.log(`    poi-spatial.json       : ${mb(spatialBytes)} (gzip ${kbs(spatialGz)})`);
+console.log('  ───────────────────────────────────────────────────────────\n');
+console.log('✅ GCS 데이터 빌드 완료.');
 
-  ── data (백엔드 전용, 브라우저 미노출) ──
-  poi-spatial.json ${mb(spatialBytes).padStart(8)}  gzip ${kbs(spatialGz).padStart(7)}   서버 기동 시 1회
-  ragFullCorpus    ${mb(corpusBytes).padStart(8)}  gzip ${kbs(corpusGz).padStart(7)}   서버 기동 시 1회
-
-  ✅ 산출물: build/gcs/
-`);

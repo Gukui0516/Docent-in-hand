@@ -275,9 +275,9 @@ export const JEJU_DIALECT_DICTIONARY: DialectEntry[] = [
   },
   {
     "word": "펜두룽이",
-    "meaning": "펜주룽이=펜드렁이&lt;핀두룽이. 시치미 떼고 그대로 있는 꼴, 겁내지 않고 태연한 꼴.",
+    "meaning": "펜주룽이=펜드렁이<핀두룽이. 시치미 떼고 그대로 있는 꼴, 겁내지 않고 태연한 꼴.",
     "jeju": "펜두룽이",
-    "standard": "펜주룽이=펜드렁이&lt;핀두룽이. 시치미 떼고 그대로 있는 꼴, 겁내지 않고 태연한 꼴."
+    "standard": "펜주룽이=펜드렁이<핀두룽이. 시치미 떼고 그대로 있는 꼴, 겁내지 않고 태연한 꼴."
   },
   {
     "word": "페삭페삭",
@@ -515,9 +515,9 @@ export const JEJU_DIALECT_DICTIONARY: DialectEntry[] = [
   },
   {
     "word": "복삭",
-    "meaning": "&lt;박삭&lt;북삭. 털이나 풀 따위가 많이 돋은 꼴",
+    "meaning": "<박삭<북삭. 털이나 풀 따위가 많이 돋은 꼴",
     "jeju": "복삭",
-    "standard": "&lt;박삭&lt;북삭. 털이나 풀 따위가 많이 돋은 꼴"
+    "standard": "<박삭<북삭. 털이나 풀 따위가 많이 돋은 꼴"
   },
   {
     "word": "베잭이",
@@ -581,9 +581,9 @@ export const JEJU_DIALECT_DICTIONARY: DialectEntry[] = [
   },
   {
     "word": "문짝",
-    "meaning": "&gt;짝. 흠뻑",
+    "meaning": ">짝. 흠뻑",
     "jeju": "문짝",
-    "standard": "&gt;짝. 흠뻑"
+    "standard": ">짝. 흠뻑"
   },
   {
     "word": "문지르르",
@@ -605,9 +605,9 @@ export const JEJU_DIALECT_DICTIONARY: DialectEntry[] = [
   },
   {
     "word": "멜락",
-    "meaning": "멜싹&lt;몰락=물싹&lt;밀락=밀싹. 조심성 없이 디디는 꼴, 힘없이 주저앉는 꼴",
+    "meaning": "멜싹<몰락=물싹<밀락=밀싹. 조심성 없이 디디는 꼴, 힘없이 주저앉는 꼴",
     "jeju": "멜락",
-    "standard": "멜싹&lt;몰락=물싹&lt;밀락=밀싹. 조심성 없이 디디는 꼴, 힘없이 주저앉는 꼴"
+    "standard": "멜싹<몰락=물싹<밀락=밀싹. 조심성 없이 디디는 꼴, 힘없이 주저앉는 꼴"
   },
   {
     "word": "멘나중",
@@ -629,9 +629,9 @@ export const JEJU_DIALECT_DICTIONARY: DialectEntry[] = [
   },
   {
     "word": "든직어니",
-    "meaning": "&gt;직어니. 묵직이",
+    "meaning": ">직어니. 묵직이",
     "jeju": "든직어니",
-    "standard": "&gt;직어니. 묵직이"
+    "standard": ">직어니. 묵직이"
   },
   {
     "word": "둠실둠실",
@@ -743,9 +743,9 @@ export const JEJU_DIALECT_DICTIONARY: DialectEntry[] = [
   },
   {
     "word": "그득",
-    "meaning": "득&lt;뜩. 가득",
+    "meaning": "득<뜩. 가득",
     "jeju": "그득",
-    "standard": "득&lt;뜩. 가득"
+    "standard": "득<뜩. 가득"
   },
   {
     "word": "그냥저냥",
@@ -9905,9 +9905,9 @@ export const JEJU_DIALECT_DICTIONARY: DialectEntry[] = [
   },
   {
     "word": "멩제",
-    "meaning": "맹자(孟子). 맹ㅣ&gt;멩ㅣ&gt;멩제",
+    "meaning": "맹자(孟子). 맹ㅣ>멩ㅣ>멩제",
     "jeju": "멩제",
-    "standard": "맹자(孟子). 맹ㅣ&gt;멩ㅣ&gt;멩제"
+    "standard": "맹자(孟子). 맹ㅣ>멩ㅣ>멩제"
   },
   {
     "word": "멩령",

@@ -1,3 +1,5 @@
+import { POI_LIST } from '../data/poiData';
+
 export interface MyCommentItem {
   id: string;
   poiId: string;
@@ -24,9 +26,40 @@ export class MyCommentsService {
   private static getStorage(): MyCommentItem[] {
     try {
       const data = localStorage.getItem(STORAGE_KEY);
-      if (!data) return [];
-      const parsed = JSON.parse(data);
-      return Array.isArray(parsed) ? parsed : [];
+      let list: MyCommentItem[] = data ? JSON.parse(data) : [];
+      if (!Array.isArray(list)) list = [];
+
+      // Also reconcile with legacy 'docent_community_stories' if any exist
+      const legacyStories = localStorage.getItem('docent_community_stories');
+      if (legacyStories) {
+        try {
+          const parsedLegacy = JSON.parse(legacyStories);
+          if (Array.isArray(parsedLegacy)) {
+            for (const story of parsedLegacy) {
+              if (!list.some((item) => item.id === story.id)) {
+                const poi = POI_LIST.find((p) => p.id === story.poiId);
+                list.push({
+                  id: story.id,
+                  poiId: story.poiId,
+                  poiName: poi ? poi.name : '제주 명소',
+                  poiImageUrl: story.imageUrl || poi?.imageUrl,
+                  authorName: story.authorName || '다정한 바당',
+                  authorType: story.authorType,
+                  category: story.category,
+                  content: story.content || '',
+                  imageUrl: story.imageUrl,
+                  createdAt: story.createdAt || '2026.08.24',
+                  timestamp: Date.now()
+                });
+              }
+            }
+          }
+        } catch {
+          // ignore
+        }
+      }
+
+      return list;
     } catch (e) {
       console.warn('Failed to read my comments:', e);
       return [];
@@ -118,11 +151,26 @@ export class MyCommentsService {
     const list = this.getStorage();
     const filtered = list.filter((item) => item.id !== commentId);
     this.setStorage(filtered);
+
+    // Also remove from legacy storage if present
+    try {
+      const legacyStories = localStorage.getItem('docent_community_stories');
+      if (legacyStories) {
+        const parsedLegacy = JSON.parse(legacyStories);
+        if (Array.isArray(parsedLegacy)) {
+          const filteredLegacy = parsedLegacy.filter((s: { id: string }) => s.id !== commentId);
+          localStorage.setItem('docent_community_stories', JSON.stringify(filteredLegacy));
+        }
+      }
+    } catch {
+      // ignore
+    }
   }
 
   public static clearComments(): void {
     try {
       localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem('docent_community_stories');
     } catch (e) {
       console.warn('Failed to clear my comments:', e);
     }
