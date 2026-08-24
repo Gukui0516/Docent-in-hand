@@ -1,8 +1,9 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { POICard, POISummary } from '../types/docent';
 import { loadPOICards } from '../services/poiDataService';
 import { calculateDistanceMeters, formatDistance, hasClearAddress } from '../utils/geo';
 import { X, MapPin, Search, Navigation } from 'lucide-react';
+import { KakaoPOIMap } from './KakaoPOIMap';
 
 interface POICarouselProps {
   isOpen: boolean;
@@ -27,12 +28,14 @@ export const POICarousel: React.FC<POICarouselProps> = ({
   const PAGE_SIZE = 40;
   const [filterCategory, setFilterCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [highlightedPOIId, setHighlightedPOIId] = useState(selectedPOIId);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [shouldRender, setShouldRender] = useState(isOpen);
   const [isClosing, setIsClosing] = useState(false);
   const [cards, setCards] = useState<Record<string, POICard>>({});
   const listRef = useRef<HTMLDivElement>(null);
   const loadSentinelRef = useRef<HTMLDivElement>(null);
+  const poiItemRefs = useRef<Map<string, HTMLDivElement>>(new Map());
 
   useEffect(() => {
     if (isOpen) {
@@ -54,6 +57,7 @@ export const POICarousel: React.FC<POICarouselProps> = ({
 
   useEffect(() => {
     if (!isOpen) return;
+    setHighlightedPOIId(selectedPOIId);
     let cancelled = false;
     loadPOICards()
       .then((loaded) => { if (!cancelled) setCards(loaded); })
@@ -128,9 +132,29 @@ export const POICarousel: React.FC<POICarouselProps> = ({
 
   const visibleList = filteredList.slice(0, visibleCount);
 
+  const handleMapPOIHighlight = useCallback((poiId: string) => {
+    setHighlightedPOIId(poiId);
+    const poiIndex = filteredList.findIndex(({ poi }) => poi.id === poiId);
+    if (poiIndex >= 0) {
+      const requiredCount = Math.ceil((poiIndex + 1) / PAGE_SIZE) * PAGE_SIZE;
+      setVisibleCount((count) => Math.max(count, requiredCount));
+    }
+  }, [filteredList]);
+
   useEffect(() => {
     setVisibleCount(PAGE_SIZE);
   }, [filterCategory, searchQuery, isOpen]);
+
+  useLayoutEffect(() => {
+    if (!highlightedPOIId) return;
+    const listElement = listRef.current;
+    const selectedElement = poiItemRefs.current.get(highlightedPOIId);
+    if (!listElement || !selectedElement) return;
+
+    const listTop = listElement.getBoundingClientRect().top;
+    const selectedTop = selectedElement.getBoundingClientRect().top;
+    listElement.scrollTop += selectedTop - listTop;
+  }, [highlightedPOIId, visibleCount]);
 
   useEffect(() => {
     const listElement = listRef.current;
@@ -177,6 +201,16 @@ export const POICarousel: React.FC<POICarouselProps> = ({
           </button>
         </div>
 
+        {/* Kakao Map - viewport-driven, category-filtered exploration */}
+        <KakaoPOIMap
+          userLocation={userLocation}
+          pois={pois}
+          selectedCategory={filterCategory}
+          highlightedPOIId={highlightedPOIId}
+          onHighlightPOI={handleMapPOIHighlight}
+          searchQuery={searchQuery}
+        />
+
         {/* Category Tabs */}
         <div className="category-tabs">
           {categories.map((cat) => (
@@ -199,11 +233,15 @@ export const POICarousel: React.FC<POICarouselProps> = ({
             </div>
           ) : (
             visibleList.map(({ poi, distMeters }) => {
-              const isSelected = poi.id === selectedPOIId;
+              const isSelected = poi.id === highlightedPOIId;
 
               return (
                 <div
                   key={poi.id}
+                  ref={(element) => {
+                    if (element) poiItemRefs.current.set(poi.id, element);
+                    else poiItemRefs.current.delete(poi.id);
+                  }}
                   className={`poi-list-item ${isSelected ? 'selected' : ''}`}
                   onClick={() => {
                     onSelectPOI(poi, distMeters);

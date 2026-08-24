@@ -211,7 +211,7 @@ export const App: React.FC = () => {
 
           setUserLocation({ lat, lng });
           setIsGpsActive(true);
-          const result = findNearestPOI(lat, lng, poiIndexRef.current);
+          const result = findNearestPOI(lat, lng, poiIndexRef.current, '관광지');
           if (result) applyPOI(result.poi, result.distanceMeters);
           setIsSyncingLocation(false);
         },
@@ -240,7 +240,7 @@ export const App: React.FC = () => {
   const handleApplyCoordinates = useCallback((lat: number, lng: number) => {
     setUserLocation({ lat, lng });
     setIsGpsActive(true);
-    const result = findNearestPOI(lat, lng, poiIndexRef.current);
+    const result = findNearestPOI(lat, lng, poiIndexRef.current, '관광지');
     if (result) applyPOI(result.poi, result.distanceMeters);
   }, [applyPOI]);
 
@@ -258,7 +258,8 @@ export const App: React.FC = () => {
           return;
         }
 
-        const fallback = () => applyPOI(index[0], 80);
+        const fallbackPOI = index.find((poi) => poi.category === '관광지') ?? index[0];
+        const fallback = () => applyPOI(fallbackPOI, 80);
 
         if ('geolocation' in navigator) {
           navigator.geolocation.getCurrentPosition(
@@ -267,7 +268,7 @@ export const App: React.FC = () => {
               const lng = position.coords.longitude;
               setUserLocation({ lat, lng });
               setIsGpsActive(true);
-              const result = findNearestPOI(lat, lng, index);
+              const result = findNearestPOI(lat, lng, index, '관광지');
               if (result) applyPOI(result.poi, result.distanceMeters);
               else fallback();
             },
