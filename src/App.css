@@ -3724,10 +3724,10 @@ body::before {
   cursor: pointer;
 }
 
-/* High Z-Index Modal Backdrops so they sit on top of bottom nav bar */
-.modal-backdrop,
-.archive-modal-backdrop,
-.poi-explorer-backdrop {
+/* Blocking dialogs cover the shell. The POI explorer intentionally keeps the
+   bottom navigation visible so users can switch sections while it is open. */
+.modal-backdrop:not(.poi-explorer-backdrop),
+.archive-modal-backdrop {
   z-index: 999999 !important;
 }
 
