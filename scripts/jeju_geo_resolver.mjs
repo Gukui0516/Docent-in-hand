@@ -295,7 +295,14 @@ export class JejuGeoResolver {
       try {
         const part = JSON.parse(fs.readFileSync(cp, 'utf8'));
         for (const [k, v] of Object.entries(part)) {
-          if (this.geocache[k] === undefined) this.geocache[k] = v;
+          // 앞선 파일이 우선하되, 값이 null 이면 뒤 파일의 유효 좌표로 채운다.
+          // 예전에는 키 존재만 보고 건너뛰어, scripts/data 의 null 이 data 의
+          // 정확한 좌표를 가렸다(201개). 산방산 금장지가 그 예로,
+          // 올바른 좌표가 있는데도 서귀포시청으로 떨어졌다.
+          const cur = this.geocache[k];
+          if (cur === undefined || ((!cur || typeof cur.lat !== 'number') && v && typeof v.lat === 'number')) {
+            this.geocache[k] = v;
+          }
         }
       } catch (e) {}
     }

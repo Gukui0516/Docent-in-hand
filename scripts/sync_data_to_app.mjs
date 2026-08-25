@@ -376,6 +376,12 @@ function isValidPoi(it, title, meta) {
   if (mtype.includes('행정 지명과 마을') && /^[가-힣0-9]+(동|리|읍|면)$/.test(title)) {
     return false;
   }
+
+  // 마을 단위도 방문 대상이 아니다. 체험마을·정보화마을 등 21건.
+  // 성읍마을은 고택·객주집 등 개별 문화유산 7건이 따로 있어 콘텐츠가 남는다.
+  if (/^(?:지명)\//.test(mtype) && /마을$/.test(title)) {
+    return false;
+  }
   return true;
 }
 
