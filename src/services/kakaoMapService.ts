@@ -100,7 +100,7 @@ export class KakaoMapService {
       const script = document.createElement('script');
       script.id = 'kakao-maps-sdk';
       script.type = 'text/javascript';
-      script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${keyToUse}&autoload=false&libraries=services`;
+      script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${keyToUse}&autoload=false&libraries=services,clusterer`;
       script.async = true;
 
       script.onload = () => {
