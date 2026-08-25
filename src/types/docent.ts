@@ -28,14 +28,22 @@ export type POICategory = '관광지' | '축제' | '설화' | '인물' | '문화
  * 10MB 짜리 상수와 함께 export 됐지만, 이제 POI 상세 조각에 실려 온다.
  */
 export interface RAGDocument {
+  id?: string;
   poiId: string;
-  poiName: string;
+  poiName?: string;
+  title?: string;
   category: string;
+  region?: string;
+  summary?: string;
+  content?: string;
+  source?: string;
   sourceUrl?: string;
-  folkloreNarrative: { title: string; story: string; motifs: string[]; oralTraditionSource: string };
-  geologyAndNature: { formationProcess: string; scientificSignificance: string; naturalEnvironment: string };
-  historyAndCulture: { culturalHeritageRank: string; historicalContext: string; localFolklorePractices: string };
-  academicReferences: string[];
+  assignedCharacterId?: string;
+  metadata?: Record<string, any>;
+  folkloreNarrative?: { title: string; story: string; motifs: string[]; oralTraditionSource: string };
+  geologyAndNature?: { formationProcess: string; scientificSignificance: string; naturalEnvironment: string };
+  historyAndCulture?: { culturalHeritageRank: string; historicalContext: string; localFolklorePractices: string };
+  academicReferences?: string[];
 }
 
 /**
