@@ -4491,12 +4491,90 @@ body::before {
   transform: translate(-50%, -50%);
 }
 
-.kakao-poi-marker:focus-visible .kakao-poi-marker-shape,
-.kakao-poi-marker.selected .kakao-poi-marker-shape {
-  background: #2c7a73;
-  box-shadow:
-    0 0 0 4px rgba(44, 122, 115, 0.22),
-    0 5px 11px rgba(23, 40, 36, 0.34);
+.kakao-poi-marker.selected {
+  z-index: 99 !important;
+}
+
+.kakao-poi-marker.selected .kakao-poi-marker-shape,
+.kakao-poi-marker-shape.selected {
+  background: linear-gradient(135deg, #FF6B00 0%, #E65100 100%) !important;
+  width: 32px !important;
+  height: 32px !important;
+  border: 2.5px solid #FFFFFF !important;
+  box-shadow: 0 0 0 5px rgba(255, 107, 0, 0.4), 0 8px 18px rgba(230, 81, 0, 0.45) !important;
+  transform: rotate(-45deg) scale(1.15) !important;
+  animation: activePinPulse 1.8s infinite ease-in-out;
+}
+
+.kakao-poi-marker.selected .kakao-poi-marker-shape::after,
+.kakao-poi-marker-shape.selected::after {
+  background: #FFFFFF !important;
+  width: 9px !important;
+  height: 9px !important;
+}
+
+.kakao-poi-marker-badge {
+  position: absolute;
+  bottom: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: rgba(20, 24, 33, 0.94);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1.5px solid #FF6B00;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+  z-index: 100;
+  animation: badgeSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kakao-poi-marker-badge::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0;
+  border-style: solid;
+  border-color: #FF6B00 transparent transparent;
+  display: block;
+  width: 0;
+}
+
+.kakao-poi-marker-badge .badge-emoji {
+  font-size: 13px;
+}
+
+.kakao-poi-marker-badge .badge-label {
+  letter-spacing: -0.2px;
+  color: #FFF;
+}
+
+@keyframes activePinPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.45), 0 8px 18px rgba(230, 81, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 9px rgba(255, 107, 0, 0.15), 0 10px 22px rgba(230, 81, 0, 0.6);
+  }
+}
+
+@keyframes badgeSlideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }
 
 /* Floating Map Controls */

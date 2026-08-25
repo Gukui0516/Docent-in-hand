@@ -267,7 +267,22 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
         markerElement.className = `kakao-poi-marker${isSelected ? ' selected' : ''}`;
         markerElement.title = groupLabel;
         markerElement.setAttribute('aria-label', `${groupLabel} 중 명소 선택`);
-        markerElement.innerHTML = '<span class="kakao-poi-marker-shape"></span>';
+
+        const displayPOI = selectedPOI || poi;
+        const emoji = CATEGORY_EMOJIS[displayPOI.category] || '📍';
+
+        if (isSelected) {
+          markerElement.innerHTML = `
+            <div class="kakao-poi-marker-badge">
+              <span class="badge-emoji">${emoji}</span>
+              <span class="badge-label">${displayPOI.name}</span>
+            </div>
+            <span class="kakao-poi-marker-shape selected"></span>
+          `;
+        } else {
+          markerElement.innerHTML = '<span class="kakao-poi-marker-shape"></span>';
+        }
+
         markerElement.onclick = (event) => {
           event.stopPropagation();
           onHighlightPOI(selectedPOI?.id ?? poi.id);
@@ -278,7 +293,7 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
           content: markerElement,
           xAnchor: 0.5,
           yAnchor: 1,
-          zIndex: isSelected ? 8 : 4
+          zIndex: isSelected ? 99 : 4
         });
         markerOverlay.setMap(map);
         markersRef.current.push(markerOverlay);
@@ -307,6 +322,16 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
     onHighlightPOI,
     clearMapElements
   ]);
+
+  // Pan to selected POI whenever highlightedPOIId changes
+  useEffect(() => {
+    if (!mapLoaded || !mapInstanceRef.current || !highlightedPOIId || !window.kakao?.maps) return;
+    const target = pois.find((p) => p.id === highlightedPOIId);
+    if (target) {
+      const targetLatLng = new window.kakao.maps.LatLng(target.latitude, target.longitude);
+      mapInstanceRef.current.panTo(targetLatLng);
+    }
+  }, [highlightedPOIId, mapLoaded, pois]);
 
   // Center map on user location
   const handleRecenter = () => {
