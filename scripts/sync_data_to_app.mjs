@@ -259,8 +259,13 @@ function classifyPoiCategory(it) {
   // 주의: 설화는 '작품/설화' 형태라 아래 유형 규칙보다 반드시 먼저 판정해야 한다.
   const typeHead = mtype.split('/')[0].trim();
 
+  // 설화 판정은 유형('작품/설화', '인물/가공 인물' 등) 기준으로만 한다.
+  //
+  // 분야 문자열이 '구비 전승·언어·문학/…' 이라, 분야로 판정하면 하위가
+  // '/문학'·'/언어' 인 레코드까지 끌려온다. 실제로 문학 작품 20건과
+  // 문헌 32건(『제주도 방언집』, 『서귀포 문학』 등)이 설화로 잘못 분류됐다.
   if (['설화', '신화', '전설', '민담', '본풀이'].some(k => mtype.includes(k))) return '설화';
-  if (['구비 전승', '신화', '설화'].some(k => field.includes(k))) return '설화';
+  if (field.includes('/구비 전승')) return '설화';
 
   if (['인물', '효자', '열녀', '의인', '학자', '문인'].some(k => mtype.includes(k)) || field.includes('성씨·인물')) return '인물';
 
