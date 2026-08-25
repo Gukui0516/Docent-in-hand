@@ -285,13 +285,28 @@ export class JejuGeoResolver {
     const start = Date.now();
 
     // 0. Preload High-Precision Cadastral Geocache
+    //
+    // 기존에는 첫 번째로 발견한 캐시만 쓰고 break 했다. 두 파일의 키가 서로
+    // 달라(scripts/data 7,950 · data 4,877 → 병합 10,725) 한쪽만 쓰면 절반을
+    // 버리는 셈이었다. 앞선 경로가 더 최신이므로 뒤 파일은 빈 자리만 채운다.
+    this.geocache = {};
     for (const cp of CACHE_PATHS) {
-      if (fs.existsSync(cp)) {
-        try {
-          this.geocache = JSON.parse(fs.readFileSync(cp, 'utf8'));
-          if (Object.keys(this.geocache).length > 0) break;
-        } catch (e) {}
-      }
+      if (!fs.existsSync(cp)) continue;
+      try {
+        const part = JSON.parse(fs.readFileSync(cp, 'utf8'));
+        for (const [k, v] of Object.entries(part)) {
+          if (this.geocache[k] === undefined) this.geocache[k] = v;
+        }
+      } catch (e) {}
+    }
+
+    // 정규화 색인. Tier 0 는 정확 문자열 일치만 하므로 공백·괄호 차이로
+    // "제주 관덕정" vs "제주관덕정" 같은 건이 전부 빗나갔다.
+    this.geocacheByNorm = new Map();
+    for (const [k, v] of Object.entries(this.geocache)) {
+      if (!v || typeof v.lat !== 'number') continue;
+      const nk = this.normalizeName(k);
+      if (nk && !this.geocacheByNorm.has(nk)) this.geocacheByNorm.set(nk, v);
     }
 
     // 1. Preload Verified Landmarks
@@ -418,7 +433,15 @@ export class JejuGeoResolver {
     // Tier 0: High-Precision Kakao Cadastral & Road Geocoding (Exact Real-World Pin)
     // ─────────────────────────────────────────────────────────────────────────────
     if (this.geocache && Object.keys(this.geocache).length > 0) {
-      const geoCandidates = new Set();
+      // 후보는 "구체적인 것 → 넓은 것" 순으로 조회해야 한다.
+      // 기존에는 Set 삽입 순서라 regionStr("서귀포시")이 title 보다 먼저 걸렸고,
+      // 캐시에 "서귀포시" → 서귀포시청 좌표가 있어 902건이 한 점으로 뭉쳤다.
+      const specific = new Set();   // 번지·도로명·고유 명칭
+      const broad = new Set();      // 시/동 단위 (최후 수단)
+
+      // 행정구역 이름만으로 이뤄진 후보는 개별 POI 위치가 아니라 지역 중심점이다.
+      const ADMIN_ONLY = /^(제주특별자치도\s*)?(제주시|서귀포시)$/;
+      const geoCandidates = specific;
       const sources = [locationStr, regionStr, locationSec, summary];
 
       for (const src of sources) {
@@ -433,9 +456,10 @@ export class JejuGeoResolver {
         }
         const cleanLoc = src.replace(/\[.*?\]/g, '').trim();
         if (cleanLoc && cleanLoc.length >= 4) {
-          geoCandidates.add(cleanLoc);
-          geoCandidates.add(cleanLoc.replace(/제주특별자치도\s+/, ''));
-          geoCandidates.add(`제주특별자치도 ${cleanLoc.replace(/제주특별자치도\s+/, '')}`);
+          const bucket = ADMIN_ONLY.test(cleanLoc) ? broad : specific;
+          bucket.add(cleanLoc);
+          bucket.add(cleanLoc.replace(/제주특별자치도\s+/, ''));
+          bucket.add(`제주특별자치도 ${cleanLoc.replace(/제주특별자치도\s+/, '')}`);
         }
         const bunjiMatch = src.match(/([가-힣\d]+(?:읍|면|동|리))\s+(?:산\s*)?(\d+(?:-\d+)?)/);
         if (bunjiMatch) {
@@ -461,12 +485,20 @@ export class JejuGeoResolver {
         geoCandidates.add(`서귀포 ${title}`);
       }
 
-      for (const q of geoCandidates) {
-        if (this.geocache[q]) {
+      const inJeju = (h) =>
+        h && typeof h.lat === 'number' &&
+        h.lat > 33.0 && h.lat < 34.2 && h.lng > 126.0 && h.lng < 127.2;
+
+      // specific(번지·도로명·고유 명칭)을 먼저 다 소진한 뒤에야 broad(시 단위)를 본다.
+      // 각 그룹 안에서는 정확 일치 → 정규화 일치 순.
+      for (const group of [specific, broad]) {
+        for (const q of group) {
           const hit = this.geocache[q];
-          if (hit.lat > 33.0 && hit.lat < 34.2 && hit.lng > 126.0 && hit.lng < 127.2) {
-            return [hit.lat, hit.lng];
-          }
+          if (inJeju(hit)) return [hit.lat, hit.lng];
+        }
+        for (const q of group) {
+          const hit = this.geocacheByNorm.get(this.normalizeName(q));
+          if (inJeju(hit)) return [hit.lat, hit.lng];
         }
       }
     }
