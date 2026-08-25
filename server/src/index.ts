@@ -328,44 +328,53 @@ app.get('/data/*', async (req, res) => {
     return;
   }
 
-  // 로컬 개발: ASSETS_BUCKET 이 없으면 build/gcs/assets 를 그대로 서빙한다.
-  // 덕분에 프론트는 개발에서도 프로덕션과 똑같이 /data/* 만 바라보면 되고,
-  // POI 데이터를 번들에 넣을 이유가 사라진다.
-  if (!CONFIG.ASSETS_BUCKET) {
-    const localFile = path.resolve(process.cwd(), '../build/gcs/assets', objectName);
-    if (fs.existsSync(localFile)) {
+  // 1. 컨테이너 내부 또는 로컬의 최신 빌드 산출물이 존재하면 우선 서빙한다.
+  const localCandidates = [
+    path.resolve(process.cwd(), '../build/gcs/assets', objectName),
+    path.resolve(process.cwd(), 'build/gcs/assets', objectName),
+    path.resolve(__dirname, '../../build/gcs/assets', objectName),
+    path.resolve(__dirname, '../build/gcs/assets', objectName),
+    path.resolve('/app/build/gcs/assets', objectName)
+  ];
+
+  for (const candidate of localCandidates) {
+    if (fs.existsSync(candidate)) {
       res.setHeader('Content-Type', 'application/json; charset=utf-8');
-      res.setHeader('Cache-Control', 'no-cache');
-      res.sendFile(localFile);
-    } else {
-      res.status(503).json({
-        error: 'ASSETS_BUCKET 미설정, 로컬 산출물도 없음. `npm run build:data` 를 실행하세요.'
-      });
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+      return res.sendFile(candidate);
     }
-    return;
   }
 
-  try {
-    const { stream } = openAssetStream(CONFIG.ASSETS_BUCKET, objectName);
+  // 2. 로컬 파일이 없고 ASSETS_BUCKET 이 설정되어 있다면 GCS 스트림으로 폴백한다.
+  if (CONFIG.ASSETS_BUCKET) {
+    try {
+      const { stream } = openAssetStream(CONFIG.ASSETS_BUCKET, objectName);
 
-    // 버전 프리픽스로 격리된 불변 객체이므로 브라우저가 영구 캐시하게 둔다.
-    // 객체는 GCS 에 gzip 으로 저장돼 있고, 풀었다 다시 압축하지 않고 그대로 통과시킨다.
-    res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    res.setHeader('Content-Encoding', 'gzip');
-    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+      // 버전 프리픽스로 격리된 불변 객체이므로 브라우저가 영구 캐시하게 둔다.
+      // 객체는 GCS 에 gzip 으로 저장돼 있고, 풀었다 다시 압축하지 않고 그대로 통과시킨다.
+      res.setHeader('Content-Type', 'application/json; charset=utf-8');
+      res.setHeader('Content-Encoding', 'gzip');
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
 
-    stream.on('error', (err: NodeJS.ErrnoException & { code?: number }) => {
-      const notFound = err.code === 404;
-      if (!notFound) console.error(`[asset] ${objectName} 스트림 실패:`, err.message);
-      if (!res.headersSent) res.status(notFound ? 404 : 502).end();
-      else res.destroy();
-    });
+      stream.on('error', (err: NodeJS.ErrnoException & { code?: number }) => {
+        const notFound = err.code === 404;
+        if (!notFound) console.error(`[asset] ${objectName} 스트림 실패:`, err.message);
+        if (!res.headersSent) res.status(notFound ? 404 : 502).end();
+        else res.destroy();
+      });
 
-    stream.pipe(res);
-  } catch (err: any) {
-    console.error(`[asset] ${objectName} 실패:`, err?.message);
-    res.status(500).json({ error: 'asset fetch failed' });
+      stream.pipe(res);
+      return;
+    } catch (err: any) {
+      console.error(`[asset] ${objectName} 실패:`, err?.message);
+      res.status(500).json({ error: 'asset fetch failed' });
+      return;
+    }
   }
+
+  res.status(503).json({
+    error: 'ASSETS_BUCKET 미설정, 로컬 산출물도 없음. `npm run build:data` 를 실행하세요.'
+  });
 });
 
 // ── SSE: 2-Layer 에이전트 도슨트 스토리 ─────────────────────────────────────
