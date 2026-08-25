@@ -274,10 +274,18 @@ export const POICarousel: React.FC<POICarouselProps> = ({
                           {poi.category}
                         </span>
                       )}
-                      <span style={{ marginLeft: 'auto', fontWeight: 700, color: '#00695C' }}>
-                        <Navigation size={10} style={{ display: 'inline', marginRight: '2px' }} />
-                        {formatDistance(distMeters)}
-                      </span>
+                      {/* 위치 미상 POI 는 좌표가 시 중심점이라 거리를 표시하면
+                          없는 정보를 지어내는 셈이 된다. 대신 안내 문구를 둔다. */}
+                      {poi.hasPreciseLocation === false ? (
+                        <span style={{ marginLeft: 'auto', fontWeight: 600, color: '#9aa0a9', fontSize: '11px' }}>
+                          위치 정보 없음
+                        </span>
+                      ) : (
+                        <span style={{ marginLeft: 'auto', fontWeight: 700, color: '#00695C' }}>
+                          <Navigation size={10} style={{ display: 'inline', marginRight: '2px' }} />
+                          {formatDistance(distMeters)}
+                        </span>
+                      )}
                     </div>
                     <h4 className="item-name">{poi.name}</h4>
                     <p className="item-summary">{cards[poi.id]?.summary ?? ''}</p>

@@ -10,7 +10,7 @@ substitutions:
   _RUNTIME_SA: docent-run@iceu-694.iam.gserviceaccount.com
   _ASSETS_BUCKET: docent-in-hand-assets
   _DATA_BUCKET: docent-in-hand-data
-  _DATA_VERSION: v3
+  _DATA_VERSION: v4
   _GEMINI_MODEL: gemini-3.7-flash
 
 steps:

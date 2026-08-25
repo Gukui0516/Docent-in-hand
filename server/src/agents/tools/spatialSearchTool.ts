@@ -7,6 +7,8 @@ export interface SpatialPOIItem {
   region: string;
   latitude: number;
   longitude: number;
+  /** false 면 개별 위치 미상(시 중심점). 주변 탐색 후보에서 제외한다. */
+  hasPreciseLocation?: boolean;
   distanceMeters: number;
   formattedDistance: string;
   directionLabel: string;

@@ -482,7 +482,10 @@ function processItemsToPois(allItems) {
 
     const category = classifyPoiCategory(it);
     const persona = determinePersona(title, subcats, fullContent);
-    const [lat, lng] = jejuGeoResolver.resolveCoordinates(it);
+    // precision 'city' 는 개별 위치를 못 찾아 시 중심점으로 떨어진 경우다.
+    // 좌표 자체는 남기되(목록·정렬에서 필요) 지도 핀과 최근접 탐색에서는 제외한다.
+    const [lat, lng, precision = 'exact'] = jejuGeoResolver.resolveCoordinates(it);
+    const hasPreciseLocation = precision !== 'city';
 
     // Tags
     const tags = [];
@@ -510,6 +513,7 @@ function processItemsToPois(allItems) {
       region: regionStr,
       latitude: lat,
       longitude: lng,
+      hasPreciseLocation,
       assignedCharacterId: persona,
       imageUrl: firstImg.src,
       images: cleanImages.slice(0, 6),

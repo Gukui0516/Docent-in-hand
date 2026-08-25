@@ -57,6 +57,12 @@ export interface POISummary {
   region: string;
   latitude: number;
   longitude: number;
+  /**
+   * 좌표가 이 POI 고유 위치인지 여부.
+   * false 면 개별 위치를 특정하지 못해 시 중심점으로 떨어진 경우다.
+   * 지도 핀과 최근접 탐색에서 제외하고, 목록에는 그대로 노출한다.
+   */
+  hasPreciseLocation?: boolean;
   tags: string[];
 }
 

@@ -513,14 +513,17 @@ export class JejuGeoResolver {
 
       // specific(번지·도로명·고유 명칭)을 먼저 다 소진한 뒤에야 broad(시 단위)를 본다.
       // 각 그룹 안에서는 정확 일치 → 정규화 일치 순.
-      for (const group of [specific, broad]) {
+      // 세 번째 원소는 좌표 정밀도다. 'city' 는 개별 위치를 못 찾아 시 중심점으로
+      // 떨어진 경우로, 지도에 핀을 찍으면 시청에 수백 개가 뭉치므로 소비 측에서
+      // 제외해야 한다.
+      for (const [group, precision] of [[specific, 'exact'], [broad, 'city']]) {
         for (const q of group) {
           const hit = this.geocache[q];
-          if (inJeju(hit)) return [hit.lat, hit.lng];
+          if (inJeju(hit)) return [hit.lat, hit.lng, precision];
         }
         for (const q of group) {
           const hit = this.geocacheByNorm.get(this.normalizeName(q));
-          if (inJeju(hit)) return [hit.lat, hit.lng];
+          if (inJeju(hit)) return [hit.lat, hit.lng, precision];
         }
       }
     }
@@ -627,7 +630,8 @@ export class JejuGeoResolver {
       if (m) {
         for (const eup of m) {
           if (this.riCentroids.has(eup)) {
-            return this.riCentroids.get(eup);
+            const [la, ln] = this.riCentroids.get(eup);
+            return [la, ln, 'town'];
           }
         }
       }
@@ -635,11 +639,11 @@ export class JejuGeoResolver {
 
     // Fallback based on city
     if (regionStr.includes('서귀포') || (item.file_region && item.file_region.includes('서귀포'))) {
-      return [33.2541, 126.5600]; // Seogwipo center
+      return [33.2541, 126.5600, 'city']; // Seogwipo center — 위치 미상
     }
 
-    // Default safe Jeju city center
-    return [33.4996, 126.5312];
+    // Default safe Jeju city center — 위치 미상
+    return [33.4996, 126.5312, 'city'];
   }
 }
 
