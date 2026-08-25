@@ -21,7 +21,11 @@ export interface POIImage {
   sourceUrl?: string;
 }
 
-export type POICategory = '관광지' | '축제' | '설화' | '인물' | '문화유산' | '음식' | '교육';
+export type POICategory =
+  | '관광지' | '문화유산' | '설화' | '인물'
+  | '음식' | '축제' | '교육'
+  // 장소가 아닌 항목. 원본 유형 대분류에서 갈라낸다.
+  | '식물' | '동물' | '특산물';
 
 /**
  * 한국향토문화전자대전 학술 문서. 예전에는 src/data/ragKnowledgeBase.ts 에서
