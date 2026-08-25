@@ -296,7 +296,7 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
 
                                 <div className="saved-card-footer">
                                   <div className="saved-card-tags">
-                                    {item.tags.slice(0, 3).map((tag, idx) => (
+                                    {item.tags.slice(0, 3).map((tag: string, idx: number) => (
                                       <span key={idx} className="saved-tag-pill">
                                         #{tag}
                                       </span>
