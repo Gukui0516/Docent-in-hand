@@ -189,12 +189,18 @@ export const VERIFIED_LANDMARKS = {
   '추자도': [33.9575, 126.2975]
 };
 
+const CACHE_PATHS = [
+  path.resolve(ROOT_DIR, 'scripts', 'data', 'jeju_geocache.json'),
+  path.resolve(ROOT_DIR, 'data', 'jeju_geocache.json')
+];
+
 export class JejuGeoResolver {
   constructor() {
     this.poiByName = new Map();
     this.poiByNormalizedName = new Map();
     this.poiByAddress = new Map();
     this.riCentroids = new Map();
+    this.geocache = {};
     this.initialized = false;
   }
 
@@ -252,6 +258,16 @@ export class JejuGeoResolver {
   init() {
     if (this.initialized) return;
     const start = Date.now();
+
+    // 0. Preload High-Precision Cadastral Geocache
+    for (const cp of CACHE_PATHS) {
+      if (fs.existsSync(cp)) {
+        try {
+          this.geocache = JSON.parse(fs.readFileSync(cp, 'utf8'));
+          if (Object.keys(this.geocache).length > 0) break;
+        } catch (e) {}
+      }
+    }
 
     // 1. Preload Verified Landmarks
     for (const [k, coords] of Object.entries(VERIFIED_LANDMARKS)) {
@@ -354,7 +370,7 @@ export class JejuGeoResolver {
     const meta = item.metadata || item.meta || {};
     const regionStr = meta['지역'] || item.file_region || '제주시';
     const relatedPlaces = meta['관련지명'] ? meta['관련지명'].split('|').map(p => this.normalizeName(p)).filter(Boolean) : [];
-    const locationStr = meta['소재지'] || meta['위치'] || meta['주소'] || '';
+    const locationStr = meta['소재지'] || meta['위치'] || meta['주소'] || meta['지역'] || '';
 
     // Combine text for contextual analysis
     const sections = item.sections || [];
@@ -366,12 +382,54 @@ export class JejuGeoResolver {
       const heading = s.heading || s.title || '';
       const content = s.content || (s.paragraphs ? s.paragraphs.join(' ') : '') || '';
       if (heading.includes('개설') || heading.includes('정의')) openIntro += ' ' + content;
-      if (heading.includes('위치') || heading.includes('소재지')) locationSec += ' ' + content;
+      if (heading.includes('위치') || heading.includes('소재지') || heading.includes('상훈') || heading.includes('추모')) locationSec += ' ' + content;
       secText += ' ' + content;
     }
 
     const summary = item.summary || '';
     const fullText = (summary + ' ' + openIntro + ' ' + locationSec + ' ' + secText).trim();
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // Tier 0: High-Precision Kakao Cadastral & Road Geocoding (Exact Real-World Pin)
+    // ─────────────────────────────────────────────────────────────────────────────
+    if (this.geocache && Object.keys(this.geocache).length > 0) {
+      const geoCandidates = [];
+      const sources = [locationStr, regionStr, locationSec, summary];
+
+      for (const src of sources) {
+        if (!src) continue;
+        const bracketMatch = src.match(/\[(.*?)\]/);
+        if (bracketMatch) {
+          geoCandidates.push(`제주시 ${bracketMatch[1]}`);
+          geoCandidates.push(`서귀포시 ${bracketMatch[1]}`);
+          geoCandidates.push(bracketMatch[1]);
+        }
+        const cleanLoc = src.replace(/\[.*?\]/g, '').trim();
+        if (cleanLoc && cleanLoc.length > 5 && (cleanLoc.includes('번지') || cleanLoc.includes('동') || cleanLoc.includes('리') || cleanLoc.includes('로') || cleanLoc.includes('길'))) {
+          geoCandidates.push(cleanLoc);
+        }
+        const bunjiMatch = src.match(/([가-힣\d]+(?:읍|면|동|리))\s+(?:산\s*)?(\d+(?:-\d+)?)/);
+        if (bunjiMatch) {
+          geoCandidates.push(`제주특별자치도 ${bunjiMatch[0]}`);
+          geoCandidates.push(`제주시 ${bunjiMatch[0]}`);
+          geoCandidates.push(`서귀포시 ${bunjiMatch[0]}`);
+        }
+      }
+
+      if (title && !title.includes(' ') && title.length >= 2) {
+        geoCandidates.push(`제주 ${title}`);
+        geoCandidates.push(`서귀포 ${title}`);
+      }
+
+      for (const q of geoCandidates) {
+        if (this.geocache[q]) {
+          const hit = this.geocache[q];
+          if (hit.lat > 33.0 && hit.lat < 34.2 && hit.lng > 126.0 && hit.lng < 127.2) {
+            return [hit.lat, hit.lng];
+          }
+        }
+      }
+    }
 
     // ─────────────────────────────────────────────────────────────────────────────
     // Tier 1: Exact / High-Confidence Landmark Dictionary Match

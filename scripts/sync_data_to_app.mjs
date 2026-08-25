@@ -258,6 +258,10 @@ function classifyPoiCategory(it) {
   if (['설화', '신화', '전설', '민담', '본풀이'].some(k => mtype.includes(k))) return '설화';
   if (['구비 전승', '신화', '설화'].some(k => field.includes(k))) return '설화';
 
+  if (['인물', '효자', '열녀', '의인', '학자', '문인'].some(k => mtype.includes(k)) || field.includes('성씨·인물')) return '인물';
+
+  if (['음식', '식생활', '향토음식'].some(k => mtype.includes(k)) || field.includes('식생활')) return '음식';
+
   const festivalKeywords = ['축제', '제전', '음악회', '페스티벌', '대축제', '문화제', '영등굿', '입춘굿', '풍어제', '산신제', '포제', '당제'];
   if (festivalKeywords.some(k => title.includes(k)) || mtype.includes('행사') || mtype.includes('축제')) return '축제';
 
@@ -285,10 +289,15 @@ function isValidPoi(it, title, meta) {
     return false;
   }
 
-  // 2. Strictly exclude people/genealogies (인물, 성씨)
+  // 2. People/genealogies (인물, 성씨) - keep if they have physical memorials, shrines, tombs, or specific addresses
   const isPerson = mtype.includes('인물') || field.includes('성씨·인물') || mtype.includes('성씨') || subcats.includes('인물') || subcats.includes('성씨');
-  if (isPerson && !['기념관', '생가', '유허비', '사당', '묘', '공원', '박물관', '미술관'].some(k => title.includes(k))) {
-    return false;
+  if (isPerson) {
+    const loc = meta['소재지'] || meta['위치'] || meta['지역'] || '';
+    const hasPhysicalSite = ['기념관', '생가', '유허비', '사당', '묘', '공원', '박물관', '미술관', '비', '정려', '각', '터', '신도비'].some(k => title.includes(k)) ||
+      (loc && loc.length > 5 && !loc.endsWith('도') && !loc.endsWith('시') && (loc.includes('번지') || loc.includes('길') || loc.includes('로') || loc.includes('[') || loc.includes('산') || loc.includes('동') || loc.includes('리')));
+    if (!hasPhysicalSite) {
+      return false;
+    }
   }
 
   // 3. Strictly exclude culinary recipes / foods (음식물 조리법)
