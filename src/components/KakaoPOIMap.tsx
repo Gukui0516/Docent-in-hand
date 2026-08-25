@@ -285,11 +285,11 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
         map,
         averageCenter: true,
         // 카카오 줌 레벨과 축척: 6=500m, 7=1km, 8=2km …
-        // 레벨 6(500m) 이하로 확대하면 개별 핀만, 레벨 7(1km)부터는 클러스터만 보이게 한다.
+        // 레벨 6(500m) 이하로 확대하면 전부 개별 핀, 레벨 7(1km)부터 묶기 시작한다.
         minLevel: 7,
-        // 1 이면 이웃이 없는 단독 마커도 원형으로 표시된다. 2 였을 때는
-        // 클러스터와 개별 핀이 한 화면에 섞여 지저분했다.
-        minClusterSize: 1,
+        // 2 이상만 묶는다. 1 로 두면 이웃이 없는 단독 POI 도 "1" 원형이 되는데,
+        // 눌러도 풀릴 게 없어 확대만 반복될 뿐 목적지에 닿지 못한다.
+        minClusterSize: 2,
         disableClickZoom: false,
         styles: CLUSTER_STYLES
       });
