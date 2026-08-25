@@ -418,32 +418,47 @@ export class JejuGeoResolver {
     // Tier 0: High-Precision Kakao Cadastral & Road Geocoding (Exact Real-World Pin)
     // ─────────────────────────────────────────────────────────────────────────────
     if (this.geocache && Object.keys(this.geocache).length > 0) {
-      const geoCandidates = [];
+      const geoCandidates = new Set();
       const sources = [locationStr, regionStr, locationSec, summary];
 
       for (const src of sources) {
         if (!src) continue;
         const bracketMatch = src.match(/\[(.*?)\]/);
         if (bracketMatch) {
-          geoCandidates.push(`제주시 ${bracketMatch[1]}`);
-          geoCandidates.push(`서귀포시 ${bracketMatch[1]}`);
-          geoCandidates.push(bracketMatch[1]);
+          const b = bracketMatch[1].trim();
+          geoCandidates.add(`제주시 ${b}`);
+          geoCandidates.add(`서귀포시 ${b}`);
+          geoCandidates.add(`제주특별자치도 ${b}`);
+          geoCandidates.add(b);
         }
         const cleanLoc = src.replace(/\[.*?\]/g, '').trim();
-        if (cleanLoc && cleanLoc.length > 5 && (cleanLoc.includes('번지') || cleanLoc.includes('동') || cleanLoc.includes('리') || cleanLoc.includes('로') || cleanLoc.includes('길'))) {
-          geoCandidates.push(cleanLoc);
+        if (cleanLoc && cleanLoc.length >= 4) {
+          geoCandidates.add(cleanLoc);
+          geoCandidates.add(cleanLoc.replace(/제주특별자치도\s+/, ''));
+          geoCandidates.add(`제주특별자치도 ${cleanLoc.replace(/제주특별자치도\s+/, '')}`);
         }
         const bunjiMatch = src.match(/([가-힣\d]+(?:읍|면|동|리))\s+(?:산\s*)?(\d+(?:-\d+)?)/);
         if (bunjiMatch) {
-          geoCandidates.push(`제주특별자치도 ${bunjiMatch[0]}`);
-          geoCandidates.push(`제주시 ${bunjiMatch[0]}`);
-          geoCandidates.push(`서귀포시 ${bunjiMatch[0]}`);
+          const dong = bunjiMatch[1];
+          const num = bunjiMatch[2];
+          const dong1 = dong.replace(/1동/, '일동').replace(/2동/, '이동').replace(/3동/, '삼동');
+          const dongNum = dong.replace(/일동/, '1동').replace(/이동/, '2동').replace(/삼동/, '3동');
+          const baseDong = dong.replace(/[123일이삼]동/, '동');
+
+          [dong, dong1, dongNum, baseDong].forEach(d => {
+            geoCandidates.add(`제주특별자치도 제주시 ${d} ${num}`);
+            geoCandidates.add(`제주특별자치도 서귀포시 ${d} ${num}`);
+            geoCandidates.add(`제주시 ${d} ${num}`);
+            geoCandidates.add(`서귀포시 ${d} ${num}`);
+            geoCandidates.add(`${d} ${num}`);
+          });
         }
       }
 
-      if (title && !title.includes(' ') && title.length >= 2) {
-        geoCandidates.push(`제주 ${title}`);
-        geoCandidates.push(`서귀포 ${title}`);
+      if (title && title.length >= 2) {
+        geoCandidates.add(title);
+        geoCandidates.add(`제주 ${title}`);
+        geoCandidates.add(`서귀포 ${title}`);
       }
 
       for (const q of geoCandidates) {

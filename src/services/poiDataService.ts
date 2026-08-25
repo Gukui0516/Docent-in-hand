@@ -23,9 +23,11 @@ import { deepDecodeHtmlEntities } from '../utils/text';
 
 const DATA_VERSION = import.meta.env.VITE_DATA_VERSION || 'v1';
 const BASE = `/data/${DATA_VERSION}`;
+const CACHE_BUST = `_cb=${Date.now().toString(36)}`;
 
 async function fetchJson<T>(url: string): Promise<T> {
-  const res = await fetch(url);
+  const separator = url.includes('?') ? '&' : '?';
+  const res = await fetch(`${url}${separator}${CACHE_BUST}`);
   if (!res.ok) throw new Error(`${url} 요청 실패 (HTTP ${res.status})`);
   const raw = await res.json();
   return deepDecodeHtmlEntities(raw) as T;

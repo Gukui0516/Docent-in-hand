@@ -126,38 +126,58 @@ console.log(`Loaded ${allItems.length} total database items. Starting precise Ka
 
 async function run() {
   let hits = 0;
-  const BATCH_SIZE = 15;
+  const BATCH_SIZE = 20;
 
   for (let i = 0; i < allItems.length; i += BATCH_SIZE) {
     const batch = allItems.slice(i, i + BATCH_SIZE);
     await Promise.all(batch.map(async (it) => {
       const meta = it.metadata || it.meta || {};
       const title = (it.title || '').replace(/^[「『\(\[\{<]+/, '').replace(/[」』\)\]\}>]+$/, '').trim();
-      const loc = meta['소재지'] || meta['위치'] || meta['지역'] || '';
+      const loc = meta['소재지'] || meta['위치'] || meta['주소'] || meta['지역'] || '';
       
-      const queries = [];
+      const queries = new Set();
+
+      // 1. Bracketed road address e.g. [아란13길 57-49], [삼성로 22]
       const bracketMatch = loc.match(/\[(.*?)\]/);
       if (bracketMatch) {
-        queries.push(`제주시 ${bracketMatch[1]}`);
-        queries.push(`서귀포시 ${bracketMatch[1]}`);
-        queries.push(bracketMatch[1]);
+        const b = bracketMatch[1].trim();
+        queries.add(`제주시 ${b}`);
+        queries.add(`서귀포시 ${b}`);
+        queries.add(`제주특별자치도 ${b}`);
+        queries.add(b);
       }
 
+      // 2. Clean loc
       const cleanLoc = loc.replace(/\[.*?\]/g, '').trim();
-      if (cleanLoc && cleanLoc.length > 5) {
-        queries.push(cleanLoc);
+      if (cleanLoc && cleanLoc.length >= 4) {
+        queries.add(cleanLoc);
+        queries.add(cleanLoc.replace(/제주특별자치도\s+/, ''));
+        queries.add(`제주특별자치도 ${cleanLoc.replace(/제주특별자치도\s+/, '')}`);
       }
 
+      // 3. Bunji matches e.g. "아라동 387", "아라1동 387", "아라일동 387", "삼도1동 983"
       const bunjiMatch = loc.match(/([가-힣\d]+(?:읍|면|동|리))\s+(?:산\s*)?(\d+(?:-\d+)?)/);
       if (bunjiMatch) {
-        queries.push(`제주특별자치도 ${bunjiMatch[0]}`);
-        queries.push(`제주시 ${bunjiMatch[0]}`);
-        queries.push(`서귀포시 ${bunjiMatch[0]}`);
+        const dong = bunjiMatch[1];
+        const num = bunjiMatch[2];
+        const dong1 = dong.replace(/1동/, '일동').replace(/2동/, '이동').replace(/3동/, '삼동');
+        const dongNum = dong.replace(/일동/, '1동').replace(/이동/, '2동').replace(/삼동/, '3동');
+        const baseDong = dong.replace(/[123일이삼]동/, '동');
+
+        [dong, dong1, dongNum, baseDong].forEach(d => {
+          queries.add(`제주특별자치도 제주시 ${d} ${num}`);
+          queries.add(`제주특별자치도 서귀포시 ${d} ${num}`);
+          queries.add(`제주시 ${d} ${num}`);
+          queries.add(`서귀포시 ${d} ${num}`);
+          queries.add(`${d} ${num}`);
+        });
       }
 
-      if (title && !title.includes(' ') && title.length >= 2) {
-        queries.push(`제주 ${title}`);
-        queries.push(`서귀포 ${title}`);
+      // 4. Title search
+      if (title && title.length >= 2) {
+        queries.add(title);
+        queries.add(`제주 ${title}`);
+        queries.add(`서귀포 ${title}`);
       }
 
       for (const q of queries) {
@@ -169,7 +189,7 @@ async function run() {
       }
     }));
 
-    if ((i + BATCH_SIZE) % 150 === 0 || i + BATCH_SIZE >= allItems.length) {
+    if ((i + BATCH_SIZE) % 200 === 0 || i + BATCH_SIZE >= allItems.length) {
       console.log(`[${Math.min(i + BATCH_SIZE, allItems.length)}/${allItems.length}] Hits: ${hits}, Cache Size: ${Object.keys(cache).length}`);
       fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2));
     }
