@@ -74,6 +74,9 @@ export const POICarousel: React.FC<POICarouselProps> = ({
     { id: '음식', label: '음식' },
     { id: '축제', label: '축제' },
     { id: '교육', label: '교육' },
+    { id: '식물', label: '식물' },
+    { id: '동물', label: '동물' },
+    { id: '특산물', label: '특산물' },
   ];
 
   // Calculate distances for all POIs and sort by proximity

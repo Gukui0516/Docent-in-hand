@@ -58,7 +58,10 @@ const CATEGORY_EMOJIS: Record<string, string> = {
   인물: '👤',
   음식: '🍲',
   축제: '🎆',
-  교육: '📚'
+  교육: '📚',
+  식물: '🌿',
+  동물: '🦌',
+  특산물: '🍊'
 };
 
 export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
