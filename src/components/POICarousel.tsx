@@ -91,7 +91,8 @@ export const POICarousel: React.FC<POICarouselProps> = ({
 
   // Deep search logic across name, region, tags, mythTitle, summary, details, and sampleQuestions
   const filteredList = useMemo(() => {
-    const normalizedQuery = searchQuery.trim().toLowerCase();
+    const rawQuery = searchQuery.trim().toLowerCase();
+    const cleanQuery = rawQuery.replace(/[\s「」『』"']/g, '');
 
     return sortedPOIsWithDistance.filter(({ poi }) => {
       let matchCat = true;
@@ -99,23 +100,23 @@ export const POICarousel: React.FC<POICarouselProps> = ({
         matchCat = poi.category === filterCategory;
       }
 
-      if (!normalizedQuery) return matchCat;
+      if (!rawQuery) return matchCat;
 
-      // 인덱스에 있는 필드 + 카드에 실려 온 필드까지 검색한다.
-      // mythAndFact.details(원문 본문)는 카드에 넣지 않았으므로 대상이 아니다 —
-      // 그 필드 하나가 카드 전송량을 gzip 329KB → 1.5MB 로 불린다.
       const card = cards[poi.id];
-      const matchName = poi.name.toLowerCase().includes(normalizedQuery);
-      const matchRegion = poi.region.toLowerCase().includes(normalizedQuery);
-      const matchTags = poi.tags.some((tag) => tag.toLowerCase().includes(normalizedQuery));
+      const nameClean = poi.name.toLowerCase().replace(/[\s「」『』"']/g, '');
+      const matchName = poi.name.toLowerCase().includes(rawQuery) || (cleanQuery && nameClean.includes(cleanQuery));
+      const matchRegion = poi.region.toLowerCase().includes(rawQuery);
+      const matchTags = poi.tags.some((tag) => tag.toLowerCase().includes(rawQuery) || (cleanQuery && tag.toLowerCase().replace(/\s+/g, '').includes(cleanQuery)));
+      
+      const mythTitleClean = (card?.mythTitle || '').toLowerCase().replace(/[\s「」『』"']/g, '');
       const matchMythTitle = card?.mythTitle
-        ? card.mythTitle.toLowerCase().includes(normalizedQuery)
+        ? (card.mythTitle.toLowerCase().includes(rawQuery) || (cleanQuery && mythTitleClean.includes(cleanQuery)))
         : false;
       const matchSummary = card?.summary
-        ? card.summary.toLowerCase().includes(normalizedQuery)
+        ? card.summary.toLowerCase().includes(rawQuery)
         : false;
       const matchQuestions = card?.sampleQuestions
-        ? card.sampleQuestions.some((q) => q.toLowerCase().includes(normalizedQuery))
+        ? card.sampleQuestions.some((q) => q.toLowerCase().includes(rawQuery))
         : false;
 
       const matchSearch =

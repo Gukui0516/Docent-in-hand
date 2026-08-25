@@ -100,7 +100,7 @@ export class KakaoMapService {
       const script = document.createElement('script');
       script.id = 'kakao-maps-sdk';
       script.type = 'text/javascript';
-      script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${keyToUse}&autoload=false`;
+      script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${keyToUse}&autoload=false&libraries=services`;
       script.async = true;
 
       script.onload = () => {
@@ -128,6 +128,73 @@ export class KakaoMapService {
     });
 
     return this.loadPromise;
+  }
+
+  /**
+   * Searches for addresses or keywords using Kakao Maps services (Geocoder + Places)
+   */
+  public async searchAddressOrKeyword(query: string): Promise<Array<{ title: string; address: string; lat: number; lng: number }>> {
+    const cleanQuery = query.trim();
+    if (!cleanQuery) return [];
+
+    // Ensure SDK is loaded
+    await this.loadSDK();
+
+    if (!window.kakao?.maps?.services) {
+      throw new Error('카카오 지도 Services 라이브러리가 로드되지 않았습니다.');
+    }
+
+    const results: Array<{ title: string; address: string; lat: number; lng: number }> = [];
+
+    // 1. Keyword search (Places)
+    const placesPromise = new Promise<void>((resolve) => {
+      try {
+        const ps = new window.kakao.maps.services.Places();
+        ps.keywordSearch(cleanQuery, (data: any[], status: any) => {
+          if (status === window.kakao.maps.services.Status.OK && Array.isArray(data)) {
+            data.slice(0, 5).forEach((item) => {
+              results.push({
+                title: item.place_name,
+                address: item.road_address_name || item.address_name,
+                lat: parseFloat(item.y),
+                lng: parseFloat(item.x)
+              });
+            });
+          }
+          resolve();
+        });
+      } catch (e) {
+        resolve();
+      }
+    });
+
+    // 2. Geocoder address search
+    const geocoderPromise = new Promise<void>((resolve) => {
+      try {
+        const geocoder = new window.kakao.maps.services.Geocoder();
+        geocoder.addressSearch(cleanQuery, (data: any[], status: any) => {
+          if (status === window.kakao.maps.services.Status.OK && Array.isArray(data)) {
+            data.slice(0, 5).forEach((item) => {
+              const alreadyExists = results.some((r) => Math.abs(r.lat - parseFloat(item.y)) < 0.0001 && Math.abs(r.lng - parseFloat(item.x)) < 0.0001);
+              if (!alreadyExists) {
+                results.push({
+                  title: item.address_name,
+                  address: item.road_address?.address_name || item.address_name,
+                  lat: parseFloat(item.y),
+                  lng: parseFloat(item.x)
+                });
+              }
+            });
+          }
+          resolve();
+        });
+      } catch (e) {
+        resolve();
+      }
+    });
+
+    await Promise.all([placesPromise, geocoderPromise]);
+    return results;
   }
 }
 
