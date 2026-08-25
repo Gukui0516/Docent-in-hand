@@ -27,6 +27,30 @@ interface MapBoundsSnapshot {
 
 const MARKER_BATCH_SIZE = 40;
 
+// 클러스터 원형 스타일. 개수 구간별로 크기를 키워 밀집도를 한눈에 보이게 한다.
+// 색은 개별 핀과 같은 짙은 청록 계열로 맞춘다.
+const clusterStyle = (size: number, font: number) => ({
+  width: size + 'px',
+  height: size + 'px',
+  background: 'rgba(0, 105, 92, 0.88)',
+  border: '2px solid rgba(255, 255, 255, 0.9)',
+  borderRadius: '50%',
+  color: '#fff',
+  textAlign: 'center',
+  fontWeight: '700',
+  fontSize: font + 'px',
+  lineHeight: (size - 4) + 'px',
+  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)'
+});
+
+const CLUSTER_STYLES = [
+  clusterStyle(34, 12),  // 2~9
+  clusterStyle(42, 13),  // 10~99
+  clusterStyle(52, 14),  // 100~999
+  clusterStyle(62, 15)   // 1000+
+];
+
+
 const CATEGORY_EMOJIS: Record<string, string> = {
   관광지: '🏞️',
   문화유산: '🏛️',
@@ -48,6 +72,7 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
   const markersRef = useRef<any[]>([]);
+  const clustererRef = useRef<any>(null);
   const userMarkerRef = useRef<any>(null);
 
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -209,6 +234,11 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
 
   // Clear existing markers & overlays
   const clearMapElements = useCallback(() => {
+    // 클러스터러가 들고 있는 마커는 clusterer.clear() 로 정리해야 한다.
+    // setMap(null) 만 하면 클러스터러 내부 목록에 남아 다음 렌더에서 중복된다.
+    if (clustererRef.current) {
+      clustererRef.current.clear();
+    }
     markersRef.current.forEach((m) => m.setMap(null));
     markersRef.current = [];
 
@@ -245,9 +275,27 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
     userMarker.setMap(map);
     userMarkerRef.current = userMarker;
 
+    // 클러스터러는 한 번만 만들고 재사용한다. 매번 새로 만들면 이전 인스턴스가
+    // 지도에 남아 마커가 중복된다.
+    if (!clustererRef.current) {
+      clustererRef.current = new window.kakao.maps.MarkerClusterer({
+        map,
+        averageCenter: true,
+        // 카카오 줌 레벨과 축척: 6=500m, 7=1km, 8=2km …
+        // 레벨 6(500m) 이하로 확대하면 개별 핀만, 레벨 7(1km)부터는 클러스터만 보이게 한다.
+        minLevel: 7,
+        // 1 이면 이웃이 없는 단독 마커도 원형으로 표시된다. 2 였을 때는
+        // 클러스터와 개별 핀이 한 화면에 섞여 지저분했다.
+        minClusterSize: 1,
+        disableClickZoom: false,
+        styles: CLUSTER_STYLES
+      });
+    }
+
     let nextMarkerIndex = 0;
     let markerFrameId: number | null = null;
     let isCancelled = false;
+    const pendingForCluster: any[] = [];
 
     const renderNextMarkerBatch = () => {
       if (isCancelled) return;
@@ -298,13 +346,22 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
           yAnchor: 1,
           zIndex: isSelected ? 99 : 4
         });
-        markerOverlay.setMap(map);
+
+        // 선택된 핀은 항상 보이도록 클러스터에서 제외한다.
+        // 나머지는 클러스터러가 줌 레벨에 따라 묶고 푼다.
+        if (isSelected) {
+          markerOverlay.setMap(map);
+        } else {
+          pendingForCluster.push(markerOverlay);
+        }
         markersRef.current.push(markerOverlay);
       });
 
       nextMarkerIndex += batch.length;
       if (nextMarkerIndex < visibleMarkerGroups.length) {
         markerFrameId = window.requestAnimationFrame(renderNextMarkerBatch);
+      } else if (clustererRef.current && pendingForCluster.length > 0) {
+        clustererRef.current.addMarkers(pendingForCluster);
       }
     };
 
@@ -325,6 +382,17 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
     onHighlightPOI,
     clearMapElements
   ]);
+
+  // 컴포넌트가 사라질 때 클러스터러도 지도에서 떼어낸다.
+  useEffect(() => {
+    return () => {
+      if (clustererRef.current) {
+        clustererRef.current.clear();
+        clustererRef.current.setMap(null);
+        clustererRef.current = null;
+      }
+    };
+  }, []);
 
   // Pan to selected POI whenever highlightedPOIId changes
   useEffect(() => {
