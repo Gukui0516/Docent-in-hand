@@ -1,12 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { getKakaoRestKey } from './kakaoKey.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 
-const KAKAO_KEY = '2693067e2ab6b27e7c99caf6c57f097d';
+const KAKAO_KEY = getKakaoRestKey();
 const CACHE_PATH = path.join(ROOT_DIR, 'data', 'jeju_geocache.json');
 
 let cache = {};
