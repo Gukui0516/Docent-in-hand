@@ -408,9 +408,31 @@ export class JejuGeoResolver {
     const title = (item.title || '').trim().normalize('NFC');
     const normTitle = this.normalizeName(title);
     const meta = item.metadata || item.meta || {};
-    const regionStr = meta['지역'] || item.file_region || '제주시';
+
+    // 원본 아카이브는 메타 키 체계가 두 가지다.
+    //   한글 키 3,285건 ('지역', '소재지 주소', …)
+    //   영문 키 1,875건 ('region', …)  ← 기존에는 통째로 무시됐다
+    // 영문 키 레코드의 region 1,059건이 동/리까지 있는 상세 주소인데도
+    // regionStr 이 '제주시' 기본값으로 떨어져 시 중심 좌표로 뭉쳤다.
+    const pick = (...keys) => {
+      for (const k of keys) {
+        const v = meta[k];
+        if (typeof v === 'string' && v.trim()) return v.trim();
+      }
+      return '';
+    };
+
+    const regionStr = pick('지역', 'region') || item.file_region || '제주시';
     const relatedPlaces = meta['관련지명'] ? meta['관련지명'].split('|').map(p => this.normalizeName(p)).filter(Boolean) : [];
-    const locationStr = meta['소재지'] || meta['위치'] || meta['주소'] || meta['지역'] || '';
+
+    // 소재지성 필드를 넓게 훑는다. '소재지 주소'(공백 포함)는 기존 '소재지'
+    // 조회로는 잡히지 않았다.
+    const locationStr = pick(
+      '소재지 주소', '주소', '소재지', '위치', 'address', 'location',
+      '발생(시작)장소', '의례장소', '행사장소',
+      '소장처 주소', '발행처 주소', '집성촌', '출신지',
+      '지역', 'region'
+    );
 
     // Combine text for contextual analysis
     const sections = item.sections || [];
