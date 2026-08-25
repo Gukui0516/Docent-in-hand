@@ -10,8 +10,6 @@ RUN npm ci
 
 COPY tsconfig.json vite.config.ts index.html ./
 COPY src ./src
-COPY scripts ./scripts
-COPY data ./data
 
 # 카카오맵 JS 키는 import.meta.env 로 읽히는 빌드 타임 변수다. Vite 가 번들에
 # 인라인하므로 Cloud Run 런타임 환경변수로는 절대 주입되지 않는다.
@@ -20,7 +18,11 @@ COPY data ./data
 ARG VITE_KAKAO_MAP_API_KEY=""
 ENV VITE_KAKAO_MAP_API_KEY=$VITE_KAKAO_MAP_API_KEY
 
-RUN node scripts/sync_data_to_app.mjs && node scripts/build_gcs_data.mjs
+# 데이터 파이프라인은 빌드 안에서 돌리지 않는다.
+# 원본 data/(64MB)는 .gitignore 대상이라 저장소에 없고, .gcloudignore·.dockerignore
+# 로도 제외돼 빌드 컨텍스트에 존재할 수 없다. 데이터 갱신은 로컬에서
+#   npm run sync:data && npm run build:data && npm run upload:data
+# 로 GCS 에 올리고, 런타임에 DATA_VERSION 환경변수로 가리킨다.
 RUN npx tsc && npx vite build
 
 # ── 2. 백엔드 빌드 ──────────────────────────────────────────────────────────
