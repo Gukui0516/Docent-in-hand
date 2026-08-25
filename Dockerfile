@@ -47,9 +47,6 @@ RUN npm ci --omit=dev && npm cache clean --force
 COPY --from=backend /app/server/dist ./dist
 # STATIC_DIR 기본값이 __dirname/../../dist 이므로 /app/dist 에 놓는다.
 COPY --from=frontend /app/dist /app/dist
-COPY --from=frontend /app/build /app/build
-COPY --from=frontend /app/src/data /app/src/data
-COPY --from=frontend /app/server/src/data /app/server/src/data
 
 USER node
 EXPOSE 8080
