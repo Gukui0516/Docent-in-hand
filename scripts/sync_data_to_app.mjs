@@ -7,6 +7,41 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 
+/**
+ * 지오코더가 잘못 붙인 좌표를 손으로 바로잡는 보정 목록.
+ * 캐시 전면 재검증(scripts/verify_geocache.mjs)은 오탐이 너무 많아 쓰지 못했다.
+ * 근거와 형식은 scripts/poi_coord_overrides.json 상단 _readme 참고.
+ */
+const COORD_OVERRIDES = (() => {
+  const raw = JSON.parse(
+    fs.readFileSync(path.join(ROOT_DIR, 'scripts', 'poi_coord_overrides.json'), 'utf8')
+  );
+  delete raw._readme;
+  for (const [id, o] of Object.entries(raw)) {
+    const ok = o.unlocatable === true || (typeof o.lat === 'number' && typeof o.lng === 'number');
+    if (!ok) throw new Error(`좌표 보정 항목 ${id}(${o.name}) 형식 오류: lat/lng 또는 unlocatable 필요`);
+  }
+  return raw;
+})();
+
+/** 시 중심점 — 위치를 특정하지 못한 POI 가 떨어지는 자리. 리졸버 폴백과 같은 값이다. */
+const CITY_CENTERS = { 서귀포시: [33.2541, 126.5600], 제주시: [33.4996, 126.5312] };
+
+const overrideStats = { replaced: 0, unlocatable: 0 };
+
+/** 보정 목록을 적용한다. 해당 id 가 없으면 리졸버 결과를 그대로 돌려준다. */
+function applyCoordOverride(id, regionStr, lat, lng, precision) {
+  const o = COORD_OVERRIDES[id];
+  if (!o) return [lat, lng, precision];
+  if (o.unlocatable) {
+    overrideStats.unlocatable++;
+    const [cLat, cLng] = CITY_CENTERS[/서귀포/.test(regionStr) ? '서귀포시' : '제주시'];
+    return [cLat, cLng, 'city'];
+  }
+  overrideStats.replaced++;
+  return [o.lat, o.lng, 'exact'];
+}
+
 const DATA_DIR = path.join(ROOT_DIR, 'data');
 const SRC_POI_DATA = path.join(ROOT_DIR, 'src/data/poiData.ts');
 const SRC_RAG_KB = path.join(ROOT_DIR, 'src/data/ragKnowledgeBase.ts');
@@ -521,7 +556,11 @@ function processItemsToPois(allItems) {
     const persona = determinePersona(title, subcats, fullContent);
     // precision 'city' 는 개별 위치를 못 찾아 시 중심점으로 떨어진 경우다.
     // 좌표 자체는 남기되(목록·정렬에서 필요) 지도 핀과 최근접 탐색에서는 제외한다.
-    const [lat, lng, precision = 'exact'] = jejuGeoResolver.resolveCoordinates(it);
+    const resolved = jejuGeoResolver.resolveCoordinates(it);
+    // 지오코더가 확실히 틀린 소수 건은 손 보정 목록으로 덮어쓴다.
+    const [lat, lng, precision] = applyCoordOverride(
+      it.id, regionStr, resolved[0], resolved[1], resolved[2] || 'exact'
+    );
     const hasPreciseLocation = precision !== 'city';
 
     // Tags
@@ -631,6 +670,18 @@ function processItemsToPois(allItems) {
   }
 
   console.log(`Successfully extracted and sorted ${pois.length} verified physical POIs with valid coordinates.`);
+  console.log(
+    `좌표 보정 목록 적용: 교체 ${overrideStats.replaced}건 · 위치 미확정 ${overrideStats.unlocatable}건`
+  );
+  const unusedOverrides = Object.entries(COORD_OVERRIDES)
+    .filter(([id]) => !pois.some(p => p.id === id));
+  if (unusedOverrides.length) {
+    // POI 가 사라졌거나 id 를 잘못 적은 경우다. 조용히 넘어가면 보정이 안 먹은 줄 모른다.
+    console.warn(
+      `[warn] 매칭되지 않은 보정 항목 ${unusedOverrides.length}건: ` +
+        unusedOverrides.map(([id, o]) => `${id}(${o.name})`).join(', ')
+    );
+  }
   return pois;
 }
 
