@@ -78,7 +78,11 @@ const EXACT_COORDS: Record<string, [number, number]> = {
 export async function initSpatialPOIs(): Promise<number> {
   const pois = await loadJson<RawPOI[]>(
     process.env.POI_SPATIAL_URI,
-    ['build/gcs/data/poi/v1/poi-spatial.json', '../build/gcs/data/poi/v1/poi-spatial.json'],
+    [
+      '/app/build/gcs/data/poi/v1/poi-spatial.json',
+      'build/gcs/data/poi/v1/poi-spatial.json',
+      '../build/gcs/data/poi/v1/poi-spatial.json'
+    ],
     'poi-spatial'
   );
   KNOWN_POIS = pois ?? [];

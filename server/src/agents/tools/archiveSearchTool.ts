@@ -29,7 +29,15 @@ let CORPUS: CorpusDoc[] = [];
 export async function initArchiveCorpus(): Promise<number> {
   const docs = await loadJson<CorpusDoc[]>(
     process.env.CORPUS_URI,
-    ['src/data/ragFullCorpus.json', '../src/data/ragFullCorpus.json'],
+    [
+      '/app/build/gcs/data/corpus/v1/ragFullCorpus.json',
+      '/app/src/data/ragFullCorpus.json',
+      '/app/server/src/data/ragFullCorpus.json',
+      'build/gcs/data/corpus/v1/ragFullCorpus.json',
+      '../build/gcs/data/corpus/v1/ragFullCorpus.json',
+      'src/data/ragFullCorpus.json',
+      '../src/data/ragFullCorpus.json'
+    ],
     'corpus'
   );
   CORPUS = docs ?? [];

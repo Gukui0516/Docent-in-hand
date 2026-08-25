@@ -10,6 +10,8 @@ RUN npm ci
 
 COPY tsconfig.json vite.config.ts index.html ./
 COPY src ./src
+COPY scripts ./scripts
+COPY data ./data
 
 # 카카오맵 JS 키는 import.meta.env 로 읽히는 빌드 타임 변수다. Vite 가 번들에
 # 인라인하므로 Cloud Run 런타임 환경변수로는 절대 주입되지 않는다.
@@ -18,8 +20,7 @@ COPY src ./src
 ARG VITE_KAKAO_MAP_API_KEY=""
 ENV VITE_KAKAO_MAP_API_KEY=$VITE_KAKAO_MAP_API_KEY
 
-# npm run build 의 prebuild 훅은 data/ 원본으로 40MB 파일을 생성하는데,
-# 이제 그 데이터는 번들이 아니라 GCS 에서 오므로 컴파일·번들만 직접 돌린다.
+RUN node scripts/sync_data_to_app.mjs && node scripts/build_gcs_data.mjs
 RUN npx tsc && npx vite build
 
 # ── 2. 백엔드 빌드 ──────────────────────────────────────────────────────────
@@ -44,6 +45,9 @@ RUN npm ci --omit=dev && npm cache clean --force
 COPY --from=backend /app/server/dist ./dist
 # STATIC_DIR 기본값이 __dirname/../../dist 이므로 /app/dist 에 놓는다.
 COPY --from=frontend /app/dist /app/dist
+COPY --from=frontend /app/build /app/build
+COPY --from=frontend /app/src/data /app/src/data
+COPY --from=frontend /app/server/src/data /app/server/src/data
 
 USER node
 EXPOSE 8080
