@@ -281,9 +281,12 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
       clustererRef.current = new window.kakao.maps.MarkerClusterer({
         map,
         averageCenter: true,
-        // 이 레벨보다 축소하면 묶는다. 확대하면 개별 핀으로 자동 분리된다.
-        minLevel: 6,
-        minClusterSize: 2,
+        // 카카오 줌 레벨과 축척: 6=500m, 7=1km, 8=2km …
+        // 레벨 6(500m) 이하로 확대하면 개별 핀만, 레벨 7(1km)부터는 클러스터만 보이게 한다.
+        minLevel: 7,
+        // 1 이면 이웃이 없는 단독 마커도 원형으로 표시된다. 2 였을 때는
+        // 클러스터와 개별 핀이 한 화면에 섞여 지저분했다.
+        minClusterSize: 1,
         disableClickZoom: false,
         styles: CLUSTER_STYLES
       });
