@@ -135,6 +135,9 @@ const index = pois.map((p) => ({
   region: p.region,
   latitude: p.latitude,
   longitude: p.longitude,
+  // 개별 위치를 특정하지 못한 POI 는 지도 핀·최근접 탐색에서 제외한다.
+  // 값이 true 인 경우는 생략해 인덱스 크기를 아낀다.
+  ...(p.hasPreciseLocation === false ? { hasPreciseLocation: false } : {}),
   assignedCharacterId: p.assignedCharacterId,
   tags: p.tags ?? []
 }));
@@ -199,6 +202,7 @@ const spatial = pois.map((p) => ({
   region: p.region,
   latitude: p.latitude,
   longitude: p.longitude,
+  ...(p.hasPreciseLocation === false ? { hasPreciseLocation: false } : {}),
   tags: p.tags ?? []
 }));
 const spatialBytes = writeJson(path.join(OUT_POI, 'poi-spatial.json'), spatial);

@@ -92,6 +92,9 @@ export const KakaoPOIMap: React.FC<KakaoPOIMapProps> = ({
     if (!mapBounds) return [];
 
     return matchingPOIs.filter(({ poi }) => (
+      // 개별 위치를 특정하지 못한 POI 는 핀을 찍지 않는다.
+      // 좌표가 시 중심점이라 찍으면 시청 한 점에 수백 개가 쌓인다.
+      poi.hasPreciseLocation !== false &&
       poi.latitude >= mapBounds.south &&
       poi.latitude <= mapBounds.north &&
       poi.longitude >= mapBounds.west &&

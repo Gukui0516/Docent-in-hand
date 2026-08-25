@@ -44,9 +44,13 @@ export function findNearestPOI(
   pois: POISummary[],
   category?: string
 ): NearestPOIResult | null {
+  // 개별 위치를 특정하지 못해 시 중심점으로 떨어진 POI 는 최근접 후보에서 뺀다.
+  // 넣어두면 시청 좌표가 항상 "가장 가까운 명소"로 뽑히는 일이 생긴다.
+  const located = pois.filter((poi) => poi.hasPreciseLocation !== false);
+
   const candidates = category
-    ? pois.filter((poi) => poi.category === category)
-    : pois;
+    ? located.filter((poi) => poi.category === category)
+    : located;
 
   if (candidates.length === 0) return null;
 
