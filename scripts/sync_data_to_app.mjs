@@ -581,6 +581,55 @@ function processItemsToPois(allItems) {
   }
 
   pois.sort((a, b) => sortScore(a) - sortScore(b));
+  // 설화 좌표 보정: "산방산 전설" 같은 항목은 대상지를 이름에 담고 있다.
+  //
+  // 이런 항목은 원본 주소가 시 단위뿐이라 지오코딩이 이름으로 추정하는데,
+  // 카카오 키워드 검색이 엉뚱한 곳을 잡는 일이 있다. 실제로 "산방산 전설"이
+  // 산방산에서 7km 떨어진 안덕면 서광리 지점으로 캐시에 들어가 있었다.
+  //
+  // 이미 위치가 확정된 다른 POI 를 앵커로 삼아 덮어쓴다. 캐시보다 신뢰할 수
+  // 있는 값이다.
+  {
+    const TALE_SUFFIX = /(전설|설화|이야기|유래|본풀이|신화)$/;
+    const normName = (s) => (s || '').replace(/[\s『』「」()·,]/g, '');
+    const distKm = (a, b, c, d) => Math.hypot((a - c) * 111, (b - d) * 93);
+
+    const anchors = pois
+      .filter((x) => x.hasPreciseLocation !== false && x.category !== '설화')
+      .map((x) => ({ key: normName(x.name), poi: x }));
+
+    let relocated = 0;
+
+    for (const tale of pois) {
+      if (tale.category !== '설화') continue;
+      const m = tale.name.match(TALE_SUFFIX);
+      if (!m) continue;
+
+      const base = normName(tale.name.slice(0, tale.name.length - m[1].length));
+      // 2글자 이하는 '제사', '여우' 처럼 지명이 아닌 경우가 많아 제외한다.
+      if (base.length < 3) continue;
+
+      const cands = anchors.filter((a) => a.key.includes(base));
+      if (cands.length === 0) continue;
+
+      // 후보가 여럿이어도 서로 가까우면 같은 장소로 본다.
+      // 산방산 3개 후보는 550m 이내, 백록담 2개는 70m 이내였다.
+      const far = cands.some((a) =>
+        distKm(a.poi.latitude, a.poi.longitude, cands[0].poi.latitude, cands[0].poi.longitude) > 2
+      );
+      if (far) continue;
+
+      tale.latitude = cands[0].poi.latitude;
+      tale.longitude = cands[0].poi.longitude;
+      tale.hasPreciseLocation = true;
+      relocated++;
+    }
+
+    if (relocated > 0) {
+      console.log(`[Folklore] Relocated ${relocated} tales to their referenced place.`);
+    }
+  }
+
   console.log(`Successfully extracted and sorted ${pois.length} verified physical POIs with valid coordinates.`);
   return pois;
 }
