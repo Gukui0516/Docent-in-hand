@@ -81,11 +81,14 @@ export function formatDistance(meters: number): string {
 
 /**
  * Checks whether a given region string is a concrete, specific physical address
- * rather than a generic administrative or broad island/city label.
+ * (with specific road name, lot number, building or bracketed address)
+ * rather than a generic administrative or broad island/city/dong label.
  */
 export function hasClearAddress(region?: string | null): boolean {
   if (!region || typeof region !== 'string') return false;
   const trimmed = region.trim();
+  if (!trimmed) return false;
+
   const broadOnly = [
     '제주시',
     '서귀포시',
@@ -97,6 +100,12 @@ export function hasClearAddress(region?: string | null): boolean {
     '서귀포'
   ];
   if (broadOnly.includes(trimmed)) return false;
-  return /[읍면동리로길번]/.test(trimmed);
+
+  // A clear, concrete address must have specific lot number, road number, building, or bracket notation
+  const hasSpecificNumberOrStreet = /\d+번지|\d+호|\d+길|\d+로|\d+-\d+|\d+/.test(trimmed);
+  const hasBracketAddress = /\[.*\]/.test(trimmed);
+  const hasSpecificSiteMarker = /(입구|주차장|매표소|맞은편|부근|일원)/.test(trimmed);
+
+  return hasSpecificNumberOrStreet || hasBracketAddress || hasSpecificSiteMarker;
 }
 

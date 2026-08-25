@@ -22,14 +22,21 @@ export class RAGService {
 
     let specificContext = '';
     if (doc) {
+      const name = doc.poiName || doc.title || poi.name;
+      const rank = doc.historyAndCulture?.culturalHeritageRank || doc.metadata?.type || '향토문화유산';
+      const story = doc.folkloreNarrative ? `${doc.folkloreNarrative.title} ("${doc.folkloreNarrative.story}")` : (doc.summary || '');
+      const geology = doc.geologyAndNature ? `${doc.geologyAndNature.formationProcess} (${doc.geologyAndNature.scientificSignificance})` : '';
+      const hist = doc.historyAndCulture?.historicalContext || (doc.content ? doc.content.slice(0, 300) : '');
+      const folklore = doc.historyAndCulture?.localFolklorePractices || '';
+
       specificContext = `
 [대표 명소 고유 학술 정보 (한국학중앙연구원)]
-- 명소명: ${doc.poiName} (${doc.category})
-- 문화재/유산 등급: ${doc.historyAndCulture.culturalHeritageRank}
-- 설화 서사: ${doc.folkloreNarrative.title} ("${doc.folkloreNarrative.story}")
-- 형성 과정 및 지질학: ${doc.geologyAndNature.formationProcess} (${doc.geologyAndNature.scientificSignificance})
-- 역사적 배경: ${doc.historyAndCulture.historicalContext}
-- 전승 민속: ${doc.historyAndCulture.localFolklorePractices}
+- 명소명: ${name} (${doc.category})
+- 문화재/유산 등급: ${rank}
+- 설화 및 역사 요약: ${story}
+${geology ? `- 형성 과정 및 지질학: ${geology}` : ''}
+${hist ? `- 역사적 배경: ${hist}` : ''}
+${folklore ? `- 전승 민속: ${folklore}` : ''}
 `;
     }
 

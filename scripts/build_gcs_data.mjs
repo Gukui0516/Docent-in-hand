@@ -103,11 +103,14 @@ const pois = extractLiteral(
   /export const POI_LIST: POI\[\] = ([\s\S]*);\s*$/,
   'POI_LIST'
 );
-const kb = extractLiteral(
+const rawKb = extractLiteral(
   SRC_KB,
-  /export const RAG_KNOWLEDGE_BASE: Record<string, RAGDocument> = ([\s\S]*);\s*$/,
+  /export const RAG_KNOWLEDGE_BASE:\s*(?:Record<string,\s*RAGDocument>|RAGDocument\[\])\s*=\s*([\s\S]*);\s*$/,
   'RAG_KNOWLEDGE_BASE'
 );
+const kb = Array.isArray(rawKb)
+  ? Object.fromEntries(rawKb.map((d) => [d.poiId || d.id, d]))
+  : rawKb;
 
 if (!fs.existsSync(SRC_CORPUS)) {
   throw new Error(`코퍼스 없음: ${SRC_CORPUS}\n  → 먼저 \`npm run sync:data\` 를 실행하세요.`);
