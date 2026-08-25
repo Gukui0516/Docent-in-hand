@@ -35,7 +35,7 @@ steps:
       - |
         docker build \
           --cache-from=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest \
-          --build-arg VITE_KAKAO_MAP_API_KEY="$KAKAO_MAP_KEY" \
+          --build-arg VITE_KAKAO_MAP_API_KEY="$$KAKAO_MAP_KEY" \
           --build-arg VITE_DATA_VERSION="${_DATA_VERSION}" \
           -t ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:$COMMIT_SHA \
           -t ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest \
