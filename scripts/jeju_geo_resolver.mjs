@@ -491,12 +491,19 @@ export class JejuGeoResolver {
           const dongNum = dong.replace(/일동/, '1동').replace(/이동/, '2동').replace(/삼동/, '3동');
           const baseDong = dong.replace(/[123일이삼]동/, '동');
 
+          // 리 이름은 서로 다른 읍·면에 중복 존재한다(우도면 서광리 vs 안덕면 서광리).
+          // 예전에는 제주시·서귀포시 조합을 모두 만들어 넣어, 원문에 없는 반대편
+          // 시의 동명이인 리가 걸렸다. 우도박물관이 62km 떨어진 안덕면에 찍힌 원인이다.
+          const cityInSrc = /서귀포시/.test(src) ? '서귀포시' : /제주시/.test(src) ? '제주시' : null;
+          const cities = cityInSrc ? [cityInSrc] : ['제주시', '서귀포시'];
+
           [dong, dong1, dongNum, baseDong].forEach(d => {
-            geoCandidates.add(`제주특별자치도 제주시 ${d} ${num}`);
-            geoCandidates.add(`제주특별자치도 서귀포시 ${d} ${num}`);
-            geoCandidates.add(`제주시 ${d} ${num}`);
-            geoCandidates.add(`서귀포시 ${d} ${num}`);
-            geoCandidates.add(`${d} ${num}`);
+            cities.forEach(city => {
+              geoCandidates.add(`제주특별자치도 ${city} ${d} ${num}`);
+              geoCandidates.add(`${city} ${d} ${num}`);
+            });
+            // 시가 특정되지 않은 형태는 동명이인 위험이 커 최후에 본다.
+            broad.add(`${d} ${num}`);
           });
         }
       }
