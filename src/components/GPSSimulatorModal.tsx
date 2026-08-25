@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { X, Navigation, Compass, CheckCircle2 } from 'lucide-react';
+import { X, Navigation, Compass, CheckCircle2, Search, MapPin, Loader2 } from 'lucide-react';
+import { kakaoMapService } from '../services/kakaoMapService';
 
 interface GPSSimulatorModalProps {
   isOpen: boolean;
@@ -9,6 +10,13 @@ interface GPSSimulatorModalProps {
   onApplyCoordinates: (lat: number, lng: number, label: string) => void;
   onUseRealGPS: () => void;
   isRealGpsActive: boolean;
+}
+
+interface SearchResultItem {
+  title: string;
+  address: string;
+  lat: number;
+  lng: number;
 }
 
 interface PresetLocation {
@@ -96,10 +104,36 @@ export const GPSSimulatorModal: React.FC<GPSSimulatorModalProps> = ({
   onUseRealGPS,
   isRealGpsActive
 }) => {
+  const [activeTab, setActiveTab] = useState<'preset' | 'search' | 'custom'>('preset');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchResults, setSearchResults] = useState<SearchResultItem[]>([]);
+  const [searchError, setSearchError] = useState<string | null>(null);
+
   const [customLat, setCustomLat] = useState<string>(currentLat.toString());
   const [customLng, setCustomLng] = useState<string>(currentLng.toString());
 
   if (!isOpen) return null;
+
+  const handleSearchAddress = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+
+    setIsSearching(true);
+    setSearchError(null);
+    try {
+      const results = await kakaoMapService.searchAddressOrKeyword(searchQuery);
+      if (results.length === 0) {
+        setSearchError('검색 결과가 없습니다. 도로명 주소나 지명(예: 성산일출봉, 애월읍)을 입력해보세요.');
+      }
+      setSearchResults(results);
+    } catch (err: any) {
+      console.warn('Kakao address search error:', err);
+      setSearchError('카카오 주소 검색을 실행할 수 없습니다. 지도 API 키 설정을 확인해 주세요.');
+    } finally {
+      setIsSearching(false);
+    }
+  };
 
   const handleApplyCustom = (e: React.FormEvent) => {
     e.preventDefault();
@@ -120,7 +154,7 @@ export const GPSSimulatorModal: React.FC<GPSSimulatorModalProps> = ({
               <Navigation size={20} className="nav-icon" />
               <h3>GPS 실시간 위치 시뮬레이터</h3>
             </div>
-            <p>실제 제주 현장에 있지 않아도 좌표 이동에 따른 자동 매핑을 테스트할 수 있습니다.</p>
+            <p>실제 제주 현장에 있지 않아도 주소 검색이나 좌표 이동으로 자동 매핑을 테스트할 수 있습니다.</p>
           </div>
           <button type="button" className="close-btn" onClick={onClose} aria-label="닫기">
             <X size={20} />
@@ -151,70 +185,209 @@ export const GPSSimulatorModal: React.FC<GPSSimulatorModalProps> = ({
           </button>
         </div>
 
-        {/* Preset Locations Grid */}
-        <div className="preset-section">
-          <h4 className="preset-title">📍 제주 주요 랜드마크 가상 이동 (원클릭 매핑)</h4>
-          <div className="preset-list">
-            {PRESET_LOCATIONS.map((preset) => {
-              const isMatched = Math.abs(currentLat - preset.lat) < 0.005 && Math.abs(currentLng - preset.lng) < 0.005;
+        {/* Navigation Tabs */}
+        <div className="gps-modal-tabs" style={{ display: 'flex', gap: '8px', marginTop: '12px', borderBottom: '1px solid #e0e0e0', paddingBottom: '8px' }}>
+          <button
+            type="button"
+            style={{
+              padding: '6px 14px',
+              borderRadius: '20px',
+              border: 'none',
+              background: activeTab === 'preset' ? '#00695C' : '#f0f0f0',
+              color: activeTab === 'preset' ? '#fff' : '#555',
+              fontSize: '13px',
+              fontWeight: 600,
+              cursor: 'pointer'
+            }}
+            onClick={() => setActiveTab('preset')}
+          >
+            📍 주요 랜드마크 (7곳)
+          </button>
+          <button
+            type="button"
+            style={{
+              padding: '6px 14px',
+              borderRadius: '20px',
+              border: 'none',
+              background: activeTab === 'search' ? '#00695C' : '#f0f0f0',
+              color: activeTab === 'search' ? '#fff' : '#555',
+              fontSize: '13px',
+              fontWeight: 600,
+              cursor: 'pointer'
+            }}
+            onClick={() => setActiveTab('search')}
+          >
+            🔍 카카오 주소/장소 검색
+          </button>
+          <button
+            type="button"
+            style={{
+              padding: '6px 14px',
+              borderRadius: '20px',
+              border: 'none',
+              background: activeTab === 'custom' ? '#00695C' : '#f0f0f0',
+              color: activeTab === 'custom' ? '#fff' : '#555',
+              fontSize: '13px',
+              fontWeight: 600,
+              cursor: 'pointer'
+            }}
+            onClick={() => setActiveTab('custom')}
+          >
+            ✏️ 위경도 직접 입력
+          </button>
+        </div>
 
-              return (
+        {/* Tab 1: Preset Locations Grid */}
+        {activeTab === 'preset' && (
+          <div className="preset-section" style={{ marginTop: '10px' }}>
+            <div className="preset-list">
+              {PRESET_LOCATIONS.map((preset) => {
+                const isMatched = Math.abs(currentLat - preset.lat) < 0.005 && Math.abs(currentLng - preset.lng) < 0.005;
+
+                return (
+                  <div
+                    key={preset.id}
+                    className={`preset-card ${isMatched ? 'selected' : ''}`}
+                    onClick={() => {
+                      onApplyCoordinates(preset.lat, preset.lng, preset.name);
+                      onClose();
+                    }}
+                  >
+                    <div className="preset-card-header">
+                      <span className="preset-name">{preset.name}</span>
+                      <span className="preset-region">{preset.region}</span>
+                    </div>
+                    <div className="preset-expected">
+                      🎯 <strong>자동 매칭 대상:</strong> {preset.targetPOIName}
+                    </div>
+                    <div className="preset-desc">{preset.description}</div>
+                    {isMatched && (
+                      <div className="selected-badge">
+                        <CheckCircle2 size={13} /> 현재 시뮬레이션 중인 위치
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Tab 2: Kakao Address / Keyword Search */}
+        {activeTab === 'search' && (
+          <div className="address-search-section" style={{ marginTop: '12px' }}>
+            <form onSubmit={handleSearchAddress} style={{ display: 'flex', gap: '8px' }}>
+              <div style={{ flex: 1, position: 'relative', display: 'flex', alignItems: 'center' }}>
+                <Search size={16} style={{ position: 'absolute', left: '12px', color: '#888' }} />
+                <input
+                  type="text"
+                  placeholder="예: 제주시 중앙로, 성산읍 일출로, 협재리..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '10px 12px 10px 36px',
+                    borderRadius: '8px',
+                    border: '1px solid #ccc',
+                    fontSize: '13px'
+                  }}
+                  autoFocus
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={isSearching}
+                style={{
+                  padding: '10px 16px',
+                  background: '#00695C',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '8px',
+                  fontWeight: 600,
+                  fontSize: '13px',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
+              >
+                {isSearching ? <Loader2 size={16} className="spin" /> : '검색'}
+              </button>
+            </form>
+
+            {searchError && (
+              <div style={{ marginTop: '10px', padding: '8px 12px', background: '#FFF3E0', color: '#E65100', borderRadius: '6px', fontSize: '12px' }}>
+                {searchError}
+              </div>
+            )}
+
+            <div className="search-results-list" style={{ marginTop: '12px', maxHeight: '240px', overflowY: 'auto' }}>
+              {searchResults.map((result, idx) => (
                 <div
-                  key={preset.id}
-                  className={`preset-card ${isMatched ? 'selected' : ''}`}
+                  key={idx}
+                  style={{
+                    padding: '10px 12px',
+                    borderBottom: '1px solid #f0f0f0',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '2px',
+                    borderRadius: '6px',
+                    transition: 'background 0.15s'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = '#E0F2F1')}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
                   onClick={() => {
-                    onApplyCoordinates(preset.lat, preset.lng, preset.name);
+                    onApplyCoordinates(result.lat, result.lng, result.title);
                     onClose();
                   }}
                 >
-                  <div className="preset-card-header">
-                    <span className="preset-name">{preset.name}</span>
-                    <span className="preset-region">{preset.region}</span>
+                  <div style={{ fontWeight: 700, fontSize: '13px', color: '#004D40', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <MapPin size={13} color="#00695C" />
+                    <span>{result.title}</span>
                   </div>
-                  <div className="preset-expected">
-                    🎯 <strong>자동 매칭 대상:</strong> {preset.targetPOIName}
+                  <div style={{ fontSize: '12px', color: '#666', paddingLeft: '17px' }}>
+                    {result.address}
                   </div>
-                  <div className="preset-desc">{preset.description}</div>
-                  {isMatched && (
-                    <div className="selected-badge">
-                      <CheckCircle2 size={13} /> 현재 시뮬레이션 중인 위치
-                    </div>
-                  )}
+                  <div style={{ fontSize: '11px', color: '#999', paddingLeft: '17px' }}>
+                    좌표: {result.lat.toFixed(5)}, {result.lng.toFixed(5)} (클릭하여 이 위치로 이동)
+                  </div>
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
-        {/* Custom Coordinates Input */}
-        <form className="custom-coord-form" onSubmit={handleApplyCustom}>
-          <h4 className="preset-title">✏️ 임의 위경도 좌표 직접 입력</h4>
-          <div className="coord-inputs-row">
-            <div className="coord-field">
-              <label>위도 (Latitude)</label>
-              <input
-                type="number"
-                step="any"
-                value={customLat}
-                onChange={(e) => setCustomLat(e.target.value)}
-                placeholder="예: 33.4586"
-              />
+        {/* Tab 3: Custom Coordinates Input */}
+        {activeTab === 'custom' && (
+          <form className="custom-coord-form" onSubmit={handleApplyCustom} style={{ marginTop: '12px' }}>
+            <div className="coord-inputs-row">
+              <div className="coord-field">
+                <label>위도 (Latitude)</label>
+                <input
+                  type="number"
+                  step="any"
+                  value={customLat}
+                  onChange={(e) => setCustomLat(e.target.value)}
+                  placeholder="예: 33.4586"
+                />
+              </div>
+              <div className="coord-field">
+                <label>경도 (Longitude)</label>
+                <input
+                  type="number"
+                  step="any"
+                  value={customLng}
+                  onChange={(e) => setCustomLng(e.target.value)}
+                  placeholder="예: 126.9423"
+                />
+              </div>
             </div>
-            <div className="coord-field">
-              <label>경도 (Longitude)</label>
-              <input
-                type="number"
-                step="any"
-                value={customLng}
-                onChange={(e) => setCustomLng(e.target.value)}
-                placeholder="예: 126.9423"
-              />
-            </div>
-          </div>
-          <button type="submit" className="btn-apply-coord">
-            이 좌표로 이동하여 자동 매핑 실행
-          </button>
-        </form>
+            <button type="submit" className="btn-apply-coord">
+              이 좌표로 이동하여 자동 매핑 실행
+            </button>
+          </form>
+        )}
       </div>
     </div>
   );

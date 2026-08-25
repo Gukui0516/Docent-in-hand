@@ -8,6 +8,8 @@ import {
   MessageSquareHeart,
   BookOpen
 } from 'lucide-react';
+import type { POICard } from '../types/docent';
+import { loadPOICards, getLoadedPOIIndex } from '../services/poiDataService';
 import { SavedStoryService, DateGroupedStories, SavedStoryItem } from '../services/savedStoryService';
 import { MyCommentsService, DateGroupedComments, MyCommentItem } from '../services/myCommentsService';
 
@@ -37,6 +39,9 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
   const [storySearchQuery, setStorySearchQuery] = useState('');
   const [storyCount, setStoryCount] = useState(0);
 
+  // POI Cards cache for thumbnail lookup
+  const [cards, setCards] = useState<Record<string, POICard>>({});
+
   const refreshData = () => {
     // Refresh bookmarks
     const bGroups = SavedStoryService.getGroupedStories();
@@ -56,8 +61,25 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
       refreshData();
       setBookmarkSearchQuery('');
       setStorySearchQuery('');
+      loadPOICards()
+        .then(setCards)
+        .catch((err) => console.warn('SavedStoriesModal POI 카드 로드 실패:', err));
     }
   }, [isOpen]);
+
+  const getStoryThumbnail = (item: MyCommentItem): string => {
+    if (item.imageUrl && item.imageUrl.trim()) return item.imageUrl.trim();
+    if (item.poiImageUrl && item.poiImageUrl.trim()) return item.poiImageUrl.trim();
+    if (cards[item.poiId]?.imageUrl) return cards[item.poiId].imageUrl;
+    return 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=800&q=80';
+  };
+
+  const getStoryTags = (item: MyCommentItem): string[] => {
+    if (item.tags && item.tags.length > 0) return item.tags;
+    const poi = getLoadedPOIIndex().find((p) => p.id === item.poiId);
+    if (poi && poi.tags && poi.tags.length > 0) return poi.tags;
+    return item.category ? [item.category] : ['제주명소', '향토문화'];
+  };
 
   if (!isOpen) return null;
 
@@ -97,13 +119,16 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
   // Filter my stories by search query
   const filteredStoryGroups = storyGroups
     .map((group) => {
-      const filteredItems = group.items.filter(
-        (item) =>
-          item.poiName.toLowerCase().includes(storySearchQuery.toLowerCase()) ||
-          item.content.toLowerCase().includes(storySearchQuery.toLowerCase()) ||
-          item.authorName.toLowerCase().includes(storySearchQuery.toLowerCase()) ||
-          (item.category && item.category.toLowerCase().includes(storySearchQuery.toLowerCase()))
-      );
+      const filteredItems = group.items.filter((item) => {
+        const q = storySearchQuery.toLowerCase();
+        const tags = getStoryTags(item);
+        return (
+          item.poiName.toLowerCase().includes(q) ||
+          item.content.toLowerCase().includes(q) ||
+          item.authorName.toLowerCase().includes(q) ||
+          tags.some((t) => t.toLowerCase().includes(q))
+        );
+      });
       return {
         ...group,
         items: filteredItems
@@ -354,18 +379,16 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
                               onClick={() => handleItemClick(item.poiId)}
                             >
                               <div className="saved-card-thumb-wrapper">
-                                {item.imageUrl || item.poiImageUrl ? (
-                                  <img
-                                    src={item.imageUrl || item.poiImageUrl}
-                                    alt={item.poiName}
-                                    className="saved-card-thumb"
-                                    loading="lazy"
-                                  />
-                                ) : (
-                                  <div className="saved-card-thumb-placeholder">
-                                    <MessageSquareHeart size={24} />
-                                  </div>
-                                )}
+                                <img
+                                  src={getStoryThumbnail(item)}
+                                  alt={item.poiName}
+                                  className="saved-card-thumb"
+                                  loading="lazy"
+                                  onError={(e) => {
+                                    (e.target as HTMLImageElement).src =
+                                      'https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=800&q=80';
+                                  }}
+                                />
                                 <div className="saved-card-time-badge">{item.createdAt}</div>
                               </div>
 
@@ -394,10 +417,11 @@ export const SavedStoriesModal: React.FC<SavedStoriesModalProps> = ({
 
                                 <div className="saved-card-footer">
                                   <div className="saved-card-tags">
-                                    {item.category && (
-                                      <span className="saved-tag-pill">#{item.category}</span>
-                                    )}
-                                    <span className="saved-tag-pill">#내가쓴이야기</span>
+                                    {getStoryTags(item).slice(0, 3).map((tag, idx) => (
+                                      <span key={idx} className="saved-tag-pill">
+                                        #{tag}
+                                      </span>
+                                    ))}
                                   </div>
                                 </div>
                               </div>

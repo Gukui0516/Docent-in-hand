@@ -5,6 +5,7 @@ export interface MyCommentItem {
   poiId: string;
   poiName: string;
   poiImageUrl?: string;
+  tags?: string[];
   authorName: string;
   authorType?: string;
   category?: string;
@@ -29,6 +30,22 @@ export class MyCommentsService {
       let list: MyCommentItem[] = data ? JSON.parse(data) : [];
       if (!Array.isArray(list)) list = [];
 
+      // 부팅 시 받아 둔 POI 인덱스가 있다면 이름, 태그 보강
+      const loadedPOIIndex = getLoadedPOIIndex();
+      if (loadedPOIIndex && loadedPOIIndex.length > 0) {
+        for (const item of list) {
+          const poi = loadedPOIIndex.find((p) => p.id === item.poiId);
+          if (poi) {
+            if (!item.poiName || item.poiName === '제주 명소') {
+              item.poiName = poi.name;
+            }
+            if (!item.tags || item.tags.length === 0) {
+              item.tags = poi.tags;
+            }
+          }
+        }
+      }
+
       // Also reconcile with legacy 'docent_community_stories' if any exist
       const legacyStories = localStorage.getItem('docent_community_stories');
       if (legacyStories) {
@@ -47,6 +64,7 @@ export class MyCommentsService {
                   poiName: poi ? poi.name : '제주 명소',
                   // 인덱스에는 imageUrl 이 없다(용량 때문에 카드로 분리). 원본 값만 쓴다.
                   poiImageUrl: story.imageUrl,
+                  tags: poi?.tags,
                   authorName: story.authorName || '다정한 바당',
                   authorType: story.authorType,
                   category: story.category,
@@ -83,6 +101,7 @@ export class MyCommentsService {
     poiId: string;
     poiName: string;
     poiImageUrl?: string;
+    tags?: string[];
     authorName: string;
     authorType?: string;
     category?: string;
@@ -103,6 +122,7 @@ export class MyCommentsService {
       poiId: comment.poiId,
       poiName: comment.poiName,
       poiImageUrl: comment.poiImageUrl,
+      tags: comment.tags,
       authorName: comment.authorName,
       authorType: comment.authorType,
       category: comment.category,

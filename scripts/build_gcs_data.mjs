@@ -120,7 +120,11 @@ const corpus = deepDecode(JSON.parse(fs.readFileSync(SRC_CORPUS, 'utf8')));
 console.log(`  입력: POI ${pois.length}건 · KB ${Object.keys(kb).length}건 · 코퍼스 ${corpus.length}건`);
 
 // 기존 산출물 정리 (같은 VERSION 재빌드 시 삭제된 POI 조각이 남지 않도록)
-fs.rmSync(OUT, { recursive: true, force: true });
+try {
+  fs.rmSync(OUT, { recursive: true, force: true });
+} catch (e) {
+  // Ignore Windows directory lock if dev server is running
+}
 
 // ── 2. Tier 1: 슬림 인덱스 ──────────────────────────────────────────────────
 // 검색(name/region/tags), 카테고리 필터, geo.ts 최근접 탐색, 캐릭터 배정에 필요한 최소 필드.

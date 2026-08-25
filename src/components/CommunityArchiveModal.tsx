@@ -92,11 +92,16 @@ export const CommunityArchiveModal: React.FC<CommunityArchiveModalProps> = ({
       });
 
       // Save to My Comments service
+      const poiThumb =
+        poi.imageUrl ||
+        (poi.images && poi.images.length > 0 ? poi.images[0].src : undefined);
+
       MyCommentsService.addMyComment({
         id: createdStory.id,
         poiId: poi.id,
         poiName: poi.name,
-        poiImageUrl: poi.imageUrl,
+        poiImageUrl: poiThumb,
+        tags: poi.tags || [],
         authorName: createdStory.authorName,
         authorType: createdStory.authorType,
         category: createdStory.category,

@@ -76,8 +76,8 @@ export class ArchiveSearchTool {
     for (const { doc } of scoredDocs) {
       if (seenIds.has(doc.id)) continue;
 
-      const cat = doc.category;
-      const sub = doc.subcats.join(' ');
+      const cat = doc.category || '';
+      const sub = Array.isArray(doc.subcats) ? doc.subcats.join(' ') : (Array.isArray((doc as any).metadata?.subcategories) ? (doc as any).metadata.subcategories.join(' ') : '');
 
       if (
         (cat.includes('언어') || cat.includes('문학') || cat.includes('구비전승') || doc.title.includes('「') || doc.title.includes('설화')) &&
@@ -150,7 +150,8 @@ export class ArchiveSearchTool {
     query?: string
   ): number {
     let score = 0;
-    const { title, summary, content, subcats, category } = doc;
+    const { title = '', summary = '', content = '', category = '' } = doc;
+    const subcats = Array.isArray(doc.subcats) ? doc.subcats : (Array.isArray((doc as any).metadata?.subcategories) ? (doc as any).metadata.subcategories : []);
     const subStr = subcats.join(' ');
 
     if (title.includes(poiName) || poiName.includes(title)) score += 150;
