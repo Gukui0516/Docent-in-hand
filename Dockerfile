@@ -18,6 +18,12 @@ COPY src ./src
 ARG VITE_KAKAO_MAP_API_KEY=""
 ENV VITE_KAKAO_MAP_API_KEY=$VITE_KAKAO_MAP_API_KEY
 
+# 프론트가 요청할 데이터 버전도 빌드 타임 변수다(import.meta.env.VITE_DATA_VERSION).
+# Cloud Run 런타임 env(DATA_VERSION)는 서버만 보므로, 이걸 안 넘기면 프론트는
+# 기본값 v1 을 계속 요청해 백엔드가 v3 를 들고 있어도 구버전 데이터가 나간다.
+ARG VITE_DATA_VERSION="v1"
+ENV VITE_DATA_VERSION=$VITE_DATA_VERSION
+
 # 데이터 파이프라인은 빌드 안에서 돌리지 않는다.
 # 원본 data/(64MB)는 .gitignore 대상이라 저장소에 없고, .gcloudignore·.dockerignore
 # 로도 제외돼 빌드 컨텍스트에 존재할 수 없다. 데이터 갱신은 로컬에서
