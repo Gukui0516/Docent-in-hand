@@ -340,7 +340,7 @@ app.get('/data/*', async (req, res) => {
   for (const candidate of localCandidates) {
     if (fs.existsSync(candidate)) {
       res.setHeader('Content-Type', 'application/json; charset=utf-8');
-      res.setHeader('Cache-Control', 'public, max-age=3600');
+      res.setHeader('Cache-Control', CONFIG.IS_PRODUCTION ? 'public, max-age=3600' : 'no-cache, no-store, must-revalidate');
       return res.sendFile(candidate);
     }
   }
